@@ -873,7 +873,7 @@ record(ai, "$(P)$(R)PoolMaxMem")
    field(DTYP, "asynFloat64")
    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))POOL_MAX_MEMORY")
    field(PREC, "1")
-   field(EGU,  "MB")
+   field(EGU,  "Mbyte")
    field(SCAN, "Passive")
    field(PINI, "YES")
 }

@@ -197,7 +197,7 @@ record(longout, "$(P)$(R)MinFlatField")
     field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))MIN_FLAT_FIELD")
     field(DESC, "Minimum flat field value")
     field(VAL,  "100")
-    field(EGU,  "Counts")
+    field(EGU,  "count")
 }
 
 record(longin, "$(P)$(R)MinFlatField_RBV")
@@ -205,7 +205,7 @@ record(longin, "$(P)$(R)MinFlatField_RBV")
     field(DTYP, "asynInt32")
     field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))MIN_FLAT_FIELD")
     field(DESC, "Minimum flat field value")
-    field(EGU,  "Counts")
+    field(EGU,  "count")
     field(SCAN, "I/O Intr")
 }
 
@@ -266,7 +266,7 @@ record(ao, "$(P)$(R)Wavelength")
     field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))WAVELENGTH")
     field(PREC, "4")
     field(VAL,  "1.54")
-    field(EGU,  "Angstroms")
+    field(EGU,  "angstrom")
 }
 
 record(ao, "$(P)$(R)EnergyLow")
@@ -316,7 +316,7 @@ record(ao, "$(P)$(R)BeamX")
     field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))BEAM_X")
     field(PREC, "3")
     field(VAL,  "0")
-    field(EGU,  "pixels")
+    field(EGU,  "pixel")
 }
 
 record(ao, "$(P)$(R)BeamY")
@@ -326,7 +326,7 @@ record(ao, "$(P)$(R)BeamY")
     field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))BEAM_Y")
     field(PREC, "3")
     field(VAL,  "0")
-    field(EGU,  "pixels")
+    field(EGU,  "pixel")
 }
 
 record(ao, "$(P)$(R)Flux")
@@ -336,7 +336,7 @@ record(ao, "$(P)$(R)Flux")
     field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))FLUX")
     field(PREC, "4")
     field(VAL,  "0")
-    field(EGU,  "ph/s")
+    field(EGU,  "photon/s")
 }
 
 record(ao, "$(P)$(R)FilterTransm")
@@ -355,7 +355,7 @@ record(ao, "$(P)$(R)StartAngle")
     field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))START_ANGLE")
     field(PREC, "4")
     field(VAL,  "0")
-    field(EGU,  "deg")
+    field(EGU,  "degree")
 }
 
 record(ao, "$(P)$(R)AngleIncr")
@@ -365,7 +365,7 @@ record(ao, "$(P)$(R)AngleIncr")
     field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))ANGLE_INCR")
     field(PREC, "4")
     field(VAL,  "0.1")
-    field(EGU,  "deg")
+    field(EGU,  "degree")
 }
 
 record(ao, "$(P)$(R)Det2theta")
@@ -375,7 +375,7 @@ record(ao, "$(P)$(R)Det2theta")
     field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))DET_2THETA")
     field(PREC, "4")
     field(VAL,  "0")
-    field(EGU,  "deg")
+    field(EGU,  "degree")
 }
 
 record(ao, "$(P)$(R)Polarization")
@@ -394,7 +394,7 @@ record(ao, "$(P)$(R)Alpha")
     field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))ALPHA")
     field(PREC, "4")
     field(VAL,  "0")
-    field(EGU,  "deg")
+    field(EGU,  "degree")
 }
 
 record(ao, "$(P)$(R)Kappa")
@@ -404,7 +404,7 @@ record(ao, "$(P)$(R)Kappa")
     field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))KAPPA")
     field(PREC, "4")
     field(VAL,  "0")
-    field(EGU,  "deg")
+    field(EGU,  "degree")
 }
 
 record(ao, "$(P)$(R)Phi")
@@ -414,7 +414,7 @@ record(ao, "$(P)$(R)Phi")
     field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))PHI")
     field(PREC, "4")
     field(VAL,  "0")
-    field(EGU,  "deg")
+    field(EGU,  "degree")
 }
 
 record(ao, "$(P)$(R)Chi")
@@ -424,7 +424,7 @@ record(ao, "$(P)$(R)Chi")
     field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))CHI")
     field(PREC, "4")
     field(VAL,  "0")
-    field(EGU,  "deg")
+    field(EGU,  "degree")
 }
 
 record(stringout, "$(P)$(R)OscillAxis")
@@ -531,7 +531,7 @@ record(ai, "$(P)$(R)PixelCutOff_RBV")
 {
     field(DTYP, "asynInt32")
     field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))PIXEL_CUTOFF")
-    field(EGU,  "counts")
+    field(EGU,  "count")
     field(SCAN, "I/O Intr")
     field(VAL,  "0")
 }

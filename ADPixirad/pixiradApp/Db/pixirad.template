@@ -224,7 +224,7 @@ record(ai, "$(P)$(R)UDPSpeed_RBV")
     field(DTYP, "asynFloat64")
     field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))UDP_SPEED")
     field(DESC, "UDP speed")
-    field(EGU,  "MB/s")
+    field(EGU,  "Mbyte/s")
     field(PREC, "1")
     field(SCAN, "I/O Intr")
 }
