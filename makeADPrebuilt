@@ -1,0 +1,67 @@
+#!/bin/bash
+#  This script takes 3 parameters.  
+# 1 - The name of the detector (ADProsilica, etc.)
+# 2 - The version number (R2-0, etc.)
+# 3 - The EPICS architecture (linux-x86_64, etc.)
+
+find . -name 'auto_settings.sav_*' -exec rm -fv {} \;
+find . -name 'auto_settings.savB*' -exec rm -fv {} \;
+find . -name 'core.*' -exec rm -fv {} \;
+find . -name '*.exe.*' -exec rm -fv {} \;
+
+AREA_DETECTOR=areaDetector-2-0
+ASYN=asyn-4-22
+AUTOSAVE=autosave-5-1
+CALC=calc-3-2
+SSCAN=sscan-2-9
+
+cd ..
+tar cvzf /home/epics/public_html/pub/$1/$1_Prebuilt_$2_$3.tgz \
+--exclude '.svn*' \
+--exclude 'O.*'  \
+$AREA_DETECTOR/ADCore/db \
+$AREA_DETECTOR/ADCore/documentation \
+$AREA_DETECTOR/ADCore/ADApp/Db \
+$AREA_DETECTOR/ADCore/ADApp/op \
+$AREA_DETECTOR/ADCore/iocBoot \
+$AREA_DETECTOR/ADCore/Viewers/ImageJ \
+$AREA_DETECTOR/$1/db \
+$AREA_DETECTOR/$1/*/Db \
+$AREA_DETECTOR/$1/*/op \
+$AREA_DETECTOR/$1/documentation \
+$AREA_DETECTOR/$1/iocs/*IOC/bin/$3 \
+$AREA_DETECTOR/$1/iocs/*IOC/dbd \
+$AREA_DETECTOR/$1/iocs/*IOC/iocBoot \
+$ASYN/opi \
+$ASYN/db \
+$AUTOSAVE/asApp/Db \
+$AUTOSAVE/asApp/op \
+$CALC/calcApp/Db \
+$CALC/calcApp/op \
+$SSCAN/sscanApp/Db \
+$SSCAN/sscanApp/op
+
+rm -f /home/epics/public_html/pub/$1/$1_Prebuilt_$2_$3.zip
+zip -r /home/epics/public_html/pub/$1/$1_Prebuilt_$2_$3.zip   \
+$AREA_DETECTOR/ADCore/db \
+$AREA_DETECTOR/ADCore/documentation \
+$AREA_DETECTOR/ADCore/ADApp/Db \
+$AREA_DETECTOR/ADCore/ADApp/op \
+$AREA_DETECTOR/ADCore/iocBoot \
+$AREA_DETECTOR/ADCore/Viewers/ImageJ \
+$AREA_DETECTOR/$1/db \
+$AREA_DETECTOR/$1/*/Db \
+$AREA_DETECTOR/$1/*/op \
+$AREA_DETECTOR/$1/documentation \
+$AREA_DETECTOR/$1/iocs/*IOC/bin/$3 \
+$AREA_DETECTOR/$1/iocs/*IOC/dbd \
+$AREA_DETECTOR/$1/iocs/*IOC/iocBoot \
+$ASYN/opi \
+$ASYN/db \
+$AUTOSAVE/asApp/Db \
+$AUTOSAVE/asApp/op \
+$CALC/calcApp/Db \
+$CALC/calcApp/op  \
+$SSCAN/sscanApp/Db \
+$SSCAN/sscanApp/op \
+--exclude '*.svn*' --exclude '*/O.*' 
