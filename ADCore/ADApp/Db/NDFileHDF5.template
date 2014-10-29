@@ -112,7 +112,7 @@ record(longin, "$(P)$(R)BoundaryThreshold_RBV")
     field(INP, "@asyn($(PORT),0)HDF5_chunkBoundaryThreshold")
     field(PINI, "NO")
     field(SCAN, "I/O Intr")
-    field(EGU, "bytes")
+    field(EGU, "byte")
 }
 
 # % gdatag, pv, rw, $(PORT)_NDFileHDF5, NumExtraDims, Number of extra dimensions [0..2]
