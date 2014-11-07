@@ -1,6 +1,10 @@
 # Database for the records specific to the Andor CCD.
 # Matthew Pearson
 # June 2009
+# Gabriele Salvato added support for iStar with DDG
+# October 2014
+# Gabriele Salvato added support for Autofocus
+# October 2014
 
 # These are the records that we modify from NDFile.template
 record(mbbo, "$(P)$(R)FileFormat")
@@ -141,8 +145,6 @@ record(mbbi, "$(P)$(R)DataType_RBV")
    field(SVVL, "")
 }
 
-
-
 # These are the records that are new for the Andor detector 
 record(bo, "$(P)$(R)AndorCooler")
 {
@@ -161,6 +163,83 @@ record(bi, "$(P)$(R)AndorCooler_RBV")
     field(ONAM, "On")
     field(SCAN, "I/O Intr")
 }
+
+# (Gabriele Salvato) DDG Integrate On Chip
+record(bo, "$(P)$(R)AndorDDGIOC")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))ANDOR_DDG_IOC")
+    field(ZNAM, "Off")
+    field(ONAM, "On")
+}
+
+record(bi, "$(P)$(R)AndorDDGIOC_RBV")
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))ANDOR_DDG_IOC")
+    field(ZNAM, "Off")
+    field(ONAM, "On")
+    field(SCAN, "I/O Intr")
+}
+
+# (Gabriele Salvato) MCP Gain
+record(ao, "$(P)$(R)AndorMCPGain")
+{
+   field(PINI, "YES")
+   field(DTYP, "asynInt32")
+   field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))ANDOR_MCP_GAIN")
+   field(PREC, "3")
+   field(VAL,  "1")
+   
+}
+
+record(ai, "$(P)$(R)AndorMCPGain_RBV")
+{
+   field(DTYP, "asynInt32")
+   field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))ANDOR_MCP_GAIN")
+   field(PREC, "3")
+   field(SCAN, "I/O Intr")
+}
+
+# (Gabriele Salvato) DDG Delay
+record(ao, "$(P)$(R)AndorDDGGateDelay")
+{
+   field(PINI, "YES")
+   field(DTYP, "asynFloat64")
+   field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))ANDOR_DDG_GATE_DELAY")
+   field(PREC, "3")
+   field(VAL,  "0.0")
+   
+}
+
+record(ai, "$(P)$(R)AndorDDGGateDelay_RBV")
+{
+   field(DTYP, "asynFloat64")
+   field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))ANDOR_DDG_GATE_DELAY")
+   field(PREC, "3")
+   field(SCAN, "I/O Intr")
+}
+
+# (Gabriele Salvato) DDG Width
+record(ao, "$(P)$(R)AndorDDGGateWidth")
+{
+   field(PINI, "YES")
+   field(DTYP, "asynFloat64")
+   field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))ANDOR_DDG_GATE_WIDTH")
+   field(PREC, "3")
+   field(VAL,  "0.1")
+   
+}
+
+record(ai, "$(P)$(R)AndorDDGGateWidth_RBV")
+{
+   field(DTYP, "asynFloat64")
+   field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))ANDOR_DDG_GATE_WIDTH")
+   field(PREC, "3")
+   field(SCAN, "I/O Intr")
+}
+# (Gabriele Salvato) end
 
 # Accumulation period.
 record(ao, "$(P)$(R)AndorAccumulatePeriod")
