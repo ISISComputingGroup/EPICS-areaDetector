@@ -143,7 +143,10 @@ ADDriver::ADDriver(const char *portName, int maxAddr, int numParams, int maxBuff
     createParam(ADStatusMessageString,       asynParamOctet, &ADStatusMessage);
     createParam(ADStringToServerString,      asynParamOctet, &ADStringToServer);
     createParam(ADStringFromServerString,    asynParamOctet, &ADStringFromServer);    
-
+    //Dario Start
+    createParam(ADWriteFileString,           asynParamInt32, &ADWriteFile);
+    //Dario End
+    
     /* Here we set the values of read-only parameters and of read/write parameters that cannot
      * or should not get their values from the database.  Note that values set here will override
      * those in the database for output records because if asyn device support reads a value from 
@@ -162,4 +165,8 @@ ADDriver::ADDriver(const char *portName, int maxAddr, int numParams, int maxBuff
     setStringParam (ADStatusMessage,  "");
     setStringParam (ADStringToServer, "");
     setStringParam (ADStringFromServer,  "");
+    
+    //Dario Start
+    setIntegerParam(ADWriteFile, 0);
+    //Dario End
 }

@@ -1,3 +1,15 @@
+#
+#
+#
+# (Gabriele Salvato)
+# Create an autofocus plugin
+NDFocusMetricsConfigure("FOCUS1", 1, 0, "$(PORT)", 0, 0, 0)
+dbLoadRecords("$(ADCORE)/db/NDPluginBase.template","P=$(PREFIX), R=Focus1:, PORT=FOCUS1, ADDR=0, TIMEOUT=1, NDARRAY_PORT=$(PORT), NDARRAY_ADDR=0")
+dbLoadRecords("$(ADCORE)/db/NDFocusMetrics.template", "P=13ANDOR1:, R=Focus1:, PORT=FOCUS1, ADDR=0, TIMEOUT=1")
+# (Gabriele Salvato) end
+#
+#
+#
 # Create a netCDF file saving plugin.
 NDFileNetCDFConfigure("FileNetCDF1", $(QSIZE), 0, "$(PORT)", 0)
 dbLoadRecords("$(ADCORE)/db/NDPluginBase.template","P=$(PREFIX),R=netCDF1:,PORT=FileNetCDF1,ADDR=0,TIMEOUT=1,NDARRAY_PORT=$(PORT),NDARRAY_ADDR=0")

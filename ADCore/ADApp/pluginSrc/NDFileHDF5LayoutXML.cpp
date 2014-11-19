@@ -22,7 +22,6 @@ namespace hdf5
   const std::string LayoutXML::ATTR_DATASET            = "dataset";
   const std::string LayoutXML::ATTR_ATTRIBUTE          = "attribute";
   const std::string LayoutXML::ATTR_GLOBAL             = "global";
-  const std::string LayoutXML::ATTR_HARDLINK           = "hardlink";
 
   const std::string LayoutXML::ATTR_SOURCE             = "source";
   const std::string LayoutXML::ATTR_SRC_DETECTOR       = "detector";
@@ -35,37 +34,28 @@ namespace hdf5
   const std::string LayoutXML::ATTR_SRC_WHEN           = "when";
   const std::string LayoutXML::ATTR_GLOBAL_NAME        = "name";
   const std::string LayoutXML::ATTR_GLOBAL_VALUE       = "ndattribute";
-  const std::string LayoutXML::ATTR_HARDLINK_NAME      = "name";
-  const std::string LayoutXML::ATTR_HARDLINK_TARGET    = "target";
 
   const std::string LayoutXML::DEFAULT_LAYOUT = " \
   <group name=\"entry\"> \
-    <attribute name=\"NX_class\" source=\"constant\" value=\"NXentry\" type=\"string\"></attribute> \
+    <attribute name=\"NX_class\" source=\"constant\" value=\"NX_entry\" type=\"string\"></attribute> \
     <group name=\"instrument\"> \
-      <attribute name=\"NX_class\" source=\"constant\" value=\"NXinstrument\" type=\"string\"></attribute> \
+      <attribute name=\"NX_class\" source=\"constant\" value=\"NX_instrument\" type=\"string\"></attribute> \
       <group name=\"detector\"> \
-        <attribute name=\"NX_class\" source=\"constant\" value=\"NXdetector\" type=\"string\"></attribute> \
         <dataset name=\"data\" source=\"detector\" det_default=\"true\"> \
-          <attribute name=\"NX_class\" source=\"constant\" value=\"SDS\" type=\"string\"></attribute> \
+          <attribute name=\"NX_class\" source=\"constant\" value=\"SDS\"></attribute> \
           <attribute name=\"signal\" source=\"constant\" value=\"1\" type=\"int\"></attribute> \
         </dataset> \
         <group name=\"NDAttributes\"> \
-          <attribute name=\"NX_class\" source=\"constant\" value=\"NXcollection\" type=\"string\"></attribute> \
           <dataset name=\"ColorMode\" source=\"ndattribute\" ndattribute=\"ColorMode\"> \
           </dataset> \
         </group>          <!-- end group NDAttribute --> \
       </group>            <!-- end group detector --> \
       <group name=\"NDAttributes\" ndattr_default=\"true\"> \
-        <attribute name=\"NX_class\" source=\"constant\" value=\"NXcollection\" type=\"string\"></attribute> \
       </group>            <!-- end group NDAttribute (default) --> \
       <group name=\"performance\"> \
         <dataset name=\"timestamp\"></dataset> \
       </group>            <!-- end group performance --> \
     </group>              <!-- end group instrument --> \
-    <group name=\"data\"> \
-      <attribute name=\"NX_class\" source=\"constant\" value=\"NXdata\" type=\"string\"></attribute> \
-      <hardlink name=\"data\" target=\"/entry/instrument/detector/data\"></hardlink> \
-    </group>              <!-- end group data --> \
   </group>                <!-- end group entry --> ";
 
   LayoutXML::LayoutXML() : ptr_tree(NULL), ptr_curr_element(NULL)
@@ -261,8 +251,6 @@ namespace hdf5
           ret = this->new_attribute();
         } else if (name == LayoutXML::ATTR_GLOBAL){
           ret = this->new_global();
-        } else if (name == LayoutXML::ATTR_HARDLINK){
-          ret = this->new_hardlink();
         }
         if (ret != 0){
           LOG4CXX_WARN(log, "adding new node: " << name << " failed..." );
@@ -555,27 +543,6 @@ namespace hdf5
 
     this->globals[str_global_name] = str_global_value;
     return ret;
-  }
-
-  int LayoutXML::new_hardlink()
-  {
-    // First check the basics
-    if (! xmlTextReaderHasAttributes(this->xmlreader) ) return -1;
-    xmlChar *hardlink_name = NULL;
-    hardlink_name = xmlTextReaderGetAttribute(this->xmlreader, (const xmlChar*)LayoutXML::ATTR_ELEMENT_NAME.c_str());
-    if (hardlink_name == NULL) return -1;
-    xmlChar *hardlink_target = NULL;
-    hardlink_target = xmlTextReaderGetAttribute(this->xmlreader, (const xmlChar*)LayoutXML::ATTR_HARDLINK_TARGET.c_str());
-    if (hardlink_target == NULL) return -1;
-
-    std::string str_hardlink_name((char*)hardlink_name);
-    Group *parent = (Group *)this->ptr_curr_element;
-    HardLink *hardlink = NULL;
-    hardlink = parent->new_hardlink(str_hardlink_name);
-    if (hardlink == NULL) return -1;
-    const std::string str_hardlink_target((char*)hardlink_target);
-    hardlink->set_target(str_hardlink_target);
-    return 0;
   }
 
 } // hdf5

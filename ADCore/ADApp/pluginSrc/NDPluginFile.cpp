@@ -162,7 +162,7 @@ asynStatus NDPluginFile::writeFileBase()
     char driverFileName[MAX_FILENAME_LEN];
     char errorMessage[256];
     static const char* functionName = "writeFileBase";
-
+    
     /* Make sure there is a valid array */
     if (!this->pArrays[0]) {
         asynPrint(this->pasynUserSelf, ASYN_TRACE_ERROR,
@@ -845,6 +845,7 @@ NDPluginFile::NDPluginFile(const char *portName, int queueSize, int blockingCall
 
     this->ndArrayInfoInit = NULL;
     this->lazyOpen = false;
+    this->createParam("FILE_LAZY_OPEN", asynParamInt32, &NDFileLazyOpen);
     //setIntegerParam(NDFileLazyOpen, 1);
 
     this->useAttrFilePrefix = false;

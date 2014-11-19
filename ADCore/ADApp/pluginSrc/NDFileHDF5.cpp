@@ -17,6 +17,7 @@
 #include <sstream>
 #include <hdf5.h>
 #include <sys/stat.h>
+#include <stdint.h>
 // #include <hdf5_hl.h> // high level HDF5 API not currently used (requires use of library hdf5_hl)
 
 #include <epicsStdio.h>
@@ -82,7 +83,6 @@ class NDFileHDF5 : public NDPluginFile
     asynStatus storeOnCloseAttributes();
     asynStatus storeOnOpenCloseAttribute(hdf5::Element *element, bool open);
     asynStatus createTree(hdf5::Group* root, hid_t h5handle);
-    asynStatus createHardLinks(hdf5::Group* root);
 
     void writeHdfConstDatasets( hid_t h5_handle, hdf5::Group* group);
     void writeH5dsetStr(hid_t element, const std::string &name, const std::string &str_value) const;
@@ -433,9 +433,6 @@ asynStatus NDFileHDF5::createXMLFileLayout()
     }
 
   }
-  
-  retcode = this->createHardLinks(root);
-
   return retcode;
 }
 
@@ -624,49 +621,6 @@ asynStatus NDFileHDF5::createTree(hdf5::Group* root, hid_t h5handle)
   return retcode;
 }
 
-/** Create the hardlinks in the HDF5 file.
- *
- */
-asynStatus NDFileHDF5::createHardLinks(hdf5::Group* root)
-{
-  asynStatus retcode = asynSuccess;
-  static const char *functionName = "createHardLinks";
-
-  if (root == NULL) return asynError; // sanity check
-
-  std::string name = root->get_name();
-  if (root->get_parent() == NULL){
-    // This is a reserved element and cannot contain hard links.  Do its groups.
-    hdf5::Group::MapGroups_t::const_iterator it_group;
-    hdf5::Group::MapGroups_t& groups = root->get_groups();
-    for (it_group = groups.begin(); it_group != groups.end(); ++it_group){
-      // recursively call this function to create hardlinks in all subgroups
-      retcode = this->createHardLinks(it_group->second);
-    }
-  } else {
-    // Create all the hardlinks in this group
-    hdf5::Group::MapHardLinks_t::iterator it_hardlinks;
-    hdf5::Group::MapHardLinks_t& hardlinks = root->get_hardlinks();
-    for (it_hardlinks = hardlinks.begin(); it_hardlinks != hardlinks.end(); ++it_hardlinks){
-      std::string targetName = it_hardlinks->second->get_target();
-      std::string linkName = it_hardlinks->second->get_full_name();
-      herr_t err = H5Lcreate_hard(this->file, targetName.c_str(), this->file, linkName.c_str(), 0, 0);
-      if (err < 0) {
-        asynPrint(this->pasynUserSelf, ASYN_TRACE_ERROR, "%s::%s error creating hard link from: %s to %s\n",
-                  driverName, functionName, targetName.c_str(), linkName.c_str());
-      }
-    }
-
-    hdf5::Group::MapGroups_t::const_iterator it_group;
-    hdf5::Group::MapGroups_t& groups = root->get_groups();
-    for (it_group = groups.begin(); it_group != groups.end(); ++it_group){
-      // recursively call this function to create hardlinks in all subgroups
-      retcode = this->createHardLinks(it_group->second);
-    }
-  }
-  return retcode;
-}
-
 /** Check this element for any attached attributes and write them out.
  *  Supported types are 'string', 'int' and 'float'.
  *
@@ -825,7 +779,7 @@ void NDFileHDF5::writeH5dsetInt32(hid_t element, const std::string &name, const 
       H5Sclose(hdfdataspace);
       return;
     }
-    epicsInt32 ival;
+    int32_t ival;
     sscanf(str_value.c_str(), "%d", &ival);
     hdfstatus = H5Dwrite(hdfdset, hdfdatatype, H5S_ALL, H5S_ALL, H5P_DEFAULT, &ival);
     if (hdfstatus < 0) {
@@ -1053,7 +1007,7 @@ void NDFileHDF5::writeH5attrInt32(hid_t element, const std::string &attr_name, c
       H5Sclose(hdfattrdataspace);
       return;
     }
-    epicsInt32 ival;
+    int32_t ival;
     sscanf(str_attr_value.c_str(), "%d", &ival);
     hdfstatus = H5Awrite(hdfattr, hdfdatatype, &ival);
     if (hdfstatus < 0) {
@@ -1528,13 +1482,13 @@ asynStatus NDFileHDF5::closeFile()
               "%s::%s Closing file not totally clean.  Groups remaining=%d\n",
               driverName, functionName, obj_count);
   }
-  obj_count = (int)H5Fget_obj_count(this->file, H5F_OBJ_DATASET);
+  obj_count = H5Fget_obj_count(this->file, H5F_OBJ_DATASET);
   if (obj_count > 0){
     asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW,
               "%s::%s Closing file not totally clean.  Datasets remaining=%d\n",
               driverName, functionName, obj_count);
   }
-  obj_count = (int)H5Fget_obj_count(this->file, H5F_OBJ_ATTR);
+  obj_count = H5Fget_obj_count(this->file, H5F_OBJ_ATTR);
   if (obj_count > 0){
     asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW,
               "%s::%s Closing file not totally clean.  Attributes remaining=%d\n",
@@ -1829,10 +1783,12 @@ int NDFileHDF5::verifyLayoutXMLFile()
 //  Reading in a filename or string of xml. We will need more than 256 bytes
   char *fileName = new char[MAX_LAYOUT_LEN];
   fileName[MAX_LAYOUT_LEN - 1] = '\0';
+  int len;
   const char *functionName = "verifyLayoutXMLFile";
 
   getStringParam(NDFileHDF5_layoutFilename, MAX_LAYOUT_LEN-1, fileName);
-  if (strlen(fileName) == 0){
+  len = strlen(fileName);
+  if (len == 0){
     setIntegerParam(NDFileHDF5_layoutValid, 1);
     setStringParam(NDFileHDF5_layoutErrorMsg, "Default layout selected");
     delete [] fileName; 

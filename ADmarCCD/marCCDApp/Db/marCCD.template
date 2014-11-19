@@ -514,7 +514,7 @@ record(ao, "$(P)$(R)StartPhi")
     field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))MAR_START_PHI")
     field(PINI, "YES")
     field(PREC, "3")
-    field(EGU,  "degree")
+    field(EGU,  "deg")
 }
 
 record(stringout, "$(P)$(R)RotationAxis")
@@ -530,7 +530,7 @@ record(ao, "$(P)$(R)RotationRange")
     field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))MAR_ROTATION_RANGE")
     field(PINI, "YES")
     field(PREC, "3")
-    field(EGU,  "degree")
+    field(EGU,  "deg")
 }
 
 record(ao, "$(P)$(R)TwoTheta")
@@ -539,7 +539,7 @@ record(ao, "$(P)$(R)TwoTheta")
     field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))MAR_TWO_THETA")
     field(PINI, "YES")
     field(PREC, "3")
-    field(EGU,  "degree")
+    field(EGU,  "deg")
 }
 
 record(ao, "$(P)$(R)Wavelength")
@@ -548,7 +548,7 @@ record(ao, "$(P)$(R)Wavelength")
     field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))MAR_WAVELENGTH")
     field(PINI, "YES")
     field(PREC, "4")
-    field(EGU,  "angstrom")
+    field(EGU,  "Angstrom")
 }
 
 record(waveform, "$(P)$(R)FileComments")

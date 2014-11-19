@@ -85,7 +85,7 @@ record(longout, "$(P)$(R)BoundaryAlign")
     field(OUT, "@asyn($(PORT),0)HDF5_chunkBoundaryAlign")
     field(PINI, "YES")
     field(VAL, "0")
-    field(EGU, "byte")
+    field(EGU, "bytes")
 }
 
 record(longin, "$(P)$(R)BoundaryAlign_RBV")
@@ -94,7 +94,7 @@ record(longin, "$(P)$(R)BoundaryAlign_RBV")
     field(INP, "@asyn($(PORT),0)HDF5_chunkBoundaryAlign")
     field(PINI, "NO")
     field(SCAN, "I/O Intr")
-    field(EGU, "byte")
+    field(EGU, "bytes")
 }
 
 record(longout, "$(P)$(R)BoundaryThreshold")
@@ -103,7 +103,7 @@ record(longout, "$(P)$(R)BoundaryThreshold")
     field(OUT, "@asyn($(PORT),0)HDF5_chunkBoundaryThreshold")
     field(PINI, "YES")
     field(VAL, "1")
-    field(EGU, "byte")
+    field(EGU, "bytes")
 }
 
 record(longin, "$(P)$(R)BoundaryThreshold_RBV")
@@ -112,7 +112,7 @@ record(longin, "$(P)$(R)BoundaryThreshold_RBV")
     field(INP, "@asyn($(PORT),0)HDF5_chunkBoundaryThreshold")
     field(PINI, "NO")
     field(SCAN, "I/O Intr")
-    field(EGU, "byte")
+    field(EGU, "bytes")
 }
 
 # % gdatag, pv, rw, $(PORT)_NDFileHDF5, NumExtraDims, Number of extra dimensions [0..2]

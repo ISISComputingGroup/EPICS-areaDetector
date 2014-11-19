@@ -132,6 +132,10 @@ typedef enum
 #define ADStringToServerString      "STRING_TO_SERVER"      /**< (asynOctet,    r/o) String sent to server for message-based drivers */
 #define ADStringFromServerString    "STRING_FROM_SERVER"    /**< (asynOctet,    r/o) String received from server for message-based drivers */
 
+//Dario Start Parameter for saving image
+#define ADWriteFileString             "WRITE_FILE"               /**< (asynInt32,    r/w) Save(1) or Done(0)  */
+//Dario End
+
 /** Class from which areaDetector drivers are directly derived. */
 class epicsShareClass ADDriver : public asynNDArrayDriver {
 public:
@@ -185,6 +189,9 @@ protected:
     int ADStatusMessage;
     int ADStringToServer;
     int ADStringFromServer; 
+    // Dario Begin
+    int ADWriteFile;
+    //Dario End
     #define LAST_AD_PARAM ADStringFromServer   
 };
 #define NUM_AD_PARAMS ((int)(&LAST_AD_PARAM - &FIRST_AD_PARAM + 1))

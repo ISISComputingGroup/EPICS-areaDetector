@@ -38,7 +38,6 @@ using namespace std;
 #define MAX_MESSAGE_SIZE 4096
 #define MAX_FILENAME_LEN 256
 #define PSL_SERVER_TIMEOUT 2.0
-#define PSL_GET_IMAGE_TIMEOUT 20.0
 #define MAX_CHOICES 64
 
 
@@ -79,7 +78,6 @@ protected:
 private:                                        
     /* These are the methods that are new to this class */
     asynStatus writeReadServer(const char *output, char *input, size_t maxChars, double timeout);
-    asynStatus writeReadServer(const char *output, double timeout);
     asynStatus writeReadServer(const char *output);
     asynStatus openCamera(int cameraId);
     asynStatus getConfig();
@@ -88,7 +86,6 @@ private:
     void getChoices(const char *command, choice_t& choices);
     const std::string& getChoiceFromIndex(choice_t& choices, int index);
     asynStatus doEnumCallbacks();
-    asynStatus startAcquire();
    
     /* Our data */
     epicsEventId startEventId_;
@@ -284,12 +281,6 @@ const std::string& PSL::getChoiceFromIndex(choice_t& choices, int index)
 asynStatus PSL::writeReadServer(const char *output)
 {
     return writeReadServer(output, fromServer_, sizeof(fromServer_), PSL_SERVER_TIMEOUT);
-}
-
-
-asynStatus PSL::writeReadServer(const char *output, double timeout)
-{
-    return writeReadServer(output, fromServer_, sizeof(fromServer_), timeout);
 }
 
 
@@ -531,7 +522,7 @@ asynStatus PSL::getImage()
     char *pIn;
     const char *functionName = "getImage";
 
-    writeReadServer("GetImage", PSL_GET_IMAGE_TIMEOUT);
+    writeReadServer("GetImage");
     nDims = 2;
     colorMode = NDColorModeMono;
     if (strncmp(fromServer_, "L;", 2) == 0) {
@@ -627,33 +618,6 @@ asynStatus PSL::getImage()
     return asynSuccess;
 }
 
-asynStatus PSL::startAcquire()
-{
-    int imageMode;
-    int numImages=1;
-
-    getIntegerParam(ADImageMode, &imageMode);
-    switch (imageMode) {
-        case ADImageSingle:
-            writeReadServer("SetFrameNumber;1");
-            writeReadServer("Snap");
-            break;
-            
-        case ADImageMultiple:
-            getIntegerParam(ADNumImages, &numImages);
-            epicsSnprintf(toServer_, sizeof(toServer_), "SetFrameNumber;%d", numImages);
-            writeReadServer(toServer_);
-            writeReadServer("Snap");
-            break;
-            
-        case ADImageContinuous:
-            writeReadServer("Start");
-            break;
-    }
-    epicsEventSignal(startEventId_);
-    return asynSuccess;
-}    
-
 /** This thread controls acquisition, reads TIFF files to get the image data, and
  * does the callbacks to send it to higher layers */
 void PSL::PSLTask()
@@ -662,9 +626,13 @@ void PSL::PSLTask()
     int numImages, numImagesCounter;
     int imageMode;
     int acquire;
+    epicsEventWaitStatus waitStatus;
+    double acquirePeriod;
     int autoSave;
     int arrayCallbacks;
     int shutterMode;
+    double elapsedTime, delayTime;
+    epicsTimeStamp acqStartTime, acqEndTime;
     const char *functionName = "PSLTask";
 
     this->lock();
@@ -694,26 +662,30 @@ void PSL::PSLTask()
         getIntegerParam(ADShutterMode, &shutterMode);
         getIntegerParam(NDArrayCallbacks, &arrayCallbacks);
         
-
-        /* If arrayCallbacks is set then read the data, do callbacks */
-        if (arrayCallbacks) {
-            while (1) {
-                writeReadServer("HasNewData");
-                if (strcmp(fromServer_, "True") == 0) break;
-                if (epicsEventTryWait(stopEventId_) == epicsEventWaitOK) break;
-                unlock();
-                epicsThreadSleep(epicsThreadSleepQuantum());
-                lock();
-            }
-            getImage();
-        }
-
+        epicsTimeGetCurrent(&acqStartTime);
+        writeReadServer("Snap");
+        
         getIntegerParam(NDArrayCounter, &imageCounter);
         imageCounter++;
         setIntegerParam(NDArrayCounter, imageCounter);
         getIntegerParam(ADNumImagesCounter, &numImagesCounter);
         numImagesCounter++;
         setIntegerParam(ADNumImagesCounter, numImagesCounter);
+        /* Call the callbacks to update any changes */
+        callParamCallbacks();
+
+        /* If arrayCallbacks is set then read the data, do callbacks */
+        if (arrayCallbacks) {
+            while (1) {
+                writeReadServer("HasNewData");
+                if (strcmp(fromServer_, "True") == 0) break;
+                unlock();
+                waitStatus = epicsEventWaitWithTimeout(stopEventId_, 0.1);
+                lock();
+                if (waitStatus == epicsEventWaitOK) break;
+            }
+            getImage();
+        }
 
         getIntegerParam(ADImageMode, &imageMode);
         if (imageMode == ADImageMultiple) {
@@ -721,6 +693,22 @@ void PSL::PSLTask()
             if (numImagesCounter >= numImages) setIntegerParam(ADAcquire, 0);
         }    
         if (imageMode == ADImageSingle) setIntegerParam(ADAcquire, 0);
+        getIntegerParam(ADAcquire, &acquire);
+        if (acquire) {
+            /* We are in continuous or multiple mode.
+             * Sleep until the acquire period expires or acquire is set to stop */
+            epicsTimeGetCurrent(&acqEndTime);
+            elapsedTime = epicsTimeDiffInSeconds(&acqEndTime, &acqStartTime);
+            getDoubleParam(ADAcquirePeriod, &acquirePeriod);
+            delayTime = acquirePeriod - elapsedTime;
+            if (delayTime > 0.) {
+                setIntegerParam(ADStatus, ADStatusWaiting);
+                callParamCallbacks();
+                this->unlock();
+                epicsEventWaitWithTimeout(stopEventId_, delayTime);
+                this->lock();
+            }
+        }
 
         /* Call the callbacks to update any changes */
         callParamCallbacks();
@@ -747,7 +735,8 @@ asynStatus PSL::writeInt32(asynUser *pasynUser, epicsInt32 value)
 
     if (function == ADAcquire) {
         if (value && !acquiring) {
-            startAcquire();
+            /* Send an event to wake up the PSL task.  */
+            epicsEventSignal(startEventId_);
         } 
         if (!value && acquiring) {
             /* This was a command to stop acquisition */
@@ -840,9 +829,6 @@ asynStatus PSL::writeFloat64(asynUser *pasynUser, epicsFloat64 value)
             epicsSnprintf(toServer_, sizeof(toServer_),
                           "SetExpoMS;%d", (int)(value*1e3 + 0.5));
         }
-        status = writeReadServer(toServer_);
-    } else if (function == ADAcquirePeriod) {
-        epicsSnprintf(toServer_, sizeof(toServer_), "SetFrameTime;%f", value*1000);
         status = writeReadServer(toServer_);
     } else if (function == ADGain) {
         epicsSnprintf(toServer_, sizeof(toServer_), "SetChipGain;%f", value);
