@@ -15,7 +15,6 @@
 #include <string.h>
 #include <string>
 #include <errno.h>
-
 #include <epicsTime.h>
 #include <epicsThread.h>
 #include <epicsEvent.h>
@@ -246,7 +245,7 @@ AndorCCD::AndorCCD(const char *portName, const char *installPath, int shamrockID
   status |= setIntegerParam(NDArraySize, sizeX*sizeY*sizeof(epicsUInt16)); 
   mAccumulatePeriod = 2.0;
   status |= setDoubleParam(AndorAccumulatePeriod, mAccumulatePeriod); 
-  status |= setIntegerParam(AndorAdcSpeed, 0);
+  status |= setIntegerParam(AndorAdcSpeed, 3);
   status |= setIntegerParam(AndorShutterExTTL, 1);
   status |= setIntegerParam(AndorShutterMode, AShutterAuto);
   status |= setDoubleParam(ADShutterOpenDelay, 0.);
@@ -436,7 +435,7 @@ void AndorCCD::setupADCSpeeds()
         pSpeed->BitDepth = bitDepth;
         pSpeed->HSSpeed = HSSpeed;
         epicsSnprintf(pSpeed->EnumString, MAX_ENUM_STRING_SIZE, 
-                      "%.2f MHz", HSSpeed);
+                      "%d us/pixel", static_cast<int>(HSSpeed));
         mNumADCSpeeds++;
         if (mNumADCSpeeds >= MAX_ADC_SPEEDS) return;
         pSpeed++;
@@ -633,6 +632,22 @@ asynStatus AndorCCD::writeInt32(asynUser *pasynUser, epicsInt32 value)
              (function == AndorShutterExTTL)) {
       status = setupShutter(-1);
     }
+    //Dario begin
+    else if (function == ADWriteFile){
+        at_32 firstImage, lastImage;
+        int ReturnStatus;
+        //Is there an image available?
+        ReturnStatus = GetNumberNewImages(&firstImage, &lastImage);
+        if (ReturnStatus == 20024){//20024 = DRV_SUCCESS
+            this->saveDataFrame(lastImage);
+            /* Send a signal to the poller task which will make it do a poll, and switch to the fast poll rate EpicsEventSignal.h*/
+            epicsEventSignal(dataEvent);
+        }
+        else{
+            printf("No Image available\n");
+        }
+    }
+    //Dario End
     else {
       status = ADDriver::writeInt32(pasynUser, value);
     }
@@ -1161,6 +1176,7 @@ asynStatus AndorCCD::setupAcquisition()
     // (Gabriele Salvato) end
 	
     switch (imageMode) {
+    
       case ADImageSingle:
         if (numExposures == 1) {
           asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW, 
@@ -1181,8 +1197,32 @@ asynStatus AndorCCD::setupAcquisition()
             driverName, functionName, mAccumulatePeriod);
           checkStatus(SetAccumulationCycleTime(mAccumulatePeriod));
         }
-        break;
-
+        break; 
+        
+      //Dario Start
+      // case ADImageSingle:
+        // asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW, 
+            // "%s:%s:, SetAcquisitionMode(AASingle)\n", 
+            // driverName, functionName);
+          // checkStatus(SetAcquisitionMode(AASingle));
+        // break;
+      
+      // case ADImageAccumulate:
+        // asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW, 
+            // "%s:%s:, SetAcquisitionMode(AAAccumulate)\n", 
+            // driverName, functionName);
+          // checkStatus(SetAcquisitionMode(AAAccumulate));
+          // asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW, 
+            // "%s:%s:, SetNumberAccumulations(%d)\n", 
+            // driverName, functionName, numExposures);
+          // checkStatus(SetNumberAccumulations(numExposures));
+          // asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW, 
+            // "%s:%s:, SetAccumulationCycleTime(%f)\n", 
+            // driverName, functionName, mAccumulatePeriod);
+          // checkStatus(SetAccumulationCycleTime(mAccumulatePeriod));
+        // break;
+      //Dario End
+      
       case ADImageMultiple:
         asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW, 
           "%s:%s:, SetAcquisitionMode(AAKinetics)\n", 
@@ -1234,6 +1274,9 @@ asynStatus AndorCCD::setupAcquisition()
         setIntegerParam(NDArraySizeX, maxSizeX/binX);
         setIntegerParam(NDArraySizeY, sizeY/binY);
         break;
+        
+      
+      
     }
     // Read the actual times
     if (imageMode == AImageFastKinetics) {
@@ -1323,6 +1366,7 @@ void AndorCCD::dataTask(void)
       getIntegerParam(NDArrayCallbacks, &arrayCallbacks);
       getIntegerParam(NDArraySizeX, &sizeX);
       getIntegerParam(NDArraySizeY, &sizeY);
+
       // Reset the counters
       setIntegerParam(ADNumImagesCounter, 0);
       setIntegerParam(ADNumExposuresCounter, 0);
@@ -1417,7 +1461,23 @@ void AndorCCD::dataTask(void)
             this->pArrays[0] = pArray;
           }// if (arrayCallbacks)
           // Save data if autosave is enabled
-          if (autoSave) this->saveDataFrame(i);
+          if (autoSave){
+            // Dario Begin :AutoSave must wait until the camera stops to acquire
+            int imageMode;
+            getIntegerParam(ADImageMode, &imageMode);
+            if(imageMode != ADImageContinuous){
+                do{
+                    checkStatus(GetStatus(&acquireStatus));
+                }
+                while (acquireStatus == DRV_ACQUIRING);
+                this->saveDataFrame(i);
+            }
+            // int TimeToWait;
+            // TimeToWait = mAcquireTime + 10;
+            // Sleep(TimeToWait*1000);
+            //Dario End
+            //this->saveDataFrame(i); commented by Dario
+          }
           callParamCallbacks();
         }// for (i=firstImage; i<=lastImage; i++)
       } catch (const std::string &e) {
@@ -1432,6 +1492,9 @@ void AndorCCD::dataTask(void)
     //Now clear main thread flag
     mAcquiringData = 0;
     setIntegerParam(ADAcquire, 0);
+    //Dario Start
+    setIntegerParam(ADWriteFile, 0);
+    //Dario End
     //setIntegerParam(ADStatus, 0); //Dont set this as the status thread sets it.
 
     /* Call the callbacks to update any changes */
@@ -1467,31 +1530,49 @@ void AndorCCD::saveDataFrame(int frameNumber)
 
   try {
     if (fileFormat == AFFTIFF) {
+      //Dario Start
+      strcat(fullFileName,".tiff");
+      //Dario End  
       asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW, 
         "%s:%s:, SaveAsTiffEx(%s, %s, %d, 1, 1)\n", 
         driverName, functionName, fullFileName, palFilePath, frameNumber);
       checkStatus(SaveAsTiffEx(fullFileName, palFilePath, frameNumber, 1, 1));
     } else if (fileFormat == AFFBMP) {
+      //Dario Start
+      strcat(fullFileName,".bmp");
+      //Dario End  
       asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW, 
         "%s:%s:, SaveAsBmp(%s, %s, 0, 0)\n", 
         driverName, functionName, fullFileName, palFilePath);
       checkStatus(SaveAsBmp(fullFileName, palFilePath, 0, 0));
     } else if (fileFormat == AFFSIF) {
+      //Dario Start
+      strcat(fullFileName,".sif");
+      //Dario End  
       asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW, 
         "%s:%s:, SaveAsSif(%s)\n", 
         driverName, functionName, fullFileName);
       checkStatus(SaveAsSif(fullFileName));
     } else if (fileFormat == AFFEDF) {
+      //Dario Start
+      strcat(fullFileName,".edf");
+      //Dario End  
       asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW, 
         "%s:%s:, SaveAsEDF(%s, 0)\n", 
         driverName, functionName, fullFileName);
       checkStatus(SaveAsEDF(fullFileName, 0));
     } else if (fileFormat == AFFRAW) {
+      //Dario Start
+      strcat(fullFileName,".raw");
+      //Dario End  
       asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW, 
         "%s:%s:, SaveAsRaw(%s, 1)\n", 
         driverName, functionName, fullFileName);
       checkStatus(SaveAsRaw(fullFileName, 1));
     } else if (fileFormat == AFFFITS) {
+      //Dario Start
+      strcat(fullFileName,".fits");
+      //Dario End  
       getIntegerParam(NDDataType, &itemp); dataType = (NDDataType_t)itemp;
       if (dataType == NDUInt16) FITSType=0;
       else if (dataType== NDUInt32) FITSType=1;
@@ -1500,6 +1581,9 @@ void AndorCCD::saveDataFrame(int frameNumber)
         driverName, functionName, fullFileName, FITSType);
       checkStatus(SaveAsFITS(fullFileName, FITSType));
     } else if (fileFormat == AFFSPE) {
+      //Dario Start
+      strcat(fullFileName,".spe");
+      //Dario End  
       asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW, 
         "%s:%s:, SaveAsSPE(%s)\n", 
         driverName, functionName, fullFileName);
