@@ -1,0 +1,5 @@
+# The following definitions must be changed for each site
+
+AREA_DETECTOR= $(SUPPORT)/areaDetector/R2-1
+
+include $(EPICS_KIT_ROOT)/ISIS_CONFIG.$(EPICS_HOST_ARCH)
