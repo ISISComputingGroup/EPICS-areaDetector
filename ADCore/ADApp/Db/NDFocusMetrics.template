@@ -1,0 +1,30 @@
+###################################################################
+#  These records are for the focus metrics                        #
+###################################################################
+record(bo, "$(P)$(R)ComputeFocusMetrics")
+{
+   field(PINI, "YES")
+   field(DTYP, "asynInt32")
+   field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))COMPUTE_FOCUS_METRICS")
+   field(VAL,  "0")
+   field(ZNAM, "No")
+   field(ONAM, "Yes")
+}
+
+record(bi, "$(P)$(R)ComputeFocusMetrics_RBV")
+{
+   field(DTYP, "asynInt32")
+   field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))COMPUTE_FOCUS_METRICS")
+   field(ZNAM, "No")
+   field(ONAM, "Yes")
+   field(ZSV,  "NO_ALARM")
+   field(OSV,  "MINOR")
+   field(SCAN, "I/O Intr")
+}
+
+record(ai, "$(P)$(R)FocusValue_RBV")
+{
+   field(DTYP, "asynFloat64")
+   field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))FOCUS_METRICS")
+   field(SCAN, "I/O Intr")
+}
