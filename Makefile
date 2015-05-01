@@ -22,8 +22,10 @@ ADBruker_DEPEND_DIRS += ADCore
 DIRS := $(DIRS) ADFireWireWin
 ADFireWireWin_DEPEND_DIRS += ADCore
 
+ifeq ($(STATIC_BUILD),YES)
 DIRS := $(DIRS) ADLightField
 ADLightField_DEPEND_DIRS += ADCore
+endif
 
 DIRS := $(DIRS) ADPSL
 ADPSL_DEPEND_DIRS += ADCore
