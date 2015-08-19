@@ -1,5 +1,10 @@
 # The following definitions must be changed for each site
 
-AREA_DETECTOR= $(SUPPORT)/areaDetector/R2-1
+#AREA_DETECTOR= $(SUPPORT)/areaDetector/R2-1
+
+include $(EPICS_KIT_ROOT)/configure/MASTER_RELEASE
+-include $(EPICS_KIT_ROOT)/configure/MASTER_RELEASE.private
+-include $(EPICS_KIT_ROOT)/configure/MASTER_RELEASE.$(EPICS_HOST_ARCH)
+-include $(EPICS_KIT_ROOT)/configure/MASTER_RELEASE.private.$(EPICS_HOST_ARCH)
 
 include $(EPICS_KIT_ROOT)/ISIS_CONFIG.$(EPICS_HOST_ARCH)

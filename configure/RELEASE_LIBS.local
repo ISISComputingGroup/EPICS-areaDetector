@@ -17,8 +17,8 @@ TEMPLATE_TOP=$(EPICS_BASE)/templates/makeBaseApp/top
 
 
 # ASYN is needed for base classes 
-ASYN=$(SUPPORT)/asyn/4-26
-ONCRPC=$(SUPPORT)/oncrpc/2
+#ASYN=$(SUPPORT)/asyn/4-26
+#ONCRPC=$(SUPPORT)/oncrpc/2
 
 # Binaries and include files for Windows
 ADBINARIES=$(AREA_DETECTOR)/ADBinaries
