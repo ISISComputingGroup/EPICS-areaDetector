@@ -1,6 +1,15 @@
-include $(TOP)/../../../configure/MASTER_RELEASE
+#RELEASE Location of external products
+# Run "gnumake clean uninstall install" in the application
+# top directory each time this file is changed.
 
-# overrdie module definitions here
--include $(TOP)/configure/RELEASE.private
+include $(TOP)/configure/RELEASE_PATHS.local
+-include $(TOP)/configure/RELEASE_PATHS.local.$(EPICS_HOST_ARCH)
+include $(TOP)/configure/RELEASE_LIBS.local
+-include $(TOP)/configure/RELEASE.local
 
-include $(TOP)/../../../ISIS_CONFIG.$(EPICS_HOST_ARCH)
+TEMPLATE_TOP=$(EPICS_BASE)/templates/makeBaseApp/top
+# If you don't want to install into $(TOP) then
+# define INSTALL_LOCATION_APP here
+#INSTALL_LOCATION_APP=<fullpathname>
+
+
