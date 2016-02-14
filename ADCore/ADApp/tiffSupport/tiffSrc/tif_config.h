@@ -47,7 +47,10 @@
 /* Set the native cpu bit order */
 #define HOST_FILLORDER FILLORDER_LSB2MSB
 
+/* snprintf is present in VS2015 and above */
+#if _MSC_VER < 1900
 #define snprintf _snprintf
+#endif /* _MSC_VER */
 
 /* Define to 1 if your processor stores words with the most significant byte
    first (like Motorola and SPARC, unlike Intel and VAX). */
