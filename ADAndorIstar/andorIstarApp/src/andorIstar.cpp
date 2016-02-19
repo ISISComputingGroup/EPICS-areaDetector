@@ -1,5 +1,5 @@
 /**
- * Area Detector driver for the Andor CCD.
+ * Area Detector driver for the Andor iStar.
  *
  * @author Matthew Pearson
  * @date June 2009
@@ -8,7 +8,7 @@
  *
  * Major updates to get callbacks working, etc. by Mark Rivers Feb. 2011
  *
- * Updated Oct 2014 for including iStar model with MCP and DDG
+ * Updated February 2016 for including iStar model with MCP and DDG by Gabriele Salvato 
  */
 
 #include <stdio.h>
@@ -21,6 +21,9 @@
 #include <epicsString.h>
 #include <iocsh.h>
 #include <epicsExit.h>
+#include <fitsio.h> // as modified by (Gabriele Salvato) see comments inside the file.
+#include <fstream>
+
 
 #ifdef _WIN32
 #include "ATMCD32D.h"
@@ -33,67 +36,67 @@
 #include "atmcdLXd.h"
 #endif
 
-#include "andorCCD.h"
+#include "andorIstar.h"
 
 #include <epicsExport.h>
 
-static const char *driverName = "andorCCD";
+static const char *driverName = "AndorIstar";
 
 //Definitions of static class data members
 
 // Additional image mode to those in ADImageMode_t
-const epicsInt32 AndorCCD::AImageFastKinetics = ADImageContinuous+1;
+const epicsInt32 AndorIstar::AImageFastKinetics = ADImageContinuous+1;
 
 // List of acquisiton modes.
-const epicsUInt32 AndorCCD::AASingle = 1;
-const epicsUInt32 AndorCCD::AAAccumulate = 2;
-const epicsUInt32 AndorCCD::AAKinetics = 3;
-const epicsUInt32 AndorCCD::AAFastKinetics = 4;
-const epicsUInt32 AndorCCD::AARunTillAbort = 5;
-const epicsUInt32 AndorCCD::AATimeDelayedInt = 9;
+const epicsUInt32 AndorIstar::AASingle = 1;
+const epicsUInt32 AndorIstar::AAAccumulate = 2;
+const epicsUInt32 AndorIstar::AAKinetics = 3;
+const epicsUInt32 AndorIstar::AAFastKinetics = 4;
+const epicsUInt32 AndorIstar::AARunTillAbort = 5;
+const epicsUInt32 AndorIstar::AATimeDelayedInt = 9;
 
 // List of trigger modes.
-const epicsUInt32 AndorCCD::ATInternal = 0;
-const epicsUInt32 AndorCCD::ATExternal = 1;
-const epicsUInt32 AndorCCD::ATExternalStart = 6;
-const epicsUInt32 AndorCCD::ATExternalExposure = 7;
-const epicsUInt32 AndorCCD::ATExternalFVB = 9;
-const epicsUInt32 AndorCCD::ATSoftware = 10;
+const epicsUInt32 AndorIstar::ATInternal = 0;
+const epicsUInt32 AndorIstar::ATExternal = 1;
+const epicsUInt32 AndorIstar::ATExternalStart = 6;
+const epicsUInt32 AndorIstar::ATExternalExposure = 7;
+const epicsUInt32 AndorIstar::ATExternalFVB = 9;
+const epicsUInt32 AndorIstar::ATSoftware = 10;
 
 // List of detector status states
-const epicsUInt32 AndorCCD::ASIdle = DRV_IDLE;
-const epicsUInt32 AndorCCD::ASTempCycle = DRV_TEMPCYCLE;
-const epicsUInt32 AndorCCD::ASAcquiring = DRV_ACQUIRING;
-const epicsUInt32 AndorCCD::ASAccumTimeNotMet = DRV_ACCUM_TIME_NOT_MET;
-const epicsUInt32 AndorCCD::ASKineticTimeNotMet = DRV_KINETIC_TIME_NOT_MET;
-const epicsUInt32 AndorCCD::ASErrorAck = DRV_ERROR_ACK;
-const epicsUInt32 AndorCCD::ASAcqBuffer = DRV_ACQ_BUFFER;
-const epicsUInt32 AndorCCD::ASSpoolError = DRV_SPOOLERROR;
+const epicsUInt32 AndorIstar::ASIdle = DRV_IDLE;
+const epicsUInt32 AndorIstar::ASTempCycle = DRV_TEMPCYCLE;
+const epicsUInt32 AndorIstar::ASAcquiring = DRV_ACQUIRING;
+const epicsUInt32 AndorIstar::ASAccumTimeNotMet = DRV_ACCUM_TIME_NOT_MET;
+const epicsUInt32 AndorIstar::ASKineticTimeNotMet = DRV_KINETIC_TIME_NOT_MET;
+const epicsUInt32 AndorIstar::ASErrorAck = DRV_ERROR_ACK;
+const epicsUInt32 AndorIstar::ASAcqBuffer = DRV_ACQ_BUFFER;
+const epicsUInt32 AndorIstar::ASSpoolError = DRV_SPOOLERROR;
 
 // List of detector readout modes.
-const epicsInt32 AndorCCD::ARFullVerticalBinning = 0;
-const epicsInt32 AndorCCD::ARMultiTrack = 1;
-const epicsInt32 AndorCCD::ARRandomTrack = 2;
-const epicsInt32 AndorCCD::ARSingleTrack = 3;
-const epicsInt32 AndorCCD::ARImage = 4;
+const epicsInt32 AndorIstar::ARFullVerticalBinning = 0;
+const epicsInt32 AndorIstar::ARMultiTrack = 1;
+const epicsInt32 AndorIstar::ARRandomTrack = 2;
+const epicsInt32 AndorIstar::ARSingleTrack = 3;
+const epicsInt32 AndorIstar::ARImage = 4;
 
 // List of shutter modes
-const epicsInt32 AndorCCD::AShutterAuto = 0;
-const epicsInt32 AndorCCD::AShutterOpen = 1;
-const epicsInt32 AndorCCD::AShutterClose = 2;
+const epicsInt32 AndorIstar::AShutterAuto = 0;
+const epicsInt32 AndorIstar::AShutterOpen = 1;
+const epicsInt32 AndorIstar::AShutterClose = 2;
 
 // (Gabriele Salvato) List of Integrate On Chip modes
-const epicsInt32 AndorCCD::AIOC_Off = 0;
-const epicsInt32 AndorCCD::AIOC_On  = 1;
+const epicsInt32 AndorIstar::AIOC_Off = 0;
+const epicsInt32 AndorIstar::AIOC_On  = 1;
 
 // List of file formats
-const epicsInt32 AndorCCD::AFFTIFF = 0;
-const epicsInt32 AndorCCD::AFFBMP  = 1;
-const epicsInt32 AndorCCD::AFFSIF  = 2;
-const epicsInt32 AndorCCD::AFFEDF  = 3;
-const epicsInt32 AndorCCD::AFFRAW  = 4;
-const epicsInt32 AndorCCD::AFFFITS = 5;
-const epicsInt32 AndorCCD::AFFSPE  = 6;
+const epicsInt32 AndorIstar::AFFTIFF = 0;
+const epicsInt32 AndorIstar::AFFBMP  = 1;
+const epicsInt32 AndorIstar::AFFSIF  = 2;
+const epicsInt32 AndorIstar::AFFEDF  = 3;
+const epicsInt32 AndorIstar::AFFRAW  = 4;
+const epicsInt32 AndorIstar::AFFFITS = 5;
+const epicsInt32 AndorIstar::AFFSPE  = 6;
 
 //C Function prototypes to tie in with EPICS
 static void andorStatusTaskC(void *drvPvt);
@@ -116,20 +119,20 @@ static void exitHandler(void *drvPvt);
   * \param[in] priority The thread priority for the asyn port driver thread if ASYN_CANBLOCK is set in asynFlags.
   * \param[in] stackSize The stack size for the asyn port driver thread if ASYN_CANBLOCK is set in asynFlags.
   */
-AndorCCD::AndorCCD(const char *portName, const char *installPath, int shamrockID,
+AndorIstar::AndorIstar(const char *portName, const char *installPath, int shamrockID,
                    int maxBuffers, size_t maxMemory, int priority, int stackSize)
 
   : ADDriver(portName, 1, NUM_ANDOR_DET_PARAMS, maxBuffers, maxMemory, 
-             asynEnumMask, asynEnumMask,
-             ASYN_CANBLOCK, 1, priority, stackSize),
-    mExiting(false), mShamrockId(shamrockID), mSPEDoc(0)
+             asynEnumMask, asynEnumMask, ASYN_CANBLOCK, 1, priority, stackSize)
+  , mExiting(false)
+  , mShamrockId(shamrockID)
+  , mSPEDoc(0)
 {
-
   int status = asynSuccess;
   int i;
   int binX=1, binY=1, minX=0, minY=0, sizeX, sizeY;
   char model[256];
-  static const char *functionName = "AndorCCD";
+  static const char *functionName = "AndorIstar";
   
   /* (Gabriele Salvato) support for iStar MCP image intensifier */
   mIsCameraiStar = false;
@@ -179,12 +182,26 @@ AndorCCD::AndorCCD(const char *portName, const char *installPath, int shamrockID
   }
 
   // Initialize camera
-  try {
-    printf("%s:%s: initializing camera\n",
-      driverName, functionName);
-    checkStatus(Initialize(mInstallPath));
-    setStringParam(AndorMessage, "Camera successfully initialized.");
+  // (Gabriele Salvato) modified to exit because of an unrecoverable error.
+  printf("%s:%s: initializing camera\n", driverName, functionName);
+  unsigned int result;
+  for(int i=0; i<5; i++) {
+	result = Initialize(mInstallPath);
+	if (result == DRV_SUCCESS) break;
+  }
+  if (result != DRV_SUCCESS) {// Last try
+    try {
+      checkStatus(Initialize(mInstallPath));
+    } catch (const std::string &e) {
+      asynPrint(pasynUserSelf, ASYN_TRACE_ERROR,
+        "%s:%s: %s\n",
+        driverName, functionName, e.c_str());
+      exit(asynError);
+    }
+  }
+  setStringParam(AndorMessage, "Camera successfully initialized.");
 	
+  try {
 	// (Gabriele Salvato) Get the camera capabilities
     capabilities.ulSize = sizeof(capabilities);
     checkStatus(GetCapabilities(&capabilities));
@@ -232,7 +249,7 @@ AndorCCD::AndorCCD(const char *portName, const char *installPath, int shamrockID
   status |= setIntegerParam(ADMaxSizeX, sizeX);
   status |= setIntegerParam(ADMaxSizeY, sizeY);  
   status |= setIntegerParam(ADImageMode, ADImageSingle);
-  status |= setIntegerParam(ADTriggerMode, AndorCCD::ATInternal);
+  status |= setIntegerParam(ADTriggerMode, AndorIstar::ATInternal);
   mAcquireTime = 1.0;
   status |= setDoubleParam (ADAcquireTime, mAcquireTime);
   mAcquirePeriod = 5.0;
@@ -255,7 +272,7 @@ AndorCCD::AndorCCD(const char *portName, const char *installPath, int shamrockID
   status |= setIntegerParam(AndorMCPGain,     1);
   status |= setDoubleParam(AndorDDGGateDelay, 0.0);
   status |= setDoubleParam(AndorDDGGateWidth, 0.01);
-  status |= setIntegerParam(AndorDDGIOC,      AndorCCD::AIOC_Off);
+  status |= setIntegerParam(AndorDDGIOC,      AndorIstar::AIOC_Off);
   // (Gabriele Salvato)
   status |= setIntegerParam(ADReverseX, 0);
   status |= setIntegerParam(ADReverseY, 0);
@@ -309,15 +326,14 @@ AndorCCD::AndorCCD(const char *portName, const char *installPath, int shamrockID
            driverName, functionName);
     return;
   }
-  printf("CCD initialized OK!\n");
+  printf("Istar initialized OK!\n");
 }
 
 /**
  * Destructor.  Free resources and closes the Andor library
  */
-AndorCCD::~AndorCCD() 
-{
-  static const char *functionName = "~AndorCCD";
+AndorIstar::~AndorIstar() {
+  static const char *functionName = "~AndorIstar";
 
   this->lock();
   mExiting = true;
@@ -335,18 +351,18 @@ AndorCCD::~AndorCCD()
 
 
 /**
- * Exit handler, delete the AndorCCD object.
+ * Exit handler, delete the AndorIstar object.
  */
 
-static void exitHandler(void *drvPvt)
-{
-  AndorCCD *pAndorCCD = (AndorCCD *)drvPvt;
-  delete pAndorCCD;
+static void 
+exitHandler(void *drvPvt) {
+  AndorIstar *pAndorIstar = (AndorIstar *)drvPvt;
+  delete pAndorIstar;
 }
 
 
-void AndorCCD::setupPreAmpGains()
-{
+void 
+AndorIstar::setupPreAmpGains() {
   int i;
   AndorADCSpeed_t *pSpeed;
   AndorPreAmpGain_t *pGain = mPreAmpGains;
@@ -383,8 +399,10 @@ void AndorCCD::setupPreAmpGains()
                   mNumPreAmpGains, AndorPreAmpGain, 0);
 }
 
-asynStatus AndorCCD::readEnum(asynUser *pasynUser, char *strings[], int values[], int severities[], 
-                              size_t nElements, size_t *nIn)
+
+asynStatus 
+AndorIstar::readEnum(asynUser *pasynUser, char *strings[], int values[], int severities[], 
+                     size_t nElements, size_t *nIn)
 {
   int function = pasynUser->reason;
   int i;
@@ -413,8 +431,9 @@ asynStatus AndorCCD::readEnum(asynUser *pasynUser, char *strings[], int values[]
   return asynSuccess;   
 }
 
-void AndorCCD::setupADCSpeeds()
-{
+
+void 
+AndorIstar::setupADCSpeeds() {
   int i, j, k, numHSSpeeds, bitDepth;
   float HSSpeed;
   AndorADCSpeed_t *pSpeed = mADCSpeeds;
@@ -451,8 +470,8 @@ void AndorCCD::setupADCSpeeds()
   * It then calls the ADDriver::report() method.
   * \param[in] fp File pointed passed by caller where the output is written to.
   * \param[in] details Controls the level of detail in the report. */
-void AndorCCD::report(FILE *fp, int details)
-{
+void 
+AndorIstar::report(FILE *fp, int details) {
   int param1;
   float fParam1;
   int xsize, ysize;
@@ -464,12 +483,12 @@ void AndorCCD::report(FILE *fp, int details)
   unsigned int uIntParam4;
   unsigned int uIntParam5;
   unsigned int uIntParam6;
-  // (Gabriele Salvato) Commented out because now is a class member
+  // (Gabriele Salvato) Removed because now it is a class member
   // AndorCapabilities capabilities;
   AndorADCSpeed_t *pSpeed;
   static const char *functionName = "report";
 
-  fprintf(fp, "Andor CCD port=%s\n", this->portName);
+  fprintf(fp, "Andor iStar port=%s\n", this->portName);
   if (details > 0) {
     try {
       checkStatus(GetHeadModel(sParam));
@@ -508,7 +527,7 @@ void AndorCCD::report(FILE *fp, int details)
         fprintf(fp, "    Index=%d, Gain=%f\n",
                 mPreAmpGains[i].EnumValue, mPreAmpGains[i].Gain);
       }
-      /* (Gabriele Salvato) Already done at initialization...
+      /* (Gabriele Salvato) Removed because already done at initialization...
       capabilities.ulSize = sizeof(capabilities);
       checkStatus(GetCapabilities(&capabilities));
 	  */
@@ -541,9 +560,10 @@ void AndorCCD::report(FILE *fp, int details)
   * For all parameters it sets the value in the parameter library and calls any registered callbacks..
   * \param[in] pasynUser pasynUser structure that encodes the reason and address.
   * \param[in] value Value to write. */
-asynStatus AndorCCD::writeInt32(asynUser *pasynUser, epicsInt32 value)
-{
+asynStatus 
+AndorIstar::writeInt32(asynUser *pasynUser, epicsInt32 value) {
     int function = pasynUser->reason;
+
     int adstatus = 0;
     epicsInt32 oldValue;
 
@@ -632,7 +652,13 @@ asynStatus AndorCCD::writeInt32(asynUser *pasynUser, epicsInt32 value)
              (function == AndorShutterExTTL)) {
       status = setupShutter(-1);
     }
-    else {
+    // (Gabriele Salvato) File Writing using 
+    else if (function == NDWriteFile) {
+      saveDataFrame(1);
+      setIntegerParam(NDWriteFile, 0);
+    }
+    // (Gabriele Salvato) end
+    else {// If this parameter belongs to a base class call its method
       status = ADDriver::writeInt32(pasynUser, value);
     }
 
@@ -669,8 +695,8 @@ asynStatus AndorCCD::writeInt32(asynUser *pasynUser, epicsInt32 value)
   * For all parameters it sets the value in the parameter library and calls any registered callbacks.
   * \param[in] pasynUser pasynUser structure that encodes the reason and address.
   * \param[in] value Value to write. */
-asynStatus AndorCCD::writeFloat64(asynUser *pasynUser, epicsFloat64 value)
-{
+asynStatus 
+AndorIstar::writeFloat64(asynUser *pasynUser, epicsFloat64 value) {
     int function = pasynUser->reason;
     asynStatus status = asynSuccess;
     static const char *functionName = "writeFloat64";
@@ -768,8 +794,8 @@ asynStatus AndorCCD::writeFloat64(asynUser *pasynUser, epicsFloat64 value)
 
 /** Controls shutter
  * @param[in] command 0=close, 1=open, -1=no change, only set other parameters */
-asynStatus AndorCCD::setupShutter(int command)
-{
+asynStatus 
+AndorIstar::setupShutter(int command) {
   double dTemp;
   int openTime, closeTime;
   int shutterExTTL;
@@ -820,8 +846,8 @@ asynStatus AndorCCD::setupShutter(int command)
  * @return 0=success. Does not return in case of failure.
  * @throw std::string An exception is thrown in case of failure.
  */
-unsigned int AndorCCD::checkStatus(unsigned int returnStatus)
-{
+unsigned int 
+AndorIstar::checkStatus(unsigned int returnStatus) {
   char message[256];
   if (returnStatus == DRV_SUCCESS) {
     return 0;
@@ -906,8 +932,8 @@ unsigned int AndorCCD::checkStatus(unsigned int returnStatus)
 /**
  * Update status of detector. Meant to be run in own thread.
  */
-void AndorCCD::statusTask(void)
-{
+void 
+AndorIstar::statusTask(void) {
   int value = 0;
   float temperature;
   unsigned int uvalue = 0;
@@ -1003,9 +1029,10 @@ void AndorCCD::statusTask(void)
 
 }
 
+
 /** Set up acquisition parameters */
-asynStatus AndorCCD::setupAcquisition()
-{
+asynStatus 
+AndorIstar::setupAcquisition() {
   int numExposures;
   int numImages;
   int imageMode;
@@ -1143,7 +1170,7 @@ asynStatus AndorCCD::setupAcquisition()
         driverName, functionName, dDDGgateDelay, dDDGgateWidth);
       checkStatus(SetDDGTimes(0.0, dDDGgateDelay*1.0e12, dDDGgateWidth*1.0e12));
 	}
-	// DDG Gate Mode and SetUp END
+	// (Gabriele Salvato) DDG Gate Mode and SetUp END
   
     // (Gabriele Salvato) Flip the image
     // This function will cause data output from the SDK to be flipped on one or both axes. 
@@ -1258,9 +1285,6 @@ asynStatus AndorCCD::setupAcquisition()
         setIntegerParam(NDArraySizeX, maxSizeX/binX);
         setIntegerParam(NDArraySizeY, sizeY/binY);
         break;
-        
-      
-      
     }
     // Read the actual times
     if (imageMode == AImageFastKinetics) {
@@ -1289,8 +1313,8 @@ asynStatus AndorCCD::setupAcquisition()
 /**
  * Do data readout from the detector. Meant to be run in own thread.
  */
-void AndorCCD::dataTask(void)
-{
+void 
+AndorIstar::dataTask(void) {
   epicsUInt32 status = 0;
   int acquireStatus;
   char *errorString = NULL;
@@ -1446,21 +1470,7 @@ void AndorCCD::dataTask(void)
           }// if (arrayCallbacks)
           // Save data if autosave is enabled
           if (autoSave){
-            // Dario Begin :AutoSave must wait until the camera stops to acquire
-            int imageMode;
-            getIntegerParam(ADImageMode, &imageMode);
-            if(imageMode != ADImageContinuous){
-                do{
-                    checkStatus(GetStatus(&acquireStatus));
-                }
-                while (acquireStatus == DRV_ACQUIRING);
-                this->saveDataFrame(i);
-            }
-            // int TimeToWait;
-            // TimeToWait = mAcquireTime + 10;
-            // Sleep(TimeToWait*1000);
-            //Dario End
-            //this->saveDataFrame(i); commented by Dario
+            this->saveDataFrame(i);
           }
           callParamCallbacks();
         }// for (i=firstImage; i<=lastImage; i++)
@@ -1488,8 +1498,8 @@ void AndorCCD::dataTask(void)
 /**
  * Save a data frame using the Andor SDK file writing functions.
  */
-void AndorCCD::saveDataFrame(int frameNumber) 
-{
+void 
+AndorIstar::saveDataFrame(int frameNumber) {
   char *errorString = NULL;
   int fileFormat;
   NDDataType_t dataType;
@@ -1504,6 +1514,7 @@ void AndorCCD::saveDataFrame(int frameNumber)
       
   this->createFileName(255, fullFileName);
   setStringParam(NDFullFileName, fullFileName);
+  
   asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW, 
     "%s:%s:, file name is %s.\n",
     driverName, functionName, fullFileName);
@@ -1560,7 +1571,7 @@ void AndorCCD::saveDataFrame(int frameNumber)
       asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW, 
         "%s:%s:, SaveAsFITS(%s, %d)\n", 
         driverName, functionName, fullFileName, FITSType);
-      checkStatus(SaveAsFITS(fullFileName, FITSType));
+      checkStatus(SaveAsFitsFile(fullFileName, FITSType));
     } else if (fileFormat == AFFSPE) {
       //Dario Start
       strcat(fullFileName,".spe");
@@ -1575,6 +1586,7 @@ void AndorCCD::saveDataFrame(int frameNumber)
       "%s:%s: %s\n",
       driverName, functionName, e.c_str());
     errorString = const_cast<char *>(e.c_str());
+    setStringParam(NDFileWriteMessage, errorString);
   }
 
   asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW, 
@@ -1584,12 +1596,15 @@ void AndorCCD::saveDataFrame(int frameNumber)
   if (errorString != NULL) {
     setStringParam(AndorMessage, errorString);
     setIntegerParam(ADStatus, ADStatusError);
+  } else {
+    setStringParam(NDFileWriteMessage, "Saving data.. Done!");
   }
 
 }
 
-unsigned int AndorCCD::SaveAsSPE(char *fullFileName)
-{
+
+unsigned int 
+AndorIstar::SaveAsSPE(char *fullFileName) {
   NDArray *pArray = this->pArrays[0];
   NDArrayInfo arrayInfo;
   int nx, ny;
@@ -1752,11 +1767,169 @@ unsigned int AndorCCD::SaveAsSPE(char *fullFileName)
 }
 
 
+// (Gabriele Salvato) routines for writing FITS Files with the IMAT keywords
+// What to do if the file already exists ?
+// Create a FITS primary array containing a 2-D image
+unsigned int
+AndorIstar::SaveAsFitsFile(char *fullFileName, int FITSType) {
+
+  static const char *functionName="SaveAsFitsFile";
+  NDArray *pArray = this->pArrays[0];
+  if (!pArray) 
+    return DRV_NO_NEW_DATA;
+    
+  if(SaveAsFITS(fullFileName, FITSType) != DRV_SUCCESS)
+    return DRV_GENERAL_ERRORS;
+  int iStatus;
+  if(WriteKeys(fullFileName, &iStatus) != DRV_SUCCESS)
+    return DRV_GENERAL_ERRORS;
+
+/*
+  char fits_status_str[FLEN_STATUS];
+  
+  // At present only 16 bits unsigned images are valid.
+  if (pArray->dataType != NDUInt16) 
+    return DRV_GENERAL_ERRORS;
+  if (FITSType != 0) 
+    return DRV_GENERAL_ERRORS;
+  
+  NDArrayInfo arrayInfo;
+  pArray->getInfo(&arrayInfo);
+  int nx = (int) arrayInfo.xSize;
+  int ny = (int) arrayInfo.ySize;
+
+  int iStatus = 0;
+  fitsfile *fitsFilePtr;
+  if(fits_create_file(&fitsFilePtr, fullFileName, &iStatus)) {// create new FITS file
+    // get the error description
+    fits_get_errstatus(iStatus, fits_status_str);
+    asynPrint(pasynUserSelf, ASYN_TRACE_ERROR,
+      "%s::%s error opening file %s error=%s\n",
+      driverName, functionName, fullFileName, fits_status_str);
+    fits_clear_errmsg();
+    return DRV_GENERAL_ERRORS;
+  }
+
+  long naxis    = 2;         // 2-dimensional image
+  long naxes[2] = { nx, ny };
+
+  if(fits_create_img(fitsFilePtr, USHORT_IMG, naxis, naxes, &iStatus)) {
+    fits_get_errstatus(iStatus, fits_status_str);
+    asynPrint(pasynUserSelf, ASYN_TRACE_ERROR,
+      "%s::%s error creating fits image: error=%s\n",
+      driverName, functionName, fits_status_str);
+    fits_clear_errmsg();
+    return DRV_GENERAL_ERRORS;
+  }
+
+  if(fits_write_img(fitsFilePtr, CFITSIO_TUSHORT, 1, naxes[0]*naxes[1], pArray->pData, &iStatus)) {
+    fits_get_errstatus(iStatus, fits_status_str);
+    asynPrint(pasynUserSelf, ASYN_TRACE_ERROR,
+      "%s::%s error writing fits image: error=%s\n",
+      driverName, functionName, fits_status_str);
+    fits_close_file(fitsFilePtr, &iStatus);
+    fits_clear_errmsg();
+    return DRV_GENERAL_ERRORS;
+  }
+  
+  if(WriteKeys(fitsFilePtr, &iStatus)) {
+    fits_get_errstatus(iStatus, fits_status_str);
+    asynPrint(pasynUserSelf, ASYN_TRACE_ERROR,
+      "%s::%s error writing fits image: error=%s\n",
+      driverName, functionName, fits_status_str);
+    fits_close_file(fitsFilePtr, &iStatus);
+    return DRV_GENERAL_ERRORS;
+  }
+
+  if(fits_close_file(fitsFilePtr, &iStatus)) {
+    fits_get_errstatus(iStatus, fits_status_str);
+    asynPrint(pasynUserSelf, ASYN_TRACE_ERROR,
+      "%s::%s error closing fits image file: error=%s\n",
+      driverName, functionName, fits_status_str);
+    fits_clear_errmsg();
+    return DRV_GENERAL_ERRORS;
+  }
+*/
+//  fits_clear_errmsg();
+  return DRV_SUCCESS;  
+}
+
+
+int
+AndorIstar::WriteKeys(char *fullFileName, int* iStatus) {
+  *iStatus = 0;
+  std::ifstream fHeader;
+  char filePath[MAX_PATH] = {"FitsHeaderParameters.txt"};
+  fHeader.open(filePath, std::ios_base::in);
+  if(fHeader.fail()) 
+    return DRV_SUCCESS; // If the file does not exists there is nothing to add
+  
+  fitsfile *fptr;
+  int iResult;
+  iResult = fits_open_file(&fptr, fullFileName, CFITSIO_READWRITE, iStatus);
+  if(iResult)
+    return DRV_GENERAL_ERRORS;
+  char lineBuf[256], keyword[FLEN_KEYWORD], value[FLEN_VALUE], comment[FLEN_COMMENT];
+  char *pToken;
+  char *context	= NULL;
+  
+  while (fHeader.getline(lineBuf, sizeof(lineBuf), '\n')) {
+    if (strstr(lineBuf, "//")) continue;// It is a comment
+    pToken= strtok_s(lineBuf, "\n\t ", &context);
+    if (!pToken) continue;// It is an empty line
+    strncpy_s(keyword, sizeof(keyword), pToken, _TRUNCATE);
+    pToken= strtok_s(0, "\n\t ", &context);
+    if (!pToken) continue;// No value specified.. skip entire line
+    strncpy_s(value, sizeof(value), pToken, _TRUNCATE);
+    pToken= strtok_s(0, "\n", &context);
+    if (pToken)
+      strncpy_s(comment, sizeof(comment), pToken, _TRUNCATE);
+    else
+      strncpy_s(comment, sizeof(comment), "", _TRUNCATE);
+      
+	fits_update_key(fptr, CFITSIO_TSTRING, keyword, value, comment, iStatus);
+  }
+  
+  fits_close_file(fptr, iStatus); // close the fits file
+  fHeader.close();
+  if(*iStatus)
+    return DRV_GENERAL_ERRORS;
+  return DRV_SUCCESS;  
+/*
+  size_t nRead = sizeof(buf);
+  int iRes;
+  double fVal;
+  char cVal[FLEN_VALUE];
+  
+  fVal = 1.234567e-15;
+  _snprintf_s(cVal, sizeof(cVal), _TRUNCATE, "01234567890123456789012345678901234567890123456789012345678901234567890123456789");
+  iRes = fits_update_key(fitsFilePtr, CFITSIO_TSTRING, "CAZZATA", cVal, "Tutta una cazzata", iStatus);
+  
+  getStringParam(ADModel, FLEN_VALUE-1, cVal);
+  iRes = fits_update_key(fitsFilePtr, CFITSIO_TSTRING, "HEAD", cVal, "Head model", iStatus);
+  
+  getStringParam(ADImageMode, FLEN_VALUE-1, cVal);
+  iRes = fits_update_key(fitsFilePtr, CFITSIO_TSTRING, "ACQMODE", cVal, "Acquisition mode", iStatus);
+  
+  if(f_TimeOfFlight == FLOAT_UNDEFINED) {
+    iRes = fits_delete_key(fitsFilePtr, "GATEDELY", &iStatus);
+    iRes = fits_delete_key(fitsFilePtr, "TOF", &iStatus);
+    iStatus = 0;
+  } else {
+    fVal = f_TimeOfFlight * 1.0e-15f;
+    iRes = fits_update_key(fitsFilePtr, TFLOAT, "GATEDELY", &fVal, "Gate delay", &iStatus);
+  }
+*/
+}
+// (Gabriele Salvato) end of routines to write FITS Files in the ISIS format
+
+
+
 //C utility functions to tie in with EPICS
 
 static void andorStatusTaskC(void *drvPvt)
 {
-  AndorCCD *pPvt = (AndorCCD *)drvPvt;
+  AndorIstar *pPvt = (AndorIstar *)drvPvt;
 
   pPvt->statusTask();
 }
@@ -1764,7 +1937,7 @@ static void andorStatusTaskC(void *drvPvt)
 
 static void andorDataTaskC(void *drvPvt)
 {
-  AndorCCD *pPvt = (AndorCCD *)drvPvt;
+  AndorIstar *pPvt = (AndorIstar *)drvPvt;
 
   pPvt->dataTask();
 }
@@ -1784,45 +1957,48 @@ static void andorDataTaskC(void *drvPvt)
   * \param[in] stackSize The stack size for the asyn port driver thread
   */
 extern "C" {
-int andorCCDConfig(const char *portName, const char *installPath, int shamrockID,
-                   int maxBuffers, size_t maxMemory, int priority, int stackSize)
-{
+int 
+andorIstarConfig(const char *portName, const char *installPath, int shamrockID,
+                 int maxBuffers, size_t maxMemory, int priority, int stackSize) {
   /*Instantiate class.*/
-  new AndorCCD(portName, installPath, shamrockID, maxBuffers, maxMemory, priority, stackSize);
+  new AndorIstar(portName, installPath, shamrockID, maxBuffers, maxMemory, priority, stackSize);
   return(asynSuccess);
 }
 
 
 /* Code for iocsh registration */
 
-/* andorCCDConfig */
-static const iocshArg andorCCDConfigArg0 = {"Port name", iocshArgString};
-static const iocshArg andorCCDConfigArg1 = {"installPath", iocshArgString};
-static const iocshArg andorCCDConfigArg2 = {"shamrockID", iocshArgInt};
-static const iocshArg andorCCDConfigArg3 = {"maxBuffers", iocshArgInt};
-static const iocshArg andorCCDConfigArg4 = {"maxMemory", iocshArgInt};
-static const iocshArg andorCCDConfigArg5 = {"priority", iocshArgInt};
-static const iocshArg andorCCDConfigArg6 = {"stackSize", iocshArgInt};
-static const iocshArg * const andorCCDConfigArgs[] =  {&andorCCDConfigArg0,
-                                                       &andorCCDConfigArg1,
-                                                       &andorCCDConfigArg2,
-                                                       &andorCCDConfigArg3,
-                                                       &andorCCDConfigArg4,
-                                                       &andorCCDConfigArg5,
-                                                       &andorCCDConfigArg6};
+/* AndorIstarConfig */
+static const iocshArg AndorIstarConfigArg0 = {"Port name", iocshArgString};
+static const iocshArg AndorIstarConfigArg1 = {"installPath", iocshArgString};
+static const iocshArg AndorIstarConfigArg2 = {"shamrockID", iocshArgInt};
+static const iocshArg AndorIstarConfigArg3 = {"maxBuffers", iocshArgInt};
+static const iocshArg AndorIstarConfigArg4 = {"maxMemory", iocshArgInt};
+static const iocshArg AndorIstarConfigArg5 = {"priority", iocshArgInt};
+static const iocshArg AndorIstarConfigArg6 = {"stackSize", iocshArgInt};
+static const iocshArg * const AndorIstarConfigArgs[] =  {&AndorIstarConfigArg0,
+                                                         &AndorIstarConfigArg1,
+                                                         &AndorIstarConfigArg2,
+                                                         &AndorIstarConfigArg3,
+                                                         &AndorIstarConfigArg4,
+                                                         &AndorIstarConfigArg5,
+                                                         &AndorIstarConfigArg6};
 
-static const iocshFuncDef configAndorCCD = {"andorCCDConfig", 7, andorCCDConfigArgs};
-static void configAndorCCDCallFunc(const iocshArgBuf *args)
-{
-    andorCCDConfig(args[0].sval, args[1].sval, args[2].ival, args[3].ival, 
-                   args[4].ival, args[5].ival, args[6].ival);
+static const iocshFuncDef configAndorIstar = {"andorIstarConfig", 7, AndorIstarConfigArgs};
+
+
+static void 
+configAndorIstarCallFunc(const iocshArgBuf *args) {
+    andorIstarConfig(args[0].sval, args[1].sval, args[2].ival, args[3].ival, 
+                     args[4].ival, args[5].ival, args[6].ival);
 }
 
-static void andorCCDRegister(void)
-{
 
-    iocshRegister(&configAndorCCD, configAndorCCDCallFunc);
+static void 
+andorIstarRegister(void) {
+    iocshRegister(&configAndorIstar, configAndorIstarCallFunc);
 }
 
-epicsExportRegistrar(andorCCDRegister);
+
+epicsExportRegistrar(andorIstarRegister);
 }

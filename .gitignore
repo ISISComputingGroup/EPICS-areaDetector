@@ -1,9 +1,9 @@
 O.*/
-/db
-/bin
-/dbd
-/include
-/lib
+/db/
+/bin/
+/dbd/
+/include/
+/lib/
 /templates
 envPaths
 cdCommands
@@ -12,3 +12,6 @@ runIOC.bat
 runIOC.sh
 relPaths.sh
 /ADAndor/data/
+*~
+*.swp
+/documentation/html
