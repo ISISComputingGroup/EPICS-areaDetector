@@ -1,0 +1,81 @@
+//First column is the KEYWORD. The keyword names may be up to 8 characters 
+//long and can only contain uppercase letters A to Z, 
+//the digits 0 to 9, the hyphen, and the underscore character. 
+//----------------------------------------------
+//second column is the value - currently it is saved as a string
+//-----------------------------------------------
+//third column is the comment
+//--------------------------------------------------
+// The entier record should be less than 80 characters long, therefore
+//the commend field will be truncated if needed 
+//--------------------------------------------------
+// Empty lines are allowed and ignored
+// "//" - means a comment string, is also ignored
+//columns are separated by either a TAB or SPACE characters
+
+EXP_RB  1510999 Proposal RB number
+EXP_Run 660666 Run number
+STINDX 0 Image stack index
+DIRNAME Metals Sample name (=folder name and image name
+IMGNAME Metals Image name (default is: DIRNAME
+SNAME Angle Image stack folder name
+IMGINDX 0 Filename index or Stack name index
+FILNAME noname filename (composed of the above
+EXPTITLE Phantom_1_scan_4 Experiment title 
+
+//COMMENT   Instrument Parameters ---------------------------
+PINPOS 1 Pinhole position 
+POS_X 0.0 X Position mm
+POS_Y 0.0 Y Position mm
+POS_Z 0.0 Z Position mm
+OMEGA 0.0 Large omega stage
+TOMANGLE 0.0 Tomography Stage Angular Position 
+TOMTILT1 0.0 Tomography Stage Angular Position Degree
+TOMTILT2 0.0 Tomography Stage Angular Position Degree
+CAMPOS_X 0.0 Camera Position along beam
+CAMPOS_Y 0.0 Camera along horiziontal
+CAMPOS_Z 0.0 Camera along vertical
+CAMTILT1 0.0 Camera Angular Position Degree                        
+CAMTILT2 0.0 Camera Angular Position Degree                        
+
+COMMENT   Image acquisition   -----------------------------
+ACQTIME .001 acquisition time (display parameter MCP)
+EXPOSURE 0 Exposure time, Acquisition count (seconds)
+ITYPE DATA Image type DARK/FLAT/DATA
+First_A 0 First rotation angle
+Last_A 360 Last rotation angle
+SCAN_360 625 Number of steps in 360
+D_ANGLE 0.576 Calc: 360 / Scan_360  
+SCAN_N 625 Total Number of Steps
+AURULE 0 Golden rule scan: no=0, yes=1
+AULIST Angle_list.txt Golden section list (filename)
+FLPATH 15.90 Calibrated Distance from moderator to the detector (m)
+SDIST 0.0 Distance centre of the rotation to detector (mm) 
+RAWFRMS 0 Raw Frames
+GOODFRMS 0 Good Frames
+CURRENT 0.0 Total Beam Current (uA)                         
+MONITOR1 0.0 integral counts Monitor 1
+MONITOR2 0.0 integral counts Monitor 2
+MONITOR3 0.0 integral counts Monitor 3
+MONITOR4 0.0 integral counts Monitor 4
+MONITOR5 0.0 integral counts Monitor 5
+MONITOR6 0.0 integral counts Monitor 6
+
+//COMMENT  CCD Camera Details -----------------------------
+TRASPOS -18.0 Translator Position (mm)                  
+TILTPOS 4999 Tilter Position (um)                  
+ROTPOS 6999 Rotator Position (um)                  
+LENS 135.0 Lens type (string)(mm)                              
+SCINTILL 200_um_White Scintillator type (string)
+FOV 20_20 Field of view (string)
+TEMP -89.0 Temperature degree Celsius
+GATEDEL 0 Gate delay (msec)
+GATESTEP 0 Gate step (seconds)
+ERULE 0 TOF steps from file: no=0, yes=1
+ELIST TOFlist.txt TOF steps from file filename
+GAIN 50 Gain
+IOC TRUE ntegrate on Chip
+
+//COMMENT   MCP Camera Details -----------------------------
+TCBFILE ShutterValues.txt Filename of time channel boundaries
+TRIGDEL 0.0 Trigger delay (seconds)
