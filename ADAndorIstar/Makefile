@@ -5,7 +5,7 @@ DIRS := $(DIRS) configure
 DIRS := $(DIRS) andorIstarSupport
 DIRS := $(DIRS) andorIstarApp
 
-andorApp_DEPEND_DIRS += andorIstarSupport
+andorIstarApp_DEPEND_DIRS += andorIstarSupport
 
 ifeq ($(BUILD_IOCS), YES)
 DIRS := $(DIRS) $(filter-out $(DIRS), $(wildcard iocs))
