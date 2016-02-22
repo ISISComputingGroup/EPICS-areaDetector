@@ -32,6 +32,8 @@ else ifeq (windows-x64, $(findstring windows-x64, $(T_A)))
   USE_GRAPHICSMAGICK=NO
   PROD_LIBS  += atmcd64m
 endif
+PROD_LIBS += cfitsio
+
 PROD_LIBS_WIN32 += ShamrockCIFm
 
 # Test application
@@ -50,4 +52,3 @@ include $(ADCORE)/ADApp/commonDriverMakefile
 include $(TOP)/configure/RULES
 #----------------------------------------
 #  ADD RULES AFTER THIS LINE
-
