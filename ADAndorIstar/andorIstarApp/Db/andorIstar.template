@@ -6,6 +6,26 @@
 # Gabriele Salvato added support for Autofocus
 # October 2014
 
+# (Gabriele Salvato) Full FITS_File_Header filename, including path
+record(waveform, "$(P)$(R)FullFitsFileHeaderFileName")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynOctetWrite")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))FULL_FITS_FILE_HEADER_FILE_NAME")
+    field(FTVL, "CHAR")
+    field(NELM, "256")
+}
+
+record(waveform, "$(P)$(R)FullFitsFileHeaderFileName_RBV")
+{
+    field(DTYP, "asynOctetRead")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))FULL_FITS_FILE_HEADER_FILE_NAME")
+    field(FTVL, "CHAR")
+    field(NELM, "256")
+    field(SCAN, "I/O Intr")
+}
+# Gabriele Salvato (end)
+ 
 # These are the records that we modify from NDFile.template
 record(mbbo, "$(P)$(R)FileFormat")
 {
@@ -164,8 +184,7 @@ record(bi, "$(P)$(R)AndorCooler_RBV")
     field(SCAN, "I/O Intr")
 }
 
-# (Gabriele Salvato) DDG Integrate On Chip
-record(bo, "$(P)$(R)AndorDDGIOC")
+FILE_PATH_EXISTSrecord(bo, "$(P)$(R)AndorDDGIOC")
 {
     field(PINI, "YES")
     field(DTYP, "asynInt32")
