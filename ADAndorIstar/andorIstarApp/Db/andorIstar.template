@@ -184,7 +184,7 @@ record(bi, "$(P)$(R)AndorCooler_RBV")
     field(SCAN, "I/O Intr")
 }
 
-FILE_PATH_EXISTSrecord(bo, "$(P)$(R)AndorDDGIOC")
+record(bo, "$(P)$(R)AndorDDGIOC")
 {
     field(PINI, "YES")
     field(DTYP, "asynInt32")
