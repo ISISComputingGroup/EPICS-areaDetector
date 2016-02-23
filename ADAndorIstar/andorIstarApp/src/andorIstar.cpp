@@ -187,14 +187,21 @@ AndorIstar::AndorIstar(const char *portName, const char *installPath, int shamro
   // Initialize camera
   // (Gabriele Salvato) modified to exit because of an unrecoverable error.
   printf("%s:%s: initializing camera\n", driverName, functionName);
-	try {
-	  checkStatus(Initialize(mInstallPath));
-	} catch (const std::string &e) {
-	  asynPrint(pasynUserSelf, ASYN_TRACE_ERROR,
-		"%s:%s: %s\n",
-		driverName, functionName, e.c_str());
-	  exit(asynError);
-	}
+  unsigned int result;
+  for(int i=0; i<5; i++) {
+	result = Initialize(mInstallPath);
+	if (result == DRV_SUCCESS) break;
+  }
+  if (result != DRV_SUCCESS) {// Last try
+    try {
+      checkStatus(Initialize(mInstallPath));
+    } catch (const std::string &e) {
+      asynPrint(pasynUserSelf, ASYN_TRACE_ERROR,
+        "%s:%s: %s\n",
+        driverName, functionName, e.c_str());
+      exit(asynError);
+    }
+  }
   setStringParam(AndorMessage, "Camera successfully initialized.");
 	
   try {
@@ -273,7 +280,7 @@ AndorIstar::AndorIstar(const char *portName, const char *installPath, int shamro
   status |= setIntegerParam(ADReverseX, 0);
   status |= setIntegerParam(ADReverseY, 0);
   // (Gabriele Salvato)
-  status |= setStringParam(FitsFileHeaderFullFileName, "./FitsHeaderParameters.txt");  
+  status |= setStringParam(FitsFileHeaderFullFileName, ".\\FitsHeaderParameters.txt");  
   // (Gabriele Salvato) end
 
   setupADCSpeeds();
@@ -1585,6 +1592,7 @@ AndorIstar::saveDataFrame(int frameNumber) {
       driverName, functionName, e.c_str());
     errorString = const_cast<char *>(e.c_str());
     setStringParam(NDFileWriteMessage, errorString);
+    fits_clear_errmsg();
   }
 
   asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW, 
@@ -1848,7 +1856,6 @@ AndorIstar::SaveAsFitsFile(char *fullFileName, int FITSType) {
     return DRV_GENERAL_ERRORS;
   }
 */
-//  fits_clear_errmsg();
   return DRV_SUCCESS;  
 }
 
@@ -1857,8 +1864,9 @@ int
 AndorIstar::WriteKeys(char *fullFileName, int* iStatus) {
   *iStatus = 0;
   std::ifstream fHeader;
-  char filePath[MAX_PATH];
+  char filePath[MAX_PATH] = {0};
   *iStatus = getStringParam(FitsFileHeaderFullFileName, sizeof(filePath), filePath); 
+
   if (*iStatus) return DRV_SUCCESS;
   fHeader.open(filePath, std::ios_base::in);
   if(fHeader.fail()) 
@@ -1903,7 +1911,7 @@ AndorIstar::WriteKeys(char *fullFileName, int* iStatus) {
   
   fVal = 1.234567e-15;
   _snprintf_s(cVal, sizeof(cVal), _TRUNCATE, "01234567890123456789012345678901234567890123456789012345678901234567890123456789");
-  iRes = fits_update_key(fitsFilePtr, CFITSIO_TSTRING, "CAZZATA", cVal, "Tutta una cazzata", iStatus);
+  iRes = fits_update_key(fitsFilePtr, CFITSIO_TSTRING, "TEST", cVal, "Test", iStatus);
   
   getStringParam(ADModel, FLEN_VALUE-1, cVal);
   iRes = fits_update_key(fitsFilePtr, CFITSIO_TSTRING, "HEAD", cVal, "Head model", iStatus);

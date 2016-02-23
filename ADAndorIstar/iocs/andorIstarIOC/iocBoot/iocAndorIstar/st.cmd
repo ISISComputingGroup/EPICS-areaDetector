@@ -36,7 +36,14 @@ dbLoadRecords("$(ADCORE)/db/NDStdArrays.template", "P=$(PREFIX),R=image1:,PORT=I
 # Load all other plugins using commonPlugins.cmd
 # (Gabriele Salvato) uncomment this !!! < $(ADCORE)/iocBoot/commonPlugins.cmd
 #
-set_requestfile_path("$(ADANDORISTAR)/andorApp/Db")
+# specify where request files come from
+set_requestfile_path("$(ADANDORISTAR)", "andorIstarApp/Db")
+set_requestfile_path("$(ADCORE)", "ADApp/Db")
+
+# path needed in Windows format ????
+set_savefile_path("C:\Instrument\Apps\EPICS\support\areaDetector\master\ADAndorIstar\iocs\andorIstarIOC\iocBoot\iocAndorIstar\autosave")
+
+set_pass1_restoreFile("C:\Instrument\Apps\EPICS\support\areaDetector\master\ADAndorIstar\iocs\andorIstarIOC\iocBoot\iocAndorIstar\autosave\auto_settings.req", "P=$(PREFIX)")
 #
 #asynSetTraceMask("$(PORT)",0,3)
 #asynSetTraceIOMask("$(PORT)",0,4)

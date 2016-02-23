@@ -7,19 +7,19 @@
 # October 2014
 
 # (Gabriele Salvato) Full FITS_File_Header filename, including path
-record(waveform, "$(P)$(R)FullFitsFileHeaderFileName")
+record(waveform, "$(P)$(R)FitsFileHeaderFullFileName")
 {
     field(PINI, "YES")
     field(DTYP, "asynOctetWrite")
-    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))FULL_FITS_FILE_HEADER_FILE_NAME")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))FITS_FILE_HEADER_FULL_FILE_NAME")
     field(FTVL, "CHAR")
     field(NELM, "256")
 }
 
-record(waveform, "$(P)$(R)FullFitsFileHeaderFileName_RBV")
+record(waveform, "$(P)$(R)FitsFileHeaderFullFileName_RBV")
 {
     field(DTYP, "asynOctetRead")
-    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))FULL_FITS_FILE_HEADER_FILE_NAME")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))FITS_FILE_HEADER_FULL_FILE_NAME")
     field(FTVL, "CHAR")
     field(NELM, "256")
     field(SCAN, "I/O Intr")

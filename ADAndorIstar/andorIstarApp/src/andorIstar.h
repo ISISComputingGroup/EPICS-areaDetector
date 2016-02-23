@@ -35,7 +35,7 @@
 #define AndorDDGGateWidthString            "ANDOR_DDG_GATE_WIDTH"
 #define AndorDDGIOCString                  "ANDOR_DDG_IOC"
 // (Gabriele Salvato) Fits_File_Header name including path 
-#define FitsFileHeaderFullFileNameString   "FULL_FITS_FILE_HEADER_FILE_NAME"
+#define FitsFileHeaderFullFileNameString   "FITS_FILE_HEADER_FULL_FILE_NAME"
 // (Gabriele Salvato) end
 
 #define AT_GATEMODE_FIRE_AND_GATE 0
