@@ -1527,49 +1527,31 @@ AndorIstar::saveDataFrame(int frameNumber) {
 
   try {
     if (fileFormat == AFFTIFF) {
-      //Dario Start
-      strcat(fullFileName,".tiff");
-      //Dario End  
       asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW, 
         "%s:%s:, SaveAsTiffEx(%s, %s, %d, 1, 1)\n", 
         driverName, functionName, fullFileName, palFilePath, frameNumber);
       checkStatus(SaveAsTiffEx(fullFileName, palFilePath, frameNumber, 1, 1));
     } else if (fileFormat == AFFBMP) {
-      //Dario Start
-      strcat(fullFileName,".bmp");
-      //Dario End  
       asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW, 
         "%s:%s:, SaveAsBmp(%s, %s, 0, 0)\n", 
         driverName, functionName, fullFileName, palFilePath);
       checkStatus(SaveAsBmp(fullFileName, palFilePath, 0, 0));
     } else if (fileFormat == AFFSIF) {
-      //Dario Start
-      strcat(fullFileName,".sif");
-      //Dario End  
       asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW, 
         "%s:%s:, SaveAsSif(%s)\n", 
         driverName, functionName, fullFileName);
       checkStatus(SaveAsSif(fullFileName));
     } else if (fileFormat == AFFEDF) {
-      //Dario Start
-      strcat(fullFileName,".edf");
-      //Dario End  
       asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW, 
         "%s:%s:, SaveAsEDF(%s, 0)\n", 
         driverName, functionName, fullFileName);
       checkStatus(SaveAsEDF(fullFileName, 0));
     } else if (fileFormat == AFFRAW) {
-      //Dario Start
-      strcat(fullFileName,".raw");
-      //Dario End  
       asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW, 
         "%s:%s:, SaveAsRaw(%s, 1)\n", 
         driverName, functionName, fullFileName);
       checkStatus(SaveAsRaw(fullFileName, 1));
     } else if (fileFormat == AFFFITS) {
-      //Dario Start
-      strcat(fullFileName,".fits");
-      //Dario End  
       getIntegerParam(NDDataType, &itemp); dataType = (NDDataType_t)itemp;
       if (dataType == NDUInt16) FITSType=0;
       else if (dataType== NDUInt32) FITSType=1;
@@ -1578,9 +1560,6 @@ AndorIstar::saveDataFrame(int frameNumber) {
         driverName, functionName, fullFileName, FITSType);
       checkStatus(SaveAsFitsFile(fullFileName, FITSType));
     } else if (fileFormat == AFFSPE) {
-      //Dario Start
-      strcat(fullFileName,".spe");
-      //Dario End  
       asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW, 
         "%s:%s:, SaveAsSPE(%s)\n", 
         driverName, functionName, fullFileName);

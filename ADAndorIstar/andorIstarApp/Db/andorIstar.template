@@ -5,6 +5,8 @@
 # October 2014
 # Gabriele Salvato added support for Autofocus
 # October 2014
+# Gabriele Salvato added support for Fits file header
+# February 2016
 
 # (Gabriele Salvato) Full FITS_File_Header filename, including path
 record(waveform, "$(P)$(R)FitsFileHeaderFullFileName")
