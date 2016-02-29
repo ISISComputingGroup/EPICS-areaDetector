@@ -20,7 +20,7 @@ public:
     void processCallbacks(NDArray *pArray);
     asynStatus writeFloat64(asynUser *pasynUser, epicsFloat64 value);
     
-    template <typename epicsType> void doComputeFocusMetricsT(NDArray *pArray, double *pFocusMetrics);
+    template <typename epicsType> void doComputeFocusMetricsT(NDArray *pArray, double *pFocusMetrics, double dNormFactor);
     int doComputeFocusMetrics(NDArray *pArray, double *pFocusMetrics);
    
 protected:

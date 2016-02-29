@@ -147,15 +147,15 @@ AndorIstar::AndorIstar(const char *portName, const char *installPath, int shamro
   /* Create an EPICS exit handler */
   epicsAtExit(exitHandler, this);
 
-  createParam(AndorCoolerParamString,             asynParamInt32, &AndorCoolerParam);
-  createParam(AndorTempStatusMessageString,       asynParamOctet, &AndorTempStatusMessage);
-  createParam(AndorMessageString,                 asynParamOctet, &AndorMessage);
-  createParam(AndorShutterModeString,             asynParamInt32, &AndorShutterMode);
-  createParam(AndorShutterExTTLString,            asynParamInt32, &AndorShutterExTTL);
-  createParam(AndorPalFileNameString,             asynParamOctet, &AndorPalFileName);
-  createParam(AndorAccumulatePeriodString,      asynParamFloat64, &AndorAccumulatePeriod);
-  createParam(AndorPreAmpGainString,              asynParamInt32, &AndorPreAmpGain);
-  createParam(AndorAdcSpeedString,                asynParamInt32, &AndorAdcSpeed);
+  createParam(AndorCoolerParamString,             asynParamInt32,   &AndorCoolerParam);
+  createParam(AndorTempStatusMessageString,       asynParamOctet,   &AndorTempStatusMessage);
+  createParam(AndorMessageString,                 asynParamOctet,   &AndorMessage);
+  createParam(AndorShutterModeString,             asynParamInt32,   &AndorShutterMode);
+  createParam(AndorShutterExTTLString,            asynParamInt32,   &AndorShutterExTTL);
+  createParam(AndorPalFileNameString,             asynParamOctet,   &AndorPalFileName);
+  createParam(AndorAccumulatePeriodString,      asynParamFloat64,   &AndorAccumulatePeriod);
+  createParam(AndorPreAmpGainString,              asynParamInt32,   &AndorPreAmpGain);
+  createParam(AndorAdcSpeedString,                asynParamInt32,   &AndorAdcSpeed);
   
   // (Gabriele Salvato) create parameters for the iStar Micro Channel Plate image intensifier
   createParam(AndorMCPGainString,                 asynParamInt32,   &AndorMCPGain);
@@ -164,8 +164,11 @@ AndorIstar::AndorIstar(const char *portName, const char *installPath, int shamro
   createParam(AndorDDGGateDelayString,            asynParamFloat64, &AndorDDGGateDelay);
   createParam(AndorDDGGateWidthString,            asynParamFloat64, &AndorDDGGateWidth);
   createParam(AndorDDGIOCString,                  asynParamInt32,   &AndorDDGIOC);
-  // (Gabriele Salvato) end
  
+  // (Gabriele Salvato) create parameters for the Fits File Header Path and Name
+  createParam(FitsFileHeaderFullFileNameString,   asynParamOctet,   &FitsFileHeaderFullFileName);
+  // (Gabriele Salvato) end
+
   // Create the epicsEvent for signaling to the status task when parameters should have changed.
   // This will cause it to do a poll immediately, rather than wait for the poll time period.
   this->statusEvent = epicsEventMustCreate(epicsEventEmpty);
@@ -202,10 +205,10 @@ AndorIstar::AndorIstar(const char *portName, const char *installPath, int shamro
   setStringParam(AndorMessage, "Camera successfully initialized.");
 	
   try {
-	// (Gabriele Salvato) Get the camera capabilities
+	  // (Gabriele Salvato) Get the camera capabilities
     capabilities.ulSize = sizeof(capabilities);
     checkStatus(GetCapabilities(&capabilities));
-	// (Gabriele Salvato) Is the camera an iStar ?
+	  // (Gabriele Salvato) Is the camera an iStar ?
     mIsCameraiStar = (capabilities.ulCameraType == AC_CAMERATYPE_ISTAR);	
     checkStatus(GetDetector(&sizeX, &sizeY));
     checkStatus(GetHeadModel(model));
@@ -276,6 +279,8 @@ AndorIstar::AndorIstar(const char *portName, const char *installPath, int shamro
   // (Gabriele Salvato)
   status |= setIntegerParam(ADReverseX, 0);
   status |= setIntegerParam(ADReverseY, 0);
+  // (Gabriele Salvato)
+  status |= setStringParam(FitsFileHeaderFullFileName, ".\\FitsHeaderParameters.txt");  
   // (Gabriele Salvato) end
 
   setupADCSpeeds();
@@ -652,7 +657,7 @@ AndorIstar::writeInt32(asynUser *pasynUser, epicsInt32 value) {
              (function == AndorShutterExTTL)) {
       status = setupShutter(-1);
     }
-    // (Gabriele Salvato) File Writing using 
+    // (Gabriele Salvato) File Writing using SDK
     else if (function == NDWriteFile) {
       saveDataFrame(1);
       setIntegerParam(NDWriteFile, 0);
@@ -1174,8 +1179,8 @@ AndorIstar::setupAcquisition() {
   
     // (Gabriele Salvato) Flip the image
     // This function will cause data output from the SDK to be flipped on one or both axes. 
-	// This flip is not done in the camera, it occurs after the data is retrieved and will
-	// increase processing overhead.
+	  // This flip is not done in the camera, it occurs after the data is retrieved and will
+	  // increase processing overhead.
     // If flipping could be implemented by the user more efficiently 
     // then use of this function is not recomended.
     getIntegerParam(ADReverseX, &iFlipX);
@@ -1522,49 +1527,31 @@ AndorIstar::saveDataFrame(int frameNumber) {
 
   try {
     if (fileFormat == AFFTIFF) {
-      //Dario Start
-      strcat(fullFileName,".tiff");
-      //Dario End  
       asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW, 
         "%s:%s:, SaveAsTiffEx(%s, %s, %d, 1, 1)\n", 
         driverName, functionName, fullFileName, palFilePath, frameNumber);
       checkStatus(SaveAsTiffEx(fullFileName, palFilePath, frameNumber, 1, 1));
     } else if (fileFormat == AFFBMP) {
-      //Dario Start
-      strcat(fullFileName,".bmp");
-      //Dario End  
       asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW, 
         "%s:%s:, SaveAsBmp(%s, %s, 0, 0)\n", 
         driverName, functionName, fullFileName, palFilePath);
       checkStatus(SaveAsBmp(fullFileName, palFilePath, 0, 0));
     } else if (fileFormat == AFFSIF) {
-      //Dario Start
-      strcat(fullFileName,".sif");
-      //Dario End  
       asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW, 
         "%s:%s:, SaveAsSif(%s)\n", 
         driverName, functionName, fullFileName);
       checkStatus(SaveAsSif(fullFileName));
     } else if (fileFormat == AFFEDF) {
-      //Dario Start
-      strcat(fullFileName,".edf");
-      //Dario End  
       asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW, 
         "%s:%s:, SaveAsEDF(%s, 0)\n", 
         driverName, functionName, fullFileName);
       checkStatus(SaveAsEDF(fullFileName, 0));
     } else if (fileFormat == AFFRAW) {
-      //Dario Start
-      strcat(fullFileName,".raw");
-      //Dario End  
       asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW, 
         "%s:%s:, SaveAsRaw(%s, 1)\n", 
         driverName, functionName, fullFileName);
       checkStatus(SaveAsRaw(fullFileName, 1));
     } else if (fileFormat == AFFFITS) {
-      //Dario Start
-      strcat(fullFileName,".fits");
-      //Dario End  
       getIntegerParam(NDDataType, &itemp); dataType = (NDDataType_t)itemp;
       if (dataType == NDUInt16) FITSType=0;
       else if (dataType== NDUInt32) FITSType=1;
@@ -1573,9 +1560,6 @@ AndorIstar::saveDataFrame(int frameNumber) {
         driverName, functionName, fullFileName, FITSType);
       checkStatus(SaveAsFitsFile(fullFileName, FITSType));
     } else if (fileFormat == AFFSPE) {
-      //Dario Start
-      strcat(fullFileName,".spe");
-      //Dario End  
       asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW, 
         "%s:%s:, SaveAsSPE(%s)\n", 
         driverName, functionName, fullFileName);
@@ -1587,6 +1571,7 @@ AndorIstar::saveDataFrame(int frameNumber) {
       driverName, functionName, e.c_str());
     errorString = const_cast<char *>(e.c_str());
     setStringParam(NDFileWriteMessage, errorString);
+    fits_clear_errmsg();
   }
 
   asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW, 
@@ -1850,7 +1835,6 @@ AndorIstar::SaveAsFitsFile(char *fullFileName, int FITSType) {
     return DRV_GENERAL_ERRORS;
   }
 */
-//  fits_clear_errmsg();
   return DRV_SUCCESS;  
 }
 
@@ -1859,7 +1843,10 @@ int
 AndorIstar::WriteKeys(char *fullFileName, int* iStatus) {
   *iStatus = 0;
   std::ifstream fHeader;
-  char filePath[MAX_PATH] = {"FitsHeaderParameters.txt"};
+  char filePath[MAX_PATH] = {0};
+  *iStatus = getStringParam(FitsFileHeaderFullFileName, sizeof(filePath), filePath); 
+
+  if (*iStatus) return DRV_SUCCESS;
   fHeader.open(filePath, std::ios_base::in);
   if(fHeader.fail()) 
     return DRV_SUCCESS; // If the file does not exists there is nothing to add
@@ -1887,7 +1874,7 @@ AndorIstar::WriteKeys(char *fullFileName, int* iStatus) {
     else
       strncpy_s(comment, sizeof(comment), "", _TRUNCATE);
       
-	fits_update_key(fptr, CFITSIO_TSTRING, keyword, value, comment, iStatus);
+	  fits_update_key(fptr, CFITSIO_TSTRING, keyword, value, comment, iStatus);
   }
   
   fits_close_file(fptr, iStatus); // close the fits file
@@ -1903,7 +1890,7 @@ AndorIstar::WriteKeys(char *fullFileName, int* iStatus) {
   
   fVal = 1.234567e-15;
   _snprintf_s(cVal, sizeof(cVal), _TRUNCATE, "01234567890123456789012345678901234567890123456789012345678901234567890123456789");
-  iRes = fits_update_key(fitsFilePtr, CFITSIO_TSTRING, "CAZZATA", cVal, "Tutta una cazzata", iStatus);
+  iRes = fits_update_key(fitsFilePtr, CFITSIO_TSTRING, "TEST", cVal, "Test", iStatus);
   
   getStringParam(ADModel, FLEN_VALUE-1, cVal);
   iRes = fits_update_key(fitsFilePtr, CFITSIO_TSTRING, "HEAD", cVal, "Head model", iStatus);

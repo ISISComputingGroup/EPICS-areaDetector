@@ -34,6 +34,8 @@
 #define AndorDDGGateDelayString            "ANDOR_DDG_GATE_DELAY"
 #define AndorDDGGateWidthString            "ANDOR_DDG_GATE_WIDTH"
 #define AndorDDGIOCString                  "ANDOR_DDG_IOC"
+// (Gabriele Salvato) Fits_File_Header name including path 
+#define FitsFileHeaderFullFileNameString   "FITS_FILE_HEADER_FULL_FILE_NAME"
 // (Gabriele Salvato) end
 
 #define AT_GATEMODE_FIRE_AND_GATE 0
@@ -106,8 +108,9 @@ class AndorIstar : public ADDriver {
   int AndorDDGGateDelay;
   int AndorDDGGateWidth;
   int AndorDDGIOC;
-  // (Gabriele Salvato) Andor Driver file writing message
-  #define LAST_ANDOR_PARAM AndorDDGIOC
+  // (Gabriele Salvato) Fits File Header Name including path 
+  int FitsFileHeaderFullFileName;
+  #define LAST_ANDOR_PARAM FitsFileHeaderFullFileName
 
  private:
 

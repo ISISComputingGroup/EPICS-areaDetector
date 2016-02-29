@@ -11,6 +11,8 @@
 #include <string.h>
 #include <stdio.h>
 #include <math.h>
+#include <limits.h>
+#include <float.h>
 
 #include <epicsString.h>
 #include <epicsMutex.h>
@@ -32,7 +34,7 @@ static const char *driverName="NDPluginFocusMetrics";
 */
 template <typename epicsType>
 void 
-NDPluginFocusMetrics::doComputeFocusMetricsT(NDArray *pArray, double *pFocusMetrics) {
+NDPluginFocusMetrics::doComputeFocusMetricsT(NDArray *pArray, double *pFocusMetrics, double dNormFactor) {
     size_t n_rows, n_columns;
     epicsType *pData = (epicsType *)pArray->pData;
     NDArrayInfo arrayInfo;
@@ -51,10 +53,10 @@ NDPluginFocusMetrics::doComputeFocusMetricsT(NDArray *pArray, double *pFocusMetr
       pRowP1 = pData+(j+1)*n_columns;
 
       for(size_t k=1; k<n_columns-2; k++) {
-        gXY  = fabs(static_cast<double>(*(pRow+k)-(*(pRow+k-1))));
-        gXY += fabs(static_cast<double>(*(pRow+k)-(*(pRow+k+1))));
-        gXY += fabs(static_cast<double>(*(pRow+k)-(*(pRowM1+k))));
-        gXY += fabs(static_cast<double>(*(pRow+k)-(*(pRowP1+k))));
+        gXY  = fabs(static_cast<double>(*(pRow+k)-(*(pRow+k-1)))) / dNormFactor;
+        gXY += fabs(static_cast<double>(*(pRow+k)-(*(pRow+k+1)))) / dNormFactor;
+        gXY += fabs(static_cast<double>(*(pRow+k)-(*(pRowM1+k)))) / dNormFactor;
+        gXY += fabs(static_cast<double>(*(pRow+k)-(*(pRowP1+k)))) / dNormFactor;
         *pFocusMetrics += gXY*gXY;
       }
     }
@@ -66,28 +68,28 @@ NDPluginFocusMetrics::doComputeFocusMetrics(NDArray *pArray, double *pFocusMetri
 
     switch(pArray->dataType) {
         case NDInt8:
-            doComputeFocusMetricsT<epicsInt8>(pArray, pFocusMetrics);
+            doComputeFocusMetricsT<epicsInt8>(pArray, pFocusMetrics, -double(-SCHAR_MIN));
             break;
         case NDUInt8:
-            doComputeFocusMetricsT<epicsUInt8>(pArray, pFocusMetrics);
+            doComputeFocusMetricsT<epicsUInt8>(pArray, pFocusMetrics, double(UCHAR_MAX));
             break;
         case NDInt16:
-            doComputeFocusMetricsT<epicsInt16>(pArray, pFocusMetrics);
+            doComputeFocusMetricsT<epicsInt16>(pArray, pFocusMetrics, -double(SHRT_MIN));
             break;
         case NDUInt16:
-            doComputeFocusMetricsT<epicsUInt16>(pArray, pFocusMetrics);
+            doComputeFocusMetricsT<epicsUInt16>(pArray, pFocusMetrics, double(USHRT_MAX));
             break;
         case NDInt32:
-            doComputeFocusMetricsT<epicsInt32>(pArray, pFocusMetrics);
+            doComputeFocusMetricsT<epicsInt32>(pArray, pFocusMetrics, -double(INT_MIN));
             break;
         case NDUInt32:
-            doComputeFocusMetricsT<epicsUInt32>(pArray, pFocusMetrics);
+            doComputeFocusMetricsT<epicsUInt32>(pArray, pFocusMetrics, double(UINT_MAX));
             break;
         case NDFloat32:
-            doComputeFocusMetricsT<epicsFloat32>(pArray, pFocusMetrics);
+            doComputeFocusMetricsT<epicsFloat32>(pArray, pFocusMetrics, double(FLT_MAX));
             break;
         case NDFloat64:
-            doComputeFocusMetricsT<epicsFloat64>(pArray, pFocusMetrics);
+            doComputeFocusMetricsT<epicsFloat64>(pArray, pFocusMetrics, double(DBL_MAX));
             break;
         default:
             return(ND_ERROR);
@@ -123,7 +125,7 @@ NDPluginFocusMetrics::processCallbacks(NDArray *pArray) {
         pArray->getInfo(&arrayInfo);
         doComputeFocusMetrics(pArray, pFocusMetrics);
         setDoubleParam(NDPluginFocusMetricsFocusValue, focusMetrics);
-        printf("Focus Value= %f", focusMetrics);
+        printf("Focus Value= %f\n", focusMetrics);
         asynPrint(this->pasynUserSelf, ASYN_TRACEIO_DRIVER,
             (char *)pArray->pData, arrayInfo.totalBytes,
             "%s:%s focus Value=%f",
