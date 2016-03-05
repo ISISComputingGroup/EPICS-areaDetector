@@ -6,5 +6,5 @@ $(P)$(R)AndorShutterExTTL
 $(P)$(R)PALFilePath
 $(P)$(R)AndorPreAmpGain
 $(P)$(R)AndorADCSpeed
-$(P)$(R)FitsFileHeaderFullFileName
+$(P)$(R)FitsHeaderFullFileName
 $(P)$(R)ArrayCallbacks

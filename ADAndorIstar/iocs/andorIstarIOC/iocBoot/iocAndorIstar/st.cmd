@@ -4,7 +4,7 @@ errlogInit(20000)
 dbLoadDatabase("$(TOP)/dbd/andorIstarApp.dbd")
 andorIstarApp_registerRecordDeviceDriver(pdbbase) 
 
-epicsEnvSet("PREFIX", "13ANDOR1:")
+epicsEnvSet("PREFIX", "$(MYPVPREFIX)13ANDOR1:")
 epicsEnvSet("PORT",   "ANDOR")
 epicsEnvSet("QSIZE",  "20")
 epicsEnvSet("XSIZE",  "1024")
@@ -18,7 +18,8 @@ epicsEnvSet("NCHANS", "1024")
 #                  size_t maxMemory, 
 #                  int priority, 
 #                  int stackSize)
-andorIstarConfig("$(PORT)", "C:/Program Files (x86)/Andor iStar/Drivers", 0, 0, 0, 0, 0)
+#andorIstarConfig("$(PORT)", "C:\Program Files (x86)\Andor iStar", 0, 0, 0, 0, 0)
+andorIstarConfig("$(PORT)", "", 0, 0, 0, 0, 0)
 
 dbLoadRecords("$(ADCORE)/db/ADBase.template",           "P=$(PREFIX),R=cam1:,PORT=$(PORT),ADDR=0,TIMEOUT=10")
 dbLoadRecords("$(ADCORE)/db/NDFile.template",           "P=$(PREFIX),R=cam1:,PORT=$(PORT),ADDR=0,TIMEOUT=10")
@@ -32,7 +33,7 @@ dbLoadRecords("$(ADCORE)/db/NDPluginBase.template","P=$(PREFIX),R=image1:,PORT=I
 # Create an autofocus plugin
 NDFocusMetricsConfigure("FOCUS1", 1, 0, "$(PORT)", 0, 0, 0)
 dbLoadRecords("$(ADCORE)/db/NDPluginBase.template","P=$(PREFIX), R=Focus1:, PORT=FOCUS1, ADDR=0, TIMEOUT=1, NDARRAY_PORT=$(PORT), NDARRAY_ADDR=0")
-dbLoadRecords("$(ADCORE)/db/NDFocusMetrics.template", "P=13ANDOR1:, R=Focus1:, PORT=FOCUS1, ADDR=0, TIMEOUT=1")
+dbLoadRecords("$(ADCORE)/db/NDFocusMetrics.template", "P=$(PREFIX), R=Focus1:, PORT=FOCUS1, ADDR=0, TIMEOUT=1")
 # (Gabriele Salvato) end
 
 

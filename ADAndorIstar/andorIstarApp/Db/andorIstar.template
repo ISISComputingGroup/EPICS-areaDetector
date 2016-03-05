@@ -8,25 +8,6 @@
 # Gabriele Salvato added support for Fits file header
 # February 2016
 
-# (Gabriele Salvato) Full FITS_File_Header filename, including path
-record(waveform, "$(P)$(R)FitsFileHeaderFullFileName")
-{
-    field(PINI, "YES")
-    field(DTYP, "asynOctetWrite")
-    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))FITS_FILE_HEADER_FULL_FILE_NAME")
-    field(FTVL, "CHAR")
-    field(NELM, "256")
-}
-
-record(waveform, "$(P)$(R)FitsFileHeaderFullFileName_RBV")
-{
-    field(DTYP, "asynOctetRead")
-    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))FITS_FILE_HEADER_FULL_FILE_NAME")
-    field(FTVL, "CHAR")
-    field(NELM, "256")
-    field(SCAN, "I/O Intr")
-}
-# Gabriele Salvato (end)
  
 # These are the records that we modify from NDFile.template
 record(mbbo, "$(P)$(R)FileFormat")
@@ -373,6 +354,27 @@ record(mbbi, "$(P)$(R)AndorPreAmpGain_RBV")
    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))ANDOR_PREAMP_GAIN")
    field(SCAN, "I/O Intr")
 }
+
+
+# (Gabriele Salvato) Full FITS_File_Header filename, including path
+record(waveform, "$(P)$(R)FitsHeaderFullFileName")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynOctetWrite")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))FITS_HEADER_FULL_FILE_NAME")
+    field(FTVL, "CHAR")
+    field(NELM, "256")
+}
+
+record(waveform, "$(P)$(R)FitsHeaderFullFileName_RBV")
+{
+    field(DTYP, "asynOctetRead")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))FITS_HEADER_FULL_FILE_NAME")
+    field(FTVL, "CHAR")
+    field(NELM, "256")
+    field(SCAN, "I/O Intr")
+}
+# Gabriele Salvato (end)
 
 
 

@@ -29,7 +29,7 @@ else
   ifeq ($(STATIC_BUILD), YES)
     USR_LDFLAGS_WIN32   += /NODEFAULTLIB:MSVCRT.lib
   endif
-  LIB_LIBS_WIN32        += tiff jpeg
+  LIB_LIBS_WIN32        += tiff jpeg cfitsio
 endif
 
 ifeq (win32-x86-debug, $(findstring win32-x86-debug, $(T_A)))

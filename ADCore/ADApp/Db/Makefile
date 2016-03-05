@@ -37,6 +37,7 @@ DB += NDStdArrays.template
 DB += NDTransform.template
 DB += NDAttribute.template
 # (Gabriele Salvato)
+DB += NDFileFITS.template
 DB += NDFocusMetrics.template
 
 #----------------------------------------------------

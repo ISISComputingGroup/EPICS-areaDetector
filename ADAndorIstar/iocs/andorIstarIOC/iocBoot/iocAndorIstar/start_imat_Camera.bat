@@ -2,6 +2,8 @@
 set OLD_PATH=%PATH%
 set PATH=%EPICS_KIT_ROOT%\support\areaDetector\master\ADAndorIstar\bin\win32-x86;%PATH%
 set PATH=%ProgramFiles(x86)%\Andor iStar\Drivers;%PATH%
+set PATH=%EPICS_KIT_ROOT%\support\areaDetector\master\ADAndorIstar\lib\win32-x86;%PATH%
+set PATH=%ProgramFiles%\Andor iStar\Drivers;%PATH%
 set PATH=%EPICS_KIT_ROOT%\support\areaDetector\master\ADAndorIstar\andorIstarApp\cfitsio\win32-x86;%PATH%
 set PATH=%EPICS_KIT_ROOT%\support\areaDetector\master\ADBinaries\bin\win32-x86;%PATH%
 set PATH=%EPICS_KIT_ROOT%\support\areaDetector\master\ADCore\bin\win32-x86;%PATH%
@@ -23,7 +25,7 @@ set EPICS_DISPLAY_PATH=%EPICS_DISPLAY_PATH%;%EPICS_KIT_ROOT%\support\autosave\ma
 set DISPLAY=localhost:0.0
 @echo on
 
-start medm -x -macro "P=13ANDOR1:, R=cam1:" Andor.adl &
+start medm -x -macro "P=%MYPVPREFIX%13ANDOR1:, R=cam1:" Andor.adl &
 
 ..\..\bin\win32-x86\andorIstarApp st.cmd
 

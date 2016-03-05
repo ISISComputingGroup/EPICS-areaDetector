@@ -187,20 +187,13 @@ AndorIstar::AndorIstar(const char *portName, const char *installPath, int shamro
   // Initialize camera
   // (Gabriele Salvato) modified to exit because of an unrecoverable error.
   printf("%s:%s: initializing camera\n", driverName, functionName);
-  unsigned int result;
-  for(int i=0; i<5; i++) {
-	result = Initialize(mInstallPath);
-	if (result == DRV_SUCCESS) break;
-  }
-  if (result != DRV_SUCCESS) {// Last try
-    try {
-      checkStatus(Initialize(mInstallPath));
-    } catch (const std::string &e) {
-      asynPrint(pasynUserSelf, ASYN_TRACE_ERROR,
-        "%s:%s: %s\n",
-        driverName, functionName, e.c_str());
-      exit(asynError);
-    }
+  try {
+    checkStatus(Initialize(mInstallPath));
+  } catch (const std::string &e) {
+    asynPrint(pasynUserSelf, ASYN_TRACE_ERROR,
+      "%s:%s: %s\n",
+      driverName, functionName, e.c_str());
+    exit(asynError);
   }
   setStringParam(AndorMessage, "Camera successfully initialized.");
 	
