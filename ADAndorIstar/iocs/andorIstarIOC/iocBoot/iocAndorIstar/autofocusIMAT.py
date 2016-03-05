@@ -6,11 +6,11 @@ import sys
 import os
 import math
 
-#pvPrefixGalil = os.getenv("MYPVPREFIX") + "MOT:DMC01:"
-#pvprefixCamera = "IMAT-MESSINA-DETECT:IMAT:13ANDOR1:"
+pvPrefixGalil  = os.getenv("MYPVPREFIX") + "MOT:DMC01:"
+pvprefixCamera = os.getenv("MYPVPREFIX") + "13ANDOR1:"
 
-pvPrefixGalil = "IMAT-PC:salvato:MOT:DMC01:"
-pvprefixCamera = "NUR:Administrator:13ANDOR1:"
+#pvPrefixGalil = "IMAT-PC:salvato:MOT:DMC01:"
+#pvprefixCamera = "NUR:Administrator:13ANDOR1:"
 
 # Process Variables we are interested in:
 # For iStar Camera
@@ -65,13 +65,26 @@ laserControlBit        = PV(pvLaserControlBit)
 laserStatusBit         = PV(pvLaserStatusBit)
 
 def initPVs():
-	laserControlBit.put(0)    # Ensure Laser is switched off 
+	if(laserControlBit.wait_for_connection() == False) :
+		print("Error: Galil controller ioc not responding")
+		return False
+	laserControlBit.put(0)    # Ensure Laser is switched off
+	if(lensCarrierVMAX.wait_for_connection() == False) :
+		print("Error: Galil ioc controller not responding")
+		return False
 	lensCarrierVMAX.put(4.0)  # Max speed of Lenses in mm/s
 	lensCarrierWLP.put("Off") # No Wrong Limits Protection
 	lensCarrierMRES.put(0.005)# mm per step
 	
+	if(cameraArraycallbacks.wait_for_connection() == False) :
+		print("Error: Andor camera ioc not responding")
+		return False
 	cameraArraycallbacks.put(1)# Ensure Array Callbacks are enabled
+	if(imageCallbaks.wait_for_connection() == False) :
+		print("Error: Image plugin ioc not responding")
+		return False
 	imageCallbaks.put(1)       # Ensure Image Callbacks are enabled
+	return True
 
 	
 def waitLensInPosition():
@@ -223,15 +236,18 @@ def main():
 		xMin = 0.0
 		xMax = 25.5
 		xTol = 0.02
-		initPVs()
+		print ("Checking PVs connection...")
+		if(initPVs() == False) :
+			print("PVs not connected ... Autofocus failed. Exiting")
+			end
 		# Ensure Lens carrier is homed.
-		print ("Homing.", end="")
-		lensCarrierCNEN.put("Enable")    # Enable motor Power
-		lensCarrierHOMR.put(1)           # Start Reverse Homing procedure
-		while lensCarrierDMOV.get() != 1:# Wait until Homed
+		print ("Homing lens carrier.", end="")
+		lensCarrierCNEN.put("Enable")      # Enable motor Power
+		lensCarrierHOMR.put(1)             # Start Reverse Homing procedure
+		while lensCarrierDMOV.get() != 1 : # Wait until Homed
 			time.sleep(1)
 			print (".", end="")
-		print ("At Home: Start focusing !")
+		print ("Lens carrier at Home: Start focusing !")
 		goldenSearch(xMin, xMax, xTol)
 	except:
 		pass
