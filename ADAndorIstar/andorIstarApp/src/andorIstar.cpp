@@ -156,6 +156,7 @@ AndorIstar::AndorIstar(const char *portName, const char *installPath, int shamro
   createParam(AndorAccumulatePeriodString,      asynParamFloat64,   &AndorAccumulatePeriod);
   createParam(AndorPreAmpGainString,              asynParamInt32,   &AndorPreAmpGain);
   createParam(AndorAdcSpeedString,                asynParamInt32,   &AndorAdcSpeed);
+	createParam(AndorReadModeString,                asynParamInt32,   &AndorReadMode);
   
   // (Gabriele Salvato) create parameters for the iStar Micro Channel Plate image intensifier
   createParam(AndorMCPGainString,                 asynParamInt32,   &AndorMCPGain);
@@ -164,7 +165,10 @@ AndorIstar::AndorIstar(const char *portName, const char *installPath, int shamro
   createParam(AndorDDGGateDelayString,            asynParamFloat64, &AndorDDGGateDelay);
   createParam(AndorDDGGateWidthString,            asynParamFloat64, &AndorDDGGateWidth);
   createParam(AndorDDGIOCString,                  asynParamInt32,   &AndorDDGIOC);
- 
+  createParam(AndorDDGInsertionDelayString,       asynParamInt32,   &AndorDDGInsertionDelay);
+  createParam(AndorDDGTriggerModeString,          asynParamInt32,   &AndorDDGTriggerMode);
+ 	createParam(AndorGateModeString,                asynParamInt32,   &AndorGateMode);
+
   // (Gabriele Salvato) create parameters for the Fits File Header Path and Name
   createParam(FitsFileHeaderFullFileNameString,   asynParamOctet,   &FitsFileHeaderFullFileName);
   // (Gabriele Salvato) end
@@ -608,15 +612,18 @@ AndorIstar::writeInt32(asynUser *pasynUser, epicsInt32 value) {
         } 
       }
     }
-    else if ((function == ADNumExposures) || (function == ADNumImages) ||
-             (function == ADImageMode)                                 ||
-             (function == ADBinX)         || (function == ADBinY)      ||
-             (function == ADMinX)         || (function == ADMinY)      ||
-             (function == ADSizeX)        || (function == ADSizeY)     ||
-             (function == ADTriggerMode)                               ||
+    else if ((function == ADNumExposures)    || (function == ADNumImages)   ||
+             (function == ADImageMode)                                      ||
+             (function == ADBinX)            || (function == ADBinY)        ||
+             (function == ADMinX)            || (function == ADMinY)        ||
+             (function == ADSizeX)           || (function == ADSizeY)       ||
+             (function == ADTriggerMode)                                    ||
              // (Gabriele Salvato) 
-             (function == ADReverseX)     || (function == ADReverseY)  ||
-             (function == AndorMCPGain)   || (function == AndorDDGIOC) || 
+             (function == ADReverseX)        || (function == ADReverseY)    ||
+             (function == AndorMCPGain)      || (function == AndorDDGIOC)   || 
+						 (function == AndorReadMode)     || (function == AndorGateMode) || 
+						 (function == AndorDDGInsertionDelay)                           || 
+						 (function == AndorDDGTriggerMode)                              || 
              // (Gabriele Salvato) end
              (function == AndorAdcSpeed)) {
       status = setupAcquisition();
@@ -1040,7 +1047,9 @@ AndorIstar::setupAcquisition() {
   float acquireTimeAct, acquirePeriodAct, accumulatePeriodAct;
   // (Gabriele Salvato) MCP gain, Integrate on chip, DDG and image flip control
   int MCPgain, IOC;
+	int iReadMode, iGateMode;
   double dDDGgateDelay, dDDGgateWidth;
+	int iDDGInsertionDelay, iDDGTriggerMode;
   int iFlipX, iFlipY;
   // end
   int FKmode = 4;
@@ -1154,19 +1163,39 @@ AndorIstar::setupAcquisition() {
         "%s:%s:, SetDDGIOC(IOC)\n", 
         driverName, functionName);
 	  checkStatus(SetDDGIOC(IOC));
-	
-	  asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW, 
-        "%s:%s:, SetGateMode(5)\n", 
-        driverName, functionName);
-      checkStatus(SetGateMode(AT_GATEMODE_DDG));//Gate using DDG
-    
-      getDoubleParam(AndorDDGGateDelay, &dDDGgateDelay);
-      getDoubleParam(AndorDDGGateWidth, &dDDGgateWidth);
-	
-	  asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW, 
+	    	
+	  getIntegerParam(AndorGateMode, &iGateMode);
+		asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW, 
+        "%s:%s:, SetGateMode(%d)\n", 
+        driverName, functionName, iGateMode);
+		checkStatus(SetGateMode(iGateMode));
+		if(iGateMode == AT_GATEMODE_DDG) {
+			getDoubleParam(AndorDDGGateDelay, &dDDGgateDelay);
+			getDoubleParam(AndorDDGGateWidth, &dDDGgateWidth);		
+			asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW, 
         "%s:%s:, SetDDGTimes(0.0, %f*1.0e12, %f*1.0e12)\n", 
         driverName, functionName, dDDGgateDelay, dDDGgateWidth);
       checkStatus(SetDDGTimes(0.0, dDDGgateDelay*1.0e12, dDDGgateWidth*1.0e12));
+		}
+	  	
+	  getIntegerParam(AndorReadMode, &iReadMode);
+		asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW, 
+			"%s:%s:, SetReadMode(%d)\n", 
+			driverName, functionName, iReadMode);
+		checkStatus(SetReadMode(iReadMode));
+
+		getIntegerParam(AndorDDGInsertionDelay, &iDDGInsertionDelay);
+		asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW, 
+			"%s:%s:, SetDDGInsertionDelay(%d)\n", 
+			driverName, functionName, iDDGInsertionDelay);
+		checkStatus(SetDDGInsertionDelay(iDDGInsertionDelay));
+
+		getIntegerParam(AndorDDGTriggerMode, &iDDGTriggerMode);
+		asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW, 
+			"%s:%s:, SetDDGTriggerMode(%d)\n", 
+			driverName, functionName, iDDGTriggerMode);
+		checkStatus(SetDDGTriggerMode(iDDGTriggerMode));
+		
 	}
 	// (Gabriele Salvato) DDG Gate Mode and SetUp END
   

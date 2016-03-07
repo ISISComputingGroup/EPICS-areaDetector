@@ -185,6 +185,116 @@ record(bi, "$(P)$(R)AndorDDGIOC_RBV")
     field(SCAN, "I/O Intr")
 }
 
+# (Gabriele Salvato) Read Mode
+record(mbbo, "$(P)$(R)AndorReadMode")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))ANDOR_READ_MODE")
+    field(ZRST, "Full Vertical Binning")
+		field(ZRVL, "0")
+    field(ONST, "Multi Track")
+		field(ONVL, "1")
+		field(TWST, "Random Track")
+		field(TWVL, "2")
+		field(THST, "Single Track")
+		field(THVL, "3")
+		field(FRST, "Image")
+		field(FRVL, "4")
+}
+
+record(mbbi, "$(P)$(R)AndorReadMode_RBV")
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))ANDOR_READ_MODE")
+    field(ZRST, "Full Vertical Binning")
+		field(ZRVL, "0")
+    field(ONST, "Multi Track")
+		field(ONVL, "1")
+		field(TWST, "Random Track")
+		field(TWVL, "2")
+		field(THST, "Single Track")
+		field(THVL, "3")
+		field(FRST, "Image")
+		field(FRVL, "4")
+}
+
+# (Gabriele Salvato) AndorGateMode
+record(mbbo, "$(P)$(R)AndorGateMode")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))ANDOR_GATE_MODE")
+    field(ZRST, "Fire ANDed with Gate")
+		field(ZRVL, "0")
+    field(ONST, "Gating from Fire Only")
+		field(ONVL, "1")
+		field(TWST, "Gating from SMB Only")
+		field(TWVL, "2")
+		field(THST, "Gate On Continuously")
+		field(THVL, "3")
+		field(FRST, "Gate Off Continuously")
+		field(FRVL, "4")
+		field(FVST, "Gate using DDG")
+		field(FVVL, "5")
+}
+
+record(mbbi, "$(P)$(R)AndorGateMode_RBV")
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))ANDOR_GATE_MODE")
+    field(ZRST, "Fire ANDed with Gate")
+		field(ZRVL, "0")
+    field(ONST, "Gating from Fire Only")
+		field(ONVL, "1")
+		field(TWST, "Gating from SMB Only")
+		field(TWVL, "2")
+		field(THST, "Gate On Continuously")
+		field(THVL, "3")
+		field(FRST, "Gate Off Continuously")
+		field(FRVL, "4")
+		field(FVST, "Gate using DDG")
+		field(FVVL, "5")
+}
+
+# (Gabriele Salvato) DDG Insertion Delay
+record(bo, "$(P)$(R)DDGInsertionDelay")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))DDG_INSERTION_DELAY")
+    field(ZNAM, "Normal")
+    field(ONAM, "Fast")
+}
+
+record(bi, "$(P)$(R)DDGInsertionDelay_RBV")
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))DDG_INSERTION_DELAY")
+    field(ZNAM, "Normal")
+    field(ONAM, "Fast")
+    field(SCAN, "I/O Intr")
+}
+
+# (Gabriele Salvato) DDG Trigger Mode
+record(bo, "$(P)$(R)AndorDDGTriggerMode")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))ANDOR_DDG_TRIGGER_MODE")
+    field(ZNAM, "Internal")
+    field(ONAM, "External")
+}
+
+record(bi, "$(P)$(R)AndorDDGTriggerMode_RBV")
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))ANDOR_DDG_TRIGGER_MODE")
+    field(ZNAM, "Internal")
+    field(ONAM, "External")
+    field(SCAN, "I/O Intr")
+}
+
 # (Gabriele Salvato) MCP Gain
 record(ao, "$(P)$(R)AndorMCPGain")
 {
@@ -357,19 +467,19 @@ record(mbbi, "$(P)$(R)AndorPreAmpGain_RBV")
 
 
 # (Gabriele Salvato) Full FITS_File_Header filename, including path
-record(waveform, "$(P)$(R)FitsHeaderFullFileName")
+record(waveform, "$(P)$(R)FitsHeaderFileName")
 {
     field(PINI, "YES")
     field(DTYP, "asynOctetWrite")
-    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))FITS_HEADER_FULL_FILE_NAME")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))FITS_HEADER_FILE_NAME")
     field(FTVL, "CHAR")
     field(NELM, "256")
 }
 
-record(waveform, "$(P)$(R)FitsHeaderFullFileName_RBV")
+record(waveform, "$(P)$(R)FitsHeaderFileName_RBV")
 {
     field(DTYP, "asynOctetRead")
-    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))FITS_HEADER_FULL_FILE_NAME")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))FITS_HEADER_FILE_NAME")
     field(FTVL, "CHAR")
     field(NELM, "256")
     field(SCAN, "I/O Intr")

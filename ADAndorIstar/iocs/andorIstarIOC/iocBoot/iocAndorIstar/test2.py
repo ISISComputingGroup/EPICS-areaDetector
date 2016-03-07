@@ -1,126 +1,196 @@
-from CaChannel import CaChannel
-from CaChannel import CaChannelException
-import ca
+#!/usr/bin/python
+
+from __future__ import print_function
+from epics import ca, PV
+
+import os
 import time
 import sys
 
-#pvprefix = "IMAT-MESSINA-DETECT:IMAT:13ANDOR1:"
-pvprefix = "13ANDOR1:"
+pvprefixCamera = os.getenv("MYPVPREFIX") + "13ANDOR1:"
+
+
+#  pParameters->iReadMode         = 4;// Read Mode = IMAGE
+#  pParameters->iFlipX            = 0;
+#  pParameters->iFlipY            = 1;
+#  pParameters->iInsertionDelay   = 0;
+#  pParameters->iGateMode         = 5;// Gate using DDG
+#  pParameters->bExternalTrigger  = bExternalTrigger;
+#  pParameters->bGateAlwaysOn     = bGateAlwaysOn;
+#  pParameters->bIOC              = bIOC;
 
 # Process Variables we are interested in
-cameraStatusPV               = pvprefix + "cam1:DetectorState_RBV"
-startAcquirePV               = pvprefix + "cam1:Acquire"
-exposureTimePV               = pvprefix + "cam1:AcquireTime"
-cameraArraycallbacksPV       = pvprefix + "cam1:ArrayCallbacks"
 
-filePathPV                   = pvprefix + "cam1:FilePath"
-fileNamePV                   = pvprefix + "cam1:FileName"
-fileNumberPV                 = pvprefix + "cam1:FileNumber"
-fileTemplatePV               = pvprefix + "cam1:FileTemplate"
-autoIncrementPV              = pvprefix + "cam1:AutoIncrement"
-saveFilePV                   = pvprefix + "cam1:WriteFile"
+cameraImageModePV            = pvprefixCamera + "cam1:ImageMode"
+cameraReadModePV             = pvprefixCamera + "cam1:AndorReadMode"
+cameraMCPGainPV              = pvprefixCamera + "cam1:AndorMCPGain"
+cameraStatusPV               = pvprefixCamera + "cam1:DetectorState_RBV"
+cameraStartAcquirePV         = pvprefixCamera + "cam1:Acquire"
+cameraExposureTimePV         = pvprefixCamera + "cam1:AcquireTime"
+cameraInsertionDelayPV       = pvprefixCamera + "cam1:DDGInsertionDelay"
+cameraGateWidthPV            = pvprefixCamera + "cam1:AndorDDGGateWidth"
+cameraGateDelayPV            = pvprefixCamera + "cam1:AndorDDGGateDelay"
+cameraArraycallbacksPV       = pvprefixCamera + "cam1:ArrayCallbacks"
+cameraTriggerModePV          = pvprefixCamera + "cam1:TriggerMode"
+cameraDDGTriggerModePV       = pvprefixCamera + "cam1:AndorDDGTriggerMode"
+cameraGateModePV             = pvprefixCamera + "cam1:AndorGateMode"
+cameraIntegrateOnChipPV      = pvprefixCamera + "cam1:AndorDDGIOC"
 
-fitsFileHeaderFullFileNamePV = pvprefix + "cam1:FitsFileHeaderFullFileName"
+filePathPV                   = pvprefixCamera + "cam1:FilePath"
+fileNamePV                   = pvprefixCamera + "cam1:FileName"
+fileNumberPV                 = pvprefixCamera + "cam1:FileNumber"
+fileTemplatePV               = pvprefixCamera + "cam1:FileTemplate"
+autoIncrementPV              = pvprefixCamera + "cam1:AutoIncrement"
+saveFilePV                   = pvprefixCamera + "cam1:WriteFile"
+
+fitsHeaderFileNamePV         = pvprefixCamera + "cam1:FitsHeaderFileName"
 
 
-# For focusing....
+# For focusing....in the future
 # 13ANDOR1:Focus:ComputeFocusMetrics
 # 13ANDOR1:Focus:FocusValue_RBV
 # 13ANDOR1:Focus1:EnableCallback
 
 # Create CA Channels for PVs
-cameraStatus               = CaChannel(cameraStatusPV)
-startAcquire               = CaChannel(startAcquirePV)
-exposureTime               = CaChannel(exposureTimePV)
-cameraArraycallbacks       = CaChannel(cameraArraycallbacksPV)
-filePath                   = CaChannel(filePathPV)
-fileName                   = CaChannel(fileNamePV)
-fileNumber                 = CaChannel(fileNumberPV)
-fileTemplate               = CaChannel(fileTemplatePV)
-autoIncrement              = CaChannel(autoIncrementPV)
-saveFile                   = CaChannel(saveFilePV)
+cameraStatus               = PV(cameraStatusPV)
+cameraImageMode            = PV(cameraImageModePV)
+cameraReadMode             = PV(cameraReadModePV)
+cameraTriggerMode          = PV(cameraTriggerModePV)
+cameraStartAcquire         = PV(cameraStartAcquirePV)
+cameraExposureTime         = PV(cameraExposureTimePV)
+cameraInsertionDelay       = PV(cameraInsertionDelayPV)
+cameraGateWidth            = PV(cameraGateWidthPV)
+cameraGateDelay            = PV(cameraGateDelayPV)
+cameraMCPGain              = PV(cameraMCPGainPV)
+cameraDDGTriggerMode       = PV(cameraDDGTriggerModePV)
+cameraGateMode             = PV(cameraGateModePV)
+cameraIntegrateOnChip      = PV(cameraIntegrateOnChipPV)
 
-fitsFileHeaderFullFileName = CaChannel(fitsFileHeaderFullFileNamePV)
+cameraArraycallbacks       = PV(cameraArraycallbacksPV)
 
-isCameraArmed         = False
-exposureTimeSeconds   = 1
+filePath                   = PV(filePathPV)
+fileName                   = PV(fileNamePV)
+fileNumber                 = PV(fileNumberPV)
+fileTemplate               = PV(fileTemplatePV)
+fileAutoIncrement          = PV(autoIncrementPV)
+fileSave                   = PV(saveFilePV)
 
+fitsHeaderFileName         = PV(fitsHeaderFileNamePV)
 
-def eventCB(epics_args, user_args):
-	if (epics_args['pv_value'] == 0) and (isCameraArmed == True):# A new image is available
-		saveFile.putw(1)
-		isCameraArmed = False
-		startAcquire.putw(1)
-	elif epics_args['pv_value'] == 1:
-		isCameraArmed = True
-	
-#	print "eventCb: Python callback function"
-#	print type(epics_args)
-#	print epics_args
-#	print ca.message(epics_args['status'])
-#	print epics_args['pv_value']
-#	print ca.alarmSeverityString(epics_args['pv_severity'])
-#	print ca.alarmStatusString(epics_args['pv_status'])
+exposureTimeSeconds   = 10
+ADImageSingle         = 0
+ARImage               = 4
+ATInternal            = 0
+AGGateOnContinuously  = 3
+GainDDG               = 0
 
 		
 # Initialize the values of PVs	
 def initPVs():
 	try:
-		cameraArraycallbacks.putw(1)
-		filePath.array_put("c:/Images")
-		filePath.pend_io()
-		fileName.array_put("testImage")
-		fileName.pend_io()
-		fileTemplate.array_put("%s%s_%3.3d.fits")
-		fileTemplate.pend_io()
-		fileNumber.putw(0)
-		autoIncrement.putw(1)
-		fitsFileHeaderFullFileName.array_put("./FitsHeaderParameters.txt")
-		fitsFileHeaderFullFileName.pend_io()
-		exposureTime.putw(exposureTimeSeconds)
+		filePath.put("c:/Images")
+		fileName.put("testImage")
+		fileTemplate.put("%s%s_%3.3d.fits")
+		fileNumber.put(0)
+		fileAutoIncrement.put(1)
+		fitsHeaderFileName.put("./FitsHeaderParameters.txt")
+		
+		cameraImageMode.put(ADImageSingle)
+		cameraReadMode.put(ARImage)
+		cameraArraycallbacks.put(1)
+		cameraExposureTime.put(exposureTimeSeconds)
+		cameraInsertionDelay.put(0)
+		cameraTriggerMode.put(ATInternal)
+		cameraDDGTriggerMode.put(ATInternal)
+		cameraGateMode.put(AGGateOnContinuously)
+		cameraIntegrateOnChip.put(0)
+		cameraMCPGain.put(GainDDG)
 
-	except CaChannelException as e:
-		print e
+	except :
+		print (e)
 		sys.exit(0)
+		
+		
+class ConnectionError(StandardError) :
+   def __init__(self, arg):
+      self.args = arg
 		
 		
 # Attempt to establish a connection to a process variable.
-# This method waits for connection to be established or fail with exception.
+# This method waits for connection to be established or fail.
 def connectPVs():
 	try:
-		cameraStatus.searchw()
-		startAcquire.searchw()
-		exposureTime.searchw()
-		cameraArraycallbacks.searchw()
-		filePath.searchw()
-		fileName.searchw()
-		fileNumber.searchw()
-		fileTemplate.searchw()
-		autoIncrement.searchw()
-		fitsFileHeaderFullFileName.searchw()
-		saveFile.searchw()
-		
-	except CaChannelException as e:
-		print e
-		sys.exit(0)
+		if(cameraImageMode.wait_for_connection() == False) :
+			raise ConnectionError("cameraImageMode")
+		if(cameraReadMode.wait_for_connection() == False) :
+			raise ConnectionError("cameraReadMode")
+		if(cameraStatus.wait_for_connection() == False) :
+			raise ConnectionError("cameraStatus")
+		if(cameraStartAcquire.wait_for_connection() == False) :
+			raise ConnectionError("cameraStartAcquire")
+		if(cameraExposureTime.wait_for_connection() == False):
+			raise ConnectionError("cameraExposureTime")
+		if(cameraArraycallbacks.wait_for_connection() == False):
+			raise ConnectionError("cameraArraycallbacks")
+		if(cameraInsertionDelay.wait_for_connection() == False):
+			raise ConnectionError("cameraInsertionDelay")
+		if(cameraTriggerMode.wait_for_connection() == False):
+			raise ConnectionError("cameraTriggerMode")
+		if(cameraDDGTriggerMode.wait_for_connection() == False):
+			raise ConnectionError("cameraDDGTriggerMode")
+		if(cameraGateMode.wait_for_connection() == False) :
+			raise ConnectionError("cameraGateMode")
+		if(cameraIntegrateOnChip.wait_for_connection() == False) :
+			raise ConnectionError("cameraIntegrateOnChip")
+		if(cameraMCPGain.wait_for_connection() == False) :
+			raise ConnectionError("cameraMCPGain")
 
+		if(filePath.wait_for_connection() == False) :
+			raise ConnectionError("filePath")
+		if(fileName.wait_for_connection() == False) :
+			raise ConnectionError("fileName")
+		if(fileNumber.wait_for_connection() == False) :
+			raise ConnectionError("fileNumber")
+		if(fileTemplate.wait_for_connection() == False) :
+			raise ConnectionError("fileTemplate")
+		if(fileAutoIncrement.wait_for_connection() == False) :
+			raise ConnectionError("fileAutoIncrement")
+		if(fitsHeaderFileName.wait_for_connection() == False) :
+			raise ConnectionError("fitsHeaderFileName")
+		if(fileSave.wait_for_connection() == False) :
+			raise ConnectionError("fileSave")
+
+		return True
+		
+	except ConnectionError, e :
+		print("Unable to Connect "+"".join(e.args) + "PV")
+		return False
 
 def main():
-	connectPVs()
+	print("Test program for acquiring 10 FITS Images")
+	print("stored into the directory: ", end="")
+	fp = filePath.get(None, True)
+	print("%s" % fp)
+	print("Connecting to the Camera IOC PVs")
+	if(connectPVs() == False) :
+		print("Not all the needed PVs are available: exiting")
+		sys.exit(0)
+	print("Initilizing PVs")
 	initPVs()
-		
+	print("Start acquiring", end="")	
 	try:
-		while(fileNumber.getw() != 10) :
-			startAcquire.putw(1)
-			while (cameraStatus.getw() != 1) :
+		while(fileNumber.get() != 10) :
+			cameraStartAcquire.put(1)
+			while (cameraStatus.get() != 1) :
 				pass
-			while (cameraStatus.getw() != 0) :
+			while (cameraStatus.get() != 0) :
 				pass
-			saveFile.putw(1)
+			fileSave.put(1)
+			print(".", end="")
+		print("Done")
 			
-		
-	except CaChannelException as e:
-			print e.status
+	except :
+		print ("Error...exiting")
 	
 
 if __name__ == "__main__":

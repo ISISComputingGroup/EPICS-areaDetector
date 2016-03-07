@@ -19,7 +19,7 @@ epicsEnvSet("NCHANS", "1024")
 #                  int priority, 
 #                  int stackSize)
 #andorIstarConfig("$(PORT)", "C:\Program Files (x86)\Andor iStar", 0, 0, 0, 0, 0)
-andorIstarConfig("$(PORT)", "", 0, 0, 0, 0, 0)
+andorIstarConfig("$(PORT)", "C:\\Program Files (x86)\\Andor iStar", 0, 0, 0, 0, 0)
 
 dbLoadRecords("$(ADCORE)/db/ADBase.template",           "P=$(PREFIX),R=cam1:,PORT=$(PORT),ADDR=0,TIMEOUT=10")
 dbLoadRecords("$(ADCORE)/db/NDFile.template",           "P=$(PREFIX),R=cam1:,PORT=$(PORT),ADDR=0,TIMEOUT=10")

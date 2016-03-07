@@ -239,7 +239,7 @@ def main():
 		print ("Checking PVs connection...")
 		if(initPVs() == False) :
 			print("PVs not connected ... Autofocus failed. Exiting")
-			end
+			sys.exit(0)
 		# Ensure Lens carrier is homed.
 		print ("Homing lens carrier.", end="")
 		lensCarrierCNEN.put("Enable")      # Enable motor Power

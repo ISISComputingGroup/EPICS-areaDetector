@@ -29,13 +29,17 @@
 #define AndorAccumulatePeriodString        "ANDOR_ACCUMULATE_PERIOD"
 #define AndorPreAmpGainString              "ANDOR_PREAMP_GAIN"
 #define AndorAdcSpeedString                "ANDOR_ADC_SPEED"
+#define AndorReadModeString                "ANDOR_READ_MODE"
 // (Gabriele Salvato) MCP (Image Intensifier) and DDG (Digital Delay Generator)
 #define AndorMCPGainString                 "ANDOR_MCP_GAIN"
 #define AndorDDGGateDelayString            "ANDOR_DDG_GATE_DELAY"
 #define AndorDDGGateWidthString            "ANDOR_DDG_GATE_WIDTH"
 #define AndorDDGIOCString                  "ANDOR_DDG_IOC"
+#define AndorDDGInsertionDelayString       "DDG_INSERTION_DELAY"
+#define AndorDDGTriggerModeString          "ANDOR_DDG_TRIGGER_MODE"
+#define AndorGateModeString                "ANDOR_GATE_MODE"
 // (Gabriele Salvato) Fits_File_Header name including path 
-#define FitsFileHeaderFullFileNameString   "FITS_HEADER_FULL_FILE_NAME"
+#define FitsFileHeaderFullFileNameString   "FITS_HEADER_FILE_NAME"
 // (Gabriele Salvato) end
 
 #define AT_GATEMODE_FIRE_AND_GATE 0
@@ -103,11 +107,15 @@ class AndorIstar : public ADDriver {
   int AndorAccumulatePeriod;
   int AndorPreAmpGain;
   int AndorAdcSpeed;
+	int AndorReadMode;
   // (Gabriele Salvato) MCP (Image Intensifier) and DDG (Digital Delay Generator) 
   int AndorMCPGain;
   int AndorDDGGateDelay;
   int AndorDDGGateWidth;
   int AndorDDGIOC;
+  int AndorDDGInsertionDelay;
+  int AndorDDGTriggerMode;
+	int AndorGateMode;
   // (Gabriele Salvato) Fits File Header Name including path 
   int FitsFileHeaderFullFileName;
   #define LAST_ANDOR_PARAM FitsFileHeaderFullFileName
