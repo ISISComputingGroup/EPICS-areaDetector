@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 from __future__ import print_function
 from epics import PV
 
@@ -9,25 +11,37 @@ import math
 pvPrefixGalil  = os.getenv("MYPVPREFIX") + "MOT:DMC01:"
 pvprefixCamera = os.getenv("MYPVPREFIX") + "13ANDOR1:"
 
+exposureTimeSeconds   = 0.003
+ADImageSingle         = 0
+ARImage               = 4
+ATInternal            = 0
+AGGateOnContinuously  = 3
+GainDDG               = 0
+
 #pvPrefixGalil = "IMAT-PC:salvato:MOT:DMC01:"
 #pvprefixCamera = "NUR:Administrator:13ANDOR1:"
 
 # Process Variables we are interested in:
 # For iStar Camera
-pvCameraStatus               = pvprefixCamera + "cam1:DetectorState_RBV"
-pvStartAcquire               = pvprefixCamera + "cam1:Acquire"
-pvExposureTime               = pvprefixCamera + "cam1:AcquireTime"
-pvCameraArraycallbacks       = pvprefixCamera + "cam1:ArrayCallbacks"
-pvImagecallbaks              = pvprefixCamera + "image1:EnableCallbacks"
-pvImageData                  = pvprefixCamera + "image1:ArrayData"
-pvImageColumns               = pvprefixCamera + "image1:ArraySize0_RBV"
-pvImageRows                  = pvprefixCamera + "image1:ArraySize1_RBV"
+cameraStatusPV               = pvprefixCamera + "cam1:DetectorState_RBV"
+cameraStartAcquirePV         = pvprefixCamera + "cam1:Acquire"
+cameraExposureTimePV         = pvprefixCamera + "cam1:AcquireTime"
+cameraArraycallbacksPV       = pvprefixCamera + "cam1:ArrayCallbacks"
+cameraImageModePV            = pvprefixCamera + "cam1:ImageMode"
+cameraReadModePV             = pvprefixCamera + "cam1:AndorReadMode"
+cameraTriggerModePV          = pvprefixCamera + "cam1:TriggerMode"
+cameraGateModePV             = pvprefixCamera + "cam1:AndorGateMode"
+cameraMCPGainPV              = pvprefixCamera + "cam1:AndorMCPGain"
 
-# For focusing with the focusing plugin....
+imageCallbacksPV             = pvprefixCamera + "image1:EnableCallbacks"
+imageDataPV                  = pvprefixCamera + "image1:ArrayData"
+imageColumnsPV               = pvprefixCamera + "image1:ArraySize0_RBV"
+imageRowsPV                  = pvprefixCamera + "image1:ArraySize1_RBV"
+
+# For focusing with the focusing plugin....(sometime in the future...)
 # 13ANDOR1:Focus:ComputeFocusMetrics
 # 13ANDOR1:Focus:FocusValue_RBV
 # 13ANDOR1:Focus1:EnableCallback
-
 
 # For Newport Lens Carrier
 pvLensCarrierVMAX = pvPrefixGalil + "MTR0101.VMAX"
@@ -38,20 +52,26 @@ pvLensCarrierDMOV = pvPrefixGalil + "MTR0101.DMOV"
 pvLensCarrierAPOS = pvPrefixGalil + "MTR0101.VAL"
 pvLensCarrierMRES = pvPrefixGalil + "MTR0101.MRES"
 
-# Laser light source
+# For Laser light source
 pvLaserControlBit = pvPrefixGalil + "Galil0Bo0_CMD"
 pvLaserStatusBit  = pvPrefixGalil + "Galil0Bo0_STATUS.VAL"
 
-#Create PVs
-cameraStatus           = PV(pvCameraStatus)
-startAcquire           = PV(pvStartAcquire)
-exposureTime           = PV(pvExposureTime)
-cameraArraycallbacks   = PV(pvCameraArraycallbacks)
 
-imageCallbaks          = PV(pvImagecallbaks)
-imageData              = PV(pvImageData)
-imageColumns           = PV(pvImageColumns)
-imageRows              = PV(pvImageRows)
+#Create PVs
+cameraStatus           = PV(cameraStatusPV)
+cameraStartAcquire     = PV(cameraStartAcquirePV)
+cameraExposureTime     = PV(cameraExposureTimePV)
+cameraArraycallbacks   = PV(cameraArraycallbacksPV)
+cameraImageMode        = PV(cameraImageModePV)
+cameraReadMode         = PV(cameraReadModePV)
+cameraTriggerMode      = PV(cameraTriggerModePV)
+cameraGateMode         = PV(cameraGateModePV)
+cameraMCPGain          = PV(cameraMCPGainPV)
+
+imageCallbaks          = PV(imageCallbacksPV)
+imageData              = PV(imageDataPV)
+imageColumns           = PV(imageColumnsPV)
+imageRows              = PV(imageRowsPV)
 
 lensCarrierVMAX        = PV(pvLensCarrierVMAX)
 lensCarrierCNEN        = PV(pvLensCarrierCNEN)
@@ -64,26 +84,63 @@ lensCarrierMRES        = PV(pvLensCarrierMRES)
 laserControlBit        = PV(pvLaserControlBit)
 laserStatusBit         = PV(pvLaserStatusBit)
 
+
+class ConnectionError(StandardError) :
+   def __init__(self, arg):
+      self.args = arg
+		
+		
+# Attempt to establish a connection to the process variables.
+def connectPVs():
+	try :
+		if(cameraExposureTime.wait_for_connection() == False):
+			raise ConnectionError("Error: cameraExposureTime not connected")
+		if(cameraImageMode.wait_for_connection() == False) :
+			raise ConnectionError("Error: cameraImageMode not connected")
+		if(cameraReadMode.wait_for_connection() == False) :
+			raise ConnectionError("Error: cameraReadMode not connected")
+		if(cameraTriggerMode.wait_for_connection() == False):
+			raise ConnectionError("Error: cameraTriggerMode not connected")
+		if(cameraMCPGain.wait_for_connection() == False) :
+			raise ConnectionError("Error: cameraMCPGain not connected")
+		if(cameraArraycallbacks.wait_for_connection() == False) :
+			raise ConnectionError("Error: cameraArraycallbacks not connected")
+			
+		if(imageCallbaks.wait_for_connection() == False) :
+			raise ConnectionError("Error: imageCallbaks not connected")
+		'''			
+		if(laserControlBit.wait_for_connection() == False) :
+			raise ConnectionError("Error: laserControlBit not connected")
+		if(lensCarrierVMAX.wait_for_connection() == False) :
+			raise ConnectionError("Error: lensCarrierVMAX not connected")
+		if(lensCarrierWLP.wait_for_connection() == False) :
+			raise ConnectionError("Error: lensCarrierWLP not connected")
+		if(lensCarrierMRES.wait_for_connection() == False) :
+			raise ConnectionError("Error: lensCarrierMRES not connected")
+		'''
+		return True
+
+	except ConnectionError, e :
+		print("".join(e.args))
+		return False
+		
+		
 def initPVs():
-	if(laserControlBit.wait_for_connection() == False) :
-		print("Error: Galil controller ioc not responding")
-		return False
+	cameraMCPGain.put(GainDDG)
+	cameraExposureTime.put(exposureTimeSeconds)
+	cameraImageMode.put(ADImageSingle)
+	cameraReadMode.put(ARImage)
+	cameraGateMode.put(AGGateOnContinuously)
+	cameraTriggerMode.put(ATInternal)
+	cameraGateMode.put(AGGateOnContinuously)
+	cameraArraycallbacks.put(1)# Ensure Array Callbacks are enabled
+	
+	imageCallbaks.put(1)       # Ensure Image Callbacks are enabled
+
 	laserControlBit.put(0)    # Ensure Laser is switched off
-	if(lensCarrierVMAX.wait_for_connection() == False) :
-		print("Error: Galil ioc controller not responding")
-		return False
 	lensCarrierVMAX.put(4.0)  # Max speed of Lenses in mm/s
 	lensCarrierWLP.put("Off") # No Wrong Limits Protection
 	lensCarrierMRES.put(0.005)# mm per step
-	
-	if(cameraArraycallbacks.wait_for_connection() == False) :
-		print("Error: Andor camera ioc not responding")
-		return False
-	cameraArraycallbacks.put(1)# Ensure Array Callbacks are enabled
-	if(imageCallbaks.wait_for_connection() == False) :
-		print("Error: Image plugin ioc not responding")
-		return False
-	imageCallbaks.put(1)       # Ensure Image Callbacks are enabled
 	return True
 
 	
@@ -163,7 +220,7 @@ def goldenSearch(_x0, _x3, _Tolerance):
 	waitLensInPosition()
 	laserControlBit.put(1)
 	waitLaserOn()# Ensure Laser is switched on
-	startAcquire.put(1)
+	cameraStartAcquire.put(1)
 	waitNewimageReady()
 	laserControlBit.put(0)
 	nImageRows    = imageRows.get()
@@ -178,7 +235,7 @@ def goldenSearch(_x0, _x3, _Tolerance):
 	waitLensInPosition()
 	laserControlBit.put(1)
 	waitLaserOn()
-	startAcquire.put(1)
+	cameraStartAcquire.put(1)
 	waitNewimageReady()
 	laserControlBit.put(0)
 	image = list(imageData.get())
@@ -197,7 +254,7 @@ def goldenSearch(_x0, _x3, _Tolerance):
 			waitLensInPosition()
 			laserControlBit.put(1)
 			waitLaserOn()
-			startAcquire.put(1)
+			cameraStartAcquire.put(1)
 			waitNewimageReady()
 			laserControlBit.put(0)
 			image = list(imageData.get())
@@ -214,7 +271,7 @@ def goldenSearch(_x0, _x3, _Tolerance):
 			waitLensInPosition()
 			laserControlBit.put(1)
 			waitLaserOn()
-			startAcquire.put(1)
+			cameraStartAcquire.put(1)
 			waitNewimageReady()
 			laserControlBit.put(0)
 			image = list(imageData.get())
@@ -237,8 +294,12 @@ def main():
 		xMax = 25.5
 		xTol = 0.02
 		print ("Checking PVs connection...")
-		if(initPVs() == False) :
+		if(connectPVs() == False) :
 			print("PVs not connected ... Autofocus failed. Exiting")
+			sys.exit(0)
+		print ("Initializing PVs...")
+		if(initPVs() == False) :
+			print("Unable to initialize PV values ... Autofocus failed. Exiting")
 			sys.exit(0)
 		# Ensure Lens carrier is homed.
 		print ("Homing lens carrier.", end="")
