@@ -108,7 +108,7 @@ def connectPVs():
 			
 		if(imageCallbaks.wait_for_connection() == False) :
 			raise ConnectionError("Error: imageCallbaks not connected")
-		'''			
+	
 		if(laserControlBit.wait_for_connection() == False) :
 			raise ConnectionError("Error: laserControlBit not connected")
 		if(lensCarrierVMAX.wait_for_connection() == False) :
@@ -117,7 +117,7 @@ def connectPVs():
 			raise ConnectionError("Error: lensCarrierWLP not connected")
 		if(lensCarrierMRES.wait_for_connection() == False) :
 			raise ConnectionError("Error: lensCarrierMRES not connected")
-		'''
+
 		return True
 
 	except ConnectionError, e :
