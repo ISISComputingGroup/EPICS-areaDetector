@@ -8,12 +8,12 @@ import sys
 import os
 import math
 
-#pvPrefixGalil  = os.getenv("MYPVPREFIX") + "MOT:DMC01:"
-#pvprefixCamera = os.getenv("MYPVPREFIX") + "13ANDOR1:"
+pvPrefixGalil  = os.getenv("MYPVPREFIX") + "MOT:DMC01:"
+pvprefixCamera = os.getenv("MYPVPREFIX") + "13ANDOR1:"
 
-pvPrefixGalilCrate  = "IMAT:SALVATO:MOT:DMC01:"
-pvPrefixGalilMotor  = "IMAT:SALVATO:MOT:"
-pvprefixCamera      = "NUR:ADMINISTRATOR:13ANDOR1:"
+#pvPrefixGalilCrate  = "IMAT:SALVATO:MOT:DMC01:"
+#pvPrefixGalilMotor  = "IMAT:SALVATO:MOT:"
+#pvprefixCamera      = "NUR:ADMINISTRATOR:13ANDOR1:"
 
 exposureTimeSeconds   = 0.003
 ADImageSingle         = 0

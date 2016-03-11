@@ -53,11 +53,11 @@ set_requestfile_path("$(TOP)/iocBoot/$(IOC)", "autosave")
 set_requestfile_path("$(ADANDORISTAR)", "andorIstarApp/Db")
 set_requestfile_path("$(ADCORE)", "ADApp/Db")
 
-# Is the path needed in Windows format ????
-set_savefile_path("C:\EPICS\support\areaDetector\master\ADAndorIstar\iocs\andorIstarIOC\iocBoot\iocAndorIstar\autosave")
+#
+set_savefile_path("$(ADANDORISTAR)/iocs/andorIstarIOC/iocBoot/iocAndorIstar/autosave")
 
-# Again: is the path needed in Windows format ????
-set_pass1_restoreFile("C:\EPICS\support\areaDetector\master\ADAndorIstar\iocs\andorIstarIOC\iocBoot\iocAndorIstar\autosave\auto_settings.sav", "P=$(PREFIX)")
+#
+set_pass1_restoreFile("$(ADANDORISTAR)/iocs/andorIstarIOC/iocBoot/iocAndorIstar/autosave/auto_settings.sav", "P=$(PREFIX)")
 #
 
 #asynSetTraceMask("$(PORT)",0,3)
