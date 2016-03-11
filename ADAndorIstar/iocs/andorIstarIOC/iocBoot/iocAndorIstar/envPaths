@@ -1,6 +1,6 @@
 epicsEnvSet("ARCH",          "win32-x86")
 epicsEnvSet("IOC",           "iocAndorIstar")
-epicsEnvSet("EPICS_ROOT",    "C:/Instrument/Apps/EPICS")
+epicsEnvSet("EPICS_ROOT",    "C:/EPICS")
 epicsEnvSet("EPICS_BASE",    "$(EPICS_ROOT)/base/master")
 epicsEnvSet("SUPPORT",       "$(EPICS_ROOT)/support")
 epicsEnvSet("ISISSUPPORT",   "$(EPICS_ROOT)/ISIS")

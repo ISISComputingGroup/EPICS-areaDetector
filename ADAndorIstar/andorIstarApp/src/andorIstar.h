@@ -38,6 +38,9 @@
 #define AndorDDGInsertionDelayString       "DDG_INSERTION_DELAY"
 #define AndorDDGTriggerModeString          "ANDOR_DDG_TRIGGER_MODE"
 #define AndorGateModeString                "ANDOR_GATE_MODE"
+// (Gabriele Salvato) Internal Focus Calculation
+#define EnableFocusCalculationString       "ENABLE_FOCUS_CALCULATION"
+#define FocusValueString                   "FOCUS_VALUE"
 // (Gabriele Salvato) Fits_File_Header name including path 
 #define FitsFileHeaderFullFileNameString   "FITS_HEADER_FILE_NAME"
 // (Gabriele Salvato) end
@@ -107,7 +110,7 @@ class AndorIstar : public ADDriver {
   int AndorAccumulatePeriod;
   int AndorPreAmpGain;
   int AndorAdcSpeed;
-	int AndorReadMode;
+  int AndorReadMode;
   // (Gabriele Salvato) MCP (Image Intensifier) and DDG (Digital Delay Generator) 
   int AndorMCPGain;
   int AndorDDGGateDelay;
@@ -115,7 +118,10 @@ class AndorIstar : public ADDriver {
   int AndorDDGIOC;
   int AndorDDGInsertionDelay;
   int AndorDDGTriggerMode;
-	int AndorGateMode;
+  int AndorGateMode;
+  // (Gabriele Salvato) Internal Focus Calculation
+  int EnableFocusCalculation;
+  int FocusValue;
   // (Gabriele Salvato) Fits File Header Name including path 
   int FitsFileHeaderFullFileName;
   #define LAST_ANDOR_PARAM FitsFileHeaderFullFileName
@@ -132,6 +138,7 @@ class AndorIstar : public ADDriver {
   // (Gabriele Salvato) To save in ISIS FITS Format 
   unsigned int SaveAsFitsFile(char *fullFileName, int FITSType);
   int WriteKeys(char *fullFileName, int* iStatus);
+  double ComputeFocusMetric(epicsUInt16* pImg, epicsInt32 n_columns, epicsInt32 n_rows);
   // (Gabriele Salvato) end
   /**
    * Additional image mode to those in ADImageMode_t
@@ -234,7 +241,7 @@ class AndorIstar : public ADDriver {
   int mLowMCPGain;
   int mHighMCPGain;
   // (Gabriele Salvato) end
-  
+
   // Shamrock spectrometer ID
   int mShamrockId;
 

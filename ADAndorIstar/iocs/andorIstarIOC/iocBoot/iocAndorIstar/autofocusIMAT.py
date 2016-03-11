@@ -8,8 +8,12 @@ import sys
 import os
 import math
 
-pvPrefixGalil  = os.getenv("MYPVPREFIX") + "MOT:DMC01:"
-pvprefixCamera = os.getenv("MYPVPREFIX") + "13ANDOR1:"
+#pvPrefixGalil  = os.getenv("MYPVPREFIX") + "MOT:DMC01:"
+#pvprefixCamera = os.getenv("MYPVPREFIX") + "13ANDOR1:"
+
+pvPrefixGalilCrate  = "IMAT:SALVATO:MOT:DMC01:"
+pvPrefixGalilMotor  = "IMAT:SALVATO:MOT:"
+pvprefixCamera      = "NUR:ADMINISTRATOR:13ANDOR1:"
 
 exposureTimeSeconds   = 0.003
 ADImageSingle         = 0
@@ -17,9 +21,6 @@ ARImage               = 4
 ATInternal            = 0
 AGGateOnContinuously  = 3
 GainDDG               = 0
-
-#pvPrefixGalil = "IMAT-PC:salvato:MOT:DMC01:"
-#pvprefixCamera = "NUR:Administrator:13ANDOR1:"
 
 # Process Variables we are interested in:
 # For iStar Camera
@@ -44,17 +45,17 @@ imageRowsPV                  = pvprefixCamera + "image1:ArraySize1_RBV"
 # 13ANDOR1:Focus1:EnableCallback
 
 # For Newport Lens Carrier
-pvLensCarrierVMAX = pvPrefixGalil + "MTR0101.VMAX"
-pvLensCarrierCNEN = pvPrefixGalil + "MTR0101.CNEN"
-pvLensCarrierWLP  = pvPrefixGalil + "MTR0101_WLP_CMD"
-pvLensCarrierHOMR = pvPrefixGalil + "MTR0101.HOMR"
-pvLensCarrierDMOV = pvPrefixGalil + "MTR0101.DMOV"
-pvLensCarrierAPOS = pvPrefixGalil + "MTR0101.VAL"
-pvLensCarrierMRES = pvPrefixGalil + "MTR0101.MRES"
+pvLensCarrierVMAX = pvPrefixGalilMotor + "MTR0101_VMAX_SP"
+pvLensCarrierCNEN = pvPrefixGalilMotor + "MTR0101.CNEN"
+pvLensCarrierWLP  = pvPrefixGalilMotor + "MTR0101_WLP_CMD"
+pvLensCarrierHOMR = pvPrefixGalilMotor + "MTR0101.HOMR"
+pvLensCarrierDMOV = pvPrefixGalilMotor + "MTR0101.DMOV"
+pvLensCarrierAPOS = pvPrefixGalilMotor + "MTR0101.VAL"
+pvLensCarrierMRES = pvPrefixGalilMotor + "MTR0101.MRES"
 
 # For Laser light source
-pvLaserControlBit = pvPrefixGalil + "Galil0Bo0_CMD"
-pvLaserStatusBit  = pvPrefixGalil + "Galil0Bo0_STATUS.VAL"
+pvLaserControlBit = pvPrefixGalilCrate + "Galil0Bo0_CMD"
+pvLaserStatusBit  = pvPrefixGalilCrate + "Galil0Bo0_STATUS.VAL"
 
 
 #Create PVs
@@ -138,9 +139,9 @@ def initPVs():
 	imageCallbaks.put(1)       # Ensure Image Callbacks are enabled
 
 	laserControlBit.put(0)    # Ensure Laser is switched off
+	lensCarrierMRES.put(0.005)# mm per step
 	lensCarrierVMAX.put(4.0)  # Max speed of Lenses in mm/s
 	lensCarrierWLP.put("Off") # No Wrong Limits Protection
-	lensCarrierMRES.put(0.005)# mm per step
 	return True
 
 	
@@ -225,7 +226,9 @@ def goldenSearch(_x0, _x3, _Tolerance):
 	laserControlBit.put(0)
 	nImageRows    = imageRows.get()
 	nImageColumns = imageColumns.get()
+	print("Getting the image")
 	image = list(imageData.get())
+	print("Got the image")
 	f1 = -focusMetric(image, nImageRows, nImageColumns)
 	#f1 = f(x1)#fake value for testing purpose
 	print ("At position %f Focus value is %f" % (x1, -f1))
@@ -311,6 +314,7 @@ def main():
 		print ("Lens carrier at Home: Start focusing !")
 		goldenSearch(xMin, xMax, xTol)
 	except:
+		print("Got an Exception") 
 		pass
 		
 if __name__ == "__main__":

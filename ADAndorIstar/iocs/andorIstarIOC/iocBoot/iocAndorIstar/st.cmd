@@ -18,7 +18,7 @@ epicsEnvSet("NCHANS", "1024")
 #                  size_t maxMemory, 
 #                  int priority, 
 #                  int stackSize)
-andorIstarConfig("$(PORT)", "C:\AndoriStar", 0, 0, 0, 0, 0)
+andorIstarConfig("$(PORT)", "C:\Programmi\Andor iStar", 0, 0, 0, 0, 0)
 
 dbLoadRecords("$(ADCORE)/db/ADBase.template",           "P=$(PREFIX),R=cam1:,PORT=$(PORT),ADDR=0,TIMEOUT=10")
 dbLoadRecords("$(ADCORE)/db/NDFile.template",           "P=$(PREFIX),R=cam1:,PORT=$(PORT),ADDR=0,TIMEOUT=10")
@@ -54,10 +54,10 @@ set_requestfile_path("$(ADANDORISTAR)", "andorIstarApp/Db")
 set_requestfile_path("$(ADCORE)", "ADApp/Db")
 
 # Is the path needed in Windows format ????
-set_savefile_path("C:\Instrument\Apps\EPICS\support\areaDetector\master\ADAndorIstar\iocs\andorIstarIOC\iocBoot\iocAndorIstar\autosave")
+set_savefile_path("C:\EPICS\support\areaDetector\master\ADAndorIstar\iocs\andorIstarIOC\iocBoot\iocAndorIstar\autosave")
 
 # Again: is the path needed in Windows format ????
-set_pass1_restoreFile("C:\Instrument\Apps\EPICS\support\areaDetector\master\ADAndorIstar\iocs\andorIstarIOC\iocBoot\iocAndorIstar\autosave\auto_settings.sav", "P=$(PREFIX)")
+set_pass1_restoreFile("C:\EPICS\support\areaDetector\master\ADAndorIstar\iocs\andorIstarIOC\iocBoot\iocAndorIstar\autosave\auto_settings.sav", "P=$(PREFIX)")
 #
 
 #asynSetTraceMask("$(PORT)",0,3)

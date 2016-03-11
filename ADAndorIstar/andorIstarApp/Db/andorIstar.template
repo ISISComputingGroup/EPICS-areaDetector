@@ -8,6 +8,33 @@
 # Gabriele Salvato added support for Fits file header
 # February 2016
 
+
+# (Gabriele Salvato) EnableFocusCalculation
+record(bo, "$(P)$(R)EnableFocusCalculation")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))ENABLE_FOCUS_CALCULATION")
+    field(ZNAM, "No")
+    field(ONAM, "Yes")
+}
+
+record(bi, "$(P)$(R)EnableFocusCalculation_RBV")
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))ENABLE_FOCUS_CALCULATION")
+    field(ZNAM, "No")
+    field(ONAM, "Yes")
+    field(SCAN, "I/O Intr")
+}
+
+record(ai, "$(P)$(R)FocusValue_RBV")
+{
+   field(DTYP, "asynFloat64")
+   field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))FOCUS_VALUE")
+   field(PREC, "5")
+   field(SCAN, "I/O Intr")
+}
  
 # These are the records that we modify from NDFile.template
 record(mbbo, "$(P)$(R)FileFormat")

@@ -156,19 +156,21 @@ AndorIstar::AndorIstar(const char *portName, const char *installPath, int shamro
   createParam(AndorAccumulatePeriodString,      asynParamFloat64,   &AndorAccumulatePeriod);
   createParam(AndorPreAmpGainString,              asynParamInt32,   &AndorPreAmpGain);
   createParam(AndorAdcSpeedString,                asynParamInt32,   &AndorAdcSpeed);
-	createParam(AndorReadModeString,                asynParamInt32,   &AndorReadMode);
+	createParam(AndorReadModeString,              asynParamInt32,   &AndorReadMode);
   
   // (Gabriele Salvato) create parameters for the iStar Micro Channel Plate image intensifier
   createParam(AndorMCPGainString,                 asynParamInt32,   &AndorMCPGain);
   
   // (Gabriele Salvato) create parameters for the iStar DDG
-  createParam(AndorDDGGateDelayString,            asynParamFloat64, &AndorDDGGateDelay);
-  createParam(AndorDDGGateWidthString,            asynParamFloat64, &AndorDDGGateWidth);
+  createParam(AndorDDGGateDelayString,          asynParamFloat64,   &AndorDDGGateDelay);
+  createParam(AndorDDGGateWidthString,          asynParamFloat64,   &AndorDDGGateWidth);
   createParam(AndorDDGIOCString,                  asynParamInt32,   &AndorDDGIOC);
   createParam(AndorDDGInsertionDelayString,       asynParamInt32,   &AndorDDGInsertionDelay);
   createParam(AndorDDGTriggerModeString,          asynParamInt32,   &AndorDDGTriggerMode);
- 	createParam(AndorGateModeString,                asynParamInt32,   &AndorGateMode);
-
+ 	createParam(AndorGateModeString,              asynParamInt32,   &AndorGateMode);
+  // (Gabriele Salvato) Internal Focus Calculation
+  createParam(EnableFocusCalculationString,       asynParamInt32,   &EnableFocusCalculation);
+  createParam(FocusValueString,                 asynParamFloat64,   &FocusValue);
   // (Gabriele Salvato) create parameters for the Fits File Header Path and Name
   createParam(FitsFileHeaderFullFileNameString,   asynParamOctet,   &FitsFileHeaderFullFileName);
   // (Gabriele Salvato) end
@@ -276,6 +278,8 @@ AndorIstar::AndorIstar(const char *portName, const char *installPath, int shamro
   // (Gabriele Salvato)
   status |= setIntegerParam(ADReverseX, 0);
   status |= setIntegerParam(ADReverseY, 0);
+  // (Gabriele Salvato)
+  status |= setIntegerParam(EnableFocusCalculation, 0);
   // (Gabriele Salvato)
   status |= setStringParam(FitsFileHeaderFullFileName, ".\\FitsHeaderParameters.txt");  
   // (Gabriele Salvato) end
@@ -1337,6 +1341,31 @@ AndorIstar::setupAcquisition() {
 }
 
 
+double
+AndorIstar::ComputeFocusMetric(epicsUInt16* pImg, epicsInt32 n_columns, epicsInt32 n_rows) {
+  double dContrast = 0.0;
+  double gXY; 
+  epicsUInt16 *pRow, *pRowM1, *pRowP1;
+
+  for(int j=1; j<n_rows-2; j++) {
+    pRowM1 = pImg+(j-1)*n_columns;
+    pRow   = pImg+j*n_columns;
+    pRowP1 = pImg+(j+1)*n_columns;
+
+    // Contrast Based
+    // Xu et al, Robust Automatic Focus Algorithm for Low Contrast Images Using a New Contrast Measure, Sensors 2011, 11, 8281 8294
+    for(int k=1; k<n_columns-2; k++) {
+      gXY  = fabs((*(pRow+k)-(*(pRow+k-1)))/65536.0);
+      gXY += fabs((*(pRow+k)-(*(pRow+k+1)))/65536.0);
+      gXY += fabs((*(pRow+k)-(*(pRowM1+k)))/65536.0);
+      gXY += fabs((*(pRow+k)-(*(pRowP1+k)))/65536.0);
+      dContrast += gXY*gXY;
+    }
+  }
+  return dContrast;
+}
+
+
 /**
  * Do data readout from the detector. Meant to be run in own thread.
  */
@@ -1351,6 +1380,7 @@ AndorIstar::dataTask(void) {
   epicsInt32 imageCounter;
   epicsInt32 arrayCallbacks;
   epicsInt32 sizeX, sizeY;
+  epicsInt32 focusCalculate;
   NDDataType_t dataType;
   int itemp;
   at_32 firstImage, lastImage;
@@ -1439,6 +1469,28 @@ AndorIstar::dataTask(void) {
         asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW,
           "%s:%s:, firstImage=%ld, lastImage=%ld\n",
           driverName, functionName, (long)firstImage, (long)lastImage);
+		  
+		// (Gabriele Salvato) Focus value Calculation 
+        getIntegerParam(EnableFocusCalculation, &focusCalculate);
+		if((focusCalculate) && (dataType == NDUInt16)) {
+          dims[0] = sizeX;
+          dims[1] = sizeY;
+          epicsUInt16* pImage = (epicsUInt16*) malloc(sizeX*sizeY*sizeof(epicsUInt16));
+		  if(pImage) { 
+		    asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW, 
+	  		  "%s:%s:, GetImages16(%d, %d, %p, %d, %p, %p)\n", 
+			  driverName, functionName, lastImage, lastImage, pArray->pData, 
+			  sizeX*sizeY, &validFirst, &validLast);
+		    checkStatus(GetImages16(lastImage, lastImage, (epicsUInt16*)pImage, 
+			  					    sizeX*sizeY, &validFirst, &validLast));
+		  }
+		  double fv = ComputeFocusMetric(pImage, sizeX, sizeY);
+		  //printf("Focus Value = %g\n", fv);
+          setDoubleParam (FocusValue, fv);
+		  callParamCallbacks();
+		  free(pImage);
+		}
+		  
         for (i=firstImage; i<=lastImage; i++) {
           // Update counters
           getIntegerParam(NDArrayCounter, &imageCounter);
