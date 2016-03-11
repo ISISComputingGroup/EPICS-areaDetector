@@ -24,6 +24,7 @@ GainDDG               = 0
 
 # Process Variables we are interested in:
 # For iStar Camera
+
 cameraStatusPV               = pvprefixCamera + "cam1:DetectorState_RBV"
 cameraStartAcquirePV         = pvprefixCamera + "cam1:Acquire"
 cameraExposureTimePV         = pvprefixCamera + "cam1:AcquireTime"
@@ -33,13 +34,15 @@ cameraReadModePV             = pvprefixCamera + "cam1:AndorReadMode"
 cameraTriggerModePV          = pvprefixCamera + "cam1:TriggerMode"
 cameraGateModePV             = pvprefixCamera + "cam1:AndorGateMode"
 cameraMCPGainPV              = pvprefixCamera + "cam1:AndorMCPGain"
+cameraEnableFocusPV          = pvprefixCamera + "cam1:EnableFocusCalculation"
+cameraFocusValuePV           = pvprefixCamera + "cam1:FocusValue_RBV"
 
 imageCallbacksPV             = pvprefixCamera + "image1:EnableCallbacks"
 imageDataPV                  = pvprefixCamera + "image1:ArrayData"
 imageColumnsPV               = pvprefixCamera + "image1:ArraySize0_RBV"
 imageRowsPV                  = pvprefixCamera + "image1:ArraySize1_RBV"
 
-# For focusing with the focusing plugin....(sometime in the future...)
+# For focusing with the focusing plugin....(sometime in the future.?.)
 # 13ANDOR1:Focus:ComputeFocusMetrics
 # 13ANDOR1:Focus:FocusValue_RBV
 # 13ANDOR1:Focus1:EnableCallback
@@ -68,6 +71,8 @@ cameraReadMode         = PV(cameraReadModePV)
 cameraTriggerMode      = PV(cameraTriggerModePV)
 cameraGateMode         = PV(cameraGateModePV)
 cameraMCPGain          = PV(cameraMCPGainPV)
+cameraEnableFocus      = PV(cameraEnableFocusPV)
+cameraFocusValue       = PV(cameraFocusValuePV)
 
 imageCallbaks          = PV(imageCallbacksPV)
 imageData              = PV(imageDataPV)
@@ -106,6 +111,10 @@ def connectPVs():
 			raise ConnectionError("Error: cameraMCPGain not connected")
 		if(cameraArraycallbacks.wait_for_connection() == False) :
 			raise ConnectionError("Error: cameraArraycallbacks not connected")
+		if(cameraEnableFocus.wait_for_connection() == False) :
+			raise ConnectionError("Error: cameraEnableFocus not connected")
+		if(cameraFocusValue.wait_for_connection() == False) :
+			raise ConnectionError("Error: cameraFocusValue not connected")
 			
 		if(imageCallbaks.wait_for_connection() == False) :
 			raise ConnectionError("Error: imageCallbaks not connected")
@@ -135,7 +144,7 @@ def initPVs():
 	cameraTriggerMode.put(ATInternal)
 	cameraGateMode.put(AGGateOnContinuously)
 	cameraArraycallbacks.put(1)# Ensure Array Callbacks are enabled
-	
+	cameraEnableFocus.put(1)
 	imageCallbaks.put(1)       # Ensure Image Callbacks are enabled
 
 	laserControlBit.put(0)    # Ensure Laser is switched off
@@ -224,13 +233,12 @@ def goldenSearch(_x0, _x3, _Tolerance):
 	cameraStartAcquire.put(1)
 	waitNewimageReady()
 	laserControlBit.put(0)
-	nImageRows    = imageRows.get()
-	nImageColumns = imageColumns.get()
-	print("Getting the image")
-	image = list(imageData.get())
-	print("Got the image")
-	f1 = -focusMetric(image, nImageRows, nImageColumns)
+	#nImageRows    = imageRows.get()
+	#nImageColumns = imageColumns.get()
+	#image = list(imageData.get())
+	#f1 = -focusMetric(image, nImageRows, nImageColumns)
 	#f1 = f(x1)#fake value for testing purpose
+	f1 = -cameraFocusValue.get()
 	print ("At position %f Focus value is %f" % (x1, -f1))
 
 	lensCarrierCNEN.put("Enable")
@@ -241,9 +249,10 @@ def goldenSearch(_x0, _x3, _Tolerance):
 	cameraStartAcquire.put(1)
 	waitNewimageReady()
 	laserControlBit.put(0)
-	image = list(imageData.get())
-	f2 = -focusMetric(image, nImageRows, nImageColumns)
+	#image = list(imageData.get())
+	#f2 = -focusMetric(image, nImageRows, nImageColumns)
 	#f2 = f(x2)#fake value for testing purpose
+	f2 = -cameraFocusValue.get()
 	print ("At position %f Focus value is %f" % (x2, -f2))
 
 	while (abs(x3-x0) > Tolerance) :
@@ -260,9 +269,10 @@ def goldenSearch(_x0, _x3, _Tolerance):
 			cameraStartAcquire.put(1)
 			waitNewimageReady()
 			laserControlBit.put(0)
-			image = list(imageData.get())
-			f2 = -focusMetric(image, nImageRows, nImageColumns)
+			#image = list(imageData.get())
+			#f2 = -focusMetric(image, nImageRows, nImageColumns)
 			#f2 = f(x2) #fake value for testing purpose
+			f2 = -cameraFocusValue.get()
 			print ("At position %f Focus value is %f" % (x2, -f2))
 		else :
 			x3 = x2
@@ -277,9 +287,10 @@ def goldenSearch(_x0, _x3, _Tolerance):
 			cameraStartAcquire.put(1)
 			waitNewimageReady()
 			laserControlBit.put(0)
-			image = list(imageData.get())
-			f1 = -focusMetric(image, nImageRows, nImageColumns)
+			#image = list(imageData.get())
+			#f1 = -focusMetric(image, nImageRows, nImageColumns)
 			#f1 = f(x1) #fake value for testing purpose
+			f1 = -cameraFocusValue.get()
 			print ("At position %f Focus value is %f" % (x1, -f1))
 
 	lensCarrierCNEN.put("Enable")
@@ -313,6 +324,7 @@ def main():
 			print (".", end="")
 		print ("Lens carrier at Home: Start focusing !")
 		goldenSearch(xMin, xMax, xTol)
+		cameraEnableFocus.put(0)
 	except:
 		print("Got an Exception") 
 		pass
