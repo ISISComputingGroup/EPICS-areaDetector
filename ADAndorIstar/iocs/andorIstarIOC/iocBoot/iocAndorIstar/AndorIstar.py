@@ -166,7 +166,7 @@ def main():
 
 	print("Start acquiring", end="")
 	try:
-		for i in (0, 9) :
+		for i in range(0, 9) :
 			IMATCamera.pvAcquire.put(1)
 			while (IMATCamera.pvStatus.get() != 1) :
 				pass
