@@ -4,7 +4,7 @@ errlogInit(20000)
 dbLoadDatabase("$(TOP)/dbd/andorIstarApp.dbd")
 andorIstarApp_registerRecordDeviceDriver(pdbbase) 
 
-epicsEnvSet("PREFIX", "$(MYPVPREFIX)13ANDOR1:")
+epicsEnvSet("PREFIX", "$(MYPVPREFIX)ANDOR1:")
 epicsEnvSet("PORT",   "ANDOR")
 epicsEnvSet("QSIZE",  "20")
 epicsEnvSet("XSIZE",  "1024")
@@ -18,7 +18,7 @@ epicsEnvSet("NCHANS", "1024")
 #                  size_t maxMemory, 
 #                  int priority, 
 #                  int stackSize)
-andorIstarConfig("$(PORT)", "C:\Programmi\Andor iStar", 0, 0, 0, 0, 0)
+andorIstarConfig("$(PORT)", "C:\AndoriStar", 0, 0, 0, 0, 0)
 
 dbLoadRecords("$(ADCORE)/db/ADBase.template",           "P=$(PREFIX),R=cam1:,PORT=$(PORT),ADDR=0,TIMEOUT=10")
 dbLoadRecords("$(ADCORE)/db/NDFile.template",           "P=$(PREFIX),R=cam1:,PORT=$(PORT),ADDR=0,TIMEOUT=10")

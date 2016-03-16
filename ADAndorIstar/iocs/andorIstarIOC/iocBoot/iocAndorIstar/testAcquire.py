@@ -7,7 +7,7 @@ import os
 import time
 import sys
 
-pvprefixCamera = os.getenv("MYPVPREFIX") + "13ANDOR1:"
+pvprefixCamera = os.getenv("MYPVPREFIX") + "ANDOR1:"
 
 # Process Variables we are interested in
 cameraImageModePV            = pvprefixCamera + "cam1:ImageMode"
