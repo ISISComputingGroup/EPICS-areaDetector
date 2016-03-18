@@ -7,6 +7,7 @@ import time
 
 from CaChannel import CaChannel
 from CaChannel import CaChannelException
+import ca
 from ADDriver import ADDriver
 	
 	
@@ -58,11 +59,14 @@ class ADAndorIstar(ADDriver) :
 		self.FFSPE  = 6
 		
 		# List of Data Types
-		self.DTUInt16 = 3
-		self.DTUInt32 = 5
+		self.DTUInt16 = 0
+		self.DTUInt32 = 1
 			
-		self.startImageNumber = 0 # Will save the starting image number in a sequence of acquisitions
-		self.imagesToAcquire  = 1 # Will contain the number of images to acquire
+		self.nImageWritten      = 0 # Will save the number of images written
+		self.imagesToAcquire    = 1 # Will contain the number of images to acquire
+		self.acquisitionStarted = False
+		self.acquisitionPaused  = False
+		self.acquireDone        = False
 		
 		# Process Variables for the iStar Camera
 		self.pvArraycallbacks         = CaChannel(self.pvPrefixCamera + "ArrayCallbacks");          self.pvList.append(self.pvArraycallbacks)
@@ -75,6 +79,7 @@ class ADAndorIstar(ADDriver) :
 
 		self.pvFilePath               = CaChannel(self.pvPrefixCamera + "FilePath");                self.pvList.append(self.pvFilePath)
 		self.pvFilePath_RBV           = CaChannel(self.pvPrefixCamera + "FilePath_RBV");            self.pvList.append(self.pvFilePath_RBV)
+		self.pvFilePathExists_RBV     = CaChannel(self.pvPrefixCamera + "FilePathExists_RBV");      self.pvList.append(self.pvFilePathExists_RBV)
 		self.pvFileName               = CaChannel(self.pvPrefixCamera + "FileName");                self.pvList.append(self.pvFileName)
 		self.pvFileName_RBV           = CaChannel(self.pvPrefixCamera + "FileName_RBV");            self.pvList.append(self.pvFileName_RBV)
 		self.pvFileNumber             = CaChannel(self.pvPrefixCamera + "FileNumber");              self.pvList.append(self.pvFileNumber)
@@ -96,50 +101,74 @@ class ADAndorIstar(ADDriver) :
 		
 		try :
 			for pv in self.pvList[:] :
-				print("ADAndorIstar Connecting " + pv.pvname)
+				#print("ADAndorIstar Connecting " + pv.pvname)
 				pv.searchw()
+				
+			self.pvStatus.add_masked_array_event(
+				ca.dbf_type_to_DBR_STS(self.pvStatus.field_type()),
+				None,
+				ca.DBE_VALUE,
+				self.onStatusChanged)
 
 		except CaChannelException, e :
 			print("".join(e.args))
 			sys.exit(0)
 			
-	# def acquireDone(self, char_value, **kws) :
-		# if(self.pvStatus.get() != self.ASIdle) :
-			# print("Status= ", char_value)
-			# return
-		# print("Saving")
-		# self.pvWriteFile.put(1)
-		# self.presentFileNumber = self.pvFileNumber_RBV.get()
-		# if(self.presentFileNumber-self.startImageNumber >= self.imagesToAcquire) :
-			# self.pvStatus.clear_callbacks()
-			# print("Done acquisition")
-			# return
-		# print("Saved. Now Acquiring")
-		# self.pvAcquire.put(self.AAAcquire)
-		
+			
+	def onStatusChanged(self, epics_args, user_args) :
+		if(self.acquisitionStarted == False) :
+			return
+		try :
+			if(epics_args["pv_value"] != self.ASIdle) :
+				return
+			self.pvWriteFile.putw(1)
+			self.nImageWritten = self.nImageWritten + 1
+			if(self.nImageWritten >= self.imagesToAcquire) :
+				self.acquireDone = True
+				print(".")
+				print("Done Acquisition")
+				return
+			print(".", end="")
+			if(self.acquisitionPaused) :
+				return
+			self.pvAcquire.putw(self.AAAcquire)
+
+		except CaChannelException, e :
+			print("".join(e.args))
+			sys.exit(0)
+
+		except :
+			sys.exit(0)
+			
 		
 			
-	# def startAcquire(self, nImages=1) :
-		# if(nImages < 1) :
-			# print("Acquire ", nImages, "Are you kidding ?")
-			# return
-		# self.imagesToAcquire  = nImages
-		# filePath = self.pvFilePath_RBV.get(as_string=True)
-		# if(not os.path.isdir(filePath)) :
-			# print ("Error: Non existing or no path specified. Unable to start")
-			# return
-		# fileName = self.pvFileName_RBV.get(as_string=True)
-		# if(filePath == "") :
-			# print ("Error: No filename specified. Unable to start")
-			# return
-		# self.pvFileFormat.put(self.FFFITS) # Enforce Fits file format 
-		# fileTemplate = self.pvFileTemplate_RBV.get(as_string=True)
-		# if(fileTemplate == "") :
-			# self.pvFileTemplate.put("%s%s_%3.3d.fits") # Default format
-		# self.pvDataType.put(self.DTUInt16)
-		# self.startImageNumber = self.pvFileNumber_RBV.get()
-		# while(self.pvStatus.get() != self.ASIdle) : # Wait for the camera to be redy
-			# time.sleep(1)
-		# self.pvStatus.add_callback(self.acquireDone)
-		# self.pvAcquire.put(self.AAAcquire)
+	def startAcquire(self, nImages=1) :
+		if(nImages < 1) :
+			print("Acquire ", nImages, "Are you kidding me ?")
+			print("No Acquisition in progress")
+			return
+		self.imagesToAcquire  = nImages
+		while(self.pvStatus.getw() != self.ASIdle) : # Wait for the camera to be redy
+			time.sleep(1)
+		self.nImageWritten = 0
+		self.acquisitionStarted = True
+		self.acquireDone = False
+		self.pvAcquire.putw(self.AAAcquire)
+		print("Acquiring", end="")
+		
+		
+	def pauseAcquisition(self) : 
+		self.acquisitionPaused = True
+		
+		
+	def resumeAcquisition(self) : 
+		self.acquisitionPaused = False
+		self.pvAcquire.putw(self.AAAcquire)
+		
+		
+	def abortAcquisition(self) : 
+		self.acquisitionStarted = False
+		self.acquisitionPaused  = False
+		self.acquireDone        = True
+		self.pvAcquire.putw(self.AADone)
 		

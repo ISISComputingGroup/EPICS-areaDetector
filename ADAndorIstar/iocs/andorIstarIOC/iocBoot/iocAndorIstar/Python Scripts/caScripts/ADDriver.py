@@ -5,6 +5,7 @@ import sys
 
 from CaChannel import CaChannel
 from CaChannel import CaChannelException
+import ca
 
 		
 class ADDriver :
@@ -47,7 +48,7 @@ class ADDriver :
 				
 		try :
 			for pv in self.pvList[:] :
-				print("ADDriver   Connecting " + pv.pvname)
+				#print("ADDriver     Connecting " + pv.pvname)
 				pv.searchw()
 
 		except CaChannelException, e :
