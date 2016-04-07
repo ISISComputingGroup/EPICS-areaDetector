@@ -47,7 +47,7 @@ def initPVs(Camera):
 		
 def main():
 	print("Test program for acquiring Energy selective FITS Images")
-	IMATCamera = ADAndorIstar(os.getenv("MYPVPREFIX"), "ANDOR1:", "cam1:")
+	IMATCamera = ADAndorIstar(os.getenv("MYPVPREFIX"), "13ANDOR1:", "cam1:")
 	print("Initilizing PVs")
 	initPVs(IMATCamera)
 	if(IMATCamera.pvFilePathExists_RBV.getw() != 1) :

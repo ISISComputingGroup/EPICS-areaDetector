@@ -56,7 +56,7 @@ def initPVs(Camera):
 		
 def main():
 	print("Test program for acquiring 20 FITS Images")
-	IMATCamera = ADAndorIstar(os.getenv("MYPVPREFIX"), "ANDOR1:", "cam1:")
+	IMATCamera = ADAndorIstar(os.getenv("MYPVPREFIX"), "13ANDOR1:", "cam1:")
 	print("Initilizing PVs")
 	initPVs(IMATCamera)
 
@@ -65,18 +65,6 @@ def main():
 		sys.exit(0)
 		
 	IMATCamera.startAcquire(20)
-	time.sleep(30)
-
-	print("Pausing acquisition for 30s", end="")
-	IMATCamera.pauseAcquisition()
-	time.sleep(30)
-
-	print("Resuming acquisition", end="")
-	IMATCamera.resumeAcquisition()
-	time.sleep(30)
-
-	print("Aborting acquisition", end="")
-	IMATCamera.abortAcquisition()
 
 	while(IMATCamera.acquireDone != True) :
 		time.sleep(1)	

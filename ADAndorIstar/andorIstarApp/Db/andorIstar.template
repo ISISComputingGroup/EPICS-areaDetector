@@ -76,14 +76,13 @@ record(mbbi, "$(P)$(R)FileFormat_RBV")
 
 record(mbbo, "$(P)$(R)ImageMode")
 {
+    field(PINI, "YES")
    field(ZRST, "Single")
    field(ZRVL, "0")
    field(ONST, "Multiple")
    field(ONVL, "1")
    field(TWST, "Continuous")
    field(TWVL, "2")
-   field(THST, "Fast Kinetics")
-   field(THVL, "3")
    field(VAL,  "2")
 }
 
@@ -95,8 +94,6 @@ record(mbbi, "$(P)$(R)ImageMode_RBV")
    field(ONVL, "1")
    field(TWST, "Continuous")
    field(TWVL, "2")
-   field(THST, "Fast Kinetics")
-   field(THVL, "3")
    field(SCAN, "I/O Intr")
 }
 
@@ -108,12 +105,6 @@ record(mbbo, "$(P)$(R)TriggerMode")
    field(ONVL, "1")
    field(TWST, "External Start")
    field(TWVL, "6")
-   field(THST, "External Exposure")
-   field(THVL, "7")
-   field(FRST, "External FVP")
-   field(FRVL, "9")
-   field(FVST, "Software")
-   field(FVVL, "10")
 }
 
 record(mbbi, "$(P)$(R)TriggerMode_RBV")
@@ -124,12 +115,6 @@ record(mbbi, "$(P)$(R)TriggerMode_RBV")
    field(ONVL, "1")
    field(TWST, "External Start")
    field(TWVL, "6")
-   field(THST, "External Exposure")
-   field(THVL, "7")
-   field(FRST, "External FVP")
-   field(FRVL, "9")
-   field(FVST, "Software")
-   field(FVVL, "10")
 }
 
 record(mbbo, "$(P)$(R)DataType")
@@ -222,12 +207,8 @@ record(mbbo, "$(P)$(R)AndorReadMode")
 		field(ZRVL, "0")
     field(ONST, "Multi Track")
 		field(ONVL, "1")
-		field(TWST, "Random Track")
-		field(TWVL, "2")
-		field(THST, "Single Track")
-		field(THVL, "3")
-		field(FRST, "Image")
-		field(FRVL, "4")
+		field(TWST, "Image")
+		field(TWVL, "4")
 }
 
 record(mbbi, "$(P)$(R)AndorReadMode_RBV")
@@ -238,12 +219,9 @@ record(mbbi, "$(P)$(R)AndorReadMode_RBV")
 		field(ZRVL, "0")
     field(ONST, "Multi Track")
 		field(ONVL, "1")
-		field(TWST, "Random Track")
-		field(TWVL, "2")
-		field(THST, "Single Track")
-		field(THVL, "3")
-		field(FRST, "Image")
-		field(FRVL, "4")
+		field(TWST, "Image")
+		field(TWVL, "4")
+    field(SCAN, "I/O Intr")
 }
 
 # (Gabriele Salvato) AndorGateMode
@@ -282,6 +260,7 @@ record(mbbi, "$(P)$(R)AndorGateMode_RBV")
 		field(FRVL, "4")
 		field(FVST, "Gate using DDG")
 		field(FVVL, "5")
+    field(SCAN, "I/O Intr")
 }
 
 # (Gabriele Salvato) DDG Insertion Delay

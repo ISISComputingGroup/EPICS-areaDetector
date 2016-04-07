@@ -44,9 +44,6 @@ static const char *driverName = "AndorIstar";
 
 //Definitions of static class data members
 
-// Additional image mode to those in ADImageMode_t
-const epicsInt32 AndorIstar::AImageFastKinetics = ADImageContinuous+1;
-
 // List of acquisiton modes.
 const epicsUInt32 AndorIstar::AASingle = 1;
 const epicsUInt32 AndorIstar::AAAccumulate = 2;
@@ -59,9 +56,6 @@ const epicsUInt32 AndorIstar::AATimeDelayedInt = 9;
 const epicsUInt32 AndorIstar::ATInternal = 0;
 const epicsUInt32 AndorIstar::ATExternal = 1;
 const epicsUInt32 AndorIstar::ATExternalStart = 6;
-const epicsUInt32 AndorIstar::ATExternalExposure = 7;
-const epicsUInt32 AndorIstar::ATExternalFVB = 9;
-const epicsUInt32 AndorIstar::ATSoftware = 10;
 
 // List of detector status states
 const epicsUInt32 AndorIstar::ASIdle = DRV_IDLE;
@@ -1057,7 +1051,6 @@ AndorIstar::setupAcquisition() {
   int iFlipX, iFlipY;
   // end
   int FKmode = 4;
-  int FKOffset;
   AndorADCSpeed_t *pSpeed;
   static const char *functionName = "setupAcquisition";
   
@@ -1298,34 +1291,12 @@ AndorIstar::setupAcquisition() {
           driverName, functionName, mAcquirePeriod);
         checkStatus(SetKineticCycleTime(mAcquirePeriod));
         break;
-
-      case AImageFastKinetics:
-        asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW, 
-          "%s:%s:, SetAcquisitionMode(AAFastKinetics)\n", 
-          driverName, functionName);
-        checkStatus(SetAcquisitionMode(AAFastKinetics));
-        asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW, 
-          "%s:%s:, SetImage(%d,%d,%d,%d,%d,%d)\n", 
-          driverName, functionName, binX, binY, 1, maxSizeX, 1, maxSizeY);
-        checkStatus(SetImage(binX, binY, 1, maxSizeX, 1, maxSizeY));
-        FKOffset = maxSizeY - sizeY - minY;
-        asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW, 
-          "%s:%s:, SetFastKineticsEx(%d,%d,%f,%d,%d,%d,%d)\n", 
-          driverName, functionName, sizeY, numImages, mAcquireTime, FKmode, binX, binY, FKOffset);
-        checkStatus(SetFastKineticsEx(sizeY, numImages, mAcquireTime, FKmode, binX, binY, FKOffset));
-        setIntegerParam(NDArraySizeX, maxSizeX/binX);
-        setIntegerParam(NDArraySizeY, sizeY/binY);
-        break;
     }
     // Read the actual times
-    if (imageMode == AImageFastKinetics) {
-      checkStatus(GetFKExposureTime(&acquireTimeAct));
-    } else {
-      checkStatus(GetAcquisitionTimings(&acquireTimeAct, &accumulatePeriodAct, &acquirePeriodAct));
-      asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW,
-        "%s:%s:, GetAcquisitionTimings(exposure=%f, accumulate=%f, kinetic=%f)\n",
-        driverName, functionName, acquireTimeAct, accumulatePeriodAct, acquirePeriodAct);
-    }
+		checkStatus(GetAcquisitionTimings(&acquireTimeAct, &accumulatePeriodAct, &acquirePeriodAct));
+		asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW,
+			"%s:%s:, GetAcquisitionTimings(exposure=%f, accumulate=%f, kinetic=%f)\n",
+			driverName, functionName, acquireTimeAct, accumulatePeriodAct, acquirePeriodAct);
     setDoubleParam(ADAcquireTime, acquireTimeAct);
     setDoubleParam(ADAcquirePeriod, acquirePeriodAct);
     setDoubleParam(AndorAccumulatePeriod, accumulatePeriodAct);

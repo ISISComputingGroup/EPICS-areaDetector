@@ -63,6 +63,7 @@ class ADAndorIstar(ADDriver) :
 		self.DTUInt16 = 0
 		self.DTUInt32 = 1
 			
+		# Local variables
 		self.nImageWritten      = 0 # Will save the number of images written
 		self.imagesToAcquire    = 1 # Will contain the number of images to acquire
 		self.acquisitionStarted = False
@@ -127,7 +128,7 @@ class ADAndorIstar(ADDriver) :
 			if(self.nImageWritten >= self.imagesToAcquire) :
 				self.acquireDone = True
 				print(".")
-				print("Done Acquisition")
+				print("Acquisition Done")
 				return
 			print(".", end="")
 			if(self.acquisitionPaused) :
