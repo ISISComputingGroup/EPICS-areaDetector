@@ -17,3 +17,4 @@ relPaths.sh
 *.swp
 NULL
 /documentation/html
+.project
