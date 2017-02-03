@@ -1,4 +1,0 @@
-
-FILE_PATTERNS += Makefile *.db
-INPUT += ../../example/exampleApp/src ../../db
-#IMAGE_PATH=../images

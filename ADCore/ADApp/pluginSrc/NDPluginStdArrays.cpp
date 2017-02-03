@@ -13,13 +13,11 @@
 #include <string.h>
 #include <stdio.h>
 
-#include <epicsThread.h>
-#include <epicsString.h>
-#include <epicsTimer.h>
-#include <epicsMutex.h>
-#include <epicsEvent.h>
+#include <epicsTypes.h>
 #include <epicsMessageQueue.h>
-#include <cantProceed.h>
+#include <epicsThread.h>
+#include <epicsEvent.h>
+#include <epicsTime.h>
 #include <iocsh.h>
 
 #include <asynDriver.h>
@@ -287,6 +285,10 @@ NDPluginStdArrays::NDPluginStdArrays(const char *portName, int queueSize, int bl
     /* Set the plugin type string */    
     setStringParam(NDPluginDriverPluginType, "NDPluginStdArrays");
 
+    // Disable ArrayCallbacks.  
+    // This plugin currently does not do array callbacks, so make the setting reflect the behavior
+    setIntegerParam(NDArrayCallbacks, 0);
+
     /* Try to connect to the NDArray port */
     connectToArrayPort();
 }
@@ -296,9 +298,9 @@ extern "C" int NDStdArraysConfigure(const char *portName, int queueSize, int blo
                                     const char *NDArrayPort, int NDArrayAddr, size_t maxMemory,
                                     int priority, int stackSize)
 {
-    new NDPluginStdArrays(portName, queueSize, blockingCallbacks, NDArrayPort, NDArrayAddr, maxMemory,
-                          priority, stackSize);
-    return(asynSuccess);
+    NDPluginStdArrays *pPlugin = new NDPluginStdArrays(portName, queueSize, blockingCallbacks, NDArrayPort, NDArrayAddr, maxMemory,
+                                                       priority, stackSize);
+    return pPlugin->start();
 }
 
 

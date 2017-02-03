@@ -13,8 +13,12 @@
 #include <math.h>
 #include <time.h>
 
-#include <epicsString.h>
-#include <epicsMutex.h>
+#include <cantProceed.h>
+#include <epicsTypes.h>
+#include <epicsMessageQueue.h>
+#include <epicsThread.h>
+#include <epicsEvent.h>
+#include <epicsTime.h>
 #include <iocsh.h>
 
 #include <asynDriver.h>
@@ -102,10 +106,10 @@ void NDPluginOverlay::doOverlayT(NDArray *pArray, NDOverlay_t *pOverlay)
                         setPixel(&pRow[ix*this->arrayInfo.xStride], pOverlay);
                     }
                 } else {
-                    xwidemin_line = (pOverlay->PositionX - xwide)*this->arrayInfo.xStride;
-                    xwidemax_line = (pOverlay->PositionX + xwide)*this->arrayInfo.xStride;
+                    xwidemin_line = pOverlay->PositionX - xwide;
+                    xwidemax_line = pOverlay->PositionX + xwide;
                     for (size_t line=xwidemin_line; line<=xwidemax_line; ++line) {
-                        setPixel<epicsType>(&pRow[line], pOverlay);
+                        setPixel(&pRow[line*this->arrayInfo.xStride], pOverlay);
                     }
                 }
             }
@@ -385,6 +389,10 @@ NDPluginOverlay::NDPluginOverlay(const char *portName, int queueSize, int blocki
     /* Set the plugin type string */
     setStringParam(NDPluginDriverPluginType, "NDPluginOverlay");
 
+    // Enable ArrayCallbacks.  
+    // This plugin currently ignores this setting and always does callbacks, so make the setting reflect the behavior
+    setIntegerParam(NDArrayCallbacks, 1);
+
     /* Try to connect to the array port */
     connectToArrayPort();
 }
@@ -395,9 +403,9 @@ extern "C" int NDOverlayConfigure(const char *portName, int queueSize, int block
                                  int maxBuffers, size_t maxMemory,
                                  int priority, int stackSize)
 {
-    new NDPluginOverlay(portName, queueSize, blockingCallbacks, NDArrayPort, NDArrayAddr, maxOverlays,
-                        maxBuffers, maxMemory, priority, stackSize);
-    return(asynSuccess);
+    NDPluginOverlay *pPlugin = new NDPluginOverlay(portName, queueSize, blockingCallbacks, NDArrayPort, NDArrayAddr, maxOverlays,
+                                                   maxBuffers, maxMemory, priority, stackSize);
+    return pPlugin->start();
 }
 
 /* EPICS iocsh shell commands */

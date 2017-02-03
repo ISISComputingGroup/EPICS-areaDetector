@@ -24,7 +24,13 @@ files respectively, in the configure/ directory of the appropriate release of th
 Release Notes
 =============
 
-R2-0
+R2-1 (April 16, 2015)
+----
+* Updated to SDK version 3.10.3 on Windows and Linux.
+* Changes in st.cmd for compatibility with ADCore R2-2.
+
+
+R2-0 (April 4, 2014)
 ----
 * Moved the repository to [Github](https://github.com/areaDetector/ADAndor3).
 * Re-organized the directory structure to separate the driver library from the example IOC application.
@@ -35,3 +41,4 @@ R1-9-1 and earlier
 ------------------
 Release notes are part of the
 [areaDetector Release Notes](http://cars.uchicago.edu/software/epics/areaDetectorReleaseNotes.html).
+

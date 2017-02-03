@@ -6,7 +6,7 @@ release 0
 x 154
 y 55
 w 390
-h 640
+h 665
 font "helvetica-medium-r-18.0"
 ctlFont "helvetica-medium-r-8.0"
 btnFont "helvetica-medium-r-18.0"
@@ -68,7 +68,7 @@ release 0
 x 5
 y 40
 w 380
-h 505
+h 530
 
 beginGroup
 
@@ -81,7 +81,7 @@ release 0
 x 5
 y 40
 w 380
-h 505
+h 530
 fgColor index 14
 bgColor index 0
 topShadowColor index 0
@@ -107,7 +107,7 @@ major 4
 minor 0
 release 0
 x 5
-y 550
+y 575
 w 380
 h 85
 
@@ -121,7 +121,7 @@ major 4
 minor 0
 release 0
 x 5
-y 550
+y 575
 w 380
 h 85
 lineColor index 14
@@ -136,7 +136,7 @@ major 4
 minor 0
 release 0
 x 22
-y 580
+y 605
 w 140
 h 20
 font "helvetica-medium-r-8.0"
@@ -155,7 +155,7 @@ major 4
 minor 0
 release 0
 x 138
-y 555
+y 580
 w 150
 h 20
 font "helvetica-medium-r-8.0"
@@ -174,7 +174,7 @@ major 4
 minor 0
 release 0
 x 82
-y 608
+y 633
 w 80
 h 20
 font "helvetica-medium-r-8.0"
@@ -197,7 +197,7 @@ major 4
 minor 0
 release 0
 x 5
-y 550
+y 575
 w 380
 h 85
 
@@ -211,7 +211,7 @@ major 4
 minor 0
 release 0
 x 172
-y 580
+y 605
 w 160
 h 20
 fgColor index 14
@@ -262,7 +262,7 @@ major 4
 minor 0
 release 0
 x 172
-y 607
+y 632
 w 160
 h 20
 fgColor index 14

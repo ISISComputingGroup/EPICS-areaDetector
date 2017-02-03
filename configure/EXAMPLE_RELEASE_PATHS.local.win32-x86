@@ -1,6 +1,9 @@
-# This file is included after RELEASE.local, and can override any of the definitions for a specific
+# This file is included after RELEASE_PATHS.local, and can override any of the definitions for a specific
 # EPICS target architecture
 
-EPICS_BASE    = H:/epics/base-3.14.12.4
 SUPPORT       = J:/epics/devel
-AREA_DETECTOR = J:/epics/devel/areaDetector-2-1
+AREA_DETECTOR = $(SUPPORT)/areaDetector-2-5
+EPICS_BASE    = H:/epics-devel/base-3.14.12.5
+
+# If CONFIG_SITE.local defines EPICS_V4=YES then define the path here
+EV4_BASE      = H:/epics-devel/epicsV4/pvCommonCPP

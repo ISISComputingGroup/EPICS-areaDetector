@@ -1,14 +1,14 @@
 
 file {
-	name="/home/epics/devel/areaDetector-2-0/ADCore/ADApp/op/adl/NDOverlayN.adl"
+	name="/local/DPbin/epics/epics_2015-08-31/synApps_5_8/support/areaDetector-2-3/ADCore-R2-3/ADApp/op/ui/autoconvert/../../adl/NDOverlayN.adl"
 	version=030107
 }
 display {
 	object {
-		x=241
-		y=55
-		width=975
-		height=330
+		x=92
+		y=127
+		width=980
+		height=332
 	}
 	clr=14
 	bclr=4
@@ -530,15 +530,54 @@ text {
 	}
 	textix="%Y-%m-%d %H:%M:%S.%03f"
 }
-composite {
+rectangle {
+	object {
+		x=655
+		y=40
+		width=315
+		height=255
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+	}
+}
+rectangle {
 	object {
 		x=335
 		y=40
 		width=315
 		height=255
 	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+	}
+}
+composite {
+	object {
+		x=345
+		y=45
+		width=285
+		height=245
+	}
 	"composite name"=""
 	children {
+		"text entry" {
+			object {
+				x=480
+				y=70
+				width=60
+				height=20
+			}
+			control {
+				chan="$(P)$(R)PositionX"
+				clr=14
+				bclr=51
+			}
+			limits {
+			}
+		}
 		text {
 			object {
 				x=515
@@ -580,21 +619,6 @@ composite {
 			}
 			textix="Position"
 			align="horiz. right"
-		}
-		"text entry" {
-			object {
-				x=480
-				y=70
-				width=60
-				height=20
-			}
-			control {
-				chan="$(P)$(R)PositionX"
-				clr=14
-				bclr=51
-			}
-			limits {
-			}
 		}
 		"text update" {
 			object {
@@ -639,18 +663,6 @@ composite {
 			}
 			format="string"
 			limits {
-			}
-		}
-		rectangle {
-			object {
-				x=335
-				y=40
-				width=315
-				height=255
-			}
-			"basic attribute" {
-				clr=14
-				fill="outline"
 			}
 		}
 		composite {
@@ -857,45 +869,13 @@ composite {
 }
 composite {
 	object {
-		x=655
-		y=40
-		width=315
-		height=255
+		x=665
+		y=45
+		width=285
+		height=245
 	}
 	"composite name"=""
 	children {
-		valuator {
-			object {
-				x=800
-				y=120
-				width=150
-				height=20
-			}
-			control {
-				chan="$(P)$(R)PositionY"
-				clr=14
-				bclr=51
-			}
-			dPrecision=1.000000
-			limits {
-			}
-		}
-		valuator {
-			object {
-				x=800
-				y=170
-				width=150
-				height=20
-			}
-			control {
-				chan="$(P)$(R)SizeY"
-				clr=14
-				bclr=51
-			}
-			dPrecision=1.000000
-			limits {
-			}
-		}
 		text {
 			object {
 				x=835
@@ -964,44 +944,36 @@ composite {
 				}
 			}
 		}
-		composite {
+		valuator {
 			object {
-				x=665
+				x=800
 				y=95
-				width=285
+				width=150
 				height=20
 			}
-			"composite name"=""
-			children {
-				text {
-					object {
-						x=665
-						y=95
-						width=130
-						height=20
-					}
-					"basic attribute" {
-						clr=14
-					}
-					textix="Position link"
-					align="horiz. right"
-				}
-				"text entry" {
-					object {
-						x=800
-						y=95
-						width=150
-						height=20
-					}
-					control {
-						chan="$(P)$(R)PositionYLink.DOL"
-						clr=14
-						bclr=51
-					}
-					format="string"
-					limits {
-					}
-				}
+			control {
+				chan="$(P)$(R)PositionY"
+				clr=14
+				bclr=51
+			}
+			dPrecision=1.000000
+			limits {
+			}
+		}
+		valuator {
+			object {
+				x=800
+				y=170
+				width=150
+				height=20
+			}
+			control {
+				chan="$(P)$(R)SizeY"
+				clr=14
+				bclr=51
+			}
+			dPrecision=1.000000
+			limits {
 			}
 		}
 		composite {
@@ -1099,18 +1071,6 @@ composite {
 				}
 			}
 		}
-		rectangle {
-			object {
-				x=655
-				y=40
-				width=315
-				height=255
-			}
-			"basic attribute" {
-				clr=14
-				fill="outline"
-			}
-		}
 		valuator {
 			object {
 				x=800
@@ -1199,6 +1159,46 @@ composite {
 			}
 			textix="Width link"
 			align="horiz. right"
+		}
+		composite {
+			object {
+				x=665
+				y=120
+				width=285
+				height=20
+			}
+			"composite name"=""
+			children {
+				text {
+					object {
+						x=665
+						y=120
+						width=130
+						height=20
+					}
+					"basic attribute" {
+						clr=14
+					}
+					textix="Position link"
+					align="horiz. right"
+				}
+				"text entry" {
+					object {
+						x=800
+						y=120
+						width=150
+						height=20
+					}
+					control {
+						chan="$(P)$(R)PositionYLink.DOL"
+						clr=14
+						bclr=51
+					}
+					format="string"
+					limits {
+					}
+				}
+			}
 		}
 	}
 }

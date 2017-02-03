@@ -3,10 +3,10 @@ beginScreenProperties
 major 4
 minor 0
 release 0
-x 241
-y 55
-w 975
-h 330
+x 92
+y 127
+w 980
+h 332
 font "helvetica-medium-r-18.0"
 ctlFont "helvetica-medium-r-8.0"
 btnFont "helvetica-medium-r-18.0"
@@ -627,8 +627,23 @@ value {
 }
 endObjectProperties
 
-# (Group)
-object activeGroupClass
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 655
+y 40
+w 315
+h 255
+lineColor index 14
+fillColor index 14
+lineWidth 0
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
 beginObjectProperties
 major 4
 minor 0
@@ -637,9 +652,50 @@ x 335
 y 40
 w 315
 h 255
+lineColor index 14
+fillColor index 14
+lineWidth 0
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 345
+y 45
+w 285
+h 245
 
 beginGroup
 
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 480
+y 70
+w 60
+h 20
+controlPv "$(P)$(R)PositionX"
+font "helvetica-medium-r-8.0"
+smartRefresh
+fastUpdate
+fgColor index 14
+bgColor index 51
+editable
+autoHeight
+format decimal
+motifWidget
+nullColor index 32
+useHexPrefix
+objType "controls"
+newPos
+endObjectProperties
 
 # (Static Text)
 object activeXTextClass
@@ -699,32 +755,6 @@ useDisplayBg
 value {
  "Position"
 }
-endObjectProperties
-
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 480
-y 70
-w 60
-h 20
-controlPv "$(P)$(R)PositionX"
-font "helvetica-medium-r-8.0"
-smartRefresh
-fastUpdate
-fgColor index 14
-bgColor index 51
-editable
-autoHeight
-format decimal
-motifWidget
-nullColor index 32
-useHexPrefix
-objType "controls"
-newPos
 endObjectProperties
 
 # (Text Control)
@@ -795,21 +825,6 @@ nullColor index 32
 useHexPrefix
 objType "controls"
 newPos
-endObjectProperties
-
-# (Rectangle)
-object activeRectangleClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 335
-y 40
-w 315
-h 255
-lineColor index 14
-fillColor index 14
-lineWidth 0
 endObjectProperties
 
 # (Group)
@@ -1135,57 +1150,13 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 655
-y 40
-w 315
-h 255
+x 665
+y 45
+w 285
+h 245
 
 beginGroup
 
-
-# (Motif Slider)
-object activeMotifSliderClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 800
-y 120
-w 150
-h 20
-fgColor index 14
-bgColor index 51
-2ndBgColor index 4
-topShadowColor index 2
-botShadowColor index 12
-controlPv "$(P)$(R)PositionY"
-controlLabelType "pvName"
-font "helvetica-medium-r-10.0"
-limitsFromDb
-increment 1
-endObjectProperties
-
-# (Motif Slider)
-object activeMotifSliderClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 800
-y 170
-w 150
-h 20
-fgColor index 14
-bgColor index 51
-2ndBgColor index 4
-topShadowColor index 2
-botShadowColor index 12
-controlPv "$(P)$(R)SizeY"
-controlLabelType "pvName"
-font "helvetica-medium-r-10.0"
-limitsFromDb
-increment 1
-endObjectProperties
 
 # (Static Text)
 object activeXTextClass
@@ -1295,41 +1266,8 @@ endGroup
 endObjectProperties
 
 
-# (Group)
-object activeGroupClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 665
-y 95
-w 285
-h 20
-
-beginGroup
-
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 665
-y 95
-w 130
-h 20
-font "helvetica-medium-r-8.0"
-fontAlign "right"
-fgColor index 14
-useDisplayBg
-value {
- "Position link"
-}
-endObjectProperties
-
-# (Text Control)
-object activeXTextDspClass
+# (Motif Slider)
+object activeMotifSliderClass
 beginObjectProperties
 major 4
 minor 0
@@ -1338,26 +1276,39 @@ x 800
 y 95
 w 150
 h 20
-controlPv "$(P)$(R)PositionYLink.DOL"
-font "helvetica-medium-r-8.0"
-smartRefresh
-fastUpdate
 fgColor index 14
 bgColor index 51
-editable
-autoHeight
-format "string"
-motifWidget
-nullColor index 32
-useHexPrefix
-objType "controls"
-newPos
+2ndBgColor index 4
+topShadowColor index 2
+botShadowColor index 12
+controlPv "$(P)$(R)PositionY"
+controlLabelType "pvName"
+font "helvetica-medium-r-10.0"
+limitsFromDb
+increment 1
 endObjectProperties
 
-endGroup
-
+# (Motif Slider)
+object activeMotifSliderClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 800
+y 170
+w 150
+h 20
+fgColor index 14
+bgColor index 51
+2ndBgColor index 4
+topShadowColor index 2
+botShadowColor index 12
+controlPv "$(P)$(R)SizeY"
+controlLabelType "pvName"
+font "helvetica-medium-r-10.0"
+limitsFromDb
+increment 1
 endObjectProperties
-
 
 # (Group)
 object activeGroupClass
@@ -1512,21 +1463,6 @@ endGroup
 endObjectProperties
 
 
-# (Rectangle)
-object activeRectangleClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 655
-y 40
-w 315
-h 255
-lineColor index 14
-fillColor index 14
-lineWidth 0
-endObjectProperties
-
 # (Motif Slider)
 object activeMotifSliderClass
 beginObjectProperties
@@ -1664,6 +1600,70 @@ value {
 }
 endObjectProperties
 
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 665
+y 120
+w 285
+h 20
+
+beginGroup
+
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 665
+y 120
+w 130
+h 20
+font "helvetica-medium-r-8.0"
+fontAlign "right"
+fgColor index 14
+useDisplayBg
+value {
+ "Position link"
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 800
+y 120
+w 150
+h 20
+controlPv "$(P)$(R)PositionYLink.DOL"
+font "helvetica-medium-r-8.0"
+smartRefresh
+fastUpdate
+fgColor index 14
+bgColor index 51
+editable
+autoHeight
+format "string"
+motifWidget
+nullColor index 32
+useHexPrefix
+objType "controls"
+newPos
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+
 endGroup
 
 endObjectProperties
@@ -1772,10 +1772,10 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 335
-y 40
-w 315
-h 255
+x 345
+y 45
+w 285
+h 245
 
 beginGroup
 
@@ -1826,10 +1826,10 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 655
-y 40
-w 315
-h 255
+x 665
+y 45
+w 285
+h 245
 
 beginGroup
 
@@ -1842,24 +1842,6 @@ release 0
 x 715
 y 70
 w 211
-h 20
-
-beginGroup
-
-
-endGroup
-
-endObjectProperties
-
-# (Group)
-object activeGroupClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 665
-y 95
-w 285
 h 20
 
 beginGroup
@@ -1896,6 +1878,24 @@ release 0
 x 705
 y 195
 w 245
+h 20
+
+beginGroup
+
+
+endGroup
+
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 665
+y 120
+w 285
 h 20
 
 beginGroup

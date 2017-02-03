@@ -241,9 +241,9 @@ border-radius: 2px;
             </property>
             <property name="geometry">
                 <rect>
-                    <x>168</x>
+                    <x>158</x>
                     <y>30</y>
-                    <width>12</width>
+                    <width>20</width>
                     <height>20</height>
                 </rect>
             </property>
@@ -277,9 +277,9 @@ border-radius: 2px;
             </property>
             <property name="geometry">
                 <rect>
-                    <x>261</x>
+                    <x>251</x>
                     <y>30</y>
-                    <width>12</width>
+                    <width>20</width>
                     <height>20</height>
                 </rect>
             </property>
@@ -525,7 +525,7 @@ border-radius: 2px;
                 <rect>
                     <x>62</x>
                     <y>100</y>
-                    <width>84</width>
+                    <width>70</width>
                     <height>20</height>
                 </rect>
             </property>
@@ -779,9 +779,9 @@ border-radius: 2px;
             </property>
             <property name="geometry">
                 <rect>
-                    <x>82</x>
+                    <x>10</x>
                     <y>145</y>
-                    <width>144</width>
+                    <width>122</width>
                     <height>20</height>
                 </rect>
             </property>
@@ -815,9 +815,9 @@ border-radius: 2px;
             </property>
             <property name="geometry">
                 <rect>
-                    <x>92</x>
+                    <x>10</x>
                     <y>190</y>
-                    <width>132</width>
+                    <width>122</width>
                     <height>20</height>
                 </rect>
             </property>
@@ -1073,7 +1073,7 @@ border-radius: 2px;
                 <rect>
                     <x>22</x>
                     <y>55</y>
-                    <width>132</width>
+                    <width>110</width>
                     <height>20</height>
                 </rect>
             </property>
@@ -1217,7 +1217,7 @@ border-radius: 2px;
                 <rect>
                     <x>29</x>
                     <y>280</y>
-                    <width>216</width>
+                    <width>180</width>
                     <height>20</height>
                 </rect>
             </property>
@@ -1421,7 +1421,7 @@ border-radius: 2px;
                     <rect>
                         <x>0</x>
                         <y>0</y>
-                        <width>48</width>
+                        <width>40</width>
                         <height>20</height>
                     </rect>
                 </property>
@@ -1467,7 +1467,7 @@ border-radius: 2px;
                     <rect>
                         <x>0</x>
                         <y>0</y>
-                        <width>108</width>
+                        <width>90</width>
                         <height>20</height>
                     </rect>
                 </property>
@@ -1696,7 +1696,7 @@ border-radius: 2px;
                 <rect>
                     <x>62</x>
                     <y>235</y>
-                    <width>84</width>
+                    <width>70</width>
                     <height>20</height>
                 </rect>
             </property>
@@ -1790,7 +1790,7 @@ border-radius: 2px;
             </property>
             <property name="geometry">
                 <rect>
-                    <x>42</x>
+                    <x>12</x>
                     <y>355</y>
                     <width>120</width>
                     <height>20</height>
@@ -1910,7 +1910,7 @@ border-radius: 2px;
             </property>
             <property name="geometry">
                 <rect>
-                    <x>32</x>
+                    <x>12</x>
                     <y>255</y>
                     <width>120</width>
                     <height>20</height>

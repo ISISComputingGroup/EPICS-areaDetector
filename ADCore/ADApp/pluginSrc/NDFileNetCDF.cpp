@@ -10,8 +10,11 @@
 #include <string.h>
 #include <netcdf.h>
 
-#include <epicsStdio.h>
+#include <epicsTypes.h>
+#include <epicsMessageQueue.h>
 #include <epicsThread.h>
+#include <epicsEvent.h>
+#include <epicsTime.h>
 #include <iocsh.h>
 
 #include <asynDriver.h>
@@ -520,9 +523,9 @@ extern "C" int NDFileNetCDFConfigure(const char *portName, int queueSize, int bl
                                      const char *NDArrayPort, int NDArrayAddr,
                                      int priority, int stackSize)
 {
-    new NDFileNetCDF(portName, queueSize, blockingCallbacks, NDArrayPort, NDArrayAddr,
-                     priority, stackSize);
-    return(asynSuccess);
+    NDFileNetCDF *pPlugin = new NDFileNetCDF(portName, queueSize, blockingCallbacks, NDArrayPort, NDArrayAddr,
+                                             priority, stackSize);
+    return pPlugin->start();
 }
 
 

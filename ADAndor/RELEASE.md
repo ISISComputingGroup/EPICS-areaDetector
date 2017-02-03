@@ -23,6 +23,24 @@ files respectively, in the configure/ directory of the appropriate release of th
 Release Notes
 =============
 
+R2-4 (September 15, 2015)
+* Updated autoconverted .edl, .ui, and .opi files.
+
+R2-3 (16-April-2015)
+----
+* Upgraded the Andor SDK version used to 2.99.3 on both Windows and Linux.
+* Changed st.cmd to be compatible with ADCore R2-2. 
+* Added support for mirror flippers on Shamrock spectrograph (thanks to Matthew Moore and Russell Woods).
+
+R2-2 (12-March-2015)
+----
+* Upgraded the Andor SDK version used to 2.98.3 on both Windows and Linux. 
+  - R2-0 through R2-1-1 used 2.90 on Windows and 2.84 on Linux.
+* Added support for the Shamrock spectrographs on Linux. 
+  However, andorDoc.html and the example st.cmd file were not updated
+  to reflect this change, so they indicated that the Shamrock was not 
+  supported on Linux.
+
 R2-1-1 (13-Jul-2014)
 ----
 * Added support for the Shamrock spectrographs on 64-bit Windows. 
@@ -51,4 +69,5 @@ Release notes are part of the
 
 Future Releases
 ===============
+* Upgrade to Release 2.98 of SDK
 * dataTask should check while (!mExiting)
