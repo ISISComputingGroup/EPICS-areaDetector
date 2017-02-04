@@ -15,6 +15,7 @@
 #include <string.h>
 #include <string>
 #include <errno.h>
+
 #include <epicsTime.h>
 #include <epicsThread.h>
 #include <epicsEvent.h>
@@ -22,20 +23,19 @@
 #include <iocsh.h>
 #include <epicsExit.h>
 
+#include <tinyxml.h>
+#include <ADDriver.h>
+
 #ifdef _WIN32
 #include "ATMCD32D.h"
-// (Gabriele Salvato) To exclude shamrock
-#ifdef _HAVE_SHAMROCK
-#include "ShamrockCIF.h"
-#endif
-// (Gabriele Salvato) end
 #else
 #include "atmcdLXd.h"
 #endif
-
-#include "andorCCD.h"
+#include "ShamrockCIF.h"
+#include "SPEHeader.h"
 
 #include <epicsExport.h>
+#include "andorCCD.h"
 
 static const char *driverName = "andorCCD";
 
@@ -44,7 +44,6 @@ static const char *driverName = "andorCCD";
 // Additional image mode to those in ADImageMode_t
 const epicsInt32 AndorCCD::AImageFastKinetics = ADImageContinuous+1;
 
-// List of acquisiton modes.
 const epicsUInt32 AndorCCD::AASingle = 1;
 const epicsUInt32 AndorCCD::AAAccumulate = 2;
 const epicsUInt32 AndorCCD::AAKinetics = 3;
@@ -219,6 +218,7 @@ AndorCCD::AndorCCD(const char *portName, const char *installPath, int shamrockID
     mPreAmpGains[i].EnumValue = i;
     mPreAmpGains[i].EnumString = (char *)calloc(MAX_ENUM_STRING_SIZE, sizeof(char));
   } 
+  
 
   /* Set some default values for parameters */
   status =  setStringParam(ADManufacturer, "Andor");
@@ -1258,9 +1258,6 @@ asynStatus AndorCCD::setupAcquisition()
         setIntegerParam(NDArraySizeX, maxSizeX/binX);
         setIntegerParam(NDArraySizeY, sizeY/binY);
         break;
-        
-      
-      
     }
     // Read the actual times
     if (imageMode == AImageFastKinetics) {
@@ -1350,7 +1347,6 @@ void AndorCCD::dataTask(void)
       getIntegerParam(NDArrayCallbacks, &arrayCallbacks);
       getIntegerParam(NDArraySizeX, &sizeX);
       getIntegerParam(NDArraySizeY, &sizeY);
-
       // Reset the counters
       setIntegerParam(ADNumImagesCounter, 0);
       setIntegerParam(ADNumExposuresCounter, 0);

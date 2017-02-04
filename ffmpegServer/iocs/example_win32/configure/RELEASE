@@ -8,8 +8,8 @@ AREA_DETECTOR=/home/up45/github
 
 # Module definitions
 ADCORE = $(AREA_DETECTOR)/ADCore
-ASYN=$(SUPPORT)/asyn/4-26
-BUSY=$(SUPPORT)/busy/1-6-1
+ASYN = $(SUPPORT)/asyn/4-22
+BUSY=$(SUPPORT)/busy/1-6
 FFMPEGSERVER = $(AREA_DETECTOR)/ffmpegServer
 
 # EPICS Base appears last

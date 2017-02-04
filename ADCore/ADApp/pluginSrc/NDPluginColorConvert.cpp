@@ -13,8 +13,11 @@
 #include <stdio.h>
 #include <math.h>
 
-#include <epicsMutex.h>
-#include <epicsString.h>
+#include <epicsTypes.h>
+#include <epicsMessageQueue.h>
+#include <epicsThread.h>
+#include <epicsEvent.h>
+#include <epicsTime.h>
 #include <iocsh.h>
 
 #include <asynDriver.h>
@@ -618,6 +621,10 @@ NDPluginColorConvert::NDPluginColorConvert(const char *portName, int queueSize, 
     
     setIntegerParam(NDPluginColorConvertColorModeOut, NDColorModeMono);
 
+    // Enable ArrayCallbacks.  
+    // This plugin currently ignores this setting and always does callbacks, so make the setting reflect the behavior
+    setIntegerParam(NDArrayCallbacks, 1);
+
     /* Try to connect to the array port */
     connectToArrayPort();
 }
@@ -627,9 +634,9 @@ extern "C" int NDColorConvertConfigure(const char *portName, int queueSize, int 
                                           int maxBuffers, size_t maxMemory,
                                           int priority, int stackSize)
 {
-    new NDPluginColorConvert(portName, queueSize, blockingCallbacks, NDArrayPort, NDArrayAddr, 
-                             maxBuffers, maxMemory, priority, stackSize);
-    return(asynSuccess);
+    NDPluginColorConvert *pPlugin = new NDPluginColorConvert(portName, queueSize, blockingCallbacks, NDArrayPort, NDArrayAddr, 
+                                                             maxBuffers, maxMemory, priority, stackSize);
+    return pPlugin->start();
 }
 
 /** EPICS iocsh shell commands */

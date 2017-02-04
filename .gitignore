@@ -1,9 +1,14 @@
-O.*/
+*~
+O.*
+*.swp
+#RELEASE*.local*
+#CONFIG_SITE.local*
+bin/
+lib/
+documentation/html
 /db/
-/bin/
 /dbd/
 /include/
-/lib/
 /templates
 envPaths
 cdCommands
@@ -13,8 +18,5 @@ runIOC.sh
 relPaths.sh
 /ADAndor/data/
 /ADAndorIstar/data/
-*~
-*.swp
 NULL
-/documentation/html
 .project

@@ -8,3 +8,6 @@ $(P)$(R)FileFormat
 $(P)$(R)FileWriteMode
 $(P)$(R)NumCapture
 $(P)$(R)DeleteDriverFile
+$(P)$(R)CreateDirectory
+$(P)$(R)LazyOpen
+$(P)$(R)TempSuffix

@@ -31,7 +31,7 @@ PROJECT_NAME           = areaDetector
 # This could be handy for archiving the generated documentation or 
 # if some version control system is used.
 
-PROJECT_NUMBER         = 2-1
+PROJECT_NUMBER         = 2-5
 
 # The OUTPUT_DIRECTORY tag is used to specify the (relative or absolute) 
 # base path where the generated documentation will be put. 
@@ -575,27 +575,45 @@ WARN_LOGFILE           =
 
 INPUT                  = ../../asyn/asyn/asynPortDriver/asynPortDriver.cpp \
                          ../../asyn/asyn/asynPortDriver/asynPortDriver.h \
-                         ../ADCore/ADApp/ADSrc \
-                         ../ADCore/ADApp/pluginSrc \
-                         ../ADCore/ADApp/simDetectorSrc \
-                         ../ADCore/ADApp/tiffSupport \
                          ../ADADSC/adscApp/src \
                          ../ADAndor/andorApp/src \
                          ../ADAndor3/andor3App/src \
                          ../ADBruker/brukerApp/src \
+                         ../ADCameraLink/cameralinkApp/src \
+                         ../ADCore/ADApp/ADSrc \
+                         ../ADCore/ADApp/pluginSrc \
+                         ../ADCore/ADApp/pvaDriverSrc \
+                         ../ADCore/ADApp/ntndArrayConverterSrc \
+                         ../ADDexela/dexelaApp/src \
+                         ../ADExample/exampleApp/simDetectorSrc \
+                         ../ADExample/exampleApp/ADCSimDetectorSrc \
+                         ../ADFastCCD/FastCCDApp/src \
                          ../ADFireWireWin/firewireWinApp/src \
+                         ../ADLambda/LambdaApp/src \
                          ../ADLightField/lightFieldApp/src \
+                         ../ADMerlin/medipixApp/src \
+                         ../ADMythen/mythenApp/src \
+                         ../ADPICam/PICamApp/src \
                          ../ADPSL/pslApp/src \
+                         ../ADPCO/pcoApp/src \
                          ../ADPerkinElmer/perkinElmerApp/src \
                          ../ADPilatus/pilatusApp/src \
                          ../ADPixirad/pixiradApp/src \
+                         ../ADPluginEdge/edgeApp/edgeSrc \
                          ../ADPointGrey/pointGreyApp/src \
                          ../ADProsilica/prosilicaApp/src \
                          ../ADPvCam/pvcamApp/src \
+                         ../ADQImaging/Support \
+                         ../ADQImaging/App/src \
                          ../ADRoper/roperApp/src \
                          ../ADURL/urlApp/src \
                          ../ADmar345/mar345App/src \
                          ../ADmarCCD/marCCDApp/src \
+                         ../ADnED/ADnEDApp/src \
+                         ../aravisGigE/aravisGigEApp/src \
+                         ../ffmpegServer/ffmpegServerApp/src \
+                         ../ffmpegViewer/ffmpegViewer/ \
+                         ../firewireDCAM/firewireDCAMApp/src
 
 # This tag can be used to specify the character encoding of the source files 
 # that doxygen parses. Internally doxygen uses the UTF-8 encoding, which is 

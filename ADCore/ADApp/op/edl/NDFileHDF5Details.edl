@@ -3,10 +3,10 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 426
-y 134
+x 566
+y 75
 w 417
-h 906
+h 951
 font "arial-bold-r-12.0"
 ctlFont "arial-bold-r-12.0"
 btnFont "arial-bold-r-12.0"
@@ -34,7 +34,7 @@ release 0
 x 5
 y 55
 w 405
-h 115
+h 105
 lineColor index 14
 fill
 fillColor index 3
@@ -47,7 +47,7 @@ major 4
 minor 0
 release 0
 x 5
-y 560
+y 495
 w 405
 h 40
 lineColor index 14
@@ -62,7 +62,7 @@ major 4
 minor 0
 release 0
 x 5
-y 480
+y 415
 w 405
 h 65
 lineColor index 14
@@ -77,7 +77,7 @@ major 4
 minor 0
 release 0
 x 5
-y 615
+y 550
 w 405
 h 40
 lineColor index 14
@@ -92,7 +92,7 @@ major 4
 minor 0
 release 0
 x 5
-y 395
+y 330
 w 405
 h 70
 lineColor index 14
@@ -105,9 +105,9 @@ object activeXTextClass
 beginObjectProperties
 major 4
 minor 1
-release 0
+release 1
 x 5
-y 385
+y 320
 w 118
 h 13
 font "arial-medium-r-12.0"
@@ -127,7 +127,7 @@ major 4
 minor 0
 release 0
 x 205
-y 410
+y 345
 w 75
 h 20
 fgColor index 25
@@ -145,9 +145,9 @@ object activeXTextClass
 beginObjectProperties
 major 4
 minor 1
-release 0
+release 1
 x 20
-y 410
+y 345
 w 165
 h 20
 font "arial-bold-r-12.0"
@@ -166,7 +166,7 @@ major 4
 minor 0
 release 0
 x 205
-y 435
+y 370
 w 75
 h 20
 fgColor index 25
@@ -184,9 +184,9 @@ object activeXTextClass
 beginObjectProperties
 major 4
 minor 1
-release 0
+release 1
 x 20
-y 435
+y 370
 w 185
 h 20
 font "arial-bold-r-12.0"
@@ -203,7 +203,7 @@ object activeXTextClass
 beginObjectProperties
 major 4
 minor 1
-release 0
+release 1
 x 0
 y 0
 w 415
@@ -224,9 +224,9 @@ object activeXTextClass
 beginObjectProperties
 major 4
 minor 1
-release 0
+release 1
 x 5
-y 605
+y 540
 w 134
 h 13
 font "arial-medium-r-12.0"
@@ -244,9 +244,9 @@ object activeXTextClass
 beginObjectProperties
 major 4
 minor 1
-release 0
+release 1
 x 20
-y 625
+y 560
 w 165
 h 20
 font "arial-bold-r-12.0"
@@ -265,7 +265,7 @@ major 4
 minor 0
 release 0
 x 245
-y 625
+y 560
 w 75
 h 20
 fgColor index 25
@@ -285,7 +285,7 @@ major 10
 minor 0
 release 0
 x 325
-y 625
+y 560
 w 75
 h 20
 controlPv "$(P)$(R)Compression_RBV"
@@ -304,7 +304,7 @@ major 4
 minor 1
 release 0
 x 325
-y 875
+y 920
 w 85
 h 25
 fgColor index 46
@@ -321,9 +321,9 @@ object activeXTextClass
 beginObjectProperties
 major 4
 minor 1
-release 0
+release 1
 x 5
-y 470
+y 405
 w 118
 h 13
 font "arial-medium-r-12.0"
@@ -343,7 +343,7 @@ major 10
 minor 0
 release 0
 x 205
-y 515
+y 450
 w 195
 h 20
 controlPv "$(P)$(R)IOSpeed"
@@ -362,7 +362,7 @@ major 10
 minor 0
 release 0
 x 205
-y 490
+y 425
 w 195
 h 20
 controlPv "$(P)$(R)RunTime"
@@ -379,9 +379,9 @@ object activeXTextClass
 beginObjectProperties
 major 4
 minor 1
-release 0
+release 1
 x 15
-y 490
+y 425
 w 165
 h 20
 font "arial-bold-r-12.0"
@@ -398,9 +398,9 @@ object activeXTextClass
 beginObjectProperties
 major 4
 minor 1
-release 0
+release 1
 x 15
-y 515
+y 450
 w 165
 h 20
 font "arial-bold-r-12.0"
@@ -419,7 +419,7 @@ major 4
 minor 0
 release 0
 x 5
-y 820
+y 755
 w 405
 h 45
 lineColor index 14
@@ -432,9 +432,9 @@ object activeXTextClass
 beginObjectProperties
 major 4
 minor 1
-release 0
+release 1
 x 5
-y 810
+y 745
 w 105
 h 13
 font "arial-medium-r-12.0"
@@ -452,9 +452,9 @@ object activeXTextClass
 beginObjectProperties
 major 4
 minor 1
-release 0
+release 1
 x 20
-y 835
+y 770
 w 185
 h 20
 font "arial-bold-r-12.0"
@@ -473,7 +473,7 @@ major 4
 minor 0
 release 0
 x 245
-y 835
+y 770
 w 155
 h 20
 
@@ -486,7 +486,7 @@ major 10
 minor 0
 release 0
 x 245
-y 835
+y 770
 w 75
 h 20
 controlPv "$(P)$(R)ZLevel"
@@ -504,7 +504,7 @@ major 10
 minor 0
 release 0
 x 325
-y 835
+y 770
 w 75
 h 20
 controlPv "$(P)$(R)ZLevel_RBV"
@@ -530,7 +530,7 @@ major 4
 minor 0
 release 0
 x 5
-y 760
+y 695
 w 405
 h 45
 lineColor index 14
@@ -543,9 +543,9 @@ object activeXTextClass
 beginObjectProperties
 major 4
 minor 1
-release 0
+release 1
 x 5
-y 750
+y 685
 w 108
 h 13
 font "arial-medium-r-12.0"
@@ -563,9 +563,9 @@ object activeXTextClass
 beginObjectProperties
 major 4
 minor 1
-release 0
+release 1
 x 20
-y 775
+y 710
 w 185
 h 20
 font "arial-bold-r-12.0"
@@ -584,7 +584,7 @@ major 4
 minor 0
 release 0
 x 245
-y 775
+y 710
 w 155
 h 20
 
@@ -597,7 +597,7 @@ major 10
 minor 0
 release 0
 x 245
-y 775
+y 710
 w 75
 h 20
 controlPv "$(P)$(R)SZipNumPixels"
@@ -615,7 +615,7 @@ major 10
 minor 0
 release 0
 x 325
-y 775
+y 710
 w 75
 h 20
 controlPv "$(P)$(R)SZipNumPixels_RBV"
@@ -641,7 +641,7 @@ major 4
 minor 0
 release 0
 x 5
-y 670
+y 605
 w 405
 h 75
 lineColor index 14
@@ -654,9 +654,9 @@ object activeXTextClass
 beginObjectProperties
 major 4
 minor 1
-release 0
+release 1
 x 5
-y 660
+y 595
 w 112
 h 13
 font "arial-medium-r-12.0"
@@ -674,9 +674,9 @@ object activeXTextClass
 beginObjectProperties
 major 4
 minor 1
-release 0
+release 1
 x 20
-y 690
+y 625
 w 185
 h 20
 font "arial-bold-r-12.0"
@@ -693,9 +693,9 @@ object activeXTextClass
 beginObjectProperties
 major 4
 minor 1
-release 0
+release 1
 x 20
-y 715
+y 650
 w 185
 h 20
 font "arial-bold-r-12.0"
@@ -714,7 +714,7 @@ major 4
 minor 0
 release 0
 x 245
-y 690
+y 625
 w 155
 h 45
 
@@ -727,7 +727,7 @@ major 10
 minor 0
 release 0
 x 245
-y 690
+y 625
 w 75
 h 20
 controlPv "$(P)$(R)NumDataBits"
@@ -745,7 +745,7 @@ major 10
 minor 0
 release 0
 x 325
-y 690
+y 625
 w 75
 h 20
 controlPv "$(P)$(R)NumDataBits_RBV"
@@ -764,7 +764,7 @@ major 10
 minor 0
 release 0
 x 325
-y 715
+y 650
 w 75
 h 20
 controlPv "$(P)$(R)DataBitsOffset_RBV"
@@ -783,7 +783,7 @@ major 10
 minor 0
 release 0
 x 245
-y 715
+y 650
 w 75
 h 20
 controlPv "$(P)$(R)DataBitsOffset"
@@ -808,7 +808,7 @@ major 4
 minor 0
 release 0
 x 5
-y 185
+y 175
 w 405
 h 140
 lineColor index 14
@@ -821,9 +821,9 @@ object activeXTextClass
 beginObjectProperties
 major 4
 minor 1
-release 0
+release 1
 x 5
-y 175
+y 165
 w 143
 h 13
 font "arial-medium-r-12.0"
@@ -843,7 +843,7 @@ major 10
 minor 0
 release 0
 x 200
-y 220
+y 210
 w 100
 h 20
 controlPv "$(P)$(R)NumColChunks"
@@ -861,7 +861,7 @@ major 10
 minor 0
 release 0
 x 300
-y 220
+y 210
 w 100
 h 20
 controlPv "$(P)$(R)NumColChunks_RBV"
@@ -880,7 +880,7 @@ major 10
 minor 0
 release 0
 x 300
-y 245
+y 235
 w 100
 h 20
 controlPv "$(P)$(R)NumFramesChunks_RBV"
@@ -899,7 +899,7 @@ major 10
 minor 0
 release 0
 x 200
-y 245
+y 235
 w 100
 h 20
 controlPv "$(P)$(R)NumFramesChunks"
@@ -917,7 +917,7 @@ major 10
 minor 0
 release 0
 x 300
-y 195
+y 185
 w 100
 h 20
 controlPv "$(P)$(R)NumRowChunks_RBV"
@@ -936,7 +936,7 @@ major 10
 minor 0
 release 0
 x 200
-y 195
+y 185
 w 100
 h 20
 controlPv "$(P)$(R)NumRowChunks"
@@ -952,9 +952,9 @@ object activeXTextClass
 beginObjectProperties
 major 4
 minor 1
-release 0
+release 1
 x 15
-y 195
+y 185
 w 165
 h 20
 font "arial-bold-r-12.0"
@@ -971,9 +971,9 @@ object activeXTextClass
 beginObjectProperties
 major 4
 minor 1
-release 0
+release 1
 x 15
-y 220
+y 210
 w 165
 h 20
 font "arial-bold-r-12.0"
@@ -990,9 +990,9 @@ object activeXTextClass
 beginObjectProperties
 major 4
 minor 1
-release 0
+release 1
 x 15
-y 245
+y 235
 w 175
 h 20
 font "arial-bold-r-12.0"
@@ -1004,41 +1004,6 @@ value {
 }
 endObjectProperties
 
-# (Rectangle)
-object activeRectangleClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 5
-y 340
-w 405
-h 40
-lineColor index 14
-fill
-fillColor index 3
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 0
-x 5
-y 330
-w 118
-h 13
-font "arial-medium-r-12.0"
-fgColor index 14
-bgColor index 5
-value {
-  "  Attribute/Meta data  "
-}
-autoSize
-border
-endObjectProperties
-
 # (Textupdate)
 object TextupdateClass
 beginObjectProperties
@@ -1046,63 +1011,7 @@ major 10
 minor 0
 release 0
 x 300
-y 350
-w 100
-h 20
-controlPv "$(P)$(R)NumFramesFlush_RBV"
-fgColor index 16
-fgAlarm
-bgColor index 10
-fill
-font "arial-medium-r-12.0"
-fontAlign "center"
-endObjectProperties
-
-# (Textentry)
-object TextentryClass
-beginObjectProperties
-major 10
-minor 0
-release 0
-x 200
-y 350
-w 100
-h 20
-controlPv "$(P)$(R)NumFramesFlush"
-fgColor index 25
-fgAlarm
-bgColor index 3
-fill
-font "arial-medium-r-12.0"
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 0
-x 15
-y 350
-w 165
-h 20
-font "arial-bold-r-12.0"
-fgColor index 14
-bgColor index 3
-useDisplayBg
-value {
-  "Flush on Nth frame:"
-}
-endObjectProperties
-
-# (Textupdate)
-object TextupdateClass
-beginObjectProperties
-major 10
-minor 0
-release 0
-x 300
-y 270
+y 260
 w 100
 h 20
 controlPv "$(P)$(R)BoundaryAlign_RBV"
@@ -1121,7 +1030,7 @@ major 10
 minor 0
 release 0
 x 200
-y 270
+y 260
 w 100
 h 20
 controlPv "$(P)$(R)BoundaryAlign"
@@ -1137,9 +1046,9 @@ object activeXTextClass
 beginObjectProperties
 major 4
 minor 1
-release 0
+release 1
 x 15
-y 270
+y 260
 w 175
 h 20
 font "arial-bold-r-12.0"
@@ -1158,7 +1067,7 @@ major 10
 minor 0
 release 0
 x 325
-y 570
+y 505
 w 75
 h 20
 controlPv "$(P)$(R)LazyOpen_RBV"
@@ -1177,7 +1086,7 @@ major 4
 minor 0
 release 0
 x 245
-y 570
+y 505
 w 75
 h 20
 fgColor index 25
@@ -1195,9 +1104,9 @@ object activeXTextClass
 beginObjectProperties
 major 4
 minor 1
-release 0
+release 1
 x 20
-y 570
+y 505
 w 220
 h 20
 font "arial-bold-r-12.0"
@@ -1214,9 +1123,9 @@ object activeXTextClass
 beginObjectProperties
 major 4
 minor 1
-release 0
+release 1
 x 5
-y 550
+y 485
 w 72
 h 13
 font "arial-medium-r-12.0"
@@ -1236,7 +1145,7 @@ major 10
 minor 0
 release 0
 x 300
-y 295
+y 285
 w 100
 h 20
 controlPv "$(P)$(R)BoundaryThreshold_RBV"
@@ -1255,7 +1164,7 @@ major 10
 minor 0
 release 0
 x 200
-y 295
+y 285
 w 100
 h 20
 controlPv "$(P)$(R)BoundaryThreshold"
@@ -1271,9 +1180,9 @@ object activeXTextClass
 beginObjectProperties
 major 4
 minor 1
-release 0
+release 1
 x 15
-y 295
+y 285
 w 175
 h 20
 font "arial-bold-r-12.0"
@@ -1290,7 +1199,7 @@ object activeXTextClass
 beginObjectProperties
 major 4
 minor 1
-release 0
+release 1
 x 5
 y 50
 w 101
@@ -1310,7 +1219,7 @@ object activeXTextClass
 beginObjectProperties
 major 4
 minor 1
-release 0
+release 1
 x 15
 y 65
 w 370
@@ -1328,7 +1237,7 @@ endObjectProperties
 object activeXTextDspClass
 beginObjectProperties
 major 4
-minor 5
+minor 6
 release 0
 x 15
 y 80
@@ -1350,7 +1259,7 @@ endObjectProperties
 object activeXTextDspClass
 beginObjectProperties
 major 4
-minor 5
+minor 6
 release 0
 x 15
 y 105
@@ -1376,10 +1285,10 @@ endObjectProperties
 object activeXTextDspClass
 beginObjectProperties
 major 4
-minor 5
+minor 6
 release 0
 x 15
-y 140
+y 130
 w 355
 h 20
 controlPv "$(P)$(R)XMLErrorMsg_RBV"
@@ -1401,7 +1310,7 @@ major 4
 minor 0
 release 0
 x 380
-y 140
+y 130
 w 18
 h 18
 controlPv "$(P)$(R)XMLValid_RBV"
@@ -1410,5 +1319,214 @@ onColor index 15
 offColor index 19
 lineWidth 2
 numBits 1
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 4
+release 0
+x 215
+y 920
+w 100
+h 25
+fgColor index 43
+bgColor index 3
+topShadowColor index 1
+botShadowColor index 11
+font "arial-bold-r-12.0"
+buttonLabel "SWMR Details"
+numPvs 4
+numDsps 1
+displayFileName {
+  0 "NDFileHDF5SWMRDetails"
+}
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 5
+y 815
+w 405
+h 40
+lineColor index 14
+fill
+fillColor index 3
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 5
+y 805
+w 231
+h 13
+font "arial-medium-r-12.0"
+fgColor index 14
+bgColor index 5
+value {
+  "  Store attributes with correct dimensions  "
+}
+autoSize
+border
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 20
+y 825
+w 200
+h 20
+font "arial-bold-r-12.0"
+fgColor index 14
+bgColor index 3
+useDisplayBg
+value {
+  "Store attributes by dimensions:"
+}
+endObjectProperties
+
+# (Menu Button)
+object activeMenuButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 245
+y 825
+w 75
+h 20
+fgColor index 25
+bgColor index 3
+inconsistentColor index 0
+topShadowColor index 1
+botShadowColor index 11
+controlPv "$(P)$(R)DimAttDatasets"
+indicatorPv "$(P)$(R)DimAttDatasets_RBV"
+font "arial-bold-r-12.0"
+endObjectProperties
+
+# (Textupdate)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 325
+y 825
+w 75
+h 20
+controlPv "$(P)$(R)DimAttDatasets_RBV"
+fgColor index 16
+fgAlarm
+bgColor index 10
+fill
+font "arial-medium-r-12.0"
+fontAlign "center"
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 5
+y 870
+w 405
+h 45
+lineColor index 14
+fill
+fillColor index 3
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 5
+y 860
+w 64
+h 13
+font "arial-medium-r-12.0"
+fgColor index 14
+bgColor index 5
+value {
+  "  Fill Value  "
+}
+autoSize
+border
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 20
+y 885
+w 185
+h 20
+font "arial-bold-r-12.0"
+fgColor index 14
+bgColor index 3
+useDisplayBg
+value {
+  "HDF5 Fill Value"
+}
+endObjectProperties
+
+# (Textentry)
+object TextentryClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 245
+y 885
+w 75
+h 20
+controlPv "$(P)$(R)FillValue"
+precision 1
+fgColor index 25
+fgAlarm
+bgColor index 3
+fill
+font "arial-medium-r-12.0"
+endObjectProperties
+
+# (Textupdate)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 325
+y 885
+w 75
+h 20
+controlPv "$(P)$(R)FillValue_RBV"
+precision 1
+fgColor index 16
+fgAlarm
+bgColor index 10
+fill
+font "arial-medium-r-12.0"
+fontAlign "center"
 endObjectProperties
 

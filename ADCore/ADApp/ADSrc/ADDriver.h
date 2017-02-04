@@ -132,7 +132,6 @@ typedef enum
 #define ADStringToServerString      "STRING_TO_SERVER"      /**< (asynOctet,    r/o) String sent to server for message-based drivers */
 #define ADStringFromServerString    "STRING_FROM_SERVER"    /**< (asynOctet,    r/o) String received from server for message-based drivers */
 
-
 /** Class from which areaDetector drivers are directly derived. */
 class epicsShareClass ADDriver : public asynNDArrayDriver {
 public:

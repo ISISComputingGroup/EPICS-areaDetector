@@ -16,8 +16,11 @@
 #include <stdio.h>
 #include <math.h>
 
-#include <epicsString.h>
-#include <epicsMutex.h>
+#include <epicsTypes.h>
+#include <epicsMessageQueue.h>
+#include <epicsThread.h>
+#include <epicsEvent.h>
+#include <epicsTime.h>
 #include <iocsh.h>
 
 #include <asynDriver.h>
@@ -520,6 +523,7 @@ void NDPluginTransform::processCallbacks(NDArray *pArray){
   }
   this->lock();
 
+  this->getAttributes(transformedArray->pAttributeList);
   doCallbacksGenericPointer(transformedArray, NDArrayData,0);
   callParamCallbacks();
 }
@@ -609,6 +613,10 @@ NDPluginTransform::NDPluginTransform(const char *portName, int queueSize, int bl
   setStringParam(NDPluginDriverPluginType, "NDPluginTransform");
   setIntegerParam(NDPluginTransformType_, TransformNone);
 
+  // Enable ArrayCallbacks.  
+  // This plugin currently ignores this setting and always does callbacks, so make the setting reflect the behavior
+  setIntegerParam(NDArrayCallbacks, 1);
+
   /* Try to connect to the array port */
   connectToArrayPort();
 }
@@ -619,9 +627,9 @@ extern "C" int NDTransformConfigure(const char *portName, int queueSize, int blo
                                     int maxBuffers, size_t maxMemory,
                                     int priority, int stackSize)
 {
-  new NDPluginTransform(portName, queueSize, blockingCallbacks, NDArrayPort, NDArrayAddr,
-              maxBuffers, maxMemory, priority, stackSize);
-  return(asynSuccess);
+  NDPluginTransform *pPlugin = new NDPluginTransform(portName, queueSize, blockingCallbacks, NDArrayPort, NDArrayAddr,
+                                                      maxBuffers, maxMemory, priority, stackSize);
+  return pPlugin->start();
 }
 
 /* EPICS iocsh shell commands */

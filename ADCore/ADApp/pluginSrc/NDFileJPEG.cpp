@@ -8,9 +8,12 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-#include <netcdf.h>
 
-#include <epicsStdio.h>
+#include <epicsTypes.h>
+#include <epicsMessageQueue.h>
+#include <epicsThread.h>
+#include <epicsEvent.h>
+#include <epicsTime.h>
 #include <iocsh.h>
 
 #include <asynDriver.h>
@@ -99,7 +102,10 @@ asynStatus NDFileJPEG::openFile(const char *fileName, NDFileOpenMode_t openMode,
     jpeg_set_defaults(&this->jpegInfo);
 
     /* Set the file quality */
+    /* Must lock when accessing parameter library */
+    this->lock();
     getIntegerParam(NDFileJPEGQuality, &quality);
+    this->unlock();
     jpeg_set_quality(&this->jpegInfo, quality, TRUE);
     
     jpeg_start_compress(&this->jpegInfo, TRUE);
@@ -335,9 +341,9 @@ extern "C" int NDFileJPEGConfigure(const char *portName, int queueSize, int bloc
                                    const char *NDArrayPort, int NDArrayAddr,
                                    int priority, int stackSize)
 {
-    new NDFileJPEG(portName, queueSize, blockingCallbacks, NDArrayPort, NDArrayAddr,
-                   priority, stackSize);
-    return(asynSuccess);
+    NDFileJPEG *pPlugin = new NDFileJPEG(portName, queueSize, blockingCallbacks, NDArrayPort, NDArrayAddr,
+                                         priority, stackSize);
+    return pPlugin->start();
 }
 
 

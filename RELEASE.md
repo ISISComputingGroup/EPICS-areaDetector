@@ -27,34 +27,85 @@ Release Notes
 Each submodule contains detailed release notes for each release of that submodule.  The release notes below
 only provide a short summary of the most significant items from the submodules.
 
-R2-1 (September XXX, 2014)
-* Added new modules ffmegViewer, ffmpegServer, aravisGigE, firewireDCAM.  These are all from Diam
+R2-5 (October 28, 2016)
+----
+* Requires R2-5 of ADCore.  This requires some changes to CONFIG_SITE.local.
+  ADCore R2-5 has many new features, including support for HDF5 SWMR mode, support for EPICS V4
+  NTNDArrays, and new TimeSeries and FFT plugins.
+* Added ADSupport repository.  This replaces ADBinaries and some of the source
+  directories that were previously in ADCore.  It builds support for TIFF, JPEG, NETCDF
+  ZLIB, SZIP, HDF5, XML2, and NEXUS.  All of these support libraries are now optional.
+  The configure directory and INSTALL_GUIDE.md have many changes to support this.
+* New ADLambda repository that supports the detectors from Lambda.  Thanks to John Hammonds for this.
+* New ADCameraLink repository that supports Silicon Software and Dalsa/Coreco.  Thanks to Tim Madden for this.
+* New ADPCO repository that supports PCO CameraLink cameras.  Thanks to Tim Madden for this.
+* Added LICENSE files to all repositories. 
+
+R2-4 (September 18, 2015)
+----
+* Requires R2-4 of ADCore.  This requires some changes to CONFIG_SITE.local.
+* Moved the simDetector from ADCore into a new repository ADExample.
+* New ADMythen module for Dectris Mythen detectors.  Written by Matthew Moore at the APS.
+* New ADPluginEdge module that provides an edge detection plugin using the opencv library.  Written by
+  Keith Brister from Northwestern University.
+* configure/RELEASE.local now optionally includes configure/RELEASE.local.$(EPICS_HOST_ARCH).
+  This allows restricting building of a detector module to a subset of supported architectures when 
+  building from the top-level Makefile.
+
+
+R2-3 (July 24, 2015)
+----
+* Changed top-level Makefile so that a detector sub-module is only built if the appropriate
+  variable is set in configure/RELEASE.local.  EXAMPLE_RELEASE.local contains all detector
+  submodules commented out.  This file should be copied to RELEASE.local and the lines for
+  the desired detectors uncommented.
+* Added new ADnED driver for neutron event data.  This is from Matt Pearson at ORNL.
+
+
+R2-2 (March 23, 2015)
+----
+* Added new modules ffmegViewer, ffmpegServer, aravisGigE, firewireDCAM.  These are all from Tom Cobb
+  and Ulrik Pedersen from Diamond Light Source.
+* Added new ADQImaging module.  This is from Arthur Glowacki at the APS.
+* Added new ADDexela module.  This is from Mark Rivers at the University of Chicago.
+* Added new ADFastCCD module.  This is from Stuart Wilkins at the NSLS-II.
+* Added new ADPICam module.  This is from John Hammonds at the APS.
+* Added new ADMerlin module.  This is from Giles Knap at Diamond Light Source.
 * Changed to use HTTPS (https://github.com/areaDetector) for submodules, rather 
   than SSH (git@github.com:areaDetector).  This allows a recursive checkout without a Github account.
 * This release includes the following releases of the submodules:
 
     Module        | Release
     --------------|--------
-    ADCore        | R2-1
-    ADBinaries    | R2-1
+    ADCore        | R2-2
+    ADBinaries    | R2-2
     ADADSC        | R2-0
-    ADAndor       | R2-1-1
+    ADAndor       | R2-2
     ADAndor3      | R2-0
     ADBruker      | R2-0
+    ADDexela      | R2-0-beta1
+    ADFastCCD     | none
     ADFireWireWin | R2-0
     ADLightField  | R2-1
+    ADMerlin      | 3-1-1
+    ADPICam       | none
     ADPSL         | R2-1
     ADPerkinElmer | R2-0
     ADPilatus     | R2-0
     ADPixirad     | R2-0
-    ADPointGrey   | R2-1
+    ADPointGrey   | R2-0
     ADProsilica   | R2-1
     ADPvCam       | R2-0
+    ADQImaging    | none
     ADRoper       | R2-0
     ADURL         | R2-0
     ADmar345      | R2-0
-    ADmarCCD      | R2-1
-    
+    ADmarCCD      | R2-0
+    aravisGigE    | dls-r105549
+    ffmpegServer  | none
+    ffmpegViewer  | none
+    firewireDCAM  | none
+
 
 R2-0 (April 4, 2014)
 ----

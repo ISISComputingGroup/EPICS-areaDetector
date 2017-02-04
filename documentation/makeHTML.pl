@@ -29,19 +29,31 @@ use File::Path;
           "./ADAndor/documentation",
           "./ADAndor3/documentation",
           "./ADBruker/documentation",
+          "./ADCameraLink/documentation",
+          "./ADDexela/documentation",
+          "./ADExample/documentation",
+          "./ADFastCCD/documentation",
           "./ADFireWireWin/documentation",
+          "./ADLambda/documentation",
           "./ADLightField/documentation",
+#          "./ADMerlin/documentation",
+          "./ADMythen/documentation",
+          "./ADPICam/documentation",
+          "./ADPCO/documentation",
           "./ADPSL/documentation",
           "./ADPerkinElmer/documentation",
           "./ADPilatus/documentation",
           "./ADPixirad/documentation",
+          "./ADPluginEdge/documentation",
           "./ADPointGrey/documentation",
           "./ADProsilica/documentation",
           "./ADPvCam/documentation",
+          "./ADQImaging/documentation",
           "./ADRoper/documentation",
           "./ADURL/documentation",
           "./ADmar345/documentation",
           "./ADmarCCD/documentation",
+          "./ADnED/documentation",
           );
 
 foreach $dir (@subdirs) {
@@ -53,5 +65,8 @@ foreach $dir (@subdirs) {
     copy($files,"./html");
     $command = "cp " . $files . " " . "./html";
     system($command);
-    $files = $dir . "/*.png";
+    $files = "../" . $dir . "/*.pdf";
+    copy($files,"./html");
+    $command = "cp " . $files . " " . "./html";
+    system($command);
 }

@@ -57,7 +57,8 @@ typedef enum
     NDAttrSourceDriver,    /**< Attribute is obtained directly from driver */
     NDAttrSourceParam,     /**< Attribute is obtained from parameter library */
     NDAttrSourceEPICSPV,   /**< Attribute is obtained from an EPICS PV */
-    NDAttrSourceFunct      /**< Attribute is obtained from a user-specified function */
+    NDAttrSourceFunct,     /**< Attribute is obtained from a user-specified function */
+    NDAttrSourceUndefined  /**< Attribute source is undefined */
 } NDAttrSource_t;
 
 /** Union defining the values in an NDAttribute object */
@@ -89,6 +90,7 @@ public:
     NDAttribute(const char *pName, const char *pDescription, 
                 NDAttrSource_t sourceType, const char *pSource, NDAttrDataType_t dataType, void *pValue);
     NDAttribute(NDAttribute& attribute);
+    static const char *attrSourceString(NDAttrSource_t type);
     virtual ~NDAttribute();
     virtual NDAttribute* copy(NDAttribute *pAttribute);
     virtual const char *getName();
@@ -107,6 +109,7 @@ public:
 
 
 private:
+    template <typename epicsType> int getValueT(void *pValue, size_t dataSize);
     char *pName;                   /**< Name string */
     char *pDescription;            /**< Description string */
     NDAttrDataType_t dataType;     /**< Data type of attribute */
