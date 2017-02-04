@@ -20,3 +20,7 @@ relPaths.sh
 /ADAndorIstar/data/
 NULL
 .project
+/*/db/
+/*/dbd/
+/*/include/
+/*/iocs/
