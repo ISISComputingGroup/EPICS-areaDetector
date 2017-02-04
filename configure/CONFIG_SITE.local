@@ -28,9 +28,9 @@ WITH_BOOST     = NO
 WITH_EPICS_V4  = YES
 
 # GraphicsMagick is required for NDFileMagick and the URL driver.
-WITH_GRAPHICSMAGICK     = YES
+WITH_GRAPHICSMAGICK     = NO
 GRAPHICSMAGICK_EXTERNAL = YES
-#GRAPHICSMAGICK_INCLUDE =
+GRAPHICSMAGICK_INCLUDE = -I/usr/include/GraphicsMagick
 #GRAPHICSMAGICK_LIB     =
 
 # HDF5 is required for the NDFileHDF5 and NDFileNexus plugins
@@ -66,7 +66,7 @@ OPENCV_EXTERNAL = YES
 # SZIP is required for the NDFileHDF5 and NDFileNexus plugins.  
 # This may be optional in the future.
 WITH_SZIP     = YES
-SZIP_EXTERNAL = YES
+SZIP_EXTERNAL = NO
 #SZIP_INCLUDE =
 #SZIP_LIB     =
 
@@ -79,15 +79,16 @@ TIFF_EXTERNAL = YES
 # XML2 is required for the NDFileHDF5 and NDFileNexus plugins.  
 WITH_XML2     = YES
 XML2_EXTERNAL = YES
-XML2_INCLUDE = $(LIBXML2)/include
-XML2_LIB     = $(LIBXML2)/lib/$(EPICS_HOST_ARCH)
+#XML2_INCLUDE = $(LIBXML2)/include
+XML2_INCLUDE = -I/usr/include/libxml2
+#XML2_LIB     = $(LIBXML2)/lib/$(EPICS_HOST_ARCH)
 
 # ZLIB is required for the NDFileHDF5 and NDFileNexus plugins.  
 # This may be optional in the future.
 WITH_ZLIB     = YES
-ZLIB_EXTERNAL = YES
-ZLIB_INCLUDE = $(ZLIB)/include
-ZLIB_LIB     = $(ZLIB)/lib/$(EPICS_HOST_ARCH)
+ZLIB_EXTERNAL = NO
+#ZLIB_INCLUDE = -I$(ZLIB)/include
+#ZLIB_LIB     = $(ZLIB)/lib/$(EPICS_HOST_ARCH)
 
 # The definitions above can be overridden in the following files.
 # The files are searched in this order, with the last definition being used.

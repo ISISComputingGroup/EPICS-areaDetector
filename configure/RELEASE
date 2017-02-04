@@ -6,6 +6,7 @@ include $(TOP)/configure/RELEASE_PATHS.local
 -include $(TOP)/configure/RELEASE_PATHS.local.$(EPICS_HOST_ARCH)
 include $(TOP)/configure/RELEASE_LIBS.local
 -include $(TOP)/configure/RELEASE.local
+-include $(TOP)/configure/RELEASE.local.$(OS_CLASS)
 
 #TEMPLATE_TOP=$(EPICS_BASE)/templates/makeBaseApp/top
 # If you don't want to install into $(TOP) then

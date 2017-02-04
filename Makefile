@@ -2,11 +2,13 @@
 TOP = .
 include $(TOP)/configure/CONFIG
 
+# Always build ADSupport and ADCore
 DIRS := $(DIRS) $(ADSUPPORT)
 
 DIRS := $(DIRS) $(ADCORE)
 $(ADCORE)_DEPEND_DIRS += $(ADSUPPORT)
 
+# Build optional plugins next
 ifdef FFMPEGSERVER
 DIRS := $(DIRS) $(FFMPEGSERVER)
 $(FFMPEGSERVER)_DEPEND_DIRS += $(ADCORE)
@@ -17,11 +19,31 @@ DIRS := $(DIRS) $(ADPLUGINEDGE)
 $(ADPLUGINEDGE)_DEPEND_DIRS += $(ADCORE)
 endif
 
-ifdef ADEXAMPLE
-DIRS := $(DIRS) $(ADEXAMPLE)
-$(ADEXAMPLE)_DEPEND_DIRS += $(ADCORE)
+# Build simulation drivers next
+ifdef ADSIMDETECTOR
+DIRS := $(DIRS) $(ADSIMDETECTOR)
+$(ADSIMDETECTOR)_DEPEND_DIRS += $(ADCORE)
 endif
 
+ifdef ADCSIMDETECTOR
+DIRS := $(DIRS) $(ADCSIMDETECTOR)
+$(ADCSIMDETECTOR)_DEPEND_DIRS += $(ADCORE)
+endif
+
+# Build software drivers next (no associated hardware)
+ifdef NDDRIVERSTDARRAYS
+DIRS := $(DIRS) $(NDDRIVERSTDARRAYS)
+$(NDDRIVERSTDARRAYS)_DEPEND_DIRS += $(ADCORE)
+endif
+
+ifeq ($(WITH_EPICS_V4), YES)
+  ifdef PVADRIVER
+  DIRS := $(DIRS) $(PVADRIVER)
+  $(PVADRIVER)_DEPEND_DIRS += $(ADCORE)
+  endif
+endif
+
+# Finally build hardware drivers
 ifdef ADADSC
 DIRS := $(DIRS) $(ADADSC)
 $(ADADSC)_DEPEND_DIRS += $(ADCORE)
@@ -32,9 +54,14 @@ DIRS := $(DIRS) $(ADANDOR)
 $(ADANDOR)_DEPEND_DIRS += $(ADCORE)
 endif
 
-ifdef ADANOR3
-DIRS := $(DIRS) $(ADANOR3)
-$(ADANOR3)_DEPEND_DIRS += $(ADCORE)
+ifdef ADANDOR3
+DIRS := $(DIRS) $(ADANDOR3)
+$(ADANDOR3)_DEPEND_DIRS += $(ADCORE)
+endif
+
+ifdef ADANDORISTAR
+#DIRS := $(DIRS) $(ADANDORISTAR)
+#$(ADANDORISTAR)_DEPEND_DIRS += $(ADCORE)
 endif
 
 ifdef ADBRUKER
@@ -173,6 +200,7 @@ DIRS := $(DIRS) $(FIREWIREDCAM)
 $(FIREWIREDCAM)_DEPEND_DIRS += $(ADCORE)
 endif
 
+
 include $(TOP)/configure/RULES_TOP
 
 uninstallTargets = $(foreach dir, $(DIRS), $(dir)$(DIVIDER)uninstall)
@@ -192,4 +220,6 @@ $(1)$(DIVIDER)realuninstall:
 endef
 $(foreach dir, $(DIRS), $(eval $(call REALUNINSTALL_template,$(dir))))
 .PHONY: realuninstall $(realuninstallTargets)
+
+
 

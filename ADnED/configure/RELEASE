@@ -18,19 +18,13 @@
 # or include statements that pull in similar RELEASE files.
 # Build settings that are NOT module paths should appear in a
 # CONFIG_SITE file.
+-include $(TOP)/../configure/RELEASE_PATHS.local
+-include $(TOP)/../configure/RELEASE_PATHS.local.$(EPICS_HOST_ARCH)
+-include $(TOP)/../configure/RELEASE_LIBS.local
+-include $(TOP)/RELEASE.local
+-include $(TOP)/configure/RELEASE.local
 
-SUPPORT=/home/controls/epics
-
-BASEV4=		/home/controls/prod/epics/basev4/relhead_20150218
-
-TEMPLATE_TOP=$(EPICS_BASE)/templates/makeBaseApp/top
-
-ASYN=		/home/controls/prod/epics/asyn/rel4-26_20150804
-ADCORE=		/home/controls/prod/epics/ADCore/rel2-2_20160421
-
-include $(BASEV4)/RELEASE.local
-
-EPICS_BASE=/home/controls/prod/epics/base/rel3.14.12.4_20140619
+#include $(EV4_BASE)/RELEASE.local
 
 # Set RULES here if you want to take build rules from somewhere
 # other than EPICS_BASE:

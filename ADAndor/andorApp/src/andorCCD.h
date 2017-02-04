@@ -173,8 +173,8 @@ class AndorCCD : public ADDriver {
   static const epicsInt32 AShutterClose;
 
   // (Gabriele Salvato) List of Integrate On Chip modes
-  static const epicsInt32 AndorCCD::AIOC_Off;
-  static const epicsInt32 AndorCCD::AIOC_On;
+  static const epicsInt32 AIOC_Off;
+  static const epicsInt32 AIOC_On;
   // (Gabriele Salvato) end
   
   /**
