@@ -46,4 +46,4 @@ include $(TOP)/../../configure/RELEASE_PATHS.local
 -include $(TOP)/../../configure/RELEASE_PATHS.local.$(EPICS_HOST_ARCH)
 include $(TOP)/../../configure/RELEASE_LIBS.local
 include $(TOP)/../../configure/RELEASE.local
-include $(TOP)/../../configure/RELEASE.local.$(EPICS_HOST_ARCH)
+-include $(TOP)/../../configure/RELEASE.local.$(EPICS_HOST_ARCH)
