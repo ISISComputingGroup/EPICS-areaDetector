@@ -53,13 +53,13 @@ long ADnEDAxisProcess(struct aSubRecord *psub)
   double start = ((double *)psub->a)[0];
   int size = ((int *)psub->b)[0];
   double bin = ((double *)psub->c)[0];
+  double *pData = psub->dpvt;
+  double point = size*bin;
 
   if (size > maxsize) {
     return 1;
   }
   
-  double *pData = psub->dpvt;
-  double point = size*bin;
   for (i=0; i<maxsize; ++i) {
     pData[i] = point;
   }

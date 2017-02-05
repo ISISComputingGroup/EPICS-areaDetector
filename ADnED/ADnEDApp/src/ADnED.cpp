@@ -1217,7 +1217,7 @@ void ADnED::eventHandler(shared_ptr<epics::pvData::PVStructure> const &pv_struct
 		  tofIndex = (x_pos * tofBins) + int(floor(tof / (m_tofMax / tofBins))); 
 		} else if (static_cast<epicsUInt32>(plotType) == s_ADNED_2D_PLOT_YTOF) {
 		  // Y/TOF plot
-		  y_pos = int(floor(mappedPixelIndex / m_detPixelSizeX[det]));
+		  y_pos = int(floor(static_cast<double>(mappedPixelIndex / m_detPixelSizeX[det])));
 		  tofIndex = (y_pos * tofBins) + int(floor(tof / (m_tofMax / tofBins)));
 		} else if (static_cast<epicsUInt32>(plotType) == s_ADNED_2D_PLOT_PIXELIDTOF) {
 		  // PixelID/TOF plot
