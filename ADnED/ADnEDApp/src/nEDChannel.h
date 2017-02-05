@@ -63,7 +63,7 @@ namespace nEDChannel {
     void monitorEvent(MonitorPtr const & monitor);
     void unlisten(MonitorPtr const & monitor);
     bool waitUntilConnected(double timeOut);
-    boolean waitUntilDone();
+    bool waitUntilDone();
     
 
     std::string getRequesterName();

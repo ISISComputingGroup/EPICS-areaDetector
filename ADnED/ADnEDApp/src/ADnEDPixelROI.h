@@ -5,10 +5,21 @@
 #ifndef ADNED_PIXEL_ROI_H
 #define ADNED_PIXEL_ROI_H
 
+#ifdef epicsExportSharedSymbols
+#undef epicsExportSharedSymbols
+#define epicsExportSharedSymbols_ADNED_PIXEL_ROI_H
+#include <shareLib.h>
+#endif
+
 #include <epicsTypes.h>
 #include <asynStandardInterfaces.h>
-
 #include "NDPluginDriver.h"
+
+#ifdef epicsExportSharedSymbols_ADNED_PIXEL_ROI_H
+#undef epicsExportSharedSymbols_ADNED_PIXEL_ROI_H
+#define epicsExportSharedSymbols
+#include <shareLib.h>
+#endif
 
 /* ROI general parameters */
 #define ADnEDPixelROINameString               "PIXELROI_NAME"              /* Name of this ROI */

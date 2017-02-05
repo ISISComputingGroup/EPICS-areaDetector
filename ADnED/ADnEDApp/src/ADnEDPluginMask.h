@@ -5,10 +5,22 @@
 #ifndef NDPluginMask_H
 #define NDPluginMask_H
 
+#ifdef epicsExportSharedSymbols
+#undef epicsExportSharedSymbols
+#define epicsExportSharedSymbols_NDPluginMask_H
+#include <shareLib.h>
+#endif
+
 #include <epicsTypes.h>
 #include <asynStandardInterfaces.h>
 
 #include "NDPluginDriver.h"
+
+#ifdef epicsExportSharedSymbols_NDPluginMask_H
+#undef epicsExportSharedSymbols_NDPluginMask_H
+#define epicsExportSharedSymbols
+#include <shareLib.h>
+#endif
 
 typedef struct NDMask {
   size_t PosX;

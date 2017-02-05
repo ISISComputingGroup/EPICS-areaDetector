@@ -6,15 +6,15 @@ pattern {P, ADNED, PORT, ADDR, TIMEOUT, TOFSIZE, ADNED_PORT, TOF1SIZE, TOF2SIZE,
 	{BL99:Det:, M1:, M1, 0, 5, 160000, M1,               160000, 160000, 160000, 160000,         1024,     1024,     0,        0,        32,    32,    0,     0,     32,    32,    0,     0}
 }
 
-file save_restoreStatus.db
+file "$(AUTOSAVE)/asApp/Db/save_restoreStatus.db"
 {
 pattern {P}
         {BL99:CS:Det:ADnED:}
 }
 
-file ioc_sns.db
-{
-pattern {IOCNAME}
-        {BL99:CS:Det:ADnED}
-}
+#file ioc_sns.db
+#{
+#pattern {IOCNAME}
+#        {BL99:CS:Det:ADnED}
+#}
 

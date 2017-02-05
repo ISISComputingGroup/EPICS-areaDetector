@@ -34,8 +34,8 @@
 #include <stdio.h>
 #include <dbCommon.h>
 #include <aSubRecord.h>
-#include <epicsExport.h>
 #include <cantProceed.h>
+#include <epicsExport.h>
 
 long ADnEDAxisInit(struct aSubRecord *psub)
 {

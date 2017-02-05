@@ -19,8 +19,9 @@
 #include <ctype.h>
 #include <fcntl.h>
 #include <sys/stat.h>
+#ifndef _WIN32
 #include <unistd.h>
-
+#endif
 #include <epicsTime.h>
 #include <epicsTypes.h>
 #include <epicsThread.h>

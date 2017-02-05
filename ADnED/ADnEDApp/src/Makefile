@@ -7,7 +7,7 @@ include $(TOP)/configure/CONFIG
 #=============================
 # Build the IOC support library
 
-USR_CXXFLAGS += -Wunused-but-set-variable
+USR_CXXFLAGS_Linux += -Wunused-but-set-variable
 
 LIBRARY_IOC += ADnEDSupport
 LIBRARY_IOC += ADnEDTransform
@@ -26,7 +26,10 @@ ADnEDSupport_SRCS += ADnEDPluginMask.cpp
 ADnEDTransform_SRCS += ADnEDTransformBase.cpp
 ADnEDTransform_SRCS += ADnEDTransform.cpp
 
+ADnEDSupport_LIBS += ADnEDTransform ADBase NDPlugin ntndArrayConverter nt pvDatabase pvAccess pvData asyn
 ADnEDSupport_LIBS += $(EPICS_BASE_IOC_LIBS)
+
+ADnEDTransform_LIBS += pvData $(EPICS_BASE_IOC_LIBS)
 
 #=============================
 

@@ -8,4 +8,5 @@
 -include $(TOP)/RELEASE.local
 -include $(TOP)/configure/RELEASE.local
 
-NULLHTTPD=$(SUPPORT)/nullhttpd
+# covered in ISIS MASTER_RELEASE
+#NULLHTTPD=$(SUPPORT)/nullhttpd

@@ -17,8 +17,10 @@
 #include <stdio.h>
 
 #include <iocsh.h>
-#include <epicsExport.h>
 #include "NDPluginDriver.h"
+
+#include <epicsExport.h>
+
 #include "ADnEDPluginMask.h"
 
 #define MAX(A,B) (A)>(B)?(A):(B)

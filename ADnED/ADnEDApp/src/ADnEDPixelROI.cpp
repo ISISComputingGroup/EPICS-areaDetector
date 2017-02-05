@@ -22,8 +22,9 @@
 #include <iocsh.h>
 
 #include "NDArray.h"
-#include "ADnEDPixelROI.h"
+
 #include <epicsExport.h>
+#include "ADnEDPixelROI.h"
 
 #define MAX(A,B) (A)>(B)?(A):(B)
 #define MIN(A,B) (A)<(B)?(A):(B)

@@ -26,7 +26,12 @@
 #include "string.h"
 #include "errno.h"
 #include <stdexcept>
+#ifdef _WIN32
+#include <io.h>
+#define R_OK	4 /* for access() */
+#else
 #include "unistd.h"
+#endif
 
 #include "ADnEDFile.h"
 

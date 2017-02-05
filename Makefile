@@ -8,17 +8,6 @@ DIRS := $(DIRS) $(ADSUPPORT)
 DIRS := $(DIRS) $(ADCORE)
 $(ADCORE)_DEPEND_DIRS += $(ADSUPPORT)
 
-# Build optional plugins next
-ifdef FFMPEGSERVER
-DIRS := $(DIRS) $(FFMPEGSERVER)
-$(FFMPEGSERVER)_DEPEND_DIRS += $(ADCORE)
-endif
-
-ifdef ADPLUGINEDGE
-DIRS := $(DIRS) $(ADPLUGINEDGE)
-$(ADPLUGINEDGE)_DEPEND_DIRS += $(ADCORE)
-endif
-
 # Build simulation drivers next
 ifdef ADSIMDETECTOR
 DIRS := $(DIRS) $(ADSIMDETECTOR)
@@ -28,6 +17,17 @@ endif
 ifdef ADCSIMDETECTOR
 DIRS := $(DIRS) $(ADCSIMDETECTOR)
 $(ADCSIMDETECTOR)_DEPEND_DIRS += $(ADCORE)
+endif
+
+# Build optional plugins next
+ifdef FFMPEGSERVER
+DIRS := $(DIRS) $(FFMPEGSERVER)
+$(FFMPEGSERVER)_DEPEND_DIRS += $(ADCORE)
+endif
+
+ifdef ADPLUGINEDGE
+DIRS := $(DIRS) $(ADPLUGINEDGE)
+$(ADPLUGINEDGE)_DEPEND_DIRS += $(ADCORE)
 endif
 
 # Build software drivers next (no associated hardware)

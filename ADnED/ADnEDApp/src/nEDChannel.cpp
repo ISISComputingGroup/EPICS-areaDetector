@@ -3,14 +3,15 @@
 #include <iostream>
 #include <string>
 #include <stdexcept>
-#include "dirent.h"
 #include <sys/types.h>
+#ifndef _WIN32
+#include "dirent.h"
 #include <syscall.h> 
+#endif
 
 //Epics headers
 #include <epicsTime.h>
 #include <epicsThread.h>
-#include <epicsExport.h>
 #include <epicsString.h>
 #include <iocsh.h>
 #include <drvSup.h>
@@ -127,7 +128,7 @@ namespace nEDChannel {
     }
   }
   
-  boolean nEDMonitorRequester::waitUntilDone()
+  bool nEDMonitorRequester::waitUntilDone()
   {
     return m_doneEvent.wait();
   }

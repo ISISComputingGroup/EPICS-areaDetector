@@ -26,7 +26,7 @@ else ifeq (linux-x86, $(findstring linux-x86, $(T_A)))
 endif
 
 # For windows, install the dlls and libs
-BIN_INSTALLS_WIN32  += $(wildcard ../ffmpeg-$(VENDORARCH)-shared/bin/*.dll)
+BIN_INSTALLS_WIN32  += $(wildcard $(ICPBINARYDIR)/ffmpeg/ffmpeg-2.8.6-$(VENDORARCH)-shared/bin/*.dll)
 LIB_INSTALLS_WIN32  += avdevice.lib avformat.lib avcodec.lib avutil.lib swscale.lib
 
 # For linux, install all the .a and .so files
@@ -51,5 +51,5 @@ $(TOP)/vendor/yasm-%/yasm:
 # on windows, we can make libs out of defs by using lib.exe as listed on
 # http://ffmpeg.org/platform.html#Linking-to-FFmpeg-with-Microsoft-Visual-C_002b_002b
 %.lib:
-	lib /machine:$(MACHINE) /def:$(wildcard ../ffmpeg-$(VENDORARCH)-dev/lib/$(*F)-*.def) /out:$@
+	lib /machine:$(MACHINE) /def:$(wildcard $(ICPBINARYDIR)/ffmpeg/ffmpeg-2.8.6-$(VENDORARCH)-dev/lib/$(*F)-*.def) /out:$@
 	

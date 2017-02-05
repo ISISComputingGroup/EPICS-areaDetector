@@ -1,7 +1,11 @@
 TOP = ..
 include $(TOP)/configure/CONFIG
 
+ifneq ($(findstring windows,$(EPICS_HOST_ARCH)),)
+DIRS += example_win32
+else
 DIRS += example
+endif
 DIRS += ffmpegServerIOC
 
 include $(TOP)/configure/RULES_TOP

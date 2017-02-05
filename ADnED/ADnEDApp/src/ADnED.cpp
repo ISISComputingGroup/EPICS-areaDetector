@@ -9,26 +9,29 @@
 #include <iostream>
 #include <string>
 #include <stdexcept>
+#ifndef _WIN32
 #include "dirent.h"
-#include <sys/types.h>
 #include <syscall.h> 
+#endif
+#include <sys/types.h>
 #include <stdexcept>
 
 //Epics headers
 #include <epicsTime.h>
 #include <epicsThread.h>
-#include <epicsExport.h>
 #include <epicsString.h>
 #include <iocsh.h>
 #include <drvSup.h>
 #include <registryFunction.h>
+#include <pv/pvData.h>
 
 //ADnED
 #include "ADnED.h"
 #include "nEDChannel.h"
 #include "ADnEDFile.h"
 #include "ADnEDTransform.h"
-#include <pv/pvData.h>
+
+#include <epicsExport.h>
 
 using std::cout;
 using std::cerr;
