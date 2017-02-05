@@ -24,13 +24,17 @@ else ifeq (linux-x86, $(findstring linux-x86, $(T_A)))
 	CONFIGOPTIONS += --extra-cxxflags=-m32 
 	CONFIGOPTIONS += --extra-ldflags=-m32 
 endif
+#FFMPEGROOT = ../ffmpeg-$(T_A)
+FFMPEGROOT = /usr/local
+FFMPEGMAK =
+
 
 # For windows, install the dlls and libs
 BIN_INSTALLS_WIN32  += $(wildcard $(ICPBINARYDIR)/ffmpeg/ffmpeg-2.8.6-$(VENDORARCH)-shared/bin/*.dll)
 LIB_INSTALLS_WIN32  += avdevice.lib avformat.lib avcodec.lib avutil.lib swscale.lib
 
 # For linux, install all the .a and .so files
-LIB_INSTALLS_Linux  += $(wildcard ../ffmpeg-$(T_A)/lib/*.so*) $(wildcard ../ffmpeg-$(T_A)/lib/*.a)
+LIB_INSTALLS_Linux  += $(wildcard $(FFMPEGROOT)/lib/*.so*) $(wildcard $(FFMPEGROOT)/lib/*.a)
 
 install: $(FFMPEGMAK)
 

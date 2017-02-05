@@ -9,8 +9,8 @@ include $(TOP)/configure/CONFIG
 
 USR_CXXFLAGS_Linux += -Wunused-but-set-variable
 
-LIBRARY_IOC += ADnEDSupport
 LIBRARY_IOC += ADnEDTransform
+LIBRARY_IOC += ADnEDSupport
 
 # Install DBD files into <top>/dbd
 DBD += ADnEDSupport.dbd
