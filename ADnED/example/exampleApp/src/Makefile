@@ -47,6 +47,7 @@ example_LIBS += calc
 
 # Finally link to the EPICS Base libraries
 example_LIBS += $(EPICS_BASE_IOC_LIBS)
+example_SYS_LIBS_Linux += xml2
 
 #=============================
 
