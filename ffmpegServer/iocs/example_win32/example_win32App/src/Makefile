@@ -6,16 +6,18 @@
 TOP = ../..
 include $(TOP)/configure/CONFIG
 
+# set this for use in commonDriverMakefile
+PROD_NAME = example_win32
+
 PROD_IOC_WIN32 = example_win32
+
 DBD += example_win32.dbd
-example_win32_DBD += base.dbd
-example_win32_DBD += asyn.dbd
-example_win32_DBD += busySupport.dbd
-example_win32_DBD += ADSupport.dbd
-example_win32_DBD += NDPluginSupport.dbd
 example_win32_DBD += simDetectorSupport.dbd
 example_win32_DBD += ffmpegServer.dbd
+
+example_win32_SRCS += example_win32Main.cpp
 example_win32_SRCS += example_win32_registerRecordDeviceDriver.cpp
+
 example_win32_LIBS += ffmpegServer
 example_win32_LIBS += avdevice
 example_win32_LIBS += avformat
@@ -23,23 +25,15 @@ example_win32_LIBS += avcodec
 example_win32_LIBS += avutil
 example_win32_LIBS += swscale
 example_win32_LIBS += simDetector
-example_win32_LIBS += NDPlugin
-example_win32_LIBS += ADBase
-example_win32_LIBS += netCDF
-example_win32_LIBS += NeXus
-example_win32_LIBS += zlib
-example_win32_LIBS += busy
-example_win32_LIBS += asyn
-example_win32_SYS_LIBS += Gdi32
-example_win32_SYS_LIBS += Oleaut32
-example_win32_LIBS += $(EPICS_BASE_IOC_LIBS)
-example_win32_SRCS += example_win32Main.cpp
+
 BIN_INSTALLS_WIN32 += $(wildcard $(EPICS_BASE)/bin/$(EPICS_HOST_ARCH)/*.dll)
 BIN_INSTALLS_WIN32 += $(wildcard $(AREADETECTOR)/bin/$(EPICS_HOST_ARCH)/*.dll)
 BIN_INSTALLS_WIN32 += $(wildcard $(ASYN)/bin/$(EPICS_HOST_ARCH)/*.dll)
 BIN_INSTALLS_WIN32 += $(wildcard $(BUSY)/bin/$(EPICS_HOST_ARCH)/*.dll)
 BIN_INSTALLS_WIN32 += $(wildcard $(FFMPEGSERVER)/bin/$(EPICS_HOST_ARCH)/*.dll)
 BIN_INSTALLS_WIN32 += $(EPICS_BASE)/bin/$(EPICS_HOST_ARCH)/caRepeater.exe
+
+include $(ADCORE)/ADApp/commonDriverMakefile
 
 include $(TOP)/configure/RULES
 
