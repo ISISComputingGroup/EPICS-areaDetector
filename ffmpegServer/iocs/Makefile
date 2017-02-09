@@ -4,7 +4,11 @@ include $(TOP)/configure/CONFIG
 ifneq ($(findstring windows,$(EPICS_HOST_ARCH)),)
 DIRS += example_win32
 else
+ifneq ($(findstring win32,$(EPICS_HOST_ARCH)),)
+DIRS += example_win32
+else
 DIRS += example
+endif
 endif
 DIRS += ffmpegServerIOC
 
