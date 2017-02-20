@@ -520,6 +520,11 @@ void ffmpegStream::processCallbacks(NDArray *pArray)
     pkt.data = (uint8_t*)this->jpeg->pData;    // packet data will be allocated by the encoder
     pkt.size = c->width * c->height;
 
+	// needed to stop a stream of "AVFrame.format is not set" etc messages
+	scPicture->format = c->pix_fmt;
+	scPicture->width = c->width;
+	scPicture->height = c->height;
+
     if (avcodec_encode_video2(c, &pkt, scPicture, &got_output)) {
         asynPrint(this->pasynUserSelf, ASYN_TRACE_ERROR,
             "%s:%s: Encoding jpeg failed\n",
@@ -643,6 +648,7 @@ ffmpegStream::ffmpegStream(const char *portName, int queueSize, int blockingCall
     for (int i=0; i<config.server_maxconn; i++) {
         pthread_cond_init(&(this->cond[i]), NULL);
     }
+
 }
 
 /** Configuration routine.  Called directly, or from the iocsh function, calls ffmpegStream constructor:
@@ -658,7 +664,9 @@ extern "C" int ffmpegStreamConfigure(const char *portName, int queueSize, int bl
             driverName, MAX_FFMPEG_STREAMS);
         return(asynError);        
     }
-    streams[nstreams++] = new ffmpegStream(portName, queueSize, blockingCallbacks, NDArrayPort, NDArrayAddr, maxBuffers, maxMemory, priority, stackSize);
+	ffmpegStream* s = new ffmpegStream(portName, queueSize, blockingCallbacks, NDArrayPort, NDArrayAddr, maxBuffers, maxMemory, priority, stackSize);
+	streams[nstreams++] = s;
+	s->start();
     return(asynSuccess);
 }
 
