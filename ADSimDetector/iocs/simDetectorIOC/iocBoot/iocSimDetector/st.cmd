@@ -2,6 +2,8 @@
 
 errlogInit(20000)
 
+< envPaths
+
 dbLoadDatabase("$(TOP)/dbd/simDetectorApp.dbd")
 simDetectorApp_registerRecordDeviceDriver(pdbbase) 
 
