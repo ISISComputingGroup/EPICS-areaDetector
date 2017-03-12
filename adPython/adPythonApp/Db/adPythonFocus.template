@@ -1,0 +1,71 @@
+# % macro, P, Device Prefix
+# % macro, R, Device Suffix
+# % macro, PORT, Asyn Port name
+# % macro, TIMEOUT, Timeout
+# % macro, ADDR, Asyn Port address
+# % gui, $(PORT), edmtab, adPythonFocus.edl, P=$(P),R=$(R)
+
+record(longin, "$(P)$(R)KSize_RBV") {
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))ksize")
+    field(SCAN, "I/O Intr")
+}
+
+record(longout, "$(P)$(R)KSize") {
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))ksize")
+}
+
+record(longin, "$(P)$(R)Iters_RBV") {
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))iters")
+    field(SCAN, "I/O Intr")
+}
+
+record(longout, "$(P)$(R)Iters") {
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))iters")
+}
+
+record(mbbi, "$(P)$(R)Prefilter_RBV")
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))prefilter")
+    field(SCAN, "I/O Intr")
+    field(ZRST, "None")
+    field(ZRVL, "0")
+    field(ONST, "Open")
+    field(ONVL, "1")
+}
+
+record(mbbo, "$(P)$(R)Prefilter")
+{
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))prefilter")
+    field(ZRST, "None")
+    field(ZRVL, "0")
+    field(ONST, "Open")
+    field(ONVL, "1")
+}
+
+record(ai, "$(P)$(R)Sum_RBV") {
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))sum")
+    field(SCAN, "I/O Intr")
+}
+
+record(ai, "$(P)$(R)FilteredMean_RBV") {
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))filtered_mean")
+    field(SCAN, "I/O Intr")
+    field(PREC, "2")
+}
+
+record(ai, "$(P)$(R)FilteredStddev_RBV") {
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))filtered_stddev")
+    field(SCAN, "I/O Intr")
+    field(PREC, "2")
+}

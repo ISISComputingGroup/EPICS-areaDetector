@@ -1,0 +1,93 @@
+# % macro, P, Device Prefix
+# % macro, R, Device Suffix
+# % macro, PORT, Asyn Port name
+# % macro, TIMEOUT, Timeout
+
+# % gdatag, pv, ro, $(PORT)_adPython, Time, Time taken for plugin to run
+record(ai, "$(P)$(R)Time_RBV")
+{
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),0,$(TIMEOUT))ADPYTHON_TIME")
+    field(SCAN, "I/O Intr")
+    field(PREC, "1")
+    field(EGU,  "ms")
+}
+
+# File path.
+# % gdatag, array, rw, $(PORT)_adPython, Filename, Set Filename
+# % autosave 2 
+record(waveform, "$(P)$(R)Filename")
+{
+    field(DTYP, "asynOctetWrite")
+    field(INP,  "@asyn($(PORT),0,$(TIMEOUT))ADPYTHON_FILENAME")
+    field(FTVL, "CHAR")
+    field(NELM, "256")
+}
+
+# % gdatag, array, ro, $(PORT)_adPython, Filename_RBV, Readback for Filename
+record(waveform, "$(P)$(R)Filename_RBV")
+{
+    field(DTYP, "asynOctetRead")
+    field(INP,  "@asyn($(PORT),0,$(TIMEOUT))ADPYTHON_FILENAME")
+    field(FTVL, "CHAR")
+    field(NELM, "256")
+    field(SCAN, "I/O Intr")
+}
+
+# Class name.
+# % gdatag, array, rw, $(PORT)_adPython, Classname, Set Classname
+# % autosave 2 
+record(waveform, "$(P)$(R)Classname")
+{
+    field(DTYP, "asynOctetWrite")
+    field(INP,  "@asyn($(PORT),0,$(TIMEOUT))ADPYTHON_CLASSNAME")
+    field(FTVL, "CHAR")
+    field(NELM, "256")
+}
+
+# % gdatag, array, ro, $(PORT)_adPython, Classname_RBV, Readback for Classname
+record(waveform, "$(P)$(R)Classname_RBV")
+{
+    field(DTYP, "asynOctetRead")
+    field(INP,  "@asyn($(PORT),0,$(TIMEOUT))ADPYTHON_CLASSNAME")
+    field(FTVL, "CHAR")
+    field(NELM, "256")
+    field(SCAN, "I/O Intr")
+}
+
+# Read file
+# % gdatag, pv, rw, $(PORT)_adPython, ReadFile, Set ReadFile
+record(busy, "$(P)$(R)ReadFile")
+{
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),0,$(TIMEOUT))ADPYTHON_LOAD")
+    field(ZNAM, "Done")
+    field(ONAM, "Read")
+}
+
+# % gdatag, binary, ro, $(PORT)_adPython, ReadFile_RBV, Readback for ReadFile
+record(bi, "$(P)$(R)ReadFile_RBV")
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),0,$(TIMEOUT))ADPYTHON_LOAD")
+    field(ZNAM, "Done")
+    field(ONAM, "Reading")
+    field(SCAN, "I/O Intr")
+}
+
+# % gdatag, binary, ro, $(PORT)_adPython, Good_RBV, Readback for Good
+record(mbbi, "$(P)$(R)PluginState_RBV")
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),0,$(TIMEOUT))ADPYTHON_STATE")
+    field(ZRST, "Good")
+    field(ZRSV, "NO_ALARM")
+    field(ZRVL, "0")
+    field(ONST, "Bad")
+    field(ONSV, "MAJOR")
+    field(ONVL, "1")
+    field(TWST, "Ugly")
+    field(TWSV, "MAJOR")
+    field(TWVL, "2")
+    field(SCAN, "I/O Intr")
+}
