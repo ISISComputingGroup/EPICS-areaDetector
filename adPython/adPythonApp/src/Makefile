@@ -45,7 +45,7 @@ PYTHON_VERSION = $(shell $(PYTHON) -c 'from distutils import sysconfig; \
 ifneq ($(PYTHON_PREFIX),)
     # user defined prefix, add it explicitly
 	USR_INCLUDES += -I$(PYTHON_PREFIX)/include/python$(PYTHON_VERSION)
-	python$(PYTHON_VERSION)_DIR = $(PYTHON_PREFIX)/lib
+	python$(PYTHON_VERSION)_DIR = $(PYTHON_PREFIX)/lib64
 	adPython_LIBS += python$(PYTHON_VERSION)
 	# add the numpy include path too, which is printed out when we run
 	# adPythonPlugin.py from the command line

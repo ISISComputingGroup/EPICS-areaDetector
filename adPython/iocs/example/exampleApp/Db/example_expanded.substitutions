@@ -10,7 +10,7 @@
 #  PORT     Asyn Port name
 #  TIMEOUT  Timeout
 #  ADDR     Asyn Port address
-file $(AREADETECTOR)/db/ADBase.template
+file $(ADCORE)/db/ADBase.template
 {
 pattern { P, R, PORT, TIMEOUT, ADDR }
     { "ADPYTHONTEST", ":URL:", "CAM.URL", "1", "0" }
@@ -22,7 +22,7 @@ pattern { P, R, PORT, TIMEOUT, ADDR }
 #  PORT     Asyn Port name
 #  TIMEOUT  Timeout
 #  ADDR     Asyn Port address
-file $(AREADETECTOR)/db/URLDriver.template
+file $(ADURL)/db/URLDriver.template
 {
 pattern { P, R, PORT, TIMEOUT, ADDR }
     { "ADPYTHONTEST", ":URL:", "CAM.URL", "1", "0" }
@@ -37,7 +37,7 @@ pattern { P, R, PORT, TIMEOUT, ADDR }
 #  NDARRAY_PORT  Input Array Port
 #  NDARRAY_ADDR  Input Array Address
 #  Enabled       Plugin Enabled at startup?
-file $(AREADETECTOR)/db/NDPluginBase.template
+file $(ADCORE)/db/NDPluginBase.template
 {
 pattern { P, R, PORT, TIMEOUT, ADDR, NDARRAY_PORT, NDARRAY_ADDR, Enabled }
     { "ADPYTHONTEST", ":PY1:", "CAM.PY1", "1", "0", "CAM.URL", "0", "1" }
@@ -77,7 +77,7 @@ pattern { P, R, PORT, TIMEOUT, ADDR }
 #  TYPE       Asyn Type e.g. Int32
 #  FTVL       Format, e.g. Int
 #  NELEMENTS  Number of elements
-file $(AREADETECTOR)/db/NDStdArrays.template
+file $(ADCORE)/db/NDStdArrays.template
 {
 pattern { P, R, PORT, TIMEOUT, ADDR, TYPE, FTVL, NELEMENTS }
     { "ADPYTHONTEST", ":ARR1:", "CAM.ARR1", "1", "0", "Int8", "UCHAR", "786432" }
@@ -89,7 +89,7 @@ pattern { P, R, PORT, TIMEOUT, ADDR, TYPE, FTVL, NELEMENTS }
 #  PORT     Asyn Port name
 #  TIMEOUT  Timeout
 #  ADDR     Asyn Port address
-file $(AREADETECTOR)/db/NDFile.template
+file $(ADCORE)/db/NDFile.template
 {
 pattern { P, R, PORT, TIMEOUT, ADDR }
     { "ADPYTHONTEST", ":HDF:", "CAM.HDF", "1", "0" }
@@ -99,7 +99,7 @@ pattern { P, R, PORT, TIMEOUT, ADDR }
 #  P     Device Prefix
 #  R     Device Suffix
 #  PORT  Asyn Port name
-file $(AREADETECTOR)/db/NDFileHDF5.template
+file $(ADCORE)/db/NDFileHDF5.template
 {
 pattern { P, R, PORT }
     { "ADPYTHONTEST", ":HDF:", "CAM.HDF" }

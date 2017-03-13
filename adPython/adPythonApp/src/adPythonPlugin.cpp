@@ -677,9 +677,9 @@ asynStatus adPythonPlugin::updateAttrDict(NDArray *pArray) {
         if (pObject == NULL) {
             asynPrint(this->pasynUserSelf, ASYN_TRACE_ERROR,
                 "%s:%s: attribute %s could not be put in attribute dict\n",
-                driverName, __func__, pAttr->pName);            
+                driverName, __func__, pAttr->getName());            
         } else {            
-            PyDict_SetItemString(this->pAttrs, pAttr->pName, pObject); 
+            PyDict_SetItemString(this->pAttrs, pAttr->getName(), pObject); 
             Py_DECREF(pObject); 
         }
         pAttr = this->pFileAttributes->next(pAttr);

@@ -8,5 +8,6 @@ else ifeq ($(EPICS_HOST_ARCH), linux-x86_64)
 else ifeq ($(EPICS_HOST_ARCH), win32-x86)
 	DIRS :=
 endif
+DIRS := example
 
 include $(TOP)/configure/RULES_DIRS

@@ -19,18 +19,24 @@
 # Build settings that are NOT module paths should appear in a
 # CONFIG_SITE file.
 
-TEMPLATE_TOP=$(EPICS_BASE)/templates/makeBaseApp/top
-SUPPORT=/dls_sw/prod/R3.14.12.3/support
-WORK=/dls_sw/work/R3.14.12.3/support
-TOOLS_BASE=/dls_sw/prod/tools/RHEL6-x86_64
+#TEMPLATE_TOP=$(EPICS_BASE)/templates/makeBaseApp/top
+#SUPPORT=/dls_sw/prod/R3.14.12.3/support
+#WORK=/dls_sw/work/R3.14.12.3/support
+#TOOLS_BASE=/dls_sw/prod/tools/RHEL6-x86_64
 
-ASYN=$(SUPPORT)/asyn/4-21
-AREADETECTOR=$(SUPPORT)/areaDetector/1-9dls4
-PYTHON_PREFIX=$(TOOLS_BASE)/Python/2-7-3/prefix
+#ASYN=$(SUPPORT)/asyn/4-21
+#AREADETECTOR=$(SUPPORT)/areaDetector/1-9dls4
+#PYTHON_PREFIX=$(TOOLS_BASE)/Python/2-7-3/prefix
+PYTHON_PREFIX=/usr
 
 # EPICS_BASE usually appears last so other apps can override stuff:
-EPICS_BASE=/dls_sw/epics/R3.14.12.3/base
+#EPICS_BASE=/dls_sw/epics/R3.14.12.3/base
 
 # Set RULES here if you want to take build rules from somewhere
 # other than EPICS_BASE:
 #RULES=/path/to/epics/support/module/rules/x-y
+-include $(TOP)/../configure/RELEASE_PATHS.local
+-include $(TOP)/../configure/RELEASE_PATHS.local.$(EPICS_HOST_ARCH)
+-include $(TOP)/../configure/RELEASE_LIBS.local
+-include $(TOP)/RELEASE.local
+-include $(TOP)/configure/RELEASE.local
