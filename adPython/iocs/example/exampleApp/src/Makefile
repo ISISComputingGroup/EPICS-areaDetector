@@ -6,36 +6,40 @@
 TOP = ../..
 include $(TOP)/configure/CONFIG
 
-PROD_IOC = example
-DBD += example.dbd
-example_DBD += base.dbd
-example_DBD += asyn.dbd
-example_DBD += busySupport.dbd
-example_DBD += ADSupport.dbd
-example_DBD += NDPluginSupport.dbd
-example_DBD += URLDriverSupport.dbd
-example_DBD += adPythonPlugin.dbd
-example_SRCS += example_registerRecordDeviceDriver.cpp
-example_LIBS += adPython
-example_LIBS += URLDriver
-example_LIBS += NDPlugin
-example_LIBS += ADBase
-example_LIBS += busy
-example_LIBS += asyn
-#example_SYS_LIBS += tiff
-#example_SYS_LIBS += jpeg
-#example_SYS_LIBS += z
-#example_SYS_LIBS += gomp
-#example_SYS_LIBS += X11
-#example_SYS_LIBS += xml2
-#example_SYS_LIBS += png12
-#example_SYS_LIBS += bz2
-#example_SYS_LIBS += Xext
-#example_SYS_LIBS += freetype
-#example_SYS_LIBS += python2.7
-#example_SYS_LIBS += GraphicsMagick++
-example_LIBS += $(EPICS_BASE_IOC_LIBS)
-example_SRCS += exampleMain.cpp
+ifeq ($(STATIC_BUILD),NO)
+
+  PROD_IOC = example
+  DBD += example.dbd
+  example_DBD += base.dbd
+  example_DBD += asyn.dbd
+  example_DBD += busySupport.dbd
+  example_DBD += ADSupport.dbd
+  example_DBD += NDPluginSupport.dbd
+  example_DBD += URLDriverSupport.dbd
+  example_DBD += adPythonPlugin.dbd
+  example_SRCS += example_registerRecordDeviceDriver.cpp
+  example_LIBS += adPython
+  example_LIBS += URLDriver
+  example_LIBS += NDPlugin
+  example_LIBS += ADBase
+  example_LIBS += busy
+  example_LIBS += asyn
+  #example_SYS_LIBS += tiff
+  #example_SYS_LIBS += jpeg
+  #example_SYS_LIBS += z
+  #example_SYS_LIBS += gomp
+  #example_SYS_LIBS += X11
+  #example_SYS_LIBS += xml2
+  #example_SYS_LIBS += png12
+  #example_SYS_LIBS += bz2
+  #example_SYS_LIBS += Xext
+  #example_SYS_LIBS += freetype
+  #example_SYS_LIBS += python2.7
+  #example_SYS_LIBS += GraphicsMagick++
+  example_LIBS += $(EPICS_BASE_IOC_LIBS)
+  example_SRCS += exampleMain.cpp
+
+endif
 
 include $(ADCORE)/ADApp/commonDriverMakefile
 
