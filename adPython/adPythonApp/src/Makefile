@@ -41,14 +41,17 @@ PYTHON = python
 PYTHON_VERSION = $(shell $(PYTHON) -c 'from distutils import sysconfig; \
     print sysconfig.get_config_var("VERSION")')
 
-USR_INCLUDES += -Ic:/Instrument/Apps/Python/include
-USR_LDFLAGS += /libpath:c:/Instrument/Apps/Python/libs
+USR_INCLUDES_WIN32 += -Ic:/Instrument/Apps/Python/include
+USR_LDFLAGS_WIN32 += /libpath:c:/Instrument/Apps/Python/libs
 # link against python
 ifneq ($(PYTHON_PREFIX),)
     # user defined prefix, add it explicitly
 	USR_INCLUDES += -I$(PYTHON_PREFIX)/include/python$(PYTHON_VERSION)
-	python$(PYTHON_VERSION)_DIR = $(PYTHON_PREFIX)/lib64
+ifeq ($(OS_CLASS),WIN32)
 	python$(PYTHON_VERSION)_DIR = c:/Instrument/Apps/Python/libs
+else
+	python$(PYTHON_VERSION)_DIR = $(PYTHON_PREFIX)/lib64
+endif
 	adPython_LIBS += python$(PYTHON_VERSION)
 	# add the numpy include path too, which is printed out when we run
 	# adPythonPlugin.py from the command line
