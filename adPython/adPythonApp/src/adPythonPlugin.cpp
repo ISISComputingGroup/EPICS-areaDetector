@@ -20,6 +20,11 @@
 // adPythonPlugin.py not working
 #define UGLY 2
 
+// __func__ doesn't exist prior to VS2013
+#if defined(_WIN32) && (_MSC_VER < 1800) 
+#define __func__  __FUNCTION__
+#endif
+
 // Some macros to set an error state and print a message
 #define NoGood(errString, st) {                         \
     asynPrint(this->pasynUserSelf, ASYN_TRACE_ERROR,    \
