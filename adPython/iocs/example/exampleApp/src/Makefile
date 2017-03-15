@@ -20,31 +20,24 @@ example_LIBS += adPython
 example_LIBS += URLDriver
 example_LIBS += NDPlugin
 example_LIBS += ADBase
-#example_LIBS += netCDF
-#example_LIBS += cbfad
-#example_LIBS += NeXus
-#example_LIBS += hdf5
-#example_LIBS += sz
-#example_LIBS += PvAPI
-#example_LIBS += GraphicsMagick++
-#example_LIBS += GraphicsMagickWand
-#example_LIBS += GraphicsMagick
 example_LIBS += busy
 example_LIBS += asyn
-example_SYS_LIBS += tiff
-example_SYS_LIBS += jpeg
-example_SYS_LIBS += z
-example_SYS_LIBS += gomp
-example_SYS_LIBS += X11
-example_SYS_LIBS += xml2
-example_SYS_LIBS += png12
-example_SYS_LIBS += bz2
-example_SYS_LIBS += Xext
-example_SYS_LIBS += freetype
-example_SYS_LIBS += python2.7
-example_SYS_LIBS += GraphicsMagick++
+#example_SYS_LIBS += tiff
+#example_SYS_LIBS += jpeg
+#example_SYS_LIBS += z
+#example_SYS_LIBS += gomp
+#example_SYS_LIBS += X11
+#example_SYS_LIBS += xml2
+#example_SYS_LIBS += png12
+#example_SYS_LIBS += bz2
+#example_SYS_LIBS += Xext
+#example_SYS_LIBS += freetype
+#example_SYS_LIBS += python2.7
+#example_SYS_LIBS += GraphicsMagick++
 example_LIBS += $(EPICS_BASE_IOC_LIBS)
 example_SRCS += exampleMain.cpp
+
+include $(ADCORE)/ADApp/commonDriverMakefile
 
 include $(TOP)/configure/RULES
 

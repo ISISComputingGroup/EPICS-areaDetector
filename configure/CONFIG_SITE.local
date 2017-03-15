@@ -28,10 +28,11 @@ WITH_BOOST     = NO
 WITH_EPICS_V4  = YES
 
 # GraphicsMagick is required for NDFileMagick and the URL driver.
-WITH_GRAPHICSMAGICK     = NO
+WITH_GRAPHICSMAGICK     = YES
 GRAPHICSMAGICK_EXTERNAL = YES
 GRAPHICSMAGICK_INCLUDE = -I/usr/include/GraphicsMagick
 #GRAPHICSMAGICK_LIB     =
+#GRAPHICSMAGICK_BIN     =
 
 # HDF5 is required for the NDFileHDF5 and NDFileNexus plugins
 WITH_HDF5     = YES

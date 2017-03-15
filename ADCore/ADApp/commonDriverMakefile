@@ -140,11 +140,18 @@ endif
 # The following libraries are only needed for GraphicsMagick
 ifeq ($(WITH_GRAPHICSMAGICK), YES)
   $(PROD_NAME)_DBD += NDFileMagick.dbd
-  ifdef GRAPHICS_MAGICK_LIB
-    GraphicsMagick_DIR     = $(GRAPHICS_MAGICK_LIB)
-    GraphicsMagick++_DIR   = $(GRAPHICS_MAGICK_LIB)
-    GraphicsMagickWand_DIR = $(GRAPHICS_MAGICK_LIB)
-    PROD_LIBS               += GraphicsMagick++ GraphicsMagickWand GraphicsMagick
+  ifdef GRAPHICSMAGICK_LIB
+    ifeq ($(OS_CLASS),WIN32)
+	  CORE_RL_magick__DIR    = $(GRAPHICSMAGICK_LIB)
+	  CORE_RL_Magick++__DIR  = $(GRAPHICSMAGICK_LIB)
+	  CORE_RL_wand__DIR      = $(GRAPHICSMAGICK_LIB)
+	  PROD_LIBS               += CORE_RL_Magick++_ CORE_RL_wand_ CORE_RL_magick_
+    else
+      GraphicsMagick_DIR     = $(GRAPHICSMAGICK_LIB)
+      GraphicsMagick++_DIR   = $(GRAPHICSMAGICK_LIB)
+      GraphicsMagickWand_DIR = $(GRAPHICSMAGICK_LIB)
+      PROD_LIBS               += GraphicsMagick++ GraphicsMagickWand GraphicsMagick
+    endif
   else
     PROD_SYS_LIBS           += GraphicsMagick++ GraphicsMagickWand GraphicsMagick
   endif
