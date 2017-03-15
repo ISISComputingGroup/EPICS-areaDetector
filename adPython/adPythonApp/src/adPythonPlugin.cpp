@@ -8,7 +8,7 @@
 #define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION
 #include "numpy/ndarrayobject.h"
 #include <stdio.h>
-#include <libgen.h>
+//#include <libgen.h>
 #include <epicsTime.h>
 #include "NDArray.h"
 #include "adPythonPlugin.h"

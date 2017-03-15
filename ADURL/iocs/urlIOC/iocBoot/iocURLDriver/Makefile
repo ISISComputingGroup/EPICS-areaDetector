@@ -1,6 +1,6 @@
 TOP = ../..
 include $(TOP)/configure/CONFIG
-ARCH = win32-x86
+ARCH = $(EPICS_HOST_ARCH)
 #ARCH = linux-x86
-TARGETS = envPaths cdCommands
+TARGETS = envPaths cdCommands runIOC.bat
 include $(TOP)/configure/RULES.ioc
