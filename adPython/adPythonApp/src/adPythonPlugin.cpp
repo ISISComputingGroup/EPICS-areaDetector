@@ -3,10 +3,21 @@
 #undef _XOPEN_SOURCE
 #define _POSIX_C_SOURCE 200112L
 #define _XOPEN_SOURCE 600
+
+// always link against non-debug python DLL even when compiling debug on windows
+#if defined(_WIN32) && defined(_DEBUG)
+#undef _DEBUG
+#define UNDEF_DEBUG 1
+#endif
 #include <Python.h>
 #define PYTHON_USE_NUMPY
 #define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION
 #include "numpy/ndarrayobject.h"
+#if defined(_WIN32) && defined(UNDEF_DEBUG)
+#define _DEBUG 1
+#undef UNDEF_DEBUG
+#endif
+
 #include <stdio.h>
 //#include <libgen.h>
 #include <epicsTime.h>
