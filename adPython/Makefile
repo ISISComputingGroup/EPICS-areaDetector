@@ -1,9 +1,13 @@
 #Makefile at top of application tree
 TOP = .
 include $(TOP)/configure/CONFIG
-DIRS := $(DIRS) $(filter-out $(DIRS), configure)
-DIRS := $(DIRS) $(filter-out $(DIRS), $(wildcard *App))
-DIRS := $(DIRS) $(filter-out $(DIRS), $(wildcard iocBoot))
+
+# we don't have 32bit python installed
+ifneq ($(findstring win32,$(EPICS_HOST_ARCH)),"")
+  DIRS := $(DIRS) $(filter-out $(DIRS), configure)
+  DIRS := $(DIRS) $(filter-out $(DIRS), $(wildcard *App))
+  DIRS := $(DIRS) $(filter-out $(DIRS), $(wildcard iocBoot))
+endif
 
 define DIR_template
  $(1)_DEPEND_DIRS = configure
