@@ -3,7 +3,7 @@ TOP = .
 include $(TOP)/configure/CONFIG
 
 # we don't have 32bit python installed
-ifeq ($(findstring win32,$(EPICS_HOST_ARCH)),"")
+ifeq ($(findstring win32,$(EPICS_HOST_ARCH)),)
   DIRS := $(DIRS) $(filter-out $(DIRS), configure)
   DIRS := $(DIRS) $(filter-out $(DIRS), $(wildcard *App))
   DIRS := $(DIRS) $(filter-out $(DIRS), $(wildcard iocBoot))

@@ -22,7 +22,7 @@ XML2_LIB     = $(LIBXML2)/lib/$(EPICS_HOST_ARCH)
 #
 GRAPHICSMAGICK_EXTERNAL = YES
 GRAPHICSMAGICK_INCLUDE = -I$(ICPBINARYDIR)/GraphicsMagick/include -I$(ICPBINARYDIR)/GraphicsMagick/include/Magick++/lib
-ifneq ($(findstring windows,$(EPICS_HOST_ARCH)),"")
+ifneq ($(findstring windows,$(EPICS_HOST_ARCH)),)
 GRAPHICSMAGICK_LIB     = $(ICPBINARYDIR)/GraphicsMagick/x64/Release/lib
 GRAPHICSMAGICK_BIN     = $(ICPBINARYDIR)/GraphicsMagick/x64/Release/bin
 else
