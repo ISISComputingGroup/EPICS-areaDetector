@@ -520,18 +520,22 @@ void ffmpegStream::processCallbacks(NDArray *pArray)
     pkt.data = (uint8_t*)this->jpeg->pData;    // packet data will be allocated by the encoder
     pkt.size = c->width * c->height;
 
-	// needed to stop a stream of "AVFrame.format is not set" etc messages
-	scPicture->format = c->pix_fmt;
-	scPicture->width = c->width;
-	scPicture->height = c->height;
+    // needed to stop a stream of "AVFrame.format is not set" etc messages
+    scPicture->format = c->pix_fmt;
+    scPicture->width = c->width;
+    scPicture->height = c->height;
 
     if (avcodec_encode_video2(c, &pkt, scPicture, &got_output)) {
         asynPrint(this->pasynUserSelf, ASYN_TRACE_ERROR,
             "%s:%s: Encoding jpeg failed\n",
             driverName, functionName);
+        got_output = 0; // got_output is undefined on error, so explicitly set it for use later
     }
 
-    this->jpeg->dims[0].size = pkt.size;
+    if (got_output) {
+        this->jpeg->dims[0].size = pkt.size;
+        av_packet_unref(&pkt);
+    }
 
     //printf("Frame! Size: %d\n", this->jpeg->dims[0].size);
     
@@ -546,6 +550,7 @@ void ffmpegStream::processCallbacks(NDArray *pArray)
 
     /* Update the parameters.  */
     callParamCallbacks(0, 0);
+
 //    gettimeofday(&end, NULL);   
 //    difftime = (end.tv_usec - start.tv_usec) * 0.000001 + end.tv_sec - start.tv_sec;
 //    if (difftime > 0.1) printf ("It took %.2lf seconds to process callbacks. That's a bit slow\n", difftime);      
