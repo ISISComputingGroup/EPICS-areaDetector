@@ -31,8 +31,9 @@
 // adPythonPlugin.py not working
 #define UGLY 2
 
-// __func__ doesn't exist prior to VS2013
-#if defined(_WIN32) && (_MSC_VER < 1800) 
+// __func__ doesn't exist prior to VS2015 - some docs say it exists in 2013
+// but that seemed not to be the case
+#if defined(_WIN32) && (_MSC_VER < 1900)
 #define __func__  __FUNCTION__
 #endif
 
