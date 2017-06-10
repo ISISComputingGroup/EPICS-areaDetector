@@ -1,0 +1,316 @@
+# % macro, P, Device Prefix
+# % macro, R, Device Suffix
+# % macro, PORT, Asyn Port name
+# % macro, TIMEOUT, Timeout
+# % macro, ADDR, Asyn Port address
+# % gui, $(PORT), edmtab, adPythonDataMatrix.edl, P=$(P),R=$(R)
+
+record(mbbi, "$(P)$(R)step_RBV")
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))step")
+    field(SCAN, "I/O Intr")
+    field(ZRST, "Gray")
+    field(ZRVL, "0")
+    field(ONST, "Circles")
+    field(ONVL, "1")
+    field(TWST, "Threshold")
+    field(TWVL, "2")
+    field(THST, "Morphology")
+    field(THVL, "3")    
+    field(FRST, "Contours")
+    field(FRVL, "4")
+    field(FVST, "FirstMatrix")
+    field(FVVL, "5")
+    field(SXST, "Complete")
+    field(SXVL, "6")
+}
+
+record(mbbo, "$(P)$(R)step")
+{
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))step")
+    field(ZRST, "Gray")
+    field(ZRVL, "0")
+    field(ONST, "Circles")
+    field(ONVL, "1")
+    field(TWST, "Threshold")
+    field(TWVL, "2")
+    field(THST, "Morphology")
+    field(THVL, "3")    
+    field(FRST, "Contours")
+    field(FRVL, "4")
+    field(FVST, "FirstMatrix")
+    field(FVVL, "5")
+    field(SXST, "Complete")
+    field(SXVL, "6")
+}
+
+record(stringin, "$(P)$(R)message_RBV") {
+    field(PINI, "YES")
+    field(DTYP, "asynOctetRead")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))message")
+    field(SCAN, "I/O Intr")
+}
+
+record(ai, "$(P)$(R)double1_RBV") {
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))double1")
+    field(SCAN, "I/O Intr")
+    field(PREC, "3")
+    field(EGU,  "")     
+}
+
+record(ao, "$(P)$(R)double1") {
+    field(DTYP, "asynFloat64")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))double1")
+    field(PREC, "3")
+    field(EGU, "")    
+    field(PINI, "YES")
+}
+
+record(ai, "$(P)$(R)double2_RBV") {
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))double2")
+    field(SCAN, "I/O Intr")
+    field(PREC, "3")
+    field(EGU,  "")     
+}
+
+record(ao, "$(P)$(R)double2") {
+    field(DTYP, "asynFloat64")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))double2")
+    field(PREC, "3")
+    field(EGU, "")    
+    field(PINI, "YES")
+}
+
+record(ai, "$(P)$(R)double3_RBV") {
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))double3")
+    field(SCAN, "I/O Intr")
+    field(PREC, "3")
+    field(EGU,  "")     
+}
+
+record(ao, "$(P)$(R)double3") {
+    field(DTYP, "asynFloat64")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))double3")
+    field(PREC, "3")
+    field(EGU, "")    
+    field(PINI, "YES")
+}
+
+record(longin, "$(P)$(R)int1_RBV") {
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))int1")
+    field(SCAN, "I/O Intr")
+}
+
+record(longout, "$(P)$(R)int1") {
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))int1")
+}
+
+record(longin, "$(P)$(R)int2_RBV") {
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))int2")
+    field(SCAN, "I/O Intr")
+}
+
+record(longout, "$(P)$(R)int2") {
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))int2")
+}
+
+record(longin, "$(P)$(R)int3_RBV") {
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))int3")
+    field(SCAN, "I/O Intr")
+}
+
+record(longout, "$(P)$(R)int3") {
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))int3")
+}
+
+record(ai, "$(P)$(R)dp_RBV") {
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))dp")
+    field(SCAN, "I/O Intr")
+    field(PREC, "3")
+    field(EGU,  "")     
+}
+
+record(ao, "$(P)$(R)dp") {
+    field(DTYP, "asynFloat64")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))dp")
+    field(PREC, "3")
+    field(EGU, "")    
+    field(PINI, "YES")
+}
+
+record(longin, "$(P)$(R)minDist_RBV") {
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))minDist")
+    field(SCAN, "I/O Intr")
+}
+
+record(longout, "$(P)$(R)minDist") {
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))minDist")
+}
+
+record(longin, "$(P)$(R)minRadius_RBV") {
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))minRadius")
+    field(SCAN, "I/O Intr")
+}
+
+record(longout, "$(P)$(R)minRadius") {
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))minRadius")
+}
+
+record(longin, "$(P)$(R)maxRadius_RBV") {
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))maxRadius")
+    field(SCAN, "I/O Intr")
+}
+
+record(longout, "$(P)$(R)maxRadius") {
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))maxRadius")
+}
+
+record(longin, "$(P)$(R)param1_RBV") {
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))param1")
+    field(SCAN, "I/O Intr")
+}
+
+record(longout, "$(P)$(R)param1") {
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))param1")
+}
+
+record(stringin, "$(P)$(R)bc1_RBV") {
+    field(PINI, "YES")
+    field(DTYP, "asynOctetRead")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))bc1")
+    field(SCAN, "I/O Intr")
+}
+
+record(stringin, "$(P)$(R)bc2_RBV") {
+    field(PINI, "YES")
+    field(DTYP, "asynOctetRead")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))bc2")
+    field(SCAN, "I/O Intr")
+}
+
+record(stringin, "$(P)$(R)bc3_RBV") {
+    field(PINI, "YES")
+    field(DTYP, "asynOctetRead")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))bc3")
+    field(SCAN, "I/O Intr")
+}
+
+record(stringin, "$(P)$(R)bc4_RBV") {
+    field(PINI, "YES")
+    field(DTYP, "asynOctetRead")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))bc4")
+    field(SCAN, "I/O Intr")
+}
+
+record(stringin, "$(P)$(R)bc5_RBV") {
+    field(PINI, "YES")
+    field(DTYP, "asynOctetRead")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))bc5")
+    field(SCAN, "I/O Intr")
+}
+
+record(stringin, "$(P)$(R)bc6_RBV") {
+    field(PINI, "YES")
+    field(DTYP, "asynOctetRead")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))bc6")
+    field(SCAN, "I/O Intr")
+}
+
+record(stringin, "$(P)$(R)bc7_RBV") {
+    field(PINI, "YES")
+    field(DTYP, "asynOctetRead")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))bc7")
+    field(SCAN, "I/O Intr")
+}
+
+record(stringin, "$(P)$(R)bc8_RBV") {
+    field(PINI, "YES")
+    field(DTYP, "asynOctetRead")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))bc8")
+    field(SCAN, "I/O Intr")
+}
+
+record(stringin, "$(P)$(R)bc9_RBV") {
+    field(PINI, "YES")
+    field(DTYP, "asynOctetRead")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))bc9")
+    field(SCAN, "I/O Intr")
+}
+
+record(stringin, "$(P)$(R)bc10_RBV") {
+    field(PINI, "YES")
+    field(DTYP, "asynOctetRead")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))bc10")
+    field(SCAN, "I/O Intr")
+}
+
+record(stringin, "$(P)$(R)bc11_RBV") {
+    field(PINI, "YES")
+    field(DTYP, "asynOctetRead")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))bc11")
+    field(SCAN, "I/O Intr")
+}
+
+record(stringin, "$(P)$(R)bc12_RBV") {
+    field(PINI, "YES")
+    field(DTYP, "asynOctetRead")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))bc12")
+    field(SCAN, "I/O Intr")
+}
+
+record(stringin, "$(P)$(R)bc13_RBV") {
+    field(PINI, "YES")
+    field(DTYP, "asynOctetRead")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))bc13")
+    field(SCAN, "I/O Intr")
+}
+
+record(stringin, "$(P)$(R)bc14_RBV") {
+    field(PINI, "YES")
+    field(DTYP, "asynOctetRead")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))bc14")
+    field(SCAN, "I/O Intr")
+}
+
+record(stringin, "$(P)$(R)bc15_RBV") {
+    field(PINI, "YES")
+    field(DTYP, "asynOctetRead")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))bc15")
+    field(SCAN, "I/O Intr")
+}
+
+record(stringin, "$(P)$(R)bc16_RBV") {
+    field(PINI, "YES")
+    field(DTYP, "asynOctetRead")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))bc16")
+    field(SCAN, "I/O Intr")
+}
+
+

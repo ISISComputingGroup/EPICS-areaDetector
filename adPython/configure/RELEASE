@@ -24,8 +24,8 @@
 #WORK=/dls_sw/work/R3.14.12.3/support
 #TOOLS_BASE=/dls_sw/prod/tools/RHEL6-x86_64
 
-#ASYN=$(SUPPORT)/asyn/4-21
-#AREADETECTOR=$(SUPPORT)/areaDetector/1-9dls4
+#ASYN=$(SUPPORT)/asyn/4-26
+#ADCORE=$(SUPPORT)/ADCore/2-4dls8
 #PYTHON_PREFIX=$(TOOLS_BASE)/Python/2-7-3/prefix
 PYTHON_PREFIX=/usr
 

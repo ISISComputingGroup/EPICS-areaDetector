@@ -1,0 +1,2 @@
+# Place any example specific dependencies here
+ARAVISGIGE=$(SUPPORT)/aravisGigE/2-1dls2

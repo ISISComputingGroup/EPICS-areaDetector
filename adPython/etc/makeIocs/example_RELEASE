@@ -1,0 +1,2 @@
+# Place any example specific dependencies here
+ADURL=$(SUPPORT)/ADURL/2-1dls3

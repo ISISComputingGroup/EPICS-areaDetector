@@ -61,7 +61,7 @@ else
 	adPython_SYS_LIBS += python$(PYTHON_VERSION)
 endif
 
-USR_CXXFLAGS += -DDATADIR=\"$(shell cd ..; pwd)\"
+USR_CXXFLAGS += -DDATADIRS=\"$(shell cd ..; pwd):$(shell cd ../../scripts; pwd)\"
 
 adPython_LIBS += NDPlugin
 

@@ -11,12 +11,7 @@ include $(TOP)/configure/CONFIG
 # In a Diamond Support Module, install
 # templates like this
 #
-DB += adPythonPlugin.template
-DB += adPythonTemplate.template
-DB += adPythonMorph.template
-DB += adPythonFocus.template
-DB += adPythonBarCode.template
-DB += adPythonTransfer.template
+DB += $(patsubst ../%, %, $(wildcard ../*.template))
 
 #----------------------------------------------------
 # In a Diamond IOC Application, build db files from
