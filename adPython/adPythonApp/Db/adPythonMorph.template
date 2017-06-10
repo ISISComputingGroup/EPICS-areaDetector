@@ -54,6 +54,8 @@ record(mbbi, "$(P)$(R)Operation_RBV")
     field(EIVL, "8")
     field(NIST, "medianBlur")
     field(NIVL, "9")
+    field(TEST, "adaptiveThresh")
+    field(TEVL, "10")
 }
 
 record(mbbo, "$(P)$(R)Operation")
@@ -80,4 +82,6 @@ record(mbbo, "$(P)$(R)Operation")
     field(EIVL, "8")
     field(NIST, "medianBlur")
     field(NIVL, "9")
+    field(TEST, "adaptiveThresh")
+    field(TEVL, "10")    
 }

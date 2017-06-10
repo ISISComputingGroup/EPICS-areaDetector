@@ -1,0 +1,108 @@
+# % macro, P, Device Prefix
+# % macro, R, Device Suffix
+# % macro, PORT, Asyn Port name
+# % macro, TIMEOUT, Timeout
+# % macro, ADDR, Asyn Port address
+# % gui, $(PORT), edmtab, adPythonCircle.edl, P=$(P),R=$(R)
+
+record(ai, "$(P)$(R)dp_RBV") {
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))dp")
+    field(SCAN, "I/O Intr")
+    field(PREC, "3")
+    field(EGU,  "")     
+}
+
+record(ao, "$(P)$(R)dp") {
+    field(DTYP, "asynFloat64")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))dp")
+    field(PREC, "3")
+    field(EGU, "")    
+    field(PINI, "YES")
+}
+
+record(longin, "$(P)$(R)minDist_RBV") {
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))minDist")
+    field(SCAN, "I/O Intr")
+}
+
+record(longout, "$(P)$(R)minDist") {
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))minDist")
+}
+
+record(longin, "$(P)$(R)minRadius_RBV") {
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))minRadius")
+    field(SCAN, "I/O Intr")
+}
+
+record(longout, "$(P)$(R)minRadius") {
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))minRadius")
+}
+
+record(longin, "$(P)$(R)maxRadius_RBV") {
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))maxRadius")
+    field(SCAN, "I/O Intr")
+}
+
+record(longout, "$(P)$(R)maxRadius") {
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))maxRadius")
+}
+
+record(longin, "$(P)$(R)param1_RBV") {
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))param1")
+    field(SCAN, "I/O Intr")
+}
+
+record(longout, "$(P)$(R)param1") {
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))param1")
+}
+
+record(mbbi, "$(P)$(R)drawCircles_RBV")
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))drawCircles")
+    field(SCAN, "I/O Intr")
+    field(ZRST, "No")
+    field(ZRVL, "0")
+    field(ONST, "Yes")
+    field(ONVL, "1")
+}
+
+record(mbbo, "$(P)$(R)drawCircles")
+{
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))drawCircles")
+    field(ZRST, "No")
+    field(ZRVL, "0")
+    field(ONST, "Yes")
+    field(ONVL, "1")
+}
+
+record(ai, "$(P)$(R)x") {
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))x")
+    field(SCAN, "I/O Intr")
+    field(PREC, "3")
+    field(EGU, "pixels")     
+}
+
+record(ai, "$(P)$(R)y") {
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))y")
+    field(SCAN, "I/O Intr")
+    field(PREC, "3")
+    field(EGU, "pixels")     
+}
+

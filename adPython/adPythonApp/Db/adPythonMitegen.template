@@ -1,0 +1,256 @@
+# % macro, P, Device Prefix
+# % macro, R, Device Suffix
+# % macro, PORT, Asyn Port name
+# % macro, TIMEOUT, Timeout
+# % macro, ADDR, Asyn Port address
+# % gui, $(PORT), edmtab, adPythonMitegen.edl, P=$(P),R=$(R)
+
+record(ai, "$(P)$(R)micron_pix_RBV") {
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))micron_pix")
+    field(SCAN, "I/O Intr")
+    field(PREC, "3")
+    field(EGU, "um/pix")     
+}
+
+record(ao, "$(P)$(R)micron_pix") {
+    field(DTYP, "asynFloat64")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))micron_pix")
+    field(PREC, "3")
+    field(EGU, "um/pix")    
+}
+
+record(longin, "$(P)$(R)m_ksize_RBV") {
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))m_ksize")
+    field(SCAN, "I/O Intr")
+}
+
+record(longout, "$(P)$(R)m_ksize") {
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))m_ksize")
+}
+
+record(longin, "$(P)$(R)m_iters_RBV") {
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))m_iters")
+    field(SCAN, "I/O Intr")
+}
+
+record(longout, "$(P)$(R)m_iters") {
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))m_iters")
+}
+
+record(mbbi, "$(P)$(R)m_operation_RBV")
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))m_operation")
+    field(SCAN, "I/O Intr")
+    field(ZRST, "Erode")
+    field(ZRVL, "0")
+    field(ONST, "Dilate")
+    field(ONVL, "1")
+    field(TWST, "Open")
+    field(TWVL, "2")
+    field(THST, "Close")
+    field(THVL, "3")    
+    field(FRST, "Gradient")
+    field(FRVL, "4")
+    field(FVST, "Tophat")
+    field(FVVL, "5")
+    field(SXST, "Blackhat")
+    field(SXVL, "6")
+    field(SVST, "Blur")
+    field(SVVL, "7")
+    field(EIST, "GaussianBlur")
+    field(EIVL, "8")
+    field(NIST, "medianBlur")
+    field(NIVL, "9")
+    field(TEST, "adaptiveThresh")
+    field(TEVL, "10")
+}
+
+record(mbbo, "$(P)$(R)m_operation")
+{
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))m_operation")
+    field(ZRST, "Erode")
+    field(ZRVL, "0")
+    field(ONST, "Dilate")
+    field(ONVL, "1")
+    field(TWST, "Open")
+    field(TWVL, "2")
+    field(THST, "Close")
+    field(THVL, "3")    
+    field(FRST, "Gradient")
+    field(FRVL, "4")
+    field(FVST, "Tophat")
+    field(FVVL, "5")
+    field(SXST, "Blackhat")
+    field(SXVL, "6")
+    field(SVST, "Blur")
+    field(SVVL, "7")
+    field(EIST, "GaussianBlur")
+    field(EIVL, "8")
+    field(NIST, "medianBlur")
+    field(NIVL, "9")
+    field(TEST, "adaptiveThresh")
+    field(TEVL, "10")    
+}
+
+record(longin, "$(P)$(R)t_ksize_RBV") {
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))t_ksize")
+    field(SCAN, "I/O Intr")
+}
+
+record(longout, "$(P)$(R)t_ksize") {
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))t_ksize")
+}
+
+record(longin, "$(P)$(R)t_c_RBV") {
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))t_c")
+    field(SCAN, "I/O Intr")
+}
+
+record(longout, "$(P)$(R)t_c") {
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))t_c")
+}
+
+record(longin, "$(P)$(R)curve_epsilon_RBV") {
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))curve_epsilon")
+    field(SCAN, "I/O Intr")
+}
+
+record(longout, "$(P)$(R)curve_epsilon") {
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))curve_epsilon")
+}
+
+record(ai, "$(P)$(R)ar_err_RBV") {
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))ar_err")
+    field(SCAN, "I/O Intr")
+    field(PREC, "3")
+}
+
+record(ao, "$(P)$(R)ar_err") {
+    field(DTYP, "asynFloat64")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))ar_err")
+    field(PREC, "3")
+}
+
+record(longin, "$(P)$(R)canny_thresh_RBV") {
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))canny_thresh")
+    field(SCAN, "I/O Intr")
+}
+
+record(longout, "$(P)$(R)canny_thresh") {
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))canny_thresh")
+}
+
+record(mbbi, "$(P)$(R)step_RBV")
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))step")
+    field(SCAN, "I/O Intr")
+    field(ZRST, "Gray")
+    field(ZRVL, "0")
+    field(ONST, "Threshold")
+    field(ONVL, "1")
+    field(TWST, "Morphology")
+    field(TWVL, "2")
+    field(THST, "Contours")
+    field(THVL, "3")    
+    field(FRST, "Crosses")
+    field(FRVL, "4")
+    field(FVST, "Canny")
+    field(FVVL, "5")
+    field(SXST, "Dots")
+    field(SXVL, "6")
+    field(SVST, "Loop")
+    field(SVVL, "7")
+    field(EIST, "NoOutput")
+    field(EIVL, "8")
+}
+
+record(mbbo, "$(P)$(R)step")
+{
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))step")
+    field(ZRST, "Gray")
+    field(ZRVL, "0")
+    field(ONST, "Threshold")
+    field(ONVL, "1")
+    field(TWST, "Morphology")
+    field(TWVL, "2")
+    field(THST, "Contours")
+    field(THVL, "3")    
+    field(FRST, "Crosses")
+    field(FRVL, "4")
+    field(FVST, "Canny")
+    field(FVVL, "5")
+    field(SXST, "Dots")
+    field(SXVL, "6")
+    field(SVST, "Loop")
+    field(SVVL, "7")
+    field(EIST, "NoOutput")
+    field(EIVL, "8")    
+}
+
+record(mbbi, "$(P)$(R)ltype")
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))ltype")
+    field(SCAN, "I/O Intr")
+    field(ZRST, "Microloops")
+    field(ZRVL, "4")
+    field(ONST, "M2")
+    field(ONVL, "1")
+    field(TWST, "Invalid")
+    field(TWVL, "-1")
+}
+
+record(longin, "$(P)$(R)lsize") {
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))lsize")
+    field(SCAN, "I/O Intr")
+    field(EGU, "um")
+}
+
+record(ai, "$(P)$(R)lx") {
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))lx")
+    field(SCAN, "I/O Intr")
+    field(PREC, "3")
+    field(EGU, "um")     
+}
+
+record(ai, "$(P)$(R)ly") {
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))ly")
+    field(SCAN, "I/O Intr")
+    field(PREC, "3")
+    field(EGU, "um")     
+}
+
+record(ai, "$(P)$(R)ch") {
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))ch")
+    field(SCAN, "I/O Intr")
+    field(PREC, "3")
+    field(EGU, "um")     
+}

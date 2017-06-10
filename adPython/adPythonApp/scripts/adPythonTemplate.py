@@ -20,7 +20,7 @@ class Template(AdPythonPlugin):
         # You can change the Name fields on the EDM screen here
         # Hide them by making their name -1
         params = dict(int1 = 1,      int1Name = "Array offset",
-                      int2 = 2,      int2Name = "Int 2",
+                      int2 = 2,      int2Name = "Array Sum",
                       int3 = 3,      int3Name = "-1",
                       double1 = 1.0, double1Name = "Double 1",
                       double2 = 2.0, double2Name = "Double 2",
@@ -32,7 +32,7 @@ class Template(AdPythonPlugin):
         # just log it for now, do nothing.
         self.log.debug("Parameter has been changed %s", self)
 
-    def processArray(self, arr, attr):        
+    def processArray(self, arr, attr={}):        
         # Called when the plugin gets a new array
         # arr is a numpy array
         # attr is an attribute dictionary that will be attached to the array
@@ -47,6 +47,7 @@ class Template(AdPythonPlugin):
         # uint64 type to a python integer as we only handle python integers,
         # doubles and strings in the C code for now
         attr["sum"] = int(out.sum())
+        self["int2"] = attr["sum"]
         self.log.debug("Array processed, sum: %d", attr["sum"])        
         # return the resultant array.
         return out

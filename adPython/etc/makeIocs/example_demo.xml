@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<components arch="linux-x86_64">
+	<ADURL.URLDriver ADDR="0" P="ADPYTHONTEST" PORT="CAM.URL" R=":URL:" TIMEOUT="1"/>
+	<adPython.adPythonPlugin ADDR="0" NDARRAY_ADDR="0" NDARRAY_PORT="CAM.URL" P="ADPYTHONTEST" PORT="CAM.PY1" R=":PY1:" TIMEOUT="1" classname="Mitegen"/>
+	<ffmpegServer.ffmpegStream ADDR="0" NDARRAY_ADDR="0" NDARRAY_PORT="CAM.PY1" P="ADPYTHONTEST" PORT="CAM.MJPG" R=":MJPG:" TIMEOUT="1"/>
+	<EPICS_BASE.StartupCommand command="dbpf(&quot;ADPYTHONTEST:URL:URL1&quot;, &quot;/home/tmc43/test/mitegen/mitegen_1.png&quot;)" post_init="True"/>
+	<EPICS_BASE.StartupCommand command="dbpf(&quot;ADPYTHONTEST:URL:AcquirePeriod&quot;, &quot;1&quot;)" post_init="True"/>
+	<EPICS_BASE.StartupCommand command="dbpf(&quot;ADPYTHONTEST:URL:Acquire&quot;, &quot;1&quot;)" post_init="True"/>
+</components>

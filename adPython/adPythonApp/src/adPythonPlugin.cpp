@@ -74,10 +74,16 @@ adPythonPlugin::adPythonPlugin(const char *portNameArg, const char *filename,
     createParam("ADPYTHON_LOAD",       asynParamInt32,   &adPythonLoad);
     createParam("ADPYTHON_TIME",       asynParamFloat64, &adPythonTime);    
     createParam("ADPYTHON_STATE",      asynParamInt32,   &adPythonState);        
+}
 
-    // First we tell python where to find adPythonPlugin.py
+/** Init function called once immediately after class instantiation. Starts the
+ *  plugin threads.
+ */
+void adPythonPlugin::initThreads()
+{
+    // First we tell python where to find adPythonPlugin.py and other scripts
     char buffer[BIGBUFFER];
-    snprintf(buffer, sizeof(buffer), "PYTHONPATH=%s", DATADIR);
+    snprintf(buffer, sizeof(buffer), "PYTHONPATH=%s", DATADIRS);
     putenv(buffer);
     
     // Now we initialise python
@@ -164,30 +170,29 @@ void adPythonPlugin::processCallbacks(NDArray *pArray) {
     this->interpretReturn(pValue);
     Py_XDECREF(pValue);
 
-    // copy everything except the data, e.g. uniqueId and timeStamp, attributes
-    if (this->pArrays[0]) this->pNDArrayPool->copy(pArray, this->pArrays[0], 0);
-
     // update param list, this will callParamCallbacks at the end
     this->updateParamList(0);    
 
     // update the attribute list
-    this->updateAttrList();
+    this->updateAttrList(pArray);
 
-    // release GIL and dict Mutex    
-    this->threadState = PyEval_SaveThread();
-    epicsMutexUnlock(this->dictMutex);
-    
     // timestamp
     epicsTimeGetCurrent(&end);
     setDoubleParam(adPythonTime, epicsTimeDiffInSeconds(&end, &start)*1000);
-    callParamCallbacks();    
+    callParamCallbacks();
+
+    // release GIL and dict Mutex 
+    this->unlock();   
+    this->threadState = PyEval_SaveThread();
+    epicsMutexUnlock(this->dictMutex);
     
     // Spit out the array
     if (this->pArrays[0]) {
-        this->unlock();
         doCallbacksGenericPointer(this->pArrays[0], NDArrayData, 0);
-        this->lock();    
     }
+    
+    // called with the lock taken, so lock back up here
+    this->lock();        
 }
 
 /** Called when asyn clients call pasynInt32->write().
@@ -318,7 +323,10 @@ asynStatus adPythonPlugin::importAdPythonModule() {
     
     // Import the adPython module
     PyObject *pAdPython = PyImport_ImportModule("adPythonPlugin");
-    if (pAdPython == NULL) Ugly("Can't import adPythonPlugin");
+    if (pAdPython == NULL) {
+        PyErr_Print();
+        Ugly("Can't import adPythonPlugin");
+    }
     
     // Try and init numpy, needs to be done here as adPythonPlugin might have
     // to put it on our path
@@ -457,26 +465,26 @@ asynStatus adPythonPlugin::interpretReturn(PyObject *pValue) {
         Bad("Can't lookup numpy format for dataType");
     
     // Create a dimension description from numpy array, note the inverse order
+    int ndims = PyArray_NDIM(pArrayOb);
     size_t ad_dims[ND_ARRAY_MAX_DIMS];
-    for (int i=0; i<PyArray_NDIM(pArrayOb); i++) {
-        ad_dims[i] = PyArray_DIMS(pArrayOb)[PyArray_NDIM(pArrayOb)-i-1];
+    for (int i=0; i<ndims; i++) {
+        ad_dims[i] = PyArray_DIMS(pArrayOb)[ndims-i-1];
     }
     
     /* Allocate the array */
-    this->pArrays[0] = pNDArrayPool->alloc(PyArray_NDIM(pArrayOb), ad_dims, 
-        ad_fmt, 0, NULL);
+    this->pArrays[0] = pNDArrayPool->alloc(ndims, ad_dims, ad_fmt, 0, NULL);
     if (this->pArrays[0] == NULL) Bad("Error allocating buffer");
 
     // TODO: could avoid this memcpy if we could pass an existing
     // buffer to NDArray *AND* have it call a user free function
     NDArrayInfo arrayInfo;    
     this->pArrays[0]->getInfo(&arrayInfo);
-    memcpy(this->pArrays[0]->pData, PyArray_DATA(pArrayOb), arrayInfo.totalBytes);              
-    return asynSuccess; 
+    memcpy(this->pArrays[0]->pData, PyArray_DATA(pArrayOb), arrayInfo.totalBytes);                  
+    return asynSuccess;     
 }           
 
 /** Called by writexxx(). Updates the python param dict with values from the
-  * param list.
+  * param list, except for Numpy arrays, which are silently not updated.
   * 
   * Called with dictMutex taken, GIL taken, this->lock taken.
   */ 
@@ -520,9 +528,13 @@ asynStatus adPythonPlugin::updateParamDict() {
             char value[BIGBUFFER];
             getStringParam(param, BIGBUFFER, value);
             PyDict_SetItem(this->pParams, key, PyString_FromString(value));
+        } else if (PyArray_Check(pValue)) {
+            ; // Do nothing, because we expect no one has written to a waveform record.
+              // (If someone tried to do so, they would fail loudly, since
+              //  asynPortDriver::writeInt32Array() is not implemented.)
         } else {
             asynPrint(this->pasynUserSelf, ASYN_TRACE_ERROR,
-                "%s:%s: param %s is not an int, float or string\n",
+                "%s:%s: param %s is not an int, float, string or Numpy array\n",
                 driverName, __func__, paramStr);            
         }
     }
@@ -590,9 +602,48 @@ asynStatus adPythonPlugin::updateParamList(int atinit) {
             }
             // set string param
             setStringParam(param, PyString_AsString(value));
+        } else if (PyArray_Check(value)) {
+
+            PyArrayObject *array = reinterpret_cast<PyArrayObject*>(value);
+
+            if (PyArray_NDIM(array) != 1) {
+                asynPrint(this->pasynUserSelf, ASYN_TRACE_ERROR,
+                    "%s:%s: Numpy array param %s is not 1-dimensional\n",
+                    driverName, __func__, paramStr);
+                continue;
+            }
+
+            size_t width = PyArray_SIZE(array);
+            int elementType = PyArray_TYPE(array);
+
+            if (elementType == NPY_INT32) {
+                if (atinit) {
+                    createParam(paramStr, asynParamInt32Array,
+                        &adPythonUserParams[this->nextParam]);
+                    param = adPythonUserParams[this->nextParam++];
+                }
+                // set int32 array param
+                epicsInt32 *arrayData = static_cast<epicsInt32*>(PyArray_DATA(array));
+                doCallbacksInt32Array(arrayData, width, param, 0);
+
+            } else if (elementType == NPY_FLOAT64) {
+                if (atinit) {
+                    createParam(paramStr, asynParamFloat64Array,
+                        &adPythonUserParams[this->nextParam]);
+                    param = adPythonUserParams[this->nextParam++];
+                }
+                // set float64 array param
+                epicsFloat64 *arrayData = static_cast<epicsFloat64*>(PyArray_DATA(array));
+                doCallbacksFloat64Array(arrayData, width, param, 0);
+
+            } else {
+                asynPrint(this->pasynUserSelf, ASYN_TRACE_ERROR,
+                    "%s:%s: Numpy array %s has elements neither of type int32 or float64\n",
+                    driverName, __func__, paramStr);
+            }
         } else {
             asynPrint(this->pasynUserSelf, ASYN_TRACE_ERROR,
-                "%s:%s: param %s is not an int, float or string\n",
+                "%s:%s: param %s is not an int, float, string or Numpy array\n",
                 driverName, __func__, paramStr);            
         }
     }
@@ -677,9 +728,9 @@ asynStatus adPythonPlugin::updateAttrDict(NDArray *pArray) {
         if (pObject == NULL) {
             asynPrint(this->pasynUserSelf, ASYN_TRACE_ERROR,
                 "%s:%s: attribute %s could not be put in attribute dict\n",
-                driverName, __func__, pAttr->pName);            
+                driverName, __func__, pAttr->getName());
         } else {            
-            PyDict_SetItemString(this->pAttrs, pAttr->pName, pObject); 
+            PyDict_SetItemString(this->pAttrs, pAttr->getName(), pObject);
             Py_DECREF(pObject); 
         }
         pAttr = this->pFileAttributes->next(pAttr);
@@ -693,7 +744,7 @@ asynStatus adPythonPlugin::updateAttrDict(NDArray *pArray) {
   * 
   * Called with dictMutex taken, GIL taken, this->lock taken.
   */ 
-asynStatus adPythonPlugin::updateAttrList() {
+asynStatus adPythonPlugin::updateAttrList(NDArray *pArray) {
      // Return if we aren't all good
     if (this->pluginState != GOOD) return asynError;
 
@@ -702,6 +753,10 @@ asynStatus adPythonPlugin::updateAttrList() {
 
     // Return if we don't have an attribute dict to read from
     if (this->pAttrs == NULL) Bad("Attribute dict is null");
+
+    // copy uniqueId and timeStamp over
+    this->pArrays[0]->timeStamp = pArray->timeStamp;
+    this->pArrays[0]->uniqueId = pArray->uniqueId;    
 
     // Create attr key list
     PyObject *pKeys = PyDict_Keys(this->pAttrs);
@@ -728,7 +783,17 @@ asynStatus adPythonPlugin::updateAttrList() {
                 driverName, __func__, paramStr);            
         }
     }
-    Py_DECREF(pKeys);    
+    Py_DECREF(pKeys);  
+    
+    // If we have a 3 dim image then assume RGB1, otherwise Mono
+    int colorMode;
+    if (this->pArrays[0]->ndims > 2) {
+        colorMode = NDColorModeRGB1;
+    } else {
+        colorMode = NDColorModeMono;
+    }
+    this->pArrays[0]->pAttributeList->add("ColorMode", "Color Mode", NDAttrInt32, &colorMode);    
+      
     return asynSuccess;
 }
 
@@ -777,10 +842,12 @@ static int adPythonPluginConfigure(const char *portNameArg, const char *filename
                    int priority, int stackSize) {
     // Stack Size must be a minimum of 2MB
     if (stackSize < 2097152) stackSize = 2097152;
-    new adPythonPlugin(portNameArg, filename,
+    adPythonPlugin* adp;
+    adp = new adPythonPlugin(portNameArg, filename,
                    classname, queueSize, blockingCallbacks,
                    NDArrayPort, NDArrayAddr, maxBuffers, maxMemory,
                    priority, stackSize);
+    adp->initThreads();
     return(asynSuccess);
 }
 

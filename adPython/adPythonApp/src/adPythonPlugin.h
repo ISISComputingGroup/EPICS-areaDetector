@@ -19,6 +19,8 @@ public:
 				   const char *NDArrayPort, int NDArrayAddr, int maxBuffers, size_t maxMemory,
 				   int priority, int stackSize);
 	~adPythonPlugin() {}
+	/** This called once immediately after class instantiation */
+	virtual void initThreads();
     /** This is called when the plugin gets a new array callback */
     virtual void processCallbacks(NDArray *pArray);
     /** This is when we get a new int value */
@@ -48,7 +50,7 @@ private:
     asynStatus updateParamDict();
     asynStatus updateParamList(int atinit);
     asynStatus updateAttrDict(NDArray *pArray);
-    asynStatus updateAttrList();    
+    asynStatus updateAttrList(NDArray *pArray);    
     asynStatus lookupNpyFormat(NDDataType_t ad_fmt, int *npy_fmt);
     asynStatus lookupAdFormat(int npy_fmt, NDDataType_t *ad_fmt);
     
