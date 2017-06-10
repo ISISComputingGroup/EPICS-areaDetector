@@ -1,5 +1,5 @@
 # Set the default behavior, in case people don't have core.autocrlf set.
-* text=auto
+#* text=auto
 
 # Explicitly declare text files you want to always be normalized and converted
 # to native line endings on checkout.
@@ -14,6 +14,11 @@
 *.dbd text
 *.template text
 *.substitutions text
+*.edl text
+*.opi text
+*.pro text
+Makefile
+*.mak text
 
 # Declare files that will always have CRLF line endings on checkout.
 *.sln text eol=crlf
