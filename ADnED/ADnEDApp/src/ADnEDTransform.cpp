@@ -1,5 +1,7 @@
-
-#include <ADnED.h>
+// we include epicsTypes here so it isn't accidentally expored from ADnEDTransform.h
+#include <cmath>
+#include "epicsTypes.h"
+#include <epicsExport.h>
 #include <ADnEDTransform.h>
 
 /**

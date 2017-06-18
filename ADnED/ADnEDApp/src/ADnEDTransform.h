@@ -30,7 +30,7 @@
 #include "ADnEDGlobals.h"
 #include "ADnEDTransformBase.h"
 
-class ADnEDTransform : public ADnEDTransformBase {
+class epicsShareClass ADnEDTransform : public ADnEDTransformBase {
   
  public:
   ADnEDTransform();

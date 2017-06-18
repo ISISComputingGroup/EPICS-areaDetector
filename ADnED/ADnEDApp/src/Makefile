@@ -29,7 +29,7 @@ ADnEDTransform_SRCS += ADnEDTransform.cpp
 ADnEDSupport_LIBS += ADnEDTransform ADBase NDPlugin ntndArrayConverter nt pvDatabase pvAccess pvData asyn
 ADnEDSupport_LIBS += $(EPICS_BASE_IOC_LIBS)
 
-ADnEDTransform_LIBS += pvData $(EPICS_BASE_IOC_LIBS)
+ADnEDTransform_LIBS += $(EPICS_BASE_IOC_LIBS)
 
 #=============================
 

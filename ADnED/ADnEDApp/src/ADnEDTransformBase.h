@@ -13,7 +13,7 @@
 #include "epicsTypes.h"
 #include "ADnEDGlobals.h"
 
-class ADnEDTransformBase {
+class epicsShareClass ADnEDTransformBase {
 
  public: 
   ADnEDTransformBase();

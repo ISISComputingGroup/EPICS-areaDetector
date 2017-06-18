@@ -2,6 +2,9 @@
  * ADnEDTransform base class. Concrete classes should inherit from this.
  */
 
+// we include epicsTypes here so it isn't accidentally expored from ADnEDTransformBase.h
+#include "epicsTypes.h"
+#include <epicsExport.h>
 #include <ADnEDTransformBase.h>
 
 /**
