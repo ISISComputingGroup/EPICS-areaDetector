@@ -12,6 +12,7 @@
 #include <string.h>
 #include <stdio.h>
 #include <math.h>
+#include <limits>
 
 #include <epicsTypes.h>
 #include <epicsMessageQueue.h>
@@ -32,6 +33,13 @@
 
 static const char *driverName="NDPluginColorConvert";
 
+/* scale supplied value to the 0-255 range needed for the false color lookup table */
+template <typename epicsType>
+unsigned char NDPluginColorConvert::falseColorIndex(epicsType value)
+{
+	return static_cast<unsigned char>(0.5 + static_cast<double>(value) / std::numeric_limits<epicsType>::max() * std::numeric_limits<unsigned char>::max());
+}
+
 /* This function returns 1 if it did a conversion, 0 if it did not */
 template <typename epicsType>
 void NDPluginColorConvert::convertColor(NDArray *pArray)
@@ -39,6 +47,7 @@ void NDPluginColorConvert::convertColor(NDArray *pArray)
     NDColorMode_t colorModeOut;
     static const char* functionName = "convertColor";
     size_t i, j;
+	unsigned char ind;
     epicsType *pIn, *pRedIn, *pGreenIn, *pBlueIn;
     epicsType *pOut, *pRedOut, *pGreenOut, *pBlueOut;
     epicsType *pDataIn  = (epicsType *)pArray->pData;
@@ -67,10 +76,9 @@ void NDPluginColorConvert::convertColor(NDArray *pArray)
     pAttribute = pArray->pAttributeList->find("BayerPattern");
     if (pAttribute) pAttribute->getValue(NDAttrInt32, &bayerPattern);
     
-    /* if we have int8 data then check for false color */
-    if (pArray->dataType == NDInt8 || pArray->dataType == NDUInt8) {
-        getIntegerParam(NDPluginColorConvertFalseColor, &falseColor);            
-        switch (falseColor) {
+/* check for false color */
+	getIntegerParam(NDPluginColorConvertFalseColor, &falseColor);            
+    switch (falseColor) {
         case 1:
             colorMapR = RainbowColorR;
             colorMapG = RainbowColorG;
@@ -85,9 +93,9 @@ void NDPluginColorConvert::convertColor(NDArray *pArray)
             break;
         default:
             falseColor = 0;
-        }
-    }     
-    /* This function is called with the lock taken, and it must be set when we exit.
+    }
+
+	/* This function is called with the lock taken, and it must be set when we exit.
      * The following code can be exected without the mutex because we are not accessing elements of
      * pPvt that other threads can access. */
     this->unlock();
@@ -116,8 +124,11 @@ void NDPluginColorConvert::convertColor(NDArray *pArray)
                     pIn  = pDataIn;
                     if (falseColor) {
                         for (i=0; i<imageSize; i++) {
-                            memcpy(pOut, colorMapRGB + 3 * ((unsigned char)*pIn++), 3);
-                            pOut+=3;
+							ind = falseColorIndex(*pIn);
+                            *pOut++ = colorMapR[ind];
+                            *pOut++ = colorMapG[ind];
+                            *pOut++ = colorMapB[ind];
+							++pIn;								
                         }                                       
                     } else {
                         for (i=0; i<imageSize; i++) {
@@ -149,9 +160,11 @@ void NDPluginColorConvert::convertColor(NDArray *pArray)
                             pGreenOut = pRedOut + rowSize;
                             pBlueOut  = pRedOut + 2*rowSize;
                             for (j=0; j<rowSize; j++) {
-                                *pRedOut++   = colorMapR[(unsigned char)*pIn];
-                                *pGreenOut++ = colorMapG[(unsigned char)*pIn];
-                                *pBlueOut++  = colorMapB[(unsigned char)*pIn++];
+								ind = falseColorIndex(*pIn);
+                                *pRedOut++   = colorMapR[ind];
+                                *pGreenOut++ = colorMapG[ind];
+                                *pBlueOut++  = colorMapB[ind];
+								++pIn;								
                             }
                         }                                
                     } else {
@@ -187,9 +200,11 @@ void NDPluginColorConvert::convertColor(NDArray *pArray)
                     pIn  = pDataIn;
                     if (falseColor) {  
                         for (i=0; i<imageSize; i++) {                    
-                            *pRedOut++   = colorMapR[(unsigned char)*pIn];
-                            *pGreenOut++ = colorMapG[(unsigned char)*pIn];
-                            *pBlueOut++  = colorMapB[(unsigned char)*pIn++];
+							ind = falseColorIndex(*pIn);
+                            *pRedOut++   = colorMapR[ind];
+                            *pGreenOut++ = colorMapG[ind];
+                            *pBlueOut++  = colorMapB[ind];
+							++pIn;								
                         }                                                   
                     } else {                                      
                         for (i=0; i<imageSize; i++) {
