@@ -140,7 +140,7 @@ ifeq ($(WITH_GRAPHICSMAGICK), YES)
     LIB_SYS_LIBS           += GraphicsMagick++ GraphicsMagickWand GraphicsMagick
   endif
   # The following system libraries must be installed to use GraphicsMagick
-  LIB_SYS_LIBS_Linux    += gomp X11 png12 bz2 Xext freetype 
+  LIB_SYS_LIBS_Linux    += gomp X11 bz2 Xext freetype 
   LIB_SYS_LIBS_Darwin   += png bz2
 endif
 
