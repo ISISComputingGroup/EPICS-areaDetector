@@ -5,4 +5,6 @@ DIRS := $(DIRS) $(filter-out $(DIRS), configure)
 DIRS := $(DIRS) $(filter-out $(DIRS), $(wildcard *App))
 DIRS := $(DIRS) $(filter-out $(DIRS), $(wildcard *app))
 DIRS := $(DIRS) $(filter-out $(DIRS), $(wildcard iocBoot))
+andor3App_DEPEND_DIRS += configure
+iocBoot_DEPEND_DIRS += andor3App
 include $(TOP)/configure/RULES_TOP

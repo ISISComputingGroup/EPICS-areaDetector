@@ -4,6 +4,7 @@ include $(TOP)/configure/CONFIG
 DIRS := $(DIRS) configure
 DIRS := $(DIRS) andor3Support
 DIRS := $(DIRS) andor3App
+andor3Support_DEPEND_DIRS += configure
 andor3App_DEPEND_DIRS += andor3Support
 ifeq ($(BUILD_IOCS), YES)
 DIRS := $(DIRS) $(filter-out $(DIRS), $(wildcard iocs))
