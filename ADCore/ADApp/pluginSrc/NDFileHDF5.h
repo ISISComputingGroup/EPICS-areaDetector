@@ -39,6 +39,9 @@
 #define str_NDFileHDF5_nbitsOffset       "HDF5_nbitsOffset"
 #define str_NDFileHDF5_szipNumPixels     "HDF5_szipNumPixels"
 #define str_NDFileHDF5_zCompressLevel    "HDF5_zCompressLevel"
+#define str_NDFileHDF5_bloscShuffleType  "HDF5_bloscShuffleType"
+#define str_NDFileHDF5_bloscCompressor   "HDF5_bloscCompressor"
+#define str_NDFileHDF5_bloscCompressLevel "HDF5_bloscCompressLevel"
 #define str_NDFileHDF5_dimAttDatasets    "HDF5_dimAttDatasets"
 #define str_NDFileHDF5_layoutErrorMsg    "HDF5_layoutErrorMsg"
 #define str_NDFileHDF5_layoutValid       "HDF5_layoutValid"
@@ -141,6 +144,9 @@ class epicsShareClass NDFileHDF5 : public NDPluginFile
     int NDFileHDF5_nbitsOffset;
     int NDFileHDF5_szipNumPixels;
     int NDFileHDF5_zCompressLevel;
+    int NDFileHDF5_bloscCompressor;
+    int NDFileHDF5_bloscCompressLevel;
+    int NDFileHDF5_bloscShuffleType;
     int NDFileHDF5_dimAttDatasets;
     int NDFileHDF5_layoutErrorMsg;
     int NDFileHDF5_layoutValid;
@@ -153,7 +159,6 @@ class epicsShareClass NDFileHDF5 : public NDPluginFile
     int NDFileHDF5_SWMRSupported;
     int NDFileHDF5_SWMRMode;
     int NDFileHDF5_SWMRRunning;
-    #define LAST_NDFILE_HDF5_PARAM NDFileHDF5_SWMRRunning
 
 #ifndef _UNITTEST_HDF5_
   private:
@@ -249,7 +254,6 @@ class epicsShareClass NDFileHDF5 : public NDPluginFile
 
     char *dimsreport;       /** < A string which contain a verbose report of all dimension sizes. The method getDimsReport fill in this */
 };
-#define NUM_NDFILE_HDF5_PARAMS ((int)(&LAST_NDFILE_HDF5_PARAM - &FIRST_NDFILE_HDF5_PARAM + 1))
 
 #endif
 

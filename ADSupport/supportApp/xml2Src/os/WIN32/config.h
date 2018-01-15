@@ -6,6 +6,8 @@
 #define HAVE_MALLOC_H
 #define HAVE_ERRNO_H
 #define HAVE_STDINT_H
+#define SEND_ARG2_CAST
+#define GETHOSTBYNAME_ARG_CAST
 
 #if defined(_WIN32_WCE)
 #undef HAVE_ERRNO_H
@@ -113,6 +115,9 @@ static int isnan (double d) {
 #define HAVE_WIN32_THREADS
 #endif
 #endif
+
+/* Support for IPv6 */
+#define SUPPORT_IP6 /**/
 
 /* Some third-party libraries far from our control assume the following
    is defined, which it is not if we don't include windows.h. */

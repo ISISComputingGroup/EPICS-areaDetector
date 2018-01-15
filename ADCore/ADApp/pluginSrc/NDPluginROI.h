@@ -31,6 +31,7 @@
 #define NDPluginROIDataTypeString           "ROI_DATA_TYPE"     /* (asynInt32,   r/w) Data type for ROI.  -1 means automatic. */
 #define NDPluginROIEnableScaleString        "ENABLE_SCALE"      /* (asynInt32,   r/w) Disable/Enable scaling */
 #define NDPluginROIScaleString              "SCALE_VALUE"       /* (asynFloat64, r/w) Scaling value, used as divisor */
+#define NDPluginROICollapseDimsString       "COLLAPSE_DIMS"     /* (asynInt32,   r/w) Collapse dimensions of size 1 */
 
 /** Extract Regions-Of-Interest (ROI) from NDArray data; the plugin can be a source of NDArray callbacks for
   * other plugins, passing these sub-arrays. 
@@ -40,7 +41,7 @@ public:
     NDPluginROI(const char *portName, int queueSize, int blockingCallbacks, 
                  const char *NDArrayPort, int NDArrayAddr,
                  int maxBuffers, size_t maxMemory,
-                 int priority, int stackSize);
+                 int priority, int stackSize, int maxThreads);
     /* These methods override the virtual methods in the base class */
     void processCallbacks(NDArray *pArray);
     asynStatus writeInt32(asynUser *pasynUser, epicsInt32 value);
@@ -75,13 +76,11 @@ protected:
     int NDPluginROIDataType;
     int NDPluginROIEnableScale;
     int NDPluginROIScale;
+    int NDPluginROICollapseDims;
 
-    #define LAST_NDPLUGIN_ROI_PARAM NDPluginROIScale
-                                
 private:
     int requestedSize_[3];
     int requestedOffset_[3];
 };
-#define NUM_NDPLUGIN_ROI_PARAMS ((int)(&LAST_NDPLUGIN_ROI_PARAM - &FIRST_NDPLUGIN_ROI_PARAM + 1))
     
 #endif

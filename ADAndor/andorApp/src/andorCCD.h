@@ -12,7 +12,8 @@
 #ifndef ANDORCCD_H
 #define ANDORCCD_H
 
-#include "tinyxml.h"
+#include <libxml/parser.h>
+
 #include "ADDriver.h"
 #include "SPEHeader.h"
 
@@ -28,7 +29,12 @@
 #define AndorPalFileNameString             "ANDOR_PAL_FILE_PATH"
 #define AndorAccumulatePeriodString        "ANDOR_ACCUMULATE_PERIOD"
 #define AndorPreAmpGainString              "ANDOR_PREAMP_GAIN"
+#define AndorEmGainString                  "ANDOR_EM_GAIN"
+#define AndorEmGainModeString              "ANDOR_EM_GAIN_MODE"
+#define AndorEmGainAdvancedString          "ANDOR_EM_GAIN_ADVANCED"
 #define AndorAdcSpeedString                "ANDOR_ADC_SPEED"
+#define AndorBaselineClampString           "ANDOR_BASELINE_CLAMP"
+#define AndorReadOutModeString             "ANDOR_READOUT_MODE"
 
 /**
  * Structure defining an ADC speed for the ADAndor driver.
@@ -85,8 +91,13 @@ class AndorCCD : public ADDriver {
   int AndorPalFileName;
   int AndorAccumulatePeriod;
   int AndorPreAmpGain;
+  int AndorEmGain;
+  int AndorEmGainMode;
+  int AndorEmGainAdvanced;
   int AndorAdcSpeed;
-  #define LAST_ANDOR_PARAM AndorAdcSpeed
+  int AndorBaselineClamp;
+  int AndorReadOutMode;
+  #define LAST_ANDOR_PARAM AndorReadOutMode
 
  private:
 
@@ -146,9 +157,11 @@ class AndorCCD : public ADDriver {
   /**
    * List of shutter modes
    */
-  static const epicsInt32 AShutterAuto;
-  static const epicsInt32 AShutterOpen;
-  static const epicsInt32 AShutterClose;
+  static const epicsInt32 AShutterFullyAuto;
+  static const epicsInt32 AShutterAlwaysOpen;
+  static const epicsInt32 AShutterAlwaysClosed;
+  static const epicsInt32 AShutterOpenFVP;
+  static const epicsInt32 AShutterOpenAny;
 
   /**
    * List of file formats
@@ -184,14 +197,25 @@ class AndorCCD : public ADDriver {
   float mAcquireTime;
   float mAcquirePeriod;
   float mAccumulatePeriod;
+  int mMinShutterOpenTime;
+  int mMinShutterCloseTime;
   
   // Shamrock spectrometer ID
   int mShamrockId;
 
+  // AndorCapabilities structure
+  AndorCapabilities mCapabilities;
+
+  // EM Gain parameters 
+  int mEmGainRangeLow;
+  int mEmGainRangeHigh;
+  
   // SPE file header
   tagCSMAHEAD *mSPEHeader;
-  TiXmlDocument *mSPEDoc;
+  xmlDocPtr mSPEDoc;
 
+  // Camera init status
+  bool mInitOK;
 };
 
 #define NUM_ANDOR_DET_PARAMS ((int)(&LAST_ANDOR_PARAM - &FIRST_ANDOR_PARAM + 1))

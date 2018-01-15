@@ -16,6 +16,16 @@ files respectively, in the configure/ directory of the appropriate release of th
 Release Notes
 =============
 
+R1-2 (July 5, 2017)
+====================
+* Changed layout of medm screen for ADCore R3-0.
+
+
+R1-1 (February 22, 2017)
+====================
+* Added new parameters ADSerialNumber, ADFirmwareVersion, ADSDKVersion. Minor change to
+  driver and medm screen.
+
 
 R1-0 (November 21, 2016)
 ====================

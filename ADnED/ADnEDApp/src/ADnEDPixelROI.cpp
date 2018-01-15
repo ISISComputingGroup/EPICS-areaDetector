@@ -60,7 +60,7 @@ void ADnEDPixelROI::processCallbacks(NDArray *pArray)
     getIntegerParam(ADnEDPixelROIDataType,     &dataType);
 
     /* Call the base class method */
-    NDPluginDriver::processCallbacks(pArray);
+    NDPluginDriver::beginProcessCallbacks(pArray);
 
     /* We always keep the last array so read() can use it.
      * Release previous one. Reserve new one below. */
@@ -163,10 +163,7 @@ void ADnEDPixelROI::processCallbacks(NDArray *pArray)
     /* Get the attributes for this driver */
     this->getAttributes(this->pArrays[0]->pAttributeList);
     /* Call any clients who have registered for NDArray callbacks */
-    this->unlock();
     doCallbacksGenericPointer(this->pArrays[0], NDArrayData, 0);
-    /* We must enter the loop and exit with the mutex locked */
-    this->lock();
     callParamCallbacks();
 
 }
@@ -197,10 +194,10 @@ ADnEDPixelROI::ADnEDPixelROI(const char *portName, int queueSize, int blockingCa
                          int priority, int stackSize)
     /* Invoke the base class constructor */
     : NDPluginDriver(portName, queueSize, blockingCallbacks,
-                   NDArrayPort, NDArrayAddr, 1, NUM_ADNED_PIXELROI_PARAMS, maxBuffers, maxMemory,
+                   NDArrayPort, NDArrayAddr, 1, maxBuffers, maxMemory,
                    asynInt32ArrayMask | asynFloat64ArrayMask | asynGenericPointerMask,
                    asynInt32ArrayMask | asynFloat64ArrayMask | asynGenericPointerMask,
-                   ASYN_MULTIDEVICE, 1, priority, stackSize)
+                   ASYN_MULTIDEVICE, 1, priority, stackSize, 1)
 {
     //const char *functionName = "ADnEDPixelROI";
 

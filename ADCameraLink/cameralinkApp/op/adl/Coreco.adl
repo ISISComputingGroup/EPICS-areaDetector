@@ -1,0 +1,932 @@
+
+file {
+	name="D:\EPICS\ADEpics\synApps_5_5\support\all_adl\Coreco.adl"
+	version=030105
+}
+display {
+	object {
+		x=152
+		y=229
+		width=446
+		height=761
+	}
+	clr=14
+	bclr=4
+	cmap=""
+	gridSpacing=5
+	gridOn=0
+	snapToGrid=0
+}
+"color map" {
+	ncolors=65
+	colors {
+		ffffff,
+		ececec,
+		dadada,
+		c8c8c8,
+		bbbbbb,
+		aeaeae,
+		9e9e9e,
+		919191,
+		858585,
+		787878,
+		696969,
+		5a5a5a,
+		464646,
+		2d2d2d,
+		000000,
+		00d800,
+		1ebb00,
+		339900,
+		2d7f00,
+		216c00,
+		fd0000,
+		de1309,
+		be190b,
+		a01207,
+		820400,
+		5893ff,
+		597ee1,
+		4b6ec7,
+		3a5eab,
+		27548d,
+		fbf34a,
+		f9da3c,
+		eeb62b,
+		e19015,
+		cd6100,
+		ffb0ff,
+		d67fe2,
+		ae4ebc,
+		8b1a96,
+		610a75,
+		a4aaff,
+		8793e2,
+		6a73c1,
+		4d52a4,
+		343386,
+		c7bb6d,
+		b79d5c,
+		a47e3c,
+		7d5627,
+		58340f,
+		99ffff,
+		73dfff,
+		4ea5f9,
+		2a63e4,
+		0a00b8,
+		ebf1b5,
+		d4db9d,
+		bbc187,
+		a6a462,
+		8b8239,
+		73ff6b,
+		52da3b,
+		3cb420,
+		289315,
+		1a7309,
+	}
+}
+text {
+	object {
+		x=8
+		y=6
+		width=228
+		height=25
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Coreco Grabber"
+}
+text {
+	object {
+		x=84
+		y=32
+		width=84
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="$(P)$(R)"
+	align="horiz. centered"
+}
+"text entry" {
+	object {
+		x=21
+		y=84
+		width=366
+		height=20
+	}
+	control {
+		chan="$(P)$(R)cor_ccf_filename"
+		clr=14
+		bclr=4
+	}
+	limits {
+		loprSrc="default"
+		hoprSrc="default"
+		hoprDefault=5
+		precSrc="default"
+		precDefault=1
+	}
+}
+text {
+	object {
+		x=21
+		y=61
+		width=147
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="CCF Filename"
+}
+"text update" {
+	object {
+		x=21
+		y=109
+		width=366
+		height=20
+	}
+	monitor {
+		chan="$(P)$(R)cor_ccf_filename_RBV"
+		clr=14
+		bclr=4
+	}
+	limits {
+		loprSrc="default"
+		hoprSrc="default"
+		hoprDefault=5
+		precSrc="default"
+		precDefault=1
+	}
+}
+"message button" {
+	object {
+		x=18
+		y=140
+		width=49
+		height=20
+	}
+	control {
+		chan="$(P)$(R)cor_is_grab"
+		clr=14
+		bclr=4
+	}
+	label="GRAB"
+	press_msg="1"
+}
+"message button" {
+	object {
+		x=77
+		y=141
+		width=49
+		height=20
+	}
+	control {
+		chan="$(P)$(R)cor_is_snap"
+		clr=14
+		bclr=4
+	}
+	label="SNAP"
+	press_msg="1"
+}
+"message button" {
+	object {
+		x=135
+		y=142
+		width=49
+		height=20
+	}
+	control {
+		chan="$(P)$(R)cor_is_freeze"
+		clr=14
+		bclr=4
+	}
+	label="Freeze"
+	press_msg="1"
+}
+"message button" {
+	object {
+		x=195
+		y=142
+		width=49
+		height=20
+	}
+	control {
+		chan="$(P)$(R)cor_is_abort"
+		clr=14
+		bclr=4
+	}
+	label="ABORT"
+	press_msg="1"
+}
+"text update" {
+	object {
+		x=23
+		y=163
+		width=35
+		height=20
+	}
+	monitor {
+		chan="$(P)$(R)cor_is_grab_RBV"
+		clr=14
+		bclr=4
+	}
+	limits {
+	}
+}
+"message button" {
+	object {
+		x=20
+		y=183
+		width=200
+		height=20
+	}
+	control {
+		chan="$(P)$(R)cor_is_loadccf"
+		clr=14
+		bclr=20
+	}
+	label="(RE) CONFIGURE"
+	press_msg="1"
+	release_msg="0"
+}
+"message button" {
+	object {
+		x=20
+		y=233
+		width=200
+		height=20
+	}
+	control {
+		chan="$(P)$(R)cor_is_load_fpga_regs"
+		clr=14
+		bclr=4
+	}
+	label="Load FPGA Regs"
+	press_msg="1"
+	release_msg="0"
+}
+"message button" {
+	object {
+		x=20
+		y=208
+		width=200
+		height=20
+	}
+	control {
+		chan="$(P)$(R)cor_is_read_fpga_regs"
+		clr=14
+		bclr=4
+	}
+	label="FPGA Regs to File"
+	press_msg="1"
+	release_msg="0"
+}
+text {
+	object {
+		x=22
+		y=257
+		width=106
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Use FPGA"
+}
+"text update" {
+	object {
+		x=340
+		y=208
+		width=60
+		height=20
+	}
+	monitor {
+		chan="$(P)$(R)cor_total_missed_frames_RBV"
+		clr=14
+		bclr=4
+	}
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=264
+		y=205
+		width=60
+		height=20
+	}
+	control {
+		chan="$(P)$(R)cor_total_missed_frames"
+		clr=14
+		bclr=4
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=264
+		y=179
+		width=100
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="TotMissedFrames"
+}
+text {
+	object {
+		x=263
+		y=234
+		width=100
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="GetNDArrayFailures"
+}
+"text entry" {
+	object {
+		x=263
+		y=260
+		width=60
+		height=20
+	}
+	control {
+		chan="$(P)$(R)cor_cant_get_ndarray"
+		clr=14
+		bclr=4
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=339
+		y=263
+		width=60
+		height=20
+	}
+	monitor {
+		chan="$(P)$(R)cor_cant_get_ndarray_RBV"
+		clr=14
+		bclr=4
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=21
+		y=734
+		width=340
+		height=18
+	}
+	monitor {
+		chan="$(P)$(R)cor_fpga_reg_filename_RBV"
+		clr=14
+		bclr=4
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=17
+		y=320
+		width=100
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="MaxNDBuffers"
+}
+text {
+	object {
+		x=15
+		y=340
+		width=100
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="MaxNDMemory"
+}
+text {
+	object {
+		x=16
+		y=359
+		width=100
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="FreeNDBuffers"
+}
+text {
+	object {
+		x=14
+		y=379
+		width=100
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="NumNDBuffers"
+}
+text {
+	object {
+		x=16
+		y=400
+		width=100
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="allocNDMemory"
+}
+menu {
+	object {
+		x=112
+		y=256
+		width=121
+		height=20
+	}
+	control {
+		chan="$(P)$(R)cor_use_fpga"
+		clr=14
+		bclr=4
+	}
+}
+text {
+	object {
+		x=17
+		y=291
+		width=238
+		height=23
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Software NDBuffers"
+}
+"text update" {
+	object {
+		x=156
+		y=321
+		width=60
+		height=20
+	}
+	monitor {
+		chan="$(P)$(R)cor_max_ndbuffers_RBV"
+		clr=14
+		bclr=4
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=154
+		y=341
+		width=60
+		height=20
+	}
+	monitor {
+		chan="$(P)$(R)cor_max_ndmemory_RBV"
+		clr=14
+		bclr=4
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=155
+		y=360
+		width=60
+		height=20
+	}
+	monitor {
+		chan="$(P)$(R)cor_free_ndbuffers_RBV"
+		clr=14
+		bclr=4
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=153
+		y=380
+		width=60
+		height=20
+	}
+	monitor {
+		chan="$(P)$(R)cor_num_ndbuffers_RBV"
+		clr=14
+		bclr=4
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=155
+		y=401
+		width=60
+		height=20
+	}
+	monitor {
+		chan="$(P)$(R)cor_alloc_ndmemory_RBV"
+		clr=14
+		bclr=4
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=339
+		y=321
+		width=60
+		height=20
+	}
+	monitor {
+		chan="$(P)$(R)cor_num_repeat_timestamp_RBV"
+		clr=14
+		bclr=4
+	}
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=263
+		y=318
+		width=60
+		height=20
+	}
+	control {
+		chan="$(P)$(R)cor_num_repeat_timestamp"
+		clr=14
+		bclr=4
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=263
+		y=292
+		width=100
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Tot Rpt TimeSt"
+}
+"text update" {
+	object {
+		x=337
+		y=376
+		width=60
+		height=20
+	}
+	monitor {
+		chan="$(P)$(R)cor_num_missed_timestamp_RBV"
+		clr=14
+		bclr=4
+	}
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=261
+		y=373
+		width=60
+		height=20
+	}
+	control {
+		chan="$(P)$(R)cor_num_missed_timestamp"
+		clr=14
+		bclr=4
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=261
+		y=347
+		width=100
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Missed TimeSt"
+}
+"text update" {
+	object {
+		x=337
+		y=433
+		width=60
+		height=20
+	}
+	monitor {
+		chan="$(P)$(R)cor_missed_ts_wait_RBV"
+		clr=14
+		bclr=4
+	}
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=261
+		y=430
+		width=60
+		height=20
+	}
+	control {
+		chan="$(P)$(R)cor_missed_ts_wait"
+		clr=14
+		bclr=4
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=261
+		y=404
+		width=100
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="TimeStamp Wait(us)"
+}
+"text entry" {
+	object {
+		x=15
+		y=708
+		width=356
+		height=20
+	}
+	control {
+		chan="$(P)$(R)cor_fpga_reg_filename"
+		clr=14
+		bclr=4
+	}
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=8
+		y=611
+		width=356
+		height=20
+	}
+	control {
+		chan="$(P)$(R)cor_fpga_filename"
+		clr=14
+		bclr=4
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=13
+		y=581
+		width=219
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="FPGA Firmware File"
+}
+text {
+	object {
+		x=18
+		y=682
+		width=296
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="FPGA Register File"
+}
+"text update" {
+	object {
+		x=12
+		y=656
+		width=356
+		height=20
+	}
+	monitor {
+		chan="$(P)$(R)cor_fpga_filename_RBV"
+		clr=14
+		bclr=4
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=7
+		y=479
+		width=100
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="ReqBuffers"
+}
+text {
+	object {
+		x=7
+		y=500
+		width=100
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="NumBuffers"
+}
+"text entry" {
+	object {
+		x=119
+		y=477
+		width=60
+		height=20
+	}
+	control {
+		chan="$(P)$(R)cor_num_coreco_buffers"
+		clr=14
+		bclr=4
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=195
+		y=480
+		width=60
+		height=20
+	}
+	monitor {
+		chan="$(P)$(R)cor_num_coreco_buffers_RBV"
+		clr=14
+		bclr=4
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=194
+		y=500
+		width=60
+		height=20
+	}
+	monitor {
+		chan="$(P)$(R)cor_num_buffers_RBV"
+		clr=14
+		bclr=4
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=193
+		y=517
+		width=60
+		height=20
+	}
+	monitor {
+		chan="$(P)$(R)cor_num_free_buffers_RBV"
+		clr=14
+		bclr=4
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=6
+		y=517
+		width=100
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="FreeBuffers"
+}
+"text entry" {
+	object {
+		x=120
+		y=532
+		width=60
+		height=20
+	}
+	control {
+		chan="$(P)$(R)cor_check_timestamps"
+		clr=14
+		bclr=4
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=8
+		y=534
+		width=100
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="ChkTimeSt"
+}
+"text update" {
+	object {
+		x=196
+		y=535
+		width=60
+		height=20
+	}
+	monitor {
+		chan="$(P)$(R)cor_check_timestamps_RBV"
+		clr=14
+		bclr=4
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=19
+		y=447
+		width=238
+		height=23
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Grabber Buffers"
+}
+text {
+	object {
+		x=6
+		y=421
+		width=100
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="EstBuffers"
+}
+"text update" {
+	object {
+		x=153
+		y=421
+		width=60
+		height=20
+	}
+	monitor {
+		chan="$(P)$(R)cor_est_buffers_left_RBV"
+		clr=14
+		bclr=4
+	}
+	limits {
+	}
+}

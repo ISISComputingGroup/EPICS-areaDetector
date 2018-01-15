@@ -10,14 +10,16 @@ ADnED provides the following features:
 * start/stop/reset acqusition
 * neutron pulse event number, proton charge data, timestamp data, cummulative proton charge
 * event rate and total events for each defined detector
-* X/Y integrating plots for each detector
+* 2-D integrating plots for each detector, which can be X/Y, X/TOF, Y/TOF or PixelID/TOF.
 * Time of flight (TOF) integrating plots for each detector
 * ROI statistics on all plots (max, min, mean, total events, event rate)
 * Filter events going into a TOF spectra based on a X/Y ROI
 * Filter events going into a X/Y plot based on TOF ROI
-* Re-binning on the TOF spectrum
+* Re-binning on the TOF spectrum. The waveform sizes can be adjusted at compile time if smaller arrays are sufficient.
 * Ability to specify TOF spectrum ROIs in user units (eg. milliseconds). Automatic handling of TOF re-binning.
 * Calculate new integrating spectrums based on the TOF and pixel ID, eg. d-space or energy transfer. 
+* Ability to clear any of the 1-D plots while an acqusition is in process. This is useful when analyzing a 2-D plot by moving a ROI around on different diffraction peaks, and looking at the effect of the resulting filtered 1-D spectra.
+* Using a custom plugin called ADnEDMask (or NDPluginMask) the user has the ability to mask out part of the 2-D pixel plot of the 1-D spectrums. The masks can be set up to filter events out or exclude all other events not inside the mask. This is particulary useful for 1-D plots that have large unwanted peaks due to prompt pulse data.
 
 The CS-Studio OPI files provide additional features:
 
@@ -45,4 +47,23 @@ The V4 structure is defined as:
   NTScalarArray pixel
     uint[]  value
 ```
+
+In order to build ADnED the following needs to be defined in the configure/RELEASE file:
+
+* EPICS base 3.14.12.x
+* asyn
+* ADCore
+* pvAccessCPP
+* pvDataCPP
+* pvCommonCPP
+* pvDatabaseCPP
+
+To build the example IOC, the following will also be required:
+
+* devIocStats
+* autosave
+* sscan
+* calc
+* busy
+
 
