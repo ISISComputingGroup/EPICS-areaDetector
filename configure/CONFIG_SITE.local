@@ -30,7 +30,7 @@ WITH_EPICS_V4  = YES
 # GraphicsMagick is required for NDFileMagick and the URL driver.
 WITH_GRAPHICSMAGICK     = YES
 GRAPHICSMAGICK_EXTERNAL = YES
-GRAPHICSMAGICK_INCLUDE = -I/usr/include/GraphicsMagick
+GRAPHICSMAGICK_INCLUDE = /usr/include/GraphicsMagick
 #GRAPHICSMAGICK_LIB     =
 #GRAPHICSMAGICK_BIN     =
 
@@ -81,7 +81,7 @@ TIFF_EXTERNAL = YES
 WITH_XML2     = YES
 XML2_EXTERNAL = YES
 #XML2_INCLUDE = $(LIBXML2)/include
-XML2_INCLUDE = -I/usr/include/libxml2
+XML2_INCLUDE = /usr/include/libxml2
 #XML2_LIB     = $(LIBXML2)/lib/$(EPICS_HOST_ARCH)
 
 # ZLIB is required for the NDFileHDF5 and NDFileNexus plugins.  

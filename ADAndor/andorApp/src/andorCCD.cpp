@@ -280,8 +280,8 @@ AndorCCD::AndorCCD(const char *portName, const char *installPath, int shamrockID
   status |= setIntegerParam(AndorEmGain, 0); 
   status |= setIntegerParam(AndorEmGainMode, 0); 
   status |= setIntegerParam(AndorEmGainAdvanced, 0); 
-//  status |= setIntegerParam(AndorAdcSpeed, 0);
-  status |= setIntegerParam(AndorAdcSpeed, 3);
+  status |= setIntegerParam(AndorAdcSpeed, 0);
+//  status |= setIntegerParam(AndorAdcSpeed, 3);
   status |= setIntegerParam(AndorShutterExTTL, 1);
   status |= setIntegerParam(AndorShutterMode, AShutterFullyAuto);
   status |= setDoubleParam(ADShutterOpenDelay, 0.);
@@ -628,7 +628,9 @@ asynStatus AndorCCD::writeInt32(asynUser *pasynUser, epicsInt32 value)
              (function == ADMinX)         || (function == ADMinY)              ||
              (function == ADSizeX)        || (function == ADSizeY)             ||
              (function == ADReverseX)     || (function == ADReverseY)          ||
+             // (Gabriele Salvato) 
              (function == AndorMCPGain)   || (function == AndorDDGIOC) || 
+             // (Gabriele Salvato) end
              (function == ADTriggerMode)  || (function == AndorEmGain)         || 
              (function == AndorEmGainMode)|| (function == AndorEmGainAdvanced) ||
              (function == AndorAdcSpeed)  || (function == AndorPreAmpGain)     ||

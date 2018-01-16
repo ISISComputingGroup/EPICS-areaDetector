@@ -19,12 +19,6 @@ DIRS := $(DIRS) $(ADPLUGINEDGE)
 $(ADPLUGINEDGE)_DEPEND_DIRS += $(ADCORE)
 endif
 
-# Build software drivers next (no associated hardware)
-ifdef NDDRIVERSTDARRAYS
-DIRS := $(DIRS) $(NDDRIVERSTDARRAYS)
-$(NDDRIVERSTDARRAYS)_DEPEND_DIRS += $(ADCORE)
-endif
-#
 # Build simulation drivers next
 ifdef ADSIMDETECTOR
 DIRS := $(DIRS) $(ADSIMDETECTOR)
@@ -34,6 +28,12 @@ endif
 ifdef ADCSIMDETECTOR
 DIRS := $(DIRS) $(ADCSIMDETECTOR)
 $(ADCSIMDETECTOR)_DEPEND_DIRS += $(ADCORE)
+endif
+
+# Build software drivers next (no associated hardware)
+ifdef NDDRIVERSTDARRAYS
+DIRS := $(DIRS) $(NDDRIVERSTDARRAYS)
+$(NDDRIVERSTDARRAYS)_DEPEND_DIRS += $(ADCORE)
 endif
 
 ifeq ($(WITH_EPICS_V4), YES)
@@ -185,10 +185,10 @@ DIRS := $(DIRS) $(ADNED)
 $(ADNED)_DEPEND_DIRS += $(ADCORE)
 endif
 
-ifdef ADPYTHON
-DIRS := $(DIRS) $(ADPYTHON)
-$(ADPYTHON)_DEPEND_DIRS += $(ADCORE)
-endif
+#ifdef ADPYTHON
+#DIRS := $(DIRS) $(ADPYTHON)
+#$(ADPYTHON)_DEPEND_DIRS += $(ADCORE)
+#endif
 
 ifdef ARAVISGIGE
 DIRS := $(DIRS) $(ARAVISGIGE)

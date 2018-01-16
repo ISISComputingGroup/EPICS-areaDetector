@@ -1,0 +1,377 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>areaDetector Photon II driver</title>
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="Content-Type" />
+</head>
+<body>
+  <div style="text-align: center">
+    <h1>
+      areaDetector Photon II driver</h1>
+    <h2>
+      July 15, 2017</h2>
+    <h2>
+      Mark Rivers</h2>
+    <h2>
+      University of Chicago</h2>
+  </div>
+  <h2>
+    Table of Contents</h2>
+  <ul>
+    <li><a href="#Introduction">Introduction</a></li>
+    <li><a href="#StandardNotes">Implementation of standard driver parameters</a></li>
+    <li><a href="#Driver_parameters">Photon II specific parameters</a></li>
+    <li><a href="#Unsupported">Unsupported standard driver parameters</a></li>
+    <li><a href="#Configuration">Configuration</a></li>
+    <li><a href="#MEDM_screens">MEDM screens</a></li>
+    <li><a href="#Restrictions">Restrictions</a> </li>
+  </ul>
+  <h2 id="Introduction" style="text-align: left">
+    Introduction</h2>
+  <p>
+    This is an <a href="http://www.aps.anl.gov/epics/">EPICS</a> <a href="areaDetector.html">
+      areaDetector</a> driver for the <a href="https://www.bruker.com/products/x-ray-diffraction-and-elemental-analysis/single-crystal-x-ray-diffraction/sc-xrd-components/sc-xrd-components/overview/sc-xrd-components/detectors/photon-ii.html">
+        Photon II detector</a> from <a href="http://www.bruker.com/">Bruker</a>.
+  </p>
+  <p>
+    The interface to the detector is via a TCP/IP socket interface to the <b>p2util</b>
+    program that Bruker provides. p2util is a standard Linux command line program. In
+    order to provide a socket interface it is run with the <a href="https://sourceforge.net/projects/procserv">
+      procServ</a> program. The procServ program must be installed on the Linux computer
+    that is running the detector. The following "start_p2util" script is useful for
+    running p2util under procServ.</p>
+  <pre>    
+    /usr/local/bin/procServ --noautorestart --logstamp -n "p2util_procServ" -L /home/bruker/logs/p2util.log 20000 /home/bruker/p2util/p2util
+    telnet localhost 20000 
+</pre>
+  <p>
+    This script assums that procServ was installed in /usr/local/bin, that a directory
+    /home/bruker/logs has been created to store the procServ log file, and that the
+    p2util program is in /home/bruker/p2util. It assigns TCP port 20000 to connect to
+    the p2util program. Any number of simultaneous connections are allowed. Typically
+    there is at least one local telnet connection to provide interactive control of
+    p2util. The Photon II areaDetector driver also connects to port 20000 to issue commands
+    and read responses from p2util.
+  </p>
+  <p>
+    The p2util program saves the data to disk as raw image files with no header. The
+    areaDetector software reads these disk files in order to read the data, because
+    p2util does not provide another mechanism to access the data.
+  </p>
+  <p>
+    This driver inherits from <a href="areaDetectorDoc.html#ADDriver">ADDriver</a>.
+    It implements many of the parameters in <a href="areaDetectorDoxygenHTML/asyn_n_d_array_driver_8h.html">
+      asynNDArrayDriver.h</a> and in <a href="areaDetectorDoxygenHTML/_a_d_driver_8h.html">
+        ADArrayDriver.h</a>. It also implements a number of parameters that are specific
+    to the Photon II detector. The <a href="areaDetectorDoxygenHTML/class_photon_i_i.html">
+      Photon II class documentation</a> describes this class in detail.</p>
+  <h2 id="StandardNotes" style="text-align: left">
+    Implementation of standard driver parameters</h2>
+  <p>
+    The following table describes how the Photon II driver implements some of the standard
+    driver parameters.
+  </p>
+  <table border="1" cellpadding="2" cellspacing="2" style="text-align: left">
+    <tbody>
+      <tr>
+        <td align="center" colspan="3">
+          <b>Implementation of Parameters in asynNDArrayDriver.h and ADDriver.h, and EPICS Record
+            Definitions in ADBase.template and NDFile.template</b></td>
+      </tr>
+      <tr>
+        <th>
+          Parameter index variable</th>
+        <th>
+          EPICS record name</th>
+        <th>
+          Description</th>
+      </tr>
+      <tr>
+        <td>
+          ADFrameType</td>
+        <td>
+          $(P)$(R)FrameType</td>
+        <td>
+          The driver redefines the choices for the ADFrameType parameter (record $(P)$(R)FrameType)
+          from ADDriver.h. The choices for the Photon II are:
+          <ul>
+            <li>Normal (corrected for ADC0, dark, and flat field)</li>
+            <li>Dark (corrected for ADC0; NOT YET IMPLEMENTED)</li>
+            <li>ADC0 (uncorrected; NOT YET IMPLEMENTED)</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          NDFileFormat</td>
+        <td>
+          $(P)$(R)FileFormat</td>
+        <td>
+          Photon II only supports RAW files. </td>
+      </tr>
+    </tbody>
+  </table>
+  <h2 id="Driver_parameters" style="text-align: left">
+    Photon II specific parameters</h2>
+  <p>
+    The Photon II driver implements the following parameters in addition to those in
+    asynNDArrayDriver.h and ADDriver.h..
+  </p>
+  <table border="1" cellpadding="2" cellspacing="2" style="text-align: left">
+    <tbody>
+      <tr>
+        <td align="center" colspan="7">
+          <b>Parameter Definitions in PhotonII.cpp and EPICS Record Definitions in PhotonII.template</b>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          Parameter index variable</th>
+        <th>
+          asyn interface</th>
+        <th>
+          Access</th>
+        <th>
+          Description</th>
+        <th>
+          drvInfo string</th>
+        <th>
+          EPICS record name</th>
+        <th>
+          EPICS record type</th>
+      </tr>
+      <tr>
+        <td>
+          PII_DRSumEnable</td>
+        <td>
+          asynInt32</td>
+        <td>
+          r/w</td>
+        <td>
+          Flag to control whether the DR Summation mode is enabled. If it is enabled then
+          p2util will change from NDR Integration mode to DR Summation mode when the AcquireTime
+          is 1.0 seconds or less.</td>
+        <td>
+          PII_DRSUM_ENABLE</td>
+        <td>
+          $(P)$(R)DRSumEnable<br />
+          $(P)$(R)DRSumEnable_RBV</td>
+        <td>
+          bo<br />
+          bi</td>
+      </tr>
+      <tr>
+        <td>
+          PII_NumDarks</td>
+        <td>
+          asynInt32</td>
+        <td>
+          r/w</td>
+        <td>
+          The number of dark frames to acquire when FrameType=Dark or ADC0. (NOT YET IMPLEMENTED)
+        </td>
+        <td>
+          PII_NUM_DARKS</td>
+        <td>
+          $(P)$(R)NumDarks<br />
+          $(P)$(R)NumDarks_RBV</td>
+        <td>
+          longout<br />
+          longin</td>
+      </tr>
+      <tr>
+        <td>
+          PII_TriggerType</td>
+        <td>
+          asynInt32</td>
+        <td>
+          r/w</td>
+        <td>
+          The trigger type. Choices are Step and Continuous. In Step mode each trigger results
+          in a single frame. In Continuous mode trigger results in NumImages frames.</td>
+        <td>
+          PII_TRIGGER_TYPE</td>
+        <td>
+          $(P)$(R)TriggerType<br />
+          $(P)$(R)TriggerType_RBV</td>
+        <td>
+          bo<br />
+          bi</td>
+      </tr>
+      <tr>
+        <td>
+          PII_TriggerEdge</td>
+        <td>
+          asynInt32</td>
+        <td>
+          r/w</td>
+        <td>
+          The trigger Edge. Choices are Rising and Falling, which controls which edge of the
+          trigger pulse is used.</td>
+        <td>
+          PII_TRIGGER_EDGE</td>
+        <td>
+          $(P)$(R)TriggerEdge<br />
+          $(P)$(R)TriggerEdge_RBV</td>
+        <td>
+          bo<br />
+          bi</td>
+      </tr>
+      <tr>
+        <td>
+          PII_NumSubFrames</td>
+        <td>
+          asynInt32</td>
+        <td>
+          r/w</td>
+        <td>
+          Number of sub-frames per frame. Increasing this number reduces the chance that a
+          sub-frame will have saturated pixels. However, this comes at the expense of increased
+          read noise. Thus it is generally best to set this number to the smallest value that
+          will not result in any saturated pixels. In NDR mode each subframe requires a minimum
+          of 1 non-destructive read and 1 destructive read per subframe. The minimum time
+          per subframe is thus 1/(2*70)=28.5 ms. So if the exposure time is 1 second the maximum
+          number of sub-frames/frame is 35, and if the exposure time is 2 seconds it is 70
+          sub-frames/frame. In practice we observe data read errors from p2util when these
+          values are used, but 33 subframes in 1 second and 62 subframes in 2 seconds appears
+          to work.<br />
+          Note that this driver always runs p2util in auto mode, so the number of sub-sub-frames
+          per sub-frame is set automatically by p2util. </td>
+        <td>
+          PII_NUM_SUBFRAMES</td>
+        <td>
+          $(P)$(R)NumSubFrames<br />
+          $(P)$(R)NumSubFrames_RBV</td>
+        <td>
+          longout<br />
+          longin</td>
+      </tr>
+      <tr>
+        <td align="center" colspan="7">
+          <b>Debugging</b></td>
+      </tr>
+      <tr>
+        <td>
+          N/A</td>
+        <td>
+          N/A</td>
+        <td>
+          N/A</td>
+        <td>
+          asyn record to control debugging communication with p2util program </td>
+        <td>
+          N/A</td>
+        <td>
+          $(P)$(R)PIIAsyn</td>
+        <td>
+          asyn</td>
+      </tr>
+    </tbody>
+  </table>
+  <h2 id="Unsupported">
+    Unsupported standard driver parameters</h2>
+  <p>
+    The Photon II driver does not support the following standard driver parameters because
+    they are not supported in the Photon II program:</p>
+  <ul>
+    <li>Number of exposures per image (ADNumExposures)</li>
+    <li>Acquire period (ADAcquirePeriod)</li>
+    <li>Gain (ADGain)</li>
+    <li>Region to read out (ADMinX, ADMinY, ADSizeX, ADSizeY, ADReverseX, ADReverseY)</li>
+    <li>Data type (NDDataType)</li>
+  </ul>
+  <h2 id="Configuration">
+    Configuration</h2>
+  <p>
+    Prior to starting the EPICS IOC the p2util program must be started under procServ
+    as described above.</p>
+  <p>
+    The Photon II driver is created with the PhotonIIConfig command, either from C/C++
+    or from the EPICS IOC shell.</p>
+  <pre>int PhotonIIConfig(const char *portName, const char *commandPort,
+                 int maxBuffers, size_t maxMemory,
+                 int priority, int stackSize)
+  </pre>
+  <p>
+    For details on the meaning of the parameters to this function refer to the detailed
+    documentation on the PhotonIIConfig function in the <a href="areaDetectorDoxygenHTML/_photon_i_i_8cpp.html">
+      PhotonII.cpp documentation</a> and in the documentation for the constructor for
+    the <a href="areaDetectorDoxygenHTML/classphoton_i_i.html">PhotonII class</a>.
+  </p>
+  <p>
+    The Photon II driver defines an additional iocsh command which is used to pass p2util
+    commands directly from the iocsh shell.</p>
+  <pre>int p2util(const char *portName, const char *command)
+  </pre>
+  <p>
+    The <code>portName</code> argument is the name of the PhotonII port created with
+    the drvAsynIPPortConfigure command previously in the startup script. The <code>command</code>
+    argument is the p2util command to execute. If the command contains any spaces, which
+    it typically will, then the entire command must be enclosed in quotes. This command
+    is typically used to send the command to load an initilization script (e.g. prep_collection.cmd)
+    to p2util right after the PhotonIIConfig command. This ensures that p2util is in
+    a known state before starting the IOC. This is an example:</p>
+  <pre>
+p2util("PII", "load --commands --filename "/home/bruker/p2util/scripts/prep_collection.cmd")
+    </pre>
+  <p>
+    There an example IOC boot directory and startup script (<a href="photonii_st_cmd.html">iocBoot/iocPhotonII/st.cmd)</a>
+    provided with areaDetector.
+  </p>
+  <h2 id="MEDM_screens" style="text-align: left">
+    MEDM screens</h2>
+  <p>
+    The following is the MEDM screen that is used to control the Photon II detector.
+    Note that the general purpose screen ADBase.adl can be used, but it exposes many
+    controls that are not applicable to the Photon II, and lacks some fields that are
+    important for the Photon II.</p>
+  <p>
+    <code>PhotonII.adl</code> is the screen used to control the Photon II driver.
+  </p>
+  <div style="text-align: center">
+    <h3>
+      PhotonII.adl</h3>
+    <img alt="PhotonII.png" src="PhotonII.png" /></div>
+  <h2 id="Restrictions">
+    Restrictions</h2>
+  <p>
+    The following are some current restrictions of the Photon II driver:</p>
+  <ul>
+    <li>The p2util program does not currently implement the Step trigger correctly. Bruker
+      plans to fix this problem. </li>
+    <li>The p2util program does not correctly handle the change from NDR Integreation
+      to DR Summation mode. It is necessary to issue the following command manually in
+      the p2util program after making that change, i.e. when DRSumEnable is Enable and
+      AcquireTime is 1.0 second or less:
+      <pre>
+load --filename average_adc0_001500.raw --adc0
+    </pre>
+      Bruker plans to fix this problem.</li>
+    <li>The p2util program does not allow AcquireTime values of 0.1 second or less. This
+      restriction prevents running the Photon II at frame rates between 10 and 70 Hz,
+      which is the fastest frame rate that the Photon II hardware can do. Bruker plans
+      to fix this problem.</li>
+    <li>The driver does not currently implement FrameType=Dark or ADC0. This means that
+      the detector dark current and ADC0 values must have been previously measured, typically
+      using the calibrate.sh script provided by Bruker. That script takes about 90 minutes
+      to run because it measures dark currents 9 times each for exposure times from 0
+      to 60 seconds. In the future it may be desireable to allow collecting new ADC0 images
+      and new dark frames at a single AcquireTime. This is currently supported in the
+      ADPerkinElmer and ADDexela drivers.</li>
+    <li>The following items are hardcoded in the driver. They can be changed by recompiling
+      compiling if necessary.
+      <ul>
+        <li>PII_MAX_MESSAGE_SIZE=512 The maximum size of message to/from Photon II_socket_server.</li>
+        <li>PII_MAX_FILENAME_LEN=256 The maximum size of a complete file name including path
+          and extension.</li>
+        <li>PII_COMMAND_TIMEOUT=1.0 Timeout when communicating with Photon II_socket_server.</li>
+        <li>PII_FILE_READ_DELAY=.01 seconds. The time between polling to see if the RAW file
+          exists or if it is the expected size.</li>
+        <li>PII_FILE_READ_TIMEOUT=3.0 seconds. The timeout to wait for the RAW file to appear.
+          This value is added to the AcquireTime to determine the actual timeout.</li>
+      </ul>
+    </li>
+  </ul>
+</body>
+</html>

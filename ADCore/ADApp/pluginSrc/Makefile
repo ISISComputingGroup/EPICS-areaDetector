@@ -102,6 +102,9 @@ ifeq ($(WITH_GRAPHICSMAGICK),YES)
 #  ifdef GRAPHICSMAGICK_BIN
 #    BIN_INSTALLS_WIN32 += $(wildcard $(GRAPHICSMAGICK_BIN)/*.dll)
 #  endif
+#   endif
+  ifdef GRAPHICSMAGICK_INCLUDE
+    USR_INCLUDES += -I$(GRAPHICSMAGICK_INCLUDE)
   endif
 endif
 

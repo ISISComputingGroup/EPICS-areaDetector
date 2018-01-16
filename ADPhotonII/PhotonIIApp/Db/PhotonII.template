@@ -1,0 +1,144 @@
+# Database for the records specific to the PhotonII driver
+
+
+include "ADBase.template"
+include "NDFile.template"
+
+
+# We replace the file format choices from ADBase.template
+record(mbbo, "$(P)$(R)FileFormat")
+{
+    field(ZRST, "Raw")
+    field(ZRVL, "0")
+    field(ONST, "Invalid")
+    field(ONVL, "1")
+}
+
+record(mbbi, "$(P)$(R)FileFormat_RBV")
+{
+    field(ZRST, "Raw")
+    field(ZRVL, "0")
+    field(ONST, "Invalid")
+    field(ONVL, "1")
+    field(SCAN, "I/O Intr")
+}
+
+# We replace the choice fields for FrameType from ADBase.template
+record(mbbo, "$(P)$(R)FrameType")
+{
+   field(ZRST, "Normal")
+   field(ZRVL, "0")
+   field(ONST, "Dark")
+   field(ONVL, "1")
+   field(TWST, "ADC0")
+   field(TWVL, "2")
+}
+
+record(mbbi, "$(P)$(R)FrameType_RBV")
+{
+   field(ZRST, "Normal")
+   field(ZRVL, "0")
+   field(ONST, "Dark")
+   field(ONVL, "1")
+   field(TWST, "ADC0")
+   field(TWVL, "2")
+   field(SCAN, "I/O Intr")
+}
+
+# Number of dark fields
+record(longout, "$(P)$(R)NumDarks")
+{
+   field(PINI, "YES")
+   field(DTYP, "asynInt32")
+   field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))PII_NUM_DARKS")
+   field(VAL,  "2")
+}
+
+record(longin, "$(P)$(R)NumDarks_RBV")
+{
+   field(DTYP, "asynInt32")
+   field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))PII_NUM_DARKS")
+   field(SCAN, "I/O Intr")
+}
+
+
+# Trigger type (step/continuous)
+record(bo, "$(P)$(R)TriggerType")
+{
+   field(PINI, "YES")
+   field(DTYP, "asynInt32")
+   field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))PII_TRIGGER_TYPE")
+   field(ZNAM, "Step")
+   field(ONAM, "Continuous")
+}
+
+record(bi, "$(P)$(R)TriggerType_RBV")
+{
+   field(DTYP, "asynInt32")
+   field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))PII_TRIGGER_TYPE")
+   field(ZNAM, "Step")
+   field(ONAM, "Continuous")
+   field(SCAN, "I/O Intr")
+}
+
+# Trigger edge (rising/falling)
+record(bo, "$(P)$(R)TriggerEdge")
+{
+   field(PINI, "YES")
+   field(DTYP, "asynInt32")
+   field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))PII_TRIGGER_EDGE")
+   field(ZNAM, "Rising")
+   field(ONAM, "Falling")
+}
+
+record(bi, "$(P)$(R)TriggerEdge_RBV")
+{
+   field(DTYP, "asynInt32")
+   field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))PII_TRIGGER_EDGE")
+   field(ZNAM, "Rising")
+   field(ONAM, "Falling")
+   field(SCAN, "I/O Intr")
+}
+
+# DR Summation mode enable
+record(bo, "$(P)$(R)DRSumEnable")
+{
+   field(PINI, "YES")
+   field(DTYP, "asynInt32")
+   field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))PII_DRSUM_ENABLE")
+   field(ZNAM, "Disable")
+   field(ONAM, "Enable")
+}
+
+record(bi, "$(P)$(R)DRSumEnable_RBV")
+{
+   field(DTYP, "asynInt32")
+   field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))PII_DRSUM_ENABLE")
+   field(ZNAM, "Disable")
+   field(ONAM, "Enable")
+   field(SCAN, "I/O Intr")
+}
+
+# Number of subframes per frame
+record(longout, "$(P)$(R)NumSubFrames")
+{
+   field(PINI, "YES")
+   field(DTYP, "asynInt32")
+   field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))PII_NUM_SUBFRAMES")
+   field(VAL,  "10")
+}
+
+record(longin, "$(P)$(R)NumSubFrames_RBV")
+{
+   field(DTYP, "asynInt32")
+   field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))PII_NUM_SUBFRAMES")
+   field(SCAN, "I/O Intr")
+}
+
+# asyn record for interactive communication with p2util
+record(asyn, "$(P)$(R)PIIAsyn")
+{
+    field(PORT,  "$(PII_SERVER_PORT)")
+    field(IMAX, "256")
+    field(OMAX, "256")
+}
