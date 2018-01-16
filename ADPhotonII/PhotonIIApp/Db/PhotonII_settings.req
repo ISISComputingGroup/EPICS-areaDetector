@@ -1,0 +1,7 @@
+file "ADBase_settings.req", P=$(P), R=$(R)
+file "NDFile_settings.req", P=$(P), R=$(R)
+$(P)$(R)DRSumEnable
+$(P)$(R)NumDarks
+$(P)$(R)TriggerType
+$(P)$(R)TriggerEdge
+$(P)$(R)NumSubFrames

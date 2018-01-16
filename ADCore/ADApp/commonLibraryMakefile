@@ -24,6 +24,23 @@ ifeq ($(WITH_NETCDF),YES)
   endif
 endif
 
+ifeq ($(WITH_GRAPHICSMAGICK), YES)
+  ifeq ($(GRAPHICSMAGICK_EXTERNAL),NO)
+    LIB_LIBS               += Magick++ coders Magick jbig jp2 bzlib png webp lcms ttf wmf filters
+  else
+    ifdef GRAPHICSMAGICK_LIB
+      GraphicsMagick_DIR     = $(GRAPHICSMAGICK_LIB)
+      GraphicsMagick++_DIR   = $(GRAPHICSMAGICK_LIB)
+      GraphicsMagickWand_DIR = $(GRAPHICSMAGICK_LIB)
+      LIB_LIBS             += GraphicsMagick++ GraphicsMagick
+    else
+      LIB_SYS_LIBS         += GraphicsMagick++ GraphicsMagick
+    endif
+  endif
+  # The following system libraries must be installed to use GraphicsMagick
+  LIB_SYS_LIBS_Linux    += X11 Xext
+endif
+
 ifeq ($(WITH_TIFF),YES)
   ifeq ($(TIFF_EXTERNAL),NO)
     LIB_LIBS += tiff
@@ -42,7 +59,7 @@ ifeq ($(WITH_JPEG),YES)
     LIB_LIBS += jpeg
   else
     ifdef JPEG_LIB
-      hdf5_DIR     = $(jpeg_LIB)
+      jpeg_DIR     = $(JPEG_LIB)
       LIB_LIBS     += jpeg
     else
       LIB_SYS_LIBS += jpeg
@@ -50,16 +67,14 @@ ifeq ($(WITH_JPEG),YES)
   endif
 endif
 
-ifeq ($(WITH_XML2),YES)
-  ifeq ($(XML2_EXTERNAL),NO)
-    LIB_LIBS += xml2
+ifeq ($(XML2_EXTERNAL),NO)
+  LIB_LIBS += xml2
+else
+  ifdef XML2_LIB
+    xml2_DIR     = $(XML2_LIB)
+    LIB_LIBS     += xml2
   else
-    ifdef XML2_LIB
-      xml2_DIR     = $(XML2_LIB)
-      LIB_LIBS     += xml2
-    else
-      LIB_SYS_LIBS += xml2
-    endif
+    LIB_SYS_LIBS += xml2
   endif
 endif
 
@@ -96,6 +111,19 @@ ifeq ($(WITH_HDF5),YES)
   endif
 endif
 
+ifeq ($(WITH_BLOSC),YES)
+  ifeq ($(BLOSC_EXTERNAL),NO)
+    LIB_LIBS += blosc
+  else
+    ifdef BLOSC_LIB
+      blosc_DIR     = $(BLOSC_LIB)
+      LIB_LIBS     += blosc
+    else
+      LIB_SYS_LIBS += blosc
+    endif
+  endif
+endif
+
 ifeq ($(WITH_SZIP),YES)
   ifeq ($(SZIP_EXTERNAL),NO)
     LIB_LIBS += szip
@@ -120,28 +148,6 @@ ifeq ($(WITH_ZLIB),YES)
       LIB_SYS_LIBS += z
     endif
   endif
-endif
-
-# The following libraries are only needed for GraphicsMagick
-ifeq ($(WITH_GRAPHICSMAGICK), YES)
-  ifdef GRAPHICSMAGICK_LIB
-    ifeq ($(OS_CLASS),WIN32)
-	  CORE_RL_magick__DIR    = $(GRAPHICSMAGICK_LIB)
-	  CORE_RL_Magick++__DIR  = $(GRAPHICSMAGICK_LIB)
-	  CORE_RL_wand__DIR      = $(GRAPHICSMAGICK_LIB)
-	  LIB_LIBS               += CORE_RL_Magick++_ CORE_RL_wand_ CORE_RL_magick_ 
-    else
-      GraphicsMagick_DIR     = $(GRAPHICSMAGICK_LIB)
-      GraphicsMagick++_DIR   = $(GRAPHICSMAGICK_LIB)
-      GraphicsMagickWand_DIR = $(GRAPHICSMAGICK_LIB)
-      LIB_LIBS               += GraphicsMagick++ GraphicsMagickWand GraphicsMagick
-    endif
-  else
-    LIB_SYS_LIBS           += GraphicsMagick++ GraphicsMagickWand GraphicsMagick
-  endif
-  # The following system libraries must be installed to use GraphicsMagick
-  LIB_SYS_LIBS_Linux    += gomp X11 bz2 Xext freetype 
-  LIB_SYS_LIBS_Darwin   += png bz2
 endif
 
 ifeq ($(EPICS_LIBCOM_ONLY),YES)

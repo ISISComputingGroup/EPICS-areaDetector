@@ -30,8 +30,8 @@ use File::Path;
           "./ADAndor3/documentation",
           "./ADBruker/documentation",
           "./ADCameraLink/documentation",
+          "./ADCSimDetector/documentation",
           "./ADDexela/documentation",
-          "./ADExample/documentation",
           "./ADFastCCD/documentation",
           "./ADFireWireWin/documentation",
           "./ADLambda/documentation",
@@ -42,6 +42,7 @@ use File::Path;
           "./ADPCO/documentation",
           "./ADPSL/documentation",
           "./ADPerkinElmer/documentation",
+          "./ADPhotonII/documentation",
           "./ADPilatus/documentation",
           "./ADPixirad/documentation",
           "./ADPluginEdge/documentation",
@@ -50,10 +51,14 @@ use File::Path;
           "./ADPvCam/documentation",
           "./ADQImaging/documentation",
           "./ADRoper/documentation",
+          "./ADSimDetector/documentation",
           "./ADURL/documentation",
+          "./ADViewers/documentation",
           "./ADmar345/documentation",
           "./ADmarCCD/documentation",
           "./ADnED/documentation",
+          "./NDDriverStdArrays/documentation",
+          "./pvaDriver/documentation",
           );
 
 foreach $dir (@subdirs) {

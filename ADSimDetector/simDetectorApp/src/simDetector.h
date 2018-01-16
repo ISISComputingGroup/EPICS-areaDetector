@@ -1,6 +1,10 @@
 #include <epicsEvent.h>
 #include "ADDriver.h"
 
+#define DRIVER_VERSION      2
+#define DRIVER_REVISION     6
+#define DRIVER_MODIFICATION 0
+
 /** Simulation detector driver; demonstrates most of the features that areaDetector drivers can support. */
 class epicsShareClass simDetector : public ADDriver {
 public:
@@ -50,8 +54,6 @@ protected:
     int SimYSine2Amplitude;
     int SimYSine2Frequency;
     int SimYSine2Phase;
-
-    #define LAST_SIM_DETECTOR_PARAM SimYSine2Phase
 
 private:
     /* These are the methods that are new to this class */
@@ -117,6 +119,3 @@ typedef enum {
 #define SimYSine2AmplitudeString      "SIM_YSINE2_AMPLITUDE"
 #define SimYSine2FrequencyString      "SIM_YSINE2_FREQUENCY"
 #define SimYSine2PhaseString          "SIM_YSINE2_PHASE"
-
-#define NUM_SIM_DETECTOR_PARAMS ((int)(&LAST_SIM_DETECTOR_PARAM - &FIRST_SIM_DETECTOR_PARAM + 1))
-

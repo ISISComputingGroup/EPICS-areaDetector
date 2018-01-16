@@ -22,8 +22,29 @@ files respectively, in the configure/ directory of the appropriate release of th
 
 Release Notes
 =============
+R2-6 (July 4, 2017)
+----
+* Changed from using TinyXml to libxml2.  This is used when saving SPE files.  This change was made
+  because ADCore R3-0 no longer includes TinyXml and libxml2 is now available for all platforms in ADSupport.
+* Fixed medm screen layout for ADCore R3-0.
+
+
+R2-5 (February 19, 2017)
+----
+* Added support for Electron Multiplying (EM) Gain.  Thanks to Mike Dunning for this.
+* Add ability to set the BaselineClamp in the Andor SDK.  Thanks to Matt Pearson for this.
+* Enforce minimum values of ADShutterOpenDelay and ADShutterCloseDelay based on query of SDK.
+* Fix bug when setting MinX and MinY with binning.  There was an incorrect factor of 2 present.
+  Thanks to Hinko Kocevar for this fix.
+* Implemented ReverseX and ReverseY.
+* Fixed bug with AndorPreAmpGain; previously it was not actually calling SetPreAmpGain().
+* Added support for SerialNumber, FirmwareVersion, SDKVersion, DriverVersion, and ADCoreVersion which
+  were added in ADCore R2-6. 
+* Added support for Full Vertical Binning (FVB) readout mode. Thanks to Hinko Kocevar for this.
+* Added support for EPICS shutter control.
 
 R2-4 (September 15, 2015)
+----
 * Updated autoconverted .edl, .ui, and .opi files.
 
 R2-3 (16-April-2015)
@@ -69,5 +90,4 @@ Release notes are part of the
 
 Future Releases
 ===============
-* Upgrade to Release 2.98 of SDK
 * dataTask should check while (!mExiting)

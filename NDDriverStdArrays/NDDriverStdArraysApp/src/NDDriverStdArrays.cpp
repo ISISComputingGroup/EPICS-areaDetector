@@ -53,6 +53,7 @@ NDDriverStdArrays::NDDriverStdArrays(const char *portName, int maxBuffers, size_
 {
 
     int status = asynSuccess;
+    char versionString[20];
     const char *functionName = "NDDriverStdArrays";
 
     createParam(NDSA_CallbackModeString,             asynParamInt32,        &NDSA_CallbackMode_);
@@ -68,6 +69,12 @@ NDDriverStdArrays::NDDriverStdArrays(const char *portName, int maxBuffers, size_
 
     status  = setStringParam (ADManufacturer, "NDDriverStdArrays");
     status |= setStringParam (ADModel, "Software Detector");
+    epicsSnprintf(versionString, sizeof(versionString), "%d.%d.%d", 
+                  DRIVER_VERSION, DRIVER_REVISION, DRIVER_MODIFICATION);
+    setStringParam(NDDriverVersion, versionString);
+    setStringParam(ADSDKVersion, versionString);
+    setStringParam(ADSerialNumber, "No serial number");
+    setStringParam(ADFirmwareVersion, "No firmware");
     status |= setIntegerParam(ADImageMode, ADImageSingle);
     status |= setIntegerParam(ADNumImages, 100);
     status |= setIntegerParam(NDSA_CallbackMode_, (int)NDSA_OnUpdate);
@@ -318,9 +325,7 @@ void NDDriverStdArrays::doCallbacks()
     pArray->timeStamp = startTime.secPastEpoch+startTime.nsec/1.e9;
     updateTimeStamp(&pArray->epicsTS);
     this->getAttributes(pArray->pAttributeList);
-    this->unlock();
     doCallbacksGenericPointer(pArray, NDArrayData, 0);
-    this->lock();
 }
 
 /** Called when asyn clients call pasynInt32->write().

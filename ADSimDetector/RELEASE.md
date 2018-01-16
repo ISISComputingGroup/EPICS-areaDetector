@@ -34,6 +34,28 @@ files respectively, in the configure/ directory of the appropriate release of th
 Release Notes
 =============
 
+R2-6 (July 4, 2017)
+========================
+* Change startup scripts in iocSimDetector.  st.cmd now loads envPaths and st_base.cmd, so it can be
+  run with no copying of files.  st.cmd.linux and st.cmd.windows can still be used for conveniently
+  switching host architectures in the same directory by copying envPaths to envPaths.linux or envPaths.windows
+  as appropriate.
+
+
+R2-5 (May 5, 2017)
+========================
+* Removed parameter counting from driver, not needed with asyn R4-31.
+* Added room for new PVs for attribute file status and macros in medm screen.
+* Moved NDPluginFFT loading from this IOC to EXAMPLE_commonPlugins.cmd.
+* Added new required maxBuffers argument when creating NDPluginStdArrays in simDetectorNoIOC.cpp.
+
+
+R2-4 (February 21, 2017)
+========================
+* Add new parameters ADSerialNumber, ADFirmwareVersion, ADSDKVersion. Minor change to
+  driver and medm screen.
+
+  
 R2-3 (November 22, 2016)
 ========================
 * ADSimDetector was split into its own repository from ADExample.  The release numbering
