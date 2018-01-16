@@ -19,6 +19,7 @@ typedef int NDFileOpenMode_t;
 #define FILEPLUGIN_NAME        "FilePluginFileName"
 #define FILEPLUGIN_NUMBER      "FilePluginFileNumber"
 #define FILEPLUGIN_DESTINATION "FilePluginDestination"
+#define FILEPLUGIN_CLOSE       "FilePluginClose"
 
 /** Base class for NDArray file writing plugins; actual file writing plugins inherit from this class.
   * This class handles the logic of single file per image, capture into buffer or streaming multiple images
@@ -27,9 +28,9 @@ typedef int NDFileOpenMode_t;
 class epicsShareClass NDPluginFile : public NDPluginDriver {
 public:
     NDPluginFile(const char *portName, int queueSize, int blockingCallbacks, 
-                 const char *NDArrayPort, int NDArrayAddr, int maxAddr, int numParams,
+                 const char *NDArrayPort, int NDArrayAddr, int maxAddr,
                  int maxBuffers, size_t maxMemory, int interfaceMask, int interruptMask,
-                 int asynFlags, int autoConnect, int priority, int stackSize);
+                 int asynFlags, int autoConnect, int priority, int stackSize, int maxThreads);
                  
     /* These methods override those in the base class */
     virtual void processCallbacks(NDArray *pArray);
@@ -71,7 +72,7 @@ private:
     asynStatus closeFileBase();
     asynStatus doCapture(int capture);
     void       freeCaptureBuffer(int numCapture);
-    void       doNDArrayCallbacks(NDArray *pArray);
+    asynStatus attrFileCloseCheck();
     asynStatus attrFileNameCheck();
     asynStatus attrFileNameSet();
     bool attrIsProcessingRequired(NDAttributeList* pAttrList);
@@ -87,6 +88,4 @@ private:
                                       *  Used to check against changes in incoming frames dimensions or datatype */
 };
 
-#define NUM_NDPLUGIN_FILE_PARAMS 0
-    
 #endif

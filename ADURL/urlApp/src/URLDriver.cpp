@@ -11,6 +11,7 @@
 
 #include <stdio.h>
 #include <string.h>
+#include <string>
 
 #include <epicsTime.h>
 #include <epicsThread.h>
@@ -24,6 +25,10 @@ using namespace Magick;
 #include "ADDriver.h"
 
 #include <epicsExport.h>
+
+#define DRIVER_VERSION      2
+#define DRIVER_REVISION     2
+#define DRIVER_MODIFICATION 0
 
 static const char *driverName = "URLDriver";
 
@@ -41,7 +46,6 @@ public:
 protected:
     int URLName;
     #define FIRST_URL_DRIVER_PARAM URLName
-    #define LAST_URL_DRIVER_PARAM URLName
 
 private:
     /* These are the methods that are new to this class */
@@ -54,8 +58,6 @@ private:
 };
 
 #define URLNameString "URL_NAME"
-
-#define NUM_URL_DRIVER_PARAMS ((int)(&LAST_URL_DRIVER_PARAM - &FIRST_URL_DRIVER_PARAM + 1))
 
 
 asynStatus URLDriver::readImage()
@@ -246,13 +248,9 @@ void URLDriver::URLTask()
 
             if (arrayCallbacks) {
                 /* Call the NDArray callback */
-                /* Must release the lock here, or we can get into a deadlock, because we can
-                 * block on the plugin lock, and the plugin can be calling us */
-                this->unlock();
                 asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW,
                      "%s:%s: calling imageData callback\n", driverName, functionName);
                 doCallbacksGenericPointer(pImage, NDArrayData, 0);
-                this->lock();
             }
         }
 
@@ -352,9 +350,12 @@ void URLDriver::report(FILE *fp, int details)
     fprintf(fp, "URL Driver %s\n", this->portName);
     if (details > 0) {
         int nx, ny, dataType;
+        std::string urlName;
         getIntegerParam(ADSizeX, &nx);
         getIntegerParam(ADSizeY, &ny);
         getIntegerParam(NDDataType, &dataType);
+        getStringParam(URLName, urlName);
+        fprintf(fp, "  URL:               %s\n", urlName.c_str());
         fprintf(fp, "  NX, NY:            %d  %d\n", nx, ny);
         fprintf(fp, "  Data type:         %d\n", dataType);
     }
@@ -376,13 +377,14 @@ void URLDriver::report(FILE *fp, int details)
 URLDriver::URLDriver(const char *portName, int maxBuffers, size_t maxMemory, 
                      int priority, int stackSize)
 
-    : ADDriver(portName, 1, NUM_URL_DRIVER_PARAMS, maxBuffers, maxMemory,
+    : ADDriver(portName, 1, 0, maxBuffers, maxMemory,
                0, 0, /* No interfaces beyond those set in ADDriver.cpp */
                0, 1, /* ASYN_CANBLOCK=0, ASYN_MULTIDEVICE=0, autoConnect=1 */
                priority, stackSize)
 
 {
     int status = asynSuccess;
+    char versionString[20];
     const char *functionName = "URLDriver";
 
 
@@ -408,7 +410,12 @@ URLDriver::URLDriver(const char *portName, int maxBuffers, size_t maxMemory,
     /* Set some default values for parameters */
     status =  setStringParam (ADManufacturer, "URL Driver");
     status |= setStringParam (ADModel, "GraphicsMagick");
-
+    epicsSnprintf(versionString, sizeof(versionString), "%d.%d.%d", 
+                  DRIVER_VERSION, DRIVER_REVISION, DRIVER_MODIFICATION);
+    setStringParam(NDDriverVersion, versionString);
+    setStringParam(ADSDKVersion, MagickLibVersionText);
+    setStringParam(ADSerialNumber, "No serial number");
+    setStringParam(ADFirmwareVersion, "No firmware");
     if (status) {
         printf("%s: unable to set camera parameters\n", functionName);
         return;

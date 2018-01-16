@@ -9,5 +9,5 @@
 -include $(TOP)/configure/RELEASE.local
 -include $(TOP)/configure/RELEASE.local.$(EPICS_HOST_ARCH)
 
-# covered in ISIS MASTER_RELEASE
-#NULLHTTPD=$(SUPPORT)/nullhttpd
+ADSIMDETECTOR=$(AREA_DETECTOR)/ADSimDetector
+NULLHTTPD=$(SUPPORT)/nullhttpd

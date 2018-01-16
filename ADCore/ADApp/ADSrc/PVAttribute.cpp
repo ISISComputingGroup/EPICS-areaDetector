@@ -45,7 +45,7 @@ static asynUser *pasynUserSelf = NULL;
 PVAttribute::PVAttribute(const char *pName, const char *pDescription,
                          const char *pSource, chtype dbrType)
     : NDAttribute(pName, pDescription, NDAttrSourceEPICSPV, pSource, NDAttrUndefined, 0),
-    dbrType(dbrType), callbackString(0)
+    dbrType(dbrType), callbackString(0), connectedOnce(false)
 {
     static const char *functionName = "PVAttribute";
     
@@ -220,6 +220,10 @@ void PVAttribute::connectCallback(struct connection_handler_args cha)
     epicsMutexLock(this->lock);
     if (chanId && (ca_state(chanId) == cs_conn)) {
         dbfType = ca_field_type(chanId);
+        if (connectedOnce) {
+          goto done;
+        }
+        connectedOnce = true;
         elementCount = ca_element_count(chanId);
         asynPrint(pasynUserSelf, ASYN_TRACE_FLOW, 
             "%s:%s: Connect event, PV=%s, chanId=%p, dbfType=%ld, elementCount=%d, dbrType=%ld\n", 

@@ -1,0 +1,896 @@
+## Database for the records specific to the simulated detector driver
+#@author Timothy Madden
+#@date 2009
+
+record(longin,"$(P)$(R)cor_run_counter")
+{
+  field(PINI,"1")
+  field(SCAN,"I/O Intr")
+  field(INP,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_run_counter")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(longin,"$(P)$(R)cor_frame_to_null_RBV")
+{
+  field(PINI,"1")
+  field(SCAN,"I/O Intr")
+  field(INP,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_frame_to_null")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(longout,"$(P)$(R)cor_frame_to_null")
+{
+  field(OUT,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_frame_to_null")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(longin,"$(P)$(R)cor_is_grab_RBV")
+{
+  field(PINI,"1")
+  field(SCAN,"I/O Intr")
+  field(INP,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_is_grab")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(longout,"$(P)$(R)cor_is_grab")
+{
+  field(OUT,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_is_grab")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(longin,"$(P)$(R)cor_num_coreco_buffers_RBV")
+{
+  field(PINI,"0")
+  field(SCAN,"I/O Intr")
+  field(INP,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_num_coreco_buffers")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(longout,"$(P)$(R)cor_num_coreco_buffers")
+{
+  field(OUT,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_num_coreco_buffers")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(longin,"$(P)$(R)cor_check_timestamps_RBV")
+{
+  field(PINI,"1")
+  field(SCAN,"I/O Intr")
+  field(INP,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_check_timestamps")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(longout,"$(P)$(R)cor_check_timestamps")
+{
+  field(OUT,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_check_timestamps")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(longin,"$(P)$(R)cor_num_buffers_RBV")
+{
+  field(PINI,"0")
+  field(SCAN,"I/O Intr")
+  field(INP,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_check_timestamps")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(longin,"$(P)$(R)cor_num_free_buffers_RBV")
+{
+  field(PINI,"0")
+  field(SCAN,"I/O Intr")
+  field(INP,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_num_free_buffers")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(longin,"$(P)$(R)cor_is_abort_RBV")
+{
+  field(PINI,"1")
+  field(SCAN,"I/O Intr")
+  field(INP,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_is_abort")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(longout,"$(P)$(R)cor_is_abort")
+{
+  field(OUT,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_is_abort")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(longin,"$(P)$(R)cor_grabber_type_RBV")
+{
+  field(PINI,"1")
+  field(SCAN,"I/O Intr")
+  field(INP,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_grabber_type")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(longin,"$(P)$(R)cor_is_freeze_RBV")
+{
+  field(PINI,"1")
+  field(SCAN,"I/O Intr")
+  field(INP,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_is_freeze")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(longout,"$(P)$(R)cor_is_freeze")
+{
+  field(OUT,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_is_freeze")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(longin,"$(P)$(R)cor_is_snap_RBV")
+{
+  field(PINI,"1")
+  field(SCAN,"I/O Intr")
+  field(INP,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_is_snap")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(longout,"$(P)$(R)cor_is_snap")
+{
+  field(OUT,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_is_snap")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(longout,"$(P)$(R)cor_is_loadccf")
+{
+  field(OUT,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_is_loadccf")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(mbbo,"$(P)$(R)cor_use_fpga")
+{
+  field(PINI,"1")
+  field(ZRST,"No FPGA")
+  field(DTYP,"asynInt32")
+  field(ZRVL,"0")
+  field(ONVL,"1")
+  field(ONST,"Use FPGA")
+  field(OUT,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_use_fpga")
+}
+ 
+ 
+record(longout,"$(P)$(R)cor_is_load_fpga_regs")
+{
+  field(OUT,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_is_load_fpga_regs")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(longout,"$(P)$(R)cor_is_read_fpga_regs")
+{
+  field(OUT,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_is_read_fpga_regs")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(stringout,"$(P)$(R)cor_ccf_filename")
+{
+  field(PINI,"0")
+  field(OUT,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_ccf_filename")
+  field(DTYP,"asynOctetWrite")
+}
+ 
+ 
+record(stringin,"$(P)$(R)cor_ccf_filename_RBV")
+{
+  field(PINI,"0")
+  field(SCAN,"I/O Intr")
+  field(INP,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_ccf_filename")
+  field(VAL,"Unknown")
+  field(DTYP,"asynOctetRead")
+}
+ 
+ 
+record(mbbi,"$(P)$(R)cor_fpga_command_RBV")
+{
+  field(PINI,"1")
+  field(ZRST,"Nothing")
+  field(TWST,"Reset")
+  field(DTYP,"asynInt32")
+  field(SCAN,"I/O Intr")
+  field(INP,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_fpga_command")
+  field(TWVL,"19")
+  field(ZRVL,"0")
+  field(ONVL,"18")
+  field(ONST,"Take Data")
+}
+ 
+ 
+record(longout,"$(P)$(R)cor_fpga_num_imgs2ave")
+{
+  field(OUT,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_fpga_num_imgs2ave")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(longout,"$(P)$(R)cor_compression_rate")
+{
+  field(OUT,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_compression_rate")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(longin,"$(P)$(R)cor_fpga_num_imgs2ave_RBV")
+{
+  field(PINI,"1")
+  field(SCAN,"I/O Intr")
+  field(INP,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_fpga_num_imgs2ave")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(longin,"$(P)$(R)cor_compression_rate_RBV")
+{
+  field(PINI,"1")
+  field(SCAN,"I/O Intr")
+  field(INP,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_compression_rate")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(stringout,"$(P)$(R)cor_fpga_reg_filename")
+{
+  field(PINI,"0")
+  field(OUT,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_fpga__reg_filename")
+  field(DTYP,"asynOctetWrite")
+}
+ 
+ 
+record(stringin,"$(P)$(R)cor_fpga_reg_filename_RBV")
+{
+  field(PINI,"0")
+  field(SCAN,"I/O Intr")
+  field(INP,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_fpga_reg_filename")
+  field(VAL,"Unknown")
+  field(DTYP,"asynOctetRead")
+}
+ 
+ 
+record(longout,"$(P)$(R)cor_is_sleep")
+{
+  field(OUT,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_is_sleep")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(longout,"$(P)$(R)cor_sleep_ms")
+{
+  field(OUT,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_sleep_ms")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(stringout,"$(P)$(R)cor_fpga_filename")
+{
+  field(PINI,"0")
+  field(OUT,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_fpga_filename")
+  field(DTYP,"asynOctetWrite")
+}
+ 
+ 
+record(stringin,"$(P)$(R)cor_fpga_filename_RBV")
+{
+  field(PINI,"0")
+  field(SCAN,"I/O Intr")
+  field(INP,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_fpga_filename")
+  field(VAL,"Unknown")
+  field(DTYP,"asynOctetRead")
+}
+ 
+ 
+record(stringout,"$(P)$(R)cor_input_filename")
+{
+  field(PINI,"1")
+  field(OUT,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_input_filename")
+  field(DTYP,"asynOctetWrite")
+}
+ 
+ 
+record(stringin,"$(P)$(R)cor_input_filename_RBV")
+{
+  field(PINI,"1")
+  field(SCAN,"I/O Intr")
+  field(INP,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_input_filename")
+  field(VAL,"Unknown")
+  field(DTYP,"asynOctetRead")
+}
+ 
+ 
+record(stringout,"$(P)$(R)cor_dark_filename")
+{
+  field(PINI,"1")
+  field(OUT,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_dark_filename")
+  field(DTYP,"asynOctetWrite")
+}
+ 
+ 
+record(stringin,"$(P)$(R)cor_dark_filename_RBV")
+{
+  field(PINI,"1")
+  field(SCAN,"I/O Intr")
+  field(INP,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_dark_filename")
+  field(VAL,"Unknown")
+  field(DTYP,"asynOctetRead")
+}
+ 
+ 
+record(longout,"$(P)$(R)cor_fpga_save_dark")
+{
+  field(OUT,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_fpga_save_dark")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(mbbo,"$(P)$(R)cor_input_from_file")
+{
+  field(PINI,"1")
+  field(ZRST,"Detector Mode")
+  field(DTYP,"asynInt32")
+  field(ZRVL,"0")
+  field(ONVL,"1")
+  field(ONST,"File Mode")
+  field(OUT,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_input_from_file")
+}
+ 
+ 
+record(longout,"$(P)$(R)cor_load_img_file")
+{
+  field(OUT,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_load_img_file")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(longout,"$(P)$(R)cor_make_viewer")
+{
+  field(OUT,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_make_viewer")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(longin,"$(P)$(R)cor_sub_flag_RBV")
+{
+  field(PINI,"1")
+  field(SCAN,"I/O Intr")
+  field(INP,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_sub_flag")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(longin,"$(P)$(R)cor_comp_flag_RBV")
+{
+  field(PINI,"1")
+  field(SCAN,"I/O Intr")
+  field(INP,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_comp_flag")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(longin,"$(P)$(R)cor_acc_flag_RBV")
+{
+  field(PINI,"1")
+  field(SCAN,"I/O Intr")
+  field(INP,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_acc_flag")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(longin,"$(P)$(R)cor_store_flag_RBV")
+{
+  field(PINI,"1")
+  field(SCAN,"I/O Intr")
+  field(INP,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_store_flag")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(longin,"$(P)$(R)cor_read_flag_RBV")
+{
+  field(PINI,"1")
+  field(SCAN,"I/O Intr")
+  field(INP,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_read_flag")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(longin,"$(P)$(R)cor_saw_flag_RBV")
+{
+  field(PINI,"1")
+  field(SCAN,"I/O Intr")
+  field(INP,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_saw_flag")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(longin,"$(P)$(R)cor_dec_flag_RBV")
+{
+  field(PINI,"1")
+  field(SCAN,"I/O Intr")
+  field(INP,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_dec_flag")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(longin,"$(P)$(R)cor_abs_flag_RBV")
+{
+  field(PINI,"1")
+  field(SCAN,"I/O Intr")
+  field(INP,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_abs_flag")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(longin,"$(P)$(R)cor_comp_threshold_RBV")
+{
+  field(PINI,"1")
+  field(SCAN,"I/O Intr")
+  field(INP,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_comp_threshold")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(longout,"$(P)$(R)cor_comp_threshold")
+{
+  field(OUT,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_comp_threshold")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(longin,"$(P)$(R)cor_frame_dec_rate_RBV")
+{
+  field(PINI,"1")
+  field(SCAN,"I/O Intr")
+  field(INP,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_frame_dec_rate")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(longout,"$(P)$(R)cor_frame_dec_rate")
+{
+  field(OUT,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_frame_dec_rate")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(longout,"$(P)$(R)cor_load_dark_2_fpga")
+{
+  field(OUT,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_load_dark_2_fpga")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(stringin,"$(P)$(R)cor_coreco_message_RBV")
+{
+  field(PINI,"1")
+  field(SCAN,"I/O Intr")
+  field(INP,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_coreco_message")
+  field(VAL,"Unknown")
+  field(DTYP,"asynOctetRead")
+}
+ 
+ 
+record(longout,"$(P)$(R)cor_cant_get_ndarray")
+{
+  field(OUT,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_cant_get_ndarray")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(longin,"$(P)$(R)cor_num_repeat_timestamp_RBV")
+{
+  field(PINI,"1")
+  field(SCAN,"I/O Intr")
+  field(INP,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_num_repeat_timestamp")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(longout,"$(P)$(R)cor_num_repeat_timestamp")
+{
+  field(OUT,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_num_repeat_timestamp")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(longin,"$(P)$(R)cor_num_missed_timestamp_RBV")
+{
+  field(PINI,"1")
+  field(SCAN,"I/O Intr")
+  field(INP,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_num_missed_timestamp")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(longout,"$(P)$(R)cor_num_missed_timestamp")
+{
+  field(OUT,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_num_missed_timestamp")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(longin,"$(P)$(R)cor_missed_ts_wait_RBV")
+{
+  field(PINI,"1")
+  field(SCAN,"I/O Intr")
+  field(INP,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_missed_ts_wait")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(longout,"$(P)$(R)cor_missed_ts_wait")
+{
+  field(OUT,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_missed_ts_wait")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(longin,"$(P)$(R)cor_nd_datasize_RBV")
+{
+  field(PINI,"1")
+  field(SCAN,"I/O Intr")
+  field(INP,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_nd_datasize")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(longin,"$(P)$(R)cor_est_buffers_left_RBV")
+{
+  field(PINI,"1")
+  field(SCAN,"I/O Intr")
+  field(INP,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_est_buffers_left")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(longin,"$(P)$(R)cor_max_ndbuffers_RBV")
+{
+  field(PINI,"1")
+  field(SCAN,"I/O Intr")
+  field(INP,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_max_ndbuffers")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(longin,"$(P)$(R)cor_max_ndmemory_RBV")
+{
+  field(PINI,"1")
+  field(SCAN,"I/O Intr")
+  field(INP,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_max_ndmemory")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(longin,"$(P)$(R)cor_free_ndbuffers_RBV")
+{
+  field(PINI,"1")
+  field(SCAN,"I/O Intr")
+  field(INP,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_free_ndbuffers")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(longin,"$(P)$(R)cor_num_ndbuffers_RBV")
+{
+  field(PINI,"1")
+  field(SCAN,"I/O Intr")
+  field(INP,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_num_ndbuffers")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(longin,"$(P)$(R)cor_alloc_ndmemory_RBV")
+{
+  field(PINI,"1")
+  field(SCAN,"I/O Intr")
+  field(INP,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_alloc_ndmemory")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(longin,"$(P)$(R)cor_cant_get_ndarray_RBV")
+{
+  field(PINI,"1")
+  field(SCAN,"I/O Intr")
+  field(INP,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_cant_get_ndarray")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(longout,"$(P)$(R)cor_total_missed_frames")
+{
+  field(OUT,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_total_missed_frames")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(longin,"$(P)$(R)cor_total_missed_frames_RBV")
+{
+  field(PINI,"1")
+  field(SCAN,"I/O Intr")
+  field(INP,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_total_missed_frames")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(longout,"$(P)$(R)cor_recent_missed_frames")
+{
+  field(OUT,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_recent_missed_frames")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(longin,"$(P)$(R)cor_recent_missed_frames_RBV")
+{
+  field(PINI,"1")
+  field(SCAN,"I/O Intr")
+  field(INP,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_recent_missed_frames")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(longin,"$(P)$(R)cor_num_buff_frames_RBV")
+{
+  field(PINI,"1")
+  field(LOPR,"0")
+  field(SCAN,"I/O Intr")
+  field(HOPR,"10")
+  field(DTYP,"asynInt32")
+  field(INP,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_num_buff_frames")
+}
+ 
+ 
+record(longout,"$(P)$(R)cor_num_bad_fpga_headers")
+{
+  field(OUT,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_num_bad_fpga_headers")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(longin,"$(P)$(R)cor_num_bad_fpga_headers_RBV")
+{
+  field(PINI,"1")
+  field(SCAN,"I/O Intr")
+  field(INP,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_num_bad_fpga_headers")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(longout,"$(P)$(R)cor_sap_buffer_count")
+{
+  field(PINI,"1")
+  field(OUT,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_sap_buffer_count")
+  field(VAL,"10")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(longin,"$(P)$(R)cor_sap_buffer_count_RBV")
+{
+  field(PINI,"1")
+  field(SCAN,"I/O Intr")
+  field(INP,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_sap_buffer_count")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(longin,"$(P)$(R)cor_comp_num_images_RBV")
+{
+  field(PINI,"1")
+  field(SCAN,"I/O Intr")
+  field(INP,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_comp_num_images")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(longin,"$(P)$(R)cor_comp_pixels0_RBV")
+{
+  field(PINI,"1")
+  field(SCAN,"I/O Intr")
+  field(INP,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_comp_pixels0")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(longin,"$(P)$(R)cor_comp_pixels_error_RBV")
+{
+  field(PINI,"1")
+  field(SCAN,"I/O Intr")
+  field(INP,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_comp_pixels_error")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(longin,"$(P)$(R)cor_max_comp_pixels_RBV")
+{
+  field(PINI,"1")
+  field(SCAN,"I/O Intr")
+  field(INP,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_max_comp_pixels")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(longin,"$(P)$(R)cor_compression_error_RBV")
+{
+  field(PINI,"1")
+  field(SCAN,"I/O Intr")
+  field(INP,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_compression_error")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(ao,"$(P)$(R)cor_num_thresh_std")
+{
+  field(PINI,"1")
+  field(OUT,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_num_thresh_std")
+  field(PREC,"3")
+  field(DTYP,"asynFloat64")
+}
+ 
+ 
+record(ai,"$(P)$(R)cor_num_thresh_std_RBV")
+{
+  field(PINI,"1")
+  field(SCAN,"I/O Intr")
+  field(INP,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_num_thresh_std")
+  field(PREC,"3")
+  field(DTYP,"asynFloat64")
+}
+ 
+ 
+record(mbbo,"$(P)$(R)cor_fpga_usr_command")
+{
+  field(SXST,"ResetCounters")
+  field(PINI,"1")
+  field(ZRST,"Nothing")
+  field(TWST,"DarkSub")
+  field(DTYP,"asynInt32")
+  field(SVST,"ReturnDark")
+  field(FRST,"SumMeanImg")
+  field(FRVL,"11")
+  field(TWVL,"1")
+  field(ZRVL,"7")
+  field(FVST,"SumStdImg")
+  field(ONVL,"0")
+  field(THVL,"2")
+  field(SXVL,"8")
+  field(FVVL,"4")
+  field(SVVL,"9")
+  field(THST,"DarkSubComp")
+  field(ONST,"Pass")
+  field(OUT,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_fpga_usr_command")
+}
+ 
+ 
+record(mbbi,"$(P)$(R)cor_fpga_usr_command_RBV")
+{
+  field(SXST,"ResetCounters")
+  field(PINI,"1")
+  field(ZRST,"Nothing")
+  field(TWST,"DarkSub")
+  field(DTYP,"asynInt32")
+  field(SVST,"ReturnDark")
+  field(FRST,"SumMeanImg")
+  field(FRVL,"11")
+  field(SCAN,"I/O Intr")
+  field(INP,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_fpga_usr_command")
+  field(TWVL,"1")
+  field(ZRVL,"7")
+  field(FVST,"SumStdImg")
+  field(ONVL,"0")
+  field(THVL,"2")
+  field(SXVL,"8")
+  field(FVVL,"4")
+  field(SVVL,"9")
+  field(THST,"DarkSubComp")
+  field(ONST,"Pass")
+}
+ 
+ 
+record(stringin,"$(P)$(R)cor_filename_in_fpga_RBV")
+{
+  field(PINI,"1")
+  field(SCAN,"I/O Intr")
+  field(INP,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_filename_in_fpga")
+  field(VAL,"Unknown")
+  field(DTYP,"asynOctetRead")
+}
+ 
+ 
+record(longin,"$(P)$(R)cor_use_image_mode_RBV")
+{
+  field(PINI,"1")
+  field(SCAN,"I/O Intr")
+  field(INP,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_use_image_mode")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(longout,"$(P)$(R)cor_use_image_mode")
+{
+  field(OUT,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_use_image_mode")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(longin,"$(P)$(R)cor_is_trigpin0_RBV")
+{
+  field(PINI,"1")
+  field(SCAN,"I/O Intr")
+  field(INP,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_is_trigpin0")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(longout,"$(P)$(R)cor_is_trigpin0")
+{
+  field(OUT,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_is_trigpin0")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(longin,"$(P)$(R)cor_is_trigpin1_RBV")
+{
+  field(PINI,"1")
+  field(SCAN,"I/O Intr")
+  field(INP,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_is_trigpin1")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(longout,"$(P)$(R)cor_is_trigpin1")
+{
+  field(OUT,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_is_trigpin1")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(longin,"$(P)$(R)cor_is_trigpin2_RBV")
+{
+  field(PINI,"1")
+  field(SCAN,"I/O Intr")
+  field(INP,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_is_trigpin2")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(longout,"$(P)$(R)cor_is_trigpin2")
+{
+  field(OUT,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_is_trigpin2")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(longin,"$(P)$(R)cor_is_trigpin3_RBV")
+{
+  field(PINI,"1")
+  field(SCAN,"I/O Intr")
+  field(INP,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_is_trigpin3")
+  field(DTYP,"asynInt32")
+}
+ 
+ 
+record(longout,"$(P)$(R)cor_is_trigpin3")
+{
+  field(OUT,"@asyn($(PORT),$(ADDR),$(TIMEOUT))cor_is_trigpin3")
+  field(DTYP,"asynInt32")
+}
+ 
