@@ -14,8 +14,7 @@
 #INSTALL_LOCATION_APP=<fullpathname>
 
 # ASYN is needed for base classes 
-## ISIS: in MASTER_RELEASE
-#ASYN=$(SUPPORT)/asyn-4-30
+ASYN=$(SUPPORT)/asyn/master
 
 # ADSupport is needed by ADCore plugins
 ADSUPPORT = $(AREA_DETECTOR)/ADSupport
@@ -23,13 +22,17 @@ ADSUPPORT = $(AREA_DETECTOR)/ADSupport
 # ADCORE for base classes and plugins
 ADCORE=$(AREA_DETECTOR)/ADCore
 
+# external libxml2
+LIBXML2=$(SUPPORT)/libxml2/master
+LIBICONV=$(SUPPORT)/libiconv/master
+
 # V4 modules.
-# ISIS: in MASTER_RELEASE
-#PVCOMMON=$(EV4_BASE)/pvCommonCPP
-#PVACCESS=$(EV4_BASE)/pvAccessCPP
-#PVDATA=$(EV4_BASE)/pvDataCPP
-#PVDATABASE=$(EV4_BASE)/pvDatabaseCPP
-#NORMATIVETYPES=$(EV4_BASE)/normativeTypesCPP
+EV4_BASE=$(SUPPORT)/EPICS_V4/master
+PVCOMMON=$(EV4_BASE)/pvCommonCPP
+PVACCESS=$(EV4_BASE)/pvAccessCPP
+PVDATA=$(EV4_BASE)/pvDataCPP
+PVDATABASE=$(EV4_BASE)/pvDatabaseCPP
+NORMATIVETYPES=$(EV4_BASE)/normativeTypesCPP
 
 -include $(AREA_DETECTOR)/configure/RELEASE_LIBS.local.$(EPICS_HOST_ARCH)
 

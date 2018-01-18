@@ -3,6 +3,7 @@
 # top directory each time this file is changed.
 
 ADANDORISTAR=$(AREA_DETECTOR)/ADAndorIstar
+TINYXML=$(SUPPORT)/TinyXML/master
 
 -include $(TOP)/../../../configure/RELEASE_PATHS.local
 -include $(TOP)/../../../configure/RELEASE_PATHS.local.$(EPICS_HOST_ARCH)

@@ -98,11 +98,10 @@ ifeq ($(WITH_GRAPHICSMAGICK),YES)
   DBD      += NDFileMagick.dbd
   INC      += NDFileMagick.h
   LIB_SRCS += NDFileMagick.cpp
-#  USR_CXXFLAGS_WIN32 += -DWIN32
-#  ifdef GRAPHICSMAGICK_BIN
-#    BIN_INSTALLS_WIN32 += $(wildcard $(GRAPHICSMAGICK_BIN)/*.dll)
-#  endif
-#   endif
+  USR_CXXFLAGS_WIN32 += -DWIN32
+  ifdef GRAPHICSMAGICK_BIN
+    BIN_INSTALLS_WIN32 += $(wildcard $(GRAPHICSMAGICK_BIN)/*.dll)
+  endif
   ifdef GRAPHICSMAGICK_INCLUDE
     USR_INCLUDES += -I$(GRAPHICSMAGICK_INCLUDE)
   endif

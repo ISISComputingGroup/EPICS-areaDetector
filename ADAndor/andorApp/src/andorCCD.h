@@ -33,21 +33,6 @@
 #define AndorEmGainModeString              "ANDOR_EM_GAIN_MODE"
 #define AndorEmGainAdvancedString          "ANDOR_EM_GAIN_ADVANCED"
 #define AndorAdcSpeedString                "ANDOR_ADC_SPEED"
-// (Gabriele Salvato) MCP (Image Intensifier) and DDG (Digital Delay Generator)
-#define AndorMCPGainString                 "ANDOR_MCP_GAIN"
-#define AndorDDGGateDelayString            "ANDOR_DDG_GATE_DELAY"
-#define AndorDDGGateWidthString            "ANDOR_DDG_GATE_WIDTH"
-#define AndorDDGIOCString                  "ANDOR_DDG_IOC"
-// (Gabriele Salvato) end
-
-#define AT_GATEMODE_FIRE_AND_GATE 0
-#define AT_GATEMODE_FIRE_ONLY     1
-#define AT_GATEMODE_GATE_ONLY     2
-#define AT_GATEMODE_CW_ON         3
-#define AT_GATEMODE_CW_OFF        4
-// (Gabriele Salvato) DDG
-#define AT_GATEMODE_DDG           5
-// (Gabriele Salvato) end
 #define AndorBaselineClampString           "ANDOR_BASELINE_CLAMP"
 #define AndorReadOutModeString             "ANDOR_READOUT_MODE"
 
@@ -110,12 +95,6 @@ class AndorCCD : public ADDriver {
   int AndorEmGainMode;
   int AndorEmGainAdvanced;
   int AndorAdcSpeed;
-  // (Gabriele Salvato) MCP (Image Intensifier) and DDG (Digital Delay Generator) 
-  int AndorMCPGain;
-  int AndorDDGGateDelay;
-  int AndorDDGGateWidth;
-  int AndorDDGIOC;
-  // (Gabriele Salvato) end
   int AndorBaselineClamp;
   int AndorReadOutMode;
   #define LAST_ANDOR_PARAM AndorReadOutMode
@@ -129,7 +108,6 @@ class AndorCCD : public ADDriver {
   void setupADCSpeeds();
   void setupPreAmpGains();
   unsigned int SaveAsSPE(char *fullFileName);
-
   /**
    * Additional image mode to those in ADImageMode_t
    */
@@ -185,11 +163,6 @@ class AndorCCD : public ADDriver {
   static const epicsInt32 AShutterOpenFVP;
   static const epicsInt32 AShutterOpenAny;
 
-  // (Gabriele Salvato) List of Integrate On Chip modes
-  static const epicsInt32 AIOC_Off;
-  static const epicsInt32 AIOC_On;
-  // (Gabriele Salvato) end
-  
   /**
    * List of file formats
    */
@@ -224,15 +197,6 @@ class AndorCCD : public ADDriver {
   float mAcquireTime;
   float mAcquirePeriod;
   float mAccumulatePeriod;
- 
-  // (Gabriele Salvato) will contain the camera capabilities
-  AndorCapabilities capabilities;
-
-  //(Gabriele Salvato) for iStar Support
-  bool mIsCameraiStar;
-  int mLowMCPGain;
-  int mHighMCPGain;
-  // (Gabriele Salvato) end
   int mMinShutterOpenTime;
   int mMinShutterCloseTime;
   
