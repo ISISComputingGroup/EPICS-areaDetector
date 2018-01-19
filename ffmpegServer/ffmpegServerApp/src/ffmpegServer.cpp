@@ -379,6 +379,9 @@ void ffmpegStream::processCallbacks(NDArray *pArray)
     int quality, clients, false_col, always_on, maxw, maxh;
     /* we're going to get these from the dims of the image */
     int width, height;
+	/* in case we force a final size */
+    int setw, seth;
+	
     size_t size;
     /* for printing errors */
     const char *functionName = "processCallbacks";
@@ -401,6 +404,8 @@ void ffmpegStream::processCallbacks(NDArray *pArray)
     getIntegerParam(0, ffmpegServerAlwaysOn, &always_on);
     getIntegerParam(0, ffmpegServerMaxW, &maxw);
     getIntegerParam(0, ffmpegServerMaxH, &maxh);
+    getIntegerParam(0, ffmpegServerSetW, &setw);
+    getIntegerParam(0, ffmpegServerSetH, &seth);
 
     /* if no-ones listening and we're not always on then do nothing */
     if (clients == 0 && always_on == 0) {
@@ -426,6 +431,24 @@ void ffmpegStream::processCallbacks(NDArray *pArray)
         width  = (int) pArray->dims[0].size;
         height = (int) pArray->dims[1].size;
     }
+	/* scale image according to user request */
+	if (setw > 0 && seth > 0)
+	{
+		width = setw;
+		height = seth;		
+	}
+	else if (setw > 0)
+	{
+    	double sf = (double)(setw)/width;
+		height = (int)(sf * height);
+		width = setw;		
+	}
+	else if (seth > 0)
+	{
+    	double sf = (double)(seth)/height;
+		width = (int)(sf * width);
+		height = seth;	
+	}
 
     /* If we exceed the maximum size */
     if (width > maxw || height > maxh) {
@@ -614,6 +637,8 @@ ffmpegStream::ffmpegStream(const char *portName, int queueSize, int blockingCall
     createParam(ffmpegServerAlwaysOnString, asynParamInt32, &ffmpegServerAlwaysOn);
     createParam(ffmpegServerMaxWString,     asynParamInt32, &ffmpegServerMaxW);
     createParam(ffmpegServerMaxHString,     asynParamInt32, &ffmpegServerMaxH);
+    createParam(ffmpegServerSetWString,     asynParamInt32, &ffmpegServerSetW);
+    createParam(ffmpegServerSetHString,     asynParamInt32, &ffmpegServerSetH);
 
     /* Try to connect to the NDArray port */
     status = connectToArrayPort();
