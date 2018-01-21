@@ -59,7 +59,7 @@ struct MakeUnsigned
 template <typename epicsType>
 unsigned char NDPluginColorConvert::falseColorIndex(epicsType value)
 {
-	typedef MakeUnsigned<epicsType>::type epicsTypeU;
+	typedef typename MakeUnsigned<epicsType>::type epicsTypeU;
 	return static_cast<unsigned char>(0.5 + static_cast<double>(static_cast<epicsTypeU>(value)) / std::numeric_limits<epicsTypeU>::max() * std::numeric_limits<unsigned char>::max());
 }
 
