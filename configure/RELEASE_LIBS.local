@@ -16,6 +16,9 @@
 # ASYN is needed for base classes 
 ASYN=$(SUPPORT)/asyn/master
 
+# needed for asyn VXI11 support on windows
+ONCRPC=$(SUPPORT)/oncrpc/master
+
 # ADSupport is needed by ADCore plugins
 ADSUPPORT = $(AREA_DETECTOR)/ADSupport
 
