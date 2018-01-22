@@ -7,6 +7,10 @@
 #include <epicsTime.h>
 #include "asynNDArrayDriver.h"
 
+#define DRIVER_VERSION      2
+#define DRIVER_REVISION     5
+#define DRIVER_MODIFICATION 0
+
 #define SimAcquireString        "SIM_ACQUIRE"
 #define SimAcquireTimeString    "SIM_ACQUIRE_TIME"
 #define SimElapsedTimeString    "SIM_ELAPSED_TIME"
@@ -47,8 +51,6 @@ protected:
     int P_Frequency;
     int P_Phase;
     int P_Noise;
-    #define LAST_SIM_DETECTOR_PARAM P_Noise
-
 
 private:
     /* These are the methods that are new to this class */
@@ -63,7 +65,4 @@ private:
     int acquiring_;
     double elapsedTime_;
 };
-
-
-#define NUM_SIM_DETECTOR_PARAMS ((int)(&LAST_SIM_DETECTOR_PARAM - &FIRST_SIM_DETECTOR_PARAM + 1))
 

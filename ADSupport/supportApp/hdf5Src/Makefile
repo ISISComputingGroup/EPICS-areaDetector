@@ -26,6 +26,8 @@ ifeq ($(WITH_HDF5),YES)
     INC += H5ACpublic.h
     INC += H5api_adpt.h
     INC += H5Apublic.h
+    INC += H5B2public.h
+    INC += H5Bpublic.h
     INC += H5Cpublic.h
     INC += H5Dpublic.h
     INC += H5Epubgen.h
@@ -41,8 +43,12 @@ ifeq ($(WITH_HDF5),YES)
     INC += H5FDsec2.h
     INC += H5FDstdio.h
     INC += H5FDwindows.h
+    INC += H5FSpublic.h
     INC += H5Fpublic.h
     INC += H5Gpublic.h
+    INC += H5HFpublic.h
+    INC += H5HGpublic.h
+    INC += H5HLpublic.h
     INC += H5Ipublic.h
     INC += H5Lpublic.h
     INC += H5MMpublic.h
@@ -78,6 +84,8 @@ ifeq ($(WITH_HDF5),YES)
     LIB_SRCS += H5Atest.c
     LIB_SRCS += H5AC.c
     LIB_SRCS += H5AClog.c
+    LIB_SRCS += H5ACdbg.c
+    LIB_SRCS += H5ACproxy_entry.c
     LIB_SRCS += H5B.c
     LIB_SRCS += H5Bcache.c
     LIB_SRCS += H5Bdbg.c
@@ -86,9 +94,19 @@ ifeq ($(WITH_HDF5),YES)
     LIB_SRCS += H5B2dbg.c
     LIB_SRCS += H5B2hdr.c
     LIB_SRCS += H5B2int.c
+    LIB_SRCS += H5B2internal.c
+    LIB_SRCS += H5B2leaf.c
     LIB_SRCS += H5B2stat.c
     LIB_SRCS += H5B2test.c
     LIB_SRCS += H5C.c
+    LIB_SRCS += H5Cdbg.c
+    LIB_SRCS += H5Cepoch.c
+    LIB_SRCS += H5Cimage.c
+    LIB_SRCS += H5Clog.c
+    LIB_SRCS += H5Cprefetched.c
+    LIB_SRCS += H5Cquery.c
+    LIB_SRCS += H5Ctag.c
+    LIB_SRCS += H5Ctest.c
     LIB_SRCS += H5CS.c
     LIB_SRCS += H5D.c
     LIB_SRCS += H5Dbtree.c
@@ -138,6 +156,7 @@ ifeq ($(WITH_HDF5),YES)
     LIB_SRCS += H5Fmount.c
     LIB_SRCS += H5Fquery.c
     LIB_SRCS += H5Fsfile.c
+    LIB_SRCS += H5Fspace.c
     LIB_SRCS += H5Fsuper.c
     LIB_SRCS += H5Fsuper_cache.c
     LIB_SRCS += H5Ftest.c
@@ -196,7 +215,6 @@ ifeq ($(WITH_HDF5),YES)
     LIB_SRCS += H5HFhdr.c
     LIB_SRCS += H5HFhuge.c
     LIB_SRCS += H5HFiblock.c
-    LIB_SRCS += H5HFint.c
     LIB_SRCS += H5HFiter.c
     LIB_SRCS += H5HFman.c
     LIB_SRCS += H5HFsection.c
@@ -234,6 +252,7 @@ ifeq ($(WITH_HDF5),YES)
     LIB_SRCS += H5Obogus.c
     LIB_SRCS += H5Obtreek.c
     LIB_SRCS += H5Ocache.c
+    LIB_SRCS += H5Ocache_image.c
     LIB_SRCS += H5Ochunk.c
     LIB_SRCS += H5Ocont.c
     LIB_SRCS += H5Ocopy.c
@@ -253,7 +272,6 @@ ifeq ($(WITH_HDF5),YES)
     LIB_SRCS += H5Oname.c
     LIB_SRCS += H5Onull.c
     LIB_SRCS += H5Opline.c
-    LIB_SRCS += H5Oproxy.c
     LIB_SRCS += H5Orefcount.c
     LIB_SRCS += H5Osdspace.c
     LIB_SRCS += H5Oshared.c
@@ -279,6 +297,7 @@ ifeq ($(WITH_HDF5),YES)
     LIB_SRCS += H5Pocpypl.c
     LIB_SRCS += H5Pstrcpl.c
     LIB_SRCS += H5Ptest.c
+    LIB_SRCS += H5PB.c
     LIB_SRCS += H5PL.c
     LIB_SRCS += H5R.c
     LIB_SRCS += H5Rdeprec.c
@@ -345,7 +364,7 @@ ifeq ($(WITH_HDF5),YES)
 
     ifeq ($(SZIP_EXTERNAL),YES)
       ifdef SZIP_INCLUDE
-        USR_INCLUDES += $(SZIP_INCLUDE)
+        USR_INCLUDES += -I$(SZIP_INCLUDE)
       endif
       ifdef SZIP_LIB
         sz_DIR       = $(SZIP_LIB)
@@ -359,7 +378,7 @@ ifeq ($(WITH_HDF5),YES)
 
     ifeq ($(ZLIB_EXTERNAL),YES)
       ifdef ZLIB_INCLUDE
-        USR_INCLUDES += $(ZLIB_INCLUDE)
+        USR_INCLUDES += -I$(ZLIB_INCLUDE)
       endif
       ifdef ZLIB_LIB
         z_DIR        = $(ZLIB_LIB)
@@ -369,6 +388,24 @@ ifeq ($(WITH_HDF5),YES)
       endif
     else
       LIB_LIBS += zlib
+    endif
+
+    ifeq ($(WITH_BLOSC),YES)
+      USR_CFLAGS += -DH5_HAVE_FILTER_BLOSC
+      LIB_SRCS += blosc_filter.c
+      ifeq ($(BLOSC_EXTERNAL),YES)
+        ifdef BLOSC_INCLUDE
+          USR_INCLUDES += -I$(BLOSC_INCLUDE)
+        endif
+        ifdef BLOSC_LIB
+          blosc_DIR = $(BLOSC_LIB)
+          LIB_LIBS += blosc
+        else
+          LIB_SYS_LIBS += blosc
+        endif
+      else
+        LIB_LIBS += blosc
+      endif
     endif
 
     LIB_SYS_LIBS_WIN32 += ws2_32

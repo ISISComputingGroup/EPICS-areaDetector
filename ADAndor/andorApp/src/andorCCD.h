@@ -12,7 +12,8 @@
 #ifndef ANDORCCD_H
 #define ANDORCCD_H
 
-#include "tinyxml.h"
+#include <libxml/parser.h>
+
 #include "ADDriver.h"
 #include "SPEHeader.h"
 
@@ -28,22 +29,12 @@
 #define AndorPalFileNameString             "ANDOR_PAL_FILE_PATH"
 #define AndorAccumulatePeriodString        "ANDOR_ACCUMULATE_PERIOD"
 #define AndorPreAmpGainString              "ANDOR_PREAMP_GAIN"
+#define AndorEmGainString                  "ANDOR_EM_GAIN"
+#define AndorEmGainModeString              "ANDOR_EM_GAIN_MODE"
+#define AndorEmGainAdvancedString          "ANDOR_EM_GAIN_ADVANCED"
 #define AndorAdcSpeedString                "ANDOR_ADC_SPEED"
-// (Gabriele Salvato) MCP (Image Intensifier) and DDG (Digital Delay Generator)
-#define AndorMCPGainString                 "ANDOR_MCP_GAIN"
-#define AndorDDGGateDelayString            "ANDOR_DDG_GATE_DELAY"
-#define AndorDDGGateWidthString            "ANDOR_DDG_GATE_WIDTH"
-#define AndorDDGIOCString                  "ANDOR_DDG_IOC"
-// (Gabriele Salvato) end
-
-#define AT_GATEMODE_FIRE_AND_GATE 0
-#define AT_GATEMODE_FIRE_ONLY     1
-#define AT_GATEMODE_GATE_ONLY     2
-#define AT_GATEMODE_CW_ON         3
-#define AT_GATEMODE_CW_OFF        4
-// (Gabriele Salvato) DDG
-#define AT_GATEMODE_DDG           5
-// (Gabriele Salvato) end
+#define AndorBaselineClampString           "ANDOR_BASELINE_CLAMP"
+#define AndorReadOutModeString             "ANDOR_READOUT_MODE"
 
 /**
  * Structure defining an ADC speed for the ADAndor driver.
@@ -100,14 +91,13 @@ class AndorCCD : public ADDriver {
   int AndorPalFileName;
   int AndorAccumulatePeriod;
   int AndorPreAmpGain;
+  int AndorEmGain;
+  int AndorEmGainMode;
+  int AndorEmGainAdvanced;
   int AndorAdcSpeed;
-  // (Gabriele Salvato) MCP (Image Intensifier) and DDG (Digital Delay Generator) 
-  int AndorMCPGain;
-  int AndorDDGGateDelay;
-  int AndorDDGGateWidth;
-  int AndorDDGIOC;
-  // (Gabriele Salvato) end
-  #define LAST_ANDOR_PARAM AndorDDGIOC
+  int AndorBaselineClamp;
+  int AndorReadOutMode;
+  #define LAST_ANDOR_PARAM AndorReadOutMode
 
  private:
 
@@ -118,7 +108,6 @@ class AndorCCD : public ADDriver {
   void setupADCSpeeds();
   void setupPreAmpGains();
   unsigned int SaveAsSPE(char *fullFileName);
-
   /**
    * Additional image mode to those in ADImageMode_t
    */
@@ -168,15 +157,12 @@ class AndorCCD : public ADDriver {
   /**
    * List of shutter modes
    */
-  static const epicsInt32 AShutterAuto;
-  static const epicsInt32 AShutterOpen;
-  static const epicsInt32 AShutterClose;
+  static const epicsInt32 AShutterFullyAuto;
+  static const epicsInt32 AShutterAlwaysOpen;
+  static const epicsInt32 AShutterAlwaysClosed;
+  static const epicsInt32 AShutterOpenFVP;
+  static const epicsInt32 AShutterOpenAny;
 
-  // (Gabriele Salvato) List of Integrate On Chip modes
-  static const epicsInt32 AIOC_Off;
-  static const epicsInt32 AIOC_On;
-  // (Gabriele Salvato) end
-  
   /**
    * List of file formats
    */
@@ -211,23 +197,25 @@ class AndorCCD : public ADDriver {
   float mAcquireTime;
   float mAcquirePeriod;
   float mAccumulatePeriod;
- 
-  // (Gabriele Salvato) will contain the camera capabilities
-  AndorCapabilities capabilities;
-
-  //(Gabriele Salvato) for iStar Support
-  bool mIsCameraiStar;
-  int mLowMCPGain;
-  int mHighMCPGain;
-  // (Gabriele Salvato) end
+  int mMinShutterOpenTime;
+  int mMinShutterCloseTime;
   
   // Shamrock spectrometer ID
   int mShamrockId;
 
+  // AndorCapabilities structure
+  AndorCapabilities mCapabilities;
+
+  // EM Gain parameters 
+  int mEmGainRangeLow;
+  int mEmGainRangeHigh;
+  
   // SPE file header
   tagCSMAHEAD *mSPEHeader;
-  TiXmlDocument *mSPEDoc;
+  xmlDocPtr mSPEDoc;
 
+  // Camera init status
+  bool mInitOK;
 };
 
 #define NUM_ANDOR_DET_PARAMS ((int)(&LAST_ANDOR_PARAM - &FIRST_ANDOR_PARAM + 1))

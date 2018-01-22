@@ -51,7 +51,7 @@ static void simTaskC(void *drvPvt)
 ADCSimDetector::ADCSimDetector(const char *portName, int numTimePoints, NDDataType_t dataType,
                                int maxBuffers, size_t maxMemory, int priority, int stackSize)
 
-    : asynNDArrayDriver(portName, MAX_SIGNALS, NUM_SIM_DETECTOR_PARAMS, maxBuffers, maxMemory,
+    : asynNDArrayDriver(portName, MAX_SIGNALS, maxBuffers, maxMemory,
                0, 0, /* No interfaces beyond those set in ADDriver.cpp */
                ASYN_CANBLOCK | ASYN_MULTIDEVICE, /* asyn flags*/
                1,                                /* autoConnect=1 */
@@ -60,6 +60,7 @@ ADCSimDetector::ADCSimDetector(const char *portName, int numTimePoints, NDDataTy
 
 {
     int status = asynSuccess;
+    char versionString[20];
     const char *functionName = "ADCSimDetector";
 
     /* Create the epicsEvents for signaling to the simulate task when acquisition starts and stops */
@@ -87,6 +88,10 @@ ADCSimDetector::ADCSimDetector(const char *portName, int numTimePoints, NDDataTy
     createParam(SimFrequencyString,     asynParamFloat64, &P_Frequency);
     createParam(SimPhaseString,         asynParamFloat64, &P_Phase);
     createParam(SimNoiseString,         asynParamFloat64, &P_Noise);
+
+    epicsSnprintf(versionString, sizeof(versionString), "%d.%d.%d", 
+                  DRIVER_VERSION, DRIVER_REVISION, DRIVER_MODIFICATION);
+    setStringParam(NDDriverVersion, versionString);
 
     status |= setIntegerParam(P_NumTimePoints, numTimePoints);
     status |= setIntegerParam(NDDataType, dataType);
@@ -305,11 +310,7 @@ void ADCSimDetector::simTask()
         this->getAttributes(pImage->pAttributeList);
 
         /* Call the NDArray callback */
-        /* Must release the lock here, or we can get into a deadlock, because we can
-         * block on the plugin lock, and the plugin can be calling us */
-        this->unlock();
         doCallbacksGenericPointer(pImage, NDArrayData, 0);
-        this->lock();
 
         /* Call the callbacks to update any changes */
         for (i=0; i<MAX_SIGNALS; i++) {

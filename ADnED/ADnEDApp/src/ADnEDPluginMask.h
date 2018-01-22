@@ -70,7 +70,6 @@ protected:
     int NDPluginMaskVal;
     int NDPluginMaskType;
     int NDPluginMaskLast;
-    #define LAST_NDPLUGIN_MASK_PARAM NDPluginMaskLast
                                 
 private:
 
@@ -84,6 +83,5 @@ private:
     epicsUInt32 xArrayMax;
     epicsUInt32 yArrayMax;
 };
-#define NUM_NDPLUGIN_MASK_PARAMS ((int)(&LAST_NDPLUGIN_MASK_PARAM - &FIRST_NDPLUGIN_MASK_PARAM + 1))
     
 #endif //NDPluginMask_H

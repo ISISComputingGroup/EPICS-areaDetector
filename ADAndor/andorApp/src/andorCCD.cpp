@@ -8,7 +8,6 @@
  *
  * Major updates to get callbacks working, etc. by Mark Rivers Feb. 2011
  *
- * Updated Oct 2014 for including iStar model with MCP and DDG
  */
 
 #include <stdio.h>
@@ -23,7 +22,7 @@
 #include <iocsh.h>
 #include <epicsExit.h>
 
-#include <tinyxml.h>
+#include <libxml/parser.h>
 #include <ADDriver.h>
 
 #ifdef _WIN32
@@ -37,11 +36,14 @@
 #include <epicsExport.h>
 #include "andorCCD.h"
 
+#define DRIVER_VERSION      2
+#define DRIVER_REVISION     6
+#define DRIVER_MODIFICATION 0
+
 static const char *driverName = "andorCCD";
 
 //Definitions of static class data members
 
-// Additional image mode to those in ADImageMode_t
 const epicsInt32 AndorCCD::AImageFastKinetics = ADImageContinuous+1;
 
 const epicsUInt32 AndorCCD::AASingle = 1;
@@ -51,7 +53,6 @@ const epicsUInt32 AndorCCD::AAFastKinetics = 4;
 const epicsUInt32 AndorCCD::AARunTillAbort = 5;
 const epicsUInt32 AndorCCD::AATimeDelayedInt = 9;
 
-// List of trigger modes.
 const epicsUInt32 AndorCCD::ATInternal = 0;
 const epicsUInt32 AndorCCD::ATExternal = 1;
 const epicsUInt32 AndorCCD::ATExternalStart = 6;
@@ -59,7 +60,6 @@ const epicsUInt32 AndorCCD::ATExternalExposure = 7;
 const epicsUInt32 AndorCCD::ATExternalFVB = 9;
 const epicsUInt32 AndorCCD::ATSoftware = 10;
 
-// List of detector status states
 const epicsUInt32 AndorCCD::ASIdle = DRV_IDLE;
 const epicsUInt32 AndorCCD::ASTempCycle = DRV_TEMPCYCLE;
 const epicsUInt32 AndorCCD::ASAcquiring = DRV_ACQUIRING;
@@ -69,23 +69,18 @@ const epicsUInt32 AndorCCD::ASErrorAck = DRV_ERROR_ACK;
 const epicsUInt32 AndorCCD::ASAcqBuffer = DRV_ACQ_BUFFER;
 const epicsUInt32 AndorCCD::ASSpoolError = DRV_SPOOLERROR;
 
-// List of detector readout modes.
 const epicsInt32 AndorCCD::ARFullVerticalBinning = 0;
 const epicsInt32 AndorCCD::ARMultiTrack = 1;
 const epicsInt32 AndorCCD::ARRandomTrack = 2;
 const epicsInt32 AndorCCD::ARSingleTrack = 3;
 const epicsInt32 AndorCCD::ARImage = 4;
 
-// List of shutter modes
-const epicsInt32 AndorCCD::AShutterAuto = 0;
-const epicsInt32 AndorCCD::AShutterOpen = 1;
-const epicsInt32 AndorCCD::AShutterClose = 2;
+const epicsInt32 AndorCCD::AShutterFullyAuto    = 0;
+const epicsInt32 AndorCCD::AShutterAlwaysOpen   = 1;
+const epicsInt32 AndorCCD::AShutterAlwaysClosed = 2;
+const epicsInt32 AndorCCD::AShutterOpenFVP      = 4;
+const epicsInt32 AndorCCD::AShutterOpenAny      = 5;
 
-// (Gabriele Salvato) List of Integrate On Chip modes
-const epicsInt32 AndorCCD::AIOC_Off = 0;
-const epicsInt32 AndorCCD::AIOC_On  = 1;
-
-// List of file formats
 const epicsInt32 AndorCCD::AFFTIFF = 0;
 const epicsInt32 AndorCCD::AFFBMP  = 1;
 const epicsInt32 AndorCCD::AFFSIF  = 2;
@@ -121,19 +116,20 @@ AndorCCD::AndorCCD(const char *portName, const char *installPath, int shamrockID
   : ADDriver(portName, 1, NUM_ANDOR_DET_PARAMS, maxBuffers, maxMemory, 
              asynEnumMask, asynEnumMask,
              ASYN_CANBLOCK, 1, priority, stackSize),
-    mExiting(false), mShamrockId(shamrockID), mSPEDoc(0)
+    mExiting(false), mShamrockId(shamrockID), mSPEDoc(0), mInitOK(false)
 {
 
   int status = asynSuccess;
   int i;
   int binX=1, binY=1, minX=0, minY=0, sizeX, sizeY;
   char model[256];
+  char SDKVersion[256];
+  char tempString[256];
+  int serialNumber;
+  unsigned int firmwareVersion;
+  unsigned int firmwareBuild;
+  unsigned int uTemp;
   static const char *functionName = "AndorCCD";
-  
-  /* (Gabriele Salvato) support for iStar MCP image intensifier */
-  mIsCameraiStar = false;
-  mLowMCPGain = 0;
-  mHighMCPGain = 0;
 
   if (installPath == NULL)
     strcpy(mInstallPath, "");
@@ -151,17 +147,13 @@ AndorCCD::AndorCCD(const char *portName, const char *installPath, int shamrockID
   createParam(AndorPalFileNameString,             asynParamOctet, &AndorPalFileName);
   createParam(AndorAccumulatePeriodString,      asynParamFloat64, &AndorAccumulatePeriod);
   createParam(AndorPreAmpGainString,              asynParamInt32, &AndorPreAmpGain);
+  createParam(AndorEmGainString,                  asynParamInt32, &AndorEmGain);
+  createParam(AndorEmGainModeString,              asynParamInt32, &AndorEmGainMode);
+  createParam(AndorEmGainAdvancedString,          asynParamInt32, &AndorEmGainAdvanced);
   createParam(AndorAdcSpeedString,                asynParamInt32, &AndorAdcSpeed);
-  
-  // (Gabriele Salvato) create parameters for the iStar Micro Channel Plate image intensifier
-  createParam(AndorMCPGainString,                 asynParamInt32,   &AndorMCPGain);
-  
-  // (Gabriele Salvato) create parameters for the iStar DDG
-  createParam(AndorDDGGateDelayString,            asynParamFloat64, &AndorDDGGateDelay);
-  createParam(AndorDDGGateWidthString,            asynParamFloat64, &AndorDDGGateWidth);
-  createParam(AndorDDGIOCString,                  asynParamInt32,   &AndorDDGIOC);
-  // (Gabriele Salvato) end
- 
+  createParam(AndorBaselineClampString,           asynParamInt32, &AndorBaselineClamp);
+  createParam(AndorReadOutModeString,             asynParamInt32, &AndorReadOutMode);
+
   // Create the epicsEvent for signaling to the status task when parameters should have changed.
   // This will cause it to do a poll immediately, rather than wait for the poll time period.
   this->statusEvent = epicsEventMustCreate(epicsEventEmpty);
@@ -177,28 +169,35 @@ AndorCCD::AndorCCD(const char *portName, const char *installPath, int shamrockID
     return;
   }
 
+  // Initialize ADC enums
+  for (i=0; i<MAX_ADC_SPEEDS; i++) {
+    mADCSpeeds[i].EnumValue = i;
+    mADCSpeeds[i].EnumString = (char *)calloc(MAX_ENUM_STRING_SIZE, sizeof(char));
+  }
+
+  // Initialize Pre-Amp enums
+  for (i=0; i<MAX_PREAMP_GAINS; i++) {
+    mPreAmpGains[i].EnumValue = i;
+    mPreAmpGains[i].EnumString = (char *)calloc(MAX_ENUM_STRING_SIZE, sizeof(char));
+  }
+
   // Initialize camera
   try {
     printf("%s:%s: initializing camera\n",
       driverName, functionName);
     checkStatus(Initialize(mInstallPath));
     setStringParam(AndorMessage, "Camera successfully initialized.");
-	
-	// (Gabriele Salvato) Get the camera capabilities
-    capabilities.ulSize = sizeof(capabilities);
-    checkStatus(GetCapabilities(&capabilities));
-	// (Gabriele Salvato) Is the camera an iStar ?
-    mIsCameraiStar = (capabilities.ulCameraType == AC_CAMERATYPE_ISTAR);	
     checkStatus(GetDetector(&sizeX, &sizeY));
     checkStatus(GetHeadModel(model));
+    checkStatus(GetCameraSerialNumber(&serialNumber));
+    checkStatus(GetHardwareVersion(&uTemp, &uTemp, &uTemp, 
+                                   &uTemp, &firmwareVersion, &firmwareBuild));
+    checkStatus(GetVersionInfo(AT_SDKVersion, SDKVersion, sizeof(SDKVersion)));
     checkStatus(SetReadMode(ARImage));
     checkStatus(SetImage(binX, binY, minX+1, minX+sizeX, minY+1, minY+sizeY));
-	// (Gabriele Salvato) 
-	if (capabilities.ulSetFunctions & AC_SETFUNCTION_MCPGAIN) {
-	  checkStatus(GetMCPGainRange(&mLowMCPGain, &mHighMCPGain));
-	}
-	// (Gabriele Salvato) end 
-	
+    checkStatus(GetShutterMinTimes(&mMinShutterCloseTime, &mMinShutterOpenTime));
+    mCapabilities.ulSize = sizeof(mCapabilities);
+    checkStatus(GetCapabilities(&mCapabilities));
     callParamCallbacks();
   } catch (const std::string &e) {
     asynPrint(pasynUserSelf, ASYN_TRACE_ERROR,
@@ -207,22 +206,18 @@ AndorCCD::AndorCCD(const char *portName, const char *installPath, int shamrockID
     return;
   }
   
-  // Initialize ADC enums
-  for (i=0; i<MAX_ADC_SPEEDS; i++) {
-    mADCSpeeds[i].EnumValue = i;
-    mADCSpeeds[i].EnumString = (char *)calloc(MAX_ENUM_STRING_SIZE, sizeof(char));
-  } 
-
-  // Initialize Pre-Amp enums
-  for (i=0; i<MAX_PREAMP_GAINS; i++) {
-    mPreAmpGains[i].EnumValue = i;
-    mPreAmpGains[i].EnumString = (char *)calloc(MAX_ENUM_STRING_SIZE, sizeof(char));
-  } 
-  
 
   /* Set some default values for parameters */
   status =  setStringParam(ADManufacturer, "Andor");
   status |= setStringParam(ADModel, model);
+  epicsSnprintf(tempString, sizeof(tempString), "%u", serialNumber);
+  status |= setStringParam(ADSerialNumber, tempString);
+  epicsSnprintf(tempString, sizeof(tempString), "%d.%d", firmwareVersion, firmwareBuild);
+  status |= setStringParam(ADFirmwareVersion, tempString);
+  status |= setStringParam(ADSDKVersion, SDKVersion);
+  epicsSnprintf(tempString, sizeof(tempString), "%d.%d.%d", 
+                DRIVER_VERSION, DRIVER_REVISION, DRIVER_MODIFICATION);
+  setStringParam(NDDriverVersion,tempString);
   status |= setIntegerParam(ADSizeX, sizeX);
   status |= setIntegerParam(ADSizeY, sizeY);
   status |= setIntegerParam(ADBinX, 1);
@@ -245,21 +240,15 @@ AndorCCD::AndorCCD(const char *portName, const char *installPath, int shamrockID
   status |= setIntegerParam(NDArraySize, sizeX*sizeY*sizeof(epicsUInt16)); 
   mAccumulatePeriod = 2.0;
   status |= setDoubleParam(AndorAccumulatePeriod, mAccumulatePeriod); 
-  status |= setIntegerParam(AndorAdcSpeed, 3);
+  status |= setIntegerParam(AndorEmGain, 0); 
+  status |= setIntegerParam(AndorEmGainMode, 0); 
+  status |= setIntegerParam(AndorEmGainAdvanced, 0); 
+  status |= setIntegerParam(AndorAdcSpeed, 0);
   status |= setIntegerParam(AndorShutterExTTL, 1);
-  status |= setIntegerParam(AndorShutterMode, AShutterAuto);
+  status |= setIntegerParam(AndorShutterMode, AShutterFullyAuto);
   status |= setDoubleParam(ADShutterOpenDelay, 0.);
   status |= setDoubleParam(ADShutterCloseDelay, 0.);
-
-  // (Gabriele Salvato) Insert Parameters for MCP and DDG
-  status |= setIntegerParam(AndorMCPGain,     1);
-  status |= setDoubleParam(AndorDDGGateDelay, 0.0);
-  status |= setDoubleParam(AndorDDGGateWidth, 0.01);
-  status |= setIntegerParam(AndorDDGIOC,      AndorCCD::AIOC_Off);
-  // (Gabriele Salvato)
-  status |= setIntegerParam(ADReverseX, 0);
-  status |= setIntegerParam(ADReverseY, 0);
-  // (Gabriele Salvato) end
+  status |= setIntegerParam(AndorReadOutMode, ARImage);
 
   setupADCSpeeds();
   setupPreAmpGains();
@@ -310,6 +299,7 @@ AndorCCD::AndorCCD(const char *portName, const char *installPath, int shamrockID
     return;
   }
   printf("CCD initialized OK!\n");
+  mInitOK = true;
 }
 
 /**
@@ -435,7 +425,7 @@ void AndorCCD::setupADCSpeeds()
         pSpeed->BitDepth = bitDepth;
         pSpeed->HSSpeed = HSSpeed;
         epicsSnprintf(pSpeed->EnumString, MAX_ENUM_STRING_SIZE, 
-                      "%d us/pixel", static_cast<int>(HSSpeed));
+                      "%.2f MHz", HSSpeed);
         mNumADCSpeeds++;
         if (mNumADCSpeeds >= MAX_ADC_SPEEDS) return;
         pSpeed++;
@@ -464,8 +454,6 @@ void AndorCCD::report(FILE *fp, int details)
   unsigned int uIntParam4;
   unsigned int uIntParam5;
   unsigned int uIntParam6;
-  // (Gabriele Salvato) Commented out because now is a class member
-  // AndorCapabilities capabilities;
   AndorADCSpeed_t *pSpeed;
   static const char *functionName = "report";
 
@@ -508,22 +496,18 @@ void AndorCCD::report(FILE *fp, int details)
         fprintf(fp, "    Index=%d, Gain=%f\n",
                 mPreAmpGains[i].EnumValue, mPreAmpGains[i].Gain);
       }
-      /* (Gabriele Salvato) Already done at initialization...
-      capabilities.ulSize = sizeof(capabilities);
-      checkStatus(GetCapabilities(&capabilities));
-	  */
       fprintf(fp, "  Capabilities\n");
-      fprintf(fp, "        AcqModes=0x%X\n", (int)capabilities.ulAcqModes);
-      fprintf(fp, "       ReadModes=0x%X\n", (int)capabilities.ulReadModes);
-      fprintf(fp, "     FTReadModes=0x%X\n", (int)capabilities.ulFTReadModes);
-      fprintf(fp, "    TriggerModes=0x%X\n", (int)capabilities.ulTriggerModes);
-      fprintf(fp, "      CameraType=%d\n",   (int)capabilities.ulCameraType);
-      fprintf(fp, "      PixelModes=0x%X\n", (int)capabilities.ulPixelMode);
-      fprintf(fp, "    SetFunctions=0x%X\n", (int)capabilities.ulSetFunctions);
-      fprintf(fp, "    GetFunctions=0x%X\n", (int)capabilities.ulGetFunctions);
-      fprintf(fp, "        Features=0x%X\n", (int)capabilities.ulFeatures);
-      fprintf(fp, "         PCI MHz=%d\n",   (int)capabilities.ulPCICard);
-      fprintf(fp, "          EMGain=0x%X\n", (int)capabilities.ulEMGainCapability);
+      fprintf(fp, "        AcqModes=0x%X\n", (int)mCapabilities.ulAcqModes);
+      fprintf(fp, "       ReadModes=0x%X\n", (int)mCapabilities.ulReadModes);
+      fprintf(fp, "     FTReadModes=0x%X\n", (int)mCapabilities.ulFTReadModes);
+      fprintf(fp, "    TriggerModes=0x%X\n", (int)mCapabilities.ulTriggerModes);
+      fprintf(fp, "      CameraType=%d\n",   (int)mCapabilities.ulCameraType);
+      fprintf(fp, "      PixelModes=0x%X\n", (int)mCapabilities.ulPixelMode);
+      fprintf(fp, "    SetFunctions=0x%X\n", (int)mCapabilities.ulSetFunctions);
+      fprintf(fp, "    GetFunctions=0x%X\n", (int)mCapabilities.ulGetFunctions);
+      fprintf(fp, "        Features=0x%X\n", (int)mCapabilities.ulFeatures);
+      fprintf(fp, "         PCI MHz=%d\n",   (int)mCapabilities.ulPCICard);
+      fprintf(fp, "          EMGain=0x%X\n", (int)mCapabilities.ulEMGainCapability);
 
     } catch (const std::string &e) {
       asynPrint(pasynUserSelf, ASYN_TRACE_ERROR,
@@ -590,17 +574,16 @@ asynStatus AndorCCD::writeInt32(asynUser *pasynUser, epicsInt32 value)
         } 
       }
     }
-    else if ((function == ADNumExposures) || (function == ADNumImages) ||
-             (function == ADImageMode)                                 ||
-             (function == ADBinX)         || (function == ADBinY)      ||
-             (function == ADMinX)         || (function == ADMinY)      ||
-             (function == ADSizeX)        || (function == ADSizeY)     ||
-             (function == ADTriggerMode)                               ||
-             // (Gabriele Salvato) 
-             (function == ADReverseX)     || (function == ADReverseY)  ||
-             (function == AndorMCPGain)   || (function == AndorDDGIOC) || 
-             // (Gabriele Salvato) end
-             (function == AndorAdcSpeed)) {
+    else if ((function == ADNumExposures) || (function == ADNumImages)         ||
+             (function == ADImageMode)                                         ||
+             (function == ADBinX)         || (function == ADBinY)              ||
+             (function == ADMinX)         || (function == ADMinY)              ||
+             (function == ADSizeX)        || (function == ADSizeY)             ||
+             (function == ADReverseX)     || (function == ADReverseY)          ||
+             (function == ADTriggerMode)  || (function == AndorEmGain)         || 
+             (function == AndorEmGainMode)|| (function == AndorEmGainAdvanced) ||
+             (function == AndorAdcSpeed)  || (function == AndorPreAmpGain)     ||
+             (function == AndorReadOutMode)) {
       status = setupAcquisition();
       if (function == AndorAdcSpeed) setupPreAmpGains();
       if (status != asynSuccess) setIntegerParam(function, oldValue);
@@ -631,6 +614,9 @@ asynStatus AndorCCD::writeInt32(asynUser *pasynUser, epicsInt32 value)
     else if ((function == AndorShutterMode) ||
              (function == AndorShutterExTTL)) {
       status = setupShutter(-1);
+    }
+    else if (function == AndorBaselineClamp) {
+      checkStatus(SetBaselineClamp(value));
     }
     else {
       status = ADDriver::writeInt32(pasynUser, value);
@@ -688,27 +674,6 @@ asynStatus AndorCCD::writeFloat64(asynUser *pasynUser, epicsFloat64 value)
     else if (function == ADAcquirePeriod) {
       mAcquirePeriod = (float)value;  
       status = setupAcquisition();
-    }
-    // (Gabriele Salvato) Digital Delay Generator
-    else if (function == AndorDDGGateDelay) {
-      status = setupAcquisition();
-    }
-    else if (function == AndorDDGGateWidth) {
-      status = setupAcquisition();
-    }
-    else if (function == ADGain && !mIsCameraiStar) {// not valid for iStar model
-    // (Gabriele Salvato) end
-      try {
-        asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW, 
-          "%s:%s:, SetPreAmpGain(%d)\n", 
-          driverName, functionName, (int)value);
-        checkStatus(SetPreAmpGain((int)value));
-      } catch (const std::string &e) {
-        asynPrint(pasynUserSelf, ASYN_TRACE_ERROR,
-          "%s:%s: %s\n",
-          driverName, functionName, e.c_str());
-        status = asynError;
-      }
     }
     else if (function == AndorAccumulatePeriod) {
       mAccumulatePeriod = (float)value;  
@@ -773,24 +738,41 @@ asynStatus AndorCCD::setupShutter(int command)
   double dTemp;
   int openTime, closeTime;
   int shutterExTTL;
+  int adShutterMode;
   int shutterMode;
   asynStatus status=asynSuccess;
   static const char *functionName = "setupShutter";
-  
+
+  getIntegerParam(ADShutterMode, &adShutterMode);
+  if (adShutterMode == ADShutterModeNone) return asynSuccess;
+  if ((adShutterMode == ADShutterModeEPICS) && (command != -1)) {
+    ADDriver::setShutter(command);
+    return asynSuccess;
+  }
+
+  /* We are using internal shutter mode */
   getDoubleParam(ADShutterOpenDelay, &dTemp);
   // Convert to ms
   openTime = (int)(dTemp * 1000.);
+  if (openTime < mMinShutterOpenTime) {
+    openTime = mMinShutterOpenTime;
+    setDoubleParam(ADShutterOpenDelay, openTime / 1000.);
+  }
   getDoubleParam(ADShutterCloseDelay, &dTemp);
   closeTime = (int)(dTemp * 1000.);
+  if (closeTime < mMinShutterCloseTime) {
+    closeTime = mMinShutterCloseTime;
+    setDoubleParam(ADShutterCloseDelay, closeTime / 1000.);
+  }
   getIntegerParam(AndorShutterMode, &shutterMode);
   getIntegerParam(AndorShutterExTTL, &shutterExTTL);
   
   if (command == ADShutterClosed) {
-    shutterMode = AShutterClose;
+    shutterMode = AShutterAlwaysClosed;
     setIntegerParam(ADShutterStatus, ADShutterClosed);
   }
   else if (command == ADShutterOpen) {
-    if (shutterMode == AShutterOpen) {
+    if (shutterMode == AShutterAlwaysOpen) {
       setIntegerParam(ADShutterStatus, ADShutterOpen);
     }
     // No need to change shutterMode, we leave it alone and it shutter
@@ -798,11 +780,12 @@ asynStatus AndorCCD::setupShutter(int command)
   }
 
   try {
-    asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW, 
-      "%s:%s:, SetShutter(%d,%d,%d,%d)\n", 
-      driverName, functionName, shutterExTTL, shutterMode, closeTime, openTime);
-    checkStatus(SetShutter(shutterExTTL, shutterMode, closeTime, openTime)); 
-
+    if (mCapabilities.ulFeatures & AC_FEATURES_SHUTTER) {
+      asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW,
+        "%s:%s:, SetShutter(%d,%d,%d,%d)\n",
+        driverName, functionName, shutterExTTL, shutterMode, closeTime, openTime);
+      checkStatus(SetShutter(shutterExTTL, shutterMode, closeTime, openTime));
+    }
   } catch (const std::string &e) {
     asynPrint(pasynUserSelf, ASYN_TRACE_ERROR,
       "%s:%s: %s\n",
@@ -894,6 +877,8 @@ unsigned int AndorCCD::checkStatus(unsigned int returnStatus)
     throw std::string("ERROR: Problem communicating with camera.");  
   } else if (returnStatus == DRV_LOAD_FIRMWARE_ERROR) {
     throw std::string("ERROR: Error loading firmware.");  
+  } else if (returnStatus == DRV_NOT_SUPPORTED) {
+    throw std::string("ERROR: Feature not supported.");
   } else {
     sprintf(message, "ERROR: Unknown error code=%d returned from Andor SDK.", returnStatus);
     throw std::string(message);
@@ -1011,18 +996,24 @@ asynStatus AndorCCD::setupAcquisition()
   int imageMode;
   int adcSpeed;
   int triggerMode;
-  int binX, binY, minX, minY, sizeX, sizeY, maxSizeX, maxSizeY;
+  int preAmpGain;
+  int binX, binY, minX, minY, sizeX, sizeY, reverseX, reverseY, maxSizeX, maxSizeY;
   float acquireTimeAct, acquirePeriodAct, accumulatePeriodAct;
-  // (Gabriele Salvato) MCP gain, Integrate on chip, DDG and image flip control
-  int MCPgain, IOC;
-  double dDDGgateDelay, dDDGgateWidth;
-  int iFlipX, iFlipY;
-  // end
   int FKmode = 4;
+  int emGain;
+  int emGainMode;
+  int emGainAdvanced;
   int FKOffset;
   AndorADCSpeed_t *pSpeed;
+  int readOutMode;
   static const char *functionName = "setupAcquisition";
   
+  if (!mInitOK) {
+    return asynDisabled;
+  }
+
+  // Get current readout mode
+  getIntegerParam(AndorReadOutMode, &readOutMode);
   getIntegerParam(ADImageMode, &imageMode);
   getIntegerParam(ADNumExposures, &numExposures);
   if (numExposures <= 0) {
@@ -1044,18 +1035,42 @@ asynStatus AndorCCD::setupAcquisition()
     binY = 1;
     setIntegerParam(ADBinY, binY);
   }
+  // Check EM gain capability and range, and set gain mode before setting gain and limits
+  if ((int)mCapabilities.ulEMGainCapability > 0) {
+    getIntegerParam(AndorEmGainAdvanced, &emGainAdvanced);
+    setIntegerParam(AndorEmGainAdvanced, emGainAdvanced);
+    getIntegerParam(AndorEmGainMode, &emGainMode);
+    setIntegerParam(AndorEmGainMode, emGainMode);
+    checkStatus(GetEMGainRange(&mEmGainRangeLow, &mEmGainRangeHigh));
+    getIntegerParam(AndorEmGain, &emGain);
+    if (emGain < mEmGainRangeLow) {
+      emGain = mEmGainRangeLow;
+      setIntegerParam(AndorEmGain, emGain);
+    }
+    else if (emGain > mEmGainRangeHigh) {
+      emGain = mEmGainRangeHigh;
+      setIntegerParam(AndorEmGain, emGain);
+    }
+  }
   getIntegerParam(ADMinX, &minX);
   getIntegerParam(ADMinY, &minY);
   getIntegerParam(ADSizeX, &sizeX);
   getIntegerParam(ADSizeY, &sizeY);
+  getIntegerParam(ADReverseX, &reverseX);
+  getIntegerParam(ADReverseY, &reverseY);
   getIntegerParam(ADMaxSizeX, &maxSizeX);
   getIntegerParam(ADMaxSizeY, &maxSizeY);
-  if (minX > (maxSizeX - 2*binX)) {
-    minX = maxSizeX - 2*binX;
+  if (readOutMode == ARFullVerticalBinning) {
+    // Set maximum binning but do not update parameter, this preserves ADBinY
+    // when going back to Image readout mode.
+    binY = maxSizeY;
+  }
+  if (minX > (maxSizeX - binX)) {
+    minX = maxSizeX - binX;
     setIntegerParam(ADMinX, minX);
   }
-  if (minY > (maxSizeY - 2*binY)) {
-    minY = maxSizeY - 2*binY;
+  if (minY > (maxSizeY - binY)) {
+    minY = maxSizeY - binY;
     setIntegerParam(ADMinY, minY);
   }
   if ((minX + sizeX) > maxSizeX) {
@@ -1073,12 +1088,19 @@ asynStatus AndorCCD::setupAcquisition()
   getIntegerParam(AndorAdcSpeed, &adcSpeed);
   pSpeed = &mADCSpeeds[adcSpeed];
   
+  getIntegerParam(AndorPreAmpGain, &preAmpGain);
+  
   // Unfortunately there does not seem to be a way to query the Andor SDK 
   // for the actual size of the image, so we must compute it.
   setIntegerParam(NDArraySizeX, sizeX/binX);
   setIntegerParam(NDArraySizeY, sizeY/binY);
   
   try {
+    asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW,
+      "%s:%s:, SetReadMode(%d)\n",
+      driverName, functionName, readOutMode);
+    checkStatus(SetReadMode(readOutMode));
+
     asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW, 
       "%s:%s:, SetTriggerMode(%d)\n", 
       driverName, functionName, triggerMode);
@@ -1100,67 +1122,50 @@ asynStatus AndorCCD::setupAcquisition()
     checkStatus(SetHSSpeed(pSpeed->AmpIndex, pSpeed->HSSpeedIndex));
 
     asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW, 
-      "%s:%s:, SetImage(%d,%d,%d,%d,%d,%d)\n", 
-      driverName, functionName, binX, binY, minX+1, minX+sizeX, minY+1, minY+sizeY);
-    checkStatus(SetImage(binX, binY, minX+1, minX+sizeX, minY+1, minY+sizeY));
+      "%s:%s:, SetPreAmpGain(%d)\n", 
+      driverName, functionName, preAmpGain);
+    checkStatus(SetPreAmpGain(preAmpGain));
+
+    asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW, 
+      "%s:%s:, SetImageFlip(%d, %d)\n", 
+      driverName, functionName, reverseX, reverseY);
+    checkStatus(SetImageFlip(reverseX, reverseY));
+
+    if (readOutMode == ARImage) {
+      asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW,
+        "%s:%s:, SetImage(%d,%d,%d,%d,%d,%d)\n",
+        driverName, functionName, binX, binY, minX+1, minX+sizeX, minY+1, minY+sizeY);
+      checkStatus(SetImage(binX, binY, minX+1, minX+sizeX, minY+1, minY+sizeY));
+    }
 
     asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW, 
       "%s:%s:, SetExposureTime(%f)\n", 
       driverName, functionName, mAcquireTime);
     checkStatus(SetExposureTime(mAcquireTime));
- 	
-	// (Gabriele Salvato) DDG Gate Mode and SetUp
-	if (mIsCameraiStar) {
-	  getIntegerParam(AndorMCPGain, &MCPgain);
-	  if(MCPgain < mLowMCPGain) {
-	    MCPgain = mLowMCPGain;
-		setIntegerParam(AndorMCPGain, MCPgain);
-	  } else if(MCPgain > mHighMCPGain) {
-	    MCPgain = mHighMCPGain;
-		setIntegerParam(AndorMCPGain, MCPgain);
-	  }
-  	  asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW, 
-        "%s:%s:, SetMCPGain(MCPgain)\n", 
-        driverName, functionName);
-	  checkStatus(SetMCPGain(MCPgain));
-	  
-	  getIntegerParam(AndorDDGIOC, &IOC);
-  	  asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW, 
-        "%s:%s:, SetDDGIOC(IOC)\n", 
-        driverName, functionName);
-	  checkStatus(SetDDGIOC(IOC));
-	
-	  asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW, 
-        "%s:%s:, SetGateMode(5)\n", 
-        driverName, functionName);
-      checkStatus(SetGateMode(AT_GATEMODE_DDG));//Gate using DDG
-    
-      getDoubleParam(AndorDDGGateDelay, &dDDGgateDelay);
-      getDoubleParam(AndorDDGGateWidth, &dDDGgateWidth);
-	
-	  asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW, 
-        "%s:%s:, SetDDGTimes(0.0, %f*1.0e12, %f*1.0e12)\n", 
-        driverName, functionName, dDDGgateDelay, dDDGgateWidth);
-      checkStatus(SetDDGTimes(0.0, dDDGgateDelay*1.0e12, dDDGgateWidth*1.0e12));
-	}
-	// DDG Gate Mode and SetUp END
-  
-    // (Gabriele Salvato) Flip the image
-    // This function will cause data output from the SDK to be flipped on one or both axes. 
-	// This flip is not done in the camera, it occurs after the data is retrieved and will
-	// increase processing overhead.
-    // If flipping could be implemented by the user more efficiently 
-    // then use of this function is not recomended.
-    getIntegerParam(ADReverseX, &iFlipX);
-    getIntegerParam(ADReverseY, &iFlipY);
-    asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW, 
-      "%s:%s:, SetImageFlip(iFlipX, FlipY)\n", 
-      driverName, functionName);
-    checkStatus(SetImageFlip(iFlipX, iFlipY));
-    // (Gabriele Salvato) end
-	
+
+    // Check if camera has EM gain capability before setting modes or EM gain
+    if ((int)mCapabilities.ulEMGainCapability > 0) {
+      asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW, 
+        "%s:%s:, SetEMGainMode(%d)\n", 
+        driverName, functionName, emGainMode);
+      checkStatus(SetEMGainMode(emGainMode));
+    }
+
+    if ((int)mCapabilities.ulEMGainCapability > 0) {
+      asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW, 
+        "%s:%s:, SetEMGainAdvanced(%d)\n", 
+        driverName, functionName, emGainAdvanced);
+      checkStatus(SetEMAdvanced(emGainAdvanced));
+    }
+
+    if ((int)mCapabilities.ulEMGainCapability > 0) {
+      asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW, 
+        "%s:%s:, SetEMCCDGain(%d)\n", 
+        driverName, functionName, emGain);
+      checkStatus(SetEMCCDGain(emGain));
+    }
+
     switch (imageMode) {
-    
       case ADImageSingle:
         if (numExposures == 1) {
           asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW, 
@@ -1181,32 +1186,8 @@ asynStatus AndorCCD::setupAcquisition()
             driverName, functionName, mAccumulatePeriod);
           checkStatus(SetAccumulationCycleTime(mAccumulatePeriod));
         }
-        break; 
-        
-      //Dario Start
-      // case ADImageSingle:
-        // asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW, 
-            // "%s:%s:, SetAcquisitionMode(AASingle)\n", 
-            // driverName, functionName);
-          // checkStatus(SetAcquisitionMode(AASingle));
-        // break;
-      
-      // case ADImageAccumulate:
-        // asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW, 
-            // "%s:%s:, SetAcquisitionMode(AAAccumulate)\n", 
-            // driverName, functionName);
-          // checkStatus(SetAcquisitionMode(AAAccumulate));
-          // asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW, 
-            // "%s:%s:, SetNumberAccumulations(%d)\n", 
-            // driverName, functionName, numExposures);
-          // checkStatus(SetNumberAccumulations(numExposures));
-          // asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW, 
-            // "%s:%s:, SetAccumulationCycleTime(%f)\n", 
-            // driverName, functionName, mAccumulatePeriod);
-          // checkStatus(SetAccumulationCycleTime(mAccumulatePeriod));
-        // break;
-      //Dario End
-      
+        break;
+
       case ADImageMultiple:
         asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW, 
           "%s:%s:, SetAcquisitionMode(AAKinetics)\n", 
@@ -1297,6 +1278,7 @@ void AndorCCD::dataTask(void)
   epicsInt32 imageCounter;
   epicsInt32 arrayCallbacks;
   epicsInt32 sizeX, sizeY;
+  int adShutterMode;
   NDDataType_t dataType;
   int itemp;
   at_32 firstImage, lastImage;
@@ -1330,6 +1312,10 @@ void AndorCCD::dataTask(void)
       try {
         status = setupAcquisition();
         if (status != asynSuccess) continue;
+        getIntegerParam(ADShutterMode, &adShutterMode);
+        if (adShutterMode == ADShutterModeEPICS) {
+          ADDriver::setShutter(ADShutterOpen);
+        }
         asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW, 
           "%s:%s:, StartAcquisition()\n", 
           driverName, functionName);
@@ -1428,38 +1414,18 @@ void AndorCCD::dataTask(void)
             /* Get any attributes that have been defined for this driver */        
             this->getAttributes(pArray->pAttributeList);
             /* Call the NDArray callback */
-            /* Must release the lock here, or we can get into a deadlock, because we can
-             * block on the plugin lock, and the plugin can be calling us */
-            this->unlock();
             asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW, 
                  "%s:%s:, calling array callbacks\n", 
                  driverName, functionName);
             doCallbacksGenericPointer(pArray, NDArrayData, 0);
-            this->lock();
             // Save the current frame for use with the SPE file writer which needs the data
             if (this->pArrays[0]) this->pArrays[0]->release();
             this->pArrays[0] = pArray;
-          }// if (arrayCallbacks)
-          // Save data if autosave is enabled
-          if (autoSave){
-            // Dario Begin :AutoSave must wait until the camera stops to acquire
-            int imageMode;
-            getIntegerParam(ADImageMode, &imageMode);
-            if(imageMode != ADImageContinuous){
-                do{
-                    checkStatus(GetStatus(&acquireStatus));
-                }
-                while (acquireStatus == DRV_ACQUIRING);
-                this->saveDataFrame(i);
-            }
-            // int TimeToWait;
-            // TimeToWait = mAcquireTime + 10;
-            // Sleep(TimeToWait*1000);
-            //Dario End
-            //this->saveDataFrame(i); commented by Dario
           }
+          // Save data if autosave is enabled
+          if (autoSave) this->saveDataFrame(i);
           callParamCallbacks();
-        }// for (i=firstImage; i<=lastImage; i++)
+        }
       } catch (const std::string &e) {
         asynPrint(pasynUserSelf, ASYN_TRACE_ERROR,
           "%s:%s: %s\n",
@@ -1469,6 +1435,10 @@ void AndorCCD::dataTask(void)
       }
     }
       
+    if (adShutterMode == ADShutterModeEPICS) {
+      ADDriver::setShutter(ADShutterClosed);
+    }
+
     //Now clear main thread flag
     mAcquiringData = 0;
     setIntegerParam(ADAcquire, 0);
@@ -1507,49 +1477,31 @@ void AndorCCD::saveDataFrame(int frameNumber)
 
   try {
     if (fileFormat == AFFTIFF) {
-      //Dario Start
-      strcat(fullFileName,".tiff");
-      //Dario End  
       asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW, 
         "%s:%s:, SaveAsTiffEx(%s, %s, %d, 1, 1)\n", 
         driverName, functionName, fullFileName, palFilePath, frameNumber);
       checkStatus(SaveAsTiffEx(fullFileName, palFilePath, frameNumber, 1, 1));
     } else if (fileFormat == AFFBMP) {
-      //Dario Start
-      strcat(fullFileName,".bmp");
-      //Dario End  
       asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW, 
         "%s:%s:, SaveAsBmp(%s, %s, 0, 0)\n", 
         driverName, functionName, fullFileName, palFilePath);
       checkStatus(SaveAsBmp(fullFileName, palFilePath, 0, 0));
     } else if (fileFormat == AFFSIF) {
-      //Dario Start
-      strcat(fullFileName,".sif");
-      //Dario End  
       asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW, 
         "%s:%s:, SaveAsSif(%s)\n", 
         driverName, functionName, fullFileName);
       checkStatus(SaveAsSif(fullFileName));
     } else if (fileFormat == AFFEDF) {
-      //Dario Start
-      strcat(fullFileName,".edf");
-      //Dario End  
       asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW, 
         "%s:%s:, SaveAsEDF(%s, 0)\n", 
         driverName, functionName, fullFileName);
       checkStatus(SaveAsEDF(fullFileName, 0));
     } else if (fileFormat == AFFRAW) {
-      //Dario Start
-      strcat(fullFileName,".raw");
-      //Dario End  
       asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW, 
         "%s:%s:, SaveAsRaw(%s, 1)\n", 
         driverName, functionName, fullFileName);
       checkStatus(SaveAsRaw(fullFileName, 1));
     } else if (fileFormat == AFFFITS) {
-      //Dario Start
-      strcat(fullFileName,".fits");
-      //Dario End  
       getIntegerParam(NDDataType, &itemp); dataType = (NDDataType_t)itemp;
       if (dataType == NDUInt16) FITSType=0;
       else if (dataType== NDUInt32) FITSType=1;
@@ -1558,9 +1510,6 @@ void AndorCCD::saveDataFrame(int frameNumber)
         driverName, functionName, fullFileName, FITSType);
       checkStatus(SaveAsFITS(fullFileName, FITSType));
     } else if (fileFormat == AFFSPE) {
-      //Dario Start
-      strcat(fullFileName,".spe");
-      //Dario End  
       asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW, 
         "%s:%s:, SaveAsSPE(%s)\n", 
         driverName, functionName, fullFileName);
@@ -1584,11 +1533,23 @@ void AndorCCD::saveDataFrame(int frameNumber)
 
 }
 
+xmlNode *xmlFindChildElement(xmlNode *parent, const char *name)
+{
+  xmlNode *node;
+  for (node = xmlFirstElementChild(parent); node; node = xmlNextElementSibling(parent)) {
+    if ((xmlStrEqual(node->name, (const xmlChar *)name))) {
+      return node;
+    }
+  }
+  return 0;
+}
+
 unsigned int AndorCCD::SaveAsSPE(char *fullFileName)
 {
   NDArray *pArray = this->pArrays[0];
   NDArrayInfo arrayInfo;
   int nx, ny;
+  bool xmlError;
   int dataType;
   FILE *fp;
   size_t numWrite;
@@ -1597,11 +1558,10 @@ unsigned int AndorCCD::SaveAsSPE(char *fullFileName)
   char tempString[20];
   const char *dataTypeString;
   int i;
-  TiXmlNode *speFormatNode, *dataFormatNode, *calibrationsNode;
-  TiXmlNode *wavelengthMappingNode, *wavelengthNode;
-  TiXmlElement *dataBlockElement, *dataBlockElement2;
-  TiXmlElement *sensorInformationElement, *sensorMappingElement;
-  TiXmlText *wavelengthText;
+  xmlNode *speFormatElement, *dataFormatElement, *calibrationsElement;
+  xmlNode *wavelengthMappingElement, *wavelengthElement;
+  xmlNode *dataBlockElement, *dataBlockElement2;
+  xmlNode *sensorInformationElement, *sensorMappingElement;
   static const char *functionName="SaveAsSPE";
   
   if (!pArray) return DRV_NO_NEW_DATA;
@@ -1669,8 +1629,7 @@ unsigned int AndorCCD::SaveAsSPE(char *fullFileName)
   calibrationString = (char *) calloc(nx*20, sizeof(char));
   for (i=0; i<nx; i++) calibration[i] = (float) i; 
   
-  // If we are on Windows and there is a valid Shamrock spectrometer get the calibration
-#ifdef _HAVE_SHAMROCK
+  // If there is a valid Shamrock spectrometer get the calibration
   int error;
   int numSpectrometers;
   error = ShamrockGetNumberDevices(&numSpectrometers);
@@ -1684,7 +1643,6 @@ unsigned int AndorCCD::SaveAsSPE(char *fullFileName)
       driverName, functionName);
   }
   noSpectrometers:  
-#endif 
   
   // Create the calibration string
   for (i=0; i<nx; i++) {
@@ -1695,7 +1653,7 @@ unsigned int AndorCCD::SaveAsSPE(char *fullFileName)
 
   // Create the XML data using SPETemplate.xml in the current directory as a template    
   if (mSPEDoc == 0) {
-    mSPEDoc = new TiXmlDocument("SPETemplate.xml");
+    mSPEDoc = xmlReadFile("SPETemplate.xml", NULL, 0);
     if (mSPEDoc == 0) {
       asynPrint(pasynUserSelf, ASYN_TRACE_ERROR,
         "%s::%s error opening SPETemplate.xml\n",
@@ -1703,42 +1661,70 @@ unsigned int AndorCCD::SaveAsSPE(char *fullFileName)
       return DRV_GENERAL_ERRORS;
     }
   }
-  mSPEDoc->LoadFile();
-        
+  
+  // Assume XML parsing error
+  xmlError = true;
+      
   // Set the required values in the DataFormat element
-  speFormatNode = mSPEDoc->FirstChild("SpeFormat");
-  dataFormatNode = speFormatNode->FirstChild("DataFormat");
-  dataBlockElement = dataFormatNode->FirstChildElement("DataBlock");
-  dataBlockElement->SetAttribute("pixelFormat", dataTypeString);
+  speFormatElement = xmlDocGetRootElement(mSPEDoc);
+  if ((!xmlStrEqual(speFormatElement->name, (const xmlChar *)"SpeFormat"))) {
+      asynPrint(pasynUserSelf, ASYN_TRACE_ERROR,
+          "%s:%s: cannot find SpeFormat element\n", driverName, functionName);
+      return asynError;
+  }
+  dataFormatElement = xmlFindChildElement(speFormatElement, "DataFormat");
+  if (!dataFormatElement) goto done;
+  dataBlockElement = xmlFindChildElement(dataFormatElement, "DataBlock");
+  if (!dataBlockElement) goto done;
+  xmlSetProp(dataBlockElement, (const xmlChar*)"pixelFormat", (const xmlChar*)dataTypeString);
   sprintf(tempString, "%lu", (unsigned long)arrayInfo.totalBytes);
-  dataBlockElement->SetAttribute("size", tempString);
-  dataBlockElement->SetAttribute("stride", tempString);
-  dataBlockElement2 = dataBlockElement->FirstChildElement("DataBlock");
-  dataBlockElement2->SetAttribute("size", tempString);
+  xmlSetProp(dataBlockElement, (const xmlChar*)"size", (const xmlChar*)tempString);
+  xmlSetProp(dataBlockElement, (const xmlChar*)"stride", (const xmlChar*)tempString);
+  dataBlockElement2 = xmlFindChildElement(dataBlockElement, "DataBlock");
+  if (!dataBlockElement2) goto done;
+  xmlSetProp(dataBlockElement2, (const xmlChar*)"size", (const xmlChar*)tempString);
   sprintf(tempString, "%d", nx);
-  dataBlockElement2->SetAttribute("width", tempString);
+  xmlSetProp(dataBlockElement2, (const xmlChar*)"width", (const xmlChar*)tempString);
   sprintf(tempString, "%d", ny);
-  dataBlockElement2->SetAttribute("height", tempString);
+  xmlSetProp(dataBlockElement2, (const xmlChar*)"height", (const xmlChar*)tempString);
 
   // Set the required values in the Calibrations element
-  calibrationsNode = speFormatNode->FirstChild("Calibrations");
-  wavelengthMappingNode = calibrationsNode->FirstChild("WavelengthMapping");
-  wavelengthNode = wavelengthMappingNode->FirstChildElement("Wavelength");
-  wavelengthText = (wavelengthNode->FirstChild())->ToText();
-  wavelengthText->SetValue(calibrationString);
-  sensorInformationElement = calibrationsNode->FirstChildElement("SensorInformation");
+  calibrationsElement = xmlFindChildElement(speFormatElement, "Calibrations");
+  if (!calibrationsElement) goto done;
+  wavelengthMappingElement = xmlFindChildElement(calibrationsElement, "WavelengthMapping");
+  if (!wavelengthMappingElement) goto done;
+  wavelengthElement = xmlFindChildElement(wavelengthMappingElement, "Wavelength");
+  if (!wavelengthElement) goto done;
+  xmlNodeSetContent(wavelengthElement, (const xmlChar*)calibrationString);
+  sensorInformationElement = xmlFindChildElement(calibrationsElement, "SensorInformation");
+  if (!sensorInformationElement) goto done;
   sprintf(tempString, "%d", nx);
-  sensorInformationElement->SetAttribute("width", tempString);
+  xmlSetProp(sensorInformationElement, (const xmlChar*)"width", (const xmlChar*)tempString);
   sprintf(tempString, "%d", ny);
-  sensorInformationElement->SetAttribute("height", tempString);
-  sensorMappingElement = calibrationsNode->FirstChildElement("SensorMapping");
+  xmlSetProp(sensorInformationElement, (const xmlChar*)"height", (const xmlChar*)tempString);
+  sensorMappingElement = xmlFindChildElement(calibrationsElement, "SensorMapping");
   sprintf(tempString, "%d", nx);
-  sensorMappingElement->SetAttribute("width", tempString);
+  xmlSetProp(sensorMappingElement, (const xmlChar*)"width", (const xmlChar*)tempString);
   sprintf(tempString, "%d", ny);
-  sensorMappingElement->SetAttribute("height", tempString);
-
-  mSPEDoc->SaveFile(fp);
+  xmlSetProp(sensorMappingElement, (const xmlChar*)"height", (const xmlChar*)tempString);
+  xmlError = false;
   
+done:
+  if (xmlError) {
+    asynPrint(pasynUserSelf, ASYN_TRACE_ERROR, 
+      "%s::%s XML parsing error\n", driverName, functionName);
+  }  
+  else {
+    int nChars = xmlDocDump(fp, mSPEDoc);
+    if (nChars < 0) {
+      asynPrint(pasynUserSelf, ASYN_TRACE_ERROR, 
+        "%s::%s error calling xmlDocDump\n", driverName, functionName);
+    }
+    else {
+      asynPrint(pasynUserSelf, ASYN_TRACEIO_DRIVER, 
+        "%s::%s xmlDocDump wrote %d bytes\n", driverName, functionName, nChars);
+    }
+  }
   // Close the file
   fclose(fp);
   free(calibration);

@@ -1,10 +1,9 @@
 # Database for the records specific to the Andor CCD.
 # Matthew Pearson
 # June 2009
-# Gabriele Salvato added support for iStar with DDG
-# October 2014
-# Gabriele Salvato added support for Autofocus
-# October 2014
+
+include "ADBase.template"
+include "NDFile.template"
 
 # These are the records that we modify from NDFile.template
 record(mbbo, "$(P)$(R)FileFormat")
@@ -145,6 +144,8 @@ record(mbbi, "$(P)$(R)DataType_RBV")
    field(SVVL, "")
 }
 
+
+
 # These are the records that are new for the Andor detector 
 record(bo, "$(P)$(R)AndorCooler")
 {
@@ -163,83 +164,6 @@ record(bi, "$(P)$(R)AndorCooler_RBV")
     field(ONAM, "On")
     field(SCAN, "I/O Intr")
 }
-
-# (Gabriele Salvato) DDG Integrate On Chip
-record(bo, "$(P)$(R)AndorDDGIOC")
-{
-    field(PINI, "YES")
-    field(DTYP, "asynInt32")
-    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))ANDOR_DDG_IOC")
-    field(ZNAM, "Off")
-    field(ONAM, "On")
-}
-
-record(bi, "$(P)$(R)AndorDDGIOC_RBV")
-{
-    field(DTYP, "asynInt32")
-    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))ANDOR_DDG_IOC")
-    field(ZNAM, "Off")
-    field(ONAM, "On")
-    field(SCAN, "I/O Intr")
-}
-
-# (Gabriele Salvato) MCP Gain
-record(ao, "$(P)$(R)AndorMCPGain")
-{
-   field(PINI, "YES")
-   field(DTYP, "asynInt32")
-   field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))ANDOR_MCP_GAIN")
-   field(PREC, "3")
-   field(VAL,  "1")
-   
-}
-
-record(ai, "$(P)$(R)AndorMCPGain_RBV")
-{
-   field(DTYP, "asynInt32")
-   field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))ANDOR_MCP_GAIN")
-   field(PREC, "3")
-   field(SCAN, "I/O Intr")
-}
-
-# (Gabriele Salvato) DDG Delay
-record(ao, "$(P)$(R)AndorDDGGateDelay")
-{
-   field(PINI, "YES")
-   field(DTYP, "asynFloat64")
-   field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))ANDOR_DDG_GATE_DELAY")
-   field(PREC, "3")
-   field(VAL,  "0.0")
-   
-}
-
-record(ai, "$(P)$(R)AndorDDGGateDelay_RBV")
-{
-   field(DTYP, "asynFloat64")
-   field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))ANDOR_DDG_GATE_DELAY")
-   field(PREC, "3")
-   field(SCAN, "I/O Intr")
-}
-
-# (Gabriele Salvato) DDG Width
-record(ao, "$(P)$(R)AndorDDGGateWidth")
-{
-   field(PINI, "YES")
-   field(DTYP, "asynFloat64")
-   field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))ANDOR_DDG_GATE_WIDTH")
-   field(PREC, "3")
-   field(VAL,  "0.1")
-   
-}
-
-record(ai, "$(P)$(R)AndorDDGGateWidth_RBV")
-{
-   field(DTYP, "asynFloat64")
-   field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))ANDOR_DDG_GATE_WIDTH")
-   field(PREC, "3")
-   field(SCAN, "I/O Intr")
-}
-# (Gabriele Salvato) end
 
 # Accumulation period.
 record(ao, "$(P)$(R)AndorAccumulatePeriod")
@@ -285,10 +209,16 @@ record(mbbo, "$(P)$(R)AndorShutterMode")
     field(PINI, "1")
     field(DTYP, "asynInt32")
     field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))ANDOR_SHUTTER_MODE")
-    field(ZRST, "Auto")
+    field(ZRST, "Fully Auto")
     field(ZRVL, "0")
-    field(ONST, "Open")
+    field(ONST, "Always Open")
     field(ONVL, "1")
+    field(TWST, "Always Closed")
+    field(TWVL, "2")
+    field(THST, "Open for FVB")
+    field(THVL, "4")
+    field(FRST, "Open for Any")
+    field(FRVL, "5")
 }
 
 record(bo, "$(P)$(R)AndorShutterExTTL")
@@ -329,7 +259,6 @@ record(mbbo, "$(P)$(R)AndorADCSpeed")
     field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))ANDOR_ADC_SPEED")
 }
 
-#% archiver 10 Monitor
 record(mbbi, "$(P)$(R)AndorADCSpeed_RBV")
 {
    field(DTYP, "asynInt32")
@@ -345,7 +274,6 @@ record(mbbo, "$(P)$(R)AndorPreAmpGain")
     field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))ANDOR_PREAMP_GAIN")
 }
 
-#% archiver 10 Monitor
 record(mbbi, "$(P)$(R)AndorPreAmpGain_RBV")
 {
    field(DTYP, "asynInt32")
@@ -353,7 +281,111 @@ record(mbbi, "$(P)$(R)AndorPreAmpGain_RBV")
    field(SCAN, "I/O Intr")
 }
 
+record(bo, "$(P)$(R)AndorBaselineClamp")
+{
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))ANDOR_BASELINE_CLAMP")
+    field(ZNAM, "Disable")
+    field(ONAM, "Enable")
+}
 
+record(bi, "$(P)$(R)AndorBaselineClamp_RBV")
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))ANDOR_BASELINE_CLAMP")
+    field(ZNAM, "Disable")
+    field(ONAM, "Enable")
+    field(SCAN, "I/O Intr")
+}
+
+# EM Gain
+record(longout, "$(P)$(R)AndorEMGain")
+{
+   field(PINI, "1")
+   field(DTYP, "asynInt32")
+   field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))ANDOR_EM_GAIN")
+   field(VAL,  "0")
+}
+
+record(longin, "$(P)$(R)AndorEMGain_RBV")
+{
+   field(DTYP, "asynInt32")
+   field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))ANDOR_EM_GAIN")
+   field(SCAN, "I/O Intr")
+}
+
+# EM Gain Mode
+record(mbbo, "$(P)$(R)AndorEMGainMode")
+{
+    field(PINI, "1")
+    field(DTYP, "asynInt32")
+    field(ZRST, "8 bit DAC")
+    field(ZRVL, "0")
+    field(ONST, "12 bit DAC")
+    field(ONVL, "1")
+    field(TWST, "Linear Mode")
+    field(TWVL, "2")
+    field(THST, "Real EM Gain")
+    field(THVL, "3")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))ANDOR_EM_GAIN_MODE")
+}
+
+record(mbbi, "$(P)$(R)AndorEMGainMode_RBV")
+{
+    field(DTYP, "asynInt32")
+    field(ZRST, "8 bit DAC")
+    field(ZRVL, "0")
+    field(ONST, "12 bit DAC")
+    field(ONVL, "1")
+    field(TWST, "Linear Mode")
+    field(TWVL, "2")
+    field(THST, "Real EM Gain")
+    field(THVL, "3")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))ANDOR_EM_GAIN_MODE")
+    field(SCAN, "I/O Intr")
+}
+
+# EM Gain Advanced Mode
+record(bo, "$(P)$(R)AndorEMGainAdvanced")
+{
+    field(PINI, "1")
+    field(DTYP, "asynInt32")
+    field(ZNAM, "Disabled")
+    field(ONAM, "Enabled")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))ANDOR_EM_GAIN_ADVANCED")
+}
+
+record(bi, "$(P)$(R)AndorEMGainAdvanced_RBV")
+{
+    field(DTYP, "asynInt32")
+    field(ZNAM, "Disabled")
+    field(ONAM, "Enabled")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))ANDOR_EM_GAIN_ADVANCED")
+    field(SCAN, "I/O Intr")
+}
+
+record(mbbo, "$(P)$(R)AndorReadOutMode")
+{
+   field(PINI, "YES")
+   field(DTYP, "asynInt32")
+   field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))ANDOR_READOUT_MODE")
+   field(ZRST, "FVB")
+   field(ZRVL, "0")
+   field(ONST, "Image")
+   field(ONVL, "4")
+   field(VAL,  "4")
+}
+
+record(mbbi, "$(P)$(R)AndorReadOutMode_RBV")
+{
+   field(DTYP, "asynInt32")
+   field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))ANDOR_READOUT_MODE")
+   field(ZRST, "FVB")
+   field(ZRVL, "0")
+   field(ONST, "Image")
+   field(ONVL, "4")
+   field(SCAN, "I/O Intr")
+}
 
 #Records in ADBase that do not apply to Andor
 
@@ -362,22 +394,6 @@ record(mbbo, "$(P)$(R)ColorMode")
     field(DISA, "1")
 }
 record(mbbi, "$(P)$(R)ColorMode_RBV")
-{
-    field(DISA, "1")
-}
-record(bo, "$(P)$(R)ReverseX")
-{
-    field(DISA, "1")
-}
-record(bi, "$(P)$(R)ReverseX_RBV")
-{
-    field(DISA, "1")
-}
-record(bo, "$(P)$(R)ReverseY")
-{
-    field(DISA, "1")
-}
-record(bi, "$(P)$(R)ReverseY_RBV")
 {
     field(DISA, "1")
 }
