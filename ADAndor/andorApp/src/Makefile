@@ -10,6 +10,10 @@ LIB_SRCS += shamrock.cpp
 ifeq (win32-x86, $(findstring win32-x86, $(T_A)))
 LIB_LIBS_WIN32 += atmcd32m
 else ifeq (windows-x64, $(findstring windows-x64, $(T_A)))
+# Note: we must built the application without GraphicsMagick for windows-x64.  
+# This is because of a conflict with the Andor library (SetImage function) 
+# that only occurs on windows-x64.
+WITH_GRAPHICSMAGICK=NO
 LIB_LIBS_WIN32 += atmcd64m
 endif
 LIB_LIBS_WIN32 += ShamrockCIFm

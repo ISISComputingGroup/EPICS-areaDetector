@@ -6,7 +6,7 @@ include $(TOP)/configure/CONFIG
 # Note: we must built the application without GraphicsMagick.
 # This is because of a conflict with the Andor library (SetImage function) 
 # It leads to a build error on windows-x64, but to a run-time error on Linux.
-USE_GRAPHICSMAGICK=NO
+WITH_GRAPHICSMAGICK=NO
 
 PROD_NAME = andorCCDApp
 PROD_IOC_WIN32  += $(PROD_NAME)
@@ -29,7 +29,7 @@ else ifeq (windows-x64, $(findstring windows-x64, $(T_A)))
   # Note: we must built the application without GraphicsMagick for windows-x64.  
   # This is because of a conflict with the Andor library (SetImage function) 
   # that only occurs on windows-x64.
-  USE_GRAPHICSMAGICK=NO
+  WITH_GRAPHICSMAGICK=NO
   PROD_LIBS  += atmcd64m
 endif
 PROD_LIBS_WIN32 += ShamrockCIFm
