@@ -24,8 +24,8 @@ dbLoadRecords("$(ADANDOR)/db/andorCCD.template",   "P=$(PREFIX),R=cam1:,PORT=$(P
 
 # Comment out the following lines if there is no Shamrock spectrograph
 #shamrockConfig(const char *portName, int shamrockId, const char *iniPath, int priority, int stackSize)
-shamrockConfig("SR1", 0, "", 0, 0)
-dbLoadRecords("$(ADANDOR)/db/shamrock.template",   "P=$(PREFIX),R=sham1:,PORT=SR1,TIMEOUT=1,PIXELS=1024")
+#shamrockConfig("SR1", 0, "", 0, 0)
+#dbLoadRecords("$(ADANDOR)/db/shamrock.template",   "P=$(PREFIX),R=sham1:,PORT=SR1,TIMEOUT=1,PIXELS=1024")
 
 # Create a standard arrays plugin
 NDStdArraysConfigure("Image1", 5, 0, "$(PORT)", 0, 0)
