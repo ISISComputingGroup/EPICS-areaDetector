@@ -12,5 +12,5 @@ include $(TOP)/configure/CONFIG
 ARCH = $(EPICS_HOST_ARCH)
 #ARCH = solaris-sparc
 #ARCH = vxWorks-ppc32
-TARGETS = envPaths cdCommands dllPath.bat
+TARGETS = envPaths cdCommands dllPath.bat runIOC.bat
 include $(TOP)/configure/RULES.ioc
