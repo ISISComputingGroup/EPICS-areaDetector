@@ -6,15 +6,15 @@ dbLoadDatabase("$(TOP)/dbd/simDetectorApp.dbd")
 simDetectorApp_registerRecordDeviceDriver(pdbbase) 
 
 # Prefix for all records
-epicsEnvSet("PREFIX", "13SIM1:")
+epicsEnvSet("PREFIX", "$(MYPVPREFIX)DAE:")
 # The port name for the detector
 epicsEnvSet("PORT",   "SIM1")
 # The queue size for all plugins
 epicsEnvSet("QSIZE",  "20")
 # The maximum image width; used to set the maximum size for this driver and for row profiles in the NDPluginStats plugin
-epicsEnvSet("XSIZE",  "1024")
+epicsEnvSet("XSIZE",  "512")
 # The maximum image height; used to set the maximum size for this driver and for column profiles in the NDPluginStats plugin
-epicsEnvSet("YSIZE",  "1024")
+epicsEnvSet("YSIZE",  "100")
 # The maximum number of time series points in the NDPluginStats plugin
 epicsEnvSet("NCHANS", "2048")
 # The maximum number of frames buffered in the NDPluginCircularBuff plugin
@@ -36,7 +36,7 @@ asynSetMinTimerPeriod(0.001)
 # Do not set EPICS_CA_MAX_ARRAY_BYTES to a value much larger than that required, because EPICS Channel Access actually
 # allocates arrays of this size every time it needs a buffer larger than 16K.
 # Uncomment the following line to set it in the IOC.
-#epicsEnvSet("EPICS_CA_MAX_ARRAY_BYTES", "10000000")
+epicsEnvSet("EPICS_CA_MAX_ARRAY_BYTES", "100000000")
 
 # Create a simDetector driver
 # simDetectorConfig(const char *portName, int maxSizeX, int maxSizeY, int dataType,
@@ -58,7 +58,7 @@ NDStdArraysConfigure("Image1", 20, 0, "$(PORT)", 0, 0, 0, 0, 0, 5)
 
 # This creates a waveform large enough for 2000x2000x3 (e.g. RGB color) arrays.
 # This waveform only allows transporting 8-bit images
-dbLoadRecords("NDStdArrays.template", "P=$(PREFIX),R=image1:,PORT=Image1,ADDR=0,TIMEOUT=1,NDARRAY_PORT=$(PORT),TYPE=Int8,FTVL=UCHAR,NELEMENTS=12000000")
+dbLoadRecords("NDStdArrays.template", "P=$(PREFIX),R=image1:,PORT=Image1,ADDR=0,TIMEOUT=1,NDARRAY_PORT=$(PORT),TYPE=Int8,FTVL=UCHAR,NELEMENTS=12000000,ENABLED=1")
 # This waveform only allows transporting 16-bit images
 #dbLoadRecords("NDStdArrays.template", "P=$(PREFIX),R=image1:,PORT=Image1,ADDR=0,TIMEOUT=1,NDARRAY_PORT=$(PORT),TYPE=Int16,FTVL=SHORT,NELEMENTS=12000000")
 # This waveform allows transporting 32-bit images
