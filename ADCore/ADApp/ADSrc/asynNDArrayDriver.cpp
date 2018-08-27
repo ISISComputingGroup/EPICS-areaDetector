@@ -595,16 +595,18 @@ asynStatus asynNDArrayDriver::writeGenericPointer(asynUser *pasynUser, void *gen
 
 asynStatus asynNDArrayDriver::readInt32(asynUser *pasynUser, epicsInt32 *value)
 {
-    int function = pasynUser->reason;
-    asynStatus status = asynSuccess;
+	int addr = 0;
+	int function = pasynUser->reason;
+	asynStatus status = asynSuccess;
+	status = getAddress(pasynUser, &addr); if (status != asynSuccess) return(status);
 
     // Just read the status of the NDArrayPool
     if (function == NDPoolMaxBuffers) {
-        setIntegerParam(function, this->pNDArrayPool->maxBuffers());
+        setIntegerParam(addr, function, this->pNDArrayPool->maxBuffers());
     } else if (function == NDPoolAllocBuffers) {
-        setIntegerParam(function, this->pNDArrayPool->numBuffers());
+        setIntegerParam(addr, function, this->pNDArrayPool->numBuffers());
     } else if (function == NDPoolFreeBuffers) {
-        setIntegerParam(function, this->pNDArrayPool->numFree());
+        setIntegerParam(addr, function, this->pNDArrayPool->numFree());
     }
 
     // Call base class
@@ -615,14 +617,16 @@ asynStatus asynNDArrayDriver::readInt32(asynUser *pasynUser, epicsInt32 *value)
 #define MEGABYTE_DBL 1048576.
 asynStatus asynNDArrayDriver::readFloat64(asynUser *pasynUser, epicsFloat64 *value)
 {
-    int function = pasynUser->reason;
+	int addr = 0;
+	int function = pasynUser->reason;
     asynStatus status = asynSuccess;
+	status = getAddress(pasynUser, &addr); if (status != asynSuccess) return(status);
 
     // Just read the status of the NDArrayPool
     if (function == NDPoolMaxMemory) {
-        setDoubleParam(function, this->pNDArrayPool->maxMemory() / MEGABYTE_DBL);
+        setDoubleParam(addr, function, this->pNDArrayPool->maxMemory() / MEGABYTE_DBL);
     } else if (function == NDPoolUsedMemory) {
-        setDoubleParam(function, this->pNDArrayPool->memorySize() / MEGABYTE_DBL);
+        setDoubleParam(addr, function, this->pNDArrayPool->memorySize() / MEGABYTE_DBL);
     }
 
     // Call base class

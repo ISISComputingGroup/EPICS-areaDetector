@@ -61,11 +61,13 @@ void ADDriver::setShutter(int open)
   * should set the value of the parameter in the parameter library. */
 asynStatus ADDriver::writeInt32(asynUser *pasynUser, epicsInt32 value)
 {
+    int addr=0;
     int function = pasynUser->reason;
     asynStatus status = asynSuccess;
     const char *functionName = "writeInt32";
 
-    status = setIntegerParam(function, value);
+    status = getAddress(pasynUser, &addr); if (status != asynSuccess) return(status);
+    status = setIntegerParam(addr, function, value);
 
     if (function == ADShutterControl) {
         setShutter(value);
