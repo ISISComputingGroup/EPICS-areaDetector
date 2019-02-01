@@ -20,8 +20,14 @@ LIBRARY_IOC += NDPluginEdge
 NDPluginEdge_SRCS += NDPluginEdge.cpp
 
 USR_INCLUDES += -I$(OPENCV_INCLUDE)
+
+NDPluginEdge_LIBS       += NDPlugin
+
 ifdef OPENCV_LIB
-  NDPluginEdge_DIR += $(OPENCV_LIB)
+  opencv_core_DIR += $(OPENCV_LIB)
+  NDPluginEdge_LIBS       += opencv_core opencv_imgproc
+else
+  NDPluginEdge_SYS_LIBS   += opencv_core opencv_imgproc
 endif
 
 include $(AREA_DETECTOR)/ADCore/ADApp/commonLibraryMakefile

@@ -29,6 +29,8 @@ ADCORE=$(AREA_DETECTOR)/ADCore
 LIBXML2=$(SUPPORT)/libxml2/master
 LIBICONV=$(SUPPORT)/libiconv/master
 
+OPENCV=$(SUPPORT)/OpenCV/master
+
 # V4 modules.
 EV4_BASE=$(SUPPORT)/EPICS_V4/master
 PVCOMMON=$(EV4_BASE)/pvCommonCPP

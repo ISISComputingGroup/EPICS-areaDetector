@@ -17,8 +17,11 @@
 #include <iocsh.h>
 
 #include "NDArray.h"
-#include "NDPluginEdge.h"
+#include "NDPluginDriver.h"
+
 #include <epicsExport.h>
+
+#include "NDPluginEdge.h"
 
 #include <opencv2/opencv.hpp>
 

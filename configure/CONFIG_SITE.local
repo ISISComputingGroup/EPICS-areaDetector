@@ -59,10 +59,10 @@ NEXUS_EXTERNAL = NO
 #NEXUS_LIB     =
 
 # OPENCV is required for the ADPluginEdge plugin
-WITH_OPENCV     = NO
+WITH_OPENCV     = YES
 OPENCV_EXTERNAL = YES
-#OPENCV_INCLUDE =
-#OPENCV_LIB     =
+OPENCV_INCLUDE = $(OPENCV)/include
+OPENCV_LIB     = $(OPENCV)/lib/$(EPICS_HOST_ARCH)
 
 # SZIP is required for the NDFileHDF5 and NDFileNexus plugins.  
 # This may be optional in the future.
