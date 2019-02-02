@@ -25,7 +25,11 @@ ADANDORISTAR=$(AREA_DETECTOR)/ADAndorIstar
 #ADPERKINELMER=$(AREA_DETECTOR)/ADPerkinElmer
 #ADPILATUS=$(AREA_DETECTOR)/ADPilatus
 #ADPIXIRAD=$(AREA_DETECTOR)/ADPixirad
+ifeq ($(findstring 10.0,$(VCVERSION)),)
+ifeq ($(findstring static,$(EPICS_HOST_ARCH)),)
 ADPLUGINEDGE=$(AREA_DETECTOR)/ADPluginEdge
+endif
+endif
 ### ADPointGrey cannot be built on Linux systems without libc 2.14
 #ADPOINTGREY=$(AREA_DETECTOR)/ADPointGrey
 #ADPROSILICA=$(AREA_DETECTOR)/ADProsilica

@@ -16,11 +16,9 @@ $(FFMPEGSERVER)_DEPEND_DIRS += $(ADSIMDETECTOR)
 endif
 
 ifdef ADPLUGINEDGE
-ifeq ($(findstring 10.0,$(VCVERSION)),)
 DIRS := $(DIRS) $(ADPLUGINEDGE)
 $(ADPLUGINEDGE)_DEPEND_DIRS += $(ADCORE)
 ADCORE := $(ADCORE) $(ADPLUGINEDGE)
-endif
 endif
 
 # Build simulation drivers next
