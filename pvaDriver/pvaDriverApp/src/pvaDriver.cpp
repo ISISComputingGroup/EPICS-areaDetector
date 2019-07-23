@@ -106,11 +106,7 @@ pvaDriver::pvaDriver (const char *portName, const char *pvName,
                 driverName, functionName);
 
     ClientFactory::start();
-#if EPICS_PVA_MAJOR_VERSION >= 6
-    m_provider = ChannelProviderRegistry::clients()->getProvider("pva");
-#else
     m_provider = getChannelProviderRegistry()->getProvider("pva");
-#endif
     connectPv(pvName);
 
     unlock();

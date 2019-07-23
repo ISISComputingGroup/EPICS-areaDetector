@@ -17,7 +17,6 @@
 #include <stdio.h>
 
 #include <iocsh.h>
-#include <cantProceed.h>
 #include "NDPluginDriver.h"
 
 #include <epicsExport.h>

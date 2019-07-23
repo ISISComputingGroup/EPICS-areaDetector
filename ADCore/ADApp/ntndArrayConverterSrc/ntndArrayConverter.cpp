@@ -1,8 +1,6 @@
 #include <math.h>
 
 #include <epicsExport.h>
-#include <pv/pvaVersion.h>
-
 #include "ntndArrayConverter.h"
 
 using namespace std;
@@ -496,12 +494,7 @@ void NTNDArrayConverter::fromStringAttribute (PVStructurePtr dest, NDAttribute *
 
 void NTNDArrayConverter::fromUndefinedAttribute (PVStructurePtr dest)
 {
-#if EPICS_PVA_MAJOR_VERSION >= 6
-    PVFieldPtr nullPtr;
-    dest->getSubField<PVUnion>("value")->set(nullPtr);
-#else
     dest->getSubField<PVUnion>("value")->get().reset();
-#endif
 }
 
 void NTNDArrayConverter::fromAttributes (NDArray *src)

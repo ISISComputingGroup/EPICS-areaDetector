@@ -8,7 +8,6 @@ include $(TOP)/configure/CONFIG
 # Build the IOC support library
 
 USR_CXXFLAGS_Linux += -Wunused-but-set-variable
-USR_CXXFLAGS_WIN32 += -DNOMINMAX
 
 LIBRARY_IOC += ADnEDTransform
 LIBRARY_IOC += ADnEDSupport
