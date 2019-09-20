@@ -1674,7 +1674,11 @@ asynStatus ADnED::setupChannelMonitor(const char *pvName, int channel)
   }
 
   if (!p_ChannelProvider) {
+#if EPICS_PVA_MAJOR_VERSION >= 6
+    p_ChannelProvider = epics::pvAccess::ChannelProviderRegistry::clients()->getProvider(ADNED_PV_PROVIDER);
+#else
     p_ChannelProvider = epics::pvAccess::getChannelProviderRegistry()->getProvider(ADNED_PV_PROVIDER);
+#endif
     if (!p_ChannelProvider) {
       throw std::runtime_error("No Channel Provider.");
     }
