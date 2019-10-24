@@ -1,6 +1,6 @@
 # Directories created by EPICS make system
 bin/
-db/
+/db/
 dbd/
 html/
 include/
