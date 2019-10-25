@@ -4,7 +4,7 @@ O.*/
 bin/
 lib/
 dbd/
-db/
+/db/
 data/
 .project
 .cproject
