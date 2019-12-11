@@ -6,13 +6,13 @@ https://github.com/areaDetector/ADAndor.
 
 Tagged source code and pre-built binary releases prior to R2-0 are included
 in the areaDetector releases available via links at
-http://cars.uchicago.edu/software/epics/areaDetector.html.
+https://cars.uchicago.edu/software/epics/areaDetector.html.
 
 Tagged source code releases from R2-0 onward can be obtained at 
 https://github.com/areaDetector/ADAndor/releases.
 
 Tagged prebuilt binaries from R2-0 onward can be obtained at
-http://cars.uchicago.edu/software/pub/ADAndor.
+https://cars.uchicago.edu/software/pub/ADAndor.
 
 The versions of EPICS base, asyn, and other synApps modules used for each release can be obtained from 
 the EXAMPLE_RELEASE_PATHS.local, EXAMPLE_RELEASE_LIBS.local, and EXAMPLE_RELEASE_PRODS.local
@@ -22,6 +22,23 @@ files respectively, in the configure/ directory of the appropriate release of th
 
 Release Notes
 =============
+R2-8 (July 1, 2018)
+----
+* Added support for new PVs in ADCore R3-3 in opi files (NumQueuedArrays, EmptyFreeList, etc.)
+* Changed configure/RELEASE files for compatibility with areaDetector R3-3.
+* Improved op/*/autoconvert/* files with better medm files and better converters.
+
+R2-7 (January 31, 2018)
+----
+* Added support for Frame Transfer mode.  Thanks to Michael Dunning for this.
+* Added support for setting the Vertical Shift Period. Thanks to Michael Dunning for this.
+* Upgraded the Andor SDK version used to 2.102.3 on Linux. Thanks to Hinko Kocevar for this.
+* Fixed medm adl files to improve the autoconversion to other display manager files.
+* Added op/Makefile to automatically convert adl files to edl, ui, and opi files.
+* Updated the edl, ui, and opi autoconvert directories to contain the conversions
+  from the most recent adl files.
+
+
 R2-6 (July 4, 2017)
 ----
 * Changed from using TinyXml to libxml2.  This is used when saving SPE files.  This change was made
@@ -86,7 +103,7 @@ R2-0 (24-Mar-2014)
 R1-9-1 and earlier
 ------------------
 Release notes are part of the
-[areaDetector Release Notes](http://cars.uchicago.edu/software/epics/areaDetectorReleaseNotes.html).
+[areaDetector Release Notes](https://cars.uchicago.edu/software/epics/areaDetectorReleaseNotes.html).
 
 Future Releases
 ===============

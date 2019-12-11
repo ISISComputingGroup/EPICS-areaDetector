@@ -16,6 +16,12 @@ files respectively, in the configure/ directory of the appropriate release of th
 Release Notes
 =============
 
+R1-3 (January XXX, 2018)
+====================
+* Fixed layout of medm screen.
+* Added op/edl/autoconvert, op/opi/autoconvert, and op/ui/autoconvert files.
+* Fixed Db/NDDriverStdArrays_settings.req for misnamed PV and missing PVs.
+
 R1-2 (July 5, 2017)
 ====================
 * Changed layout of medm screen for ADCore R3-0.

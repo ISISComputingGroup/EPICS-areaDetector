@@ -9,7 +9,7 @@ include "ADBase.template"
 ## These are the records from ADBase.template that we modify
 ## Disable ReadStatus when acquisition is active because querying the detector 
 ## when it is streaming causes dropped frames
-record(bo, $(P)$(R)ReadStatus) {
+record(bo, "$(P)$(R)ReadStatus") {
   field(SDIS, "$(P)$(R)Acquire NPP NMS")
   field(DISV, "1")
 }
@@ -276,6 +276,23 @@ record(longin, "$(P)$(R)PacketDelayActual") {
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT) 0)PG_PACKET_DELAY_ACTUAL")
   field(SCAN, "I/O Intr")
+}
+
+#Packets resend enable
+record(bo,"$(P)$(R)ResendEnable"){
+  field(PINI, "YES")
+  field(DTYP, "asynInt32")
+  field(ZNAM, "Disable")
+  field(ONAM, "Enable")
+  field(OUT,  "@asyn($(PORT) 0)PG_PACKET_RESEND_ENABLE")
+}
+
+record(bi, "$(P)$(R)ResendEnable_RBV"){
+  field(SCAN, "I/O Intr")
+  field(DTYP, "asynInt32")
+  field(ZNAM, "Disable")
+  field(ONAM, "Enable")
+  field(INP,  "@asyn($(PORT) 0)PG_PACKET_RESEND_ENABLE")
 }
 
 record(ai, "$(P)$(R)Bandwidth") {

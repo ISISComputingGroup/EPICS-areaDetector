@@ -14,6 +14,8 @@
 #ifndef Dexela_H
 #define Dexela_H
 
+#define DRIVER_VERSION "2.2"
+
 #include "ADDriver.h"
 #include "DexelaDetector.h"
 
@@ -43,6 +45,7 @@
 #define DEX_DefectMapFileString              "DEX_DEFECT_MAP_FILE"
 #define DEX_LoadDefectMapFileString          "DEX_LOAD_DEFECT_MAP_FILE"
 #define DEX_SoftwareTriggerString            "DEX_SOFTWARE_TRIGGER"
+#define DEX_ReadoutModeString                "DEX_READOUT_MODE"
 
 
 /** Driver for the Perkin Elmer Dexela CMOS flat panel detectors */
@@ -95,7 +98,7 @@ protected:
   int DEX_DefectMapFile;
   int DEX_LoadDefectMapFile;
   int DEX_SoftwareTrigger;
-  #define DEX_LAST_PARAM DEX_SoftwareTrigger
+  int DEX_ReadoutMode;
 
 
 private:
@@ -126,8 +129,6 @@ private:
   asynStatus saveGainFile(void);
   asynStatus loadDefectMapFile();
 };
-
-#define NUM_DEXELA_PARAMS ((int)(&DEX_LAST_PARAM - &DEX_FIRST_PARAM + 1))
 
 #endif
 

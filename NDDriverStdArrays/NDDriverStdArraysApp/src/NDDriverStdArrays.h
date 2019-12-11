@@ -16,7 +16,7 @@
 #include "ADDriver.h"
 
 #define DRIVER_VERSION      1
-#define DRIVER_REVISION     2
+#define DRIVER_REVISION     3
 #define DRIVER_MODIFICATION 0
 
 typedef enum {

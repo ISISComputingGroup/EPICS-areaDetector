@@ -1,7 +1,6 @@
 #ifndef ffmpegServer_H
 #define ffmpegServer_H
 
-// need to move earlier as asyn now include stdint.h
 #ifndef __STDC_CONSTANT_MACROS
 #define __STDC_CONSTANT_MACROS
 #endif

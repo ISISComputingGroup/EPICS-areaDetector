@@ -1,0 +1,746 @@
+#
+# EPICS database template file for ADCompVision. 
+# This will contatin records used by the plugin's various
+# functions.
+# 
+# Author: Jakub Wlodek 
+#
+# Created on: 26-Jun-2018
+# Last modified: 11-Jan-2019
+#
+
+
+# include the base driver template file
+include "NDPluginBase.template"
+
+
+#########################################################################
+# Function selection PVs.                                               #
+#########################################################################
+
+############################ First Comp Vision Functions ####################################
+
+record(mbbo, "$(P)$(R)CompVisionFunction1")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT, "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))NDCV_FUNCTION1")
+    field(ZRST, "None")
+    field(ZRVL, "0")
+    field(ONST, "Gaussian Blur")
+    field(ONVL, "1")
+    field(TWST, "Threshold")
+    field(TWVL, "2")
+    field(THST, "Subtract")
+    field(THVL, "3")
+    field(FRST, "Laplacian")
+    field(FRVL, "4")
+    field(FVST, "Canny Edge Detection")
+    field(FVVL, "5")
+    field(VAL, "0")
+    info(autosaveFields, "VAL")
+}
+
+record(mbbi, "$(P)$(R)CompVisionFunction1_RBV")
+{
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))NDCV_FUNCTION1")
+    field(ZRST, "None")
+    field(ZRVL, "0")
+    field(ONST, "Gaussian Blur")
+    field(ONVL, "1")
+    field(TWST, "Threshold")
+    field(TWVL, "2")
+    field(THST, "Subtract")
+    field(THVL, "3")
+    field(FRST, "Laplacian")
+    field(FRVL, "4")
+    field(FVST, "Canny Edge Detection")
+    field(FVVL, "5")
+    field(VAL, "0")
+    field(SCAN, "I/O Intr")
+}
+
+############################ Second Comp Vision Functions ####################################
+
+record(mbbo, "$(P)$(R)CompVisionFunction2")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT, "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))NDCV_FUNCTION2")
+    field(ZRST, "None")
+    field(ZRVL, "0")
+    field(ONST, "Centroid Identification")
+    field(ONVL, "1")
+    field(TWST, "Sharpen")
+    field(TWVL, "2" )
+    field(THST, "Convert Format")
+    field(THVL, "3")
+    field(VAL, "0")
+    info(autosaveFields, "VAL")
+}
+
+record(mbbi, "$(P)$(R)CompVisionFunction2_RBV")
+{
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))NDCV_FUNCTION2")
+    field(ZRST, "None")
+    field(ZRVL, "0")
+    field(ONST, "Centroid Identification")
+    field(ONVL, "1")
+    field(TWST, "Sharpen")
+    field(TWVL, "2" )
+    field(THST, "Convert Format")
+    field(THVL, "3") 
+    field(VAL, "0")
+    field(SCAN, "I/O Intr")
+}
+
+############################ Third Comp Vision Functions ####################################
+
+record(mbbo, "$(P)$(R)CompVisionFunction3")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT, "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))NDCV_FUNCTION3")
+    field(ZRST, "None")
+    field(ZRVL, "0")
+    field(ONST, "User Function")
+    field(ONVL, "1")
+    field(TWST, "Image Stats")
+    field(TWVL, "2")
+    field(THST, "Dist. Check")
+    field(THVL, "3")
+    field(VAL, "0")
+    info(autosaveFields, "VAL")
+}
+
+record(mbbi, "$(P)$(R)CompVisionFunction3_RBV")
+{
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))NDCV_FUNCTION3")
+    field(ZRST, "None")
+    field(ZRVL, "0")
+    field(ONST, "User Function")
+    field(ONVL, "1")
+    field(TWST, "Image Stats")
+    field(TWVL, "2")
+    field(THST, "Dist. Check")
+    field(THVL, "3")
+    field(VAL, "0")
+    field(SCAN, "I/O Intr")
+}
+
+#############################################################################
+# Because OpenCV has so many functions with so many different flags and     #
+# parameters, the PV values for this plugin will vary in effect for each    #
+# OpenCV function. Further information can be found in the README.md file   #
+#############################################################################
+
+#############################################################################
+# Input PVs (10)                                                       #
+#############################################################################
+
+record(ao, "$(P)$(R)Input1")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynFloat64")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))NDCV_IN1")
+    field(VAL, "0.0")
+}
+
+record(ai, "$(P)$(R)Input1_RBV")
+{
+    field(DTYP, "asynFloat64")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))NDCV_IN1")
+    field(SCAN, "I/O Intr")
+}
+
+record(stringin, "$(P)$(R)Input1Description_RBV"){
+    field(DTYP, "asynOctetRead")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))NDCV_IN_DESCRIPTION1")
+    field(VAL, "CV Inputs")
+    field(SCAN, "I/O Intr")
+}
+
+#------------------------------------------------------------------------------------
+
+record(ao, "$(P)$(R)Input2")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynFloat64")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))NDCV_IN2")
+    field(VAL, "0.0")
+}
+
+record(ai, "$(P)$(R)Input2_RBV")
+{
+    field(DTYP, "asynFloat64")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))NDCV_IN2")
+    field(SCAN, "I/O Intr")
+}
+
+record(stringin, "$(P)$(R)Input2Description_RBV"){
+    field(DTYP, "asynOctetRead")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))NDCV_IN_DESCRIPTION2")
+    field(VAL, "CV Inputs")
+    field(SCAN, "I/O Intr")
+}
+
+#------------------------------------------------------------------------------------
+
+record(ao, "$(P)$(R)Input3")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynFloat64")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))NDCV_IN3")
+    field(VAL, "0.0")
+}
+
+record(ai, "$(P)$(R)Input3_RBV")
+{
+    field(DTYP, "asynFloat64")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))NDCV_IN3")
+    field(SCAN, "I/O Intr")
+}
+
+record(stringin, "$(P)$(R)Input3Description_RBV"){
+    field(DTYP, "asynOctetRead")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))NDCV_IN_DESCRIPTION3")
+    field(VAL, "CV Inputs")
+    field(SCAN, "I/O Intr")
+}
+
+#------------------------------------------------------------------------------------
+
+record(ao, "$(P)$(R)Input4")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynFloat64")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))NDCV_IN4")
+    field(VAL, "0.0")
+}
+
+record(ai, "$(P)$(R)Input4_RBV")
+{
+    field(DTYP, "asynFloat64")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))NDCV_IN4")
+    field(SCAN, "I/O Intr")
+}
+
+record(stringin, "$(P)$(R)Input4Description_RBV"){
+    field(DTYP, "asynOctetRead")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))NDCV_IN_DESCRIPTION4")
+    field(VAL, "CV Inputs")
+    field(SCAN, "I/O Intr")
+}
+
+#------------------------------------------------------------------------------------
+
+record(ao, "$(P)$(R)Input5")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynFloat64")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))NDCV_IN5")
+    field(VAL, "0.0")
+}
+
+record(ai, "$(P)$(R)Input5_RBV")
+{
+    field(DTYP, "asynFloat64")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))NDCV_IN5")
+    field(SCAN, "I/O Intr")
+}
+
+record(stringin, "$(P)$(R)Input5Description_RBV"){
+    field(DTYP, "asynOctetRead")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))NDCV_IN_DESCRIPTION5")
+    field(VAL, "CV Inputs")
+    field(SCAN, "I/O Intr")
+}
+
+#------------------------------------------------------------------------------------
+
+record(ao, "$(P)$(R)Input6")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynFloat64")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))NDCV_IN6")
+    field(VAL, "0.0")
+}
+
+record(ai, "$(P)$(R)Input6_RBV")
+{
+    field(DTYP, "asynFloat64")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))NDCV_IN6")
+    field(SCAN, "I/O Intr")
+}
+
+record(stringin, "$(P)$(R)Input6Description_RBV"){
+    field(DTYP, "asynOctetRead")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))NDCV_IN_DESCRIPTION6")
+    field(VAL, "CV Inputs")
+    field(SCAN, "I/O Intr")
+}
+
+#------------------------------------------------------------------------------------
+
+record(ao, "$(P)$(R)Input7")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynFloat64")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))NDCV_IN7")
+    field(VAL, "0.0")
+}
+
+record(ai, "$(P)$(R)Input7_RBV")
+{
+    field(DTYP, "asynFloat64")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))NDCV_IN7")
+    field(SCAN, "I/O Intr")
+}
+
+record(stringin, "$(P)$(R)Input7Description_RBV"){
+    field(DTYP, "asynOctetRead")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))NDCV_IN_DESCRIPTION7")
+    field(VAL, "CV Inputs")
+    field(SCAN, "I/O Intr")
+}
+
+#------------------------------------------------------------------------------------
+
+record(ao, "$(P)$(R)Input8")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynFloat64")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))NDCV_IN8")
+    field(VAL, "0.0")
+}
+
+record(ai, "$(P)$(R)Input8_RBV")
+{
+    field(DTYP, "asynFloat64")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))NDCV_IN8")
+    field(SCAN, "I/O Intr")
+}
+
+record(stringin, "$(P)$(R)Input8Description_RBV"){
+    field(DTYP, "asynOctetRead")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))NDCV_IN_DESCRIPTION8")
+    field(VAL, "CV Inputs")
+    field(SCAN, "I/O Intr")
+}
+
+#------------------------------------------------------------------------------------
+
+record(ao, "$(P)$(R)Input9")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynFloat64")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))NDCV_IN9")
+    field(VAL, "0.0")
+}
+
+record(ai, "$(P)$(R)Input9_RBV")
+{
+    field(DTYP, "asynFloat64")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))NDCV_IN9")
+    field(SCAN, "I/O Intr")
+}
+
+record(stringin, "$(P)$(R)Input9Description_RBV"){
+    field(DTYP, "asynOctetRead")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))NDCV_IN_DESCRIPTION9")
+    field(VAL, "CV Inputs")
+    field(SCAN, "I/O Intr")
+}
+
+#------------------------------------------------------------------------------------
+
+record(ao, "$(P)$(R)Input10")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynFloat64")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))NDCV_IN10")
+    field(VAL, "0.0")
+}
+
+record(ai, "$(P)$(R)Input10_RBV")
+{
+    field(DTYP, "asynFloat64")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))NDCV_IN10")
+    field(SCAN, "I/O Intr")
+}
+
+record(stringin, "$(P)$(R)Input10Description_RBV"){
+    field(DTYP, "asynOctetRead")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))NDCV_IN_DESCRIPTION10")
+    field(VAL, "CV Inputs")
+    field(SCAN, "I/O Intr")
+}
+
+#######################################################################
+# Output PVs (10)                                                #
+#######################################################################
+
+record(ao, "$(P)$(R)Output1")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynFloat64")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))NDCV_OUT1")
+    field(VAL, "0.0")
+}
+
+record(ai, "$(P)$(R)Output1_RBV")
+{
+    field(DTYP, "asynFloat64")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))NDCV_OUT1")
+    field(SCAN, "I/O Intr")
+}
+
+record(stringin, "$(P)$(R)Output1Description_RBV"){
+    field(DTYP, "asynOctetRead")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))NDCV_OUT_DESCRIPTION1")
+    field(VAL, "CV Outputs")
+    field(SCAN, "I/O Intr")
+}
+
+#------------------------------------------------------------------------------------
+
+record(ao, "$(P)$(R)Output2")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynFloat64")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))NDCV_OUT2")
+    field(VAL, "0.0")
+}
+
+record(ai, "$(P)$(R)Output2_RBV")
+{
+    field(DTYP, "asynFloat64")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))NDCV_OUT2")
+    field(SCAN, "I/O Intr")
+}
+
+record(stringin, "$(P)$(R)Output2Description_RBV"){
+    field(DTYP, "asynOctetRead")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))NDCV_OUT_DESCRIPTION2")
+    field(VAL, "CV Outputs")
+    field(SCAN, "I/O Intr")
+}
+
+#------------------------------------------------------------------------------------
+
+record(ao, "$(P)$(R)Output3")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynFloat64")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))NDCV_OUT3")
+    field(VAL, "0.0")
+}
+
+record(ai, "$(P)$(R)Output3_RBV")
+{
+    field(DTYP, "asynFloat64")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))NDCV_OUT3")
+    field(SCAN, "I/O Intr")
+}
+
+record(stringin, "$(P)$(R)Output3Description_RBV"){
+    field(DTYP, "asynOctetRead")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))NDCV_OUT_DESCRIPTION3")
+    field(VAL, "CV Outputs")
+    field(SCAN, "I/O Intr")
+}
+
+#------------------------------------------------------------------------------------
+
+record(ao, "$(P)$(R)Output4")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynFloat64")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))NDCV_OUT4")
+    field(VAL, "0.0")
+}
+
+record(ai, "$(P)$(R)Output4_RBV")
+{
+    field(DTYP, "asynFloat64")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))NDCV_OUT4")
+    field(SCAN, "I/O Intr")
+}
+
+record(stringin, "$(P)$(R)Output4Description_RBV"){
+    field(DTYP, "asynOctetRead")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))NDCV_OUT_DESCRIPTION4")
+    field(VAL, "CV Outputs")
+    field(SCAN, "I/O Intr")
+}
+
+#------------------------------------------------------------------------------------
+
+record(ao, "$(P)$(R)Output5")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynFloat64")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))NDCV_OUT5")
+    field(VAL, "0.0")
+}
+
+record(ai, "$(P)$(R)Output5_RBV")
+{
+    field(DTYP, "asynFloat64")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))NDCV_OUT5")
+    field(SCAN, "I/O Intr")
+}
+
+record(stringin, "$(P)$(R)Output5Description_RBV"){
+    field(DTYP, "asynOctetRead")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))NDCV_OUT_DESCRIPTION5")
+    field(VAL, "CV Outputs")
+    field(SCAN, "I/O Intr")
+}
+
+#------------------------------------------------------------------------------------
+
+record(ao, "$(P)$(R)Output6")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynFloat64")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))NDCV_OUT6")
+    field(VAL, "0.0")
+}
+
+record(ai, "$(P)$(R)Output6_RBV")
+{
+    field(DTYP, "asynFloat64")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))NDCV_OUT6")
+    field(SCAN, "I/O Intr")
+}
+
+record(stringin, "$(P)$(R)Output6Description_RBV"){
+    field(DTYP, "asynOctetRead")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))NDCV_OUT_DESCRIPTION6")
+    field(VAL, "CV Outputs")
+    field(SCAN, "I/O Intr")
+}
+
+#------------------------------------------------------------------------------------
+
+record(ao, "$(P)$(R)Output7")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynFloat64")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))NDCV_OUT7")
+    field(VAL, "0.0")
+}
+
+record(ai, "$(P)$(R)Output7_RBV")
+{
+    field(DTYP, "asynFloat64")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))NDCV_OUT7")
+    field(SCAN, "I/O Intr")
+}
+
+record(stringin, "$(P)$(R)Output7Description_RBV"){
+    field(DTYP, "asynOctetRead")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))NDCV_OUT_DESCRIPTION7")
+    field(VAL, "CV Outputs")
+    field(SCAN, "I/O Intr")
+}
+
+#------------------------------------------------------------------------------------
+
+record(ao, "$(P)$(R)Output8")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynFloat64")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))NDCV_OUT8")
+    field(VAL, "0.0")
+}
+
+record(ai, "$(P)$(R)Output8_RBV")
+{
+    field(DTYP, "asynFloat64")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))NDCV_OUT8")
+    field(SCAN, "I/O Intr")
+}
+
+record(stringin, "$(P)$(R)Output8Description_RBV"){
+    field(DTYP, "asynOctetRead")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))NDCV_OUT_DESCRIPTION8")
+    field(VAL, "CV Outputs")
+    field(SCAN, "I/O Intr")
+}
+
+#------------------------------------------------------------------------------------
+
+record(ao, "$(P)$(R)Output9")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynFloat64")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))NDCV_OUT9")
+    field(VAL, "0.0")
+}
+
+record(ai, "$(P)$(R)Output9_RBV")
+{
+    field(DTYP, "asynFloat64")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))NDCV_OUT9")
+    field(SCAN, "I/O Intr")
+}
+
+record(stringin, "$(P)$(R)Output9Description_RBV"){
+    field(DTYP, "asynOctetRead")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))NDCV_OUT_DESCRIPTION9")
+    field(VAL, "CV Outputs")
+    field(SCAN, "I/O Intr")
+}
+
+#------------------------------------------------------------------------------------
+
+record(ao, "$(P)$(R)Output10")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynFloat64")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))NDCV_OUT10")
+    field(VAL, "0.0")
+}
+
+record(ai, "$(P)$(R)Output10_RBV")
+{
+    field(DTYP, "asynFloat64")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))NDCV_OUT10")
+    field(SCAN, "I/O Intr")
+}
+
+record(stringin, "$(P)$(R)Output10Description_RBV"){
+    field(DTYP, "asynOctetRead")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))NDCV_OUT_DESCRIPTION10")
+    field(VAL, "CV Outputs")
+    field(SCAN, "I/O Intr")
+}
+
+
+#################################################################
+# File Writing records - Currently unused                       #
+#################################################################
+
+# record(mbbo, "$(P)$(R)CVWriteFile")
+# {
+#     field(PINI, "YES")
+#     field(DTYP, "asynInt32")
+#     field(OUT, "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))NDCV_FILE")
+#     field(ZRST, "Disable")
+#     field(ZRVL, "0")
+#     field(ONST, "JPEG")
+#     field(ONVL, "1")
+#     field(TWST, "PNG")
+#     field(TWVL, "2")
+#     field(THST, "TIF")
+#     field(THVL, "3")
+#     field(VAL, "0")
+#     info(autosaveFields, "VAL")
+# }
+# 
+# record(mbbi, "$(P)$(R)CVWriteFile_RBV")
+# {
+#     field(DTYP, "asynInt32")
+#     field(INP, "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))NDCV_FILE")
+#     field(ZRST, "Disable")
+#     field(ZRVL, "0")
+#     field(ONST, "JPEG")
+#     field(ONVL, "1")
+#     field(TWST, "PNG")
+#     field(TWVL, "2")
+#     field(THST, "TIF")
+#     field(THVL, "3")
+#     field(VAL, "0")
+#     field(SCAN, "I/O Intr")
+# }
+# 
+# 
+# record(waveform, "$(P)$(R)CVFilename"){
+#     field(PINI, "YES")
+#     field(DTYP, "asynOctetWrite")
+#     field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))NDCV_FILENAME")
+#     field(FTVL, "CHAR")
+#     field(NELM, "256")
+#     field(autosaveFields, "VAL")
+# }
+# 
+# record(waveform, "$(P)$(R)CVFilename_RBV"){
+#     field(DTYP, "asynOctetRead")
+#     field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))NDCV_FILENAME")
+#     field(FTVL, "CHAR")
+#     field(NELM, "256")
+#     field(SCAN, "I/O Intr")
+# }
+
+
+#################################################################
+# Other records                                                 #
+#################################################################
+
+#------------------Description of values in output PVs--------------------------
+
+record(waveform, "$(P)$(R)FunctionDescription_RBV"){
+    field(DTYP, "asynOctetRead")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))NDCV_FUN_DESCRIPTION")
+    field(FTVL, "CHAR")
+    field(NELM, "256")
+    field(SCAN, "I/O Intr")
+}
+
+#-----------------CompVision Status message, for troubleshooting----------------
+
+record(waveform, "$(P)$(R)CVStatusMessage_RBV"){
+    field(DTYP, "asynOctetRead")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))NDCV_STATUS")
+    field(FTVL, "CHAR")
+    field(NELM, "256")
+    field(SCAN, "I/O Intr")
+}
+
+#------------------Camera Depth Records--------------------------
+
+record(mbbo, "$(P)$(R)CompVisionCamDepth")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT, "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))NDCV_CAMDEPTH")
+    field(ZRST, "8 bit")
+    field(ZRVL, "0")
+    field(ONST, "10 bit")
+    field(ONVL, "1")
+    field(TWST, "12 bit")
+    field(TWVL, "2")
+    field(THST, "14 bit")
+    field(THVL, "3")
+    field(FRST, "16 bit")
+    field(FRVL, "4")
+    field(VAL, "0")
+    info(autosaveFields, "VAL")
+}
+
+record(mbbi, "$(P)$(R)CompVisionCamDepth_RBV")
+{
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))NDCV_CAMDEPTH")
+    field(ZRST, "8 bit")
+    field(ZRVL, "0")
+    field(ONST, "10 bit")
+    field(ONVL, "1")
+    field(TWST, "12 bit")
+    field(TWVL, "2")
+    field(THST, "14 bit")
+    field(THVL, "3")
+    field(FRST, "16 bit")
+    field(FRVL, "4")
+    field(VAL, "0")
+    field(SCAN, "I/O Intr")
+}
+
+
+
+

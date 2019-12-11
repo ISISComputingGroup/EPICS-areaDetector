@@ -15,6 +15,15 @@ files respectively, in the configure/ directory of the appropriate release of th
 
 Release Notes
 =============
+R1-3 (XXX-July-2019)
+----
+* Converted return call of NDEdgeConfigure to include thread start
+* Fixed configure/RELEASE to include RELEASE_LIBS_INCLUDE
+* Add autoconverted OPI file
+* Add protection against bad input
+* Fail more gracefully if input is not required format
+* Replace calls to getAttributes() and doCallbacksGenericPointer() with endProcessCallbacks()
+
 R1-2 (05-July-2017)
 ----
 * Changed number of arguments passed to NDPluginDriver base class in constructor for ADCore R3-0.

@@ -14,6 +14,7 @@
  */
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #ifdef _WIN32
   #include <tchar.h>
@@ -37,7 +38,7 @@ using namespace FlyCapture2;
 #include <epicsExport.h>
 
 #define DRIVER_VERSION      2
-#define DRIVER_REVISION     5
+#define DRIVER_REVISION     9
 #define DRIVER_MODIFICATION 0
 
 static const char *driverName = "pointGrey";
@@ -85,6 +86,7 @@ static const char *driverName = "pointGrey";
 #define PGMaxPacketSizeString         "PG_MAX_PACKET_SIZE"
 #define PGPacketDelayString           "PG_PACKET_DELAY"
 #define PGPacketDelayActualString     "PG_PACKET_DELAY_ACTUAL"
+#define PGPacketResendEnableString    "PG_PACKET_RESEND_ENABLE"
 #define PGBandwidthString             "PG_BANDWIDTH"
 #define PGTimeStampModeString         "PG_TIME_STAMP_MODE"
 #define PGCorruptFramesString         "PG_CORRUPT_FRAMES"
@@ -234,7 +236,7 @@ static const char *convertPixelFormatStrings[NUM_CONVERT_PIXEL_FORMATS] = {
     "RGB16",
 };
 
-static const int convertPixelFormatValues[NUM_CONVERT_PIXEL_FORMATS] = {
+static const unsigned int convertPixelFormatValues[NUM_CONVERT_PIXEL_FORMATS] = {
     0,
     PIXEL_FORMAT_MONO8,
     PIXEL_FORMAT_RAW16,
@@ -372,6 +374,7 @@ protected:
     int PGMaxPacketSize;          /** Maximum size of data packets from camera        (int32 write/read) */
     int PGPacketDelay;            /** Packet delay in usec from camera, GigE only     (int32 write/read) */
     int PGPacketDelayActual;      /** Packet delay in usec from camera, GigE only     (int32 read) */
+    int PGPacketResendEnable;     /** Packet resend enable, GigE only                 (int32 read/write) */
     int PGBandwidth;              /** Bandwidth in MB/s                               (float64 read) */
     int PGTimeStampMode;          /** Time stamp mode (PGTimeStamp_t)                 (int32 write/read) */
     int PGCorruptFrames;          /** Number of corrupt frames                        (int32 read) */
@@ -408,6 +411,7 @@ private:
     asynStatus createDynamicEnums();
     asynStatus getAllProperties();
     asynStatus getAllGigEProperties();
+    asynStatus getGigEConfigParams();
     int getPixelFormatIndex(PixelFormat pixelFormat);
     asynStatus setTrigger();
     asynStatus softwareTrigger();
@@ -434,6 +438,7 @@ private:
     Property              *allProperties_[NUM_PROPERTIES];
     PropertyInfo          *allPropInfos_ [NUM_PROPERTIES];
     GigEProperty          *allGigEProperties_[NUM_GIGE_PROPERTIES];
+    GigEConfig            *pGigEConfig_;
     int numValidVideoModes_;
     int numValidFormat7Modes_;
     int numValidBinningModes_;
@@ -577,6 +582,7 @@ pointGrey::pointGrey(const char *portName, int cameraId, int traceMask, int memo
     createParam(PGMaxPacketSizeString,          asynParamInt32,   &PGMaxPacketSize);
     createParam(PGPacketDelayString,            asynParamInt32,   &PGPacketDelay);
     createParam(PGPacketDelayActualString,      asynParamInt32,   &PGPacketDelayActual);
+    createParam(PGPacketResendEnableString,     asynParamInt32,   &PGPacketResendEnable);
     createParam(PGBandwidthString,              asynParamFloat64, &PGBandwidth);
     createParam(PGTimeStampModeString,          asynParamInt32,   &PGTimeStampMode);
     createParam(PGCorruptFramesString,          asynParamInt32,   &PGCorruptFrames);
@@ -636,6 +642,9 @@ pointGrey::pointGrey(const char *portName, int cameraId, int traceMask, int memo
         allGigEProperties_[i]->propType = (GigEPropertyType) i;
     }
     getAllGigEProperties();
+    
+    pGigEConfig_=new GigEConfig();
+    getGigEConfigParams();
 
     createStaticEnums();
     createDynamicEnums();
@@ -665,6 +674,21 @@ pointGrey::pointGrey(const char *portName, int cameraId, int traceMask, int memo
         setIntegerParam(PGPacketDelay, DEFAULT_PACKET_DELAY);
         setGigEPropertyValue(PACKET_SIZE, packetSize);
         setGigEPropertyValue(PACKET_DELAY, DEFAULT_PACKET_DELAY);
+    
+        // Get and set Enable Packet resend property 
+        if (pGigEConfig_) {
+            error = pGigECamera_->GetGigEConfig(pGigEConfig_);
+            if (checkError(error, functionName, "GetGigEConfig")) {
+                // There should not be an error getting the config parmas, but in case set some defaults
+                pGigEConfig_ -> enablePacketResend= true;
+                pGigEConfig_ -> registerTimeoutRetries = 3;
+                pGigEConfig_-> registerTimeout = 20000;
+            }
+            asynPrint(pasynUserSelf, ASYN_TRACE_WARNING,
+                "%s::%s called GetGigEConfig, pGigEConfig_=%p, packetResendEnable=%d\n",
+                driverName, functionName, pGigEConfig_, pGigEConfig_->enablePacketResend);
+            setIntegerParam(PGPacketResendEnable, pGigEConfig_->enablePacketResend);   
+        }
     }
 
     startEventId_ = epicsEventCreate(epicsEventEmpty);
@@ -1124,6 +1148,8 @@ asynStatus pointGrey::grabImage()
                                    (double)timeStamp.cycleCount / 8000. + 
                                    (double)timeStamp.cycleOffset / 8000. / 3072.;
             }
+            // The camera timestamps are in Posix epoch.  Convert to EPICS epoch
+            pRaw_->timeStamp -= POSIX_TIME_AT_EPICS_EPOCH;
             break;
         case TimeStampEPICS:
             pRaw_->timeStamp = pRaw_->epicsTS.secPastEpoch + pRaw_->epicsTS.nsec/1e9;
@@ -1184,7 +1210,8 @@ asynStatus pointGrey::writeInt32( asynUser *pasynUser, epicsInt32 value)
                 (function == PGPixelFormat) ||
                 (function == PGBinningMode) ||
                 (function == PGPacketSize)  ||
-                (function == PGPacketDelay)) {
+                (function == PGPacketDelay) ||
+                (function == PGPacketResendEnable)) {
         status = setImageParams();
 
     } else if (function == PGPropertyValue) {
@@ -1952,6 +1979,17 @@ asynStatus pointGrey::setGigEImageParams()
     if (packetDelay > maxPacketDelay) packetDelay = maxPacketDelay;
     setGigEPropertyValue(PACKET_DELAY, packetDelay);
 
+    //Set resend Enable, assume gigEConfig structure reflects camera hardware settings
+    int enablePacketResend;
+    getIntegerParam(PGPacketResendEnable, &enablePacketResend);
+    pGigEConfig_->enablePacketResend = enablePacketResend;
+    asynPrint(pasynUserSelf, ASYN_TRACE_WARNING, 
+        "%s::%s calling GigECamera::SetGigEConfig pGigECamera=%p, pGigEConfig->enablePacketResend =%d, pGigEConfig->registerTimeoutRetries=%d, pGigEConfig->registerTimeout=%d\n", 
+        driverName, functionName, pGigECamera_, pGigEConfig_ -> enablePacketResend, pGigEConfig_-> registerTimeoutRetries, pGigEConfig_->registerTimeout );
+    error = pGigECamera_->SetGigEConfig(pGigEConfig_);
+    if (checkError(error, functionName, "SetGigeEConfig")) 
+        goto cleanup;
+    
     // Set the binning
     getIntegerParam(PGBinningMode, &binningMode);
     asynPrint(pasynUserSelf, ASYN_TRACE_WARNING,
@@ -2549,6 +2587,24 @@ asynStatus pointGrey::getAllProperties()
     return asynSuccess;
 }
 
+asynStatus pointGrey::getGigEConfigParams()
+{
+    Error error;
+    static const char *functionName="getGigEConfigParams";
+    
+    if(pGigECamera_ == NULL) return asynError;
+    
+    error = pGigECamera_->GetGigEConfig(pGigEConfig_);
+    if (checkError(error, functionName, "GetGigEConfigStruct")) 
+        return asynError;
+    asynPrint(pasynUserSelf, ASYN_TRACE_WARNING,
+        "%s::%s called GigECamera::GetGigEConfigParam, pGigECamera_=%p, pGigEConfig->enablePacketResend=%d, pGigEConfig->registerTimeoutRetries=%d, pGigEConfig->registerTimeout=%d\n",
+        driverName, functionName, pGigECamera_, pGigEConfig_->enablePacketResend, pGigEConfig_->registerTimeoutRetries, pGigEConfig_->registerTimeout);
+    
+    setIntegerParam(PGPacketResendEnable,pGigEConfig_->enablePacketResend);  
+    return asynSuccess;        
+}
+
 asynStatus pointGrey::getAllGigEProperties()
 {
     GigEProperty *pProperty;
@@ -2834,6 +2890,9 @@ void pointGrey::report(FILE *fp, int details)
         error = pGigECamera_->GetGigEImageBinningSettings(&binX, &binY);
         if (checkError(error, functionName, "GetGigEImageBinningSettings")) 
             return;
+        error = pGigECamera_-> GetGigEConfig(pGigEConfig_);
+        if(checkError(error, functionName, "GetGigEConfig"))
+            return;    
         pixelFormatIndex = getPixelFormatIndex(gigESettings.pixelFormat);
         getAllGigEProperties();
         getIntegerParam(PACKET_SIZE,       PGGigEPropertyValue, &packetSize);
@@ -2845,6 +2904,7 @@ void pointGrey::report(FILE *fp, int details)
         fprintf(fp, "               Mode: %d\n",    gigEMode);
         fprintf(fp, "        Packet size: %d\n",    packetSize);
         fprintf(fp, "       Packet delay: %d\n",    packetDelay);
+        fprintf(fp, "Packet resend enable:%d\n",    pGigEConfig_ -> enablePacketResend);
         fprintf(fp, "          Heartbeat: %d\n",    heartBeat);
         fprintf(fp, "  Heartbeat timeout: %d\n",    heartBeatTimeout);
         fprintf(fp, "             Offset: %d %d\n", gigESettings.offsetX, gigESettings.offsetY);

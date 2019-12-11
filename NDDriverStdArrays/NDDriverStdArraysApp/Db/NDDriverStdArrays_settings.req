@@ -1,5 +1,7 @@
 file "ADBase_settings.req", P=$(P), R=$(R)
-$(P)$(R)ArrayMode
+$(P)$(R)AppendMode
+$(P)$(R)Stride
+$(P)$(R)NextElement
 $(P)$(R)FillValue
 $(P)$(R)CallbackMode
-$(P)$(R)DoCallbacksScan
+$(P)$(R)DoCallbacksScan.SCAN

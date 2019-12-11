@@ -130,7 +130,7 @@ template <typename epicsType> asynStatus NDDriverStdArrays::writeXXXArray(asynUs
     int stride;
     int numDimensions;
     int arrayCallbacks;
-    int i;
+    unsigned int i;
     int itemp;
     int newArray;
     double fillValueDouble;
@@ -174,7 +174,6 @@ template <typename epicsType> asynStatus NDDriverStdArrays::writeXXXArray(asynUs
         setIntegerParam(NDArraySizeY, 0);
         setIntegerParam(NDArraySizeZ, 0);
 
-        memset(currentIndex, 0, ND_ARRAY_MAX_DIMS*sizeof(currentIndex[0]));
         memset(dimProd_, 0, ND_ARRAY_MAX_DIMS*sizeof(dimProd_[0]));
         dimProd_[0] = arrayDimensions_[0];
         for (i=1; i<numDimensions; i++) {
@@ -255,6 +254,7 @@ template <typename epicsType> asynStatus NDDriverStdArrays::writeXXXArray(asynUs
     setIntegerParam(NDSA_NextElement_, nextElement);
 
     //  Convert nextElement into multi-array dimensions which is more user-friendly
+    memset(currentIndex, 0, ND_ARRAY_MAX_DIMS*sizeof(currentIndex[0]));
     itemp = nextElement-1;
     for (i=numDimensions-1; i>0; i--) {
         if (i < (numDimensions-1)) {

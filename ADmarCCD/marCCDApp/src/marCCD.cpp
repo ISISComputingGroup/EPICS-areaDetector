@@ -39,6 +39,8 @@
 
 #include "ADDriver.h"
 
+#define DRIVER_VERSION "2.3.0"
+
 /** Messages to/from server */
 #define MAX_MESSAGE_SIZE 256
 #define MAX_FILENAME_LEN 256
@@ -1553,6 +1555,7 @@ marCCD::marCCD(const char *portName, const char *serverPort,
     status |= setDoubleParam (ADAcquirePeriod, 0.);
     status |= setIntegerParam(ADNumImages, 1);
     status |= setIntegerParam(marCCDOverlap, 0);
+    status |= setStringParam(NDDriverVersion, DRIVER_VERSION);
 
     status |= setDoubleParam (marCCDTiffTimeout, 20.);
        

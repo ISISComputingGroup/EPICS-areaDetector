@@ -1,4 +1,5 @@
 #include <math.h>
+#include <epicsTime.h>
 
 #include <epicsExport.h>
 #include <pv/pvaVersion.h>
@@ -16,11 +17,11 @@ static const NDDataType_t scalarToNDDataType[pvString+1] = {
         NDInt8,     // 1:  pvByte
         NDInt16,    // 2:  pvShort
         NDInt32,    // 3:  pvInt
-        NDInt8,     // 4:  pvLong (not supported)
+        NDInt64,    // 4:  pvLong
         NDUInt8,    // 5:  pvUByte
         NDUInt16,   // 6:  pvUShort
         NDUInt32,   // 7:  pvUInt
-        NDInt8,     // 8:  pvULong (not supported)
+        NDUInt64,   // 8:  pvULong
         NDFloat32,  // 9:  pvFloat
         NDFloat64,  // 10: pvDouble
         NDInt8,     // 11: pvString (notSupported)
@@ -32,14 +33,28 @@ static const NDAttrDataType_t scalarToNDAttrDataType[pvString+1] = {
         NDAttrInt8,     // 1:  pvByte
         NDAttrInt16,    // 2:  pvShort
         NDAttrInt32,    // 3:  pvInt
-        NDAttrInt8,     // 4:  pvLong (not supported)
+        NDAttrInt64,    // 4:  pvLong
         NDAttrUInt8,    // 5:  pvUByte
         NDAttrUInt16,   // 6:  pvUShort
         NDAttrUInt32,   // 7:  pvUInt
-        NDAttrInt8,     // 8:  pvULong (not supported)
+        NDAttrUInt64,   // 8:  pvULong
         NDAttrFloat32,  // 9:  pvFloat
         NDAttrFloat64,  // 10: pvDouble
         NDAttrString,   // 11: pvString
+};
+
+// Maps NDDataType to ScalarType
+static const ScalarType NDDataTypeToScalar[NDFloat64 + 1] = {
+        pvByte,     // 0:  NDInt8
+        pvUByte,    // 1:  NDUInt8
+        pvShort,    // 2:  NDInt16
+        pvUShort,   // 3:  NDUInt16
+        pvInt,      // 4:  NDInt32
+        pvUInt,     // 5:  NDUInt32
+        pvLong,     // 6:  NDInt32
+        pvULong,    // 7:  NDUInt32
+        pvFloat,    // 8:  NDFloat32
+        pvDouble,   // 9:  NDFloat64
 };
 
 static const PVDataCreatePtr PVDC = getPVDataCreate();
@@ -77,11 +92,16 @@ NDColorMode_t NTNDArrayConverter::getColorMode (void)
     for(PVStructureArray::const_svector::iterator it(attrs.cbegin());
             it != attrs.cend(); ++it)
     {
-        if((*it)->getSubField<PVString>("name")->get() == "ColorMode")
+        PVStringPtr nameFld((*it)->getSubFieldT<PVString>("name"));
+        if(nameFld->get() == "ColorMode")
         {
-            PVUnionPtr field((*it)->getSubField<PVUnion>("value"));
-            int cm = static_pointer_cast<PVInt>(field->get())->get();
-            colorMode = (NDColorMode_t) cm;
+            PVUnionPtr valueUnion((*it)->getSubFieldT<PVUnion>("value"));
+            PVScalar::shared_pointer valueFld(valueUnion->get<PVScalar>());
+            if(valueFld) {
+                int cm = valueFld->getAs<int32>();
+                colorMode = (NDColorMode_t) cm;
+            } else
+                throw std::runtime_error("Error accessing attribute ColorMode");
         }
     }
 
@@ -103,9 +123,23 @@ NTNDArrayInfo_t NTNDArrayConverter::getInfo (void)
         info.nElements *= info.dims[i];
     }
 
+    PVStructurePtr codec(m_array->getCodec());
+
+    info.codec = codec->getSubField<PVString>("name")->get();
+
+    ScalarType dataType;
+
+    if (info.codec.empty())
+        dataType = getValueType();
+    else {
+        // Read uncompressed data type
+        PVIntPtr udt(codec->getSubField<PVUnion>("parameters")->get<PVInt>());
+        dataType = static_cast<ScalarType>(udt->get());
+    }
+
     NDDataType_t dt;
     int bpe;
-    switch(getValueType())
+    switch(dataType)
     {
     case pvByte:    dt = NDInt8;     bpe = sizeof(epicsInt8);    break;
     case pvUByte:   dt = NDUInt8;    bpe = sizeof(epicsUInt8);   break;
@@ -113,11 +147,11 @@ NTNDArrayInfo_t NTNDArrayConverter::getInfo (void)
     case pvUShort:  dt = NDUInt16;   bpe = sizeof(epicsUInt16);  break;
     case pvInt:     dt = NDInt32;    bpe = sizeof(epicsInt32);   break;
     case pvUInt:    dt = NDUInt32;   bpe = sizeof(epicsUInt32);  break;
+    case pvLong:    dt = NDInt64;    bpe = sizeof(epicsInt64);   break;
+    case pvULong:   dt = NDUInt64;   bpe = sizeof(epicsUInt64);  break;
     case pvFloat:   dt = NDFloat32;  bpe = sizeof(epicsFloat32); break;
     case pvDouble:  dt = NDFloat64;  bpe = sizeof(epicsFloat64); break;
     case pvBoolean:
-    case pvLong:
-    case pvULong:
     case pvString:
     default:
         throw std::runtime_error("invalid value data type");
@@ -214,8 +248,6 @@ void NTNDArrayConverter::fromArray (NDArray *src)
     fromDataTimeStamp(src);
     fromAttributes(src);
 
-    m_array->getCodec()->getSubField<PVString>("name")->put("");
-
     // getUniqueId not implemented yet
     // m_array->getUniqueId()->put(src->uniqueId);
     PVIntPtr uniqueId(m_array->getPVStructure()->getSubField<PVInt>("uniqueId"));
@@ -231,6 +263,13 @@ void NTNDArrayConverter::toValue (NDArray *dest)
     PVUnionPtr src(m_array->getValue());
     arrayVecType srcVec(src->get<arrayType>()->view());
     memcpy(dest->pData, srcVec.data(), srcVec.size()*sizeof(arrayValType));
+
+    NTNDArrayInfo_t info = getInfo();
+    dest->codec.name = info.codec;
+    dest->dataType = info.dataType;
+
+    if (!info.codec.empty())
+        dest->compressedSize = srcVec.size()*sizeof(arrayValType);
 }
 
 void NTNDArrayConverter::toValue (NDArray *dest)
@@ -253,6 +292,7 @@ void NTNDArrayConverter::toValue (NDArray *dest)
         throw std::runtime_error("invalid value data type");
         break;
     }
+
 }
 
 void NTNDArrayConverter::toDimensions (NDArray *dest)
@@ -360,12 +400,12 @@ void NTNDArrayConverter::toAttributes (NDArray *dest)
             case pvUShort: toAttribute<PVUShort, uint16_t>(dest, *it); break;
             case pvInt:    toAttribute<PVInt,    int32_t> (dest, *it); break;
             case pvUInt:   toAttribute<PVUInt,   uint32_t>(dest, *it); break;
+            case pvLong:   toAttribute<PVLong,   int64_t> (dest, *it); break;
+            case pvULong:  toAttribute<PVULong,  uint64_t>(dest, *it); break;
             case pvFloat:  toAttribute<PVFloat,  float>   (dest, *it); break;
             case pvDouble: toAttribute<PVDouble, double>  (dest, *it); break;
             case pvString: toStringAttribute (dest, *it); break;
             case pvBoolean:
-            case pvLong:
-            case pvULong:
             default:
                 break;   // ignore invalid types
             }
@@ -378,18 +418,28 @@ void NTNDArrayConverter::fromValue (NDArray *src)
 {
     typedef typename arrayType::value_type arrayValType;
 
-    NDArrayInfo_t arrayInfo;
-    size_t count, nBytes;
-
     string unionField(string(ScalarTypeFunc::name(arrayType::typeCode)) +
             string("Value"));
 
+    NDArrayInfo_t arrayInfo;
     src->getInfo(&arrayInfo);
-    count = arrayInfo.nElements;
-    nBytes = arrayInfo.totalBytes;
 
-    m_array->getCompressedDataSize()->put(static_cast<int64>(nBytes));
-    m_array->getUncompressedDataSize()->put(static_cast<int64>(nBytes));
+    int64 compressedSize = src->compressedSize;
+    int64 uncompressedSize = arrayInfo.totalBytes;
+
+    m_array->getCompressedDataSize()->put(compressedSize);
+    m_array->getUncompressedDataSize()->put(uncompressedSize);
+
+    // The uncompressed data type would be lost when converting to NTNDArray,
+    // so we must store it somewhere. codec.parameters seems like a good place.
+    PVScalarPtr uncompressedType(PVDC->createPVScalar(pvInt));
+    uncompressedType->putFrom<int32>(NDDataTypeToScalar[src->dataType]);
+
+    PVStructurePtr codec(m_array->getCodec());
+    codec->getSubField<PVUnion>("parameters")->set(uncompressedType);
+    codec->getSubField<PVString>("name")->put(src->codec.name);
+
+    size_t count = src->codec.empty() ? arrayInfo.nElements : compressedSize;
 
     src->reserve();
     shared_vector<arrayValType> temp((srcDataType*)src->pData,
@@ -402,16 +452,24 @@ void NTNDArrayConverter::fromValue (NDArray *src)
 
 void NTNDArrayConverter::fromValue (NDArray *src)
 {
-    switch(src->dataType)
-    {
-    case NDInt8:    fromValue<PVByteArray,   int8_t>   (src); break;
-    case NDUInt8:   fromValue<PVUByteArray,  uint8_t>  (src); break;
-    case NDInt16:   fromValue<PVShortArray,  int16_t>  (src); break;
-    case NDUInt16:  fromValue<PVUShortArray, uint16_t> (src); break;
-    case NDInt32:   fromValue<PVIntArray,    int32_t>  (src); break;
-    case NDUInt32:  fromValue<PVUIntArray,   uint32_t> (src); break;
-    case NDFloat32: fromValue<PVFloatArray,  float>    (src); break;
-    case NDFloat64: fromValue<PVDoubleArray, double>   (src); break;
+    // Uncompressed
+    if (src->codec.empty()) {
+        switch(src->dataType)
+        {
+        case NDInt8:    fromValue<PVByteArray,   int8_t>   (src); break;
+        case NDUInt8:   fromValue<PVUByteArray,  uint8_t>  (src); break;
+        case NDInt16:   fromValue<PVShortArray,  int16_t>  (src); break;
+        case NDUInt16:  fromValue<PVUShortArray, uint16_t> (src); break;
+        case NDInt32:   fromValue<PVIntArray,    int32_t>  (src); break;
+        case NDUInt32:  fromValue<PVUIntArray,   uint32_t> (src); break;
+        case NDInt64:   fromValue<PVLongArray,   int64_t>  (src); break;
+        case NDUInt64:  fromValue<PVULongArray,  uint64_t> (src); break;
+        case NDFloat32: fromValue<PVFloatArray,  float>    (src); break;
+        case NDFloat64: fromValue<PVDoubleArray, double>   (src); break;
+        }
+    // Compressed
+    } else {
+        fromValue<PVUByteArray, uint8_t>(src);
     }
 }
 
@@ -442,6 +500,8 @@ void NTNDArrayConverter::fromDataTimeStamp (NDArray *src)
 
     double seconds = floor(src->timeStamp);
     double nanoseconds = (src->timeStamp - seconds)*1e9;
+    // pvAccess uses Posix time, NDArray uses EPICS time, need to convert
+    seconds += POSIX_TIME_AT_EPICS_EPOCH;
 
     PVTimeStamp pvDest;
     pvDest.attach(dest);
@@ -457,7 +517,8 @@ void NTNDArrayConverter::fromTimeStamp (NDArray *src)
     PVTimeStamp pvDest;
     pvDest.attach(dest);
 
-    TimeStamp ts(src->epicsTS.secPastEpoch, src->epicsTS.nsec);
+    // pvAccess uses Posix time, NDArray uses EPICS time, need to convert
+    TimeStamp ts(src->epicsTS.secPastEpoch + POSIX_TIME_AT_EPICS_EPOCH, src->epicsTS.nsec);
     pvDest.set(ts);
 }
 
@@ -467,12 +528,13 @@ void NTNDArrayConverter::fromAttribute (PVStructurePtr dest, NDAttribute *src)
     valueType value;
     src->getValue(src->getDataType(), (void*)&value);
 
-    PVUnionPtr destUnion(dest->getSubField<PVUnion>("value"));
-
-    if(!destUnion->get())
-        destUnion->set(PVDC->createPVScalar<pvAttrType>());
-
-    static_pointer_cast<pvAttrType>(destUnion->get())->put(value);
+    PVUnionPtr destUnion(dest->getSubFieldT<PVUnion>("value"));
+    typename pvAttrType::shared_pointer valueFld(destUnion->get<pvAttrType>());
+    if(!valueFld) {
+        valueFld = PVDC->createPVScalar<pvAttrType>();
+        destUnion->set(valueFld);
+    }
+    valueFld->put(value);
 }
 
 void NTNDArrayConverter::fromStringAttribute (PVStructurePtr dest, NDAttribute *src)
@@ -481,27 +543,22 @@ void NTNDArrayConverter::fromStringAttribute (PVStructurePtr dest, NDAttribute *
     size_t attrDataSize;
 
     src->getValueInfo(&attrDataType, &attrDataSize);
+    std::vector<char> value(attrDataSize);
+    src->getValue(attrDataType, &value[0], attrDataSize);
 
-    char *value = (char *)malloc(sizeof(char) * attrDataSize);
-    src->getValue(attrDataType, value, attrDataSize);
-
-    PVUnionPtr destUnion(dest->getSubField<PVUnion>("value"));
-
-    if(!destUnion->get())
-        destUnion->set(PVDC->createPVScalar<PVString>());
-
-    static_pointer_cast<PVString>(destUnion->get())->put(value);
-    free(value);
+    PVUnionPtr destUnion(dest->getSubFieldT<PVUnion>("value"));
+    PVStringPtr valueFld(destUnion->get<PVString>());
+    if(!valueFld) {
+        valueFld = PVDC->createPVScalar<PVString>();
+        destUnion->set(valueFld);
+    }
+    valueFld->put(&value[0]);
 }
 
 void NTNDArrayConverter::fromUndefinedAttribute (PVStructurePtr dest)
 {
-#if EPICS_PVA_MAJOR_VERSION >= 6
     PVFieldPtr nullPtr;
     dest->getSubField<PVUnion>("value")->set(nullPtr);
-#else
-    dest->getSubField<PVUnion>("value")->get().reset();
-#endif
 }
 
 void NTNDArrayConverter::fromAttributes (NDArray *src)
@@ -538,6 +595,8 @@ void NTNDArrayConverter::fromAttributes (NDArray *src)
         case NDAttrUInt16:    fromAttribute <PVUShort, uint16_t>(pvAttr, attr); break;
         case NDAttrInt32:     fromAttribute <PVInt,    int32_t> (pvAttr, attr); break;
         case NDAttrUInt32:    fromAttribute <PVUInt,   uint32_t>(pvAttr, attr); break;
+        case NDAttrInt64:     fromAttribute <PVLong,   int64_t> (pvAttr, attr); break;
+        case NDAttrUInt64:    fromAttribute <PVULong,  uint64_t>(pvAttr, attr); break;
         case NDAttrFloat32:   fromAttribute <PVFloat,  float>   (pvAttr, attr); break;
         case NDAttrFloat64:   fromAttribute <PVDouble, double>  (pvAttr, attr); break;
         case NDAttrString:    fromStringAttribute(pvAttr, attr); break;

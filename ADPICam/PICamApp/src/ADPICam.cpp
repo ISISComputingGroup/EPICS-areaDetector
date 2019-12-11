@@ -12,6 +12,7 @@
 
 #include <epicsTime.h>
 #include <epicsExit.h>
+#include "ADDriver.h"
 #include <epicsExport.h>
 
 #include "ADPICam.h"

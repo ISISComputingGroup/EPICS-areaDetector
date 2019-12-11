@@ -2,7 +2,7 @@ NDDriverStdArrays
 =================
 An 
 [EPICS](http://www.aps.anl.gov/epics)
-[areaDetector](http://cars.uchicago.edu/software/epics/areaDetector.html)
+[areaDetector](https://cars.uchicago.edu/software/epics/areaDetector.html)
 driver that allows any EPICS Channel Access client to create NDArrays in 
 an areaDetector IOC.
 It is the logical inverse of the NDPluginStdArrays plugin which converts
@@ -21,5 +21,5 @@ pvaDriver only works with EPICS V4 PVAccess clients, while NDDriverStdArrays
 works with EPICS V3 Channel Access clients.
 
 Additional information:
-* [Documentation](http://cars.uchicago.edu/software/epics/NDDriverStdArraysDoc.html).
+* [Documentation](https://cars.uchicago.edu/software/epics/NDDriverStdArraysDoc.html).
 * [Release notes and links to source and binary releases](RELEASE.md).

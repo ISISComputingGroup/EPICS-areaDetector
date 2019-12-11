@@ -1,0 +1,74 @@
+
+# Macros:
+#% macro, P, Device Prefix
+#% macro, R, Device Suffix
+#% macro, PORT, Asyn Port name
+#% macro, TIMEOUT, Timeout
+#% macro, ADDR, Asyn Port address
+
+# Gang connection state
+record(bi, "$(P)$(R)GANGCONN:CONNECTED_RBV")
+{
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_GANGCONN_CONNECTED")
+    field(SCAN, "I/O Intr")
+    field(ZNAM, "Disconnected")
+    field(ONAM, "Connected")
+}
+
+# Gang server IP address
+record(stringin, "$(P)$(R)GANGCONN:SERVERIP_RBV")
+{
+    field(DTYP, "asynOctetRead")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_GANGCONN_SERVERIP")
+    field(SCAN, "I/O Intr")
+}
+
+# Gang server port number
+record(longin, "$(P)$(R)GANGCONN:SERVERPORT_RBV")
+{
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_GANGCONN_SERVERPORT")
+    field(SCAN, "I/O Intr")
+}
+
+# Gang operating function
+record(mbbi, "$(P)$(R)GANGCONN:FUNCTION_RBV")
+{
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_GANGCONN_FUNCTION")
+    field(VAL, "0")
+    field(SCAN, "I/O Intr")
+    field(ZRST, "Off")
+    field(ZRVL, 0)
+    field(ONST, "Control")
+    field(ONVL, 1)
+    field(TWST, "Full")
+    field(TWVL, 2)
+}
+
+# X location of this member's image in the overall image
+record(longout, "$(P)$(R)GANGCONN:POSITIONX")
+{
+    field(DTYP, "asynInt32")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_GANGCONN_POSITIONX")
+}
+record(longin, "$(P)$(R)GANGCONN:POSITIONX_RBV")
+{
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_GANGCONN_POSITIONX")
+    field(SCAN, "I/O Intr")
+}
+
+# Y location of this member's image in the overall image
+record(longout, "$(P)$(R)GANGCONN:POSITIONY")
+{
+    field(DTYP, "asynInt32")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_GANGCONN_POSITIONY")
+}
+record(longin, "$(P)$(R)GANGCONN:POSITIONY_RBV")
+{
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_GANGCONN_POSITIONY")
+    field(SCAN, "I/O Intr")
+}

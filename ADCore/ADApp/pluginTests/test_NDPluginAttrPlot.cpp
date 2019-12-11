@@ -131,16 +131,20 @@ struct AttrPlotPluginTestFixture
     static const int n_selected = 2;
     AttrPlotPluginWrapper* attrPlot;
     NDArrayPool * arrPool;
+    std::string dummy_port;
     std::string port;
 
     AttrPlotPluginTestFixture()
-        : arrPool(new NDArrayPool(100,0)),
-          port("TS")
+        : port("TS")
     {
 
         // Asyn manager doesn't like it if we try to reuse the same port name for multiple drivers
         // (even if only one is ever instantiated at once), so we change it slightly for each test case.
         uniqueAsynPortName(port);
+        uniqueAsynPortName(dummy_port);
+
+        asynNDArrayDriver *dummy_driver = new asynNDArrayDriver(dummy_port.c_str(), 1, 0, 0, asynGenericPointerMask, asynGenericPointerMask, 0, 0, 0, 0);
+        arrPool = dummy_driver->pNDArrayPool;
 
         // This is the plugin under test
         attrPlot = new AttrPlotPluginWrapper(
@@ -387,7 +391,7 @@ BOOST_AUTO_TEST_CASE(attrplot_multiple_attributes)
     std::string attr1 = attrPlot->readString(NDAttrPlotAttributeString, 0);
     std::string attr2 = attrPlot->readString(NDAttrPlotAttributeString, 1);
     std::string attr3 = attrPlot->readString(NDAttrPlotAttributeString, 2);
-    BOOST_CHECK(attr1 != attr2 and attr2 != attr3 and attr1 != attr3);
+    BOOST_CHECK((attr1 != attr2) && (attr2 != attr3) && (attr1 != attr3));
     BOOST_CHECK(std::find(attributes.begin(), attributes.end(), attr1) != attributes.end());
     BOOST_CHECK(std::find(attributes.begin(), attributes.end(), attr2) != attributes.end());
     BOOST_CHECK(std::find(attributes.begin(), attributes.end(), attr3) != attributes.end());

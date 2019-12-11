@@ -7,7 +7,7 @@
 
 #define NDPluginStdArraysDataString "STD_ARRAY_DATA"           /* (asynXXXArray, r/w) Array data waveform */
 
-/** Converts NDArray callback data into standard asyn arrays (asynInt8Array, asynInt16Array, asynInt32Array,
+/** Converts NDArray callback data into standard asyn arrays (asynInt8Array, asynInt16Array, asynInt32Array, asynInt64Array,
   * asynFloat32Array or asynFloat64Array); normally used for putting NDArray data in EPICS waveform records.
   * It handles the data type conversion if the NDArray data type differs from the data type of the asyn interface.
   * It flattens the NDArrays to a single dimension because asyn and EPICS do not support multi-dimensional arrays. */
@@ -25,6 +25,8 @@ public:
                                         size_t nElements, size_t *nIn);
     virtual asynStatus readInt32Array(asynUser *pasynUser, epicsInt32 *value,
                                         size_t nElements, size_t *nIn);
+    virtual asynStatus readInt64Array(asynUser *pasynUser, epicsInt64 *value,
+                                        size_t nElements, size_t *nIn);
     virtual asynStatus readFloat32Array(asynUser *pasynUser, epicsFloat32 *value,
                                         size_t nElements, size_t *nIn);
     virtual asynStatus readFloat64Array(asynUser *pasynUser, epicsFloat64 *value,
@@ -38,7 +40,7 @@ private:
                                         size_t nElements, size_t *nIn, NDDataType_t outputType);
     template <typename epicsType, typename interruptType> void arrayInterruptCallback(NDArray *pArray, 
                             NDArrayPool *pNDArrayPool, 
-                            void *interruptPvt, int *initialized, NDDataType_t signedType);
+                            void *interruptPvt, int *initialized, NDDataType_t signedType, bool *wasThrottled);
                                         
 };
 

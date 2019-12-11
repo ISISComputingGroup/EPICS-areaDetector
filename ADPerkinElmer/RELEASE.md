@@ -6,13 +6,13 @@ https://github.com/areaDetector/ADPerkinElmer.
 
 Tagged source code and pre-built binary releases prior to R2-0 are included
 in the areaDetector releases available via links at
-http://cars.uchicago.edu/software/epics/areaDetector.html.
+https://cars.uchicago.edu/software/epics/areaDetector.html.
 
 Tagged source code releases from R2-0 onward can be obtained at 
 https://github.com/areaDetector/ADPerkinElmer/releases.
 
 Tagged prebuilt binaries from R2-0 onward can be obtained at
-http://cars.uchicago.edu/software/pub/ADPerkinElmer.
+https://cars.uchicago.edu/software/pub/ADPerkinElmer.
 
 The versions of EPICS base, asyn, and other synApps modules used for each release can be obtained from 
 the EXAMPLE_RELEASE_PATHS.local, EXAMPLE_RELEASE_LIBS.local, and EXAMPLE_RELEASE_PRODS.local
@@ -22,6 +22,35 @@ files respectively, in the configure/ directory of the appropriate release of th
 
 Release Notes
 =============
+R2-9 (29-May-2019)
+----
+* Fixed error reading bad pixel file.  There were 2 problems:
+  - The structures defined in Acq.h were not declared to be packed.  This caused the structures to be
+    read incorrectly from the bad pixel file. In particular the image dimensions were read wrong.
+    Added #pragma pack(1) when including Acq.h so these structures are packed.
+  - Because of the previous problem the driver was deliberately using the wrong fields in the structure to determine
+    the dimensions of the image array in the file (ULY, BRX, rather than BRX, BRY).  
+    If a compiler did do structure packing then the driver would crash in loadPixelCorrectionFile 
+    because the wrong structure members were being used.
+* Fixed error in loadGainFile().  It was using the PE_CorrectionsDirectory instead of PE_GainFile.
+
+
+R2-8 (2-July-2018)
+----
+* Changed configure/RELEASE files for compatibility with areaDetector R3-3.
+* Added support for new PVs in ADCore R3-3 in opi files (NumQueuedArrays, EmptyFreeList, etc.)
+* Added ADBuffers.adl to main medm screen.
+* Improved op/*/autoconvert/* files with better medm files and better converters.
+
+
+R2-7 (31-January-2018)
+----
+* Removed calls to release lock around calls to doCallbacksGenericPointer.
+* Fixed medm adl files to improve the autoconversion to other display manager files.
+* Added op/Makefile to automatically convert adl files to edl, ui, and opi files.
+* Updated the edl, ui, and opi autoconvert directories to contain the conversions
+  from the most recent adl files.
+
 
 R2-6 (04-July-2017)
 ----
@@ -109,11 +138,5 @@ R2-0 (20-March-2014)
 R1-9-1 and earlier
 ------------------
 Release notes are part of the
-[areaDetector Release Notes](http://cars.uchicago.edu/software/epics/areaDetectorReleaseNotes.html).
-
-Future Releases
-===============
-* Test gain file input
-* Test bad pixel map, modify ours
-* Test supplied Nexus template file
+[areaDetector Release Notes](https://cars.uchicago.edu/software/epics/areaDetectorReleaseNotes.html).
 

@@ -38,6 +38,7 @@ ifeq ($(WITH_GRAPHICSMAGICK),YES)
     INSTALL_INCLUDE           = $(INSTALL_LOCATION)/include/magick
     INC += magick_config.h
     INC += magick_config_Win32.h
+    INC += magick_config_Darwin.h
     INC += magick_config_Linux.h
     INC += api.h
     INC += enum_strings.h
@@ -198,7 +199,7 @@ ifeq ($(WITH_GRAPHICSMAGICK),YES)
       LIB_LIBS += zlib
     else
       ifdef ZLIB_INCLUDE
-        USR_INCLUDES += -I$(ZLIB_INCLUDE)
+        USR_INCLUDES += $(addprefix -I, $(ZLIB_INCLUDE))
       endif
       ifdef ZLIB_LIB
         z_DIR        = $(ZLIB_LIB)

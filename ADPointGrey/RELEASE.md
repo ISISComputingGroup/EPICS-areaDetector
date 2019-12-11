@@ -8,7 +8,7 @@ Tagged source code releases from R2-0 onward can be obtained at
 https://github.com/areaDetector/ADPointGrey/releases.
 
 Tagged prebuilt binaries from R2-0 onward can be obtained at
-http://cars.uchicago.edu/software/pub/ADPointGrey.
+https://cars.uchicago.edu/software/pub/ADPointGrey.
 
 The versions of EPICS base, asyn, and other synApps modules used for each release can be obtained from 
 the EXAMPLE_RELEASE_PATHS.local, EXAMPLE_RELEASE_LIBS.local, and EXAMPLE_RELEASE_PRODS.local
@@ -18,6 +18,52 @@ files respectively, in the configure/ directory of the appropriate release of th
 
 Release Notes
 =============
+
+R2-9 (XXX-January-2019)
+----
+* Added new ResendEnable record to control whether GigE packets should be resent on error.
+  Thanks to Oksana Ivashkevych for this.
+
+R2-8 (3-December-2018)
+----
+* Updated FlyCap2 SDK on Windows from 2.9.3 to 2.12.3.
+  * The most important reason for the upgrade is that there is a bug in 2.9.3 where
+    camera serial numbers are limited to 24 bits.  This can cause FlyCap2 to fail to find
+    cameras whose serial number starts with 17 and higher, i.e. manufactured in 2017 and later.
+  * Linux was left at SDK version 2.9.3 because later versions will not work with GCC 4.8 or earlier.
+    This means they won't work with RHEL 7 or Centos 7.
+  * So far cameras with serial numbers stating with 17 or 18 have worked on Linux for me, 
+    but this may just be luck, since it may depend on uninitialized memory.
+    Point Grey do provide a utility to "downgrade" the serial number of a camera by subtracting 17
+    from the first 2 digits, so this can be used if there are problems with new cameras on Linux.
+  * On Windows the name of the required FlyCap2 library now depends on what version of Visual Studio
+    is being used.  It is FlyCapture2_v100.lib for VS 2010, FlyCapture2_v120.lib for VS 2013, 
+    and FlyCapture2_v140.lib for VS 2015.
+    I have not yet found a way to have the Makefile automatically detect the VS version, so the Makefiles 
+    will need to be manually edited if VS 2015 is not being used.
+* Tweaked medm screens, and thus the autoconverted opi, ui, and edl screens.
+
+
+R2-7 (2-July-2018)
+----
+* Fixed camera timestamps to use EPICS epoch, not Posix epoch.
+* Fixed problem with libflycapture.so in Makefile on Linux.
+* Changed configure/RELEASE files for compatibility with areaDetector R3-3.
+* Added support for new PVs in ADCore R3-3 in opi files (NumQueuedArrays, EmptyFreeList, etc.)
+* Improved op/*/autoconvert/* files with better medm files and better converters.
+
+
+R2-6 (29-January-2018)
+----
+* Removed the SerialNumber, FirmwareVersion, and SoftwareVersion parameters and records,
+  since the equivalents are now in ADDriver.h and ADBase.template.
+* Removed code that released the lock around the calls to doCallbacksGenericPointer.  
+  This was not needed and could cause problems.
+* Fixed medm adl files to improve the autoconversion to other display manager files.
+* Added op/Makefile to automatically convert adl files to edl, ui, and opi files.
+* Updated the edl, ui, and opi autoconvert directories to contain the conversions
+  from the most recent adl files.
+
 
 R2-5 (4-July-2017)
 ----
