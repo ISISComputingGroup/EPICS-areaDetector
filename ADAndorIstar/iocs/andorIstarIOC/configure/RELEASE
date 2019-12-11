@@ -5,8 +5,7 @@
 ADANDORISTAR=$(AREA_DETECTOR)/ADAndorIstar
 TINYXML=$(SUPPORT)/TinyXML/master
 
--include $(TOP)/../../../configure/RELEASE_PATHS.local
--include $(TOP)/../../../configure/RELEASE_PATHS.local.$(EPICS_HOST_ARCH)
+-include $(TOP)/../../../configure/RELEASE_SUPPORT.local
 -include $(TOP)/../../../configure/RELEASE_PRODS.local
 -include $(TOP)/RELEASE.local
 -include $(TOP)/configure/RELEASE.local

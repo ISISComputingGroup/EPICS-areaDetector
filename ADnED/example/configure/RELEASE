@@ -26,8 +26,8 @@
 
 #TEMPLATE_TOP=$(EPICS_BASE)/templates/makeBaseApp/top
 
-#ASYN=		$(SUPPORT)/asyn/master
 #ADCORE=		$(SUPPORT)/ADCore/master
+#AREA_DETECTOR=		$(SUPPORT)/areaDetector/master
 ADNED=		$(AREA_DETECTOR)/ADnED
 DEVIOCSTATS=    $(SUPPORT)/devIocStats/master
 AUTOSAVE=       $(SUPPORT)/autosave/master
