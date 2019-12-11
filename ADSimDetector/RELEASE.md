@@ -6,7 +6,7 @@ https://github.com/areaDetector/ADSimDetector.
 
 Tagged source code and pre-built binary releases prior to R2-0 are included
 in the areaDetector releases available via links at
-http://cars.uchicago.edu/software/epics/areaDetector.html.
+https://cars.uchicago.edu/software/epics/areaDetector.html.
 
 Prior to R2-3 the files in this repository were contained in the ADExample
 repository.  ADSimDetector was split into its own repository on Nov. 22, 2016
@@ -20,10 +20,10 @@ Tagged source code releases from R2-0 to R2-2 can be obtained at
 https://github.com/areaDetector/ADExample/releases.
 
 Tagged prebuilt binaries from R2-3 onward can be obtained at
-http://cars.uchicago.edu/software/pub/ADSimDetector.
+https://cars.uchicago.edu/software/pub/ADSimDetector.
 
 Tagged prebuilt binaries from R2-0 to R2-2 onward can be obtained at
-http://cars.uchicago.edu/software/pub/ADExample.
+https://cars.uchicago.edu/software/pub/ADExample.
 
 The versions of EPICS base, asyn, and other synApps modules used for each release can be obtained from 
 the EXAMPLE_RELEASE_PATHS.local, EXAMPLE_RELEASE_LIBS.local, and EXAMPLE_RELEASE_PRODS.local
@@ -33,6 +33,66 @@ files respectively, in the configure/ directory of the appropriate release of th
 
 Release Notes
 =============
+
+R2-10 (October XXX, 2019)
+=========================
+* Added support for NDArray datatypes NDInt64 and NDUInt64
+  * This requires asyn R4-37 and ADCore R3-8 
+* Added iocSimDetector/testHDF5Compression.py to test HDF5 compression.
+* Added Time64 attribute to iocSimDetector/simDetectorAttributes.xml.  This tests attributes of type NDAttrUInt64.
+
+
+R2-9 (May 29, 2019)
+===================
+* Requires asyn R4-35 because of changes to the asynPortClient class used in simDetectorNoIOC (see below).
+* Changes in the simulation modes and parameters to improve utility and performance.
+  * The Noise parameter now applies to all simulation modes, not just to Peaks mode.
+  * The Noise computation only calls rand() when the image is reset, i.e. the data type,
+    dimensions, etc. are changed.  In normal cases it just adds the precomputed noise
+    to each pixel starting at a random pixel.  This means the noise spatial pattern is the same
+    in each successive image, but starting at a different pixel.  This makes it look quite random
+    while being very fast.
+  * A new Offset parameter now applies to all simulation modes.
+  * The sineNoise and sineOffset parameters were removed, replaced by Noise and Offset.
+  * PeakVariation was changed from longout record to ao record so it is not constrained to be an integer.
+  * Removed the dependence of the image data on the AcquireTime.  This was confusing and meant the data
+    changed significantly when the AcquireTime changed.
+  * Improved performance of Peaks mode by more than 10X.  Previously it computed the Gaussian peak profile
+    for each peak in the image.  Now it only does the Gausssian calculation once into a scratch buffer
+    and then copies that peak multiple times into the output image at different locations.
+  * A new simulation mode Offset&Noise was added.  This mode only does offset and noise, and
+    is the fastest simulation mode.  It can generate >700 frames/s using 1024x1024 images and asynFloat64
+    data type, which is >5GB/s.  In asynUInt8 mode it can generate >3000 frames/s which is >3GB/s.
+* simDetectorNoIOC
+  * This directory contains a pure C++ application that instantiates a simDetector, a statistics plugin,
+    and an HDF5 file plugin outside the context of an EPICS IOC.  
+    It is intended in part to demonstrate that areaDetector drivers and plugins can be used with other
+    control systems such as Tango. 
+  * This application has been considerably improved and simplified by using the new versions of the
+    asynPortClient and asynParamClient classes in asyn R4-35.
+* iocHDF5Test
+  * Fixed the startup scripts.
+
+
+R2-8 (July 1, 2018)
+===================
+* Changed Makefile to use addprefix to add -I to user-defined include file directory paths
+* Fixed so it builds OK if WITH_HDF5=NO.
+* Changed simDetector.adl to have the new records from ADCore R3-3.
+* Updated the edl, ui, and opi autoconvert directories to contain the conversions
+  from the most recent adl files and improved converters.
+* Fixed comments in the files in the iocBoot directories.  Thanks to Lewis Muir for this.
+
+
+R2-7 (January 28, 2018)
+========================
+* Fixed simDetectorNoIOCApp/src/Makefile so it handles external locations of HDF, SZIP, and XML2 correctly.
+* Add simDetectorApp/op/Makefile to automatically convert adl files to edl, ui, and opi.
+* Fixed medm adl files to improve the autoconversion to other display manager files.
+* Added op/Makefile to automatically convert adl files to edl, ui, and opi files.
+* Updated the edl, ui, and opi autoconvert directories to contain the conversions
+  from the most recent adl files.
+
 
 R2-6 (July 4, 2017)
 ========================
@@ -108,4 +168,4 @@ The files in this this repository were previously located in the ADCore reposito
 R1-9-1 and earlier
 ==================
 Release notes are part of the
-[areaDetector Release Notes](http://cars.uchicago.edu/software/epics/areaDetectorReleaseNotes.html).
+[areaDetector Release Notes](https://cars.uchicago.edu/software/epics/areaDetectorReleaseNotes.html).

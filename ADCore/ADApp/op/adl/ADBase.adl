@@ -1,14 +1,14 @@
 
 file {
-	name="/home/epics/devel/areaDetector/ADCore/ADApp/op/adl/ADBase.adl"
-	version=030107
+	name="/home/epics/devel/areaDetector-3-3/ADCore/ADApp/op/adl/ADBase.adl"
+	version=030109
 }
 display {
 	object {
-		x=125
-		y=48
+		x=670
+		y=172
 		width=715
-		height=885
+		height=970
 	}
 	clr=14
 	bclr=4
@@ -87,39 +87,15 @@ display {
 		1a7309,
 	}
 }
-composite {
+rectangle {
 	object {
-		x=100
+		x=0
 		y=4
-		width=500
-		height=26
+		width=715
+		height=25
 	}
-	"composite name"=""
-	children {
-		rectangle {
-			object {
-				x=100
-				y=4
-				width=500
-				height=25
-			}
-			"basic attribute" {
-				clr=2
-			}
-		}
-		text {
-			object {
-				x=158
-				y=5
-				width=384
-				height=25
-			}
-			"basic attribute" {
-				clr=54
-			}
-			textix="Area Detector Control - $(P)$(R)"
-			align="horiz. centered"
-		}
+	"basic attribute" {
+		clr=2
 	}
 }
 composite {
@@ -145,17 +121,17 @@ composite {
 composite {
 	object {
 		x=360
-		y=820
+		y=855
 		width=350
-		height=60
+		height=110
 	}
 	"composite name"=""
 	"composite file"="ADAttrFile.adl"
 }
 composite {
 	object {
-		x=360
-		y=755
+		x=5
+		y=850
 		width=350
 		height=60
 	}
@@ -177,7 +153,7 @@ composite {
 		x=360
 		y=205
 		width=350
-		height=405
+		height=480
 	}
 	"composite name"=""
 	"composite file"="ADCollect.adl"
@@ -195,10 +171,23 @@ composite {
 composite {
 	object {
 		x=360
-		y=615
+		y=690
 		width=350
-		height=135
+		height=160
 	}
 	"composite name"=""
 	"composite file"="ADBuffers.adl"
+}
+text {
+	object {
+		x=0
+		y=5
+		width=715
+		height=25
+	}
+	"basic attribute" {
+		clr=54
+	}
+	textix="Area Detector Control - $(P)$(R)"
+	align="horiz. centered"
 }

@@ -41,7 +41,7 @@ void NDPluginOverlay::addPixel(NDOverlay_t *pOverlay, int ix, int iy, NDArrayInf
 {
   if ((ix >= 0) && (ix < (int)pArrayInfo->xSize) &&
       (iy >= 0) && (iy < (int)pArrayInfo->ySize))
-    pOverlay->pvt.addressOffset.push_back(iy*pArrayInfo->yStride + ix*pArrayInfo->xStride);
+    pOverlay->pvt.addressOffset.push_back((int)(iy*pArrayInfo->yStride) + (int)(ix*pArrayInfo->xStride));
 }
 
 template <typename epicsType>
@@ -275,6 +275,12 @@ int NDPluginOverlay::doOverlay(NDArray *pArray, NDOverlay_t *pOverlay, NDArrayIn
       break;
     case NDUInt32:
       doOverlayT<epicsUInt32>(pArray, pOverlay, pArrayInfo);
+      break;
+    case NDInt64:
+      doOverlayT<epicsInt64>(pArray, pOverlay, pArrayInfo);
+      break;
+    case NDUInt64:
+      doOverlayT<epicsUInt64>(pArray, pOverlay, pArrayInfo);
       break;
     case NDFloat32:
       doOverlayT<epicsFloat32>(pArray, pOverlay, pArrayInfo);

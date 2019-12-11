@@ -1,0 +1,281 @@
+
+# Macros:
+#% macro, P, Device Prefix (same as detector driver)
+#% macro, R, Device Suffix (same as detector driver)
+#% macro, PORT, The asyn port name of the detector driver
+#% macro, TIMEOUT, Timeout
+#% macro, ADDR, Asyn Port address
+
+# Gang server connection count
+record(longin, "$(P)$(R)GANGSERV:CONNECTIONS_RBV")
+{
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_GANGSERV_CONNECTIONS")
+    field(SCAN, "I/O Intr")
+}
+
+# Gang server listener port number
+record(longin, "$(P)$(R)GANGSERV:PORT_RBV")
+{
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_GANGSERV_PORT")
+    field(SCAN, "I/O Intr")
+}
+
+# Gang operating function
+record(mbbo, "$(P)$(R)GANGSERV:FUNCTION")
+{
+    field(DTYP, "asynInt32")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_GANGSERV_FUNCTION")
+    field(VAL, "0")
+    field(ZRST, "Off")
+    field(ZRVL, 0)
+    field(ONST, "Control")
+    field(ONVL, 1)
+    field(TWST, "Full")
+    field(TWVL, 2)
+}
+record(mbbi, "$(P)$(R)GANGSERV:FUNCTION_RBV")
+{
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_GANGSERV_FUNCTION")
+    field(VAL, "0")
+    field(SCAN, "I/O Intr")
+    field(ZRST, "Off")
+    field(ZRVL, 0)
+    field(ONST, "Control")
+    field(ONVL, 1)
+    field(TWST, "Full")
+    field(TWVL, 2)
+}
+
+# X location of this server's image in the overall image
+record(longout, "$(P)$(R)GANGSERV:POSITIONX")
+{
+    field(DTYP, "asynInt32")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_GANGSERV_POSITIONX")
+}
+record(longin, "$(P)$(R)GANGSERV:POSITIONX_RBV")
+{
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_GANGSERV_POSITIONX")
+    field(SCAN, "I/O Intr")
+}
+
+# Y location of this server's image in the overall image
+record(longout, "$(P)$(R)GANGSERV:POSITIONY")
+{
+    field(DTYP, "asynInt32")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_GANGSERV_POSITIONY")
+}
+record(longin, "$(P)$(R)GANGSERV:POSITIONY_RBV")
+{
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_GANGSERV_POSITIONY")
+    field(SCAN, "I/O Intr")
+}
+
+# X size of the full image
+record(longin, "$(P)$(R)GANGSERV:FULLSIZEX_RBV")
+{
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_GANGSERV_FULLSIZEX")
+    field(SCAN, "I/O Intr")
+}
+
+# Y size of the full image
+record(longin, "$(P)$(R)GANGSERV:FULLSIZEY_RBV")
+{
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_GANGSERV_FULLSIZEY")
+    field(SCAN, "I/O Intr")
+}
+
+# The server queue size
+record(longin, "$(P)$(R)GANGSERV:QUEUESIZE_RBV")
+{
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_GANGSERV_QUEUESIZE")
+    field(SCAN, "I/O Intr")
+}
+
+# The number of missing frame fragments
+record(longin, "$(P)$(R)GANGSERV:MISSINGPIECES_RBV")
+{
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_GANGSERV_MISSINGPIECES")
+    field(SCAN, "I/O Intr")
+}
+
+# Client connection state
+record(bi, "$(P)$(R)GANGSERV:CONNECTED0_RBV")
+{
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_GANGSERV_CONNECTED0")
+    field(SCAN, "I/O Intr")
+    field(ZNAM, "Disconnected")
+    field(ONAM, "Connected")
+}
+record(bi, "$(P)$(R)GANGSERV:CONNECTED1_RBV")
+{
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_GANGSERV_CONNECTED1")
+    field(SCAN, "I/O Intr")
+    field(ZNAM, "Disconnected")
+    field(ONAM, "Connected")
+}
+record(bi, "$(P)$(R)GANGSERV:CONNECTED2_RBV")
+{
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_GANGSERV_CONNECTED2")
+    field(SCAN, "I/O Intr")
+    field(ZNAM, "Disconnected")
+    field(ONAM, "Connected")
+}
+
+# Client use state
+record(bo, "$(P)$(R)GANGSERV:USE0")
+{
+    field(DTYP, "asynInt32")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_GANGSERV_USE0")
+    field(ZNAM, "Don't Use")
+    field(ONAM, "Use")
+}
+record(bi, "$(P)$(R)GANGSERV:USE0_RBV")
+{
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_GANGSERV_USE0")
+    field(SCAN, "I/O Intr")
+    field(ZNAM, "Don't Use")
+    field(ONAM, "Use")
+}
+record(bo, "$(P)$(R)GANGSERV:USE1")
+{
+    field(DTYP, "asynInt32")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_GANGSERV_USE1")
+    field(ZNAM, "Don't Use")
+    field(ONAM, "Use")
+}
+record(bi, "$(P)$(R)GANGSERV:USE1_RBV")
+{
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_GANGSERV_USE1")
+    field(SCAN, "I/O Intr")
+    field(ZNAM, "Don't Use")
+    field(ONAM, "Use")
+}
+record(bo, "$(P)$(R)GANGSERV:USE2")
+{
+    field(DTYP, "asynInt32")
+    field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_GANGSERV_USE2")
+    field(ZNAM, "Don't Use")
+    field(ONAM, "Use")
+}
+record(bi, "$(P)$(R)GANGSERV:USE2_RBV")
+{
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_GANGSERV_USE2")
+    field(SCAN, "I/O Intr")
+    field(ZNAM, "Don't Use")
+    field(ONAM, "Use")
+}
+
+# X location of the client images in the overall image
+record(longin, "$(P)$(R)GANGSERV:POSITIONX0_RBV")
+{
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_GANGSERV_POSITIONX0")
+    field(SCAN, "I/O Intr")
+}
+record(longin, "$(P)$(R)GANGSERV:POSITIONX1_RBV")
+{
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_GANGSERV_POSITIONX1")
+    field(SCAN, "I/O Intr")
+}
+record(longin, "$(P)$(R)GANGSERV:POSITIONX2_RBV")
+{
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_GANGSERV_POSITIONX2")
+    field(SCAN, "I/O Intr")
+}
+
+# Y location of the client images in the overall image
+record(longin, "$(P)$(R)GANGSERV:POSITIONY0_RBV")
+{
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_GANGSERV_POSITIONY0")
+    field(SCAN, "I/O Intr")
+}
+record(longin, "$(P)$(R)GANGSERV:POSITIONY1_RBV")
+{
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_GANGSERV_POSITIONY1")
+    field(SCAN, "I/O Intr")
+}
+record(longin, "$(P)$(R)GANGSERV:POSITIONY2_RBV")
+{
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_GANGSERV_POSITIONY2")
+    field(SCAN, "I/O Intr")
+}
+
+# X size of the client images
+record(longin, "$(P)$(R)GANGSERV:SIZEX0_RBV")
+{
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_GANGSERV_SIZEX0")
+    field(SCAN, "I/O Intr")
+}
+record(longin, "$(P)$(R)GANGSERV:SIZEX1_RBV")
+{
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_GANGSERV_SIZEX1")
+    field(SCAN, "I/O Intr")
+}
+record(longin, "$(P)$(R)GANGSERV:SIZEX2_RBV")
+{
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_GANGSERV_SIZEX2")
+    field(SCAN, "I/O Intr")
+}
+
+# Y size of the client images
+record(longin, "$(P)$(R)GANGSERV:SIZEY0_RBV")
+{
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_GANGSERV_SIZEY0")
+    field(SCAN, "I/O Intr")
+}
+record(longin, "$(P)$(R)GANGSERV:SIZEY1_RBV")
+{
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_GANGSERV_SIZEY1")
+    field(SCAN, "I/O Intr")
+}
+record(longin, "$(P)$(R)GANGSERV:SIZEY2_RBV")
+{
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_GANGSERV_SIZEY2")
+    field(SCAN, "I/O Intr")
+}
+
+# Queue size of the client receivers
+record(longin, "$(P)$(R)GANGSERV:QUEUESIZE0_RBV")
+{
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_GANGSERV_QUEUESIZE0")
+    field(SCAN, "I/O Intr")
+}
+record(longin, "$(P)$(R)GANGSERV:QUEUESIZE1_RBV")
+{
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_GANGSERV_QUEUESIZE1")
+    field(SCAN, "I/O Intr")
+}
+record(longin, "$(P)$(R)GANGSERV:QUEUESIZE2_RBV")
+{
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_GANGSERV_QUEUESIZE2")
+    field(SCAN, "I/O Intr")
+}

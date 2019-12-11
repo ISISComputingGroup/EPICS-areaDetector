@@ -8,7 +8,7 @@ Tagged source code releases from R2-0 onward can be obtained at
 https://github.com/areaDetector/ADPICam/releases.
 
 Tagged prebuilt binaries from R2-0 onward can be obtained at
-http://cars.uchicago.edu/software/pub/ADPICam (Not yet available).
+https://cars.uchicago.edu/software/pub/ADPICam (Not yet available).
 
 
 Release Notes

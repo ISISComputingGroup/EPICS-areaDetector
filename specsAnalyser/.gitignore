@@ -1,0 +1,17 @@
+/data
+db
+dbd
+/iocs/example*
+O.*/
+*~
+/documentation/doxygen
+docs/build
+st.cmd
+records.dbl
+bin
+lib
+include
+envPaths*
+auto_settings.sav*
+configure/*.local
+*.swp

@@ -379,6 +379,9 @@ void ffmpegStream::processCallbacks(NDArray *pArray)
     int quality, clients, false_col, always_on, maxw, maxh;
     /* we're going to get these from the dims of the image */
     int width, height;
+    /* in case we force a final size */
+    int setw, seth;
+
     size_t size;
     /* for printing errors */
     const char *functionName = "processCallbacks";
@@ -401,6 +404,8 @@ void ffmpegStream::processCallbacks(NDArray *pArray)
     getIntegerParam(0, ffmpegServerAlwaysOn, &always_on);
     getIntegerParam(0, ffmpegServerMaxW, &maxw);
     getIntegerParam(0, ffmpegServerMaxH, &maxh);
+    getIntegerParam(0, ffmpegServerSetW, &setw);
+    getIntegerParam(0, ffmpegServerSetH, &seth);
 
     /* if no-ones listening and we're not always on then do nothing */
     if (clients == 0 && always_on == 0) {
@@ -426,6 +431,19 @@ void ffmpegStream::processCallbacks(NDArray *pArray)
         width  = (int) pArray->dims[0].size;
         height = (int) pArray->dims[1].size;
     }
+    /* scale image according to user request */
+    if (setw > 0 && seth > 0) {
+        width = setw;
+        height = seth;
+    } else if (setw > 0) {
+        double sf = (double)(setw)/width;
+        height = (int)(sf * height);
+        width = setw;
+    } else if (seth > 0) {
+        double sf = (double)(seth)/height;
+        width = (int)(sf * width);
+        height = seth;
+    }
 
     /* If we exceed the maximum size */
     if (width > maxw || height > maxh) {
@@ -446,9 +464,9 @@ void ffmpegStream::processCallbacks(NDArray *pArray)
             av_free(c);
         }
         c = avcodec_alloc_context3(codec);
-        /* Make sure that we don't try and create an image smaller than FF_MIN_BUFFER_SIZE */
-        if (width * height < FF_MIN_BUFFER_SIZE) {
-        	double sf = sqrt(1.0 * FF_MIN_BUFFER_SIZE / width / height);
+        /* Make sure that we don't try and create an image smaller than AV_INPUT_BUFFER_MIN_SIZE */
+        if (width * height < AV_INPUT_BUFFER_MIN_SIZE) {
+        	double sf = sqrt(1.0 * AV_INPUT_BUFFER_MIN_SIZE / width / height);
         	height = (int) (height * sf + 1);
         	if (height % 32) height = height + 32 - (height % 32);
         	width = (int) (width * sf + 1);        	
@@ -456,11 +474,11 @@ void ffmpegStream::processCallbacks(NDArray *pArray)
 		}        	
         c->width = width;
         c->height = height;
-        c->flags = CODEC_FLAG_QSCALE;
+        c->flags = AV_CODEC_FLAG_QSCALE;
         c->time_base = avr;
-        c->pix_fmt = PIX_FMT_YUVJ420P;
+        c->pix_fmt = AV_PIX_FMT_YUVJ420P;
         if(codec && codec->pix_fmts){
-            const enum PixelFormat *p= codec->pix_fmts;
+            const enum AVPixelFormat *p= codec->pix_fmts;
             for(; *p!=-1; p++){
                 if(*p == c->pix_fmt)
                     break;
@@ -477,8 +495,8 @@ void ffmpegStream::processCallbacks(NDArray *pArray)
             return;
         }
         /* Override codec pix_fmt to get rid of error messages */
-        if (c->pix_fmt == PIX_FMT_YUVJ420P) {
-        	c->pix_fmt = PIX_FMT_YUV420P;
+        if (c->pix_fmt == AV_PIX_FMT_YUVJ420P) {
+        	c->pix_fmt = AV_PIX_FMT_YUV420P;
         	c->color_range = AVCOL_RANGE_JPEG;
     	}
     }
@@ -520,13 +538,22 @@ void ffmpegStream::processCallbacks(NDArray *pArray)
     pkt.data = (uint8_t*)this->jpeg->pData;    // packet data will be allocated by the encoder
     pkt.size = c->width * c->height;
 
+    // needed to stop a stream of "AVFrame.format is not set" etc. messages
+    scPicture->format = c->pix_fmt;
+    scPicture->width = c->width;
+    scPicture->height = c->height;
+
     if (avcodec_encode_video2(c, &pkt, scPicture, &got_output)) {
         asynPrint(this->pasynUserSelf, ASYN_TRACE_ERROR,
             "%s:%s: Encoding jpeg failed\n",
             driverName, functionName);
+        got_output = 0; // got_output is undefined on error, so explicitly set it for use later
     }
 
-    this->jpeg->dims[0].size = pkt.size;
+    if (got_output) {
+        this->jpeg->dims[0].size = pkt.size;
+        av_packet_unref(&pkt);
+    }
 
     //printf("Frame! Size: %d\n", this->jpeg->dims[0].size);
     
@@ -604,6 +631,8 @@ ffmpegStream::ffmpegStream(const char *portName, int queueSize, int blockingCall
     createParam(ffmpegServerAlwaysOnString, asynParamInt32, &ffmpegServerAlwaysOn);
     createParam(ffmpegServerMaxWString,     asynParamInt32, &ffmpegServerMaxW);
     createParam(ffmpegServerMaxHString,     asynParamInt32, &ffmpegServerMaxH);
+    createParam(ffmpegServerSetWString,     asynParamInt32, &ffmpegServerSetW);
+    createParam(ffmpegServerSetHString,     asynParamInt32, &ffmpegServerSetH);
 
     /* Try to connect to the NDArray port */
     status = connectToArrayPort();
@@ -627,11 +656,11 @@ ffmpegStream::ffmpegStream(const char *portName, int queueSize, int blockingCall
     ffmpegInitialise();
 
     /* make the input and output pictures */
-    inPicture = avcodec_alloc_frame();
-    scPicture = avcodec_alloc_frame();
+    inPicture = av_frame_alloc();
+    scPicture = av_frame_alloc();
 
     /* Setup correct codec for mjpeg */
-    codec = avcodec_find_encoder(CODEC_ID_MJPEG);
+    codec = avcodec_find_encoder(AV_CODEC_ID_MJPEG);
     if (!codec) {
         fprintf(stderr, "MJPG codec not found\n");
         exit(1);

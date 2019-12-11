@@ -22,7 +22,6 @@
 #include <epicsEvent.h>
 #include <epicsThread.h>
 
-#include "ADDriver.h"
 
 #include "picam_advanced.h"
 

@@ -8,7 +8,7 @@ Tagged source code releases from R2-0 onward can be obtained at
 https://github.com/areaDetector/ADLightField/releases.
 
 Tagged prebuilt binaries from R2-0 onward can be obtained at
-http://cars.uchicago.edu/software/pub/ADLightField.
+https://cars.uchicago.edu/software/pub/ADLightField.
 
 The versions of EPICS base, asyn, and other synApps modules used for each release can be obtained from 
 the EXAMPLE_RELEASE_PATHS.local, EXAMPLE_RELEASE_LIBS.local, and EXAMPLE_RELEASE_PRODS.local
@@ -18,6 +18,32 @@ files respectively, in the configure/ directory of the appropriate release of th
 
 Release Notes
 =============
+
+R2-6 (2-July-2018)
+---
+* Added support for new PVs in ADCore R3-3 in opi files (NumQueuedArrays, EmptyFreeList, etc.)
+* Added ADBuffers.adl to main medm screen.
+* Changed configure/RELEASE files for compatibility with areaDetector R3-3.
+* Improved op/*/autoconvert/* files with better medm files and better converters.
+* Set Set ADSDKVersion and NDDriverVersion parameters in constructor.
+
+
+R2-5 (30-January-2018)
+---
+* Added support for creating the directories for data and background files.
+* LightField.template
+  - Change LFGratingWavelength records to LFGratingWL because names were too long for links.
+  - Disable PINI for LFGratingWL because it will crash LightField if Step and Glue is enabled.
+* Added support for Step And Glue to collect spectra that require changing gratings automatically.
+  There are records to enable Step And Glue and to set the starting and ending wavelength.
+* Added support for selecting the Entrance Port of the spectrometer.
+* Fixed medm adl files to improve the autoconversion to other display manager files.
+* Added op/Makefile to automatically convert adl files to edl, ui, and opi files.
+* Updated the edl, ui, and opi autoconvert directories to contain the conversions
+  from the most recent adl files.
+* Updated the DLL files to those from LightField 6.4.
+* Changed CONFIG_SITE to disable GraphicsMagick with LightField because it is incompatible for some reason.
+
 
 R2-4 (04-July-2017)
 ----

@@ -1,0 +1,338 @@
+# Database for the records specific to the MMPAD driver
+# Mark Rivers
+# January 6, 2019
+
+include "ADBase.template"
+include "NDFile.template"
+
+# We redefine the states for the TriggerMode records defined in ADBase.template
+record(mbbo,"$(P)$(R)TriggerMode") {
+    field(DESC,"Acquire mode")
+    field(ZRVL,"0")
+    field(ZRST,"Internal")
+    field(ONVL,"1")
+    field(ONST,"Ext. Enable")
+    field(TWVL,"2")
+    field(TWST,"Ext. Trigger")
+    field(THVL,"3")
+    field(THST,"Mult. Trigger")
+    field(FRVL,"4")
+    field(FRST,"Alignment")
+}
+record(mbbi,"$(P)$(R)TriggerMode_RBV") {
+    field(DESC,"Acquire mode")
+    field(ZRVL,"0")
+    field(ZRST,"Internal")
+    field(ONVL,"1")
+    field(ONST,"Ext. Enable")
+    field(TWVL,"2")
+    field(TWST,"Ext. Trigger")
+    field(THVL,"3")
+    field(THST,"Mult. Trigger")
+    field(FRVL,"4")
+    field(FRST,"Alignment")
+}
+
+# We redefine the states for ImageMode
+record(mbbo, "$(P)$(R)ImageMode")
+{
+   field(ZRST, "Normal")
+   field(ZRVL, "0")
+   field(ONST, "Video")
+   field(ONVL, "1")
+   field(TWST, "")
+   field(TWVL, "")
+}
+
+record(mbbi, "$(P)$(R)ImageMode_RBV")
+{
+   field(ZRST, "Normal")
+   field(ZRVL, "0")
+   field(ONST, "Video")
+   field(ONVL, "1")
+   field(TWST, "")
+   field(TWVL, "")
+}
+
+# We redefine the states for the FileFormat records defined in NDFile.template
+record(mbbo, "$(P)$(R)FileFormat")
+{
+    field(ZRST, "RAW")
+    field(ZRVL, "0")
+    field(ONST, "TIFF")
+    field(ONVL, "1")
+}
+
+record(mbbi, "$(P)$(R)FileFormat_RBV")
+{
+    field(ZRST, "RAW")
+    field(ZRVL, "0")
+    field(ONST, "TIFF")
+    field(ONVL, "1")
+}
+
+record(longin, "$(P)$(R)ROI_Sum")
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))ROI_SUM")
+    field(SCAN, "I/O Intr")
+}
+
+record(longin, "$(P)$(R)ROI_UL")
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))ROI_UL")
+    field(SCAN, "I/O Intr")
+}
+
+record(longin, "$(P)$(R)ROI_UR")
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))ROI_UR")
+    field(SCAN, "I/O Intr")
+}
+
+record(longin, "$(P)$(R)ROI_LL")
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))ROI_LL")
+    field(SCAN, "I/O Intr")
+}
+
+record(longin, "$(P)$(R)ROI_LR")
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))ROI_LR")
+    field(SCAN, "I/O Intr")
+}
+
+# background flag
+record(bo, "$(P)$(R)BackSubFlag")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))BACKSUB_FLAG")
+    field(ZNAM, "Disable")
+    field(ONAM, "Enable")
+}
+record(bi, "$(P)$(R)BackSubFlag_RBV")
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))BACKSUB_FLAG")
+    field(SCAN, "I/O Intr")
+}
+
+
+# mildisp controls
+record(longout, "$(P)$(R)MilDispBitShift")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))MILDISP_BITSHIFT")
+    field(DRVL, "-2")
+    field(DRVH, "12")
+    field(VAL,  "4")
+}
+record(longin, "$(P)$(R)MilDispBitShift_RBV")
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))MILDISP_BITSHIFT")
+    field(SCAN, "I/O Intr")
+}
+
+record(bo, "$(P)$(R)MilDispOn")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))MILDISP_ON")
+    field(ZNAM, "Disable")
+    field(ONAM, "Enable")
+}
+record(bi, "$(P)$(R)MilDispOn_RBV")
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))MILDISP_ON")
+    field(ZNAM, "Disable")
+    field(ONAM, "Enable")
+    field(SCAN, "I/O Intr")
+}
+
+record(bo, "$(P)$(R)MilDispLog")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))MILDISP_LOG")
+    field(ZNAM, "Linear")
+    field(ONAM, "Log")
+}
+record(bi, "$(P)$(R)MilDispLog_RBV")
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))MILDISP_LOG")
+    field(ZNAM, "Linear")
+    field(ONAM, "Log")
+    field(SCAN, "I/O Intr")
+}
+
+record(longout, "$(P)$(R)MilDispOffset")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))MILDISP_OFFSET")
+    field(VAL,  "20")
+}
+record(longin, "$(P)$(R)MilDispOffset_RBV")
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))MILDISP_OFFSET")
+    field(SCAN, "I/O Intr")
+}
+record(longout, "$(P)$(R)MilDispScale")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))MILDISP_SCALE")
+    field(VAL,  "1")
+}
+record(longin, "$(P)$(R)MilDispScale_RBV")
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))MILDISP_SCALE")
+    field(SCAN, "I/O Intr")
+}
+## end midisp controls
+
+
+record(busy, "$(P)$(R)AVGAcquire") {
+   field(DTYP, "asynInt32")
+   field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))AVGACQUIRE")
+   field(ZNAM, "Done")
+   field(ONAM, "Acquire")
+   field(VAL,  "0")
+}
+record(bi, "$(P)$(R)AVGAcquire_RBV") {
+   field(DTYP, "asynInt32")
+   field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))AVGACQUIRE")
+   field(ZNAM, "Done")
+   field(ZSV,  "NO_ALARM")
+   field(ONAM, "Acquiring")
+   field(OSV,  "MINOR")
+   field(SCAN, "I/O Intr")
+}
+
+record(longout, "$(P)$(R)AVGCount")
+{
+	#field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))AVGCOUNT")
+    field(VAL, "40")
+}
+record(longin, "$(P)$(R)AVGCount_RBV")
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))AVGCOUNT")
+    field(SCAN, "I/O Intr")
+}
+
+record(longout, "$(P)$(R)BGSubtract")
+{
+	#field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))BG_SUBTRACT")
+   # field(SCAN, "I/O Intr")
+    field(VAL,"0")
+}
+record(longin, "$(P)$(R)BGSubtract_RBV")
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))BG_SUBTRACT")
+    field(SCAN, "I/O Intr")
+}
+
+record(waveform, "$(P)$(R)AVGFile")
+{
+   # field(PINI, "YES")
+    field(DTYP, "asynOctetWrite")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))AVGFILE")
+    field(FTVL, "CHAR")
+    field(NELM, "256")
+   # field(VAL, "AverageFile")
+}
+
+record(waveform, "$(P)$(R)AVGFile_RBV")
+{
+    field(DTYP, "asynOctetRead")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))AVGFILE")
+    field(FTVL, "CHAR")
+    field(NELM, "256")
+    field(SCAN, "I/O Intr")
+}
+
+record(waveform, "$(P)$(R)BGFile")
+{
+#    field(PINI, "YES")
+    field(DTYP, "asynOctetWrite")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))BGFILE")
+    field(FTVL, "CHAR")
+    field(NELM, "256")
+   # field(VAL, "BackgroundFile")
+}
+
+record(waveform, "$(P)$(R)BGFile_RBV")
+{
+    field(DTYP, "asynOctetRead")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))BGFILE")
+    field(FTVL, "CHAR")
+    field(NELM, "256")
+    field(SCAN, "I/O Intr")
+}
+
+# Armed flag, which indicates MMPAD is ready for external triggers
+record(bi, "$(P)$(R)Armed")
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))ARMED")
+    field(ZNAM, "Unarmed")
+    field(ONAM, "Armed")
+    field(SCAN, "I/O Intr")
+}
+
+# Delay time in External Trigger mode.
+record(ao, "$(P)$(R)DelayTime")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynFloat64")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))DELAY_TIME")
+    field(EGU,  "s")
+    field(VAL,  "0")
+    field(PREC, "6")
+}
+
+record(ai, "$(P)$(R)DelayTime_RBV")
+{
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))DELAY_TIME")
+    field(EGU,  "s")
+    field(PREC, "6")
+    field(SCAN, "I/O Intr")
+}
+
+# Timeout waiting for image to be written to file system
+record(ao, "$(P)$(R)ImageFileTmot")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynFloat64")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))IMAGE_FILE_TMOT")
+    field(DESC, "Timeout for image file")
+    field(VAL,  "20")
+    field(EGU,  "s")
+    field(PREC, "3")
+}
+
+# asyn record for interactive communication with camserver
+record(asyn, "$(P)$(R)CamserverAsyn")
+{
+    field(PORT,  "$(CAMSERVER_PORT)")
+    field(IMAX, "64")
+    field(OMAX, "64")
+}

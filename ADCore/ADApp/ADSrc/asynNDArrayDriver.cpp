@@ -25,7 +25,7 @@
 #include <macLib.h>
 #include <cantProceed.h>
 
-#include <asynDriver.h>
+#include <asynPortDriver.h>
 
 
 #define epicsExportSharedSymbols
@@ -55,29 +55,23 @@
 
 static const char *driverName = "asynNDArrayDriver";
 
-/** Checks whether the directory specified NDFilePath parameter exists.
+/** Checks whether the directory specified exists.
   * 
-  * This is a convenience function that determinesthe directory specified NDFilePath parameter exists.
-  * It sets the value of NDFilePathExists to 0 (does not exist) or 1 (exists).  
-  * It also adds a trailing '/' character to the path if one is not present.
-  * Returns a error status if the directory does not exist.
+  * This is a convenience function that determines the directory specified exists.
+  * It adds a trailing '/' or '\' character to the path if one is not present.
+  * It returns true if the directory exists and false if it does not
   */
-asynStatus asynNDArrayDriver::checkPath()
+bool asynNDArrayDriver::checkPath(std::string &filePath)
 {
-    /* Formats a complete file name from the components defined in NDStdDriverParams */
-    asynStatus status = asynError;
-    char filePath[MAX_FILENAME_LEN];
     char lastChar;
-    int hasTerminator=0;
     struct stat buff;
     int istat;
     size_t len;
     int isDir=0;
-    int pathExists=0;
+    bool pathExists=false;
     
-    getStringParam(NDFilePath, sizeof(filePath), filePath);
-    len = strlen(filePath);
-    if (len == 0) return asynSuccess;
+    len = filePath.size();
+    if (len == 0) return false;
     /* If the path contains a trailing '/' or '\' remove it, because Windows won't find
      * the directory if it has that trailing character */
     lastChar = filePath[len-1];
@@ -87,21 +81,37 @@ asynStatus asynNDArrayDriver::checkPath()
     if (lastChar == '/') 
 #endif
     {
-        filePath[len-1] = 0;
-        len--;
-        hasTerminator=1;
+        filePath.resize(len-1);
     }
-    istat = stat(filePath, &buff);
+    istat = stat(filePath.c_str(), &buff);
     if (!istat) isDir = (S_IFDIR & buff.st_mode);
     if (!istat && isDir) {
-        pathExists = 1;
-        status = asynSuccess;
+        pathExists = true;
     }
-    /* If the path did not have a trailing terminator then add it if there is room */
-    if (!hasTerminator) {
-        if (len < MAX_FILENAME_LEN-2) strcat(filePath, delim);
-        setStringParam(NDFilePath, filePath);
-    }
+    /* Add a terminator even if it did not have one originally */
+    filePath.append(delim);
+    return pathExists;   
+}
+
+
+/** Checks whether the directory specified NDFilePath parameter exists.
+  * 
+  * This is a convenience function that determines the directory specified NDFilePath parameter exists.
+  * It sets the value of NDFilePathExists to 0 (does not exist) or 1 (exists).  
+  * It also adds a trailing '/' character to the path if one is not present.
+  * Returns a error status if the directory does not exist.
+  */
+asynStatus asynNDArrayDriver::checkPath()
+{
+    asynStatus status;
+    std::string filePath;
+    int pathExists;
+    
+    getStringParam(NDFilePath, filePath);
+    if (filePath.size() == 0) return asynSuccess;
+    pathExists = checkPath(filePath);
+    status = pathExists ? asynSuccess : asynError;
+    setStringParam(NDFilePath, filePath);
     setIntegerParam(NDFilePathExists, pathExists);
     return status;   
 }
@@ -113,7 +123,7 @@ asynStatus asynNDArrayDriver::checkPath()
                       pathDepth = 0 create no directories
                       pathDepth = 1 create all directories needed (i.e. only assume root directory exists).
                       pathDepth = 2  Assume 1 directory below the root directory exists
-                      pathDepth = -1 Assume all but one direcory exists
+                      pathDepth = -1 Assume all but one directory exists
                       pathDepth = -2 Assume all but two directories exist.
 */
 asynStatus asynNDArrayDriver::createFilePath(const char *path, int pathDepth)
@@ -498,12 +508,15 @@ asynStatus asynNDArrayDriver::getAttributes(NDAttributeList *pList)
 asynStatus asynNDArrayDriver::writeOctet(asynUser *pasynUser, const char *value, 
                                     size_t nChars, size_t *nActual)
 {
-    int addr=0;
-    int function = pasynUser->reason;
+    int addr;
+    int function;
+    const char *paramName;
     asynStatus status = asynSuccess;
     const char *functionName = "writeOctet";
 
-    status = getAddress(pasynUser, &addr); if (status != asynSuccess) return(status);
+    status = parseAsynUser(pasynUser, &function, &addr, &paramName); 
+    if (status != asynSuccess) return status;
+
     /* Set the parameter in the parameter library. */
     status = (asynStatus)setStringParam(addr, function, (char *)value);
 
@@ -525,12 +538,12 @@ asynStatus asynNDArrayDriver::writeOctet(asynUser *pasynUser, const char *value,
 
     if (status) 
         epicsSnprintf(pasynUser->errorMessage, pasynUser->errorMessageSize, 
-                  "%s:%s: status=%d, function=%d, value=%s", 
-                  driverName, functionName, status, function, value);
+                  "%s:%s: status=%d, function=%d, paramName=%s, value=%s", 
+                  driverName, functionName, status, function, paramName, value);
     else        
         asynPrint(pasynUser, ASYN_TRACEIO_DRIVER, 
-              "%s:%s: function=%d, value=%s\n", 
-              driverName, functionName, function, value);
+              "%s:%s: function=%d, paramName=%s, value=%s\n", 
+              driverName, functionName, function, paramName, value);
     *nActual = nChars;
     return status;
 }
@@ -551,10 +564,14 @@ asynStatus asynNDArrayDriver::readGenericPointer(asynUser *pasynUser, void *gene
     NDArray *myArray;
     NDArrayInfo_t arrayInfo;
     int addr;
+    int function;
+    const char *paramName;
     asynStatus status = asynSuccess;
     const char* functionName = "readNDArray";
 
-    status = getAddress(pasynUser, &addr); if (status != asynSuccess) return(status);
+    status = parseAsynUser(pasynUser, &function, &addr, &paramName); 
+    if (status != asynSuccess) return status;
+
     this->lock();
     myArray = this->pArrays[addr];
     if (!myArray) {
@@ -593,18 +610,106 @@ asynStatus asynNDArrayDriver::writeGenericPointer(asynUser *pasynUser, void *gen
     return status;
 }
 
+/** Sets the value for an integer in the parameter library.
+  * Calls setIntegerParam(0, index, value) i.e. for parameter list 0.
+  * \param[in] index The parameter number
+  * \param[in] value Value to set. */
+asynStatus asynNDArrayDriver::setIntegerParam(int index, int value)
+{
+    return this->setIntegerParam(0, index, value);
+}
+
+/** Sets the value for an integer in the parameter library.
+  * \param[in] list The parameter list number.  Must be < maxAddr passed to asynPortDriver::asynPortDriver.
+  * \param[in] index The parameter number
+  * \param[in] value Value to set. 
+  * This function was added to trap the driver setting ADAcquire to 0 and
+  * setting NumQueuedArrays.  It implements the logic of
+  * setting ADAcquireBusy to reflect whether acquisition is done.
+  * If WaitForPlugins is true then this includes waiting for NumQueuedArrays to be 0.
+  * When ADAcquire goes to 0 it must use getQueuedArrayCount rather then NumQueuedArrays
+  * from the parameter library, because NumQueuedArrays is updated in a separate thread
+  * and might not have been set yet.  getQueuedArrayCount updates immediately. */
+asynStatus asynNDArrayDriver::setIntegerParam(int list, int index, int value)
+{
+
+    if (index == ADAcquire) {
+        if (value == 0) {
+            int waitForPlugins;
+            getIntegerParam(list, ADWaitForPlugins, &waitForPlugins);
+            if (waitForPlugins) {
+                int count = getQueuedArrayCount();
+                if (count == 0) {
+                    asynPortDriver::setIntegerParam(list, ADAcquireBusy, 0);
+                }
+            } else {
+                asynPortDriver::setIntegerParam(list, ADAcquireBusy, 0);
+            }
+        } else {
+            asynPortDriver::setIntegerParam(list, ADAcquireBusy, 1);
+        }
+    }
+    else if ((index == NDNumQueuedArrays) && (value == 0)) {
+        int acquire;
+        getIntegerParam(list, ADAcquire, &acquire);
+        if (acquire == 0) {
+            asynPortDriver::setIntegerParam(list, ADAcquireBusy, 0);
+        }
+    }
+    return asynPortDriver::setIntegerParam(list, index, value);
+}
+
+/** Sets an int32 parameter.
+  * \param[in] pasynUser asynUser structure that contains the function code in pasynUser->reason. 
+  * \param[in] value The value for this parameter 
+  *
+  * Takes action if the function code requires it. */
+asynStatus asynNDArrayDriver::writeInt32(asynUser *pasynUser, epicsInt32 value)
+{
+    int function;
+    int addr;
+    const char *paramName;
+    asynStatus status = asynSuccess;
+    static const char *functionName = "writeInt32";
+
+    status = parseAsynUser(pasynUser, &function, &addr, &paramName); 
+    if (status != asynSuccess) return status;
+
+    status = setIntegerParam(addr, function, value);
+
+    if (function == NDPoolEmptyFreeList) {
+        this->pNDArrayPool->emptyFreeList();
+    }
+
+    /* Do callbacks so higher layers see any changes */
+    callParamCallbacks();
+
+    if (status)
+        asynPrint(pasynUser, ASYN_TRACE_ERROR,
+              "%s:%s: error, status=%d function=%d, paramName=%s, value=%d\n",
+              driverName, functionName, status, function, paramName, value);
+    else
+        asynPrint(pasynUser, ASYN_TRACEIO_DRIVER,
+              "%s:%s: function=%d, paramName=%s, value=%d\n",
+              driverName, functionName, function, paramName, value);
+    return status;
+}
+
 asynStatus asynNDArrayDriver::readInt32(asynUser *pasynUser, epicsInt32 *value)
 {
-    int function = pasynUser->reason;
+    int function;
+    int addr;
+    const char *paramName;
     asynStatus status = asynSuccess;
 
+    status = parseAsynUser(pasynUser, &function, &addr, &paramName); 
+    if (status != asynSuccess) return status;
+
     // Just read the status of the NDArrayPool
-    if (function == NDPoolMaxBuffers) {
-        setIntegerParam(function, this->pNDArrayPool->maxBuffers());
-    } else if (function == NDPoolAllocBuffers) {
-        setIntegerParam(function, this->pNDArrayPool->numBuffers());
+    if (function == NDPoolAllocBuffers) {
+        setIntegerParam(addr, function, this->pNDArrayPool->getNumBuffers());
     } else if (function == NDPoolFreeBuffers) {
-        setIntegerParam(function, this->pNDArrayPool->numFree());
+        setIntegerParam(addr, function, this->pNDArrayPool->getNumFree());
     }
 
     // Call base class
@@ -615,14 +720,19 @@ asynStatus asynNDArrayDriver::readInt32(asynUser *pasynUser, epicsInt32 *value)
 #define MEGABYTE_DBL 1048576.
 asynStatus asynNDArrayDriver::readFloat64(asynUser *pasynUser, epicsFloat64 *value)
 {
-    int function = pasynUser->reason;
+    int function;
+    int addr;
+    const char *paramName;
     asynStatus status = asynSuccess;
+
+    status = parseAsynUser(pasynUser, &function, &addr, &paramName); 
+    if (status != asynSuccess) return status;
 
     // Just read the status of the NDArrayPool
     if (function == NDPoolMaxMemory) {
-        setDoubleParam(function, this->pNDArrayPool->maxMemory() / MEGABYTE_DBL);
+        setDoubleParam(addr, function, this->pNDArrayPool->getMaxMemory() / MEGABYTE_DBL);
     } else if (function == NDPoolUsedMemory) {
-        setDoubleParam(function, this->pNDArrayPool->memorySize() / MEGABYTE_DBL);
+        setDoubleParam(addr, function, this->pNDArrayPool->getMemorySize() / MEGABYTE_DBL);
     }
 
     // Call base class
@@ -647,15 +757,76 @@ void asynNDArrayDriver::report(FILE *fp, int details)
     }
     if (details > 5) {
         fprintf(fp, "\n");
-        fprintf(fp, "%s: NDArrayPool report\n", this->portName);
-        if (this->pNDArrayPool) this->pNDArrayPool->report(fp, details);
+        fprintf(fp, "%s: private NDArrayPool report\n", this->portName);
+        this->pNDArrayPoolPvt_->report(fp, details);
+        if (this->pNDArrayPool != this->pNDArrayPoolPvt_) {
+            fprintf(fp, "\n");
+            fprintf(fp, "%s: shared NDArrayPool report\n", this->portName);
+            this->pNDArrayPool->report(fp, details);
+        }
         fprintf(fp, "\n");
         fprintf(fp, "%s: pAttributeList report\n", this->portName);
         this->pAttributeList->report(fp, details);
     }
 }
 
-
+static void updateQueuedArrayCountC(void *drvPvt)
+{
+    asynNDArrayDriver *pPvt = (asynNDArrayDriver *)drvPvt;
+
+    pPvt->updateQueuedArrayCount();
+}
+
+void asynNDArrayDriver::updateQueuedArrayCount()
+{
+    while (queuedArrayUpdateRun_) {
+        epicsEventWait(queuedArrayEvent_);
+        // Exit early
+        if (!queuedArrayUpdateRun_)
+            break;
+
+        lock();
+        setIntegerParam(NDNumQueuedArrays, getQueuedArrayCount());
+        callParamCallbacks();
+        unlock();
+    }
+    epicsEventSignal(queuedArrayUpdateDone_);
+}
+
+int asynNDArrayDriver::getQueuedArrayCount()
+{
+    queuedArrayCountMutex_->lock();
+    int count = queuedArrayCount_;
+    queuedArrayCountMutex_->unlock();
+    return count;
+}
+
+asynStatus asynNDArrayDriver::incrementQueuedArrayCount() 
+{ 
+    queuedArrayCountMutex_->lock();
+    queuedArrayCount_++;
+    queuedArrayCountMutex_->unlock();
+    epicsEventSignal(queuedArrayEvent_);
+    return asynSuccess;
+}
+
+asynStatus asynNDArrayDriver::decrementQueuedArrayCount() 
+{
+    static const char *functionName = "decrementQueuedArrayCount";
+  
+    queuedArrayCountMutex_->lock();
+    if (queuedArrayCount_ <= 0) {
+        asynPrint(pasynUserSelf, ASYN_TRACE_ERROR, 
+            "%s::%s error, numQueuedArrays already 0 or less (%d)\n",
+            driverName, functionName, queuedArrayCount_);
+    }
+    queuedArrayCount_--;
+    queuedArrayCountMutex_->unlock();
+    epicsEventSignal(queuedArrayEvent_);
+    return asynSuccess;
+}
+
+
 /** This is the constructor for the asynNDArrayDriver class.
   * portName, maxAddr, interfaceMask, interruptMask, asynFlags, autoConnect, priority and stackSize
   * are simply passed to asynPortDriver::asynPortDriver. 
@@ -665,6 +836,7 @@ void asynNDArrayDriver::report(FILE *fp, int details)
   * \param[in] maxAddr The maximum  number of asyn addr addresses this driver supports. 1 is minimum.
   * \param[in] maxBuffers The maximum number of NDArray buffers that the NDArrayPool for this driver is 
   *            allowed to allocate. Set this to 0 to allow an unlimited number of buffers.
+  *            This value is no longer used and is ignored.  It will be removed in a future major release.
   * \param[in] maxMemory The maximum amount of memory that the NDArrayPool for this driver is 
   *            allowed to allocate. Set this to 0 to allow an unlimited amount of memory.
   * \param[in] interfaceMask Bit mask defining the asyn interfaces that this driver supports.
@@ -684,9 +856,11 @@ asynNDArrayDriver::asynNDArrayDriver(const char *portName, int maxAddr, int maxB
                      interfaceMask | asynInt32Mask | asynFloat64Mask | asynOctetMask | asynInt32ArrayMask | asynGenericPointerMask | asynDrvUserMask, 
                      interruptMask | asynInt32Mask | asynFloat64Mask | asynOctetMask | asynInt32ArrayMask | asynGenericPointerMask,
                      asynFlags, autoConnect, priority, stackSize),
-      pNDArrayPool(NULL)
+      pNDArrayPool(NULL), queuedArrayCountMutex_(NULL), queuedArrayCount_(0),
+      queuedArrayUpdateRun_(true)
 {
     char versionString[20];
+    static const char *functionName = "asynNDArrayDriver";
 
     /* Save the stack size and priority for other threads that this object may create */
     if (stackSize <= 0) stackSize = epicsThreadGetStackSize(epicsThreadStackMedium);
@@ -694,7 +868,9 @@ asynNDArrayDriver::asynNDArrayDriver(const char *portName, int maxAddr, int maxB
     if (priority <= 0) priority = epicsThreadPriorityMedium;
     threadPriority_ = priority;
 
-    this->pNDArrayPool = new NDArrayPool(maxBuffers, maxMemory);
+    this->pNDArrayPoolPvt_ = new NDArrayPool(this, maxMemory);
+    this->pNDArrayPool = this->pNDArrayPoolPvt_;
+    this->queuedArrayCountMutex_ = new epicsMutex();
 
     /* Allocate pArray pointer array */
     this->pArrays = (NDArray **)calloc(maxAddr, sizeof(NDArray *));
@@ -703,6 +879,14 @@ asynNDArrayDriver::asynNDArrayDriver(const char *portName, int maxAddr, int maxB
     createParam(NDPortNameSelfString,         asynParamOctet,           &NDPortNameSelf);
     createParam(NDADCoreVersionString,        asynParamOctet,           &NDADCoreVersion);
     createParam(NDDriverVersionString,        asynParamOctet,           &NDDriverVersion);
+    createParam(ADManufacturerString,         asynParamOctet,           &ADManufacturer);
+    createParam(ADModelString,                asynParamOctet,           &ADModel);
+    createParam(ADSerialNumberString,         asynParamOctet,           &ADSerialNumber);
+    createParam(ADSDKVersionString,           asynParamOctet,           &ADSDKVersion);
+    createParam(ADFirmwareVersionString,      asynParamOctet,           &ADFirmwareVersion);
+    createParam(ADAcquireString,              asynParamInt32,           &ADAcquire);
+    createParam(ADAcquireBusyString,          asynParamInt32,           &ADAcquireBusy);
+    createParam(ADWaitForPluginsString,       asynParamInt32,           &ADWaitForPlugins);
     createParam(NDArraySizeXString,           asynParamInt32,           &NDArraySizeX);
     createParam(NDArraySizeYString,           asynParamInt32,           &NDArraySizeY);
     createParam(NDArraySizeZString,           asynParamInt32,           &NDArraySizeZ);
@@ -716,6 +900,8 @@ asynNDArrayDriver::asynNDArrayDriver(const char *portName, int maxAddr, int maxB
     createParam(NDEpicsTSSecString,           asynParamInt32,           &NDEpicsTSSec);
     createParam(NDEpicsTSNsecString,          asynParamInt32,           &NDEpicsTSNsec);
     createParam(NDBayerPatternString,         asynParamInt32,           &NDBayerPattern);
+    createParam(NDCodecString,                asynParamOctet,           &NDCodec);
+    createParam(NDCompressedSizeString,       asynParamInt32,           &NDCompressedSize);
     createParam(NDArrayCounterString,         asynParamInt32,           &NDArrayCounter);
     createParam(NDFilePathString,             asynParamOctet,           &NDFilePath);
     createParam(NDFilePathExistsString,       asynParamInt32,           &NDFilePathExists);
@@ -748,6 +934,8 @@ asynNDArrayDriver::asynNDArrayDriver(const char *portName, int maxAddr, int maxB
     createParam(NDPoolFreeBuffersString,      asynParamInt32,           &NDPoolFreeBuffers);
     createParam(NDPoolMaxMemoryString,        asynParamFloat64,         &NDPoolMaxMemory);
     createParam(NDPoolUsedMemoryString,       asynParamFloat64,         &NDPoolUsedMemory);
+    createParam(NDPoolEmptyFreeListString,    asynParamInt32,           &NDPoolEmptyFreeList);
+    createParam(NDNumQueuedArraysString,      asynParamInt32,           &NDNumQueuedArrays);
 
     /* Here we set the values of read-only parameters and of read/write parameters that cannot
      * or should not get their values from the database.  Note that values set here will override
@@ -794,17 +982,41 @@ asynNDArrayDriver::asynNDArrayDriver(const char *portName, int maxAddr, int maxB
     setIntegerParam(NDAttributesStatus, NDAttributesFileNotFound);
     setStringParam (NDAttributesMacros, "");
 
-    setIntegerParam(NDPoolMaxBuffers, this->pNDArrayPool->maxBuffers());
-    setIntegerParam(NDPoolAllocBuffers, this->pNDArrayPool->numBuffers());
-    setIntegerParam(NDPoolFreeBuffers, this->pNDArrayPool->numFree());
+    setIntegerParam(NDPoolAllocBuffers, this->pNDArrayPool->getNumBuffers());
+    setIntegerParam(NDPoolFreeBuffers, this->pNDArrayPool->getNumFree());
+    setDoubleParam(NDPoolMaxMemory, 0);
+    setDoubleParam(NDPoolUsedMemory, 0);
+
+    setIntegerParam(NDNumQueuedArrays, 0);
+
+    queuedArrayEvent_ = epicsEventCreate(epicsEventEmpty);
+    queuedArrayUpdateDone_ = epicsEventCreate(epicsEventEmpty);
+    /* Create the thread that updates the queued array count */
+    
+    char taskName[100];
+    epicsSnprintf(taskName, sizeof(taskName)-1, "%s_updateQueuedArrayCount", portName);
+    epicsThreadId queuedArrayThreadId = epicsThreadCreate(taskName,
+                                                          this->threadPriority_,
+                                                          this->threadStackSize_,
+                                                          (EPICSTHREADFUNC)updateQueuedArrayCountC, this);
+    if (queuedArrayThreadId == 0) {
+        asynPrint(pasynUserSelf, ASYN_TRACE_ERROR,
+            "%s::%s error creating updateQueuedArrayCount thread\n", 
+            driverName, functionName);
+    }
 
 }
 
 
 asynNDArrayDriver::~asynNDArrayDriver()
 { 
-    delete this->pNDArrayPool;
+    queuedArrayUpdateRun_ = false;
+    epicsEventSignal(queuedArrayEvent_);
+    epicsEventWait(queuedArrayUpdateDone_);
+
+    delete this->pNDArrayPoolPvt_;
     free(this->pArrays);
     delete this->pAttributeList;
+    delete this->queuedArrayCountMutex_;
 }    
 

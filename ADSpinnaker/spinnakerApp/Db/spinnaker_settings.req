@@ -1,0 +1,19 @@
+file "ADGenICam_settings.req", P=$(P), R=$(R)
+$(P)$(R)TimeStampMode
+$(P)$(R)UniqueIdMode
+$(P)$(R)ConvertPixelFormat
+$(P)$(R)GC_BlackLevel
+$(P)$(R)GC_BlackLevelAuto
+$(P)$(R)GC_BalanceRatio
+$(P)$(R)GC_BalRatioSelector
+$(P)$(R)GC_BalanceWhiteAuto
+$(P)$(R)GC_Saturation
+$(P)$(R)GC_SaturationEnabled
+$(P)$(R)GC_Gamma
+$(P)$(R)GC_GammaEnabled
+$(P)$(R)GC_Sharpness
+$(P)$(R)GC_SharpnessAuto
+$(P)$(R)GC_SharpnessEnabled
+$(P)$(R)GC_TriggerActivation
+$(P)$(R)GC_TriggerDelay
+$(P)$(R)GC_TriDelayEnabled

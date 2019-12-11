@@ -1,5 +1,7 @@
 # This file contains the commands to build driver applications using the common set of plugins
-# The variable PROD_NAME must be defined
+# The variable DBD_NAME should be defined to specify the name of the application DBD file.
+# For backwards compatibilty if DBD_NAME is not specified then PROD_NAME must be specified, 
+# and DBD_NAME will set to this.
 
 ifndef DBD_NAME
   DBD_NAME = $(PROD_NAME)
@@ -15,15 +17,24 @@ $(DBD_NAME)_DBD += ADSupport.dbd
 
 $(DBD_NAME)_DBD += NDFileNull.dbd
 
-ifeq ($(WITH_EPICS_V4),YES)
+# Note that if WITH_QSRV is YES then WITH_PVA must also be YES
+ifeq ($(WITH_QSRV),YES)
+  $(DBD_NAME)_DBD += qsrv.dbd
+  PROD_LIBS += qsrv
+endif
+
+ifeq ($(WITH_PVA),YES)
   $(DBD_NAME)_DBD += NDPluginPva.dbd
   $(DBD_NAME)_DBD += PVAServerRegister.dbd
   PROD_LIBS += ntndArrayConverter
   PROD_LIBS += nt
   PROD_LIBS += pvDatabase
-  PROD_LIBS += pvAccess
-  PROD_LIBS += pvData
-  PROD_LIBS += ntndArrayConverter
+  ifdef EPICS_BASE_PVA_CORE_LIBS
+    PROD_LIBS += $(EPICS_BASE_PVA_CORE_LIBS)
+  else
+    PROD_LIBS += pvAccess
+    PROD_LIBS += pvData
+  endif
 endif
 
 ifeq ($(WITH_NETCDF),YES)
@@ -72,20 +83,6 @@ ifeq ($(WITH_TIFF),YES)
   endif
 endif
 
-ifeq ($(WITH_JPEG),YES)
-  $(DBD_NAME)_DBD += NDFileJPEG.dbd
-  ifeq ($(JPEG_EXTERNAL),NO)
-    PROD_LIBS += jpeg
-  else
-    ifdef JPEG_LIB
-      jpeg_DIR     = $(JPEG_LIB)
-      PROD_LIBS     += jpeg
-    else
-      PROD_SYS_LIBS += jpeg
-    endif
-  endif
-endif
-
 ifeq ($(XML2_EXTERNAL),NO)
   PROD_LIBS += xml2
 else
@@ -115,12 +112,16 @@ ifeq ($(WITH_HDF5),YES)
   $(DBD_NAME)_DBD += NDFileHDF5.dbd
   ifeq ($(HDF5_EXTERNAL),NO)
     PROD_LIBS += hdf5
+    PROD_LIBS += hdf5_hl
   else
     ifdef HDF5_LIB
       hdf5_DIR     = $(HDF5_LIB)
+      hdf5_hl_DIR  = $(HDF5_LIB)
       PROD_LIBS     += hdf5
+      PROD_LIBS     += hdf5_hl
     else
       PROD_SYS_LIBS += hdf5
+      PROD_SYS_LIBS += hdf5_hl
     endif
   endif
   ifeq ($(HDF5_STATIC_BUILD), NO)
@@ -129,6 +130,19 @@ ifeq ($(WITH_HDF5),YES)
   else
     USR_CXXFLAGS_WIN32    += -DH5_BUILT_AS_STATIC_LIB
     USR_CFLAGS_WIN32      += -DH5_BUILT_AS_STATIC_LIB
+  endif
+endif
+
+ifeq ($(WITH_BITSHUFFLE),YES)
+  ifeq ($(BITSHUFFLE_EXTERNAL),NO)
+    PROD_LIBS += bitshuffle
+  else
+    ifdef BITSHUFFLE_LIB
+      bitshuffle_DIR = $(BITSHUFFLE_LIB)
+      PROD_LIBS     += bitshuffle
+    else
+      PROD_SYS_LIBS += bitshuffle
+    endif
   endif
 endif
 
@@ -171,6 +185,39 @@ ifeq ($(WITH_ZLIB),YES)
   endif
 endif
 
+ifeq ($(WITH_BOOST),YES)
+  ifeq ($(BOOST_EXTERNAL),NO)
+    PROD_SYS_LIBS += boost_system
+  else
+    ifdef BOOST_LIB
+      BOOST_DIR        = $(BOOST_LIB)
+      PROD_LIBS     += boost_system
+    else
+      PROD_SYS_LIBS += boost_system
+    endif
+  endif
+endif
+
+ifeq ($(WITH_JPEG),YES)
+  $(DBD_NAME)_DBD += NDFileJPEG.dbd
+  ifeq ($(JPEG_EXTERNAL),NO)
+    PROD_LIBS += jpeg
+  else
+    ifdef JPEG_LIB
+      jpeg_DIR     = $(JPEG_LIB)
+      PROD_LIBS     += jpeg
+    else
+      PROD_SYS_LIBS += jpeg
+    endif
+  endif
+endif
+
+ifdef FFMPEGSERVER
+  $(DBD_NAME)_DBD += ffmpegServer.dbd
+  PROD_LIBS       += ffmpegServer
+  PROD_LIBS       += avdevice avformat avcodec swresample swscale avutil
+endif
+
 ifdef ADPLUGINEDGE
   $(DBD_NAME)_DBD  += NDPluginEdge.dbd
   PROD_LIBS         += NDPluginEdge
@@ -180,6 +227,34 @@ ifdef ADPLUGINEDGE
   else
     PROD_SYS_LIBS   += opencv_core opencv_imgproc
   endif
+endif
+
+ifdef ADPLUGINBAR
+  $(DBD_NAME)_DBD += NDPluginBar.dbd
+  PROD_LIBS	  += NDPluginBar
+  ifdef OPENCV_LIB
+    opencv_core_DIR +=$(OPENCV_LIB)
+    PROD_LIBS       += opencv_core opencv_imgproc opencv_highgui zbar
+  else
+    PROD_SYS_LIBS   += opencv_core opencv_imgproc opencv_highgui zbar
+  endif
+endif
+
+ifdef ADCOMPVISION
+  $(DBD_NAME)_DBD  += NDPluginCV.dbd
+  PROD_LIBS     += NDPluginCV
+  ifdef OPENCV_LIB
+    opencv_core_DIR += $(OPENCV_LIB)
+    PROD_LIBS       += opencv_core opencv_imgproc opencv_highgui
+    ifeq ($(WITH_OPENCV_VIDEO), YES)
+      PROD_LIBS     += opencv_video opencv_videoio
+    endif
+  else
+    PROD_SYS_LIBS   += opencv_core opencv_imgproc opencv_highgui
+    ifeq ($(WITH_OPENCV_VIDEO), YES)
+      PROD_SYS_LIBS += opencv_video opencv_videoio
+    endif
+  endif 
 endif
 
 # Required modules

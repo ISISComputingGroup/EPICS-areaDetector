@@ -16,12 +16,15 @@ ifeq ($(GNU),NO)
   NDArray_CXXFLAGS_solaris += -features=tmplrefstatic
 endif
 
+USR_CFLAGS += -DUSE_TYPED_RSET
+
 DBD += ADSupport.dbd
 
 INC += ADCoreVersion.h
 INC += NDAttribute.h
 INC += NDAttributeList.h
 INC += NDArray.h
+INC += Codec.h
 INC += PVAttribute.h
 INC += paramAttribute.h
 INC += functAttribute.h
@@ -56,7 +59,7 @@ ifeq ($(XML2_EXTERNAL),NO)
   LIB_LIBS += xml2
 else
   ifdef XML2_INCLUDE
-    USR_INCLUDES += -I$(XML2_INCLUDE)
+    USR_INCLUDES += $(addprefix -I, $(XML2_INCLUDE))
   endif
   ifdef XML2_LIB
     xml2_DIR     = $(XML2_LIB)

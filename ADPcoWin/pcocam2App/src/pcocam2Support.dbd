@@ -1,0 +1,4 @@
+registrar("pcoRegister")
+registrar("simulationApiRegister")
+registrar("gangServerRegister")
+registrar("gangConnectionRegister")

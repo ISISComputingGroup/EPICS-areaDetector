@@ -1,0 +1,17 @@
+file "ADBase_settings.req", P=$(P), R=$(R)
+file "NDFile_settings.req", P=$(P), R=$(R)
+$(P)$(R)DelayTime
+$(P)$(R)ImageFileTmot
+$(P)$(R)AVGAcquire
+$(P)$(R)AVGCount
+$(P)$(R)AVGFile
+$(P)$(R)BGSubtract
+$(P)$(R)BGFile
+$(P)$(R)BackSubFlag
+$(P)$(R)MilDispBitShift
+$(P)$(R)MilDispOn
+$(P)$(R)MilDispLog
+$(P)$(R)MilDispOffset
+$(P)$(R)MilDispScale
+
+

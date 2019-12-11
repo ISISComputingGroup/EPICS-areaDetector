@@ -7,7 +7,7 @@
 # EPICS BASE Versions 3.13.7
 # and higher are distributed subject to a Software License Agreement found
 # in file LICENSE that is included with this distribution. 
-#*************************************************************************
+#**********************************`:***************************************
 #
 #	makeHTML.pl
 #
@@ -32,6 +32,7 @@ use File::Path;
           "./ADCameraLink/documentation",
           "./ADCSimDetector/documentation",
           "./ADDexela/documentation",
+          "./ADEiger/documentation",
           "./ADFastCCD/documentation",
           "./ADFireWireWin/documentation",
           "./ADLambda/documentation",
@@ -52,6 +53,7 @@ use File::Path;
           "./ADQImaging/documentation",
           "./ADRoper/documentation",
           "./ADSimDetector/documentation",
+          "./ADSpinnaker/documentation",
           "./ADURL/documentation",
           "./ADViewers/documentation",
           "./ADmar345/documentation",
@@ -71,6 +73,10 @@ foreach $dir (@subdirs) {
     $command = "cp " . $files . " " . "./html";
     system($command);
     $files = "../" . $dir . "/*.pdf";
+    copy($files,"./html");
+    $command = "cp " . $files . " " . "./html";
+    system($command);
+    $files = "../" . $dir . "/*.jpg";
     copy($files,"./html");
     $command = "cp " . $files . " " . "./html";
     system($command);

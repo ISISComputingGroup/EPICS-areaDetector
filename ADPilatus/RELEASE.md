@@ -6,13 +6,13 @@ https://github.com/areaDetector/ADPilatus.
 
 Tagged source code and pre-built binary releases prior to R2-0 are included
 in the areaDetector releases available via links at
-http://cars.uchicago.edu/software/epics/areaDetector.html.
+https://cars.uchicago.edu/software/epics/areaDetector.html.
 
 Tagged source code releases from R2-0 onward can be obtained at 
 https://github.com/areaDetector/ADPilatus/releases.
 
 Tagged prebuilt binaries from R2-0 onward can be obtained at
-http://cars.uchicago.edu/software/pub/ADPilatus.
+https://cars.uchicago.edu/software/pub/ADPilatus.
 
 The versions of EPICS base, asyn, and other synApps modules used for each release can be obtained from 
 the EXAMPLE_RELEASE_PATHS.local, EXAMPLE_RELEASE_LIBS.local, and EXAMPLE_RELEASE_PRODS.local
@@ -22,7 +22,48 @@ files respectively, in the configure/ directory of the appropriate release of th
 
 Release Notes
 =============
+R2-8 (XXX-December-2018)
+---
+* Moved cbfSrc from this repository to ADSupport/supportApp/cbfSrc.
+  This allows the new ADMMPAD repository to use the code as well.
+
+R2-7 (4-December-2018)
+---
+* Fixed problem with stopping an acquisition.  Previously the driver was sending the commands
+  "Stop" and "K", because these were the required commands for an old version of camserver.
+  New versions of camserver no longer support the "Stop" command, and the "K" command only
+  stops an acquisition series, not the current acquisition.  Replaced the "Stop" command with
+  "camcmd k" which also stops the current acquisition.
+* Increased the timeout for response on a camserver power reset command.
+* Removed obsolete display files in op/ui, op/opi, op/edl.
+  The correct versions are in the autoconvert subdirectories.
+
+R2-6 (2-July-2018)
+---
+* Added support for new PVs in ADCore R3-3 in opi files (NumQueuedArrays, etc.)
+* Added ADBuffers.adl to main medm screen.
+* Changed configure/RELEASE files for compatibility with areaDetector R3-3.
+* Improved op/*/autoconvert/* files with better medm files and better converters.
+
+
+R2-5 (28-January-2018)
+---
+* Added support for the ResetModulePower command in camserver 7.9.0 and higher.
+  This is important for CdTe detectors where the high-voltage needs to be cycled from
+  time to time, particularly after strong saturation of pixels.
+* Fixed the parsing of the camserver "Version" command for new versions of camserver
+  where it no longer contains the string "tvx-".
+* Fixed the parsing of the camserver "Thread" command to read the temperature and
+  relative humdidity.  Recent camserver versions do not always return "Channel 0:", 
+  and this prevented it from working correctly.
+* Fixed medm adl files to improve the autoconversion to other display manager files.
+* Added op/Makefile to automatically convert adl files to edl, ui, and opi files.
+* Updated the edl, ui, and opi autoconvert directories to contain the conversions
+  from the most recent adl files.
+
+
 R2-4 (04-July-2017)
+---
 * Only increment NDArrayCounter if the driver got an image.
   When acquiring with `ADNumImages` > 1, `NDArrayCounter`  was immediately incremented before the driver 
   confirmed that it actually got an image.
@@ -74,9 +115,5 @@ R2-0 (4-April-2014)
 R1-9-1 and earlier
 ------------------
 Release notes are part of the
-[areaDetector Release Notes](http://cars.uchicago.edu/software/epics/areaDetectorReleaseNotes.html).
+[areaDetector Release Notes](https://cars.uchicago.edu/software/epics/areaDetectorReleaseNotes.html).
 
-
-Future Releases
-===============
-* Support SetEnergy camserver command?

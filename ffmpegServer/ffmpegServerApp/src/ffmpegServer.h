@@ -1,15 +1,16 @@
 #ifndef ffmpegServer_H
 #define ffmpegServer_H
 
+#ifndef __STDC_CONSTANT_MACROS
+#define __STDC_CONSTANT_MACROS
+#endif
+
 #include <epicsTypes.h>
 #include <asynStandardInterfaces.h>
 
 #include "NDPluginDriver.h"
 
 /* null-httpd includes */
-#ifndef __STDC_CONSTANT_MACROS
-#define __STDC_CONSTANT_MACROS
-#endif
 extern "C" {
 #include "nullhttpd.h"
 }
@@ -29,6 +30,8 @@ extern "C" {
 #define ffmpegServerAlwaysOnString "FFMPEG_ALWAYS_ON" /* Always produce jpeg, even when no-one is listening (int32 read)*/
 #define ffmpegServerMaxWString     "FFMPEG_MAXW"      /* Maximum width of jpg to produce (int32 read/write)*/
 #define ffmpegServerMaxHString     "FFMPEG_MAXH"      /* Maximum height of jpg to produce (int32 read/write)*/
+#define ffmpegServerSetWString     "FFMPEG_SETW"      /* Specify width of jpg, forcing rescale (int32 read/write)*/
+#define ffmpegServerSetHString     "FFMPEG_SETH"      /* Specify height of jpg, forcing rescale (int32 read/write)*/
 
 /** Take an array source and compress it and serve it as an mjpeg stream. */
 class ffmpegStream : public NDPluginDriver {
@@ -54,6 +57,8 @@ protected:
     int ffmpegServerClients;
     int ffmpegServerMaxW;
     int ffmpegServerMaxH;
+    int ffmpegServerSetW;
+    int ffmpegServerSetH;
     int ffmpegServerAlwaysOn;
                                 
 private:

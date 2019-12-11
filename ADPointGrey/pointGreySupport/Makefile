@@ -21,20 +21,24 @@ INC += Utilities.h
 # Note, the following files were manually copied from the Point Grey distribution lib directories on Windows
 # and from /usr/lib on Linux.
 ifeq (windows-x64, $(findstring windows-x64, $(T_A)))
-LIB_INSTALLS    += ../os/windows-x64/FlyCapture2.lib
+LIB_INSTALLS    += ../os/windows-x64/FlyCapture2_v100.lib
+LIB_INSTALLS    += ../os/windows-x64/FlyCapture2_v120.lib
+LIB_INSTALLS    += ../os/windows-x64/FlyCapture2_v140.lib
 
 else ifeq (win32-x86, $(findstring win32-x86, $(T_A)))
-LIB_INSTALLS    += ../os/win32-x86/FlyCapture2.lib
+LIB_INSTALLS    += ../os/win32-x86/FlyCapture2_v100.lib
+LIB_INSTALLS    += ../os/win32-x86/FlyCapture2_v120.lib
+LIB_INSTALLS    += ../os/win32-x86/FlyCapture2_v140.lib
 
 else ifeq (linux-x86_64, $(findstring linux-x86_64, $(T_A)))
 LIB_INSTALLS    += ../os/linux-x86_64/libflycapture.so
 LIB_INSTALLS    += ../os/linux-x86_64/libflycapture.so.2
-LIB_INSTALLS    += ../os/linux-x86_64/libflycapture.so.2.8.3.1
+LIB_INSTALLS    += ../os/linux-x86_64/libflycapture.so.2.9.3.43
 
 else ifeq (linux-x86, $(findstring linux-x86, $(T_A)))
 LIB_INSTALLS    += ../os/linux-x86/libflycapture.so
 LIB_INSTALLS    += ../os/linux-x86/libflycapture.so.2
-LIB_INSTALLS    += ../os/linux-x86/libflycapture.so.2.8.3.1
+LIB_INSTALLS    += ../os/linux-x86/libflycapture.so.2.9.3.43
 
 endif
 
