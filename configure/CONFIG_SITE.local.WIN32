@@ -21,6 +21,7 @@ XML2_LIB     = $(LIBXML2)/lib/$(EPICS_HOST_ARCH)
 #ZLIB_EXTERNAL = NO
 #
 GRAPHICSMAGICK_EXTERNAL = NO
+GRAPHICSMAGICK_PREFIX_SYMBOLS = YES
 #GRAPHICSMAGICK_INCLUDE = $(ICPBINARYDIR)/GraphicsMagick/include -I$(ICPBINARYDIR)/GraphicsMagick/include/Magick++/lib
 #ifneq ($(findstring windows,$(EPICS_HOST_ARCH)),)
 #GRAPHICSMAGICK_LIB     = $(ICPBINARYDIR)/GraphicsMagick/x64/Release/lib
