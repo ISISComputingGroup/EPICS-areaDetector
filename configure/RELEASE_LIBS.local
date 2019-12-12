@@ -28,8 +28,8 @@ ADSUPPORT = $(AREA_DETECTOR)/ADSupport
 ADCORE=$(AREA_DETECTOR)/ADCore
 
 # external libxml2
-LIBXML2=$(SUPPORT)/libxml2/master
-LIBICONV=$(SUPPORT)/libiconv/master
+#LIBXML2=$(SUPPORT)/libxml2/master
+#LIBICONV=$(SUPPORT)/libiconv/master
 
 OPENCV=$(SUPPORT)/OpenCV/master
 
