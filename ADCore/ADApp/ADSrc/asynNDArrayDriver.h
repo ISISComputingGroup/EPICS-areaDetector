@@ -1,6 +1,9 @@
 #ifndef asynNDArrayDriver_H
 #define asynNDArrayDriver_H
 
+#include <epicsMutex.h>
+#include <epicsEvent.h>
+
 #include "asynPortDriver.h"
 #include "NDArray.h"
 #include "ADCoreVersion.h"
@@ -39,6 +42,19 @@ typedef enum {
 #define NDADCoreVersionString   "ADCORE_VERSION"    /**< (asynOctet,    r/o) Version of ADCore */
 #define NDDriverVersionString   "DRIVER_VERSION"    /**< (asynOctet,    r/o) Version of this driver or plugin */
 
+/* These parameters were previously in ADDriver.h.
+ * We moved them here so they can be used by other types of drivers
+ * For consistency the #define and parameter names should begin with ND rather than AD but that would break
+ * backwards compatibility. */
+#define ADManufacturerString        "MANUFACTURER"          /**< (asynOctet,    r/o) Detector manufacturer name */
+#define ADModelString               "MODEL"                 /**< (asynOctet,    r/o) Detector model name */
+#define ADSerialNumberString        "SERIAL_NUMBER"         /**< (asynOctet,    r/o) Detector serial number */
+#define ADSDKVersionString          "SDK_VERSION"           /**< (asynOctet,    r/o) Vendor SDK version */
+#define ADFirmwareVersionString     "FIRMWARE_VERSION"      /**< (asynOctet,    r/o) Detector firmware version */
+#define ADAcquireString             "ACQUIRE"               /**< (asynInt32,    r/w) Start(1) or Stop(0) acquisition */
+#define ADAcquireBusyString         "ACQUIRE_BUSY"          /**< (asynInt32,    r/w) 0 when acquire done including plugins */
+#define ADWaitForPluginsString      "WAIT_FOR_PLUGINS"      /**< (asynInt32,    r/w) Wait for plugins before AcquireBusy goes to 0 */
+
 /* Parameters defining characteristics of the array data from the detector.
  * NDArraySizeX and NDArraySizeY are the actual dimensions of the array data,
  * including effects of the region definition and binning */
@@ -55,6 +71,8 @@ typedef enum {
 #define NDEpicsTSSecString      "EPICS_TS_SEC"      /**< (asynInt32,    r/o) EPOCS time stamp secPastEpoch of array */
 #define NDEpicsTSNsecString     "EPICS_TS_NSEC"     /**< (asynInt32,    r/o) EPOCS time stamp nsec of array */
 #define NDBayerPatternString    "BAYER_PATTERN"     /**< (asynInt32,    r/o) Bayer pattern of array  (from bayerPattern array attribute if present) */
+#define NDCodecString           "CODEC"             /**< (asynOctet,    r/o) Codec name */
+#define NDCompressedSizeString  "COMPRESSED_SIZE"   /**< (asynInt32,    r/o) Compressed size in bytes */
 
 /* Statistics on number of arrays collected */
 #define NDArrayCounterString    "ARRAY_COUNTER"     /**< (asynInt32,    r/w) Number of arrays since last reset */
@@ -95,12 +113,16 @@ typedef enum {
 #define NDArrayDataString       "ARRAY_DATA"        /**< (asynGenericPointer,   r/w) NDArray data */
 #define NDArrayCallbacksString  "ARRAY_CALLBACKS"   /**< (asynInt32,    r/w) Do callbacks with array data (0=No, 1=Yes) */
 
-/* NDArray Pool status */
+/* NDArray Pool status and control */
 #define NDPoolMaxBuffersString      "POOL_MAX_BUFFERS"
 #define NDPoolAllocBuffersString    "POOL_ALLOC_BUFFERS"
 #define NDPoolFreeBuffersString     "POOL_FREE_BUFFERS"
 #define NDPoolMaxMemoryString       "POOL_MAX_MEMORY"
 #define NDPoolUsedMemoryString      "POOL_USED_MEMORY"
+#define NDPoolEmptyFreeListString   "POOL_EMPTY_FREELIST"
+
+/* Queued arrays */
+#define NDNumQueuedArraysString     "NUM_QUEUED_ARRAYS"
 
 /** This is the class from which NDArray drivers are derived; implements the asynGenericPointer functions 
   * for NDArray objects. 
@@ -118,6 +140,9 @@ public:
                           size_t *nActual);
     virtual asynStatus readGenericPointer(asynUser *pasynUser, void *genericPointer);
     virtual asynStatus writeGenericPointer(asynUser *pasynUser, void *genericPointer);
+    virtual asynStatus writeInt32(asynUser *pasynUser, epicsInt32 value);
+    virtual asynStatus setIntegerParam(int index, int value);
+    virtual asynStatus setIntegerParam(int list, int index, int value);
     virtual asynStatus readInt32(asynUser *pasynUser, epicsInt32 *value);
     virtual asynStatus readFloat64(asynUser *pasynUser, epicsFloat64 *value);
     virtual void report(FILE *fp, int details);
@@ -125,16 +150,33 @@ public:
     /* These are the methods that are new to this class */
     virtual asynStatus createFilePath(const char *path, int pathDepth);
     virtual asynStatus checkPath();
+    virtual bool checkPath(std::string &filePath);
     virtual asynStatus createFileName(int maxChars, char *fullFileName);
     virtual asynStatus createFileName(int maxChars, char *filePath, char *fileName);
     virtual asynStatus readNDAttributesFile();
     virtual asynStatus getAttributes(NDAttributeList *pAttributeList);
+
+    asynStatus incrementQueuedArrayCount();
+    asynStatus decrementQueuedArrayCount();
+    int getQueuedArrayCount();
+    void updateQueuedArrayCount();
+    
+    class NDArrayPool *pNDArrayPool;     /**< An NDArrayPool pointer that is initialized to pNDArrayPoolPvt_ in the constructor.
+                                     * Plugins change this pointer to the one passed in NDArray::pNDArrayPool */
 
 protected:
     int NDPortNameSelf;
     #define FIRST_NDARRAY_PARAM NDPortNameSelf
     int NDADCoreVersion;
     int NDDriverVersion;
+    int ADManufacturer;
+    int ADModel;
+    int ADSerialNumber;
+    int ADSDKVersion;
+    int ADFirmwareVersion;
+    int ADAcquire;
+    int ADAcquireBusy;
+    int ADWaitForPlugins;
     int NDArraySizeX;
     int NDArraySizeY;
     int NDArraySizeZ;
@@ -148,6 +190,8 @@ protected:
     int NDEpicsTSSec;
     int NDEpicsTSNsec;
     int NDBayerPattern;
+    int NDCodec;
+    int NDCompressedSize;
     int NDArrayCounter;
     int NDFilePath;
     int NDFilePathExists;
@@ -180,13 +224,24 @@ protected:
     int NDPoolFreeBuffers;
     int NDPoolMaxMemory;
     int NDPoolUsedMemory;
+    int NDPoolEmptyFreeList;
+    int NDNumQueuedArrays;
 
-    NDArray **pArrays;             /**< An array of NDArray pointers used to store data in the driver */
-    NDArrayPool *pNDArrayPool;     /**< An NDArrayPool object used to allocate and manipulate NDArray objects */
-    class NDAttributeList *pAttributeList;  /**< An NDAttributeList object used to obtain the current values of a set of
-                                          *  attributes */
+    class NDArray **pArrays;             /**< An array of NDArray pointers used to store data in the driver */
+    class NDAttributeList *pAttributeList;  /**< An NDAttributeList object used to obtain the current values of a set of attributes */
     int threadStackSize_;
     int threadPriority_;
+
+private:
+    NDArrayPool *pNDArrayPoolPvt_;
+    epicsMutex *queuedArrayCountMutex_;
+    epicsEventId queuedArrayEvent_;
+    int queuedArrayCount_;
+    
+    bool queuedArrayUpdateRun_;
+    epicsEventId queuedArrayUpdateDone_;
+
+    friend class NDArrayPool;
 
 };
 

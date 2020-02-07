@@ -1,0 +1,73 @@
+/**
+\mainpage pcocam2 EPICS Support Module
+
+EPICS support module for PCO cameras
+
+<a href="../MA_DCSDKWINE_116.pdf">PCO SDK description</a>
+
+<a href="../MA_SDKCNVWINE_120.pdf">PCO Convert SDK description</a>
+
+\section release_sec Release notes
+
+<h3>Release 3-0-4</h3>
+<ul>
+<li>Updated to areaDetector 2: ADCore 2-3-dls3, requiring ADBinaries 2-2dls2.</li>
+<li>Added a standalone example IOC.</li>
+<li>Added Camera performance statistics PVs.</li>
+<li>Added PV for "confimred stop" command which calls back once stop is complete.</li>
+<li>Make only 16-bit mode available and remove image reversal.</li>
+</ul>
+
+<h3>Release 2-3-3</h3>
+<ul>
+<li>Updated area detector to 1-9dls19.</li>
+<li>Removed 32 bit windows build.</li>
+<li>Made the options in the Pixel Rate widget in the EDM GUI update when the camera connects.</li>
+<li>Added wait for entry into recording state for an arm command.</li>
+<li>Fixed faulty frame number tracking when bit alignment is LSB.</li>
+<li>Additional status PVs added.</li>
+<li>Fix for a problem where memory fills up.</li>
+<li>Fixed issue when exiting from a hardware ROI or binning.</li>
+<li>Now drop garbage frames created by the PCO4000 when acquiring without arming.</li>
+<li>Added busy record to arm mode, so that when arming the Channel Access callback is not made until the arm is complete.</li>
+<li>Added connection state PV and 20 second startup delay.</li>
+<li>Fix some race conditions.</li>
+<li>Add ability to poll buffers.</li>
+</ul>
+
+<h3>Release 1-8</h3>
+<ul>
+<li>Spurious frames created by the PCO4000 when arm is pressed removed.</li>
+<li>Support for cooling set point for the cameras that have this feature.</li>
+<li>Added external trigger only mode.</li>
+<li>Camera reported min/max exposure times now enforced.</li>
+<li>Hardware binning and ROI faults fixed.  Working well with the PCO Edge.  On the
+4000 and Dimax, returning to full frame requires a camera reboot. Work still in progress.</li>
+<li>Added experimental reboot command that only works with the Edge.</li>
+<li>Removed automatic selection of the fastest pixel clock rate.</li>
+<li>Fixed fault with Edge in its fastest clock rate where the pixels 'wrapped round' causing a faulty image.</li>
+<li>Added camlink large gap mode</li>
+<li>Fixed frame number tracking that detects missing frames.</li>
+</ul>
+
+<h3>Release 1-3</h3>
+<ul>
+<li>Initial public version.  Most development done with the PCO Edge camera. Also
+tested with the PCO Dimax and PCO 4000 cameras, with the following known issues.
+With the Dimax, the ROI feature can lock the camera up, so don't use.
+Also with the Dimax, recovery from an acquisition time that is longer than the
+maximum allowed currently requires the IOC to be restarted.
+The ROI feature has not been tested with the PCO4000. </li>
+</ul>
+
+
+\section user_sec User Manual
+This section contains instructions for the end user
+
+\section build_sec Example IOC Build Instructions 
+The page \subpage build_instructions_exampleStandalone contains instructions for building a minimal IOC using this support module. 
+
+IOCs built using these build instructions are provided in iocs/
+**/
+
+/* Build instructions page will be generated from the xml file given to dls-xml-iocbuilder.py --doc */

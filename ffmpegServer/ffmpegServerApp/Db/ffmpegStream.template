@@ -92,7 +92,7 @@ record(ao, "$(P)$(R)SETW") {
   field(DTYP, "asynInt32")
   field(OUT, "@asyn($(PORT) 0)FFMPEG_SETW")
   field(VAL, "$(SETW=0)")
-  field(PINI, "1")  
+  field(PINI, "1")
 }
 
 # # Set jpg width Readback from driver
@@ -109,7 +109,7 @@ record(ao, "$(P)$(R)SETH") {
   field(DTYP, "asynInt32")
   field(OUT, "@asyn($(PORT) 0)FFMPEG_SETH")
   field(VAL, "$(SETH=0)")
-  field(PINI, "1")  
+  field(PINI, "1")
 }
 
 # # Set jpg height Readback from driver

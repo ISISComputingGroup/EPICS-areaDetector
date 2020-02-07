@@ -1,0 +1,153 @@
+# Database for the records specific to the ADAravis driver
+# Macros:
+#% macro, P, Device Prefix
+#% macro, R, Device Suffix
+#% macro, PORT, Asyn Port name
+#% macro, TIMEOUT, Timeout, default 1
+#% macro, ADDR, Asyn Port address, default 0
+
+include "ADGenICam.template"
+
+record(ai, "$(P)$(R)ARFramesCompleted")
+{
+   field(DTYP, "asynFloat64")
+   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARAVIS_COMPLETED")
+   field(SCAN, "I/O Intr")
+   info(autosaveFields, "DESC LLSV LOLO LOW LSV")
+}
+
+record(ai, "$(P)$(R)ARFrameFailures")
+{
+   field(DTYP, "asynFloat64")
+   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARAVIS_FAILURES")
+   field(SCAN, "I/O Intr")
+   info(autosaveFields, "DESC HHSV HIHI HIGH HSV")
+}
+
+record(ai, "$(P)$(R)ARFrameUnderruns")
+{
+   field(DTYP, "asynFloat64")
+   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARAVIS_UNDERRUNS")
+   field(SCAN, "I/O Intr")
+   info(autosaveFields, "DESC HHSV HIHI HIGH HSV")
+}
+
+record(longin, "$(P)$(R)ARMissingPackets")
+{
+   field(DTYP, "asynInt32")
+   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARAVIS_MISSING_PKTS")
+   field(SCAN, "I/O Intr")
+   info(autosaveFields, "DESC HHSV HIHI HIGH HSV")
+}
+
+record(longin, "$(P)$(R)ARResentPackets")
+{
+   field(DTYP, "asynInt32")
+   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARAVIS_RESENT_PKTS")
+   field(SCAN, "I/O Intr")
+   info(autosaveFields, "DESC HHSV HIHI HIGH HSV")
+}
+
+record(mbbo, "$(P)$(R)ARPacketResendEnable")
+{
+   field(DESC, "Packet resend enable")
+   field(DTYP, "asynInt32")
+   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARAVIS_PKT_RESEND")
+   field(ZRST, "Never")
+   field(ZRVL, "0")
+   field(ONST, "Always")
+   field(ONVL, "1")
+   field(VAL,  "1")
+   field(PINI, "1")
+   info(autosaveFields, "DESC ONSV SRSV PINI VAL")
+}
+
+record(longout, "$(P)$(R)ARPacketTimeout")
+{
+   field(DESC, "Delay in us before packet resend request")
+   field(DTYP, "asynInt32")
+   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARAVIS_PKT_TIMEOUT")
+   field(VAL,  "20000")
+   field(EGU,  "us")
+   field(PINI, "1")
+   info(autosaveFields, "DESC HHSV HIHI HIGH HSV LLSV LOLO LOW LSV PINI VAL")
+}
+
+record(longout, "$(P)$(R)ARFrameRetention")
+{
+   field(DESC, "Frame timeout in us after last packet")
+   field(DTYP, "asynInt32")
+   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARAVIS_FRAME_RETENTION")
+   field(VAL,  "100000")
+   field(EGU,  "us")
+   field(PINI, "1")
+   info(autosaveFields, "DESC HHSV HIHI HIGH HSV LLSV LOLO LOW LSV PINI VAL")
+}
+
+record(longout, "$(P)$(R)ARResetCamera")
+{
+   field(DTYP, "asynInt32")
+   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARAVIS_RESET")
+   field(FLNK, "$(P)$(R)ARConnectCamera")
+}
+
+record(longout, "$(P)$(R)ARConnectCamera")
+{
+   field(DTYP, "asynInt32")
+   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARAVIS_CONNECTION")
+   field(VAL, "1")
+   field(PINI, "1")
+}
+
+record(calcout, "$(P)$(R)ARCheckConnection")
+{
+   field(SCAN, "1 second")
+   field(INPA, "$(P)$(R)ARConnectCamera.SEVR CP")
+   field(CALC, "A==0")
+   field(OOPT, "When Non-zero")
+   field(OUT,  "$(P)$(R)ARConnectCamera.PROC PP")
+}
+
+record(mbbi, "$(P)$(R)ARLeftShift_RBV") {
+  field(DTYP, "asynInt32")
+  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARAVIS_LEFTSHIFT")
+  field(ZRST, "No")
+  field(ZRVL, "0")
+  field(ONST, "Yes")
+  field(ONVL, "1")
+  field(SCAN, "I/O Intr")
+  info(autosaveFields, "DESC ZRSV ONSV")
+}
+
+## If this is set to 1, then 10, 12 and 16 bit images will be left shifted 
+## so that a pixel with maximum exposure = 2^16 no matter what the pixel format 
+record(mbbo, "$(P)$(R)ARLeftShift") {
+  field(DTYP, "asynInt32")
+  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARAVIS_LEFTSHIFT")
+  field(ZRST, "No")
+  field(ZRVL, "0")
+  field(ONST, "Yes")
+  field(ONVL, "1")
+  info(autosaveFields, "DESC ZRSV ONSV VAL")
+}
+
+record(bi, "$(P)$(R)ARHWImageMode_RBV") {
+  field(DESC, "Use HW register for acquisition modes")
+  field(DTYP, "asynInt32")
+  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARAVIS_HWIMAGEMODE")
+  field(ZNAM, "No")
+  field(ONAM, "Yes")
+  field(SCAN, "I/O Intr")
+  info(autosaveFields, "DESC ZRSV ONSV")
+}
+
+## If this is set to 1, the acquisition mode is communicated to the
+## hardware, on zero a software based implementation is used
+record(bo, "$(P)$(R)ARHWImageMode") {
+  field(DESC, "Use HW register for image modes")
+  field(DTYP, "asynInt32")
+  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARAVIS_HWIMAGEMODE")
+  field(ZNAM, "No")
+  field(ONAM, "Yes")
+  info(autosaveFields, "DESC ZRSV ONSV VAL")
+}

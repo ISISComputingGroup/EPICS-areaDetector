@@ -19,10 +19,11 @@ LIBRARY_IOC += NDPluginEdge
 
 NDPluginEdge_SRCS += NDPluginEdge.cpp
 
-USR_INCLUDES += -I$(OPENCV_INCLUDE)
-
 NDPluginEdge_LIBS       += NDPlugin
 
+ifdef OPENCV_INCLUDE
+  USR_INCLUDES += $(addprefix -I, $(OPENCV_INCLUDE))
+endif 
 ifdef OPENCV_LIB
   opencv_core_DIR += $(OPENCV_LIB)
   NDPluginEdge_LIBS       += opencv_core opencv_imgproc

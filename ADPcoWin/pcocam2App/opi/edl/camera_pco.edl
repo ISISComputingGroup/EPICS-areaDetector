@@ -1,0 +1,144 @@
+4 0 1
+beginScreenProperties
+major 4
+minor 0
+release 1
+x 1028
+y 189
+w 400
+h 865
+font "arial-bold-r-12.0"
+ctlFont "arial-bold-r-12.0"
+btnFont "arial-bold-r-12.0"
+fgColor index 14
+bgColor index 3
+textColor index 14
+ctlFgColor1 index 25
+ctlFgColor2 index 25
+ctlBgColor1 index 3
+ctlBgColor2 index 3
+topShadowColor index 1
+botShadowColor index 11
+showGrid
+gridSize 5
+endScreenProperties
+
+# (Choice Button)
+object activeChoiceButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 4
+y 3
+w 391
+h 25
+fgColor index 14
+bgColor index 3
+selectColor index 4
+inconsistentColor index 0
+topShadowColor index 1
+botShadowColor index 11
+controlPv "LOC\\$(!W)menu=e:0,Camera,ROI0,ROI1,Waveform,HDF5,TIFF1,sim"
+font "arial-bold-r-12.0"
+orientation "horizontal"
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 1
+x 4
+y 29
+w 392
+h 832
+lineColor index 1
+fillColor index 3
+numPoints 3
+xPoints {
+  0 4
+  1 396
+  2 396
+}
+yPoints {
+  0 861
+  1 861
+  2 29
+}
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 1
+x 4
+y 29
+w 392
+h 832
+lineColor index 11
+fillColor index 3
+numPoints 3
+xPoints {
+  0 4
+  1 4
+  2 396
+}
+yPoints {
+  0 861
+  1 29
+  2 29
+}
+endObjectProperties
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 5
+y 30
+w 390
+h 830
+fgColor index 14
+bgColor index 3
+topShadowColor index 1
+botShadowColor index 11
+displaySource "menu"
+filePv "LOC\\$(!W)menu"
+sizeOfs 6
+numDsps 7
+displayFileName {
+  0 "pcoDetector"
+  1 "NDROI"
+  2 "NDROI"
+  3 "NDStdArrays"
+  4 "NDFileHDF5"
+  5 "NDFileTIFF"
+  6 "simDetector"
+}
+symbols {
+  0 "P=$(P),R=PCO1:,label=pco"
+  1 "P=$(P),R=ROI:,label=roi"
+  2 "P=$(P),R=ROI1:,label=roi1"
+  3 "P=$(P),R=ARR1:,label=array"
+  4 "P=$(P),R=HDF5:,label=HDF5"
+  5 "P=$(P),R=TIFF1:,label=tiff1"
+  6 "P=$(P),R=PCOSIM1:,label=sim"
+}
+propagateMacros {
+  0 0
+  1 0
+  2 0
+  3 0
+  4 0
+  5 0
+  6 0
+}
+noScroll
+endObjectProperties
+

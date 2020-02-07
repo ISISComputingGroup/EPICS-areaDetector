@@ -39,7 +39,7 @@
 #include <epicsExport.h>
 
 #define DRIVER_VERSION      2
-#define DRIVER_REVISION     3
+#define DRIVER_REVISION     5
 #define DRIVER_MODIFICATION 0
 
 static const char *driverName = "prosilica";
@@ -84,6 +84,8 @@ protected:
     int PSReadStatistics;
     #define FIRST_PS_PARAM PSReadStatistics
     int PSBayerConvert;
+    int PSGainMode;
+    int PSExposureMode;
     int PSDriverType;
     int PSFilterVersion;
     int PSTimestampType;
@@ -118,7 +120,8 @@ protected:
     int PSStrobe1Delay;
     int PSStrobe1CtlDuration;
     int PSStrobe1Duration;
-    #define LAST_PS_PARAM PSStrobe1Duration
+    int PSTemperatureMainboard;
+    #define LAST_PS_PARAM PSTemperatureMainboard
 private:                                        
     /* These are the methods that are new to this class */
     asynStatus setPixelFormat();
@@ -251,13 +254,28 @@ static const char *PSStrobeModes[] = {
     "SyncIn4",
 };
 #define NUM_STROBE_MODES (int)(sizeof(PSStrobeModes) / sizeof(PSStrobeModes[0]))
-     
- 
+
+static const char *PSExposureModes[] = {
+    "Manual",
+    "AutoOnce",
+    "Auto",
+    "External",
+};
+#define NUM_EXPOSURE_MODES (int)(sizeof(PSExposureModes) / sizeof(PSExposureModes[0]))
+
+static const char *PSGainModes[] = {
+    "Manual",
+    "AutoOnce",
+    "Auto",
+};
+#define NUM_GAIN_MODES (int)(sizeof(PSGainModes) / sizeof(PSGainModes[0]))
 
 /** Driver-specific parameters for the Prosilica driver */
     /*                                       String              asyn interface  access   Description  */
 #define PSReadStatisticsString       "PS_READ_STATISTICS"      /* (asynInt32,    r/w) Write to read statistics  */ 
 #define PSBayerConvertString         "PS_BAYER_CONVERT"        /* (asynInt32,    r/w) Convert Bayer to another format */ 
+#define PSGainModeString             "PS_GAIN_MODE"            /* (asynInt32,    r/w) Camera gain mode, manual or auto */
+#define PSExposureModeString         "PS_EXPOSURE_MODE"        /* (asynInt32,    r/w) Camera exposure mode, manual or auto */
 #define PSDriverTypeString           "PS_DRIVER_TYPE"          /* (asynOctet,    r/o) Ethernet driver type */ 
 #define PSFilterVersionString        "PS_FILTER_VERSION"       /* (asynOctet,    r/o) Ethernet packet filter version */ 
 #define PSTimestampTypeString        "PS_TIMESTAMP_TYPE"       /* (asynInt32,    r/w) Choose how the timestamping is performed */
@@ -292,6 +310,8 @@ static const char *PSStrobeModes[] = {
 #define PSStrobe1DelayString         "PS_STROBE_1_DELAY"       /* (asynFloat64,  r/w) Strobe 1 delay */
 #define PSStrobe1CtlDurationString   "PS_STROBE_1_CTL_DURATION"/* (asynInt32,    r/w) Strobe 1 controlled duration */
 #define PSStrobe1DurationString      "PS_STROBE_1_DURATION"    /* (asynFloat64,  r/w) Strobe 1 duration */
+#define PSTemperatureMainboardString "PS_TEMPERATURE_MAINBOARD"/* (asynFloat64,  r/o) Device temperature mainboard*/
+
 
 void prosilica::shutdown (void* arg) {
 
@@ -773,6 +793,7 @@ void prosilica::frameCallback(tPvFrame *pFrame)
         /* See if acquisition is done */
         if (this->framesRemaining > 0) this->framesRemaining--;
         if (this->framesRemaining == 0) {
+            setShutter(0);
             setIntegerParam(ADAcquire, 0);
             setIntegerParam(ADStatus, ADStatusIdle);
         }
@@ -1044,6 +1065,24 @@ asynStatus prosilica::readStats()
         }
     }
     
+    /* Device Temperature */
+    status |=  PvAttrFloat32Get(this->PvHandle, "DeviceTemperatureMainboard", &fval);
+    /* This parameter can be not supported */
+    if (status == ePvErrNotFound) {
+        status = 0;
+        status |= setDoubleParam(PSTemperatureMainboard, 0.);
+    } else if (status == 0) {
+        status |= setDoubleParam(PSTemperatureMainboard, fval);
+    }
+    status |=  PvAttrFloat32Get(this->PvHandle, "DeviceTemperatureSensor", &fval);
+    /* This parameter can be not supported */
+    if (status == ePvErrNotFound) {
+        status = 0;
+        status |= setDoubleParam(ADTemperatureActual, 0.);
+    } else if (status == 0) {
+        status |= setDoubleParam(ADTemperatureActual, fval);
+    }
+
     status |= PvAttrEnumGet(this->PvHandle, "SyncOut1Invert", buffer, sizeof(buffer), &nchars);
     if (strcmp(buffer, "Off") == 0) i = 0;
     else if (strcmp(buffer, "On") == 0) i = 1;
@@ -1197,6 +1236,32 @@ asynStatus prosilica::readParameters()
     status |= PvAttrUint32Get(this->PvHandle, "GainValue", &intVal);
     dval = intVal;
     status |= setDoubleParam(ADGain, dval);
+
+    /* Exposure mode can be maunal or auto */
+    status |= PvAttrEnumGet(this->PvHandle, "ExposureMode", buffer, sizeof(buffer), &nchars);
+    for (i=0; i<NUM_EXPOSURE_MODES; i++) {
+        if (strcmp(buffer, PSExposureModes[i]) == 0) {
+            status |= setIntegerParam(PSExposureMode, i);
+            break;
+        }
+    }
+    if (i == NUM_EXPOSURE_MODES) {
+        status |= setIntegerParam(PSExposureMode, 0);
+        status |= asynError;
+    }
+    
+    /* Gain mode can be maunal or auto */
+    status |= PvAttrEnumGet(this->PvHandle, "GainMode", buffer, sizeof(buffer), &nchars);
+    for (i=0; i<NUM_GAIN_MODES; i++) {
+        if (strcmp(buffer, PSGainModes[i]) == 0) {
+            status |= setIntegerParam(PSGainMode, i);
+            break;
+        }
+    }
+    if (i == NUM_GAIN_MODES) {
+        status |= setIntegerParam(PSGainMode, 0);
+        status |= asynError;
+    }
 
     /* Call the callbacks to update the values in higher layers */
     callParamCallbacks();
@@ -1556,9 +1621,11 @@ asynStatus prosilica::writeInt32(asynUser *pasynUser, epicsInt32 value)
                 break;
            }
             setIntegerParam(ADStatus, ADStatusAcquire);
+            setShutter(1);
             status |= PvCommandRun(this->PvHandle, "AcquisitionStart");
         } else {
             setIntegerParam(ADStatus, ADStatusIdle);
+            setShutter(0);
             status |= PvCommandRun(this->PvHandle, "AcquisitionAbort");
         }
     } else if (function == ADTriggerMode) {
@@ -1613,6 +1680,10 @@ asynStatus prosilica::writeInt32(asynUser *pasynUser, epicsInt32 value)
             status = setPixelFormat();
     } else if (function == PSResetTimer) {
             status = syncTimer();
+    } else if ( function == PSExposureMode ) {
+            status = PvAttrEnumSet(this->PvHandle, "ExposureMode", PSExposureModes[value]);
+    } else if ( function == PSGainMode ) {
+            status = PvAttrEnumSet(this->PvHandle, "GainMode", PSGainModes[value]);
     } else {
             /* If this is not a parameter we have handled call the base class */
             if (function < FIRST_PS_PARAM) status = ADDriver::writeInt32(pasynUser, value);
@@ -1783,43 +1854,46 @@ prosilica::prosilica(const char *portName, const char *cameraId, int maxBuffers,
     }
     pNode->pCamera = this;
     ellAdd(cameraList, (ELLNODE *)pNode);
-    
-    createParam(PSReadStatisticsString,    asynParamInt32,    &PSReadStatistics);
-    createParam(PSBayerConvertString,      asynParamInt32,    &PSBayerConvert);
-    createParam(PSDriverTypeString,        asynParamOctet,    &PSDriverType);
-    createParam(PSFilterVersionString,     asynParamOctet,    &PSFilterVersion);
-    createParam(PSTimestampTypeString,     asynParamInt32,    &PSTimestampType);
-    createParam(PSResetTimerString,        asynParamInt32,    &PSResetTimer);
-    createParam(PSFrameRateString,         asynParamFloat64,  &PSFrameRate);
-    createParam(PSByteRateString,          asynParamInt32,    &PSByteRate);
-    createParam(PSPacketSizeString,        asynParamInt32,    &PSPacketSize);
-    createParam(PSFramesCompletedString,   asynParamInt32,    &PSFramesCompleted);
-    createParam(PSFramesDroppedString,     asynParamInt32,    &PSFramesDropped);
-    createParam(PSPacketsErroneousString,  asynParamInt32,    &PSPacketsErroneous);
-    createParam(PSPacketsMissedString,     asynParamInt32,    &PSPacketsMissed);
-    createParam(PSPacketsReceivedString,   asynParamInt32,    &PSPacketsReceived);
-    createParam(PSPacketsRequestedString,  asynParamInt32,    &PSPacketsRequested);
-    createParam(PSPacketsResentString,     asynParamInt32,    &PSPacketsResent);
-    createParam(PSBadFrameCounterString,   asynParamInt32,    &PSBadFrameCounter);
-    createParam(PSTriggerDelayString,      asynParamFloat64,  &PSTriggerDelay);
-    createParam(PSTriggerEventString,      asynParamInt32,    &PSTriggerEvent);
-    createParam(PSTriggerOverlapString,    asynParamInt32,    &PSTriggerOverlap);
-    createParam(PSTriggerSoftwareString,   asynParamInt32,    &PSTriggerSoftware);
-    createParam(PSSyncIn1LevelString,      asynParamInt32,    &PSSyncIn1Level);
-    createParam(PSSyncIn2LevelString,      asynParamInt32,    &PSSyncIn2Level);
-    createParam(PSSyncOut1ModeString,      asynParamInt32,    &PSSyncOut1Mode);
-    createParam(PSSyncOut1LevelString,     asynParamInt32,    &PSSyncOut1Level);
-    createParam(PSSyncOut1InvertString,    asynParamInt32,    &PSSyncOut1Invert);
-    createParam(PSSyncOut2ModeString,      asynParamInt32,    &PSSyncOut2Mode);
-    createParam(PSSyncOut2LevelString,     asynParamInt32,    &PSSyncOut2Level);
-    createParam(PSSyncOut2InvertString,    asynParamInt32,    &PSSyncOut2Invert);
-    createParam(PSSyncOut3ModeString,      asynParamInt32,    &PSSyncOut3Mode);
-    createParam(PSSyncOut3LevelString,     asynParamInt32,    &PSSyncOut3Level);
-    createParam(PSSyncOut3InvertString,    asynParamInt32,    &PSSyncOut3Invert);
-    createParam(PSStrobe1ModeString,       asynParamInt32,    &PSStrobe1Mode);
-    createParam(PSStrobe1DelayString,      asynParamFloat64,  &PSStrobe1Delay);
-    createParam(PSStrobe1CtlDurationString,asynParamInt32,    &PSStrobe1CtlDuration);
-    createParam(PSStrobe1DurationString,   asynParamFloat64,  &PSStrobe1Duration);
+ 
+    createParam(PSReadStatisticsString,      asynParamInt32,    &PSReadStatistics);
+    createParam(PSBayerConvertString,        asynParamInt32,    &PSBayerConvert);
+    createParam(PSGainModeString,            asynParamInt32,    &PSGainMode);
+    createParam(PSExposureModeString,        asynParamInt32,    &PSExposureMode);
+    createParam(PSDriverTypeString,          asynParamOctet,    &PSDriverType);
+    createParam(PSFilterVersionString,       asynParamOctet,    &PSFilterVersion);
+    createParam(PSTimestampTypeString,       asynParamInt32,    &PSTimestampType);
+    createParam(PSResetTimerString,          asynParamInt32,    &PSResetTimer);
+    createParam(PSFrameRateString,           asynParamFloat64,  &PSFrameRate);
+    createParam(PSByteRateString,            asynParamInt32,    &PSByteRate);
+    createParam(PSPacketSizeString,          asynParamInt32,    &PSPacketSize);
+    createParam(PSFramesCompletedString,     asynParamInt32,    &PSFramesCompleted);
+    createParam(PSFramesDroppedString,       asynParamInt32,    &PSFramesDropped);
+    createParam(PSPacketsErroneousString,    asynParamInt32,    &PSPacketsErroneous);
+    createParam(PSPacketsMissedString,       asynParamInt32,    &PSPacketsMissed);
+    createParam(PSPacketsReceivedString,     asynParamInt32,    &PSPacketsReceived);
+    createParam(PSPacketsRequestedString,    asynParamInt32,    &PSPacketsRequested);
+    createParam(PSPacketsResentString,       asynParamInt32,    &PSPacketsResent);
+    createParam(PSBadFrameCounterString,     asynParamInt32,    &PSBadFrameCounter);
+    createParam(PSTriggerDelayString,        asynParamFloat64,  &PSTriggerDelay);
+    createParam(PSTriggerEventString,        asynParamInt32,    &PSTriggerEvent);
+    createParam(PSTriggerOverlapString,      asynParamInt32,    &PSTriggerOverlap);
+    createParam(PSTriggerSoftwareString,     asynParamInt32,    &PSTriggerSoftware);
+    createParam(PSSyncIn1LevelString,        asynParamInt32,    &PSSyncIn1Level);
+    createParam(PSSyncIn2LevelString,        asynParamInt32,    &PSSyncIn2Level);
+    createParam(PSSyncOut1ModeString,        asynParamInt32,    &PSSyncOut1Mode);
+    createParam(PSSyncOut1LevelString,       asynParamInt32,    &PSSyncOut1Level);
+    createParam(PSSyncOut1InvertString,      asynParamInt32,    &PSSyncOut1Invert);
+    createParam(PSSyncOut2ModeString,        asynParamInt32,    &PSSyncOut2Mode);
+    createParam(PSSyncOut2LevelString,       asynParamInt32,    &PSSyncOut2Level);
+    createParam(PSSyncOut2InvertString,      asynParamInt32,    &PSSyncOut2Invert);
+    createParam(PSSyncOut3ModeString,        asynParamInt32,    &PSSyncOut3Mode);
+    createParam(PSSyncOut3LevelString,       asynParamInt32,    &PSSyncOut3Level);
+    createParam(PSSyncOut3InvertString,      asynParamInt32,    &PSSyncOut3Invert);
+    createParam(PSStrobe1ModeString,         asynParamInt32,    &PSStrobe1Mode);
+    createParam(PSStrobe1DelayString,        asynParamFloat64,  &PSStrobe1Delay);
+    createParam(PSStrobe1CtlDurationString,  asynParamInt32,    &PSStrobe1CtlDuration);
+    createParam(PSStrobe1DurationString,     asynParamFloat64,  &PSStrobe1Duration);
+    createParam(PSTemperatureMainboardString,asynParamFloat64,  &PSTemperatureMainboard);
 
     /* There is a conflict with readline use of signals, don't use readline signal handlers */
 #ifdef linux

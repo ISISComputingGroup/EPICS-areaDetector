@@ -14,7 +14,6 @@
         <string>
 
 QWidget#centralWidget {background: rgba(187, 187, 187, 255);}
-QPushButton::menu-indicator {image: url(none.png); width: 0}
 
 caTable {
        font: 10pt;
@@ -240,7 +239,7 @@ border-radius: 2px;
                 <rect>
                     <x>45</x>
                     <y>81</y>
-                    <width>204</width>
+                    <width>130</width>
                     <height>20</height>
                 </rect>
             </property>
@@ -384,7 +383,7 @@ border-radius: 2px;
                 <rect>
                     <x>45</x>
                     <y>181</y>
-                    <width>156</width>
+                    <width>130</width>
                     <height>20</height>
                 </rect>
             </property>
@@ -420,7 +419,7 @@ border-radius: 2px;
                 <rect>
                     <x>55</x>
                     <y>206</y>
-                    <width>168</width>
+                    <width>120</width>
                     <height>20</height>
                 </rect>
             </property>
@@ -492,7 +491,7 @@ border-radius: 2px;
                 <rect>
                     <x>45</x>
                     <y>279</y>
-                    <width>156</width>
+                    <width>130</width>
                     <height>20</height>
                 </rect>
             </property>
@@ -528,7 +527,7 @@ border-radius: 2px;
                 <rect>
                     <x>45</x>
                     <y>304</y>
-                    <width>192</width>
+                    <width>130</width>
                     <height>20</height>
                 </rect>
             </property>
@@ -1023,7 +1022,7 @@ border-radius: 2px;
                 <rect>
                     <x>75</x>
                     <y>11</y>
-                    <width>336</width>
+                    <width>300</width>
                     <height>20</height>
                 </rect>
             </property>
@@ -1059,7 +1058,7 @@ border-radius: 2px;
                 <rect>
                     <x>85</x>
                     <y>231</y>
-                    <width>108</width>
+                    <width>90</width>
                     <height>20</height>
                 </rect>
             </property>

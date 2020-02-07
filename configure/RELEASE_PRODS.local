@@ -1,3 +1,4 @@
+AREA_DETECTOR=$(SUPPORT)/areaDetector/master
 include $(AREA_DETECTOR)/configure/RELEASE_LIBS.local
 
 #AUTOSAVE is needed for save_restore

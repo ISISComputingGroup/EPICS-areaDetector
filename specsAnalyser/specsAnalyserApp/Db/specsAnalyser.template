@@ -1,0 +1,603 @@
+
+#% macro, P, Device Prefix
+#% macro, R, Device Suffix
+#% macro, PORT, Asyn Port name
+
+# This associates the template with an edm screen
+# % gui, $(PORT), edmtab, specsAnalyser.edl, P=$(P),R=$(R)
+
+include "ADBase.template"
+
+########## Disable Redundant areaDetector Fields #########
+
+record(longout, "$(P)$(R)BinX")
+{
+  field(DISA, "1")
+}
+
+record(longin, "$(P)$(R)BinX_RBV")
+{
+  field(DISA, "1")
+}
+
+record(longout, "$(P)$(R)BinY")
+{
+  field(DISA, "1")
+}
+
+record(longin, "$(P)$(R)BinY_RBV")
+{
+  field(DISA, "1")
+}
+
+record(longout, "$(P)$(R)MinX")
+{
+  field(DISA, "1")
+}
+
+record(longin, "$(P)$(R)MinX_RBV")
+{
+  field(DISA, "1")
+}
+
+record(longin, "$(P)$(R)MaxSizeX_RBV")
+{
+  field(DISA, "1")
+}
+
+record(longout, "$(P)$(R)MinY")
+{
+  field(DISA, "1")
+}
+
+record(longin, "$(P)$(R)MinY_RBV")
+{
+  field(DISA, "1")
+}
+
+record(longin, "$(P)$(R)MaxSizeX_RBV")
+{
+  field(DISA, "1")
+}
+
+record(longout, "$(P)$(R)SizeX")
+{
+  field(DISA, "1")
+}
+
+record(longin, "$(P)$(R)SizeX_RBV")
+{
+  field(DISA, "1")
+}
+
+record(longout, "$(P)$(R)SizeY")
+{
+  field(DISA, "1")
+}
+
+record(longin, "$(P)$(R)SizeY_RBV")
+{
+  field(DISA, "1")
+}
+
+record(ao, "$(P)$(R)Gain")
+{
+  field(DISA, "1")
+}
+
+record(ai, "$(P)$(R)Gain_RBV")
+{
+  field(DISA, "1")
+}
+
+record(bo, "$(P)$(R)ReverseX")
+{
+  field(DISA, "1")
+}
+
+record(bo, "$(P)$(R)ReverseY")
+{
+  field(DISA, "1")
+}
+
+record(ao, "$(P)$(R)DATA_DELAY_MAX")
+{
+#   field(PINI, "YES")
+   field(DTYP, "asynFloat64")
+   field(OUT,  "@asyn($(PORT),0)SPECS_DATA_DELAY_MAX")
+   field(PREC, "3")
+   field(VAL,  "5")
+#   info(autosaveFields, "VAL")
+}
+
+record(ai, "$(P)$(R)DATA_DELAY_MAX_RBV")
+{
+   field(DTYP, "asynFloat64")
+   field(INP,  "@asyn($(PORT),0)SPECS_DATA_DELAY_MAX")
+   field(PREC, "3")
+   field(SCAN, "I/O Intr")
+}
+
+record(bo, "$(P)$(R)SAFE_STATE") 
+{
+  field(DESC, "Set safe state")
+  field(DTYP, "asynInt32")
+  field(OUT,  "@asyn($(PORT) 0)SPECS_SAFE_STATE")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+}
+
+record(bi, "$(P)$(R)SAFE_STATE_RBV") 
+{
+  field(DESC, "Current safe state")
+  field(DTYP, "asynInt32")
+  field(INP,  "@asyn($(PORT) 0)SPECS_SAFE_STATE")
+  field(SCAN, "I/O Intr")
+  field(ZNAM, "False")
+  field(ONAM, "True")
+}
+
+# Force a connection to establish
+record(longout, "$(P)$(R)CONNECT") 
+{
+  field(DESC, "Force a connection")
+  field(DTYP, "asynInt32")
+  field(OUT,  "@asyn($(PORT) 0)SPECS_CONNECT")
+}
+
+# Report back the connected state of the IOC
+record(bi, "$(P)$(R)CONNECTED_RBV") 
+{
+  field(DESC, "Current connected status")
+  field(DTYP, "asynInt32")
+  field(INP,  "@asyn($(PORT) 0)SPECS_CONNECTED")
+  field(SCAN, "I/O Intr")
+  field(ZNAM, "Not Connected")
+  field(ONAM, "Connected")
+}
+
+# Report back current message counter
+record(longin, "$(P)$(R)COUNTER_RBV") 
+{
+  field(DESC, "Message counter Readback")
+  field(DTYP, "asynInt32")
+  field(INP,  "@asyn($(PORT) 0)SPECS_MSG_COUNTER")
+  field(SCAN, "I/O Intr")
+}
+
+# Set the number of samples
+record(longout, "$(P)$(R)SAMPLES") 
+{
+  field(DESC, "Number of samples to set")
+  field(DTYP, "asynInt32")
+  field(OUT,  "@asyn($(PORT) 0)SPECS_SAMPLES")
+  field(PINI, "YES")
+}
+
+# Report back the number of samples in the current iteration
+record(longin, "$(P)$(R)TOTAL_POINTS_ITERATION_RBV") 
+{
+  field(DESC, "Number of samples Readback")
+  field(DTYP, "asynInt32")
+  field(INP,  "@asyn($(PORT) 0)SPECS_SAMPLES_ITERATION")
+  field(SCAN, "I/O Intr")
+}
+
+# Report back the number of samples in the current spectrum
+record(longin, "$(P)$(R)TOTAL_POINTS_RBV") 
+{
+  field(DESC, "Number of samples Readback")
+  field(DTYP, "asynInt32")
+  field(INP,  "@asyn($(PORT) 0)SPECS_SAMPLES")
+  field(SCAN, "I/O Intr")
+}
+
+# Pause an acquisition
+record(bo, "$(P)$(R)PAUSE") 
+{
+  field(DESC, "Pause an acquisition")
+  field(DTYP, "asynInt32")
+  field(OUT,  "@asyn($(PORT) 0)SPECS_PAUSE_ACQ")
+  field(VAL,  "0")
+  field(ZNAM, "RUN")
+  field(ONAM, "PAUSE")
+}
+
+# Report back the number of snapshot values
+record(bi, "$(P)$(R)PAUSE_RBV") 
+{
+  field(DESC, "Current paused status")
+  field(DTYP, "asynInt32")
+  field(INP,  "@asyn($(PORT) 0)SPECS_PAUSE_ACQ")
+  field(SCAN, "I/O Intr")
+  field(ZNAM, "RUN")
+  field(ONAM, "PAUSED")
+}
+
+# Set the number of values (used by snapshot FAT mode)
+record(longout, "$(P)$(R)VALUES") 
+{
+  field(DESC, "Number of snapshot values to set")
+  field(DTYP, "asynInt32")
+  field(OUT,  "@asyn($(PORT) 0)SPECS_SNAPSHOT_VALUES")
+  field(PINI, "YES")
+}
+
+# Report back the number of snapshot values
+record(longin, "$(P)$(R)VALUES_RBV") 
+{
+  field(DESC, "Number of snapshot values readback")
+  field(DTYP, "asynInt32")
+  field(INP,  "@asyn($(PORT) 0)SPECS_SNAPSHOT_VALUES")
+  field(SCAN, "I/O Intr")
+}
+
+# Report back the number of samples in the current iteration
+record(longin, "$(P)$(R)CURRENT_POINT_RBV") 
+{
+  field(DESC, "Current sample number readback")
+  field(DTYP, "asynInt32")
+  field(INP,  "@asyn($(PORT) 0)SPECS_CRT_SAMPLE_ITER")
+  field(SCAN, "I/O Intr")
+}
+
+# Report back the number of samples in the current spectrum
+record(longin, "$(P)$(R)CURRENT_CHANNEL_RBV") 
+{
+  field(DESC, "Current sample number readback")
+  field(DTYP, "asynInt32")
+  field(INP,  "@asyn($(PORT) 0)SPECS_CURRENT_SAMPLE")
+  field(SCAN, "I/O Intr")
+}
+
+# Report back the current time left for an iteration
+record(ai, "$(P)$(R)REGION_TIME_LEFT_RBV") 
+{
+  field(DESC, "Time left for acquisition")
+  field(DTYP, "asynFloat64")
+  field(INP,  "@asyn($(PORT) 0)SPECS_RMG_TIME_ITER")
+  field(SCAN, "I/O Intr")
+  field(PREC, "1")
+  field(EGU,  "s")
+}
+
+# Report back the current time left for a scan
+record(ai, "$(P)$(R)TOTAL_TIME_LEFT_RBV") 
+{
+  field(DESC, "Time left for acquisition")
+  field(DTYP, "asynFloat64")
+  field(INP,  "@asyn($(PORT) 0)SPECS_REMAINING_TIME")
+  field(SCAN, "I/O Intr")
+  field(PREC, "1")
+  field(EGU,  "s")
+}
+
+# Report back the current progress of an iteration
+record(ai, "$(P)$(R)REGION_PROGRESS_RBV") 
+{
+  field(DESC, "Data Acq Progress")
+  field(DTYP, "asynInt32")
+  field(INP,  "@asyn($(PORT) 0)SPECS_PCT_COMPLETE_ITER")
+  field(SCAN, "I/O Intr")
+  field(PREC, "0")
+  field(EGU,  "%")
+}
+
+# Report back the current progress of a scan
+record(ai, "$(P)$(R)PROGRESS_RBV") 
+{
+  field(DESC, "Data Acq Progress")
+  field(DTYP, "asynInt32")
+  field(INP,  "@asyn($(PORT) 0)SPECS_PERCENT_COMPLETE")
+  field(SCAN, "I/O Intr")
+  field(PREC, "0")
+  field(EGU,  "%")
+}
+
+# Acquired integrated spectrum of data
+record(waveform, "$(P)$(R)INT_SPECTRUM")
+{
+  field(DESC, "Integrated Spectrum")
+  field(DTYP, "asynFloat64ArrayIn")
+  field(INP,  "@asyn($(PORT) 0)SPECS_ACQ_SPECTRUM")
+  field(SCAN, "I/O Intr")
+  field(FTVL, "DOUBLE")
+  field(NELM, "100000")
+}
+
+# Acquired image of data
+record(waveform, "$(P)$(R)IMAGE")
+{
+  field(DESC, "Data Image")
+  field(DTYP, "asynFloat64ArrayIn")
+  field(INP,  "@asyn($(PORT) 0)SPECS_ACQ_IMAGE")
+  field(SCAN, "I/O Intr")
+  field(FTVL, "DOUBLE")
+  field(NELM, "2000000")
+}
+
+# Report back the server name
+record(stringin, "$(P)$(R)SERVER_NAME_RBV")
+{
+  field(DESC, "Server name")
+  field(DTYP, "asynOctetRead")
+  field(INP,  "@asyn($(PORT) 0)SPECS_SERVER_NAME")
+  field(SCAN, "I/O Intr")
+}
+
+# Report back the protocol version
+record(stringin, "$(P)$(R)PROTOCOL_VERSION_RBV")
+{
+  field(DESC, "Protocol Version")
+  field(DTYP, "asynOctetRead")
+  field(INP,  "@asyn($(PORT) 0)SPECS_PROTOCOL_VERSION")
+  field(SCAN, "I/O Intr")
+}
+
+# Report back current number of slices used
+record(longin, "$(P)$(R)SLICES_RBV") 
+{
+  field(DESC, "Number of slices Readback")
+  field(DTYP, "asynInt32")
+  field(INP,  "@asyn($(PORT) 0)SPECS_NON_ENERGY_CHANNELS")
+  field(SCAN, "I/O Intr")
+}
+
+record(longout, "$(P)$(R)SLICES") 
+{
+  field(DESC, "Number of slices")
+  field(DTYP, "asynInt32")
+  field(OUT,  "@asyn($(PORT) 0)SPECS_NON_ENERGY_CHANNELS")
+  field(PINI, "0")
+  field(VAL,  "0")  
+}
+
+# Report back non-energy axis units
+record(stringin, "$(P)$(R)Y_UNITS_RBV")
+{
+  field(DESC, "Non-energy units RBV")
+  field(DTYP, "asynOctetRead")
+  field(INP,  "@asyn($(PORT) 0)SPECS_NON_ENERGY_UNITS")
+  field(SCAN, "I/O Intr")
+  field(VAL, "Unknown")
+}
+
+# Report back non-energy minimum range
+record(ai, "$(P)$(R)Y_MIN_RBV")
+{
+  field(DESC, "Non-energy minimum")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT) 0)SPECS_NON_ENERGY_MIN")
+  field(SCAN, "I/O Intr")
+  field(VAL, "0.0")
+}
+
+# Report back non-energy maximum range
+record(ai, "$(P)$(R)Y_MAX_RBV")
+{
+  field(DESC, "Non-energy maximum")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT) 0)SPECS_NON_ENERGY_MAX")
+  field(SCAN, "I/O Intr")
+  field(VAL, "0.0")
+}
+
+# Select lens mode
+record(mbbo, "$(P)$(R)LENS_MODE") 
+{
+  field(DESC, "Lens Mode")
+  field(DTYP, "asynInt32")
+  field(OUT,  "@asyn($(PORT) 0)SPECS_LENS_MODE")
+  field(PINI, "YES")
+  field(VAL,  "0")  
+}
+
+# Report back current lens mode
+record(mbbi, "$(P)$(R)LENS_MODE_RBV") 
+{
+  field(DESC, "Lens Mode Readback")
+  field(DTYP, "asynInt32")
+  field(INP,  "@asyn($(PORT) 0)SPECS_LENS_MODE")
+  field(SCAN, "I/O Intr")
+}
+
+# Select scan range
+record(mbbo, "$(P)$(R)SCAN_RANGE") 
+{
+  field(DESC, "Scan Range")
+  field(DTYP, "asynInt32")
+  field(OUT,  "@asyn($(PORT) 0)SPECS_SCAN_RANGE")
+  field(PINI, "YES")
+  field(VAL,  "0")  
+}
+
+# Report back current scan range
+record(mbbi, "$(P)$(R)SCAN_RANGE_RBV") 
+{
+  field(DESC, "Scan Range Readback")
+  field(DTYP, "asynInt32")
+  field(INP,  "@asyn($(PORT) 0)SPECS_SCAN_RANGE")
+  field(SCAN, "I/O Intr")
+}
+
+# Select run mode
+record(mbbo, "$(P)$(R)ACQ_MODE") 
+{
+  field(DESC, "Run Mode")
+  field(DTYP, "asynInt32")
+  field(OUT,  "@asyn($(PORT) 0)SPECS_RUN_MODE")
+  field(PINI, "YES")
+  field(VAL,  "0")  
+}
+
+# Report back current run mode
+record(mbbi, "$(P)$(R)ACQ_MODE_RBV") 
+{
+  field(DESC, "Run Mode Readback")
+  field(DTYP, "asynInt32")
+  field(INP,  "@asyn($(PORT) 0)SPECS_RUN_MODE")
+  field(SCAN, "I/O Intr")
+}
+
+# Set the currently defined parameters as a spectrum
+record(bo, "$(P)$(R)DEFINE_SPECTRUM") 
+{
+  field(DESC, "Define Spectrum")
+  field(DTYP, "asynInt32")
+  field(OUT,  "@asyn($(PORT) 0)SPECS_DEFINE")
+  field(PINI, "NO")
+}
+
+# Validate the current defined spectrum
+record(bo, "$(P)$(R)VALIDATE_SPECTRUM") 
+{
+  field(DESC, "Validate Spectrum")
+  field(DTYP, "asynInt32")
+  field(OUT,  "@asyn($(PORT) 0)SPECS_VALIDATE")
+  field(PINI, "NO")
+}
+
+###################### Energy (eV) ########################
+
+# Select pass energy
+record(ao, "$(P)$(R)PASS_ENERGY") 
+{
+  field(DESC, "Pass Energy")
+  field(DTYP, "asynFloat64")
+  field(OUT,  "@asyn($(PORT) 0)SPECS_PASS_ENERGY")
+  field(PREC, "3")
+  field(PINI, "YES")
+  field(VAL,  "10")  
+}
+
+# Report back current pass energy
+record(ai, "$(P)$(R)PASS_ENERGY_RBV") 
+{
+  field(DESC, "Pass Energy Readback")
+  field(DTYP, "asynFloat64")
+  field(SCAN, "I/O Intr")
+  field(INP,  "@asyn($(PORT) 0)SPECS_PASS_ENERGY")
+  field(PREC, "3")
+}
+
+# User enters desired low energy value
+record(ao, "$(P)$(R)LOW_ENERGY") 
+{
+  field(DESC, "Low Energy")
+  field(DTYP, "asynFloat64")
+  field(OUT,  "@asyn($(PORT) 0)SPECS_START_ENERGY")
+  field(PREC, "3")
+  field(PINI, "YES")
+  field(VAL,  "82")
+}
+
+# Report back current low energy value
+record(ai, "$(P)$(R)LOW_ENERGY_RBV") 
+{
+  field(DESC, "Low Energy Readback")
+  field(DTYP, "asynFloat64")
+  field(INP,  "@asyn($(PORT) 0)SPECS_START_ENERGY")
+  field(SCAN, "I/O Intr")
+  field(PREC, "3")
+  field(FLNK, "$(P)$(R)ENERGY_WIDTH_RBV")
+}
+
+# User enters desired high energy
+record(ao, "$(P)$(R)HIGH_ENERGY") 
+{
+  field(DESC, "High Energy")
+  field(DTYP, "asynFloat64")
+  field(OUT,  "@asyn($(PORT) 0)SPECS_END_ENERGY")
+  field(PREC, "3")
+  field(PINI, "YES")
+  field(VAL,  "86")
+}
+
+# Report back current high energy
+record(ai, "$(P)$(R)HIGH_ENERGY_RBV") 
+{
+  field(DESC, "High Energy Readback")
+  field(DTYP, "asynFloat64")
+  field(INP,  "@asyn($(PORT) 0)SPECS_END_ENERGY")
+  field(SCAN, "I/O Intr")
+  field(PREC, "3")
+  field(FLNK, "$(P)$(R)ENERGY_WIDTH_RBV")
+}
+
+# Calculate the energy width from the
+# the high and low energy values
+record(calc, "$(P)$(R)ENERGY_WIDTH_RBV")
+{
+  field(DESC, "Calculated energy width")
+  field(SCAN, "Passive")
+  field(CALC, "B-A")
+  field(INPA, "$(P)$(R)LOW_ENERGY_RBV")
+  field(INPB, "$(P)$(R)HIGH_ENERGY_RBV")
+  field(PREC, "3")
+}
+
+# User enters desired kinetic energy
+record(ao, "$(P)$(R)KINETIC_ENERGY") 
+{
+  field(DESC, "Kinetic Energy")
+  field(DTYP, "asynFloat64")
+  field(OUT,  "@asyn($(PORT) 0)SPECS_KINETIC_ENERGY")
+  field(PREC, "3")
+  field(PINI, "YES")
+  field(VAL,  "300.0")
+}
+
+# Report back current kinetic energy
+record(ai, "$(P)$(R)KINETIC_ENERGY_RBV") 
+{
+  field(DESC, "Kinetic Energy Readback")
+  field(DTYP, "asynFloat64")
+  field(INP,  "@asyn($(PORT) 0)SPECS_KINETIC_ENERGY")
+  field(SCAN, "I/O Intr")
+  field(PREC, "3")
+}
+
+# User enters desired retarding ratio
+record(ao, "$(P)$(R)RETARDING_RATIO") 
+{
+  field(DESC, "Retarding Ratio")
+  field(DTYP, "asynFloat64")
+  field(OUT,  "@asyn($(PORT) 0)SPECS_RETARDING_RATIO")
+  field(PREC, "3")
+  field(PINI, "YES")
+  field(VAL,  "10.0")
+}
+
+# Report back current retarding ratio
+record(ai, "$(P)$(R)RETARDING_RATIO_RBV") 
+{
+  field(DESC, "Retarding Ratio Readback")
+  field(DTYP, "asynFloat64")
+  field(INP,  "@asyn($(PORT) 0)SPECS_RETARDING_RATIO")
+  field(SCAN, "I/O Intr")
+  field(PREC, "3")
+}
+
+###################### Step ########################
+
+# User enters desired energy step size
+record(ao, "$(P)$(R)STEP_SIZE") 
+{
+  field(DESC, "Energy Step Size")
+  field(DTYP, "asynFloat64")
+  field(OUT,  "@asyn($(PORT) 0)SPECS_STEP_WIDTH")
+  field(PREC, "5")
+  field(PINI, "YES")
+  field(VAL,  "0.2")
+}
+
+# Report back current energy step size
+record(ai, "$(P)$(R)STEP_SIZE_RBV") 
+{
+  field(DESC, "Energy Step Size Readback")
+  field(DTYP, "asynFloat64")
+  field(INP,  "@asyn($(PORT) 0)SPECS_STEP_WIDTH")
+  field(SCAN, "I/O Intr")
+  field(PREC, "5")
+}
+

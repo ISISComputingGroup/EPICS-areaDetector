@@ -64,7 +64,8 @@ NDPluginTimeSeries::NDPluginTimeSeries(const char *portName, int queueSize, int 
              asynFloat64Mask | asynFloat64ArrayMask | asynGenericPointerMask,
              ASYN_MULTIDEVICE, 1, priority, stackSize, 1),
     dataType_(NDFloat64), dataSize_(sizeof(epicsFloat64)), numTimePoints_(DEFAULT_NUM_TSPOINTS), currentTimePoint_(0),
-    uniqueId_(0), numAverage_(1), timePerPoint_(0), signalData_(0), timeAxis_(0), timeStamp_(0), pTimeCircular_(0)
+    uniqueId_(0), numAverage_(1), acquireMode_(TSAcquireModeFixed), averagingTimeRequested_(1), timePerPoint_(0), 
+    signalData_(0), timeAxis_(0), timeStamp_(0), pTimeCircular_(0)
 {
   //const char *functionName = "NDPluginTimeSeries::NDPluginTimeSeries";
 
@@ -172,7 +173,7 @@ void NDPluginTimeSeries::createAxisArray()
 
 /**
  * Templated function to append to time series on different NDArray data types.
- * \param[in] NDArray The pointer to the NDArray object
+ * \param[in] pArray The pointer to the NDArray object
  * \return asynStatus
  */
 template <typename epicsType>
@@ -225,7 +226,7 @@ asynStatus NDPluginTimeSeries::doAddToTimeSeriesT(NDArray *pArray)
      
 /**
  * Call the templated doAddToTimeSeries so we can cast correctly. 
- * \param[in] NDArray The pointer to the NDArray object
+ * \param[in] pArray The pointer to the NDArray object
  * \return asynStatus
  */
 asynStatus NDPluginTimeSeries::addToTimeSeries(NDArray *pArray)
@@ -250,6 +251,12 @@ asynStatus NDPluginTimeSeries::addToTimeSeries(NDArray *pArray)
     break;
   case NDUInt32:
     status = doAddToTimeSeriesT<epicsUInt32>(pArray);
+    break;
+  case NDInt64:
+    status = doAddToTimeSeriesT<epicsInt64>(pArray);
+    break;
+  case NDUInt64:
+    status = doAddToTimeSeriesT<epicsUInt64>(pArray);
     break;
   case NDFloat32:
     status = doAddToTimeSeriesT<epicsFloat32>(pArray);
@@ -325,6 +332,12 @@ asynStatus NDPluginTimeSeries::doTimeSeriesCallbacks()
     break;
   case NDUInt32:
     doTimeSeriesCallbacksT<epicsUInt32>();
+    break;
+  case NDInt64:
+    doTimeSeriesCallbacksT<epicsInt64>();
+    break;
+  case NDUInt64:
+    doTimeSeriesCallbacksT<epicsUInt64>();
     break;
   case NDFloat32:
     doTimeSeriesCallbacksT<epicsFloat32>();
@@ -495,7 +508,7 @@ asynStatus NDPluginTimeSeries::writeFloat64(asynUser *pasynUser, epicsFloat64 va
   int signal;
   asynStatus status=asynSuccess;
   bool stat = true;
-  static const char* functionName = "NDPluginTimeSeries::writeInt32";
+  static const char* functionName = "NDPluginTimeSeries::writeFloat64";
 
   status = getAddress(pasynUser, &signal); 
   if (status != asynSuccess) {

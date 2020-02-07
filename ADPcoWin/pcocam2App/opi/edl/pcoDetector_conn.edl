@@ -1,0 +1,1311 @@
+4 0 1
+beginScreenProperties
+major 4
+minor 0
+release 1
+x 2442
+y 433
+w 397
+h 525
+font "arial-bold-r-12.0"
+ctlFont "arial-bold-r-12.0"
+btnFont "arial-bold-r-12.0"
+fgColor index 14
+bgColor index 3
+textColor index 14
+ctlFgColor1 index 25
+ctlFgColor2 index 25
+ctlBgColor1 index 3
+ctlBgColor2 index 3
+topShadowColor index 1
+botShadowColor index 11
+showGrid
+snapToGrid
+gridSize 5
+disableScroll
+endScreenProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 0
+y 0
+w 395
+h 350
+lineColor index 5
+fill
+fillColor index 5
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 5
+y 5
+w 380
+h 340
+lineColor index 14
+fill
+fillColor index 3
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 5
+y 0
+w 108
+h 13
+font "arial-medium-r-12.0"
+fgColor index 14
+bgColor index 5
+value {
+  "  PCO parameters  "
+}
+autoSize
+border
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 90
+y 70
+w 53
+h 12
+font "helvetica-bold-r-10.0"
+fgColor index 14
+bgColor index 3
+useDisplayBg
+value {
+  "ADC mode"
+}
+autoSize
+endObjectProperties
+
+# (Textupdate)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 260
+y 70
+w 105
+h 15
+controlPv "$(P)$(R)ADC_MODE_RBV"
+fgColor index 16
+bgColor index 10
+fill
+font "helvetica-bold-r-10.0"
+fontAlign "center"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 135
+y 195
+w 48
+h 12
+font "helvetica-bold-r-10.0"
+fgColor index 14
+bgColor index 3
+useDisplayBg
+value {
+  "Cam Ram"
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 130
+y 255
+w 55
+h 12
+font "helvetica-bold-r-10.0"
+fgColor index 14
+bgColor index 3
+useDisplayBg
+value {
+  "PSU Temp."
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 130
+y 235
+w 54
+h 12
+font "helvetica-bold-r-10.0"
+fgColor index 14
+bgColor index 3
+useDisplayBg
+value {
+  "Elec Temp."
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 75
+y 90
+w 68
+h 12
+font "helvetica-bold-r-10.0"
+fgColor index 14
+bgColor index 3
+useDisplayBg
+value {
+  "Acquire mode"
+}
+autoSize
+endObjectProperties
+
+# (Textupdate)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 260
+y 90
+w 105
+h 15
+controlPv "$(P)$(R)ACQUIRE_MODE_RBV"
+fgColor index 16
+bgColor index 10
+fill
+font "helvetica-bold-r-10.0"
+fontAlign "center"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 55
+y 110
+w 86
+h 12
+font "helvetica-bold-r-10.0"
+fgColor index 14
+bgColor index 3
+useDisplayBg
+value {
+  "Timestamp mode"
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 130
+y 215
+w 57
+h 12
+font "helvetica-bold-r-10.0"
+fgColor index 14
+bgColor index 3
+useDisplayBg
+value {
+  "CCD Temp."
+}
+autoSize
+endObjectProperties
+
+# (Menu Button)
+object activeMenuButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 150
+y 90
+w 100
+h 15
+fgColor index 25
+bgColor index 3
+inconsistentColor index 3
+topShadowColor index 1
+botShadowColor index 11
+controlPv "$(P)$(R)ACQUIRE_MODE"
+indicatorPv "$(P)$(R)ACQUIRE_MODE_RBV"
+font "helvetica-bold-r-10.0"
+endObjectProperties
+
+# (Textupdate)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 190
+y 215
+w 45
+h 15
+controlPv "$(P)$(R)Temperature_RBV"
+fgColor index 16
+fgAlarm
+bgColor index 10
+fill
+font "helvetica-bold-r-10.0"
+fontAlign "center"
+endObjectProperties
+
+# (Textupdate)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 260
+y 110
+w 105
+h 15
+controlPv "$(P)$(R)TIMESTAMP_MODE_RBV"
+fgColor index 16
+bgColor index 10
+fill
+font "helvetica-bold-r-10.0"
+fontAlign "center"
+endObjectProperties
+
+# (Textupdate)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 190
+y 195
+w 45
+h 15
+controlPv "$(P)$(R)CAM_RAM_USE_RBV"
+fgColor index 16
+fgAlarm
+bgColor index 10
+fill
+font "helvetica-bold-r-10.0"
+fontAlign "center"
+endObjectProperties
+
+# (Textupdate)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 190
+y 235
+w 45
+h 15
+controlPv "$(P)$(R)ELEC_TEMP_RBV"
+fgColor index 16
+fgAlarm
+bgColor index 10
+fill
+font "helvetica-bold-r-10.0"
+fontAlign "center"
+endObjectProperties
+
+# (Textupdate)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 190
+y 255
+w 45
+h 15
+controlPv "$(P)$(R)POWER_TEMP_RBV"
+fgColor index 16
+fgAlarm
+bgColor index 10
+fill
+font "helvetica-bold-r-10.0"
+fontAlign "center"
+endObjectProperties
+
+# (Menu Button)
+object activeMenuButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 150
+y 110
+w 100
+h 15
+fgColor index 25
+bgColor index 3
+inconsistentColor index 3
+topShadowColor index 1
+botShadowColor index 11
+controlPv "$(P)$(R)TIMESTAMP_MODE"
+indicatorPv "$(P)$(R)TIMESTAMP_MODE_RBV"
+font "helvetica-bold-r-10.0"
+endObjectProperties
+
+# (Textupdate)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 160
+y 20
+w 105
+h 25
+controlPv "$(P)$(R)ARM_MODE_RBV"
+fgColor index 16
+fgAlarm
+bgColor index 10
+fill
+font "arial-bold-r-12.0"
+fontAlign "center"
+endObjectProperties
+
+# (Menu Button)
+object activeMenuButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 50
+y 20
+w 100
+h 25
+fgColor index 25
+fgAlarm
+bgColor index 3
+inconsistentColor index 3
+topShadowColor index 1
+botShadowColor index 11
+controlPv "$(P)$(R)ARM_MODE"
+indicatorPv "$(P)$(R)ARM_MODE_RBV"
+font "arial-bold-r-12.0"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 10
+y 25
+w 31
+h 16
+font "arial-bold-r-14.0"
+fgColor index 14
+bgColor index 3
+useDisplayBg
+value {
+  "Arm"
+}
+autoSize
+endObjectProperties
+
+# (Textupdate)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 270
+y 20
+w 95
+h 25
+controlPv "$(P)$(R)Acquire_RBV"
+fgColor index 16
+fgAlarm
+bgColor index 10
+fill
+font "arial-bold-r-12.0"
+fontAlign "center"
+endObjectProperties
+
+# (Textupdate)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 260
+y 130
+w 105
+h 15
+controlPv "$(P)$(R)DELAY_TIME_RBV"
+fgColor index 16
+bgColor index 10
+fill
+font "helvetica-bold-r-10.0"
+fontAlign "center"
+endObjectProperties
+
+# (Textentry)
+object TextentryClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 150
+y 130
+w 100
+h 15
+controlPv "$(P)$(R)DELAY_TIME"
+fgColor index 25
+bgColor index 3
+fill
+font "helvetica-bold-r-10.0"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 80
+y 130
+w 56
+h 12
+font "helvetica-bold-r-10.0"
+fgColor index 14
+bgColor index 3
+useDisplayBg
+value {
+  "Delay Time"
+}
+autoSize
+endObjectProperties
+
+# (Textupdate)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 315
+y 275
+w 50
+h 15
+controlPv "$(P)$(R)IMAGE_NUMBER_RBV"
+fgColor index 16
+fgAlarm
+bgColor index 10
+fill
+font "helvetica-bold-r-10.0"
+fontAlign "center"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 250
+y 275
+w 56
+h 12
+font "helvetica-bold-r-10.0"
+fgColor index 14
+bgColor index 3
+useDisplayBg
+value {
+  "Image Num"
+}
+autoSize
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 4
+release 0
+x 275
+y 315
+w 100
+h 25
+fgColor index 43
+bgColor index 3
+topShadowColor index 1
+botShadowColor index 11
+font "arial-bold-r-12.0"
+buttonLabel "More"
+numPvs 4
+numDsps 1
+displayFileName {
+  0 "pcoDetectorMore.edl"
+}
+endObjectProperties
+
+# (Textupdate)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 75
+y 195
+w 45
+h 15
+controlPv "$(P)$(R)PERF:CNT:FAULT_RBV"
+fgColor index 16
+fgAlarm
+bgColor index 10
+fill
+font "helvetica-bold-r-10.0"
+fontAlign "center"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 10
+y 195
+w 31
+h 12
+font "helvetica-bold-r-10.0"
+fgColor index 14
+bgColor index 3
+useDisplayBg
+value {
+  "Faults"
+}
+autoSize
+endObjectProperties
+
+# (Textupdate)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 190
+y 275
+w 45
+h 15
+controlPv "$(P)$(R)XCAMSIZE_RBV"
+fgColor index 16
+fgAlarm
+bgColor index 10
+fill
+font "helvetica-bold-r-10.0"
+fontAlign "center"
+endObjectProperties
+
+# (Textupdate)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 190
+y 295
+w 45
+h 15
+controlPv "$(P)$(R)YCAMSIZE_RBV"
+fgColor index 16
+fgAlarm
+bgColor index 10
+fill
+font "helvetica-bold-r-10.0"
+fontAlign "center"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 130
+y 275
+w 59
+h 12
+font "helvetica-bold-r-10.0"
+fgColor index 14
+bgColor index 3
+useDisplayBg
+value {
+  "X Cam Size"
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 130
+y 295
+w 60
+h 12
+font "helvetica-bold-r-10.0"
+fgColor index 14
+bgColor index 3
+useDisplayBg
+value {
+  "Y Cam Size"
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 75
+y 170
+w 68
+h 12
+font "helvetica-bold-r-10.0"
+fgColor index 14
+bgColor index 3
+useDisplayBg
+value {
+  "Bit Alignment"
+}
+autoSize
+endObjectProperties
+
+# (Menu Button)
+object activeMenuButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 150
+y 170
+w 100
+h 15
+fgColor index 25
+bgColor index 3
+inconsistentColor index 3
+topShadowColor index 1
+botShadowColor index 11
+controlPv "$(P)$(R)BIT_ALIGNMENT"
+indicatorPv "$(P)$(R)BIT_ALIGNMENT_RBV"
+font "helvetica-bold-r-10.0"
+endObjectProperties
+
+# (Textupdate)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 260
+y 170
+w 105
+h 15
+controlPv "$(P)$(R)BIT_ALIGNMENT_RBV"
+fgColor index 16
+bgColor index 10
+fill
+font "helvetica-bold-r-10.0"
+fontAlign "center"
+endObjectProperties
+
+# (Menu Button)
+object activeMenuButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 150
+y 70
+w 100
+h 15
+fgColor index 25
+bgColor index 3
+inconsistentColor index 3
+topShadowColor index 1
+botShadowColor index 11
+controlPv "$(P)$(R)ADC_MODE"
+indicatorPv "$(P)$(R)ADC_MODE_RBV"
+font "helvetica-bold-r-10.0"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 250
+y 195
+w 48
+h 12
+font "helvetica-bold-r-10.0"
+fgColor index 14
+bgColor index 3
+useDisplayBg
+value {
+  "Cam Ram"
+}
+autoSize
+endObjectProperties
+
+# (Textupdate)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 305
+y 195
+w 60
+h 15
+controlPv "$(P)$(R)CAM_RAM_USE_FRAMES_RBV"
+fgColor index 16
+fgAlarm
+bgColor index 10
+fill
+font "helvetica-bold-r-10.0"
+fontAlign "center"
+endObjectProperties
+
+# (Textupdate)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 300
+y 215
+w 65
+h 15
+controlPv "$(P)$(R)CONNECTED_RBV"
+fgColor index 16
+fgAlarm
+bgColor index 10
+fill
+font "helvetica-bold-r-10.0"
+fontAlign "center"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 250
+y 215
+w 26
+h 12
+font "helvetica-bold-r-10.0"
+fgColor index 14
+bgColor index 3
+useDisplayBg
+value {
+  "Conn"
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 90
+y 50
+w 55
+h 15
+font "helvetica-bold-r-10.0"
+fgColor index 14
+bgColor index 3
+useDisplayBg
+value {
+  "Pixel rate"
+}
+endObjectProperties
+
+# (Textupdate)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 260
+y 50
+w 105
+h 15
+controlPv "$(P)$(R)PIX_RATE_RBV"
+fgColor index 16
+bgColor index 10
+fill
+font "helvetica-bold-r-10.0"
+fontAlign "center"
+endObjectProperties
+
+# (Menu Button)
+object activeMenuButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 150
+y 50
+w 100
+h 15
+fgColor index 25
+bgColor index 3
+inconsistentColor index 3
+topShadowColor index 1
+botShadowColor index 11
+controlPv "$(P)$(R)PIX_RATE"
+indicatorPv "$(P)$(R)PIX_RATE_RBV"
+font "helvetica-bold-r-10.0"
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 45
+y 150
+w 320
+h 15
+
+beginGroup
+
+# (Textupdate)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 260
+y 150
+w 105
+h 15
+controlPv "$(P)$(R)CAMERA_SETUP_RBV"
+fgColor index 16
+bgColor index 10
+fill
+font "helvetica-bold-r-10.0"
+fontAlign "center"
+endObjectProperties
+
+# (Menu Button)
+object activeMenuButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 150
+y 150
+w 100
+h 15
+fgColor index 25
+bgColor index 3
+inconsistentColor index 3
+topShadowColor index 1
+botShadowColor index 11
+controlPv "$(P)$(R)CAMERA_SETUP"
+indicatorPv "$(P)$(R)CAMERA_SETUP_RBV"
+font "helvetica-bold-r-10.0"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 45
+y 150
+w 98
+h 12
+font "helvetica-bold-r-10.0"
+fgColor index 14
+bgColor index 3
+useDisplayBg
+value {
+  "Edge Camera Setup"
+}
+autoSize
+endObjectProperties
+
+endGroup
+
+visPv "$(P)$(R)IS_EDGE_RBV"
+visInvert
+visMin "0"
+visMax "1"
+endObjectProperties
+
+# (Textupdate)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 320
+y 235
+w 45
+h 15
+controlPv "$(P)$(R)BUFFERS_IN_USE_RBV"
+fgColor index 16
+fgAlarm
+bgColor index 10
+fill
+font "helvetica-bold-r-10.0"
+fontAlign "center"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 250
+y 235
+w 61
+h 12
+font "helvetica-bold-r-10.0"
+fgColor index 14
+bgColor index 3
+useDisplayBg
+value {
+  "Buffs in Use"
+}
+autoSize
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 4
+release 0
+x 15
+y 215
+w 100
+h 25
+fgColor index 43
+bgColor index 3
+topShadowColor index 1
+botShadowColor index 11
+font "arial-bold-r-12.0"
+buttonLabel "Performance"
+numPvs 4
+numDsps 1
+displayFileName {
+  0 "pcoDetectorPerformance.edl"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 250
+y 255
+w 35
+h 12
+font "helvetica-bold-r-10.0"
+fgColor index 14
+bgColor index 3
+useDisplayBg
+value {
+  "Format"
+}
+autoSize
+endObjectProperties
+
+# (Textupdate)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 290
+y 255
+w 75
+h 15
+controlPv "$(P)$(R)DATAFORMAT_RBV"
+fgColor index 16
+fgAlarm
+bgColor index 10
+fill
+font "helvetica-bold-r-10.0"
+fontAlign "center"
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 10
+y 255
+w 110
+h 15
+
+beginGroup
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 10
+y 255
+w 53
+h 24
+font "helvetica-bold-r-10.0"
+fgColor index 14
+bgColor index 3
+useDisplayBg
+value {
+  "Local disk "
+  "used"
+}
+autoSize
+endObjectProperties
+
+# (Textupdate)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 70
+y 255
+w 50
+h 15
+controlPv "$(P):RSYNC:DFPERCENT"
+fgColor index 16
+fgAlarm
+bgColor index 10
+fill
+font "helvetica-bold-r-10.0"
+fontAlign "center"
+endObjectProperties
+
+endGroup
+
+visPv "$(P):RSYNC:DFTOTAL"
+visMin "1"
+visMax "999999999"
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 10
+y 280
+w 110
+h 15
+
+beginGroup
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 10
+y 280
+w 22
+h 12
+font "helvetica-bold-r-10.0"
+fgColor index 14
+bgColor index 3
+useDisplayBg
+value {
+  "Free"
+}
+autoSize
+endObjectProperties
+
+# (Textupdate)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 70
+y 280
+w 50
+h 15
+controlPv "$(P):RSYNC:DFFREE"
+fgColor index 16
+fgAlarm
+bgColor index 10
+fill
+font "helvetica-bold-r-10.0"
+fontAlign "center"
+endObjectProperties
+
+endGroup
+
+visPv "$(P):RSYNC:DFFREE"
+visMin "1"
+visMax "999999999"
+endObjectProperties
+
+# (Textupdate)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 305
+y 295
+w 60
+h 15
+controlPv "$(P)$(R)INTERFACE"
+fgColor index 16
+fgAlarm
+bgColor index 10
+fill
+font "helvetica-bold-r-10.0"
+fontAlign "center"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 255
+y 295
+w 44
+h 12
+font "helvetica-bold-r-10.0"
+fgColor index 14
+bgColor index 3
+useDisplayBg
+value {
+  "Interface"
+}
+autoSize
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 130
+y 315
+w 130
+h 15
+
+beginGroup
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 130
+y 315
+w 58
+h 12
+font "helvetica-bold-r-10.0"
+fgColor index 14
+bgColor index 3
+useDisplayBg
+value {
+  "CamlinkClk"
+}
+autoSize
+endObjectProperties
+
+# (Textupdate)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 190
+y 315
+w 70
+h 15
+controlPv "$(P)$(R)CAMLINKCLOCK_RBV"
+fgColor index 16
+fgAlarm
+bgColor index 10
+fill
+font "helvetica-bold-r-10.0"
+fontAlign "center"
+endObjectProperties
+
+endGroup
+
+visPv "$(P)$(R)USESCAMERALINK"
+visInvert
+visMin "0"
+visMax "1"
+endObjectProperties
+

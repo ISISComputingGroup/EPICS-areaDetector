@@ -14,6 +14,7 @@
 #include <pv/clientFactory.h>
 #include <pv/pvAccess.h>
 #include <pv/ntndarray.h>
+#include <pv/pvaVersion.h>
 
 #include <ntndArrayConverter.h>
 
@@ -107,9 +108,9 @@ pvaDriver::pvaDriver (const char *portName, const char *pvName,
 
     ClientFactory::start();
 #if EPICS_PVA_MAJOR_VERSION >= 6
-    m_provider = ChannelProviderRegistry::clients()->getProvider("pva");
+        m_provider = ChannelProviderRegistry::clients()->getProvider("pva");
 #else
-    m_provider = getChannelProviderRegistry()->getProvider("pva");
+        m_provider = getChannelProviderRegistry()->getProvider("pva");
 #endif
     connectPv(pvName);
 
@@ -240,18 +241,28 @@ void pvaDriver::monitorEvent (MonitorPtr const & monitor)
             continue;
         }
 
-        NTNDArrayConverter converter(NTNDArray::wrap(update->pvStructurePtr));
+        NTNDArrayPtr array(NTNDArray::wrap(update->pvStructurePtr));
+
+        if (!array) {
+            asynPrint(pasynUserSelf, ASYN_TRACE_ERROR,
+                    "%s::%s failed to wrap update in NTNDArray. Incorrect type?\n",
+                    driverName, functionName);
+            monitor->release(update);
+            continue;
+        }
+
+        NTNDArrayConverter converter(array);
         NTNDArrayInfo_t info;
 
         try
         {
             info = converter.getInfo();
         }
-        catch(...)
+        catch(exception& e)
         {
             asynPrint(pasynUserSelf, ASYN_TRACE_ERROR,
-                    "%s::%s failed to get info from NTNDArray\n",
-                    driverName, functionName);
+                    "%s::%s failed to get info from NTNDArray: %s\n",
+                    driverName, functionName, e.what());
             monitor->release(update);
             continue;
         }
@@ -264,7 +275,7 @@ void pvaDriver::monitorEvent (MonitorPtr const & monitor)
             asynPrint(pasynUserSelf, ASYN_TRACE_ERROR,
                     "%s::%s failed to alloc new NDArray"
                     " - memory pool exhausted? (free: %d)\n",
-                    driverName, functionName, pNDArrayPool->numFree());
+                    driverName, functionName, pNDArrayPool->getNumFree());
             monitor->release(update);
             continue;
         }
@@ -277,11 +288,11 @@ void pvaDriver::monitorEvent (MonitorPtr const & monitor)
                       driverName, functionName);
             converter.toArray(pImage);
         }
-        catch(...)
+        catch(exception& e)
         {
             asynPrint(pasynUserSelf, ASYN_TRACE_ERROR,
-                    "%s::%s failed to convert NTNDArray into NDArray\n",
-                    driverName, functionName);
+                    "%s::%s failed to convert NTNDArray into NDArray: %s\n",
+                    driverName, functionName, e.what());
             pImage->release();
             monitor->release(update);
             lock();

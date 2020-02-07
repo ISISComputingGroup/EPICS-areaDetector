@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ADCompVision Documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <h1 style="font-size: 40px">ADCompVision Documentation</h1>
+    <h3>Author: Jakub Wlodek</h3>
+    <h3>Corresponding Author: Kazimierz Gofron</h3>
+    <hr/>
+    <h3>Installing the plugin</h3>
+    <p>The ADCompVision plugin depends on several external libraries. These include:</p>
+    <ul>
+        <li>Opencv: Can be built from source from <a href="https://github.com/opencv/opencv">github</a>. Otherwise install from package manager.</li>
+        <li>EPICS, Area Detector, and their submodules, all of whuch can be found on github.</li>
+    </ul>
+    <p>Further installation instructions are located in the README.md file in the top level of <a href = "https://github.com/epicsNSLS2-areaDetector/ADCompVision">this</a>
+         repository.</p>
+    <hr/>
+    <h3>Using ADCompVision</h3>
+    <p>This plugin allows for a multitude of Open Computer Vision functions. As a result, each function will use the input/output PVs differently.</p>
+    <p>To view how each function uses the inputs and outputs view the manual <a href="manual.html">here.</a></p>
+
+    <p>The main CSS screen for the ADCompVision plugin looks as follows:</p>
+    <img style="width: 30%;" src = "assets/Main CV Screen.png" alt = "main">
+    <p>To use the plugin, you must select one of the functions from the three function sets. The other 2 function sets must be set to 'None'
+        Then, make sure that the image1 plugin has its input port set to be the output port of ADCompVision (CV1). Then, open the main screen, and
+        note that input and output descriptions are listed for each function. Enter valid input values for each of the required inputs.
+        Next, start image acquisition and enable the plugin. You should see the processed image in image1 ArrayData. Some examples are shown below:
+    </p>
+    <hr/>
+
+    <h4>Release Notes</h4>
+
+    <!--RELEASE START-->
+
+<h4>R1-1 (17-April-2019)</h4>
+<ul>
+<li>
+<p>Computer Vision functions implemented:</p>
+<ul>
+<li>Sharpening filter</li>
+<li>Image subtraction</li>
+<li>Image statistics</li>
+<li>Distance between objects</li>
+</ul>
+</li>
+<li>
+<p>Additional Feature changes</p>
+<ul>
+<li>File saving temporarily removed due to crashing issues over ssh and additional dependency</li>
+<li>Camera bit depth selector added to play better with higher bit images</li>
+<li>Image scaling corrected to account for other bit depth images</li>
+<li>Minor screen updates to reflect feature changes</li>
+</ul>
+</li>
+<li>
+<p>Bugs Fixed</p>
+<ul>
+<li>Bug where invalid bit depth could cause IOC to crash</li>
+<li>Bug where certain PV would cause error at IOC startup</li>
+<li>Fixed Image passthrough to work with any bit depth</li>
+<li>Fixed colorspace of color images passed through</li>
+<li>Removed code that caused certain compiler warnings - Cleaner compile</li>
+</ul>
+</li>
+</ul>
+<h4>R1-0 (14-January-2019)</h4>
+<ul>
+<li>
+<p>Computer Vision functions implemented:</p>
+<ul>
+<li>Gaussian Blur</li>
+<li>Thresholding</li>
+<li>Laplacian Edge Detection</li>
+<li>Canny Edge Detection</li>
+<li>Centroid Detection</li>
+<li>User Definable Function</li>
+</ul>
+</li>
+<li>
+<p>Additional Features added</p>
+<ul>
+<li>Processed image file saving. (This can work in tandem with NDPluginFile)</li>
+<li>Support for mono or RGB images</li>
+<li>Support for 8, 16, 32, and 64 bit images</li>
+<li>Flexible and modular function implementation system</li>
+<li>CSS User Interface screen</li>
+<li>Documentation</li>
+</ul>
+</li>
+<li>
+<p>Known Limitations:</p>
+<ul>
+<li>No current support for performing operations accross multiple images. Required for several CV functions</li>
+<li>Conversion between PV and ADCV_Function is convoluted and should be reworked</li>
+</ul>
+</li>
+<li>
+<p>Future Release Plans</p>
+<ul>
+<li>Expand list of supported functions<ul>
+<li>Motion Vectors</li>
+<li>Object identification</li>
+<li>Image alignment</li>
+<li>More...</li>
+</ul>
+</li>
+<li>Perform tests with variety of cameras</li>
+<li>Performance improvements and bug fixes</li>
+<li>Expand file saving to allow for capture, stream, etc</li>
+</ul>
+</li>
+</ul>
+    <!--RELEASE END-->
+
+    <hr/>
+
+    <h4>Usage Examples:</h4>
+
+    <p>Thresholding</p>
+    <img style="width: 30%;"src = "assets/threshold.png" alt = "Thresholding">
+    <img style="width: 30%;"src = "assets/threshold_menu.png" alt = "Thresholding Menu">
+
+    <p>Laplacian Edge Detection</p>
+    <img style="width: 30%;"src = "assets/Laplacian.png" alt = "Laplacian">
+    <img style="width: 30%;"src = "assets/laplacian_menu.png" alt = "Laplacian Menu">
+
+    <p>Canny edge detection</p>
+    <img style="width: 30%;"src = "assets/Canny2.png" alt = "Canny">
+    <img style="width: 30%;"src = "assets/canny_menu.png" alt = "Canny Menu">
+
+    <p>Centroid identification</p>
+    <img style="width: 30%;"src = "assets/Centroid.png" alt = "Centroid">
+    <img style="width: 30%;"src = "assets/centroid_menu.png" alt = "Centroid Menu">
+
+
+    <hr/>
+
+    <h4>Issues and Pull Requests</h4>
+
+    <p>If you wish to create an issue or pull request, please do so at the source fork on 
+        <a href = "https://github.com/jwlodek/ADCompVision">github.</a>
+    </p>
+    <hr/>
+    <h4>Important Links</h4>
+
+    <a href = "https://github.com/areaDetector">Area Detector on Github</a><br/>
+    <a href = "https://github.com/epicsNSLS2-areaDetector">NSLS2 area detector reposiotries on Github</a><br/>
+    <a href = "https://github.com/epicsNSLS2-areaDetector/ADCompVision">ADCompVision on Github</a><br/>
+    <hr/>
+    <h3>copyright: Brookhaven National Laboratory 2018-2019</h3>
+</body>
+</html>

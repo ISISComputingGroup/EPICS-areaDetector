@@ -6,6 +6,8 @@ O.*
 bin/
 lib/
 documentation/html
+documentation/xml
+Doxyfile.bak
 /db/
 /dbd/
 /include/

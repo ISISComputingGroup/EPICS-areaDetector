@@ -145,9 +145,12 @@ asynStatus NDPluginFile::readFileBase(void)
 {
     asynStatus status = asynSuccess;
     char fullFileName[MAX_FILENAME_LEN];
-    int dataType=0;
     NDArray *pArray=NULL;
+    char errorMessage[256];
     static const char* functionName = "readFileBase";
+
+    setIntegerParam(NDFileWriteStatus, NDFileWriteOK);
+    setStringParam(NDFileWriteMessage, "");
 
     status = (asynStatus)createFileName(MAX_FILENAME_LEN, fullFileName);
     if (status) { 
@@ -159,20 +162,41 @@ asynStatus NDPluginFile::readFileBase(void)
     
     /* Call the readFile method in the derived class */
     /* Do this with the main lock released since it is slow */
+    setStringParam(NDFullFileName, fullFileName);
     this->unlock();
     epicsMutexLock(this->fileMutexId);
     status = this->openFile(fullFileName, NDFileModeRead, pArray);
-    status = this->readFile(&pArray);
-    status = this->closeFile();
+    if (status) {
+        epicsSnprintf(errorMessage, sizeof(errorMessage)-1,
+                "Error opening file %s, status=%d", fullFileName, status);
+        asynPrint(this->pasynUserSelf, ASYN_TRACE_ERROR,
+                "%s::%s %s\n",
+                driverName, functionName, errorMessage);
+        setIntegerParam(NDFileWriteStatus, NDFileWriteError);
+        setStringParam(NDFileWriteMessage, errorMessage);
+    }
+    else {
+        status = this->readFile(&pArray);
+        if (status) {
+            epicsSnprintf(errorMessage, sizeof(errorMessage)-1,
+                    "Error  file %s, status=%d", fullFileName, status);
+            asynPrint(this->pasynUserSelf, ASYN_TRACE_ERROR,
+                    "%s::%s %s\n",
+                    driverName, functionName, errorMessage);
+            setIntegerParam(NDFileWriteStatus, NDFileWriteError);
+            setStringParam(NDFileWriteMessage, errorMessage);
+        }
+        this->closeFile();
+    }
     epicsMutexUnlock(this->fileMutexId);
     this->lock();
     
     /* If we got an error then return */
     if (status) return(status);
     
-    /* Update the new values of dimensions and the array data */
-    setIntegerParam(NDDataType, dataType);
-    
+    // This sets all of the plugin PVs from the NDArray
+    NDPluginDriver::beginProcessCallbacks(pArray);    
+
     /* Call any registered clients */
     NDPluginDriver::endProcessCallbacks(pArray, false, true);
 
@@ -379,7 +403,7 @@ void NDPluginFile::freeCaptureBuffer(int numCapture)
     for (i=0; i<numCapture; i++) {
         pArray = this->pCapture[i];
         if (!pArray) break;
-        delete pArray;
+        pArray->release();
     }
     free(this->pCapture);
     this->pCapture = NULL;
@@ -395,7 +419,6 @@ asynStatus NDPluginFile::doCapture(int capture)
     int fileWriteMode;
     NDArray *pArray = this->pArrays[0];
     NDArrayInfo_t arrayInfo;
-    int i;
     int numCapture;
     static const char* functionName = "doCapture";
 
@@ -412,7 +435,7 @@ asynStatus NDPluginFile::doCapture(int capture)
         }
     }
     
-    /* Decide whether or not to use the NDAttribute named "fileprefix" to create the filename */
+    /* Decide whether or not to use the NDAttribute named "FilePluginFileName" to create the filename */
     if (pArray) {
         if( pArray->pAttributeList->find(FILEPLUGIN_NAME) != NULL)
             this->useAttrFilePrefix = true;
@@ -424,8 +447,12 @@ asynStatus NDPluginFile::doCapture(int capture)
     switch(fileWriteMode) {
         case NDFileModeSingle:
             /* It is an error to set capture=1 in this mode, set to 0 */
+            asynPrint(this->pasynUserSelf, ASYN_TRACE_ERROR,
+                "%s:%s ERROR: capture not supported in Single mode\n",
+                driverName, functionName);
+            setStringParam(NDFileWriteMessage, "ERROR: capture not supported in Single mode");
             setIntegerParam(NDFileCapture, 0);
-            break;
+            return(asynError);
         case NDFileModeCapture:
             if (capture) {
                 /* Capturing was just started */
@@ -445,28 +472,6 @@ asynStatus NDPluginFile::doCapture(int capture)
                         driverName, functionName);
                     setIntegerParam(NDFileCapture, 0);
                     return(asynError);
-                }
-                for (i=0; i<numCapture; i++) {
-                    pCapture[i] = new NDArray;
-                    if (!this->pCapture[i]) {
-                        asynPrint(this->pasynUserSelf, ASYN_TRACE_ERROR,
-                            "%s::%s ERROR: cannot allocate capture buffer %d\n",
-                            driverName, functionName, i);
-                        setIntegerParam(NDFileCapture, 0);
-                        freeCaptureBuffer(numCapture);
-                        return(asynError);
-                    }
-                    this->pCapture[i]->dataSize = arrayInfo.totalBytes;
-                    this->pCapture[i]->pData = malloc(arrayInfo.totalBytes);
-                    this->pCapture[i]->ndims = pArray->ndims;
-                    if (!this->pCapture[i]->pData) {
-                        asynPrint(this->pasynUserSelf, ASYN_TRACE_ERROR,
-                            "%s::%s ERROR: cannot allocate capture array for buffer %d\n",
-                            driverName, functionName, i);
-                        setIntegerParam(NDFileCapture, 0);
-                        freeCaptureBuffer(numCapture);
-                        return(asynError);
-                    }
                 }
             } else {
                 /* Stop capturing, nothing to do, setting the parameter is all that is needed */
@@ -754,7 +759,9 @@ void NDPluginFile::processCallbacks(NDArray *pArray)
         case NDFileModeCapture:
             if (capture) {
                 if (numCaptured < numCapture && this->isFrameValid(pArray)) {
-                    this->pNDArrayPool->copy(pArray, this->pCapture[numCaptured++], 1);
+                    pArray->reserve();
+                    this->pCapture[numCaptured] = pArray;
+                    numCaptured++;
                     arrayCounter++;
                     setIntegerParam(NDFileNumCaptured, numCaptured);
                 } 
@@ -911,11 +918,13 @@ asynStatus NDPluginFile::writeNDArray(asynUser *pasynUser, void *genericPointer)
   * \param[in] priority The thread priority for the asyn port driver thread if ASYN_CANBLOCK is set in asynFlags.
   * \param[in] stackSize The stack size for the asyn port driver thread if ASYN_CANBLOCK is set in asynFlags.
   * \param[in] maxThreads The maximum number of threads this driver is allowed to use. If 0 then 1 will be used.
+  * \param[in] compressionAware true if this file plugin can handle compressed NDArrays.
   */
 NDPluginFile::NDPluginFile(const char *portName, int queueSize, int blockingCallbacks, 
                            const char *NDArrayPort, int NDArrayAddr, int maxAddr,
                            int maxBuffers, size_t maxMemory, int interfaceMask, int interruptMask,
-                           int asynFlags, int autoConnect, int priority, int stackSize, int maxThreads)
+                           int asynFlags, int autoConnect, int priority, int stackSize, int maxThreads,
+                           bool compressionAware)
 
     /* Invoke the base class constructor.
      * We allocate 1 NDArray of unlimited size in the NDArray pool.
@@ -924,7 +933,7 @@ NDPluginFile::NDPluginFile(const char *portName, int queueSize, int blockingCall
     : NDPluginDriver(portName, queueSize, blockingCallbacks, 
                      NDArrayPort, NDArrayAddr, maxAddr, maxBuffers, maxMemory, 
                      asynGenericPointerMask, asynGenericPointerMask,
-                     asynFlags, autoConnect, priority, stackSize, maxThreads),
+                     asynFlags, autoConnect, priority, stackSize, maxThreads, compressionAware),
     pCapture(NULL), captureBufferSize(0)
 {
     //static const char *functionName = "NDPluginFile";
@@ -944,4 +953,3 @@ NDPluginFile::NDPluginFile(const char *portName, int queueSize, int blockingCall
     /* Try to connect to the NDArray port */
     connectToArrayPort();
 }
-

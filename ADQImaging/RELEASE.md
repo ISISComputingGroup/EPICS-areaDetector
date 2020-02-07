@@ -6,7 +6,7 @@ https://github.com/areaDetector/ADQImaging.
 
 Tagged source code and pre-built binary releases prior to R2-0 are included
 in the areaDetector releases available via links at
-http://cars.uchicago.edu/software/epics/areaDetector.html.
+https://cars.uchicago.edu/software/epics/areaDetector.html.
 
 The versions of EPICS base, asyn, and other synApps modules used for each release can be obtained from 
 the EXAMPLE_RELEASE_PATHS.local, EXAMPLE_RELEASE_LIBS.local, and EXAMPLE_RELEASE_PRODS.local

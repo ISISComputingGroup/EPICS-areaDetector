@@ -1,0 +1,29 @@
+file "ADBase_settings.req", P=$(P), R=$(R)
+file "NDFile_settings.req", P=$(P), R=$(R)
+$(P)$(R)DataSource
+$(P)$(R)StreamDecompress
+$(P)$(R)FWEnable
+$(P)$(R)MonitorEnable
+$(P)$(R)StreamEnable
+$(P)$(R)NumTriggers
+$(P)$(R)ManualTrigger
+$(P)$(R)TriggerExposure
+$(P)$(R)FWCompression
+$(P)$(R)FWNamePattern
+$(P)$(R)FWNImagesPerFile
+$(P)$(R)FWAutoRemove
+$(P)$(R)SaveFiles
+$(P)$(R)FileOwner
+$(P)$(R)FileOwnerGrp
+$(P)$(R)FilePerms
+$(P)$(R)FlatfieldApplied
+$(P)$(R)PhotonEnergy
+$(P)$(R)ThresholdEnergy
+$(P)$(R)DetDist
+$(P)$(R)BeamX
+$(P)$(R)BeamY
+$(P)$(R)MonitorTimeout
+$(P)$(R)ROIMode
+$(P)$(R)CompressionAlgo
+$(P)$(R)StreamHdrDetail
+$(P)$(R)StreamHdrAppendix

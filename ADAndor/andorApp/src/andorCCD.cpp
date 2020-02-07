@@ -37,7 +37,7 @@
 #include "andorCCD.h"
 
 #define DRIVER_VERSION      2
-#define DRIVER_REVISION     6
+#define DRIVER_REVISION     8
 #define DRIVER_MODIFICATION 0
 
 static const char *driverName = "andorCCD";
@@ -101,6 +101,7 @@ static void exitHandler(void *drvPvt);
   * \param[in] installPath The path to the Andor directory containing the detector INI files, etc.
   *            This can be specified as an empty string ("") for new detectors that don't use the INI
   *            files on Windows, but must be a valid path on Linux.
+  * \param[in] cameraSerial The serial number of the desired camera.
   * \param[in] shamrockID The index number of the Shamrock spectrograph, if installed.
   *            0 is the first Shamrock in the system.  Ignored if there are no Shamrocks.  
   * \param[in] maxBuffers The maximum number of NDArray buffers that the NDArrayPool for this driver is 
@@ -110,7 +111,7 @@ static void exitHandler(void *drvPvt);
   * \param[in] priority The thread priority for the asyn port driver thread if ASYN_CANBLOCK is set in asynFlags.
   * \param[in] stackSize The stack size for the asyn port driver thread if ASYN_CANBLOCK is set in asynFlags.
   */
-AndorCCD::AndorCCD(const char *portName, const char *installPath, int shamrockID,
+AndorCCD::AndorCCD(const char *portName, const char *installPath, int cameraSerial, int shamrockID,
                    int maxBuffers, size_t maxMemory, int priority, int stackSize)
 
   : ADDriver(portName, 1, NUM_ANDOR_DET_PARAMS, maxBuffers, maxMemory, 
@@ -153,6 +154,8 @@ AndorCCD::AndorCCD(const char *portName, const char *installPath, int shamrockID
   createParam(AndorAdcSpeedString,                asynParamInt32, &AndorAdcSpeed);
   createParam(AndorBaselineClampString,           asynParamInt32, &AndorBaselineClamp);
   createParam(AndorReadOutModeString,             asynParamInt32, &AndorReadOutMode);
+  createParam(AndorFrameTransferModeString,       asynParamInt32, &AndorFrameTransferMode);
+  createParam(AndorVerticalShiftPeriodString,     asynParamInt32, &AndorVerticalShiftPeriod);
 
   // Create the epicsEvent for signaling to the status task when parameters should have changed.
   // This will cause it to do a poll immediately, rather than wait for the poll time period.
@@ -181,11 +184,47 @@ AndorCCD::AndorCCD(const char *portName, const char *installPath, int shamrockID
     mPreAmpGains[i].EnumString = (char *)calloc(MAX_ENUM_STRING_SIZE, sizeof(char));
   }
 
+  // Initialize Vertical Shift Period enums
+  for (i=0; i<MAX_VS_PERIODS; i++) {
+    mVSPeriods[i].EnumValue = i;
+    mVSPeriods[i].EnumString = (char *)calloc(MAX_ENUM_STRING_SIZE, sizeof(char));
+  }
+
   // Initialize camera
   try {
-    printf("%s:%s: initializing camera\n",
-      driverName, functionName);
-    checkStatus(Initialize(mInstallPath));
+    at_32 numCameras;
+    checkStatus(GetAvailableCameras(&numCameras));
+    bool cameraFound = false;
+    for (i=0; i<numCameras; i++) {
+      at_32 cameraHandle = -1;
+      checkStatus(GetCameraHandle(i, &cameraHandle));
+      checkStatus(SetCurrentCamera(cameraHandle));
+      printf("%s:%s: initializing camera with handle %d\n", driverName, functionName, cameraHandle);
+      unsigned long error = Initialize(mInstallPath);
+      if (error == DRV_NOT_AVAILABLE) {
+        // Is this the right way to detect if camera is used/busy/claimed?
+        printf("%s:%s: camera with handle %d not available (already claimed?)\n",
+               driverName, functionName, cameraHandle);
+      } else if (error == DRV_SUCCESS) {
+        checkStatus(GetCameraSerialNumber(&serialNumber));
+        if ((cameraSerial == serialNumber) ||
+          ((cameraSerial == 0) && (serialNumber != 0))) {
+          cameraFound = true;
+          break;
+        }
+      } else {
+        printf("%s:%s: initialization error for camera handle %d: %ld\n",
+               driverName, functionName, cameraHandle, error);
+      }
+      ShutDown();
+    }
+    if (! cameraFound) {
+      asynPrint(pasynUserSelf, ASYN_TRACE_ERROR,
+        "%s::%s camera not detected!\n", driverName, functionName);
+      return;
+    }
+    printf("%s:%s: found camera with serial %d\n", driverName, functionName, serialNumber);
+
     setStringParam(AndorMessage, "Camera successfully initialized.");
     checkStatus(GetDetector(&sizeX, &sizeY));
     checkStatus(GetHeadModel(model));
@@ -196,6 +235,7 @@ AndorCCD::AndorCCD(const char *portName, const char *installPath, int shamrockID
     checkStatus(SetReadMode(ARImage));
     checkStatus(SetImage(binX, binY, minX+1, minX+sizeX, minY+1, minY+sizeY));
     checkStatus(GetShutterMinTimes(&mMinShutterCloseTime, &mMinShutterOpenTime));
+    checkStatus(GetFastestRecommendedVSSpeed(&mVSIndex, &mVSPeriod));
     mCapabilities.ulSize = sizeof(mCapabilities);
     checkStatus(GetCapabilities(&mCapabilities));
     callParamCallbacks();
@@ -249,9 +289,12 @@ AndorCCD::AndorCCD(const char *portName, const char *installPath, int shamrockID
   status |= setDoubleParam(ADShutterOpenDelay, 0.);
   status |= setDoubleParam(ADShutterCloseDelay, 0.);
   status |= setIntegerParam(AndorReadOutMode, ARImage);
+  status |= setIntegerParam(AndorFrameTransferMode, 0);
 
   setupADCSpeeds();
   setupPreAmpGains();
+  setupVerticalShiftPeriods();
+  status |= setIntegerParam(AndorVerticalShiftPeriod, mVSIndex);
   status |= setupShutter(-1);
 
   callParamCallbacks();
@@ -395,6 +438,14 @@ asynStatus AndorCCD::readEnum(asynUser *pasynUser, char *strings[], int values[]
       severities[i] = 0;
     }
   }
+  else if (function == AndorVerticalShiftPeriod) {
+    for (i=0; ((i<mNumVSPeriods) && (i<(int)nElements)); i++) {
+      if (strings[i]) free(strings[i]);
+      strings[i] = epicsStrDup(mVSPeriods[i].EnumString);
+      values[i] = mVSPeriods[i].EnumValue;
+      severities[i] = 0;
+    }
+  }
   else {
     *nIn = 0;
     return asynError;
@@ -434,6 +485,25 @@ void AndorCCD::setupADCSpeeds()
   }
 }
 
+void AndorCCD::setupVerticalShiftPeriods()
+{
+    int i, numVSPeriods;
+    float VSPeriod;
+    AndorVSPeriod_t *pPeriod = mVSPeriods;
+
+    mNumVSPeriods = 0;
+    checkStatus(GetNumberVSSpeeds(&numVSPeriods));
+    for (i=0; i<numVSPeriods; i++) {
+        checkStatus(GetVSSpeed(i, &VSPeriod));
+        pPeriod->Index = i;
+        pPeriod->Period = VSPeriod;
+        epicsSnprintf(pPeriod->EnumString, MAX_ENUM_STRING_SIZE, 
+                      "%.2f us", VSPeriod);
+        mNumVSPeriods++;
+        if (mNumVSPeriods >= MAX_VS_PERIODS) return;
+        pPeriod++;
+    }
+}
 
 
 /** Report status of the driver.
@@ -455,6 +525,8 @@ void AndorCCD::report(FILE *fp, int details)
   unsigned int uIntParam5;
   unsigned int uIntParam6;
   AndorADCSpeed_t *pSpeed;
+  int vsIndex;
+  float vsPeriod;
   static const char *functionName = "report";
 
   fprintf(fp, "Andor CCD port=%s\n", this->portName);
@@ -496,6 +568,16 @@ void AndorCCD::report(FILE *fp, int details)
         fprintf(fp, "    Index=%d, Gain=%f\n",
                 mPreAmpGains[i].EnumValue, mPreAmpGains[i].Gain);
       }
+      
+      fprintf(fp, "  Vertical Shift Periods available: %d\n", mNumVSPeriods);
+      for (i=0; i<mNumVSPeriods; i++) {
+        fprintf(fp, "    Index=%d, Period=%f [us per pixel shift]\n",
+                mVSPeriods[i].EnumValue, mVSPeriods[i].Period);
+      }
+      fprintf(fp, "  Fastest recommended Vertical Shift Period:\n");
+      checkStatus(GetFastestRecommendedVSSpeed(&vsIndex, &vsPeriod));
+      fprintf(fp, "    Index=%d, Period=%f [us per pixel shift]\n", vsIndex, vsPeriod);
+     
       fprintf(fp, "  Capabilities\n");
       fprintf(fp, "        AcqModes=0x%X\n", (int)mCapabilities.ulAcqModes);
       fprintf(fp, "       ReadModes=0x%X\n", (int)mCapabilities.ulReadModes);
@@ -574,16 +656,17 @@ asynStatus AndorCCD::writeInt32(asynUser *pasynUser, epicsInt32 value)
         } 
       }
     }
-    else if ((function == ADNumExposures) || (function == ADNumImages)         ||
-             (function == ADImageMode)                                         ||
-             (function == ADBinX)         || (function == ADBinY)              ||
-             (function == ADMinX)         || (function == ADMinY)              ||
-             (function == ADSizeX)        || (function == ADSizeY)             ||
-             (function == ADReverseX)     || (function == ADReverseY)          ||
-             (function == ADTriggerMode)  || (function == AndorEmGain)         || 
-             (function == AndorEmGainMode)|| (function == AndorEmGainAdvanced) ||
-             (function == AndorAdcSpeed)  || (function == AndorPreAmpGain)     ||
-             (function == AndorReadOutMode)) {
+    else if ((function == ADNumExposures)   || (function == ADNumImages)            ||
+             (function == ADImageMode)                                              ||
+             (function == ADBinX)           || (function == ADBinY)                 ||
+             (function == ADMinX)           || (function == ADMinY)                 ||
+             (function == ADSizeX)          || (function == ADSizeY)                ||
+             (function == ADReverseX)       || (function == ADReverseY)             ||
+             (function == ADTriggerMode)    || (function == AndorEmGain)            || 
+             (function == AndorEmGainMode)  || (function == AndorEmGainAdvanced)    ||
+             (function == AndorAdcSpeed)    || (function == AndorPreAmpGain)        ||
+             (function == AndorReadOutMode) || (function == AndorFrameTransferMode) ||
+             (function == AndorVerticalShiftPeriod)) {
       status = setupAcquisition();
       if (function == AndorAdcSpeed) setupPreAmpGains();
       if (status != asynSuccess) setIntegerParam(function, oldValue);
@@ -616,7 +699,14 @@ asynStatus AndorCCD::writeInt32(asynUser *pasynUser, epicsInt32 value)
       status = setupShutter(-1);
     }
     else if (function == AndorBaselineClamp) {
-      checkStatus(SetBaselineClamp(value));
+      try {
+        checkStatus(SetBaselineClamp(value));
+      } catch (const std::string &e) {
+        asynPrint(pasynUserSelf, ASYN_TRACE_ERROR,
+          "%s:%s: %s\n",
+          driverName, functionName, e.c_str());
+        status = asynError;
+      }
     }
     else {
       status = ADDriver::writeInt32(pasynUser, value);
@@ -1006,6 +1096,8 @@ asynStatus AndorCCD::setupAcquisition()
   int FKOffset;
   AndorADCSpeed_t *pSpeed;
   int readOutMode;
+  int frameTransferMode;
+  int verticalShiftPeriod;
   static const char *functionName = "setupAcquisition";
   
   if (!mInitOK) {
@@ -1094,6 +1186,10 @@ asynStatus AndorCCD::setupAcquisition()
   // for the actual size of the image, so we must compute it.
   setIntegerParam(NDArraySizeX, sizeX/binX);
   setIntegerParam(NDArraySizeY, sizeY/binY);
+
+  getIntegerParam(AndorFrameTransferMode, &frameTransferMode);
+
+  getIntegerParam(AndorVerticalShiftPeriod, &verticalShiftPeriod);
   
   try {
     asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW,
@@ -1164,6 +1260,16 @@ asynStatus AndorCCD::setupAcquisition()
         driverName, functionName, emGain);
       checkStatus(SetEMCCDGain(emGain));
     }
+
+    asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW,
+      "%s:%s:, SetFrameTransferMode(%d)\n",
+      driverName, functionName, frameTransferMode);
+    checkStatus(SetFrameTransferMode(frameTransferMode));
+
+    asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW, 
+      "%s:%s:, SetVSSpeed(%d)\n", 
+      driverName, functionName, verticalShiftPeriod);
+    checkStatus(SetVSSpeed(verticalShiftPeriod));
 
     switch (imageMode) {
       case ADImageSingle:
@@ -1755,6 +1861,7 @@ static void andorDataTaskC(void *drvPvt)
   * \param[in] portName The name of the asyn port driver to be created.
   * \param[in] installPath The path to the Andor directory containing the detector INI files, etc.
   *            This can be specified as an empty string ("") for new detectors that don't use the INI
+  * \param[in] cameraSerial The serial number of the desired camera.
   * \param[in] shamrockID The index number of the Shamrock spectrograph, if installed.
   *            0 is the first Shamrock in the system.  Ignored if there are no Shamrocks.  
   * \param[in] maxBuffers The maximum number of NDArray buffers that the NDArrayPool for this driver is 
@@ -1766,11 +1873,11 @@ static void andorDataTaskC(void *drvPvt)
   * \param[in] stackSize The stack size for the asyn port driver thread
   */
 extern "C" {
-int andorCCDConfig(const char *portName, const char *installPath, int shamrockID,
+int andorCCDConfig(const char *portName, const char *installPath, int cameraSerial, int shamrockID,
                    int maxBuffers, size_t maxMemory, int priority, int stackSize)
 {
   /*Instantiate class.*/
-  new AndorCCD(portName, installPath, shamrockID, maxBuffers, maxMemory, priority, stackSize);
+  new AndorCCD(portName, installPath, cameraSerial, shamrockID, maxBuffers, maxMemory, priority, stackSize);
   return(asynSuccess);
 }
 
@@ -1780,24 +1887,26 @@ int andorCCDConfig(const char *portName, const char *installPath, int shamrockID
 /* andorCCDConfig */
 static const iocshArg andorCCDConfigArg0 = {"Port name", iocshArgString};
 static const iocshArg andorCCDConfigArg1 = {"installPath", iocshArgString};
-static const iocshArg andorCCDConfigArg2 = {"shamrockID", iocshArgInt};
-static const iocshArg andorCCDConfigArg3 = {"maxBuffers", iocshArgInt};
-static const iocshArg andorCCDConfigArg4 = {"maxMemory", iocshArgInt};
-static const iocshArg andorCCDConfigArg5 = {"priority", iocshArgInt};
-static const iocshArg andorCCDConfigArg6 = {"stackSize", iocshArgInt};
+static const iocshArg andorCCDConfigArg2 = {"cameraSerial", iocshArgInt};
+static const iocshArg andorCCDConfigArg3 = {"shamrockID", iocshArgInt};
+static const iocshArg andorCCDConfigArg4 = {"maxBuffers", iocshArgInt};
+static const iocshArg andorCCDConfigArg5 = {"maxMemory", iocshArgInt};
+static const iocshArg andorCCDConfigArg6 = {"priority", iocshArgInt};
+static const iocshArg andorCCDConfigArg7 = {"stackSize", iocshArgInt};
 static const iocshArg * const andorCCDConfigArgs[] =  {&andorCCDConfigArg0,
                                                        &andorCCDConfigArg1,
                                                        &andorCCDConfigArg2,
                                                        &andorCCDConfigArg3,
                                                        &andorCCDConfigArg4,
                                                        &andorCCDConfigArg5,
-                                                       &andorCCDConfigArg6};
+                                                       &andorCCDConfigArg6,
+                                                       &andorCCDConfigArg7};
 
 static const iocshFuncDef configAndorCCD = {"andorCCDConfig", 7, andorCCDConfigArgs};
 static void configAndorCCDCallFunc(const iocshArgBuf *args)
 {
     andorCCDConfig(args[0].sval, args[1].sval, args[2].ival, args[3].ival, 
-                   args[4].ival, args[5].ival, args[6].ival);
+                   args[4].ival, args[5].ival, args[6].ival, args[7].ival);
 }
 
 static void andorCCDRegister(void)

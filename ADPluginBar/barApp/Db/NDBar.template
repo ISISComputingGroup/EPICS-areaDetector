@@ -1,0 +1,313 @@
+# Database for NDBar Plugin
+# Jakub Wlodek
+# Kazimierz Gofron
+# February 12, 2018
+
+# include the base driver template file
+include "NDPluginBase.template"
+
+
+# Records needed in database:
+# Barcode value/message -> the text stored in the barcode
+# Barcode location -> coordinates of the corners of the bar code, so that it can be displayed on the image
+# Barcode type -> QR, 2D Bar etc.
+# Number of codes -> number of barcodes in an image
+
+# Up to 5 barcodes at once will be supported
+
+##################################################################
+# First stringin/stringout records to store the barcode message
+# and the barcode type.
+##################################################################
+
+record(waveform, "$(P)$(R)BarcodeMessage1_RBV"){
+	field(DTYP, "asynOctetRead")
+	field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))BARCODE_MESSAGE1")
+	field(FTVL, "CHAR")
+	field(NELM, "256")
+	field(SCAN, "I/O Intr")
+}
+
+record(stringin, "$(P)$(R)BarcodeType1_RBV")
+{
+	field(DTYP, "asynOctetRead")
+	field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))BARCODE_TYPE1")
+    field(VAL, "None")
+	field(SCAN, "I/O Intr")
+}
+
+record(waveform, "$(P)$(R)BarcodeMessage2_RBV"){
+	field(DTYP, "asynOctetRead")
+	field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))BARCODE_MESSAGE2")
+	field(FTVL, "CHAR")
+	field(NELM, "256")
+	field(SCAN, "I/O Intr")
+}
+
+record(stringin, "$(P)$(R)BarcodeType2_RBV")
+{
+	field(DTYP, "asynOctetRead")
+	field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))BARCODE_TYPE2")
+    field(VAL, "None")
+	field(SCAN, "I/O Intr")
+}
+
+record(waveform, "$(P)$(R)BarcodeMessage3_RBV"){
+	field(DTYP, "asynOctetRead")
+	field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))BARCODE_MESSAGE3")
+	field(FTVL, "CHAR")
+	field(NELM, "256")
+	field(SCAN, "I/O Intr")
+}
+
+record(stringin, "$(P)$(R)BarcodeType3_RBV")
+{
+	field(DTYP, "asynOctetRead")
+	field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))BARCODE_TYPE3")
+    field(VAL, "None")
+	field(SCAN, "I/O Intr")
+}
+
+record(waveform, "$(P)$(R)BarcodeMessage4_RBV"){
+	field(DTYP, "asynOctetRead")
+	field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))BARCODE_MESSAGE4")
+	field(FTVL, "CHAR")
+	field(NELM, "256")
+	field(SCAN, "I/O Intr")
+}
+
+record(stringin, "$(P)$(R)BarcodeType4_RBV")
+{
+	field(DTYP, "asynOctetRead")
+	field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))BARCODE_TYPE4")
+    field(VAL, "None")
+	field(SCAN, "I/O Intr")
+}
+
+record(waveform, "$(P)$(R)BarcodeMessage5_RBV"){
+	field(DTYP, "asynOctetRead")
+	field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))BARCODE_MESSAGE5")
+	field(FTVL, "CHAR")
+	field(NELM, "256")
+	field(SCAN, "I/O Intr")
+}
+
+record(stringin, "$(P)$(R)BarcodeType5_RBV")
+{
+	field(DTYP, "asynOctetRead")
+	field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))BARCODE_TYPE5")
+    	field(VAL, "None")
+	field(SCAN, "I/O Intr")
+}
+
+######################################################################
+# Number of codes in the image
+######################################################################
+
+record(ao, "$(P)$(R)NumberCodes")
+{
+	field(PINI, "YES")
+	field(DTYP, "asynInt32")
+	field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))NUMBER_CODES")
+	field(VAL, "0")
+}
+
+record(ai, "$(P)$(R)NumberCodes_RBV")
+{
+	field(DTYP, "asynInt32")
+	field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))NUMBER_CODES")
+	field(SCAN, "I/O Intr")
+}
+
+
+#####################################################################
+# Corner selection - choose which code's corners to track
+#####################################################################
+
+record(mbbo, "$(P)$(R)CodeCorners"){
+	field(PINI, "YES")
+	field(DTYP, "asynInt32")
+	field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))CODE_CORNERS")
+	field(ZRST, "Code 1")
+	field(ZRVL, "0")
+	field(ONST, "Code 2")
+	field(ONVL, "1")
+	field(TWST, "Code 3")
+	field(TWVL, "2")
+	field(THST, "Code 4")
+	field(THVL, "3")
+	field(FRST, "Code 5")
+	field(FRVL, "4")
+	field(VAL, "0")
+#	field(autosaveFields, "VAL")
+}
+
+record(mbbi, "$(P)$(R)CodeCorners_RBV"){
+	field(DTYP, "asynInt32")
+	field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))CODE_CORNERS")
+	field(ZRST, "Code 1")
+	field(ZRVL, "0")
+	field(ONST, "Code 2")
+	field(ONVL, "1")
+	field(TWST, "Code 3")
+	field(TWVL, "2")
+	field(THST, "Code 4")
+	field(THVL, "3")
+	field(FRST, "Code 5")
+	field(FRVL, "4")
+	field(VAL, "0")
+	field(SCAN, "I/O Intr")
+}
+
+#####################################################################
+# Inverted i.e. white on black
+#####################################################################
+
+record(bo, "$(P)$(R)InvertedBarcode")
+{
+	field(PINI, "YES")
+	field(DTYP, "asynInt32")
+	field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))INVERTED_CODE")
+	field(ZNAM, "Standard")
+	field(ONAM, "Inverted")
+	field(VAL, "$(Standard=0)")
+}
+
+record(bi, "$(P)$(R)InvertedBarcode_RBV")
+{
+	field(DTYP, "asynInt32")
+	field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))NUMBER_CODES")
+	field(ZNAM, "Standard")
+	field(ONAM, "Inverted")
+	field(ZSV, "NO_ALARM")
+	field(OSV, "MINOR")
+	field(SCAN, "I/O Intr")
+}
+
+#####################################################################
+# X-Values of the cooridnates of corners of discovered barcodes
+#####################################################################
+
+record(ao, "$(P)$(R)UpperRightX")
+{
+	field(PINI, "YES")
+	field(DTYP, "asynInt32")
+	field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))UPPER_RIGHT_X")
+	field(VAL, "0")
+}
+
+record(ao, "$(P)$(R)UpperLeftX")
+{
+	field(PINI, "YES")
+	field(DTYP, "asynInt32")
+	field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))UPPER_LEFT_X")
+	field(VAL, "0")
+}
+
+record(ao, "$(P)$(R)LowerRightX")
+{
+	field(PINI, "YES")
+	field(DTYP, "asynInt32")
+	field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))LOWER_RIGHT_X")
+	field(VAL, "0")
+}
+
+record(ao, "$(P)$(R)LowerLeftX")
+{
+	field(PINI, "YES")
+	field(DTYP, "asynInt32")
+	field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))LOWER_LEFT_X")
+	field(VAL, "0")
+}
+
+record(ai, "$(P)$(R)UpperLeftX_RBV")
+{
+	field(DTYP, "asynInt32")
+	field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))UPPER_LEFT_X")
+	field(SCAN, "I/O Intr")
+}
+
+record(ai, "$(P)$(R)UpperRightX_RBV")
+{
+	field(DTYP, "asynInt32")
+	field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))UPPER_RIGHT_X")
+	field(SCAN, "I/O Intr")
+}
+
+record(ai, "$(P)$(R)LowerLeftX_RBV")
+{
+	field(DTYP, "asynInt32")
+	field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))Lower_LEFT_X")
+	field(SCAN, "I/O Intr")
+}
+
+record(ai, "$(P)$(R)LowerRightX_RBV")
+{
+	field(DTYP, "asynInt32")
+	field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))LOWER_RIGHT_X")
+	field(SCAN, "I/O Intr")
+}
+
+#########################################################################
+# Y-Values of the cooridnates of corners of discovered barcodes
+#########################################################################
+
+record(ao, "$(P)$(R)UpperRightY")
+{
+	field(PINI, "YES")
+	field(DTYP, "asynInt32")
+	field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))UPPER_RIGHT_Y")
+	field(VAL, "0")
+}
+
+record(ao, "$(P)$(R)UpperLeftY")
+{
+	field(PINI, "YES")
+	field(DTYP, "asynInt32")
+	field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))UPPER_LEFT_Y")
+	field(VAL, "0")
+}
+
+record(ao, "$(P)$(R)LowerRightY")
+{
+	field(PINI, "YES")
+	field(DTYP, "asynInt32")
+	field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))LOWER_RIGHT_Y")
+	field(VAL, "0")
+}
+
+record(ao, "$(P)$(R)LowerLeftY")
+{
+	field(PINI, "YES")
+	field(DTYP, "asynInt32")
+	field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))LOWER_LEFT_Y")
+	field(VAL, "0")
+}
+
+record(ai, "$(P)$(R)UpperLeftY_RBV")
+{
+	field(DTYP, "asynInt32")
+	field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))UPPER_LEFT_Y")
+	field(SCAN, "I/O Intr")
+}
+
+record(ai, "$(P)$(R)UpperRightY_RBV")
+{
+	field(DTYP, "asynInt32")
+	field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))UPPER_RIGHT_Y")
+	field(SCAN, "I/O Intr")
+}
+
+record(ai, "$(P)$(R)LowerLeftY_RBV")
+{
+	field(DTYP, "asynInt32")
+	field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))Lower_LEFT_Y")
+	field(SCAN, "I/O Intr")
+}
+
+record(ai, "$(P)$(R)LowerRightY_RBV")
+{
+	field(DTYP, "asynInt32")
+	field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))LOWER_RIGHT_Y")
+	field(SCAN, "I/O Intr")
+}
