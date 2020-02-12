@@ -1,11 +1,11 @@
 vendor/aravis*
 configure/*.local
 O.*/
-bin/
-lib/
-dbd/
-db/
-data/
+/bin/
+/lib/
+/dbd/
+/db/
+/data/
 .project
 .cproject
 .settings/

@@ -1,10 +1,10 @@
 *~
 *#
-bin
-lib
-include
-db
-dbd
+/bin/
+/lib/
+/include/
+/db/
+/dbd/
 envPaths*
 *BAK.adl
 */O.*
