@@ -1,6 +1,6 @@
-/data
-db
-dbd
+/data/
+/db/
+/dbd/
 /iocs/example*
 O.*/
 *~
@@ -8,8 +8,8 @@ O.*/
 docs/build
 st.cmd
 records.dbl
-bin
-lib
+/bin/
+/lib/
 include
 envPaths*
 auto_settings.sav*

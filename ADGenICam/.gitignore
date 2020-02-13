@@ -1,8 +1,8 @@
-bin
-lib
+/bin/
+/lib/
 /include/
-db
-dbd
+/db/
+/dbd/
 *_BAK.adl
 documentation.html
 envPaths*

@@ -1,10 +1,10 @@
-bin/
+/bin/
 O.*/
-lib/
-db/
-dbd/
-data/
-include/
+/lib/
+/db/
+/dbd/
+/data/
+/include/
 *_BAK.adl
 envPaths*
 cdCommands*
