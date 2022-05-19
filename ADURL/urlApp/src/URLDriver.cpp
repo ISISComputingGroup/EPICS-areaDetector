@@ -78,6 +78,7 @@ asynStatus URLDriver::readImage()
     
     getStringParam(URLName, sizeof(URLString), URLString);
     if (strlen(URLString) == 0) return(asynError);
+    
     try {
         image.read(URLString);
         imageType = image.type();
@@ -215,9 +216,15 @@ void URLDriver::URLTask()
 
         /* Call the callbacks to update any changes */
         callParamCallbacks();
-
-        /* Read the image */
-        imageStatus = readImage();
+        
+        if (acquirePeriod > 0.0) {
+            /* Read the image */
+            setParamStatus(ADAcquirePeriod, asynSuccess);
+            imageStatus = readImage();
+        } else {
+            setParamStatus(ADAcquirePeriod, asynError);
+            imageStatus = asynError;
+        }
 
         /* Close the shutter */
         setShutter(ADShutterClosed);
