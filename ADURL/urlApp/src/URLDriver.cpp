@@ -182,6 +182,8 @@ void URLDriver::URLTask()
     epicsTimeStamp startTime, endTime;
     double elapsedTime;
     const char *functionName = "URLTask";
+    const int nRetry = 10;
+    int retryCount = nRetry;
 
     this->lock();
     /* Loop forever */
@@ -200,6 +202,7 @@ void URLDriver::URLTask()
             epicsEventWait(this->startEventId);
             this->lock();
             setIntegerParam(ADNumImagesCounter, 0);
+            retryCount = nRetry;
         }
 
         /* We are acquiring. */
@@ -231,14 +234,15 @@ void URLDriver::URLTask()
         /* Call the callbacks to update any changes */
         callParamCallbacks();
 
+        getIntegerParam(ADImageMode, &imageMode);
+        getIntegerParam(NDArrayCounter, &imageCounter);
+        getIntegerParam(ADNumImages, &numImages);
+        getIntegerParam(ADNumImagesCounter, &numImagesCounter);
         if (imageStatus == asynSuccess) {
+            retryCount = nRetry;
             pImage = this->pArrays[0];
 
             /* Get the current parameters */
-            getIntegerParam(NDArrayCounter, &imageCounter);
-            getIntegerParam(ADNumImages, &numImages);
-            getIntegerParam(ADNumImagesCounter, &numImagesCounter);
-            getIntegerParam(ADImageMode, &imageMode);
             getIntegerParam(NDArrayCallbacks, &arrayCallbacks);
             imageCounter++;
             numImagesCounter++;
@@ -262,7 +266,7 @@ void URLDriver::URLTask()
         }
 
         /* See if acquisition is done */
-        if ((imageStatus != asynSuccess) ||
+        if ((imageStatus != asynSuccess && --retryCount < 0) ||
             (imageMode == ADImageSingle) ||
             ((imageMode == ADImageMultiple) &&
              (numImagesCounter >= numImages))) {
