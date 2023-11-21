@@ -24,6 +24,7 @@ DBD += ADSpinnakerSupport.dbd
 USR_INCLUDES += -I ../../../spinnakerSupport/include
 USR_CXXFLAGS_Linux += -D LINUX
 USR_CXXFLAGS_Linux += -std=c++11 -Wno-unknown-pragmas
+USR_CXXFLAGS += -DSPINNAKER_EXPORT
 
 #PROD_IOC_Linux += MeasureTemperature
 PROD_IOC_WIN32 += MeasureTemperature
