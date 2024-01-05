@@ -24,6 +24,7 @@ DBD += ADSpinnakerSupport.dbd
 USR_INCLUDES += -I ../../../spinnakerSupport/include
 USR_CXXFLAGS_Linux += -D LINUX
 USR_CXXFLAGS_Linux += -std=c++11 -Wno-unknown-pragmas
+USR_CXXFLAGS += -DSPINNAKER_EXPORT
 
 ifeq (debug, $(findstring debug, $(T_A)))
   PROD_LIBS_WIN32 += Spinnakerd_v140
