@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <display typeId="org.csstudio.opibuilder.Display" version="1.0.0">
   <actions hook="false" hook_all="false" />
   <auto_scale_widgets>
@@ -17,6 +18,8 @@
   <height>875</height>
   <macros>
     <include_parent_macros>true</include_parent_macros>
+    <P>TE:NDLT1542:PEARLCAM_01:</P>
+    <R>CAM1:</R>
   </macros>
   <name>PGR_Blackfly_20E4C-features_1</name>
   <rules />
@@ -28,6 +31,7 @@
   <snap_to_geometry>false</snap_to_geometry>
   <widget_type>Display</widget_type>
   <width>1460</width>
+  <wuid>52266eb9:18c00fb3bfe:-7d59</wuid>
   <x>50</x>
   <y>50</y>
   <widget typeId="org.csstudio.opibuilder.widgets.Rectangle" version="1.0.0">
@@ -54,7 +58,7 @@
     </fg_gradient_color>
     <fill_level>100.0</fill_level>
     <font>
-      <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
+      <opifont.name fontName="Segoe UI" height="9" style="0" pixels="false">Default</opifont.name>
     </font>
     <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
     <foreground_color>
@@ -84,6 +88,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Rectangle</widget_type>
     <width>1460</width>
+    <wuid>52266eb9:18c00fb3bfe:-7d58</wuid>
     <x>0</x>
     <y>4</y>
   </widget>
@@ -111,7 +116,7 @@ $(pv_value)</tooltip>
     </fg_gradient_color>
     <fill_level>0.0</fill_level>
     <font>
-      <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
+      <opifont.name fontName="Segoe UI" height="9" style="0" pixels="false">Default</opifont.name>
     </font>
     <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
     <foreground_color>
@@ -141,6 +146,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Rectangle</widget_type>
     <width>480</width>
+    <wuid>52266eb9:18c00fb3bfe:-7d57</wuid>
     <x>5</x>
     <y>40</y>
   </widget>
@@ -168,7 +174,7 @@ $(pv_value)</tooltip>
     </fg_gradient_color>
     <fill_level>100.0</fill_level>
     <font>
-      <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
+      <opifont.name fontName="Segoe UI" height="9" style="0" pixels="false">Default</opifont.name>
     </font>
     <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
     <foreground_color>
@@ -198,6 +204,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Rectangle</widget_type>
     <width>470</width>
+    <wuid>52266eb9:18c00fb3bfe:-7d56</wuid>
     <x>10</x>
     <y>45</y>
   </widget>
@@ -225,7 +232,7 @@ $(pv_value)</tooltip>
     </fg_gradient_color>
     <fill_level>0.0</fill_level>
     <font>
-      <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
+      <opifont.name fontName="Segoe UI" height="9" style="0" pixels="false">Default</opifont.name>
     </font>
     <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
     <foreground_color>
@@ -255,6 +262,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Rectangle</widget_type>
     <width>480</width>
+    <wuid>52266eb9:18c00fb3bfe:-7d55</wuid>
     <x>490</x>
     <y>40</y>
   </widget>
@@ -282,7 +290,7 @@ $(pv_value)</tooltip>
     </fg_gradient_color>
     <fill_level>100.0</fill_level>
     <font>
-      <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
+      <opifont.name fontName="Segoe UI" height="9" style="0" pixels="false">Default</opifont.name>
     </font>
     <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
     <foreground_color>
@@ -312,6 +320,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Rectangle</widget_type>
     <width>470</width>
+    <wuid>52266eb9:18c00fb3bfe:-7d54</wuid>
     <x>495</x>
     <y>45</y>
   </widget>
@@ -339,7 +348,7 @@ $(pv_value)</tooltip>
     </fg_gradient_color>
     <fill_level>0.0</fill_level>
     <font>
-      <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
+      <opifont.name fontName="Segoe UI" height="9" style="0" pixels="false">Default</opifont.name>
     </font>
     <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
     <foreground_color>
@@ -369,6 +378,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Rectangle</widget_type>
     <width>480</width>
+    <wuid>52266eb9:18c00fb3bfe:-7d53</wuid>
     <x>975</x>
     <y>40</y>
   </widget>
@@ -396,7 +406,7 @@ $(pv_value)</tooltip>
     </fg_gradient_color>
     <fill_level>100.0</fill_level>
     <font>
-      <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
+      <opifont.name fontName="Segoe UI" height="9" style="0" pixels="false">Default</opifont.name>
     </font>
     <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
     <foreground_color>
@@ -426,6 +436,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Rectangle</widget_type>
     <width>470</width>
+    <wuid>52266eb9:18c00fb3bfe:-7d52</wuid>
     <x>980</x>
     <y>45</y>
   </widget>
@@ -457,7 +468,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>PGR_Blackfly_20E4C Features Screen #1 - $(P)$(R)</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -466,6 +476,7 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>1460</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7d51</wuid>
     <x>0</x>
     <y>5</y>
   </widget>
@@ -497,7 +508,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>AnalogControl</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -506,6 +516,7 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>470</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7d50</wuid>
     <x>10</x>
     <y>45</y>
   </widget>
@@ -537,7 +548,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>GainSelector</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -546,11 +556,11 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7d4f</wuid>
     <x>10</x>
     <y>70</y>
   </widget>
   <widget typeId="org.csstudio.opibuilder.widgets.MenuButton" version="1.0.0">
-    <actions hook="false" hook_all="false" />
     <actions_from_pv>true</actions_from_pv>
     <alarm_pulsing>false</alarm_pulsing>
     <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
@@ -565,7 +575,7 @@ $(pv_value)</tooltip>
     <border_width>1</border_width>
     <enabled>true</enabled>
     <font>
-      <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
+      <opifont.name fontName="Segoe UI" height="9" style="0" pixels="false">Default</opifont.name>
     </font>
     <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
     <foreground_color>
@@ -590,6 +600,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Menu Button</widget_type>
     <width>120</width>
+    <wuid>52266eb9:18c00fb3bfe:-7d4e</wuid>
     <x>235</x>
     <y>70</y>
   </widget>
@@ -641,6 +652,7 @@ $(pv_value)</tooltip>
     <widget_type>Text Update</widget_type>
     <width>120</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7d4d</wuid>
     <x>360</x>
     <y>70</y>
   </widget>
@@ -672,7 +684,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>GainAuto</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -681,11 +692,11 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7d4c</wuid>
     <x>10</x>
     <y>95</y>
   </widget>
   <widget typeId="org.csstudio.opibuilder.widgets.MenuButton" version="1.0.0">
-    <actions hook="false" hook_all="false" />
     <actions_from_pv>true</actions_from_pv>
     <alarm_pulsing>false</alarm_pulsing>
     <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
@@ -700,7 +711,7 @@ $(pv_value)</tooltip>
     <border_width>1</border_width>
     <enabled>true</enabled>
     <font>
-      <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
+      <opifont.name fontName="Segoe UI" height="9" style="0" pixels="false">Default</opifont.name>
     </font>
     <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
     <foreground_color>
@@ -725,6 +736,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Menu Button</widget_type>
     <width>120</width>
+    <wuid>52266eb9:18c00fb3bfe:-7d4b</wuid>
     <x>235</x>
     <y>95</y>
   </widget>
@@ -776,6 +788,7 @@ $(pv_value)</tooltip>
     <widget_type>Text Update</widget_type>
     <width>120</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7d4a</wuid>
     <x>360</x>
     <y>95</y>
   </widget>
@@ -807,7 +820,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>Gain</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -816,6 +828,7 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7d49</wuid>
     <x>10</x>
     <y>120</y>
   </widget>
@@ -846,17 +859,14 @@ $(pv_value)</tooltip>
     <height>20</height>
     <horizontal_alignment>0</horizontal_alignment>
     <limits_from_pv>false</limits_from_pv>
-    <maximum>Infinity</maximum>
-    <minimum>-Infinity</minimum>
+    <maximum>1.7976931348623157E308</maximum>
+    <minimum>-1.7976931348623157E308</minimum>
     <multiline_input>false</multiline_input>
     <name>Text Input</name>
-    <next_focus>0</next_focus>
-    <password_input>false</password_input>
     <precision>0</precision>
     <precision_from_pv>true</precision_from_pv>
     <pv_name>$(P)$(R)GC_Gain</pv_name>
     <pv_value />
-    <read_only>false</read_only>
     <rotation_angle>0.0</rotation_angle>
     <rules />
     <scale_options>
@@ -866,10 +876,7 @@ $(pv_value)</tooltip>
     </scale_options>
     <scripts />
     <selector_type>0</selector_type>
-    <show_h_scroll>false</show_h_scroll>
-    <show_native_border>true</show_native_border>
     <show_units>false</show_units>
-    <show_v_scroll>false</show_v_scroll>
     <style>0</style>
     <text></text>
     <tooltip>$(pv_name)
@@ -878,6 +885,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Text Input</widget_type>
     <width>60</width>
+    <wuid>52266eb9:18c00fb3bfe:-7d48</wuid>
     <x>235</x>
     <y>120</y>
   </widget>
@@ -929,6 +937,7 @@ $(pv_value)</tooltip>
     <widget_type>Text Update</widget_type>
     <width>120</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7d47</wuid>
     <x>300</x>
     <y>120</y>
   </widget>
@@ -960,7 +969,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>AutoGainLowerLimit</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -969,6 +977,7 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7d46</wuid>
     <x>10</x>
     <y>145</y>
   </widget>
@@ -999,17 +1008,14 @@ $(pv_value)</tooltip>
     <height>20</height>
     <horizontal_alignment>0</horizontal_alignment>
     <limits_from_pv>false</limits_from_pv>
-    <maximum>Infinity</maximum>
-    <minimum>-Infinity</minimum>
+    <maximum>1.7976931348623157E308</maximum>
+    <minimum>-1.7976931348623157E308</minimum>
     <multiline_input>false</multiline_input>
     <name>Text Input</name>
-    <next_focus>0</next_focus>
-    <password_input>false</password_input>
     <precision>0</precision>
     <precision_from_pv>true</precision_from_pv>
     <pv_name>$(P)$(R)GC_AutGainLowerLimit</pv_name>
     <pv_value />
-    <read_only>false</read_only>
     <rotation_angle>0.0</rotation_angle>
     <rules />
     <scale_options>
@@ -1019,10 +1025,7 @@ $(pv_value)</tooltip>
     </scale_options>
     <scripts />
     <selector_type>0</selector_type>
-    <show_h_scroll>false</show_h_scroll>
-    <show_native_border>true</show_native_border>
     <show_units>false</show_units>
-    <show_v_scroll>false</show_v_scroll>
     <style>0</style>
     <text></text>
     <tooltip>$(pv_name)
@@ -1031,6 +1034,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Text Input</widget_type>
     <width>60</width>
+    <wuid>52266eb9:18c00fb3bfe:-7d45</wuid>
     <x>235</x>
     <y>145</y>
   </widget>
@@ -1082,6 +1086,7 @@ $(pv_value)</tooltip>
     <widget_type>Text Update</widget_type>
     <width>120</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7d44</wuid>
     <x>300</x>
     <y>145</y>
   </widget>
@@ -1113,7 +1118,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>AutoGainUpperLimit</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -1122,6 +1126,7 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7d43</wuid>
     <x>10</x>
     <y>170</y>
   </widget>
@@ -1152,17 +1157,14 @@ $(pv_value)</tooltip>
     <height>20</height>
     <horizontal_alignment>0</horizontal_alignment>
     <limits_from_pv>false</limits_from_pv>
-    <maximum>Infinity</maximum>
-    <minimum>-Infinity</minimum>
+    <maximum>1.7976931348623157E308</maximum>
+    <minimum>-1.7976931348623157E308</minimum>
     <multiline_input>false</multiline_input>
     <name>Text Input</name>
-    <next_focus>0</next_focus>
-    <password_input>false</password_input>
     <precision>0</precision>
     <precision_from_pv>true</precision_from_pv>
     <pv_name>$(P)$(R)GC_AutGainUpperLimit</pv_name>
     <pv_value />
-    <read_only>false</read_only>
     <rotation_angle>0.0</rotation_angle>
     <rules />
     <scale_options>
@@ -1172,10 +1174,7 @@ $(pv_value)</tooltip>
     </scale_options>
     <scripts />
     <selector_type>0</selector_type>
-    <show_h_scroll>false</show_h_scroll>
-    <show_native_border>true</show_native_border>
     <show_units>false</show_units>
-    <show_v_scroll>false</show_v_scroll>
     <style>0</style>
     <text></text>
     <tooltip>$(pv_name)
@@ -1184,6 +1183,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Text Input</widget_type>
     <width>60</width>
+    <wuid>52266eb9:18c00fb3bfe:-7d42</wuid>
     <x>235</x>
     <y>170</y>
   </widget>
@@ -1235,6 +1235,7 @@ $(pv_value)</tooltip>
     <widget_type>Text Update</widget_type>
     <width>120</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7d41</wuid>
     <x>300</x>
     <y>170</y>
   </widget>
@@ -1266,7 +1267,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>BlackLevel</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -1275,6 +1275,7 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7d40</wuid>
     <x>10</x>
     <y>195</y>
   </widget>
@@ -1305,17 +1306,14 @@ $(pv_value)</tooltip>
     <height>20</height>
     <horizontal_alignment>0</horizontal_alignment>
     <limits_from_pv>false</limits_from_pv>
-    <maximum>Infinity</maximum>
-    <minimum>-Infinity</minimum>
+    <maximum>1.7976931348623157E308</maximum>
+    <minimum>-1.7976931348623157E308</minimum>
     <multiline_input>false</multiline_input>
     <name>Text Input</name>
-    <next_focus>0</next_focus>
-    <password_input>false</password_input>
     <precision>0</precision>
     <precision_from_pv>true</precision_from_pv>
     <pv_name>$(P)$(R)GC_BlackLevel</pv_name>
     <pv_value />
-    <read_only>false</read_only>
     <rotation_angle>0.0</rotation_angle>
     <rules />
     <scale_options>
@@ -1325,10 +1323,7 @@ $(pv_value)</tooltip>
     </scale_options>
     <scripts />
     <selector_type>0</selector_type>
-    <show_h_scroll>false</show_h_scroll>
-    <show_native_border>true</show_native_border>
     <show_units>false</show_units>
-    <show_v_scroll>false</show_v_scroll>
     <style>0</style>
     <text></text>
     <tooltip>$(pv_name)
@@ -1337,6 +1332,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Text Input</widget_type>
     <width>60</width>
+    <wuid>52266eb9:18c00fb3bfe:-7d3f</wuid>
     <x>235</x>
     <y>195</y>
   </widget>
@@ -1388,6 +1384,7 @@ $(pv_value)</tooltip>
     <widget_type>Text Update</widget_type>
     <width>120</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7d3e</wuid>
     <x>300</x>
     <y>195</y>
   </widget>
@@ -1419,7 +1416,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>BlackLevelEnabled</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -1428,11 +1424,11 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7d3d</wuid>
     <x>10</x>
     <y>220</y>
   </widget>
   <widget typeId="org.csstudio.opibuilder.widgets.MenuButton" version="1.0.0">
-    <actions hook="false" hook_all="false" />
     <actions_from_pv>true</actions_from_pv>
     <alarm_pulsing>false</alarm_pulsing>
     <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
@@ -1447,7 +1443,7 @@ $(pv_value)</tooltip>
     <border_width>1</border_width>
     <enabled>true</enabled>
     <font>
-      <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
+      <opifont.name fontName="Segoe UI" height="9" style="0" pixels="false">Default</opifont.name>
     </font>
     <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
     <foreground_color>
@@ -1472,6 +1468,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Menu Button</widget_type>
     <width>120</width>
+    <wuid>52266eb9:18c00fb3bfe:-7d3c</wuid>
     <x>235</x>
     <y>220</y>
   </widget>
@@ -1523,6 +1520,7 @@ $(pv_value)</tooltip>
     <widget_type>Text Update</widget_type>
     <width>120</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7d3b</wuid>
     <x>360</x>
     <y>220</y>
   </widget>
@@ -1554,7 +1552,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>BlackLevelAuto</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -1563,11 +1560,11 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7d3a</wuid>
     <x>10</x>
     <y>245</y>
   </widget>
   <widget typeId="org.csstudio.opibuilder.widgets.MenuButton" version="1.0.0">
-    <actions hook="false" hook_all="false" />
     <actions_from_pv>true</actions_from_pv>
     <alarm_pulsing>false</alarm_pulsing>
     <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
@@ -1582,7 +1579,7 @@ $(pv_value)</tooltip>
     <border_width>1</border_width>
     <enabled>true</enabled>
     <font>
-      <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
+      <opifont.name fontName="Segoe UI" height="9" style="0" pixels="false">Default</opifont.name>
     </font>
     <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
     <foreground_color>
@@ -1607,6 +1604,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Menu Button</widget_type>
     <width>120</width>
+    <wuid>52266eb9:18c00fb3bfe:-7d39</wuid>
     <x>235</x>
     <y>245</y>
   </widget>
@@ -1658,6 +1656,7 @@ $(pv_value)</tooltip>
     <widget_type>Text Update</widget_type>
     <width>120</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7d38</wuid>
     <x>360</x>
     <y>245</y>
   </widget>
@@ -1689,7 +1688,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>Gamma</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -1698,6 +1696,7 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7d37</wuid>
     <x>10</x>
     <y>270</y>
   </widget>
@@ -1728,17 +1727,14 @@ $(pv_value)</tooltip>
     <height>20</height>
     <horizontal_alignment>0</horizontal_alignment>
     <limits_from_pv>false</limits_from_pv>
-    <maximum>Infinity</maximum>
-    <minimum>-Infinity</minimum>
+    <maximum>1.7976931348623157E308</maximum>
+    <minimum>-1.7976931348623157E308</minimum>
     <multiline_input>false</multiline_input>
     <name>Text Input</name>
-    <next_focus>0</next_focus>
-    <password_input>false</password_input>
     <precision>0</precision>
     <precision_from_pv>true</precision_from_pv>
     <pv_name>$(P)$(R)GC_Gamma</pv_name>
     <pv_value />
-    <read_only>false</read_only>
     <rotation_angle>0.0</rotation_angle>
     <rules />
     <scale_options>
@@ -1748,10 +1744,7 @@ $(pv_value)</tooltip>
     </scale_options>
     <scripts />
     <selector_type>0</selector_type>
-    <show_h_scroll>false</show_h_scroll>
-    <show_native_border>true</show_native_border>
     <show_units>false</show_units>
-    <show_v_scroll>false</show_v_scroll>
     <style>0</style>
     <text></text>
     <tooltip>$(pv_name)
@@ -1760,6 +1753,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Text Input</widget_type>
     <width>60</width>
+    <wuid>52266eb9:18c00fb3bfe:-7d36</wuid>
     <x>235</x>
     <y>270</y>
   </widget>
@@ -1811,6 +1805,7 @@ $(pv_value)</tooltip>
     <widget_type>Text Update</widget_type>
     <width>120</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7d35</wuid>
     <x>300</x>
     <y>270</y>
   </widget>
@@ -1842,7 +1837,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>GammaEnabled</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -1851,11 +1845,11 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7d34</wuid>
     <x>10</x>
     <y>295</y>
   </widget>
   <widget typeId="org.csstudio.opibuilder.widgets.MenuButton" version="1.0.0">
-    <actions hook="false" hook_all="false" />
     <actions_from_pv>true</actions_from_pv>
     <alarm_pulsing>false</alarm_pulsing>
     <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
@@ -1870,7 +1864,7 @@ $(pv_value)</tooltip>
     <border_width>1</border_width>
     <enabled>true</enabled>
     <font>
-      <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
+      <opifont.name fontName="Segoe UI" height="9" style="0" pixels="false">Default</opifont.name>
     </font>
     <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
     <foreground_color>
@@ -1895,6 +1889,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Menu Button</widget_type>
     <width>120</width>
+    <wuid>52266eb9:18c00fb3bfe:-7d33</wuid>
     <x>235</x>
     <y>295</y>
   </widget>
@@ -1946,6 +1941,7 @@ $(pv_value)</tooltip>
     <widget_type>Text Update</widget_type>
     <width>120</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7d32</wuid>
     <x>360</x>
     <y>295</y>
   </widget>
@@ -1977,7 +1973,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>Sharpness</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -1986,6 +1981,7 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7d31</wuid>
     <x>10</x>
     <y>320</y>
   </widget>
@@ -2016,17 +2012,14 @@ $(pv_value)</tooltip>
     <height>20</height>
     <horizontal_alignment>0</horizontal_alignment>
     <limits_from_pv>false</limits_from_pv>
-    <maximum>Infinity</maximum>
-    <minimum>-Infinity</minimum>
+    <maximum>1.7976931348623157E308</maximum>
+    <minimum>-1.7976931348623157E308</minimum>
     <multiline_input>false</multiline_input>
     <name>Text Input</name>
-    <next_focus>0</next_focus>
-    <password_input>false</password_input>
     <precision>0</precision>
     <precision_from_pv>true</precision_from_pv>
     <pv_name>$(P)$(R)GC_Sharpness</pv_name>
     <pv_value />
-    <read_only>false</read_only>
     <rotation_angle>0.0</rotation_angle>
     <rules />
     <scale_options>
@@ -2036,10 +2029,7 @@ $(pv_value)</tooltip>
     </scale_options>
     <scripts />
     <selector_type>0</selector_type>
-    <show_h_scroll>false</show_h_scroll>
-    <show_native_border>true</show_native_border>
     <show_units>false</show_units>
-    <show_v_scroll>false</show_v_scroll>
     <style>0</style>
     <text></text>
     <tooltip>$(pv_name)
@@ -2048,6 +2038,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Text Input</widget_type>
     <width>60</width>
+    <wuid>52266eb9:18c00fb3bfe:-7d30</wuid>
     <x>235</x>
     <y>320</y>
   </widget>
@@ -2099,6 +2090,7 @@ $(pv_value)</tooltip>
     <widget_type>Text Update</widget_type>
     <width>120</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7d2f</wuid>
     <x>300</x>
     <y>320</y>
   </widget>
@@ -2130,7 +2122,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>SharpnessEnabled</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -2139,11 +2130,11 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7d2e</wuid>
     <x>10</x>
     <y>345</y>
   </widget>
   <widget typeId="org.csstudio.opibuilder.widgets.MenuButton" version="1.0.0">
-    <actions hook="false" hook_all="false" />
     <actions_from_pv>true</actions_from_pv>
     <alarm_pulsing>false</alarm_pulsing>
     <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
@@ -2158,7 +2149,7 @@ $(pv_value)</tooltip>
     <border_width>1</border_width>
     <enabled>true</enabled>
     <font>
-      <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
+      <opifont.name fontName="Segoe UI" height="9" style="0" pixels="false">Default</opifont.name>
     </font>
     <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
     <foreground_color>
@@ -2183,6 +2174,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Menu Button</widget_type>
     <width>120</width>
+    <wuid>52266eb9:18c00fb3bfe:-7d2d</wuid>
     <x>235</x>
     <y>345</y>
   </widget>
@@ -2234,6 +2226,7 @@ $(pv_value)</tooltip>
     <widget_type>Text Update</widget_type>
     <width>120</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7d2c</wuid>
     <x>360</x>
     <y>345</y>
   </widget>
@@ -2265,7 +2258,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>SharpnessAuto</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -2274,11 +2266,11 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7d2b</wuid>
     <x>10</x>
     <y>370</y>
   </widget>
   <widget typeId="org.csstudio.opibuilder.widgets.MenuButton" version="1.0.0">
-    <actions hook="false" hook_all="false" />
     <actions_from_pv>true</actions_from_pv>
     <alarm_pulsing>false</alarm_pulsing>
     <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
@@ -2293,7 +2285,7 @@ $(pv_value)</tooltip>
     <border_width>1</border_width>
     <enabled>true</enabled>
     <font>
-      <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
+      <opifont.name fontName="Segoe UI" height="9" style="0" pixels="false">Default</opifont.name>
     </font>
     <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
     <foreground_color>
@@ -2318,6 +2310,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Menu Button</widget_type>
     <width>120</width>
+    <wuid>52266eb9:18c00fb3bfe:-7d2a</wuid>
     <x>235</x>
     <y>370</y>
   </widget>
@@ -2369,6 +2362,7 @@ $(pv_value)</tooltip>
     <widget_type>Text Update</widget_type>
     <width>120</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7d29</wuid>
     <x>360</x>
     <y>370</y>
   </widget>
@@ -2400,7 +2394,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>Hue</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -2409,6 +2402,7 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7d28</wuid>
     <x>10</x>
     <y>395</y>
   </widget>
@@ -2439,17 +2433,14 @@ $(pv_value)</tooltip>
     <height>20</height>
     <horizontal_alignment>0</horizontal_alignment>
     <limits_from_pv>false</limits_from_pv>
-    <maximum>Infinity</maximum>
-    <minimum>-Infinity</minimum>
+    <maximum>1.7976931348623157E308</maximum>
+    <minimum>-1.7976931348623157E308</minimum>
     <multiline_input>false</multiline_input>
     <name>Text Input</name>
-    <next_focus>0</next_focus>
-    <password_input>false</password_input>
     <precision>0</precision>
     <precision_from_pv>true</precision_from_pv>
     <pv_name>$(P)$(R)GC_Hue</pv_name>
     <pv_value />
-    <read_only>false</read_only>
     <rotation_angle>0.0</rotation_angle>
     <rules />
     <scale_options>
@@ -2459,10 +2450,7 @@ $(pv_value)</tooltip>
     </scale_options>
     <scripts />
     <selector_type>0</selector_type>
-    <show_h_scroll>false</show_h_scroll>
-    <show_native_border>true</show_native_border>
     <show_units>false</show_units>
-    <show_v_scroll>false</show_v_scroll>
     <style>0</style>
     <text></text>
     <tooltip>$(pv_name)
@@ -2471,6 +2459,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Text Input</widget_type>
     <width>60</width>
+    <wuid>52266eb9:18c00fb3bfe:-7d27</wuid>
     <x>235</x>
     <y>395</y>
   </widget>
@@ -2522,6 +2511,7 @@ $(pv_value)</tooltip>
     <widget_type>Text Update</widget_type>
     <width>120</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7d26</wuid>
     <x>300</x>
     <y>395</y>
   </widget>
@@ -2553,7 +2543,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>HueEnabled</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -2562,11 +2551,11 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7d25</wuid>
     <x>10</x>
     <y>420</y>
   </widget>
   <widget typeId="org.csstudio.opibuilder.widgets.MenuButton" version="1.0.0">
-    <actions hook="false" hook_all="false" />
     <actions_from_pv>true</actions_from_pv>
     <alarm_pulsing>false</alarm_pulsing>
     <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
@@ -2581,7 +2570,7 @@ $(pv_value)</tooltip>
     <border_width>1</border_width>
     <enabled>true</enabled>
     <font>
-      <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
+      <opifont.name fontName="Segoe UI" height="9" style="0" pixels="false">Default</opifont.name>
     </font>
     <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
     <foreground_color>
@@ -2606,6 +2595,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Menu Button</widget_type>
     <width>120</width>
+    <wuid>52266eb9:18c00fb3bfe:-7d24</wuid>
     <x>235</x>
     <y>420</y>
   </widget>
@@ -2657,6 +2647,7 @@ $(pv_value)</tooltip>
     <widget_type>Text Update</widget_type>
     <width>120</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7d23</wuid>
     <x>360</x>
     <y>420</y>
   </widget>
@@ -2688,7 +2679,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>HueAuto</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -2697,11 +2687,11 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7d22</wuid>
     <x>10</x>
     <y>445</y>
   </widget>
   <widget typeId="org.csstudio.opibuilder.widgets.MenuButton" version="1.0.0">
-    <actions hook="false" hook_all="false" />
     <actions_from_pv>true</actions_from_pv>
     <alarm_pulsing>false</alarm_pulsing>
     <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
@@ -2716,7 +2706,7 @@ $(pv_value)</tooltip>
     <border_width>1</border_width>
     <enabled>true</enabled>
     <font>
-      <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
+      <opifont.name fontName="Segoe UI" height="9" style="0" pixels="false">Default</opifont.name>
     </font>
     <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
     <foreground_color>
@@ -2741,6 +2731,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Menu Button</widget_type>
     <width>120</width>
+    <wuid>52266eb9:18c00fb3bfe:-7d21</wuid>
     <x>235</x>
     <y>445</y>
   </widget>
@@ -2792,6 +2783,7 @@ $(pv_value)</tooltip>
     <widget_type>Text Update</widget_type>
     <width>120</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7d20</wuid>
     <x>360</x>
     <y>445</y>
   </widget>
@@ -2823,7 +2815,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>Saturation</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -2832,6 +2823,7 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7d1f</wuid>
     <x>10</x>
     <y>470</y>
   </widget>
@@ -2862,17 +2854,14 @@ $(pv_value)</tooltip>
     <height>20</height>
     <horizontal_alignment>0</horizontal_alignment>
     <limits_from_pv>false</limits_from_pv>
-    <maximum>Infinity</maximum>
-    <minimum>-Infinity</minimum>
+    <maximum>1.7976931348623157E308</maximum>
+    <minimum>-1.7976931348623157E308</minimum>
     <multiline_input>false</multiline_input>
     <name>Text Input</name>
-    <next_focus>0</next_focus>
-    <password_input>false</password_input>
     <precision>0</precision>
     <precision_from_pv>true</precision_from_pv>
     <pv_name>$(P)$(R)GC_Saturation</pv_name>
     <pv_value />
-    <read_only>false</read_only>
     <rotation_angle>0.0</rotation_angle>
     <rules />
     <scale_options>
@@ -2882,10 +2871,7 @@ $(pv_value)</tooltip>
     </scale_options>
     <scripts />
     <selector_type>0</selector_type>
-    <show_h_scroll>false</show_h_scroll>
-    <show_native_border>true</show_native_border>
     <show_units>false</show_units>
-    <show_v_scroll>false</show_v_scroll>
     <style>0</style>
     <text></text>
     <tooltip>$(pv_name)
@@ -2894,6 +2880,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Text Input</widget_type>
     <width>60</width>
+    <wuid>52266eb9:18c00fb3bfe:-7d1e</wuid>
     <x>235</x>
     <y>470</y>
   </widget>
@@ -2945,6 +2932,7 @@ $(pv_value)</tooltip>
     <widget_type>Text Update</widget_type>
     <width>120</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7d1d</wuid>
     <x>300</x>
     <y>470</y>
   </widget>
@@ -2976,7 +2964,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>SaturationEnabled</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -2985,11 +2972,11 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7d1c</wuid>
     <x>10</x>
     <y>495</y>
   </widget>
   <widget typeId="org.csstudio.opibuilder.widgets.MenuButton" version="1.0.0">
-    <actions hook="false" hook_all="false" />
     <actions_from_pv>true</actions_from_pv>
     <alarm_pulsing>false</alarm_pulsing>
     <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
@@ -3004,7 +2991,7 @@ $(pv_value)</tooltip>
     <border_width>1</border_width>
     <enabled>true</enabled>
     <font>
-      <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
+      <opifont.name fontName="Segoe UI" height="9" style="0" pixels="false">Default</opifont.name>
     </font>
     <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
     <foreground_color>
@@ -3029,6 +3016,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Menu Button</widget_type>
     <width>120</width>
+    <wuid>52266eb9:18c00fb3bfe:-7d1b</wuid>
     <x>235</x>
     <y>495</y>
   </widget>
@@ -3080,6 +3068,7 @@ $(pv_value)</tooltip>
     <widget_type>Text Update</widget_type>
     <width>120</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7d1a</wuid>
     <x>360</x>
     <y>495</y>
   </widget>
@@ -3111,7 +3100,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>SaturationAuto</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -3120,11 +3108,11 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7d19</wuid>
     <x>10</x>
     <y>520</y>
   </widget>
   <widget typeId="org.csstudio.opibuilder.widgets.MenuButton" version="1.0.0">
-    <actions hook="false" hook_all="false" />
     <actions_from_pv>true</actions_from_pv>
     <alarm_pulsing>false</alarm_pulsing>
     <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
@@ -3139,7 +3127,7 @@ $(pv_value)</tooltip>
     <border_width>1</border_width>
     <enabled>true</enabled>
     <font>
-      <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
+      <opifont.name fontName="Segoe UI" height="9" style="0" pixels="false">Default</opifont.name>
     </font>
     <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
     <foreground_color>
@@ -3164,6 +3152,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Menu Button</widget_type>
     <width>120</width>
+    <wuid>52266eb9:18c00fb3bfe:-7d18</wuid>
     <x>235</x>
     <y>520</y>
   </widget>
@@ -3215,6 +3204,7 @@ $(pv_value)</tooltip>
     <widget_type>Text Update</widget_type>
     <width>120</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7d17</wuid>
     <x>360</x>
     <y>520</y>
   </widget>
@@ -3246,7 +3236,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>BalanceWhiteAuto</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -3255,11 +3244,11 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7d16</wuid>
     <x>10</x>
     <y>545</y>
   </widget>
   <widget typeId="org.csstudio.opibuilder.widgets.MenuButton" version="1.0.0">
-    <actions hook="false" hook_all="false" />
     <actions_from_pv>true</actions_from_pv>
     <alarm_pulsing>false</alarm_pulsing>
     <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
@@ -3274,7 +3263,7 @@ $(pv_value)</tooltip>
     <border_width>1</border_width>
     <enabled>true</enabled>
     <font>
-      <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
+      <opifont.name fontName="Segoe UI" height="9" style="0" pixels="false">Default</opifont.name>
     </font>
     <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
     <foreground_color>
@@ -3299,6 +3288,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Menu Button</widget_type>
     <width>120</width>
+    <wuid>52266eb9:18c00fb3bfe:-7d15</wuid>
     <x>235</x>
     <y>545</y>
   </widget>
@@ -3350,6 +3340,7 @@ $(pv_value)</tooltip>
     <widget_type>Text Update</widget_type>
     <width>120</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7d14</wuid>
     <x>360</x>
     <y>545</y>
   </widget>
@@ -3381,7 +3372,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>BalanceRatioSelector</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -3390,11 +3380,11 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7d13</wuid>
     <x>10</x>
     <y>570</y>
   </widget>
   <widget typeId="org.csstudio.opibuilder.widgets.MenuButton" version="1.0.0">
-    <actions hook="false" hook_all="false" />
     <actions_from_pv>true</actions_from_pv>
     <alarm_pulsing>false</alarm_pulsing>
     <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
@@ -3409,7 +3399,7 @@ $(pv_value)</tooltip>
     <border_width>1</border_width>
     <enabled>true</enabled>
     <font>
-      <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
+      <opifont.name fontName="Segoe UI" height="9" style="0" pixels="false">Default</opifont.name>
     </font>
     <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
     <foreground_color>
@@ -3434,6 +3424,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Menu Button</widget_type>
     <width>120</width>
+    <wuid>52266eb9:18c00fb3bfe:-7d12</wuid>
     <x>235</x>
     <y>570</y>
   </widget>
@@ -3485,6 +3476,7 @@ $(pv_value)</tooltip>
     <widget_type>Text Update</widget_type>
     <width>120</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7d11</wuid>
     <x>360</x>
     <y>570</y>
   </widget>
@@ -3516,7 +3508,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>BalanceRatio</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -3525,6 +3516,7 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7d10</wuid>
     <x>10</x>
     <y>595</y>
   </widget>
@@ -3555,17 +3547,14 @@ $(pv_value)</tooltip>
     <height>20</height>
     <horizontal_alignment>0</horizontal_alignment>
     <limits_from_pv>false</limits_from_pv>
-    <maximum>Infinity</maximum>
-    <minimum>-Infinity</minimum>
+    <maximum>1.7976931348623157E308</maximum>
+    <minimum>-1.7976931348623157E308</minimum>
     <multiline_input>false</multiline_input>
     <name>Text Input</name>
-    <next_focus>0</next_focus>
-    <password_input>false</password_input>
     <precision>0</precision>
     <precision_from_pv>true</precision_from_pv>
     <pv_name>$(P)$(R)GC_BalanceRatio</pv_name>
     <pv_value />
-    <read_only>false</read_only>
     <rotation_angle>0.0</rotation_angle>
     <rules />
     <scale_options>
@@ -3575,10 +3564,7 @@ $(pv_value)</tooltip>
     </scale_options>
     <scripts />
     <selector_type>0</selector_type>
-    <show_h_scroll>false</show_h_scroll>
-    <show_native_border>true</show_native_border>
     <show_units>false</show_units>
-    <show_v_scroll>false</show_v_scroll>
     <style>0</style>
     <text></text>
     <tooltip>$(pv_name)
@@ -3587,6 +3573,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Text Input</widget_type>
     <width>60</width>
+    <wuid>52266eb9:18c00fb3bfe:-7d0f</wuid>
     <x>235</x>
     <y>595</y>
   </widget>
@@ -3638,6 +3625,7 @@ $(pv_value)</tooltip>
     <widget_type>Text Update</widget_type>
     <width>120</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7d0e</wuid>
     <x>300</x>
     <y>595</y>
   </widget>
@@ -3669,7 +3657,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>DeviceControl</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -3678,6 +3665,7 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>470</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7d0d</wuid>
     <x>495</x>
     <y>45</y>
   </widget>
@@ -3709,7 +3697,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>DeviceVendorName</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -3718,6 +3705,7 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7d0c</wuid>
     <x>495</x>
     <y>70</y>
   </widget>
@@ -3769,6 +3757,7 @@ $(pv_value)</tooltip>
     <widget_type>Text Update</widget_type>
     <width>240</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7d0b</wuid>
     <x>720</x>
     <y>70</y>
   </widget>
@@ -3800,7 +3789,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>DeviceModelName</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -3809,6 +3797,7 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7d0a</wuid>
     <x>495</x>
     <y>95</y>
   </widget>
@@ -3860,6 +3849,7 @@ $(pv_value)</tooltip>
     <widget_type>Text Update</widget_type>
     <width>240</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7d09</wuid>
     <x>720</x>
     <y>95</y>
   </widget>
@@ -3891,7 +3881,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>DeviceVersion</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -3900,6 +3889,7 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7d08</wuid>
     <x>495</x>
     <y>120</y>
   </widget>
@@ -3951,6 +3941,7 @@ $(pv_value)</tooltip>
     <widget_type>Text Update</widget_type>
     <width>240</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7d07</wuid>
     <x>720</x>
     <y>120</y>
   </widget>
@@ -3982,7 +3973,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>DeviceSerialNumber</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -3991,6 +3981,7 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7d06</wuid>
     <x>495</x>
     <y>145</y>
   </widget>
@@ -4042,6 +4033,7 @@ $(pv_value)</tooltip>
     <widget_type>Text Update</widget_type>
     <width>240</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7d05</wuid>
     <x>720</x>
     <y>145</y>
   </widget>
@@ -4073,7 +4065,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>DeviceID</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -4082,6 +4073,7 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7d04</wuid>
     <x>495</x>
     <y>170</y>
   </widget>
@@ -4133,6 +4125,7 @@ $(pv_value)</tooltip>
     <widget_type>Text Update</widget_type>
     <width>240</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7d03</wuid>
     <x>720</x>
     <y>170</y>
   </widget>
@@ -4164,7 +4157,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>DeviceUserID</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -4173,6 +4165,7 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7d02</wuid>
     <x>495</x>
     <y>195</y>
   </widget>
@@ -4224,6 +4217,7 @@ $(pv_value)</tooltip>
     <widget_type>Text Update</widget_type>
     <width>240</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7d01</wuid>
     <x>720</x>
     <y>195</y>
   </widget>
@@ -4255,7 +4249,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>pgrSensorDescription</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -4264,6 +4257,7 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7d00</wuid>
     <x>495</x>
     <y>220</y>
   </widget>
@@ -4315,6 +4309,7 @@ $(pv_value)</tooltip>
     <widget_type>Text Update</widget_type>
     <width>240</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7cff</wuid>
     <x>720</x>
     <y>220</y>
   </widget>
@@ -4346,7 +4341,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>DeviceSVNVersion</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -4355,6 +4349,7 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7cfe</wuid>
     <x>495</x>
     <y>245</y>
   </widget>
@@ -4406,6 +4401,7 @@ $(pv_value)</tooltip>
     <widget_type>Text Update</widget_type>
     <width>240</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7cfd</wuid>
     <x>720</x>
     <y>245</y>
   </widget>
@@ -4437,7 +4433,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>DeviceFirmwareVersion</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -4446,6 +4441,7 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7cfc</wuid>
     <x>495</x>
     <y>270</y>
   </widget>
@@ -4497,6 +4493,7 @@ $(pv_value)</tooltip>
     <widget_type>Text Update</widget_type>
     <width>240</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7cfb</wuid>
     <x>720</x>
     <y>270</y>
   </widget>
@@ -4528,7 +4525,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>DeviceScanType</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -4537,11 +4533,11 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7cfa</wuid>
     <x>495</x>
     <y>295</y>
   </widget>
   <widget typeId="org.csstudio.opibuilder.widgets.MenuButton" version="1.0.0">
-    <actions hook="false" hook_all="false" />
     <actions_from_pv>true</actions_from_pv>
     <alarm_pulsing>false</alarm_pulsing>
     <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
@@ -4556,7 +4552,7 @@ $(pv_value)</tooltip>
     <border_width>1</border_width>
     <enabled>true</enabled>
     <font>
-      <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
+      <opifont.name fontName="Segoe UI" height="9" style="0" pixels="false">Default</opifont.name>
     </font>
     <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
     <foreground_color>
@@ -4581,6 +4577,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Menu Button</widget_type>
     <width>120</width>
+    <wuid>52266eb9:18c00fb3bfe:-7cf9</wuid>
     <x>720</x>
     <y>295</y>
   </widget>
@@ -4632,6 +4629,7 @@ $(pv_value)</tooltip>
     <widget_type>Text Update</widget_type>
     <width>120</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7cf8</wuid>
     <x>845</x>
     <y>295</y>
   </widget>
@@ -4663,7 +4661,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>DeviceTemperature</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -4672,6 +4669,7 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7cf7</wuid>
     <x>495</x>
     <y>320</y>
   </widget>
@@ -4702,17 +4700,14 @@ $(pv_value)</tooltip>
     <height>20</height>
     <horizontal_alignment>0</horizontal_alignment>
     <limits_from_pv>false</limits_from_pv>
-    <maximum>Infinity</maximum>
-    <minimum>-Infinity</minimum>
+    <maximum>1.7976931348623157E308</maximum>
+    <minimum>-1.7976931348623157E308</minimum>
     <multiline_input>false</multiline_input>
     <name>Text Input</name>
-    <next_focus>0</next_focus>
-    <password_input>false</password_input>
     <precision>0</precision>
     <precision_from_pv>true</precision_from_pv>
     <pv_name>$(P)$(R)GC_DeviceTemperature</pv_name>
     <pv_value />
-    <read_only>false</read_only>
     <rotation_angle>0.0</rotation_angle>
     <rules />
     <scale_options>
@@ -4722,10 +4717,7 @@ $(pv_value)</tooltip>
     </scale_options>
     <scripts />
     <selector_type>0</selector_type>
-    <show_h_scroll>false</show_h_scroll>
-    <show_native_border>true</show_native_border>
     <show_units>false</show_units>
-    <show_v_scroll>false</show_v_scroll>
     <style>0</style>
     <text></text>
     <tooltip>$(pv_name)
@@ -4734,6 +4726,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Text Input</widget_type>
     <width>60</width>
+    <wuid>52266eb9:18c00fb3bfe:-7cf6</wuid>
     <x>720</x>
     <y>320</y>
   </widget>
@@ -4785,6 +4778,7 @@ $(pv_value)</tooltip>
     <widget_type>Text Update</widget_type>
     <width>120</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7cf5</wuid>
     <x>785</x>
     <y>320</y>
   </widget>
@@ -4816,7 +4810,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>DeviceReset</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -4825,6 +4818,7 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7cf4</wuid>
     <x>495</x>
     <y>345</y>
   </widget>
@@ -4851,7 +4845,7 @@ $(pv_value)</tooltip>
     <border_width>1</border_width>
     <enabled>true</enabled>
     <font>
-      <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
+      <opifont.name fontName="Segoe UI" height="9" style="0" pixels="false">Default</opifont.name>
     </font>
     <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
     <foreground_color>
@@ -4878,6 +4872,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Action Button</widget_type>
     <width>200</width>
+    <wuid>52266eb9:18c00fb3bfe:-7cf3</wuid>
     <x>720</x>
     <y>345</y>
   </widget>
@@ -4909,7 +4904,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>pgrDeviceUptime</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -4918,6 +4912,7 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7cf2</wuid>
     <x>495</x>
     <y>370</y>
   </widget>
@@ -4948,17 +4943,14 @@ $(pv_value)</tooltip>
     <height>20</height>
     <horizontal_alignment>0</horizontal_alignment>
     <limits_from_pv>false</limits_from_pv>
-    <maximum>Infinity</maximum>
-    <minimum>-Infinity</minimum>
+    <maximum>1.7976931348623157E308</maximum>
+    <minimum>-1.7976931348623157E308</minimum>
     <multiline_input>false</multiline_input>
     <name>Text Input</name>
-    <next_focus>0</next_focus>
-    <password_input>false</password_input>
     <precision>0</precision>
     <precision_from_pv>true</precision_from_pv>
     <pv_name>$(P)$(R)GC_pgrDeviceUptime</pv_name>
     <pv_value />
-    <read_only>false</read_only>
     <rotation_angle>0.0</rotation_angle>
     <rules />
     <scale_options>
@@ -4968,10 +4960,7 @@ $(pv_value)</tooltip>
     </scale_options>
     <scripts />
     <selector_type>0</selector_type>
-    <show_h_scroll>false</show_h_scroll>
-    <show_native_border>true</show_native_border>
     <show_units>false</show_units>
-    <show_v_scroll>false</show_v_scroll>
     <style>0</style>
     <text></text>
     <tooltip>$(pv_name)
@@ -4980,6 +4969,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Text Input</widget_type>
     <width>60</width>
+    <wuid>52266eb9:18c00fb3bfe:-7cf1</wuid>
     <x>720</x>
     <y>370</y>
   </widget>
@@ -5031,6 +5021,7 @@ $(pv_value)</tooltip>
     <widget_type>Text Update</widget_type>
     <width>120</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7cf0</wuid>
     <x>785</x>
     <y>370</y>
   </widget>
@@ -5062,7 +5053,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>AutoFunctionAOIsControl</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -5071,11 +5061,11 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7cef</wuid>
     <x>495</x>
     <y>395</y>
   </widget>
   <widget typeId="org.csstudio.opibuilder.widgets.MenuButton" version="1.0.0">
-    <actions hook="false" hook_all="false" />
     <actions_from_pv>true</actions_from_pv>
     <alarm_pulsing>false</alarm_pulsing>
     <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
@@ -5090,7 +5080,7 @@ $(pv_value)</tooltip>
     <border_width>1</border_width>
     <enabled>true</enabled>
     <font>
-      <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
+      <opifont.name fontName="Segoe UI" height="9" style="0" pixels="false">Default</opifont.name>
     </font>
     <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
     <foreground_color>
@@ -5115,6 +5105,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Menu Button</widget_type>
     <width>120</width>
+    <wuid>52266eb9:18c00fb3bfe:-7cee</wuid>
     <x>720</x>
     <y>395</y>
   </widget>
@@ -5166,6 +5157,7 @@ $(pv_value)</tooltip>
     <widget_type>Text Update</widget_type>
     <width>120</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7ced</wuid>
     <x>845</x>
     <y>395</y>
   </widget>
@@ -5197,7 +5189,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>AutoFunctionAOIWidth</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -5206,6 +5197,7 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7cec</wuid>
     <x>495</x>
     <y>420</y>
   </widget>
@@ -5236,17 +5228,14 @@ $(pv_value)</tooltip>
     <height>20</height>
     <horizontal_alignment>0</horizontal_alignment>
     <limits_from_pv>false</limits_from_pv>
-    <maximum>Infinity</maximum>
-    <minimum>-Infinity</minimum>
+    <maximum>1.7976931348623157E308</maximum>
+    <minimum>-1.7976931348623157E308</minimum>
     <multiline_input>false</multiline_input>
     <name>Text Input</name>
-    <next_focus>0</next_focus>
-    <password_input>false</password_input>
     <precision>0</precision>
     <precision_from_pv>true</precision_from_pv>
     <pv_name>$(P)$(R)GC_AutFunAOIWidth</pv_name>
     <pv_value />
-    <read_only>false</read_only>
     <rotation_angle>0.0</rotation_angle>
     <rules />
     <scale_options>
@@ -5256,10 +5245,7 @@ $(pv_value)</tooltip>
     </scale_options>
     <scripts />
     <selector_type>0</selector_type>
-    <show_h_scroll>false</show_h_scroll>
-    <show_native_border>true</show_native_border>
     <show_units>false</show_units>
-    <show_v_scroll>false</show_v_scroll>
     <style>0</style>
     <text></text>
     <tooltip>$(pv_name)
@@ -5268,6 +5254,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Text Input</widget_type>
     <width>60</width>
+    <wuid>52266eb9:18c00fb3bfe:-7ceb</wuid>
     <x>720</x>
     <y>420</y>
   </widget>
@@ -5319,6 +5306,7 @@ $(pv_value)</tooltip>
     <widget_type>Text Update</widget_type>
     <width>120</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7cea</wuid>
     <x>785</x>
     <y>420</y>
   </widget>
@@ -5350,7 +5338,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>AutoFunctionAOIHeight</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -5359,6 +5346,7 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7ce9</wuid>
     <x>495</x>
     <y>445</y>
   </widget>
@@ -5389,17 +5377,14 @@ $(pv_value)</tooltip>
     <height>20</height>
     <horizontal_alignment>0</horizontal_alignment>
     <limits_from_pv>false</limits_from_pv>
-    <maximum>Infinity</maximum>
-    <minimum>-Infinity</minimum>
+    <maximum>1.7976931348623157E308</maximum>
+    <minimum>-1.7976931348623157E308</minimum>
     <multiline_input>false</multiline_input>
     <name>Text Input</name>
-    <next_focus>0</next_focus>
-    <password_input>false</password_input>
     <precision>0</precision>
     <precision_from_pv>true</precision_from_pv>
     <pv_name>$(P)$(R)GC_AutFunAOIHeight</pv_name>
     <pv_value />
-    <read_only>false</read_only>
     <rotation_angle>0.0</rotation_angle>
     <rules />
     <scale_options>
@@ -5409,10 +5394,7 @@ $(pv_value)</tooltip>
     </scale_options>
     <scripts />
     <selector_type>0</selector_type>
-    <show_h_scroll>false</show_h_scroll>
-    <show_native_border>true</show_native_border>
     <show_units>false</show_units>
-    <show_v_scroll>false</show_v_scroll>
     <style>0</style>
     <text></text>
     <tooltip>$(pv_name)
@@ -5421,6 +5403,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Text Input</widget_type>
     <width>60</width>
+    <wuid>52266eb9:18c00fb3bfe:-7ce8</wuid>
     <x>720</x>
     <y>445</y>
   </widget>
@@ -5472,6 +5455,7 @@ $(pv_value)</tooltip>
     <widget_type>Text Update</widget_type>
     <width>120</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7ce7</wuid>
     <x>785</x>
     <y>445</y>
   </widget>
@@ -5503,7 +5487,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>AutoFunctionAOIOffsetX</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -5512,6 +5495,7 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7ce6</wuid>
     <x>495</x>
     <y>470</y>
   </widget>
@@ -5542,17 +5526,14 @@ $(pv_value)</tooltip>
     <height>20</height>
     <horizontal_alignment>0</horizontal_alignment>
     <limits_from_pv>false</limits_from_pv>
-    <maximum>Infinity</maximum>
-    <minimum>-Infinity</minimum>
+    <maximum>1.7976931348623157E308</maximum>
+    <minimum>-1.7976931348623157E308</minimum>
     <multiline_input>false</multiline_input>
     <name>Text Input</name>
-    <next_focus>0</next_focus>
-    <password_input>false</password_input>
     <precision>0</precision>
     <precision_from_pv>true</precision_from_pv>
     <pv_name>$(P)$(R)GC_AutFunAOIOffsetX</pv_name>
     <pv_value />
-    <read_only>false</read_only>
     <rotation_angle>0.0</rotation_angle>
     <rules />
     <scale_options>
@@ -5562,10 +5543,7 @@ $(pv_value)</tooltip>
     </scale_options>
     <scripts />
     <selector_type>0</selector_type>
-    <show_h_scroll>false</show_h_scroll>
-    <show_native_border>true</show_native_border>
     <show_units>false</show_units>
-    <show_v_scroll>false</show_v_scroll>
     <style>0</style>
     <text></text>
     <tooltip>$(pv_name)
@@ -5574,6 +5552,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Text Input</widget_type>
     <width>60</width>
+    <wuid>52266eb9:18c00fb3bfe:-7ce5</wuid>
     <x>720</x>
     <y>470</y>
   </widget>
@@ -5625,6 +5604,7 @@ $(pv_value)</tooltip>
     <widget_type>Text Update</widget_type>
     <width>120</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7ce4</wuid>
     <x>785</x>
     <y>470</y>
   </widget>
@@ -5656,7 +5636,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>AutoFunctionAOIOffsetY</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -5665,6 +5644,7 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7ce3</wuid>
     <x>495</x>
     <y>495</y>
   </widget>
@@ -5695,17 +5675,14 @@ $(pv_value)</tooltip>
     <height>20</height>
     <horizontal_alignment>0</horizontal_alignment>
     <limits_from_pv>false</limits_from_pv>
-    <maximum>Infinity</maximum>
-    <minimum>-Infinity</minimum>
+    <maximum>1.7976931348623157E308</maximum>
+    <minimum>-1.7976931348623157E308</minimum>
     <multiline_input>false</multiline_input>
     <name>Text Input</name>
-    <next_focus>0</next_focus>
-    <password_input>false</password_input>
     <precision>0</precision>
     <precision_from_pv>true</precision_from_pv>
     <pv_name>$(P)$(R)GC_AutFunAOIOffsetY</pv_name>
     <pv_value />
-    <read_only>false</read_only>
     <rotation_angle>0.0</rotation_angle>
     <rules />
     <scale_options>
@@ -5715,10 +5692,7 @@ $(pv_value)</tooltip>
     </scale_options>
     <scripts />
     <selector_type>0</selector_type>
-    <show_h_scroll>false</show_h_scroll>
-    <show_native_border>true</show_native_border>
     <show_units>false</show_units>
-    <show_v_scroll>false</show_v_scroll>
     <style>0</style>
     <text></text>
     <tooltip>$(pv_name)
@@ -5727,6 +5701,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Text Input</widget_type>
     <width>60</width>
+    <wuid>52266eb9:18c00fb3bfe:-7ce2</wuid>
     <x>720</x>
     <y>495</y>
   </widget>
@@ -5778,6 +5753,7 @@ $(pv_value)</tooltip>
     <widget_type>Text Update</widget_type>
     <width>120</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7ce1</wuid>
     <x>785</x>
     <y>495</y>
   </widget>
@@ -5809,7 +5785,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>pgrDevicePowerSupplySelector</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -5818,11 +5793,11 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7ce0</wuid>
     <x>495</x>
     <y>520</y>
   </widget>
   <widget typeId="org.csstudio.opibuilder.widgets.MenuButton" version="1.0.0">
-    <actions hook="false" hook_all="false" />
     <actions_from_pv>true</actions_from_pv>
     <alarm_pulsing>false</alarm_pulsing>
     <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
@@ -5837,7 +5812,7 @@ $(pv_value)</tooltip>
     <border_width>1</border_width>
     <enabled>true</enabled>
     <font>
-      <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
+      <opifont.name fontName="Segoe UI" height="9" style="0" pixels="false">Default</opifont.name>
     </font>
     <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
     <foreground_color>
@@ -5862,6 +5837,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Menu Button</widget_type>
     <width>120</width>
+    <wuid>52266eb9:18c00fb3bfe:-7cdf</wuid>
     <x>720</x>
     <y>520</y>
   </widget>
@@ -5913,6 +5889,7 @@ $(pv_value)</tooltip>
     <widget_type>Text Update</widget_type>
     <width>120</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7cde</wuid>
     <x>845</x>
     <y>520</y>
   </widget>
@@ -5944,7 +5921,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>pgrPowerSourcePresent</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -5953,11 +5929,11 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7cdd</wuid>
     <x>495</x>
     <y>545</y>
   </widget>
   <widget typeId="org.csstudio.opibuilder.widgets.MenuButton" version="1.0.0">
-    <actions hook="false" hook_all="false" />
     <actions_from_pv>true</actions_from_pv>
     <alarm_pulsing>false</alarm_pulsing>
     <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
@@ -5972,7 +5948,7 @@ $(pv_value)</tooltip>
     <border_width>1</border_width>
     <enabled>true</enabled>
     <font>
-      <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
+      <opifont.name fontName="Segoe UI" height="9" style="0" pixels="false">Default</opifont.name>
     </font>
     <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
     <foreground_color>
@@ -5997,6 +5973,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Menu Button</widget_type>
     <width>120</width>
+    <wuid>52266eb9:18c00fb3bfe:-7cdc</wuid>
     <x>720</x>
     <y>545</y>
   </widget>
@@ -6048,6 +6025,7 @@ $(pv_value)</tooltip>
     <widget_type>Text Update</widget_type>
     <width>120</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7cdb</wuid>
     <x>845</x>
     <y>545</y>
   </widget>
@@ -6079,7 +6057,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>pgrPowerSupplyEnable</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -6088,11 +6065,11 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7cda</wuid>
     <x>495</x>
     <y>570</y>
   </widget>
   <widget typeId="org.csstudio.opibuilder.widgets.MenuButton" version="1.0.0">
-    <actions hook="false" hook_all="false" />
     <actions_from_pv>true</actions_from_pv>
     <alarm_pulsing>false</alarm_pulsing>
     <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
@@ -6107,7 +6084,7 @@ $(pv_value)</tooltip>
     <border_width>1</border_width>
     <enabled>true</enabled>
     <font>
-      <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
+      <opifont.name fontName="Segoe UI" height="9" style="0" pixels="false">Default</opifont.name>
     </font>
     <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
     <foreground_color>
@@ -6132,6 +6109,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Menu Button</widget_type>
     <width>120</width>
+    <wuid>52266eb9:18c00fb3bfe:-7cd9</wuid>
     <x>720</x>
     <y>570</y>
   </widget>
@@ -6183,6 +6161,7 @@ $(pv_value)</tooltip>
     <widget_type>Text Update</widget_type>
     <width>120</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7cd8</wuid>
     <x>845</x>
     <y>570</y>
   </widget>
@@ -6214,7 +6193,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>pgrPowerSupplyVoltage</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -6223,6 +6201,7 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7cd7</wuid>
     <x>495</x>
     <y>595</y>
   </widget>
@@ -6253,17 +6232,14 @@ $(pv_value)</tooltip>
     <height>20</height>
     <horizontal_alignment>0</horizontal_alignment>
     <limits_from_pv>false</limits_from_pv>
-    <maximum>Infinity</maximum>
-    <minimum>-Infinity</minimum>
+    <maximum>1.7976931348623157E308</maximum>
+    <minimum>-1.7976931348623157E308</minimum>
     <multiline_input>false</multiline_input>
     <name>Text Input</name>
-    <next_focus>0</next_focus>
-    <password_input>false</password_input>
     <precision>0</precision>
     <precision_from_pv>true</precision_from_pv>
     <pv_name>$(P)$(R)GC_pPowSupplyVoltage</pv_name>
     <pv_value />
-    <read_only>false</read_only>
     <rotation_angle>0.0</rotation_angle>
     <rules />
     <scale_options>
@@ -6273,10 +6249,7 @@ $(pv_value)</tooltip>
     </scale_options>
     <scripts />
     <selector_type>0</selector_type>
-    <show_h_scroll>false</show_h_scroll>
-    <show_native_border>true</show_native_border>
     <show_units>false</show_units>
-    <show_v_scroll>false</show_v_scroll>
     <style>0</style>
     <text></text>
     <tooltip>$(pv_name)
@@ -6285,6 +6258,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Text Input</widget_type>
     <width>60</width>
+    <wuid>52266eb9:18c00fb3bfe:-7cd6</wuid>
     <x>720</x>
     <y>595</y>
   </widget>
@@ -6336,6 +6310,7 @@ $(pv_value)</tooltip>
     <widget_type>Text Update</widget_type>
     <width>120</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7cd5</wuid>
     <x>785</x>
     <y>595</y>
   </widget>
@@ -6367,7 +6342,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>pgrPowerSupplyCurrent</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -6376,6 +6350,7 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7cd4</wuid>
     <x>495</x>
     <y>620</y>
   </widget>
@@ -6406,17 +6381,14 @@ $(pv_value)</tooltip>
     <height>20</height>
     <horizontal_alignment>0</horizontal_alignment>
     <limits_from_pv>false</limits_from_pv>
-    <maximum>Infinity</maximum>
-    <minimum>-Infinity</minimum>
+    <maximum>1.7976931348623157E308</maximum>
+    <minimum>-1.7976931348623157E308</minimum>
     <multiline_input>false</multiline_input>
     <name>Text Input</name>
-    <next_focus>0</next_focus>
-    <password_input>false</password_input>
     <precision>0</precision>
     <precision_from_pv>true</precision_from_pv>
     <pv_name>$(P)$(R)GC_pPowSupplyCurrent</pv_name>
     <pv_value />
-    <read_only>false</read_only>
     <rotation_angle>0.0</rotation_angle>
     <rules />
     <scale_options>
@@ -6426,10 +6398,7 @@ $(pv_value)</tooltip>
     </scale_options>
     <scripts />
     <selector_type>0</selector_type>
-    <show_h_scroll>false</show_h_scroll>
-    <show_native_border>true</show_native_border>
     <show_units>false</show_units>
-    <show_v_scroll>false</show_v_scroll>
     <style>0</style>
     <text></text>
     <tooltip>$(pv_name)
@@ -6438,6 +6407,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Text Input</widget_type>
     <width>60</width>
+    <wuid>52266eb9:18c00fb3bfe:-7cd3</wuid>
     <x>720</x>
     <y>620</y>
   </widget>
@@ -6489,6 +6459,7 @@ $(pv_value)</tooltip>
     <widget_type>Text Update</widget_type>
     <width>120</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7cd2</wuid>
     <x>785</x>
     <y>620</y>
   </widget>
@@ -6520,7 +6491,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>DeviceMaxThroughput</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -6529,6 +6499,7 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7cd1</wuid>
     <x>495</x>
     <y>645</y>
   </widget>
@@ -6559,17 +6530,14 @@ $(pv_value)</tooltip>
     <height>20</height>
     <horizontal_alignment>0</horizontal_alignment>
     <limits_from_pv>false</limits_from_pv>
-    <maximum>Infinity</maximum>
-    <minimum>-Infinity</minimum>
+    <maximum>1.7976931348623157E308</maximum>
+    <minimum>-1.7976931348623157E308</minimum>
     <multiline_input>false</multiline_input>
     <name>Text Input</name>
-    <next_focus>0</next_focus>
-    <password_input>false</password_input>
     <precision>0</precision>
     <precision_from_pv>true</precision_from_pv>
     <pv_name>$(P)$(R)GC_DevMaxThroughput</pv_name>
     <pv_value />
-    <read_only>false</read_only>
     <rotation_angle>0.0</rotation_angle>
     <rules />
     <scale_options>
@@ -6579,10 +6547,7 @@ $(pv_value)</tooltip>
     </scale_options>
     <scripts />
     <selector_type>0</selector_type>
-    <show_h_scroll>false</show_h_scroll>
-    <show_native_border>true</show_native_border>
     <show_units>false</show_units>
-    <show_v_scroll>false</show_v_scroll>
     <style>0</style>
     <text></text>
     <tooltip>$(pv_name)
@@ -6591,6 +6556,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Text Input</widget_type>
     <width>60</width>
+    <wuid>52266eb9:18c00fb3bfe:-7cd0</wuid>
     <x>720</x>
     <y>645</y>
   </widget>
@@ -6642,6 +6608,7 @@ $(pv_value)</tooltip>
     <widget_type>Text Update</widget_type>
     <width>120</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7ccf</wuid>
     <x>785</x>
     <y>645</y>
   </widget>
@@ -6673,7 +6640,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>DeviceLinkThroughputLimit</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -6682,6 +6648,7 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7cce</wuid>
     <x>495</x>
     <y>670</y>
   </widget>
@@ -6712,17 +6679,14 @@ $(pv_value)</tooltip>
     <height>20</height>
     <horizontal_alignment>0</horizontal_alignment>
     <limits_from_pv>false</limits_from_pv>
-    <maximum>Infinity</maximum>
-    <minimum>-Infinity</minimum>
+    <maximum>1.7976931348623157E308</maximum>
+    <minimum>-1.7976931348623157E308</minimum>
     <multiline_input>false</multiline_input>
     <name>Text Input</name>
-    <next_focus>0</next_focus>
-    <password_input>false</password_input>
     <precision>0</precision>
     <precision_from_pv>true</precision_from_pv>
     <pv_name>$(P)$(R)GC_DevLinThrLimit</pv_name>
     <pv_value />
-    <read_only>false</read_only>
     <rotation_angle>0.0</rotation_angle>
     <rules />
     <scale_options>
@@ -6732,10 +6696,7 @@ $(pv_value)</tooltip>
     </scale_options>
     <scripts />
     <selector_type>0</selector_type>
-    <show_h_scroll>false</show_h_scroll>
-    <show_native_border>true</show_native_border>
     <show_units>false</show_units>
-    <show_v_scroll>false</show_v_scroll>
     <style>0</style>
     <text></text>
     <tooltip>$(pv_name)
@@ -6744,6 +6705,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Text Input</widget_type>
     <width>60</width>
+    <wuid>52266eb9:18c00fb3bfe:-7ccd</wuid>
     <x>720</x>
     <y>670</y>
   </widget>
@@ -6795,6 +6757,7 @@ $(pv_value)</tooltip>
     <widget_type>Text Update</widget_type>
     <width>120</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7ccc</wuid>
     <x>785</x>
     <y>670</y>
   </widget>
@@ -6826,7 +6789,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>DeviceLinkReserve</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -6835,6 +6797,7 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7ccb</wuid>
     <x>495</x>
     <y>695</y>
   </widget>
@@ -6865,17 +6828,14 @@ $(pv_value)</tooltip>
     <height>20</height>
     <horizontal_alignment>0</horizontal_alignment>
     <limits_from_pv>false</limits_from_pv>
-    <maximum>Infinity</maximum>
-    <minimum>-Infinity</minimum>
+    <maximum>1.7976931348623157E308</maximum>
+    <minimum>-1.7976931348623157E308</minimum>
     <multiline_input>false</multiline_input>
     <name>Text Input</name>
-    <next_focus>0</next_focus>
-    <password_input>false</password_input>
     <precision>0</precision>
     <precision_from_pv>true</precision_from_pv>
     <pv_name>$(P)$(R)GC_DeviceLinkReserve</pv_name>
     <pv_value />
-    <read_only>false</read_only>
     <rotation_angle>0.0</rotation_angle>
     <rules />
     <scale_options>
@@ -6885,10 +6845,7 @@ $(pv_value)</tooltip>
     </scale_options>
     <scripts />
     <selector_type>0</selector_type>
-    <show_h_scroll>false</show_h_scroll>
-    <show_native_border>true</show_native_border>
     <show_units>false</show_units>
-    <show_v_scroll>false</show_v_scroll>
     <style>0</style>
     <text></text>
     <tooltip>$(pv_name)
@@ -6897,6 +6854,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Text Input</widget_type>
     <width>60</width>
+    <wuid>52266eb9:18c00fb3bfe:-7cca</wuid>
     <x>720</x>
     <y>695</y>
   </widget>
@@ -6948,6 +6906,7 @@ $(pv_value)</tooltip>
     <widget_type>Text Update</widget_type>
     <width>120</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7cc9</wuid>
     <x>785</x>
     <y>695</y>
   </widget>
@@ -6979,7 +6938,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>DeviceIndicatorMode</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -6988,11 +6946,11 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7cc8</wuid>
     <x>495</x>
     <y>720</y>
   </widget>
   <widget typeId="org.csstudio.opibuilder.widgets.MenuButton" version="1.0.0">
-    <actions hook="false" hook_all="false" />
     <actions_from_pv>true</actions_from_pv>
     <alarm_pulsing>false</alarm_pulsing>
     <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
@@ -7007,7 +6965,7 @@ $(pv_value)</tooltip>
     <border_width>1</border_width>
     <enabled>true</enabled>
     <font>
-      <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
+      <opifont.name fontName="Segoe UI" height="9" style="0" pixels="false">Default</opifont.name>
     </font>
     <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
     <foreground_color>
@@ -7032,6 +6990,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Menu Button</widget_type>
     <width>120</width>
+    <wuid>52266eb9:18c00fb3bfe:-7cc7</wuid>
     <x>720</x>
     <y>720</y>
   </widget>
@@ -7083,6 +7042,7 @@ $(pv_value)</tooltip>
     <widget_type>Text Update</widget_type>
     <width>120</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7cc6</wuid>
     <x>845</x>
     <y>720</y>
   </widget>
@@ -7114,7 +7074,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>AcquisitionControl</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -7123,6 +7082,7 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>470</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7cc5</wuid>
     <x>980</x>
     <y>45</y>
   </widget>
@@ -7154,7 +7114,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>TriggerSelector</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -7163,11 +7122,11 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7cc4</wuid>
     <x>980</x>
     <y>70</y>
   </widget>
   <widget typeId="org.csstudio.opibuilder.widgets.MenuButton" version="1.0.0">
-    <actions hook="false" hook_all="false" />
     <actions_from_pv>true</actions_from_pv>
     <alarm_pulsing>false</alarm_pulsing>
     <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
@@ -7182,7 +7141,7 @@ $(pv_value)</tooltip>
     <border_width>1</border_width>
     <enabled>true</enabled>
     <font>
-      <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
+      <opifont.name fontName="Segoe UI" height="9" style="0" pixels="false">Default</opifont.name>
     </font>
     <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
     <foreground_color>
@@ -7207,6 +7166,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Menu Button</widget_type>
     <width>120</width>
+    <wuid>52266eb9:18c00fb3bfe:-7cc3</wuid>
     <x>1205</x>
     <y>70</y>
   </widget>
@@ -7258,6 +7218,7 @@ $(pv_value)</tooltip>
     <widget_type>Text Update</widget_type>
     <width>120</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7cc2</wuid>
     <x>1330</x>
     <y>70</y>
   </widget>
@@ -7289,7 +7250,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>TriggerMode</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -7298,11 +7258,11 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7cc1</wuid>
     <x>980</x>
     <y>95</y>
   </widget>
   <widget typeId="org.csstudio.opibuilder.widgets.MenuButton" version="1.0.0">
-    <actions hook="false" hook_all="false" />
     <actions_from_pv>true</actions_from_pv>
     <alarm_pulsing>false</alarm_pulsing>
     <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
@@ -7317,7 +7277,7 @@ $(pv_value)</tooltip>
     <border_width>1</border_width>
     <enabled>true</enabled>
     <font>
-      <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
+      <opifont.name fontName="Segoe UI" height="9" style="0" pixels="false">Default</opifont.name>
     </font>
     <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
     <foreground_color>
@@ -7342,6 +7302,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Menu Button</widget_type>
     <width>120</width>
+    <wuid>52266eb9:18c00fb3bfe:-7cc0</wuid>
     <x>1205</x>
     <y>95</y>
   </widget>
@@ -7393,6 +7354,7 @@ $(pv_value)</tooltip>
     <widget_type>Text Update</widget_type>
     <width>120</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7cbf</wuid>
     <x>1330</x>
     <y>95</y>
   </widget>
@@ -7424,7 +7386,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>TriggerSoftware</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -7433,6 +7394,7 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7cbe</wuid>
     <x>980</x>
     <y>120</y>
   </widget>
@@ -7459,7 +7421,7 @@ $(pv_value)</tooltip>
     <border_width>1</border_width>
     <enabled>true</enabled>
     <font>
-      <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
+      <opifont.name fontName="Segoe UI" height="9" style="0" pixels="false">Default</opifont.name>
     </font>
     <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
     <foreground_color>
@@ -7486,6 +7448,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Action Button</widget_type>
     <width>200</width>
+    <wuid>52266eb9:18c00fb3bfe:-7cbd</wuid>
     <x>1205</x>
     <y>120</y>
   </widget>
@@ -7517,7 +7480,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>TriggerSource</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -7526,11 +7488,11 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7cbc</wuid>
     <x>980</x>
     <y>145</y>
   </widget>
   <widget typeId="org.csstudio.opibuilder.widgets.MenuButton" version="1.0.0">
-    <actions hook="false" hook_all="false" />
     <actions_from_pv>true</actions_from_pv>
     <alarm_pulsing>false</alarm_pulsing>
     <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
@@ -7545,7 +7507,7 @@ $(pv_value)</tooltip>
     <border_width>1</border_width>
     <enabled>true</enabled>
     <font>
-      <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
+      <opifont.name fontName="Segoe UI" height="9" style="0" pixels="false">Default</opifont.name>
     </font>
     <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
     <foreground_color>
@@ -7570,6 +7532,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Menu Button</widget_type>
     <width>120</width>
+    <wuid>52266eb9:18c00fb3bfe:-7cbb</wuid>
     <x>1205</x>
     <y>145</y>
   </widget>
@@ -7621,6 +7584,7 @@ $(pv_value)</tooltip>
     <widget_type>Text Update</widget_type>
     <width>120</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7cba</wuid>
     <x>1330</x>
     <y>145</y>
   </widget>
@@ -7652,7 +7616,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>TriggerActivation</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -7661,11 +7624,11 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7cb9</wuid>
     <x>980</x>
     <y>170</y>
   </widget>
   <widget typeId="org.csstudio.opibuilder.widgets.MenuButton" version="1.0.0">
-    <actions hook="false" hook_all="false" />
     <actions_from_pv>true</actions_from_pv>
     <alarm_pulsing>false</alarm_pulsing>
     <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
@@ -7680,7 +7643,7 @@ $(pv_value)</tooltip>
     <border_width>1</border_width>
     <enabled>true</enabled>
     <font>
-      <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
+      <opifont.name fontName="Segoe UI" height="9" style="0" pixels="false">Default</opifont.name>
     </font>
     <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
     <foreground_color>
@@ -7705,6 +7668,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Menu Button</widget_type>
     <width>120</width>
+    <wuid>52266eb9:18c00fb3bfe:-7cb8</wuid>
     <x>1205</x>
     <y>170</y>
   </widget>
@@ -7756,6 +7720,7 @@ $(pv_value)</tooltip>
     <widget_type>Text Update</widget_type>
     <width>120</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7cb7</wuid>
     <x>1330</x>
     <y>170</y>
   </widget>
@@ -7787,7 +7752,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>TriggerOverlap</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -7796,11 +7760,11 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7cb6</wuid>
     <x>980</x>
     <y>195</y>
   </widget>
   <widget typeId="org.csstudio.opibuilder.widgets.MenuButton" version="1.0.0">
-    <actions hook="false" hook_all="false" />
     <actions_from_pv>true</actions_from_pv>
     <alarm_pulsing>false</alarm_pulsing>
     <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
@@ -7815,7 +7779,7 @@ $(pv_value)</tooltip>
     <border_width>1</border_width>
     <enabled>true</enabled>
     <font>
-      <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
+      <opifont.name fontName="Segoe UI" height="9" style="0" pixels="false">Default</opifont.name>
     </font>
     <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
     <foreground_color>
@@ -7840,6 +7804,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Menu Button</widget_type>
     <width>120</width>
+    <wuid>52266eb9:18c00fb3bfe:-7cb5</wuid>
     <x>1205</x>
     <y>195</y>
   </widget>
@@ -7891,6 +7856,7 @@ $(pv_value)</tooltip>
     <widget_type>Text Update</widget_type>
     <width>120</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7cb4</wuid>
     <x>1330</x>
     <y>195</y>
   </widget>
@@ -7922,7 +7888,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>TriggerDelay</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -7931,6 +7896,7 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7cb3</wuid>
     <x>980</x>
     <y>220</y>
   </widget>
@@ -7961,17 +7927,14 @@ $(pv_value)</tooltip>
     <height>20</height>
     <horizontal_alignment>0</horizontal_alignment>
     <limits_from_pv>false</limits_from_pv>
-    <maximum>Infinity</maximum>
-    <minimum>-Infinity</minimum>
+    <maximum>1.7976931348623157E308</maximum>
+    <minimum>-1.7976931348623157E308</minimum>
     <multiline_input>false</multiline_input>
     <name>Text Input</name>
-    <next_focus>0</next_focus>
-    <password_input>false</password_input>
     <precision>0</precision>
     <precision_from_pv>true</precision_from_pv>
     <pv_name>$(P)$(R)GC_TriggerDelay</pv_name>
     <pv_value />
-    <read_only>false</read_only>
     <rotation_angle>0.0</rotation_angle>
     <rules />
     <scale_options>
@@ -7981,10 +7944,7 @@ $(pv_value)</tooltip>
     </scale_options>
     <scripts />
     <selector_type>0</selector_type>
-    <show_h_scroll>false</show_h_scroll>
-    <show_native_border>true</show_native_border>
     <show_units>false</show_units>
-    <show_v_scroll>false</show_v_scroll>
     <style>0</style>
     <text></text>
     <tooltip>$(pv_name)
@@ -7993,6 +7953,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Text Input</widget_type>
     <width>60</width>
+    <wuid>52266eb9:18c00fb3bfe:-7cb2</wuid>
     <x>1205</x>
     <y>220</y>
   </widget>
@@ -8044,6 +8005,7 @@ $(pv_value)</tooltip>
     <widget_type>Text Update</widget_type>
     <width>120</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7cb1</wuid>
     <x>1270</x>
     <y>220</y>
   </widget>
@@ -8075,7 +8037,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>TriggerDelayEnabled</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -8084,11 +8045,11 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7cb0</wuid>
     <x>980</x>
     <y>245</y>
   </widget>
   <widget typeId="org.csstudio.opibuilder.widgets.MenuButton" version="1.0.0">
-    <actions hook="false" hook_all="false" />
     <actions_from_pv>true</actions_from_pv>
     <alarm_pulsing>false</alarm_pulsing>
     <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
@@ -8103,7 +8064,7 @@ $(pv_value)</tooltip>
     <border_width>1</border_width>
     <enabled>true</enabled>
     <font>
-      <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
+      <opifont.name fontName="Segoe UI" height="9" style="0" pixels="false">Default</opifont.name>
     </font>
     <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
     <foreground_color>
@@ -8128,6 +8089,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Menu Button</widget_type>
     <width>120</width>
+    <wuid>52266eb9:18c00fb3bfe:-7caf</wuid>
     <x>1205</x>
     <y>245</y>
   </widget>
@@ -8179,6 +8141,7 @@ $(pv_value)</tooltip>
     <widget_type>Text Update</widget_type>
     <width>120</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7cae</wuid>
     <x>1330</x>
     <y>245</y>
   </widget>
@@ -8210,7 +8173,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>ExposureMode</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -8219,11 +8181,11 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7cad</wuid>
     <x>980</x>
     <y>270</y>
   </widget>
   <widget typeId="org.csstudio.opibuilder.widgets.MenuButton" version="1.0.0">
-    <actions hook="false" hook_all="false" />
     <actions_from_pv>true</actions_from_pv>
     <alarm_pulsing>false</alarm_pulsing>
     <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
@@ -8238,7 +8200,7 @@ $(pv_value)</tooltip>
     <border_width>1</border_width>
     <enabled>true</enabled>
     <font>
-      <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
+      <opifont.name fontName="Segoe UI" height="9" style="0" pixels="false">Default</opifont.name>
     </font>
     <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
     <foreground_color>
@@ -8263,6 +8225,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Menu Button</widget_type>
     <width>120</width>
+    <wuid>52266eb9:18c00fb3bfe:-7cac</wuid>
     <x>1205</x>
     <y>270</y>
   </widget>
@@ -8314,6 +8277,7 @@ $(pv_value)</tooltip>
     <widget_type>Text Update</widget_type>
     <width>120</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7cab</wuid>
     <x>1330</x>
     <y>270</y>
   </widget>
@@ -8345,7 +8309,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>ExposureAuto</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -8354,11 +8317,11 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7caa</wuid>
     <x>980</x>
     <y>295</y>
   </widget>
   <widget typeId="org.csstudio.opibuilder.widgets.MenuButton" version="1.0.0">
-    <actions hook="false" hook_all="false" />
     <actions_from_pv>true</actions_from_pv>
     <alarm_pulsing>false</alarm_pulsing>
     <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
@@ -8373,7 +8336,7 @@ $(pv_value)</tooltip>
     <border_width>1</border_width>
     <enabled>true</enabled>
     <font>
-      <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
+      <opifont.name fontName="Segoe UI" height="9" style="0" pixels="false">Default</opifont.name>
     </font>
     <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
     <foreground_color>
@@ -8398,6 +8361,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Menu Button</widget_type>
     <width>120</width>
+    <wuid>52266eb9:18c00fb3bfe:-7ca9</wuid>
     <x>1205</x>
     <y>295</y>
   </widget>
@@ -8449,6 +8413,7 @@ $(pv_value)</tooltip>
     <widget_type>Text Update</widget_type>
     <width>120</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7ca8</wuid>
     <x>1330</x>
     <y>295</y>
   </widget>
@@ -8480,7 +8445,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>ExposureTime</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -8489,6 +8453,7 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7ca7</wuid>
     <x>980</x>
     <y>320</y>
   </widget>
@@ -8519,17 +8484,14 @@ $(pv_value)</tooltip>
     <height>20</height>
     <horizontal_alignment>0</horizontal_alignment>
     <limits_from_pv>false</limits_from_pv>
-    <maximum>Infinity</maximum>
-    <minimum>-Infinity</minimum>
+    <maximum>1.7976931348623157E308</maximum>
+    <minimum>-1.7976931348623157E308</minimum>
     <multiline_input>false</multiline_input>
     <name>Text Input</name>
-    <next_focus>0</next_focus>
-    <password_input>false</password_input>
     <precision>0</precision>
     <precision_from_pv>true</precision_from_pv>
     <pv_name>$(P)$(R)GC_ExposureTime</pv_name>
     <pv_value />
-    <read_only>false</read_only>
     <rotation_angle>0.0</rotation_angle>
     <rules />
     <scale_options>
@@ -8539,10 +8501,7 @@ $(pv_value)</tooltip>
     </scale_options>
     <scripts />
     <selector_type>0</selector_type>
-    <show_h_scroll>false</show_h_scroll>
-    <show_native_border>true</show_native_border>
     <show_units>false</show_units>
-    <show_v_scroll>false</show_v_scroll>
     <style>0</style>
     <text></text>
     <tooltip>$(pv_name)
@@ -8551,6 +8510,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Text Input</widget_type>
     <width>60</width>
+    <wuid>52266eb9:18c00fb3bfe:-7ca6</wuid>
     <x>1205</x>
     <y>320</y>
   </widget>
@@ -8602,6 +8562,7 @@ $(pv_value)</tooltip>
     <widget_type>Text Update</widget_type>
     <width>120</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7ca5</wuid>
     <x>1270</x>
     <y>320</y>
   </widget>
@@ -8633,7 +8594,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>ExposureTimeAbs</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -8642,6 +8602,7 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7ca4</wuid>
     <x>980</x>
     <y>345</y>
   </widget>
@@ -8672,17 +8633,14 @@ $(pv_value)</tooltip>
     <height>20</height>
     <horizontal_alignment>0</horizontal_alignment>
     <limits_from_pv>false</limits_from_pv>
-    <maximum>Infinity</maximum>
-    <minimum>-Infinity</minimum>
+    <maximum>1.7976931348623157E308</maximum>
+    <minimum>-1.7976931348623157E308</minimum>
     <multiline_input>false</multiline_input>
     <name>Text Input</name>
-    <next_focus>0</next_focus>
-    <password_input>false</password_input>
     <precision>0</precision>
     <precision_from_pv>true</precision_from_pv>
     <pv_name>$(P)$(R)GC_ExposureTimeAbs</pv_name>
     <pv_value />
-    <read_only>false</read_only>
     <rotation_angle>0.0</rotation_angle>
     <rules />
     <scale_options>
@@ -8692,10 +8650,7 @@ $(pv_value)</tooltip>
     </scale_options>
     <scripts />
     <selector_type>0</selector_type>
-    <show_h_scroll>false</show_h_scroll>
-    <show_native_border>true</show_native_border>
     <show_units>false</show_units>
-    <show_v_scroll>false</show_v_scroll>
     <style>0</style>
     <text></text>
     <tooltip>$(pv_name)
@@ -8704,6 +8659,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Text Input</widget_type>
     <width>60</width>
+    <wuid>52266eb9:18c00fb3bfe:-7ca3</wuid>
     <x>1205</x>
     <y>345</y>
   </widget>
@@ -8755,6 +8711,7 @@ $(pv_value)</tooltip>
     <widget_type>Text Update</widget_type>
     <width>120</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7ca2</wuid>
     <x>1270</x>
     <y>345</y>
   </widget>
@@ -8786,7 +8743,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>AutoExposureTimeLowerLimit</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -8795,6 +8751,7 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7ca1</wuid>
     <x>980</x>
     <y>370</y>
   </widget>
@@ -8825,17 +8782,14 @@ $(pv_value)</tooltip>
     <height>20</height>
     <horizontal_alignment>0</horizontal_alignment>
     <limits_from_pv>false</limits_from_pv>
-    <maximum>Infinity</maximum>
-    <minimum>-Infinity</minimum>
+    <maximum>1.7976931348623157E308</maximum>
+    <minimum>-1.7976931348623157E308</minimum>
     <multiline_input>false</multiline_input>
     <name>Text Input</name>
-    <next_focus>0</next_focus>
-    <password_input>false</password_input>
     <precision>0</precision>
     <precision_from_pv>true</precision_from_pv>
     <pv_name>$(P)$(R)GC_AutExpTimLowLimit</pv_name>
     <pv_value />
-    <read_only>false</read_only>
     <rotation_angle>0.0</rotation_angle>
     <rules />
     <scale_options>
@@ -8845,10 +8799,7 @@ $(pv_value)</tooltip>
     </scale_options>
     <scripts />
     <selector_type>0</selector_type>
-    <show_h_scroll>false</show_h_scroll>
-    <show_native_border>true</show_native_border>
     <show_units>false</show_units>
-    <show_v_scroll>false</show_v_scroll>
     <style>0</style>
     <text></text>
     <tooltip>$(pv_name)
@@ -8857,6 +8808,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Text Input</widget_type>
     <width>60</width>
+    <wuid>52266eb9:18c00fb3bfe:-7ca0</wuid>
     <x>1205</x>
     <y>370</y>
   </widget>
@@ -8908,6 +8860,7 @@ $(pv_value)</tooltip>
     <widget_type>Text Update</widget_type>
     <width>120</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7c9f</wuid>
     <x>1270</x>
     <y>370</y>
   </widget>
@@ -8939,7 +8892,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>AutoExposureTimeUpperLimit</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -8948,6 +8900,7 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7c9e</wuid>
     <x>980</x>
     <y>395</y>
   </widget>
@@ -8978,17 +8931,14 @@ $(pv_value)</tooltip>
     <height>20</height>
     <horizontal_alignment>0</horizontal_alignment>
     <limits_from_pv>false</limits_from_pv>
-    <maximum>Infinity</maximum>
-    <minimum>-Infinity</minimum>
+    <maximum>1.7976931348623157E308</maximum>
+    <minimum>-1.7976931348623157E308</minimum>
     <multiline_input>false</multiline_input>
     <name>Text Input</name>
-    <next_focus>0</next_focus>
-    <password_input>false</password_input>
     <precision>0</precision>
     <precision_from_pv>true</precision_from_pv>
     <pv_name>$(P)$(R)GC_AutExpTimUppLimit</pv_name>
     <pv_value />
-    <read_only>false</read_only>
     <rotation_angle>0.0</rotation_angle>
     <rules />
     <scale_options>
@@ -8998,10 +8948,7 @@ $(pv_value)</tooltip>
     </scale_options>
     <scripts />
     <selector_type>0</selector_type>
-    <show_h_scroll>false</show_h_scroll>
-    <show_native_border>true</show_native_border>
     <show_units>false</show_units>
-    <show_v_scroll>false</show_v_scroll>
     <style>0</style>
     <text></text>
     <tooltip>$(pv_name)
@@ -9010,6 +8957,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Text Input</widget_type>
     <width>60</width>
+    <wuid>52266eb9:18c00fb3bfe:-7c9d</wuid>
     <x>1205</x>
     <y>395</y>
   </widget>
@@ -9061,6 +9009,7 @@ $(pv_value)</tooltip>
     <widget_type>Text Update</widget_type>
     <width>120</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7c9c</wuid>
     <x>1270</x>
     <y>395</y>
   </widget>
@@ -9092,7 +9041,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>pgrExposureCompensationAuto</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -9101,11 +9049,11 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7c9b</wuid>
     <x>980</x>
     <y>420</y>
   </widget>
   <widget typeId="org.csstudio.opibuilder.widgets.MenuButton" version="1.0.0">
-    <actions hook="false" hook_all="false" />
     <actions_from_pv>true</actions_from_pv>
     <alarm_pulsing>false</alarm_pulsing>
     <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
@@ -9120,7 +9068,7 @@ $(pv_value)</tooltip>
     <border_width>1</border_width>
     <enabled>true</enabled>
     <font>
-      <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
+      <opifont.name fontName="Segoe UI" height="9" style="0" pixels="false">Default</opifont.name>
     </font>
     <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
     <foreground_color>
@@ -9145,6 +9093,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Menu Button</widget_type>
     <width>120</width>
+    <wuid>52266eb9:18c00fb3bfe:-7c9a</wuid>
     <x>1205</x>
     <y>420</y>
   </widget>
@@ -9196,6 +9145,7 @@ $(pv_value)</tooltip>
     <widget_type>Text Update</widget_type>
     <width>120</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7c99</wuid>
     <x>1330</x>
     <y>420</y>
   </widget>
@@ -9227,7 +9177,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>pgrExposureCompensation</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -9236,6 +9185,7 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7c98</wuid>
     <x>980</x>
     <y>445</y>
   </widget>
@@ -9266,17 +9216,14 @@ $(pv_value)</tooltip>
     <height>20</height>
     <horizontal_alignment>0</horizontal_alignment>
     <limits_from_pv>false</limits_from_pv>
-    <maximum>Infinity</maximum>
-    <minimum>-Infinity</minimum>
+    <maximum>1.7976931348623157E308</maximum>
+    <minimum>-1.7976931348623157E308</minimum>
     <multiline_input>false</multiline_input>
     <name>Text Input</name>
-    <next_focus>0</next_focus>
-    <password_input>false</password_input>
     <precision>0</precision>
     <precision_from_pv>true</precision_from_pv>
     <pv_name>$(P)$(R)GC_pExpCompensation</pv_name>
     <pv_value />
-    <read_only>false</read_only>
     <rotation_angle>0.0</rotation_angle>
     <rules />
     <scale_options>
@@ -9286,10 +9233,7 @@ $(pv_value)</tooltip>
     </scale_options>
     <scripts />
     <selector_type>0</selector_type>
-    <show_h_scroll>false</show_h_scroll>
-    <show_native_border>true</show_native_border>
     <show_units>false</show_units>
-    <show_v_scroll>false</show_v_scroll>
     <style>0</style>
     <text></text>
     <tooltip>$(pv_name)
@@ -9298,6 +9242,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Text Input</widget_type>
     <width>60</width>
+    <wuid>52266eb9:18c00fb3bfe:-7c97</wuid>
     <x>1205</x>
     <y>445</y>
   </widget>
@@ -9349,6 +9294,7 @@ $(pv_value)</tooltip>
     <widget_type>Text Update</widget_type>
     <width>120</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7c96</wuid>
     <x>1270</x>
     <y>445</y>
   </widget>
@@ -9380,7 +9326,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>pgrAutoExposureCompensationLowerLimit</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -9389,6 +9334,7 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7c95</wuid>
     <x>980</x>
     <y>470</y>
   </widget>
@@ -9419,17 +9365,14 @@ $(pv_value)</tooltip>
     <height>20</height>
     <horizontal_alignment>0</horizontal_alignment>
     <limits_from_pv>false</limits_from_pv>
-    <maximum>Infinity</maximum>
-    <minimum>-Infinity</minimum>
+    <maximum>1.7976931348623157E308</maximum>
+    <minimum>-1.7976931348623157E308</minimum>
     <multiline_input>false</multiline_input>
     <name>Text Input</name>
-    <next_focus>0</next_focus>
-    <password_input>false</password_input>
     <precision>0</precision>
     <precision_from_pv>true</precision_from_pv>
     <pv_name>$(P)$(R)GC_pAutExpComLowLim</pv_name>
     <pv_value />
-    <read_only>false</read_only>
     <rotation_angle>0.0</rotation_angle>
     <rules />
     <scale_options>
@@ -9439,10 +9382,7 @@ $(pv_value)</tooltip>
     </scale_options>
     <scripts />
     <selector_type>0</selector_type>
-    <show_h_scroll>false</show_h_scroll>
-    <show_native_border>true</show_native_border>
     <show_units>false</show_units>
-    <show_v_scroll>false</show_v_scroll>
     <style>0</style>
     <text></text>
     <tooltip>$(pv_name)
@@ -9451,6 +9391,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Text Input</widget_type>
     <width>60</width>
+    <wuid>52266eb9:18c00fb3bfe:-7c94</wuid>
     <x>1205</x>
     <y>470</y>
   </widget>
@@ -9502,6 +9443,7 @@ $(pv_value)</tooltip>
     <widget_type>Text Update</widget_type>
     <width>120</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7c93</wuid>
     <x>1270</x>
     <y>470</y>
   </widget>
@@ -9533,7 +9475,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>pgrAutoExposureCompensationUpperLimit</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -9542,6 +9483,7 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7c92</wuid>
     <x>980</x>
     <y>495</y>
   </widget>
@@ -9572,17 +9514,14 @@ $(pv_value)</tooltip>
     <height>20</height>
     <horizontal_alignment>0</horizontal_alignment>
     <limits_from_pv>false</limits_from_pv>
-    <maximum>Infinity</maximum>
-    <minimum>-Infinity</minimum>
+    <maximum>1.7976931348623157E308</maximum>
+    <minimum>-1.7976931348623157E308</minimum>
     <multiline_input>false</multiline_input>
     <name>Text Input</name>
-    <next_focus>0</next_focus>
-    <password_input>false</password_input>
     <precision>0</precision>
     <precision_from_pv>true</precision_from_pv>
     <pv_name>$(P)$(R)GC_pAutExpComUppLim</pv_name>
     <pv_value />
-    <read_only>false</read_only>
     <rotation_angle>0.0</rotation_angle>
     <rules />
     <scale_options>
@@ -9592,10 +9531,7 @@ $(pv_value)</tooltip>
     </scale_options>
     <scripts />
     <selector_type>0</selector_type>
-    <show_h_scroll>false</show_h_scroll>
-    <show_native_border>true</show_native_border>
     <show_units>false</show_units>
-    <show_v_scroll>false</show_v_scroll>
     <style>0</style>
     <text></text>
     <tooltip>$(pv_name)
@@ -9604,6 +9540,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Text Input</widget_type>
     <width>60</width>
+    <wuid>52266eb9:18c00fb3bfe:-7c91</wuid>
     <x>1205</x>
     <y>495</y>
   </widget>
@@ -9655,6 +9592,7 @@ $(pv_value)</tooltip>
     <widget_type>Text Update</widget_type>
     <width>120</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7c90</wuid>
     <x>1270</x>
     <y>495</y>
   </widget>
@@ -9686,7 +9624,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>AcquisitionMode</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -9695,11 +9632,11 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7c8f</wuid>
     <x>980</x>
     <y>520</y>
   </widget>
   <widget typeId="org.csstudio.opibuilder.widgets.MenuButton" version="1.0.0">
-    <actions hook="false" hook_all="false" />
     <actions_from_pv>true</actions_from_pv>
     <alarm_pulsing>false</alarm_pulsing>
     <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
@@ -9714,7 +9651,7 @@ $(pv_value)</tooltip>
     <border_width>1</border_width>
     <enabled>true</enabled>
     <font>
-      <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
+      <opifont.name fontName="Segoe UI" height="9" style="0" pixels="false">Default</opifont.name>
     </font>
     <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
     <foreground_color>
@@ -9739,6 +9676,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Menu Button</widget_type>
     <width>120</width>
+    <wuid>52266eb9:18c00fb3bfe:-7c8e</wuid>
     <x>1205</x>
     <y>520</y>
   </widget>
@@ -9790,6 +9728,7 @@ $(pv_value)</tooltip>
     <widget_type>Text Update</widget_type>
     <width>120</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7c8d</wuid>
     <x>1330</x>
     <y>520</y>
   </widget>
@@ -9821,7 +9760,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>AcquisitionStart</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -9830,6 +9768,7 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7c8c</wuid>
     <x>980</x>
     <y>545</y>
   </widget>
@@ -9856,7 +9795,7 @@ $(pv_value)</tooltip>
     <border_width>1</border_width>
     <enabled>true</enabled>
     <font>
-      <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
+      <opifont.name fontName="Segoe UI" height="9" style="0" pixels="false">Default</opifont.name>
     </font>
     <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
     <foreground_color>
@@ -9883,6 +9822,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Action Button</widget_type>
     <width>200</width>
+    <wuid>52266eb9:18c00fb3bfe:-7c8b</wuid>
     <x>1205</x>
     <y>545</y>
   </widget>
@@ -9914,7 +9854,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>AcquisitionStop</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -9923,6 +9862,7 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7c8a</wuid>
     <x>980</x>
     <y>570</y>
   </widget>
@@ -9949,7 +9889,7 @@ $(pv_value)</tooltip>
     <border_width>1</border_width>
     <enabled>true</enabled>
     <font>
-      <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
+      <opifont.name fontName="Segoe UI" height="9" style="0" pixels="false">Default</opifont.name>
     </font>
     <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
     <foreground_color>
@@ -9976,6 +9916,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Action Button</widget_type>
     <width>200</width>
+    <wuid>52266eb9:18c00fb3bfe:-7c89</wuid>
     <x>1205</x>
     <y>570</y>
   </widget>
@@ -10007,7 +9948,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>AcquisitionFrameRateAuto</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -10016,11 +9956,11 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7c88</wuid>
     <x>980</x>
     <y>595</y>
   </widget>
   <widget typeId="org.csstudio.opibuilder.widgets.MenuButton" version="1.0.0">
-    <actions hook="false" hook_all="false" />
     <actions_from_pv>true</actions_from_pv>
     <alarm_pulsing>false</alarm_pulsing>
     <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
@@ -10035,7 +9975,7 @@ $(pv_value)</tooltip>
     <border_width>1</border_width>
     <enabled>true</enabled>
     <font>
-      <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
+      <opifont.name fontName="Segoe UI" height="9" style="0" pixels="false">Default</opifont.name>
     </font>
     <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
     <foreground_color>
@@ -10060,6 +10000,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Menu Button</widget_type>
     <width>120</width>
+    <wuid>52266eb9:18c00fb3bfe:-7c87</wuid>
     <x>1205</x>
     <y>595</y>
   </widget>
@@ -10111,6 +10052,7 @@ $(pv_value)</tooltip>
     <widget_type>Text Update</widget_type>
     <width>120</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7c86</wuid>
     <x>1330</x>
     <y>595</y>
   </widget>
@@ -10142,7 +10084,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>AcquisitionFrameRateEnabled</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -10151,11 +10092,11 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7c85</wuid>
     <x>980</x>
     <y>620</y>
   </widget>
   <widget typeId="org.csstudio.opibuilder.widgets.MenuButton" version="1.0.0">
-    <actions hook="false" hook_all="false" />
     <actions_from_pv>true</actions_from_pv>
     <alarm_pulsing>false</alarm_pulsing>
     <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
@@ -10170,7 +10111,7 @@ $(pv_value)</tooltip>
     <border_width>1</border_width>
     <enabled>true</enabled>
     <font>
-      <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
+      <opifont.name fontName="Segoe UI" height="9" style="0" pixels="false">Default</opifont.name>
     </font>
     <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
     <foreground_color>
@@ -10195,6 +10136,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Menu Button</widget_type>
     <width>120</width>
+    <wuid>52266eb9:18c00fb3bfe:-7c84</wuid>
     <x>1205</x>
     <y>620</y>
   </widget>
@@ -10246,6 +10188,7 @@ $(pv_value)</tooltip>
     <widget_type>Text Update</widget_type>
     <width>120</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7c83</wuid>
     <x>1330</x>
     <y>620</y>
   </widget>
@@ -10277,7 +10220,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>AcquisitionFrameRate</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -10286,6 +10228,7 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7c82</wuid>
     <x>980</x>
     <y>645</y>
   </widget>
@@ -10316,17 +10259,14 @@ $(pv_value)</tooltip>
     <height>20</height>
     <horizontal_alignment>0</horizontal_alignment>
     <limits_from_pv>false</limits_from_pv>
-    <maximum>Infinity</maximum>
-    <minimum>-Infinity</minimum>
+    <maximum>1.7976931348623157E308</maximum>
+    <minimum>-1.7976931348623157E308</minimum>
     <multiline_input>false</multiline_input>
     <name>Text Input</name>
-    <next_focus>0</next_focus>
-    <password_input>false</password_input>
     <precision>0</precision>
     <precision_from_pv>true</precision_from_pv>
     <pv_name>$(P)$(R)GC_AcqFrameRate</pv_name>
     <pv_value />
-    <read_only>false</read_only>
     <rotation_angle>0.0</rotation_angle>
     <rules />
     <scale_options>
@@ -10336,10 +10276,7 @@ $(pv_value)</tooltip>
     </scale_options>
     <scripts />
     <selector_type>0</selector_type>
-    <show_h_scroll>false</show_h_scroll>
-    <show_native_border>true</show_native_border>
     <show_units>false</show_units>
-    <show_v_scroll>false</show_v_scroll>
     <style>0</style>
     <text></text>
     <tooltip>$(pv_name)
@@ -10348,6 +10285,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Text Input</widget_type>
     <width>60</width>
+    <wuid>52266eb9:18c00fb3bfe:-7c81</wuid>
     <x>1205</x>
     <y>645</y>
   </widget>
@@ -10399,6 +10337,7 @@ $(pv_value)</tooltip>
     <widget_type>Text Update</widget_type>
     <width>120</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7c80</wuid>
     <x>1270</x>
     <y>645</y>
   </widget>
@@ -10430,7 +10369,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>AcquisitionFrameCount</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -10439,6 +10377,7 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7c7f</wuid>
     <x>980</x>
     <y>670</y>
   </widget>
@@ -10469,17 +10408,14 @@ $(pv_value)</tooltip>
     <height>20</height>
     <horizontal_alignment>0</horizontal_alignment>
     <limits_from_pv>false</limits_from_pv>
-    <maximum>Infinity</maximum>
-    <minimum>-Infinity</minimum>
+    <maximum>1.7976931348623157E308</maximum>
+    <minimum>-1.7976931348623157E308</minimum>
     <multiline_input>false</multiline_input>
     <name>Text Input</name>
-    <next_focus>0</next_focus>
-    <password_input>false</password_input>
     <precision>0</precision>
     <precision_from_pv>true</precision_from_pv>
     <pv_name>$(P)$(R)GC_AcqFrameCount</pv_name>
     <pv_value />
-    <read_only>false</read_only>
     <rotation_angle>0.0</rotation_angle>
     <rules />
     <scale_options>
@@ -10489,10 +10425,7 @@ $(pv_value)</tooltip>
     </scale_options>
     <scripts />
     <selector_type>0</selector_type>
-    <show_h_scroll>false</show_h_scroll>
-    <show_native_border>true</show_native_border>
     <show_units>false</show_units>
-    <show_v_scroll>false</show_v_scroll>
     <style>0</style>
     <text></text>
     <tooltip>$(pv_name)
@@ -10501,6 +10434,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Text Input</widget_type>
     <width>60</width>
+    <wuid>52266eb9:18c00fb3bfe:-7c7e</wuid>
     <x>1205</x>
     <y>670</y>
   </widget>
@@ -10552,6 +10486,7 @@ $(pv_value)</tooltip>
     <widget_type>Text Update</widget_type>
     <width>120</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7c7d</wuid>
     <x>1270</x>
     <y>670</y>
   </widget>
@@ -10583,7 +10518,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>AcquisitionStatusSelector</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -10592,11 +10526,11 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7c7c</wuid>
     <x>980</x>
     <y>695</y>
   </widget>
   <widget typeId="org.csstudio.opibuilder.widgets.MenuButton" version="1.0.0">
-    <actions hook="false" hook_all="false" />
     <actions_from_pv>true</actions_from_pv>
     <alarm_pulsing>false</alarm_pulsing>
     <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
@@ -10611,7 +10545,7 @@ $(pv_value)</tooltip>
     <border_width>1</border_width>
     <enabled>true</enabled>
     <font>
-      <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
+      <opifont.name fontName="Segoe UI" height="9" style="0" pixels="false">Default</opifont.name>
     </font>
     <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
     <foreground_color>
@@ -10636,6 +10570,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Menu Button</widget_type>
     <width>120</width>
+    <wuid>52266eb9:18c00fb3bfe:-7c7b</wuid>
     <x>1205</x>
     <y>695</y>
   </widget>
@@ -10687,6 +10622,7 @@ $(pv_value)</tooltip>
     <widget_type>Text Update</widget_type>
     <width>120</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7c7a</wuid>
     <x>1330</x>
     <y>695</y>
   </widget>
@@ -10718,7 +10654,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>AcquisitionStatus</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -10727,11 +10662,11 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7c79</wuid>
     <x>980</x>
     <y>720</y>
   </widget>
   <widget typeId="org.csstudio.opibuilder.widgets.MenuButton" version="1.0.0">
-    <actions hook="false" hook_all="false" />
     <actions_from_pv>true</actions_from_pv>
     <alarm_pulsing>false</alarm_pulsing>
     <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
@@ -10746,7 +10681,7 @@ $(pv_value)</tooltip>
     <border_width>1</border_width>
     <enabled>true</enabled>
     <font>
-      <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
+      <opifont.name fontName="Segoe UI" height="9" style="0" pixels="false">Default</opifont.name>
     </font>
     <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
     <foreground_color>
@@ -10771,6 +10706,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Menu Button</widget_type>
     <width>120</width>
+    <wuid>52266eb9:18c00fb3bfe:-7c78</wuid>
     <x>1205</x>
     <y>720</y>
   </widget>
@@ -10822,6 +10758,7 @@ $(pv_value)</tooltip>
     <widget_type>Text Update</widget_type>
     <width>120</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7c77</wuid>
     <x>1330</x>
     <y>720</y>
   </widget>
@@ -10853,7 +10790,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>SingleFrameAcquisitionMode</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -10862,11 +10798,11 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7c76</wuid>
     <x>980</x>
     <y>745</y>
   </widget>
   <widget typeId="org.csstudio.opibuilder.widgets.MenuButton" version="1.0.0">
-    <actions hook="false" hook_all="false" />
     <actions_from_pv>true</actions_from_pv>
     <alarm_pulsing>false</alarm_pulsing>
     <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
@@ -10881,7 +10817,7 @@ $(pv_value)</tooltip>
     <border_width>1</border_width>
     <enabled>true</enabled>
     <font>
-      <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
+      <opifont.name fontName="Segoe UI" height="9" style="0" pixels="false">Default</opifont.name>
     </font>
     <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
     <foreground_color>
@@ -10906,6 +10842,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Menu Button</widget_type>
     <width>120</width>
+    <wuid>52266eb9:18c00fb3bfe:-7c75</wuid>
     <x>1205</x>
     <y>745</y>
   </widget>
@@ -10957,6 +10894,7 @@ $(pv_value)</tooltip>
     <widget_type>Text Update</widget_type>
     <width>120</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7c74</wuid>
     <x>1330</x>
     <y>745</y>
   </widget>
@@ -10988,7 +10926,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>pgrHDRModeEnabled</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -10997,11 +10934,11 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7c73</wuid>
     <x>980</x>
     <y>770</y>
   </widget>
   <widget typeId="org.csstudio.opibuilder.widgets.MenuButton" version="1.0.0">
-    <actions hook="false" hook_all="false" />
     <actions_from_pv>true</actions_from_pv>
     <alarm_pulsing>false</alarm_pulsing>
     <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
@@ -11016,7 +10953,7 @@ $(pv_value)</tooltip>
     <border_width>1</border_width>
     <enabled>true</enabled>
     <font>
-      <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
+      <opifont.name fontName="Segoe UI" height="9" style="0" pixels="false">Default</opifont.name>
     </font>
     <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
     <foreground_color>
@@ -11041,6 +10978,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Menu Button</widget_type>
     <width>120</width>
+    <wuid>52266eb9:18c00fb3bfe:-7c72</wuid>
     <x>1205</x>
     <y>770</y>
   </widget>
@@ -11092,6 +11030,7 @@ $(pv_value)</tooltip>
     <widget_type>Text Update</widget_type>
     <width>120</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7c71</wuid>
     <x>1330</x>
     <y>770</y>
   </widget>
@@ -11123,7 +11062,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>pgrHDRImageSelector</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -11132,11 +11070,11 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7c70</wuid>
     <x>980</x>
     <y>795</y>
   </widget>
   <widget typeId="org.csstudio.opibuilder.widgets.MenuButton" version="1.0.0">
-    <actions hook="false" hook_all="false" />
     <actions_from_pv>true</actions_from_pv>
     <alarm_pulsing>false</alarm_pulsing>
     <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
@@ -11151,7 +11089,7 @@ $(pv_value)</tooltip>
     <border_width>1</border_width>
     <enabled>true</enabled>
     <font>
-      <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
+      <opifont.name fontName="Segoe UI" height="9" style="0" pixels="false">Default</opifont.name>
     </font>
     <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
     <foreground_color>
@@ -11176,6 +11114,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Menu Button</widget_type>
     <width>120</width>
+    <wuid>52266eb9:18c00fb3bfe:-7c6f</wuid>
     <x>1205</x>
     <y>795</y>
   </widget>
@@ -11227,6 +11166,7 @@ $(pv_value)</tooltip>
     <widget_type>Text Update</widget_type>
     <width>120</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7c6e</wuid>
     <x>1330</x>
     <y>795</y>
   </widget>
@@ -11258,7 +11198,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>pgrHDR_ExposureTimeAbs</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -11267,6 +11206,7 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7c6d</wuid>
     <x>980</x>
     <y>820</y>
   </widget>
@@ -11297,17 +11237,14 @@ $(pv_value)</tooltip>
     <height>20</height>
     <horizontal_alignment>0</horizontal_alignment>
     <limits_from_pv>false</limits_from_pv>
-    <maximum>Infinity</maximum>
-    <minimum>-Infinity</minimum>
+    <maximum>1.7976931348623157E308</maximum>
+    <minimum>-1.7976931348623157E308</minimum>
     <multiline_input>false</multiline_input>
     <name>Text Input</name>
-    <next_focus>0</next_focus>
-    <password_input>false</password_input>
     <precision>0</precision>
     <precision_from_pv>true</precision_from_pv>
     <pv_name>$(P)$(R)GC_pHDR_ExpTimeAbs</pv_name>
     <pv_value />
-    <read_only>false</read_only>
     <rotation_angle>0.0</rotation_angle>
     <rules />
     <scale_options>
@@ -11317,10 +11254,7 @@ $(pv_value)</tooltip>
     </scale_options>
     <scripts />
     <selector_type>0</selector_type>
-    <show_h_scroll>false</show_h_scroll>
-    <show_native_border>true</show_native_border>
     <show_units>false</show_units>
-    <show_v_scroll>false</show_v_scroll>
     <style>0</style>
     <text></text>
     <tooltip>$(pv_name)
@@ -11329,6 +11263,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Text Input</widget_type>
     <width>60</width>
+    <wuid>52266eb9:18c00fb3bfe:-7c6c</wuid>
     <x>1205</x>
     <y>820</y>
   </widget>
@@ -11380,6 +11315,7 @@ $(pv_value)</tooltip>
     <widget_type>Text Update</widget_type>
     <width>120</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7c6b</wuid>
     <x>1270</x>
     <y>820</y>
   </widget>
@@ -11411,7 +11347,6 @@ $(pv_value)</tooltip>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts />
-    <show_scrollbar>false</show_scrollbar>
     <text>pgrHDR_GainAbs</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
@@ -11420,6 +11355,7 @@ $(pv_value)</tooltip>
     <widget_type>Label</widget_type>
     <width>220</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7c6a</wuid>
     <x>980</x>
     <y>845</y>
   </widget>
@@ -11450,17 +11386,14 @@ $(pv_value)</tooltip>
     <height>20</height>
     <horizontal_alignment>0</horizontal_alignment>
     <limits_from_pv>false</limits_from_pv>
-    <maximum>Infinity</maximum>
-    <minimum>-Infinity</minimum>
+    <maximum>1.7976931348623157E308</maximum>
+    <minimum>-1.7976931348623157E308</minimum>
     <multiline_input>false</multiline_input>
     <name>Text Input</name>
-    <next_focus>0</next_focus>
-    <password_input>false</password_input>
     <precision>0</precision>
     <precision_from_pv>true</precision_from_pv>
     <pv_name>$(P)$(R)GC_pgrHDR_GainAbs</pv_name>
     <pv_value />
-    <read_only>false</read_only>
     <rotation_angle>0.0</rotation_angle>
     <rules />
     <scale_options>
@@ -11470,10 +11403,7 @@ $(pv_value)</tooltip>
     </scale_options>
     <scripts />
     <selector_type>0</selector_type>
-    <show_h_scroll>false</show_h_scroll>
-    <show_native_border>true</show_native_border>
     <show_units>false</show_units>
-    <show_v_scroll>false</show_v_scroll>
     <style>0</style>
     <text></text>
     <tooltip>$(pv_name)
@@ -11482,6 +11412,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <widget_type>Text Input</widget_type>
     <width>60</width>
+    <wuid>52266eb9:18c00fb3bfe:-7c69</wuid>
     <x>1205</x>
     <y>845</y>
   </widget>
@@ -11533,6 +11464,7 @@ $(pv_value)</tooltip>
     <widget_type>Text Update</widget_type>
     <width>120</width>
     <wrap_words>false</wrap_words>
+    <wuid>52266eb9:18c00fb3bfe:-7c68</wuid>
     <x>1270</x>
     <y>845</y>
   </widget>

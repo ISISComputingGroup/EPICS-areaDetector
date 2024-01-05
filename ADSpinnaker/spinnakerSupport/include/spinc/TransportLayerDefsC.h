@@ -1,5 +1,5 @@
 //=============================================================================
-// Copyright (c) 2001-2018 FLIR Systems, Inc. All Rights Reserved.
+// Copyright (c) 2001-2023 FLIR Systems, Inc. All Rights Reserved.
 //
 // This software is the confidential and proprietary information of FLIR
 // Integrated Imaging Solutions, Inc. ("Confidential Information"). You
@@ -14,7 +14,7 @@
 // SUFFERED BY LICENSEE AS A RESULT OF USING, MODIFYING OR DISTRIBUTING
 // THIS SOFTWARE OR ITS DERIVATIVES.
 //=============================================================================
-   
+
 /* Auto-generated file. Do not modify. */
 
 #ifndef FLIR_SPINNAKERC_TRANSPORTLAYERDEFSC_H
@@ -36,31 +36,26 @@
 
 typedef enum _spinTLStreamTypeEnums	/*!< Stream type of the device.*/
 {
-	StreamType_Mixed,/*!< Stream Type - Mixed*/
-	StreamType_Custom,/*!< Stream Type - Custom*/
-	StreamType_GEV,/*!< Stream Type - GEV*/
-	StreamType_CL,/*!< Stream Type - CL*/
-	StreamType_IIDC,/*!< Stream Type - IIDC*/
-	StreamType_UVC,/*!< Stream Type - UVC*/
-	StreamType_CXP,/*!< Stream Type - CXP*/
-	StreamType_CLHS,/*!< Stream Type - CLHS*/
-	StreamType_U3V,/*!< Stream Type - U3V*/
-	StreamType_ETHERNET,/*!< Stream Type - ETHERNET*/
-	StreamType_PCI,/*!< Stream Type - PCI*/
+	StreamType_GigEVision,/*!< GigE Vision*/
+	StreamType_CameraLink,/*!< Camera Link*/
+	StreamType_CameraLinkHS,/*!< Camera Link High Speed*/
+	StreamType_CoaXPress,/*!< CoaXPress*/
+	StreamType_USB3Vision,/*!< USB3 Vision*/
+	StreamType_Custom,/*!< Custom transport layer*/
 	NUMSTREAMTYPE
 } spinTLStreamTypeEnums;
 
-typedef enum _spinTLStreamDefaultBufferCountModeEnums	/*!< DEPRECATED; Replaced by StreamBufferCountMode. Controls access to setting the number of buffers used for the stream. Locked to Manual mode on 32-bit Windows due to memory constraints.*/
+typedef enum _spinTLStreamModeEnums	/*!< Stream mode of the device.*/
 {
-	StreamDefaultBufferCountMode_Manual,/*!< DEPRECATED. The number of buffers used for the stream are set by the user.*/
-	StreamDefaultBufferCountMode_Auto,/*!< DEPRECATED. The number of buffers used for the stream is automatically calculated.*/
-	NUMSTREAMDEFAULTBUFFERCOUNTMODE
-} spinTLStreamDefaultBufferCountModeEnums;
+	StreamMode_Socket,/*!< Socket*/
+	StreamMode_LWF,/*!< Light Weight Filter Driver*/
+	StreamMode_MVA,/*!< Machine Vision Accelerator Driver*/
+	NUMSTREAMMODE
+} spinTLStreamModeEnums;
 
-typedef enum _spinTLStreamBufferCountModeEnums	/*!< Controls access to setting the number of buffers used for the stream. Locked to Manual mode on 32-bit Windows due to memory constraints.*/
+typedef enum _spinTLStreamBufferCountModeEnums	/*!< Controls access to setting the number of buffers used for the stream.*/
 {
-	StreamBufferCountMode_Manual,/*!< The number of buffers used for the stream are set by the user.*/
-	StreamBufferCountMode_Auto,/*!< The number of buffers used for the stream is automatically calculated based on the device frame rate.*/
+	StreamBufferCountMode_Manual,/*!< The number of buffers used for the stream is set by the user.*/
 	NUMSTREAMBUFFERCOUNTMODE
 } spinTLStreamBufferCountModeEnums;
 
@@ -68,44 +63,40 @@ typedef enum _spinTLStreamBufferHandlingModeEnums	/*!< Available buffer handling
 {
 	StreamBufferHandlingMode_OldestFirst,/*!< The application always gets the buffer from the head of the output buffer queue (thus, the oldest available one). If the output buffer queue is empty, the application waits for a newly acquired buffer until the timeout expires.*/
 	StreamBufferHandlingMode_OldestFirstOverwrite,/*!< The application always gets the buffer from the head of the output buffer queue (thus, the oldest available one). If the output buffer queue is empty, the application waits for a newly acquired buffer until the timeout expires. If a new buffer arrives it will overwrite the existing buffer from the head of the queue (behaves like a circular buffer).*/
-	StreamBufferHandlingMode_NewestFirst,/*!< The application always gets the buffer from the tail of the output buffer queue (thus, the newest available one). If the output buffer queue is empty, the application waits for a newly acquired buffer until the timeout expires.*/
-	StreamBufferHandlingMode_NewestFirstOverwrite,/*!< DEPRECATED.  This is replaced by NewestOnly.*/
 	StreamBufferHandlingMode_NewestOnly,/*!< The application always gets the latest completed buffer (the newest one).  If the Output Buffer Queue is empty, the application waits for a newly acquired buffer until the timeout expires.  This buffer handling mode is typically used in a live display GUI where it is important that there is no lag between camera and display.*/
+	StreamBufferHandlingMode_NewestFirst,/*!< The application always gets the buffer from the tail of the output buffer queue (thus, the newest available one). If the output buffer queue is empty, the application waits for a newly acquired buffer until the timeout expires.*/
 	NUMSTREAMBUFFERHANDLINGMODE
 } spinTLStreamBufferHandlingModeEnums;
 
 typedef enum _spinTLDeviceTypeEnums	/*!< Transport layer type of the device.*/
 {
-	DeviceType_Mixed,/*!< TL - Mixed*/
-	DeviceType_Custom,/*!< TL - Custom*/
-	DeviceType_GEV,/*!< TL - GEV*/
-	DeviceType_CL,/*!< TL - CL*/
-	DeviceType_IIDC,/*!< TL - IIDC*/
-	DeviceType_UVC,/*!< TL - UVC*/
-	DeviceType_CXP,/*!< TL - CXP*/
-	DeviceType_CLHS,/*!< TL - CLHS*/
-	DeviceType_U3V,/*!< TL - U3V*/
-	DeviceType_ETHERNET,/*!< TL - ETHERNET*/
-	DeviceType_PCI,/*!< TL - PCI*/
+	DeviceType_GigEVision,/*!< GigE Vision*/
+	DeviceType_CameraLink,/*!< Camera Link*/
+	DeviceType_CameraLinkHS,/*!< Camera Link High Speed*/
+	DeviceType_CoaXPress,/*!< CoaXPress*/
+	DeviceType_USB3Vision,/*!< USB3 Vision*/
+	DeviceType_Custom,/*!< Custom transport layer*/
 	NUMDEVICETYPE
 } spinTLDeviceTypeEnums;
 
 typedef enum _spinTLDeviceAccessStatusEnums	/*!< Gets the access status the transport layer Producer has on the device.*/
 {
-	DeviceAccessStatus_Unknown,/*!< Unknown status*/
+	DeviceAccessStatus_Unknown,/*!< Not known to producer.*/
 	DeviceAccessStatus_ReadWrite,/*!< Full access*/
 	DeviceAccessStatus_ReadOnly,/*!< Read-only access*/
-	DeviceAccessStatus_NoAccess,/*!< Non-available devices*/
+	DeviceAccessStatus_NoAccess,/*!< Not available to connect*/
+	DeviceAccessStatus_Busy,/*!< The device is already opened by another entity*/
+	DeviceAccessStatus_OpenReadWrite,/*!< Open in Read/Write mode by this GenTL host*/
+	DeviceAccessStatus_OpenReadOnly,/*!< Open in Read access mode by this GenTL host*/
 	NUMDEVICEACCESSSTATUS
 } spinTLDeviceAccessStatusEnums;
 
-typedef enum _spinTLGevCCPEnums	/*!< Controls the device access privilege of an application.*/
+typedef enum _spinTLGenICamXMLLocationEnums	/*!< Sets the location to load GenICam XML.*/
 {
-	GevCCP_EnumEntry_GevCCP_OpenAccess,/*!< Open access privilege.*/
-	GevCCP_EnumEntry_GevCCP_ExclusiveAccess,/*!< Exclusive access privilege.*/
-	GevCCP_EnumEntry_GevCCP_ControlAccess,/*!< Control access privilege.*/
-	NUMGEVCCP
-} spinTLGevCCPEnums;
+	GenICamXMLLocation_Device,/*!< Load GenICam XML from device*/
+	GenICamXMLLocation_Host,/*!< Load GenICam XML from host*/
+	NUMGENICAMXMLLOCATION
+} spinTLGenICamXMLLocationEnums;
 
 typedef enum _spinTLGUIXMLLocationEnums	/*!< Sets the location to load GUI XML.*/
 {
@@ -114,12 +105,13 @@ typedef enum _spinTLGUIXMLLocationEnums	/*!< Sets the location to load GUI XML.*
 	NUMGUIXMLLOCATION
 } spinTLGUIXMLLocationEnums;
 
-typedef enum _spinTLGenICamXMLLocationEnums	/*!< Sets the location to load GenICam XML.*/
+typedef enum _spinTLGevCCPEnums	/*!< Controls the device access privilege of an application.*/
 {
-	GenICamXMLLocation_Device,/*!< Load GenICam XML from device*/
-	GenICamXMLLocation_Host,/*!< Load GenICam XML from host*/
-	NUMGENICAMXMLLOCATION
-} spinTLGenICamXMLLocationEnums;
+	GevCCP_EnumEntry_GevCCP_OpenAccess,/*!< Open access privilege.*/
+	GevCCP_EnumEntry_GevCCP_ExclusiveAccess,/*!< Exclusive access privilege.*/
+	GevCCP_EnumEntry_GevCCP_ControlAccess,/*!< Control access privilege.*/
+	NUMGEVCCP
+} spinTLGevCCPEnums;
 
 typedef enum _spinTLDeviceEndianessMechanismEnums	/*!< Identifies the endianness handling mode.*/
 {
@@ -138,6 +130,17 @@ typedef enum _spinTLDeviceCurrentSpeedEnums	/*!< The USB Speed that the device i
 	NUMDEVICECURRENTSPEED
 } spinTLDeviceCurrentSpeedEnums;
 
+typedef enum _spinTLInterfaceTypeEnums	/*!< Transport layer type of the interface.*/
+{
+	InterfaceType_GigEVision,/*!< GigE Vision*/
+	InterfaceType_CameraLink,/*!< Camera Link*/
+	InterfaceType_CameraLinkHS,/*!< Camera Link High Speed*/
+	InterfaceType_CoaXPress,/*!< CoaXPress*/
+	InterfaceType_USB3Vision,/*!< USB3 Vision*/
+	InterfaceType_Custom,/*!< Custom transport layer*/
+	NUMINTERFACETYPE
+} spinTLInterfaceTypeEnums;
+
 typedef enum _spinTLPOEStatusEnums	/*!< Reports and controls the interface's power over Ethernet status.*/
 {
 	POEStatus_NotSupported,/*!< Not Supported*/
@@ -146,13 +149,25 @@ typedef enum _spinTLPOEStatusEnums	/*!< Reports and controls the interface's pow
 	NUMPOESTATUS
 } spinTLPOEStatusEnums;
 
-typedef enum _spinTLFilterDriverStatusEnums	/*!< Reports whether FLIR Light Weight Filter Driver is enabled or not.*/
+typedef enum _spinTLFilterDriverStatusEnums	/*!< Reports whether FLIR Light Weight Filter Driver is enabled, disabled, or not installed.*/
 {
-	FilterDriverStatus_NotSupported,/*!< Not Supported*/
-	FilterDriverStatus_Disabled,/*!< FLIR Light Weight Filter Driver is disabled*/
+	FilterDriverStatus_NotSupported,/*!< Not Installed*/
+	FilterDriverStatus_Disabled,/*!< FLIR Light Weight Filter Driver is disabled across all interfaces*/
 	FilterDriverStatus_Enabled,/*!< FLIR Light Weight Filter Driver is enabled*/
 	NUMFILTERDRIVERSTATUS
 } spinTLFilterDriverStatusEnums;
+
+typedef enum _spinTLTLTypeEnums	/*!< Transport layer type of the GenTL Producer implementation.*/
+{
+	TLType_GigEVision,/*!< GigE Vision*/
+	TLType_CameraLink,/*!< Camera Link*/
+	TLType_CameraLinkHS,/*!< Camera Link High Speed*/
+	TLType_CoaXPress,/*!< CoaXPress*/
+	TLType_USB3Vision,/*!< USB3 Vision*/
+	TLType_Mixed,/*!< Different Interface modules of the GenTL Producer are of different types*/
+	TLType_Custom,/*!< Custom transport layer*/
+	NUMTLTYPE
+} spinTLTLTypeEnums;
 
 /*@}*/
 
