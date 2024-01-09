@@ -1,5 +1,5 @@
 //=============================================================================
-// Copyright (c) 2001-2018 FLIR Systems, Inc. All Rights Reserved.
+// Copyright (c) 2001-2023 FLIR Systems, Inc. All Rights Reserved.
 //
 // This software is the confidential and proprietary information of FLIR
 // Integrated Imaging Solutions, Inc. ("Confidential Information"). You
@@ -14,7 +14,7 @@
 // SUFFERED BY LICENSEE AS A RESULT OF USING, MODIFYING OR DISTRIBUTING
 // THIS SOFTWARE OR ITS DERIVATIVES.
 //=============================================================================
-   
+
 /* Auto-generated file. Do not modify. */
 
 #include "QuickSpinC.h"
@@ -26,23 +26,31 @@
 * @defgroup TLInterfaceC_h TLInterface Structures
 * @ingroup CQuickSpin
 */
-/*@{*/
+/**@{*/
 
 typedef struct _quickSpinTLInterface
 {
 	quickSpinStringNode InterfaceID;
 	quickSpinStringNode InterfaceDisplayName;
-	quickSpinStringNode InterfaceType;
+	quickSpinEnumerationNode InterfaceType;
+	quickSpinIntegerNode GevInterfaceGatewaySelector;
 	quickSpinIntegerNode GevInterfaceGateway;
 	quickSpinIntegerNode GevInterfaceMACAddress;
-	quickSpinIntegerNode GevInterfaceIPAddress;
+	quickSpinIntegerNode GevInterfaceSubnetSelector;
+	quickSpinIntegerNode GevInterfaceSubnetIPAddress;
 	quickSpinIntegerNode GevInterfaceSubnetMask;
+	quickSpinIntegerNode GevInterfaceTransmitLinkSpeed;
+	quickSpinIntegerNode GevInterfaceReceiveLinkSpeed;
+	quickSpinIntegerNode GevInterfaceMTU;
+	quickSpinBooleanNode GevInterfaceIsIPConflict;
 	quickSpinEnumerationNode POEStatus;
-	quickSpinEnumerationNode FilterDriverStatus;
+	quickSpinEnumerationNode FLIRFilterDriverStatus;
+	quickSpinEnumerationNode TeledyneGigeVisionFilterDriverStatus;
 	quickSpinIntegerNode GevActionDeviceKey;
 	quickSpinIntegerNode GevActionGroupKey;
 	quickSpinIntegerNode GevActionGroupMask;
 	quickSpinIntegerNode GevActionTime;
+	quickSpinBooleanNode GevActionAckRequired;
 	quickSpinCommandNode ActionCommand;
 	quickSpinStringNode DeviceUnlock;
 	quickSpinCommandNode DeviceUpdateList;
@@ -51,11 +59,12 @@ typedef struct _quickSpinTLInterface
 	quickSpinStringNode DeviceID;
 	quickSpinStringNode DeviceVendorName;
 	quickSpinStringNode DeviceModelName;
+	quickSpinStringNode DeviceSerialNumber;
 	quickSpinEnumerationNode DeviceAccessStatus;
 	quickSpinIntegerNode GevDeviceIPAddress;
 	quickSpinIntegerNode GevDeviceSubnetMask;
+	quickSpinIntegerNode GevDeviceGateway;
 	quickSpinIntegerNode GevDeviceMACAddress;
-	quickSpinCommandNode AutoForceIP;
 	quickSpinIntegerNode IncompatibleDeviceCount;
 	quickSpinIntegerNode IncompatibleDeviceSelector;
 	quickSpinStringNode IncompatibleDeviceID;
@@ -64,11 +73,19 @@ typedef struct _quickSpinTLInterface
 	quickSpinIntegerNode IncompatibleGevDeviceIPAddress;
 	quickSpinIntegerNode IncompatibleGevDeviceSubnetMask;
 	quickSpinIntegerNode IncompatibleGevDeviceMACAddress;
+	quickSpinCommandNode GevDeviceForceIP;
+	quickSpinIntegerNode GevDeviceForceIPAddress;
+	quickSpinIntegerNode GevDeviceForceSubnetMask;
+	quickSpinIntegerNode GevDeviceForceGateway;
+	quickSpinCommandNode GevDeviceAutoForceIP;
+	quickSpinBooleanNode GevDeviceDiscoveryEnabled;
+	quickSpinCommandNode GevDeviceEnableDiscovery;
+	quickSpinCommandNode GevDeviceDisableDiscovery;
 	quickSpinStringNode HostAdapterName;
 	quickSpinStringNode HostAdapterVendor;
 	quickSpinStringNode HostAdapterDriverVersion;
 } quickSpinTLInterface;
 
-/*@}*/
+/**@}*/
 
 #endif // FLIR_SPINNAKERC_TLINTERFACE_H
