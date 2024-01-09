@@ -1,5 +1,5 @@
 //=============================================================================
-// Copyright (c) 2001-2018 FLIR Systems, Inc. All Rights Reserved.
+// Copyright (c) 2001-2022 FLIR Systems, Inc. All Rights Reserved.
 //
 // This software is the confidential and proprietary information of FLIR
 // Integrated Imaging Solutions, Inc. ("Confidential Information"). You
@@ -23,33 +23,34 @@
 namespace Spinnaker
 {
     // Forward declaration of implementation class
-    class SystemImpl;
+    class ProducerImpl;
     class SystemPtr;
-    class LoggingEvent;
+    class LoggingEventHandler;
+    class ISystemImpl;
 
     // Define macros for getting Spinnaker library version
-#define	FLIR_SPINNAKER_VERSION_MAJOR 1
-#define FLIR_SPINNAKER_VERSION_MINOR 20
-#define	FLIR_SPINNAKER_VERSION_TYPE 0
-#define	FLIR_SPINNAKER_VERSION_BUILD 14
+#define FLIR_SPINNAKER_VERSION_MAJOR 3
+#define FLIR_SPINNAKER_VERSION_MINOR 1
+#define FLIR_SPINNAKER_VERSION_TYPE  0
+#define FLIR_SPINNAKER_VERSION_BUILD 79
 
     /**
-    * @defgroup SpinnakerClasses Spinnaker Classes
-    */
+     * @defgroup SpinnakerClasses Spinnaker Classes
+     */
     /*@{*/
 
     /**
-    * @defgroup System_h System Class
-    */
+     * @defgroup System_h System Class
+     */
     /*@{*/
 
     /**
-    * @brief The system object is used to retrieve the list of interfaces and cameras available.
-    */
+     * @brief The system object is used to retrieve the list of interfaces and cameras available.
+     */
 
     class SPINNAKER_API System : public ISystem
     {
-    public:
+      public:
         /**
          * Returns a pointer to a Singleton instance of a System object.
          * The System object may be used to get cameras or interfaces.
@@ -63,16 +64,16 @@ namespace Spinnaker
         static SystemPtr GetInstance();
 
         /**
-        * Default destructor.
-        */
+         * Default destructor.
+         */
         virtual ~System();
 
         /**
-         * This call releases the instance of the System Singleton for
-         * this process.  After successfully releasing the System instance
-         * the pointer returned by GetInstance() will be invalid.  Calling
-         * ReleaseInstance while a camera reference is still held will throw
-         * an error of type SPINNAKER_ERR_RESOURCE_IN_USE.
+         * This call releases the referenced instance of the System Singleton.
+         * After successfully releasing the System instance, the pointer returned by GetInstance() will be invalid.
+         * Once the final System instance is released, all remaining Spinnaker resources will be released.
+         * If the final System instance is released while an interface or camera reference is still held,
+         * this function will throw an error of type SPINNAKER_ERR_RESOURCE_IN_USE.
          *
          * @see Error
          * @see GetInstance()
@@ -82,16 +83,25 @@ namespace Spinnaker
 
         /**
          * Returns a list of interfaces available on the system.  This call
-         * returns GigE and Usb2 and Usb3 interfaces. Note that on MacOS only 
+         * returns GigE and Usb2 and Usb3 interfaces. Note that on MacOS only
          * active GigE interfaces will be stored in the returned InterfaceList.
          *
          * @see UpdateInterfaceList()
-         * 
-         * @param updateInterface Determines whether or not UpdateInterfaceList() is called before getting available interfaces
+         *
+         * @param updateInterface Determines whether or not UpdateInterfaceList() is called before getting available
+         * interfaces
          *
          * @return An InterfaceList object that contains a list of all interfaces.
          */
         virtual InterfaceList GetInterfaces(bool updateInterface = true);
+
+        /**
+         * Updates the list of interfaces on the system. If desired, local copies
+         * of InterfaceList should be updated by calling GetInterfaces.
+         *
+         * @see GetInterfaces()
+         */
+        virtual void UpdateInterfaceList();
 
         /**
          * Returns a list of cameras that are available on the system.  This call
@@ -132,58 +142,61 @@ namespace Spinnaker
         virtual bool UpdateCameras(bool updateInterfaces = true);
 
         /**
-         * Updates the list of interfaces on the system. If desired, local copies 
-         * of InterfaceList should be updated by calling GetInterfaces.
+         * Registers an event handler for the system
          *
-         * @see GetInterfaces()
-         */
-        virtual void UpdateInterfaceList();
-
-        /**
-         * Registers events for all available interfaces that are found on the system
+         * @see SystemEventHandler
          *
-         * @param evtToRegister The event to register for the available interfaces
+         * @param evtHandlerToRegister The event handler to register for the system
          * @param updateInterface Determines whether or not UpdateInterfaceList() is called before registering event for
-         *                        available interfaces on the system
+         *        available interfaces on the system
+         *
          */
-        virtual void RegisterInterfaceEvent(Event & evtToRegister, bool updateInterface = true);
+        void RegisterEventHandler(EventHandler& evtHandlerToRegister, bool updateInterface = false);
 
         /**
-        * Unregisters events for all available interfaces that are found on the system
-        *
-        * @param evtToUnregister The event to unregister from the available interfaces
-        */
-        void UnregisterInterfaceEvent(Event & evtToUnregister);
+         * Unregisters an event handler for the system
+         *
+         * @see SystemEventHandler
+         *
+         * @param evtHandlerToUnregister The event handler to unregister from the system
+         *
+         */
+        void UnregisterEventHandler(EventHandler& evtHandlerToUnregister);
 
         /**
-        * Registers a logging event.
-        *
-        * @param handler The logging event handler to register
-        */
-        virtual void RegisterLoggingEvent(LoggingEvent & handler);
+         * Registers a logging event.
+         *
+         * @param handler The logging event handler to register
+         */
+        virtual void RegisterLoggingEventHandler(LoggingEventHandler& handler);
 
         /**
          * Unregisters all previously registered logging events.
          *
          */
-        virtual void UnregisterAllLoggingEvent();
+        virtual void UnregisterAllLoggingEventHandlers();
 
         /**
          * Unregisters a logging event.
          *
          * @param handler The logging event handler to unregister
          */
-        virtual void UnregisterLoggingEvent(LoggingEvent & handler);
+        virtual void UnregisterLoggingEventHandler(LoggingEventHandler& handler);
 
         /**
          * Sets a threshold priority level for logging event. Logging events
          * below such level will not trigger callbacks.
          *
-         * Spinnaker uses five levels of logging:
-         *	- Error		- failures that are non-recoverable without user intervention.
+         * Spinnaker uses multiple levels of logging:
+         *  - Fatal     - failures that are non-recoverable without user intervention.
+         *	- Error		- failures that may or may not be recoverable without user
+         *	              intervention (use case dependent).
          *	- Warning	- failures that are recoverable without user intervention.
-         *	- Notice	- information about events such as camera arrival and removal, initialization and deinitialization, starting and stopping image acquisition, and feature modification.
-         *	- Info		- information about recurring events that are generated regularly such as information on individual images.
+         *	- Notice	- information about events such as camera arrival and removal,
+         *	              initialization and deinitialization, starting and stopping image
+         *	              acquisition, and feature modification.
+         *	- Info		- information about recurring events that are generated regularly
+         *	              such as information on individual images.
          *	- Debug		- information that can be used to troubleshoot the system.
          *
          *
@@ -196,11 +209,16 @@ namespace Spinnaker
         /**
          * Retrieves the current logging event priority level.
          *
-         * Spinnaker uses five levels of logging:
-         *	- Error		- failures that are non-recoverable without user intervention.
+         * Spinnaker uses multiple levels of logging:
+         *  - Fatal     - failures that are non-recoverable without user intervention.
+         *	- Error		- failures that may or may not be recoverable without user
+         *	              intervention (use case dependent).
          *	- Warning	- failures that are recoverable without user intervention.
-         *	- Notice	- information about events such as camera arrival and removal, initialization and deinitialization, starting and stopping image acquisition, and feature modification.
-         *	- Info		- information about recurring events that are generated regularly such as information on individual images.
+         *	- Notice	- information about events such as camera arrival and removal,
+         *	              initialization and deinitialization, starting and stopping image
+         *	              acquisition, and feature modification.
+         *	- Info		- information about recurring events that are generated regularly
+         *	              such as information on individual images.
          *	- Debug		- information that can be used to troubleshoot the system.
          *
          * @see SpinnakerLogLevel
@@ -217,17 +235,29 @@ namespace Spinnaker
         virtual bool IsInUse();
 
         /**
-        * Broadcast an Action Command to all devices on system
-        *
-        * @param deviceKey The Action Command's device key
-        * @param groupKey The Action Command's group key
-        * @param groupMask The Action Command's group mask
-        * @param actionTime (Optional) Time when to assert a future action. Zero means immediate action.
-        * @param pResultSize (Optional) The number of results in the results array. The value passed should be equal to the expected number of devices that acknowledge the command. Returns the number of received results.
-        * @param results (Optional) An Array with *pResultSize elements to hold the action command result status. The buffer is filled starting from index 0. If received results are less than expected number of devices that acknowledge the command, remaining results are not changed. If received results are more than expected number of devices that acknowledge the command, extra results are ignored and not appended to array. This parameter is ignored if pResultSize is 0. Thus this parameter can be NULL if pResultSize is 0 or NULL.
-        *
-        */
-        virtual void SendActionCommand(unsigned int deviceKey, unsigned int groupKey, unsigned int groupMask, unsigned long long actionTime = 0, unsigned int* pResultSize = 0, ActionCommandResult results[] = NULL);
+         * Broadcast an Action Command to all devices on system
+         *
+         * @param deviceKey The Action Command's device key
+         * @param groupKey The Action Command's group key
+         * @param groupMask The Action Command's group mask
+         * @param actionTime (Optional) Time when to assert a future action. Zero means immediate action.
+         * @param pResultSize (Optional) The number of results in the results array. The value passed should be equal to
+         * the expected number of devices that acknowledge the command. Returns the number of received results. If this
+         * parameter is 0 or NULL, the function will return as soon as the command has been broadcasted.
+         * @param results (Optional) An Array with *pResultSize elements to hold the action command result status. The
+         * buffer is filled starting from index 0. If received results are less than expected number of devices that
+         * acknowledge the command, remaining results are not changed. If received results are more than expected number
+         * of devices that acknowledge the command, extra results are ignored and not appended to array. This parameter
+         * is ignored if pResultSize is 0. Thus this parameter can be NULL if pResultSize is 0 or NULL.
+         *
+         */
+        virtual void SendActionCommand(
+            unsigned int deviceKey,
+            unsigned int groupKey,
+            unsigned int groupMask,
+            unsigned long long actionTime = 0,
+            unsigned int* pResultSize = 0,
+            ActionCommandResult results[] = NULL);
 
         /**
          * Get current library version of Spinnaker.
@@ -237,20 +267,20 @@ namespace Spinnaker
         virtual const LibraryVersion GetLibraryVersion();
 
         /**
-        * Gets a reference to the system node map. The system must be initialized by a call to System::GetInstance() first
-        * before a node map reference can be successfully acquired.
-        *
-        * @return  A reference to the System INodeMap.
-        */
-        virtual GenApi::INodeMap & GetTLNodeMap() const;
+         * Gets a reference to the system node map. The system must be initialized by a call to System::GetInstance()
+         * first before a node map reference can be successfully acquired.
+         *
+         * @return  A reference to the System INodeMap.
+         */
+        virtual GenApi::INodeMap& GetTLNodeMap() const;
 
-    protected:
+      protected:
         /**
-        * Default constructor.
-        */
+         * Default constructor.
+         */
         System();
 
-    private:
+      private:
         /**
          * Copy constructor.
          */
@@ -260,11 +290,16 @@ namespace Spinnaker
          * Assignment operator.
          */
         System& operator=(const System&);
+
+        /**
+         * Internal use only.
+         */
+        ISystemImpl* m_pSystemImpl;
     };
 
     /*@}*/
 
     /*@}*/
-}
+} // namespace Spinnaker
 
 #endif // FLIR_SPINNAKER_SYSTEM_H
