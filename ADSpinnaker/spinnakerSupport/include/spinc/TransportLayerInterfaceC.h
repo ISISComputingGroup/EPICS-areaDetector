@@ -1,5 +1,5 @@
 //=============================================================================
-// Copyright (c) 2001-2023 FLIR Systems, Inc. All Rights Reserved.
+// Copyright (c) 2001-2018 FLIR Systems, Inc. All Rights Reserved.
 //
 // This software is the confidential and proprietary information of FLIR
 // Integrated Imaging Solutions, Inc. ("Confidential Information"). You
@@ -14,7 +14,7 @@
 // SUFFERED BY LICENSEE AS A RESULT OF USING, MODIFYING OR DISTRIBUTING
 // THIS SOFTWARE OR ITS DERIVATIVES.
 //=============================================================================
-
+   
 /* Auto-generated file. Do not modify. */
 
 #include "QuickSpinC.h"
@@ -32,16 +32,11 @@ typedef struct _quickSpinTLInterface
 {
 	quickSpinStringNode InterfaceID;
 	quickSpinStringNode InterfaceDisplayName;
-	quickSpinEnumerationNode InterfaceType;
-	quickSpinIntegerNode GevInterfaceGatewaySelector;
+	quickSpinStringNode InterfaceType;
 	quickSpinIntegerNode GevInterfaceGateway;
 	quickSpinIntegerNode GevInterfaceMACAddress;
-	quickSpinIntegerNode GevInterfaceSubnetSelector;
-	quickSpinIntegerNode GevInterfaceSubnetIPAddress;
+	quickSpinIntegerNode GevInterfaceIPAddress;
 	quickSpinIntegerNode GevInterfaceSubnetMask;
-	quickSpinIntegerNode GevInterfaceTransmitLinkSpeed;
-	quickSpinIntegerNode GevInterfaceReceiveLinkSpeed;
-	quickSpinIntegerNode GevInterfaceMTU;
 	quickSpinEnumerationNode POEStatus;
 	quickSpinEnumerationNode FilterDriverStatus;
 	quickSpinIntegerNode GevActionDeviceKey;
@@ -56,12 +51,11 @@ typedef struct _quickSpinTLInterface
 	quickSpinStringNode DeviceID;
 	quickSpinStringNode DeviceVendorName;
 	quickSpinStringNode DeviceModelName;
-	quickSpinStringNode DeviceSerialNumber;
 	quickSpinEnumerationNode DeviceAccessStatus;
 	quickSpinIntegerNode GevDeviceIPAddress;
 	quickSpinIntegerNode GevDeviceSubnetMask;
-	quickSpinIntegerNode GevDeviceGateway;
 	quickSpinIntegerNode GevDeviceMACAddress;
+	quickSpinCommandNode AutoForceIP;
 	quickSpinIntegerNode IncompatibleDeviceCount;
 	quickSpinIntegerNode IncompatibleDeviceSelector;
 	quickSpinStringNode IncompatibleDeviceID;
@@ -70,11 +64,6 @@ typedef struct _quickSpinTLInterface
 	quickSpinIntegerNode IncompatibleGevDeviceIPAddress;
 	quickSpinIntegerNode IncompatibleGevDeviceSubnetMask;
 	quickSpinIntegerNode IncompatibleGevDeviceMACAddress;
-	quickSpinCommandNode GevDeviceForceIP;
-	quickSpinIntegerNode GevDeviceForceIPAddress;
-	quickSpinIntegerNode GevDeviceForceSubnetMask;
-	quickSpinIntegerNode GevDeviceForceGateway;
-	quickSpinCommandNode GevDeviceAutoForceIP;
 	quickSpinStringNode HostAdapterName;
 	quickSpinStringNode HostAdapterVendor;
 	quickSpinStringNode HostAdapterDriverVersion;

@@ -1,5 +1,5 @@
 //=============================================================================
-// Copyright (c) 2001-2023 FLIR Systems, Inc. All Rights Reserved.
+// Copyright (c) 2001-2018 FLIR Systems, Inc. All Rights Reserved.
 //
 // This software is the confidential and proprietary information of FLIR
 // Integrated Imaging Solutions, Inc. ("Confidential Information"). You
@@ -14,7 +14,7 @@
 // SUFFERED BY LICENSEE AS A RESULT OF USING, MODIFYING OR DISTRIBUTING
 // THIS SOFTWARE OR ITS DERIVATIVES.
 //=============================================================================
-
+   
 /* Auto-generated file. Do not modify. */
 
 #include "QuickSpinC.h"
@@ -32,26 +32,25 @@ typedef struct _quickSpinTLDevice
 {
 	quickSpinStringNode DeviceID;
 	quickSpinStringNode DeviceSerialNumber;
-	quickSpinStringNode DeviceUserID;
 	quickSpinStringNode DeviceVendorName;
 	quickSpinStringNode DeviceModelName;
-	quickSpinStringNode DeviceVersion;
-	quickSpinIntegerNode DeviceBootloaderVersion;
 	quickSpinEnumerationNode DeviceType;
 	quickSpinStringNode DeviceDisplayName;
 	quickSpinEnumerationNode DeviceAccessStatus;
-	quickSpinIntegerNode DeviceLinkSpeed;
+	quickSpinStringNode DeviceVersion;
+	quickSpinStringNode DeviceUserID;
 	quickSpinStringNode DeviceDriverVersion;
 	quickSpinBooleanNode DeviceIsUpdater;
-	quickSpinEnumerationNode GenICamXMLLocation;
-	quickSpinStringNode GenICamXMLPath;
+	quickSpinEnumerationNode GevCCP;
 	quickSpinEnumerationNode GUIXMLLocation;
 	quickSpinStringNode GUIXMLPath;
-	quickSpinEnumerationNode GevCCP;
-	quickSpinIntegerNode GevDeviceMACAddress;
+	quickSpinEnumerationNode GenICamXMLLocation;
+	quickSpinStringNode GenICamXMLPath;
 	quickSpinIntegerNode GevDeviceIPAddress;
 	quickSpinIntegerNode GevDeviceSubnetMask;
+	quickSpinIntegerNode GevDeviceMACAddress;
 	quickSpinIntegerNode GevDeviceGateway;
+	quickSpinIntegerNode DeviceLinkSpeed;
 	quickSpinIntegerNode GevVersionMajor;
 	quickSpinIntegerNode GevVersionMinor;
 	quickSpinBooleanNode GevDeviceModeIsBigEndian;
@@ -61,19 +60,12 @@ typedef struct _quickSpinTLDevice
 	quickSpinCommandNode GevDeviceDiscoverMaximumPacketSize;
 	quickSpinIntegerNode GevDeviceMaximumPacketSize;
 	quickSpinBooleanNode GevDeviceIsWrongSubnet;
-	quickSpinCommandNode GevDeviceAutoForceIP;
 	quickSpinCommandNode GevDeviceForceIP;
-	quickSpinIntegerNode GevDeviceForceIPAddress;
-	quickSpinIntegerNode GevDeviceForceSubnetMask;
-	quickSpinIntegerNode GevDeviceForceGateway;
 	quickSpinBooleanNode DeviceMulticastMonitorMode;
 	quickSpinEnumerationNode DeviceEndianessMechanism;
-	quickSpinCommandNode DeviceReset;
 	quickSpinStringNode DeviceInstanceId;
-	quickSpinStringNode DeviceLocation;
 	quickSpinEnumerationNode DeviceCurrentSpeed;
 	quickSpinBooleanNode DeviceU3VProtocol;
-	quickSpinStringNode DevicePortId;
 } quickSpinTLDevice;
 
 /*@}*/

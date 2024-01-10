@@ -1,5 +1,5 @@
 //=============================================================================
-// Copyright (c) 2001-2021 FLIR Systems, Inc. All Rights Reserved.
+// Copyright © 2017 FLIR Integrated Imaging Solutions, Inc. All Rights Reserved.
 //
 // This software is the confidential and proprietary information of FLIR
 // Integrated Imaging Solutions, Inc. ("Confidential Information"). You
@@ -25,13 +25,13 @@ namespace Spinnaker
     namespace GenApi
     {
         /**
-         *  @defgroup SpinnakerGenApiClasses Spinnaker GenApi Classes
-         */
+        *  @defgroup SpinnakerGenApiClasses Spinnaker GenApi Classes
+        */
         /*@{*/
 
         /**
-         *  @defgroup Synch_h Synch Class
-         */
+        *  @defgroup Synch_h Synch Class
+        */
         /*@{*/
 
         //-----------------------------------------------------------------
@@ -39,53 +39,54 @@ namespace Spinnaker
         //-----------------------------------------------------------------
 
         /**
-         * @brief A lock class
-         */
+        * @brief A lock class
+        */
         class SPINNAKER_API CLock
         {
-          public:
+        public:
             /**
-             * Constructor
-             */
+            * Constructor
+            */
             CLock();
 
             /**
-             * Constructor
-             */
+            * Constructor
+            */
             CLock(void* pLock);
 
             /**
-             * Destructor
-             */
+            * Destructor
+            */
             ~CLock();
 
             /**
-             * tries to enter the critical section; returns true if successful
-             */
+            * tries to enter the critical section; returns true if successful
+            */
             bool TryLock();
 
             /**
-             * enters the critical section (may block)
-             */
+            * enters the critical section (may block)
+            */
             void Lock();
 
             /**
-             * leaves the critical section
-             */
+            * leaves the critical section
+            */
             void Unlock();
 
-          private:
+        private:
             /**
-             * no copy constructor
-             */
+            * no copy constructor
+            */
             CLock(const CLock&);
 
             /**
-             * no assignment operator
-             */
+            * no assignment operator
+            */
             CLock& operator=(const CLock&);
 
-          protected:
+        protected:
+
             friend class NodeMap;
             void* m_lock;
             bool m_bOwnLock;
@@ -95,66 +96,70 @@ namespace Spinnaker
         /*@}*/
 
         /**
-         *  @addtogroup SpinnakerGenApiClasses Spinnaker GenApi Classes
-         */
+        *  @addtogroup SpinnakerGenApiClasses Spinnaker GenApi Classes
+        */
         /*@{*/
 
         /**
-         *  @addtogroup Synch_h Synch Class
-         */
+        *  @addtogroup Synch_h Synch Class
+        */
         /*@{*/
 
         /**
-         * This class is for testing purposes only. It should not be used for
-         * client code because it exists only for Windows but not for Linux
-         * since it uses internal data structures of a Win32 object
-         */
+        * This class is for testing purposes only. It should not be used for
+        * client code because it exists only for Windows but not for Linux
+        * since it uses internal data structures of a Win32 object
+        */
         class SPINNAKER_API CLockEx : public CLock
         {
-          public:
-#if defined(_WIN32)
+        public:
+
+
+    #       if defined (_WIN32)
+                /**
+                * Gives access to internal data member for test and purposes
+                */
+                int64_t GetLockCount();
+
+                /**
+                * Gives access to internal data member for test and purposes
+                */
+                int64_t GetRecursionCount();
+
+    #       elif defined (__GNUC__) && (defined (__linux__) || defined (__APPLE__))
+                // nothing implemented for Unix
+    #       else
+    #           error No/unknown platform support
+    #       endif
+
+        private:
             /**
-             * Gives access to internal data member for test and purposes
-             */
-            int64_t GetLockCount();
+            * no copy constructor
+            */
+            CLockEx( const CLockEx& );
 
             /**
-             * Gives access to internal data member for test and purposes
-             */
-            int64_t GetRecursionCount();
+            * no assignment operator
+            */
+            CLockEx& operator=( const CLockEx& );
 
-#elif defined(__GNUC__) && (defined(__linux__) || defined(__APPLE__))
-            // nothing implemented for Unix
-#else
-#error No/unknown platform support
-#endif
+        protected:
 
-          private:
-            /**
-             * no copy constructor
-             */
-            CLockEx(const CLockEx&);
-
-            /**
-             * no assignment operator
-             */
-            CLockEx& operator=(const CLockEx&);
-
-          protected:
             void* m_lockEx;
+
         };
 
         /*@}*/
         /*@}*/
 
         /**
-         *  @addtogroup SpinnakerGenApiClasses Spinnaker GenApi Classes
-         */
+        *  @addtogroup SpinnakerGenApiClasses Spinnaker GenApi Classes
+        */
         /*@{*/
 
         /**
-         *  @addtogroup Synch_h Synch Class
-         */
+        *  @addtogroup Synch_h Synch Class
+        */
         /*@{*/
 
         //-----------------------------------------------------------------
@@ -163,9 +168,9 @@ namespace Spinnaker
         class AutoLock
         {
             CLock& m_Lock;
-
-          public:
-            AutoLock(CLock& lock) : m_Lock(lock)
+        public:
+            AutoLock(CLock& lock)
+                : m_Lock(lock)
             {
                 m_Lock.Lock();
             }
@@ -175,14 +180,14 @@ namespace Spinnaker
                 m_Lock.Unlock();
             }
 
-          private:
+        private:
             AutoLock& operator=(const AutoLock&);
             AutoLock(const AutoLock&);
         };
 
         /*@}*/
         /*@}*/
-    } // namespace GenApi
-} // namespace Spinnaker
+    }
+}
 
 #endif // SPINNAKER_GENAPI_SYNCH_H

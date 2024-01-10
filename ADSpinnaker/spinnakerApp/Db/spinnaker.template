@@ -80,86 +80,23 @@ record(mbbi, "$(P)$(R)ConvertPixelFormat_RBV") {
   field(INP,  "@asyn($(PORT) 0)SP_CONVERT_PIXEL_FORMAT")
 }
 
-record(longin, "$(P)$(R)StartedFrameCount")
+record(longin, "$(P)$(R)FailedPacketCount")
 {
    field(DTYP, "asynInt32")
-   field(INP,  "@asyn($(PORT) 0)SP_STARTED_FRAME_COUNT")
+   field(INP,  "@asyn($(PORT) 0)SP_FAILED_PACKET_COUNT")
    field(SCAN, "I/O Intr")
 }
 
-record(longin, "$(P)$(R)DeliveredFrameCount")
+record(longin, "$(P)$(R)FailedBufferCount")
 {
    field(DTYP, "asynInt32")
-   field(INP,  "@asyn($(PORT) 0)SP_DELIVERED_FRAME_COUNT")
+   field(INP,  "@asyn($(PORT) 0)SP_FAILED_BUFFER_COUNT")
    field(SCAN, "I/O Intr")
 }
 
-record(longin, "$(P)$(R)ReceivedFrameCount")
+record(longin, "$(P)$(R)BufferUnderrunCount")
 {
    field(DTYP, "asynInt32")
-   field(INP,  "@asyn($(PORT) 0)SP_RECEIVED_FRAME_COUNT")
-   field(SCAN, "I/O Intr")
-}
-
-record(longin, "$(P)$(R)IncompleteFrameCount")
-{
-   field(DTYP, "asynInt32")
-   field(INP,  "@asyn($(PORT) 0)SP_INCOMPLETE_FRAME_COUNT")
-   field(SCAN, "I/O Intr")
-}
-
-record(longin, "$(P)$(R)LostFrameCount")
-{
-   field(DTYP, "asynInt32")
-   field(INP,  "@asyn($(PORT) 0)SP_LOST_FRAME_COUNT")
-   field(SCAN, "I/O Intr")
-}
-
-record(longin, "$(P)$(R)DroppedFrameCount")
-{
-   field(DTYP, "asynInt32")
-   field(INP,  "@asyn($(PORT) 0)SP_DROPPED_FRAME_COUNT")
-   field(SCAN, "I/O Intr")
-}
-
-record(longin, "$(P)$(R)InputBufferCount")
-{
-   field(DTYP, "asynInt32")
-   field(INP,  "@asyn($(PORT) 0)SP_INPUT_BUFFER_COUNT")
-   field(SCAN, "I/O Intr")
-}
-
-record(longin, "$(P)$(R)OutputBufferCount")
-{
-   field(DTYP, "asynInt32")
-   field(INP,  "@asyn($(PORT) 0)SP_OUTPUT_BUFFER_COUNT")
-   field(SCAN, "I/O Intr")
-}
-
-record(longin, "$(P)$(R)ReceivedPacketCount")
-{
-   field(DTYP, "asynInt32")
-   field(INP,  "@asyn($(PORT) 0)SP_RECEIVED_PACKET_COUNT")
-   field(SCAN, "I/O Intr")
-}
-
-record(longin, "$(P)$(R)MissedPacketCount")
-{
-   field(DTYP, "asynInt32")
-   field(INP,  "@asyn($(PORT) 0)SP_MISSED_PACKET_COUNT")
-   field(SCAN, "I/O Intr")
-}
-
-record(longin, "$(P)$(R)ResendRequestedPacketCount")
-{
-   field(DTYP, "asynInt32")
-   field(INP,  "@asyn($(PORT) 0)SP_RESEND_REQUESTED_PACKET_COUNT")
-   field(SCAN, "I/O Intr")
-}
-
-record(longin, "$(P)$(R)ResendReceivedPacketCount")
-{
-   field(DTYP, "asynInt32")
-   field(INP,  "@asyn($(PORT) 0)SP_RESEND_RECEIVED_PACKET_COUNT")
+   field(INP,  "@asyn($(PORT) 0)SP_BUFFER_UNDERRUN_COUNT")
    field(SCAN, "I/O Intr")
 }

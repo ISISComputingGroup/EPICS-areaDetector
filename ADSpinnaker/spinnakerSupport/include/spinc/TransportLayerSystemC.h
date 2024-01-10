@@ -1,5 +1,5 @@
 //=============================================================================
-// Copyright (c) 2001-2023 FLIR Systems, Inc. All Rights Reserved.
+// Copyright (c) 2001-2018 FLIR Systems, Inc. All Rights Reserved.
 //
 // This software is the confidential and proprietary information of FLIR
 // Integrated Imaging Solutions, Inc. ("Confidential Information"). You
@@ -14,7 +14,7 @@
 // SUFFERED BY LICENSEE AS A RESULT OF USING, MODIFYING OR DISTRIBUTING
 // THIS SOFTWARE OR ITS DERIVATIVES.
 //=============================================================================
-
+   
 /* Auto-generated file. Do not modify. */
 
 #include "QuickSpinC.h"
@@ -30,32 +30,7 @@
 
 typedef struct _quickSpinTLSystem
 {
-	quickSpinStringNode TLID;
-	quickSpinStringNode TLVendorName;
-	quickSpinStringNode TLModelName;
-	quickSpinStringNode TLVersion;
-	quickSpinStringNode TLFileName;
-	quickSpinStringNode TLDisplayName;
-	quickSpinStringNode TLPath;
-	quickSpinEnumerationNode TLType;
-	quickSpinIntegerNode GenTLVersionMajor;
-	quickSpinIntegerNode GenTLVersionMinor;
-	quickSpinIntegerNode GenTLSFNCVersionMajor;
-	quickSpinIntegerNode GenTLSFNCVersionMinor;
-	quickSpinIntegerNode GenTLSFNCVersionSubMinor;
-	quickSpinIntegerNode GevVersionMajor;
-	quickSpinIntegerNode GevVersionMinor;
-	quickSpinCommandNode InterfaceUpdateList;
-	quickSpinIntegerNode InterfaceSelector;
-	quickSpinStringNode InterfaceID;
-	quickSpinStringNode InterfaceDisplayName;
-	quickSpinIntegerNode GevInterfaceMACAddress;
-	quickSpinIntegerNode GevInterfaceDefaultIPAddress;
-	quickSpinIntegerNode GevInterfaceDefaultSubnetMask;
-	quickSpinIntegerNode GevInterfaceDefaultGateway;
-	quickSpinBooleanNode EnumerateGEVInterfaces;
-	quickSpinBooleanNode EnumerateUSBInterfaces;
-	quickSpinBooleanNode EnumerateGen2Cameras;
+	quickSpinIntegerNode EnumerateGEVInterfaces;
 } quickSpinTLSystem;
 
 /*@}*/

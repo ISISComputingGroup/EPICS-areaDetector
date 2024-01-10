@@ -1,5 +1,5 @@
 //=============================================================================
-// Copyright (c) 2001-2021 FLIR Systems, Inc. All Rights Reserved.
+// Copyright © 2017 FLIR Integrated Imaging Solutions, Inc. All Rights Reserved.
 //
 // This software is the confidential and proprietary information of FLIR
 // Integrated Imaging Solutions, Inc. ("Confidential Information"). You
@@ -22,96 +22,96 @@
 
 namespace Spinnaker
 {
+	/**
+	*  @defgroup SpinnakerEventClasses Spinnaker Event Classes
+	*/
+
+	/*@{*/
+
+	/**
+	*  @defgroup LoggingEventData_h Logging Event Class
+	*/
+
+	/*@{*/
+
     /**
-     *  @defgroup SpinnakerEventClasses Spinnaker EventHandler Classes
-     */
+    * @brief The LoggingEventData object.
+    */
 
-    /*@{*/
+	class SPINNAKER_API LoggingEventData
+	{
+	public:
+			/**
+			* Default Destructor
+			*/
+			~LoggingEventData();
 
-    /**
-     *  @defgroup LoggingEventData_h Logging EventHandler Class
-     */
+			/**
+			* Gets the logging event category name.
+			*
+			* @return The category name
+			*/
+			const char* GetCategoryName();
 
-    /*@{*/
+			/**
+			* Gets the logging event message.
+			*
+			* @return The log message
+			*/
+			const char* GetLogMessage();
 
-    /**
-     * @brief The LoggingEventData object.
-     */
+			/**
+			* Gets the logging event's Nested Diagnostic Context (NDC).
+			*
+			* @return The log event's NDC
+			*/
+			const char* GetNDC();
 
-    class SPINNAKER_API LoggingEventData
-    {
-      public:
-        /**
-         * Default Destructor
-         */
-        ~LoggingEventData();
+			/**
+			* Gets the logging event priority.
+			*
+			* @return The log priority
+			*/
+			const int	GetPriority();
 
-        /**
-         * Gets the logging event category name.
-         *
-         * @return The category name
-         */
-        const char* GetCategoryName();
+			/**
+			* Gets the logging event thread name.
+			*
+			* @return The thread name
+			*/
+			const char* GetThreadName();
 
-        /**
-         * Gets the logging event message.
-         *
-         * @return The log message
-         */
-        const char* GetLogMessage();
+			/**
+			* Gets the logging event time stamp.
+			*
+			* @return The time stamp of the log
+			*/
+			const char* GetTimestamp();
 
-        /**
-         * Gets the logging event's Nested Diagnostic Context (NDC).
-         *
-         * @return The log event's NDC
-         */
-        const char* GetNDC();
+			/**
+			* Gets the logging event priority name.
+			*
+			* @return The priority name of the log
+			*/
+			const char* GetPriorityName();
+	protected:
+		friend class SystemImpl;
 
-        /**
-         * Gets the logging event priority.
-         *
-         * @return The log priority
-         */
-        const int GetPriority();
+		/**
+		* Default Constructor
+		*/
+		LoggingEventData(void* data);
+		
 
-        /**
-         * Gets the logging event thread name.
-         *
-         * @return The thread name
-         */
-        const char* GetThreadName();
+		private:
+			struct LoggingEventDataInternal; // Forward declaration
 
-        /**
-         * Gets the logging event time stamp.
-         *
-         * @return The time stamp of the log
-         */
-        const char* GetTimestamp();
+			LoggingEventDataInternal* m_pLoggingEventData;
+	};
 
-        /**
-         * Gets the logging event priority name.
-         *
-         * @return The priority name of the log
-         */
-        const char* GetPriorityName();
+	/*@}*/
 
-      protected:
-        friend class SystemImpl;
-
-        /**
-         * Default Constructor
-         */
-        LoggingEventData(void* data);
-
-      private:
-        struct LoggingEventDataInternal; // Forward declaration
-
-        LoggingEventDataInternal* m_pLoggingEventData;
-    };
-
-    /*@}*/
-
-    /*@}*/
-} // namespace Spinnaker
+	/*@}*/
+}
 
 #endif // PGR_LoggingEventData_H

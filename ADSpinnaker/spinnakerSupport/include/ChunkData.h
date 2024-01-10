@@ -1,5 +1,5 @@
 //=============================================================================
-// Copyright (c) 2001-2023 FLIR Systems, Inc. All Rights Reserved.
+// Copyright (c) 2001-2018 FLIR Systems, Inc. All Rights Reserved.
 //
 // This software is the confidential and proprietary information of FLIR
 // Integrated Imaging Solutions, Inc. ("Confidential Information"). You
@@ -14,11 +14,11 @@
 // SUFFERED BY LICENSEE AS A RESULT OF USING, MODIFYING OR DISTRIBUTING
 // THIS SOFTWARE OR ITS DERIVATIVES.
 //=============================================================================
-
+   
 /* Auto-generated file. Do not modify. */
 
-#ifndef FLIR_SPINNAKER_CHUNKDATA_H
-#define FLIR_SPINNAKER_CHUNKDATA_H
+#ifndef PGR_SPINNAKER_CHUNKDATA_H
+#define PGR_SPINNAKER_CHUNKDATA_H
 
 #include "Interface/IChunkData.h"
 
@@ -66,18 +66,6 @@ namespace Spinnaker
          * Visibility: 
          */
         float64_t GetExposureTime() const;
-
-        /**
-         * Description: Returns the compression mode of the last image payload.
-         * Visibility: 
-         */
-        int64_t GetCompressionMode() const;
-
-        /**
-         * Description: Returns the compression ratio of the last image payload.
-         * Visibility: 
-         */
-        float64_t GetCompressionRatio() const;
 
         /**
          * Description: Returns the Timestamp of the image.
@@ -266,30 +254,54 @@ namespace Spinnaker
         float64_t GetScan3dCoordinateReferenceValue() const;
 
         /**
-         * Description: Returns the frame ID associated with the most recent inference result.
-         * Visibility: Expert
-         */
-        int64_t GetInferenceFrameId() const;
-
-        /**
-         * Description: Returns the chunk data inference result.
+         * Description: 
          * Visibility: Expert
          */
         int64_t GetInferenceResult() const;
 
         /**
-         * Description: Returns the chunk data inference confidence percentage.
+         * Description: 
          * Visibility: Expert
          */
         float64_t GetInferenceConfidence() const;
 
-        /**
-         * Description: Returns the chunk inference bounding box result data.
-         * Visibility: Expert
-         */
-        InferenceBoundingBoxResult GetInferenceBoundingBoxResult() const;
-
-        friend class ChunkDataImpl;
+    private:
+        float64_t m_blackLevel;
+        int64_t m_frameID;
+        float64_t m_exposureTime;
+        int64_t m_timestamp;
+        int64_t m_exposureEndLineStatusAll;
+        int64_t m_width;
+        int64_t m_image;
+        int64_t m_height;
+        float64_t m_gain;
+        int64_t m_sequencerSetActive;
+        int64_t m_cRC;
+        int64_t m_offsetX;
+        int64_t m_offsetY;
+        int64_t m_serialDataLength;
+        int64_t m_partSelector;
+        int64_t m_pixelDynamicRangeMin;
+        int64_t m_pixelDynamicRangeMax;
+        int64_t m_timestampLatchValue;
+        int64_t m_lineStatusAll;
+        int64_t m_counterValue;
+        float64_t m_timerValue;
+        int64_t m_scanLineSelector;
+        int64_t m_encoderValue;
+        int64_t m_linePitch;
+        int64_t m_transferBlockID;
+        int64_t m_transferQueueCurrentBlockCount;
+        int64_t m_streamChannelID;
+        float64_t m_scan3dCoordinateScale;
+        float64_t m_scan3dCoordinateOffset;
+        float64_t m_scan3dInvalidDataValue;
+        float64_t m_scan3dAxisMin;
+        float64_t m_scan3dAxisMax;
+        float64_t m_scan3dTransformValue;
+        float64_t m_scan3dCoordinateReferenceValue;
+        int64_t m_inferenceResult;
+        float64_t m_inferenceConfidence;
 
     };
     /*@}*/
@@ -297,4 +309,4 @@ namespace Spinnaker
     /*@}*/
 
 }
-#endif // FLIR_SPINNAKER_CHUNKDATA_H
+#endif // PGR_SPINNAKER_CHUNKDATA_H

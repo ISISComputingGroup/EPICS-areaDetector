@@ -1,5 +1,5 @@
 //=============================================================================
-// Copyright (c) 2001-2021 FLIR Systems, Inc. All Rights Reserved.
+// Copyright © 2017 FLIR Integrated Imaging Solutions, Inc. All Rights Reserved.
 //
 // This software is the confidential and proprietary information of FLIR
 // Integrated Imaging Solutions, Inc. ("Confidential Information"). You
@@ -19,86 +19,99 @@
 
 namespace Spinnaker
 {
-    namespace GUI
-    {
-        /**
-         * @defgroup SpinnakerGUI Spinnaker GUI Classes
-         */
+	namespace GUI
+	{
+		/**
+		 * @defgroup SpinnakerGUI Spinnaker GUI Classes
+		 */
 
-        /*@{*/
+		/*@{*/
 
-        /**
-         * @defgroup CameraSelectionDlg_h Spinnaker GUI Camera Selection Dialog Class
-         */
+		/**
+		 * @defgroup CameraSelectionDlg_h Spinnaker GUI Camera Selection Dialog Class
+		 */
 
-        /*@{*/
+		/*@{*/
 
-        class SPINNAKER_API CameraSelectionDlg
-        {
-          public:
-            /**
-             * Default constructor.
-             */
-            CameraSelectionDlg(void);
+		class SPINNAKER_API CameraSelectionDlg
+		{
+			public:
 
-            /**
-             * Default destructor.
-             */
+				/**
+				* Default constructor.
+				*/
+				CameraSelectionDlg(void);
 
-            ~CameraSelectionDlg(void);
 
-            /**
-             * Register callback function for double clicked event on listed devices in CameraSelectionWindow
-             *
-             * @param function pointer to double clicked event
-             */
-            void RegisterDoubleClickedCallback(Spinnaker::GUI_WPF::ClickedEventCallback pCallBackFunc);
+				/**
+				* Default destructor.
+				*/
 
-            /**
-             * Register callback function for single clicked event on listed devices in CameraSelectionWindow
-             *
-             * @param function pointer to single clicked event
-             */
-            void RegisterSingleClickedCallback(Spinnaker::GUI_WPF::ClickedEventCallback pCallBackFunc);
+				~CameraSelectionDlg(void);
 
-            /**
-             * Rescan devices and refresh CameraSelectionWindow.
-             *
-             */
-            void Refresh();
+				/**
+				 * Register callback function for double clicked event on listed devices in CameraSelectionWindow
+				 *
+				 * @param function pointer to double clicked event
+				 */
+				void RegisterDoubleClickedCallback(Spinnaker::GUI_WPF::ClickedEventCallback pCallBackFunc);
 
-            /**
-             * Show the CameraSelectionWindow.
-             *
-             */
-            void Open();
 
-            /**
-             * Hide the CameraSelectionWindow.
-             *
-             */
-            void Close();
+				/**
+				 * Register callback function for single clicked event on listed devices in CameraSelectionWindow
+				 *
+				 * @param function pointer to single clicked event
+				 */
+				void RegisterSingleClickedCallback(Spinnaker::GUI_WPF::ClickedEventCallback pCallBackFunc);
 
-            /**
-             * Set the window title.
-             *
-             * @param string representing the title.
-             */
-            void SetTitle(std::string title);
 
-            /**
-             * Get the window title.
-             *
-             * @return string representing the title.
-             */
-            std::string GetTitle();
+				/**
+				 * Rescan devices and refresh CameraSelectionWindow.
+				 *
+				 */
+				void Refresh();
 
-          private:
-            Spinnaker::GUI_WPF::CameraSelectionWindow* m_pWPFCameraSelection;
-        };
 
-        /*@}*/
+				/**
+				 * Show the CameraSelectionWindow.
+				 *
+				 */
+				void Open();
 
-        /*@}*/
-    } // namespace GUI
-} // namespace Spinnaker
+
+				/**
+				 * Hide the CameraSelectionWindow.
+				 *
+				 */
+				void Close();
+
+
+				/**
+				 * Set the window title.
+				 *
+				 * @param string representing the title.
+				 */
+				void SetTitle(std::string title);
+
+
+				/**
+				 * Get the window title.
+				 *
+				 * @return string representing the title.
+				 */
+				std::string GetTitle();
+
+			private:
+
+	#ifdef GUIFrame_GTK
+				Spinnaker::GUI_GTKmm::CameraSelection* m_pGTKCameraSelection;
+	#else
+				Spinnaker::GUI_WPF::CameraSelectionWindow* m_pWPFCameraSelection;
+	#endif
+		};
+
+		/*@}*/
+
+		/*@}*/
+	}
+}

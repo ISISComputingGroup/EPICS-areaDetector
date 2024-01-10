@@ -11,30 +11,21 @@ using namespace Spinnaker;
 using namespace Spinnaker::GenApi;
 using namespace Spinnaker::GenICam;
 
-#define SPConvertPixelFormatString          "SP_CONVERT_PIXEL_FORMAT"           // asynParamInt32, R/W
-#define SPStartedFrameCountString           "SP_STARTED_FRAME_COUNT"            // asynParamInt32, R/O
-#define SPDeliveredFrameCountString         "SP_DELIVERED_FRAME_COUNT"          // asynParamInt32, R/O
-#define SPReceivedFrameCountString          "SP_RECEIVED_FRAME_COUNT"           // asynParamInt32, R/O
-#define SPIncompleteFrameCountString        "SP_INCOMPLETE_FRAME_COUNT"         // asynParamInt32, R/O
-#define SPLostFrameCountString              "SP_LOST_FRAME_COUNT"               // asynParamInt32, R/O
-#define SPDroppedFrameCountString           "SP_DROPPED_FRAME_COUNT"            // asynParamInt32, R/O
-#define SPInputBufferCountString            "SP_INPUT_BUFFER_COUNT"             // asynParamInt32, R/O
-#define SPOutputBufferCountString           "SP_OUTPUT_BUFFER_COUNT"            // asynParamInt32, R/O
-#define SPReceivedPacketCountString         "SP_RECEIVED_PACKET_COUNT"          // asynParamInt32, R/O
-#define SPMissedPacketCountString           "SP_MISSED_PACKET_COUNT"            // asynParamInt32, R/O
-#define SPResendRequestedPacketCountString  "SP_RESEND_REQUESTED_PACKET_COUNT"  // asynParamInt32, R/O
-#define SPResendReceivedPacketCountString   "SP_RESEND_RECEIVED_PACKET_COUNT"   // asynParamInt32, R/O
-#define SPTimeStampModeString               "SP_TIME_STAMP_MODE"                // asynParamInt32, R/O
-#define SPUniqueIdModeString                "SP_UNIQUE_ID_MODE"                 // asynParamInt32, R/O
+#define SPConvertPixelFormatString  "SP_CONVERT_PIXEL_FORMAT"   // asynParamInt32, R/W
+#define SPBufferUnderrunCountString "SP_BUFFER_UNDERRUN_COUNT"  // asynParamInt32, R/O
+#define SPFailedBufferCountString   "SP_FAILED_BUFFER_COUNT"    // asynParamInt32, R/O
+#define SPFailedPacketCountString   "SP_FAILED_PACKET_COUNT"    // asynParamInt32, R/O
+#define SPTimeStampModeString       "SP_TIME_STAMP_MODE"        // asynParamInt32, R/O
+#define SPUniqueIdModeString        "SP_UNIQUE_ID_MODE"         // asynParamInt32, R/O
 
-class ADSpinnakerImageEventHandler : public ImageEventHandler
+class ImageEventHandler : public ImageEvent
 {
 public:
 
-    ADSpinnakerImageEventHandler(epicsMessageQueue *pMsgQ) 
+    ImageEventHandler(epicsMessageQueue *pMsgQ) 
      : pMsgQ_(pMsgQ)
     {}
-    ~ADSpinnakerImageEventHandler() {}
+    ~ImageEventHandler() {}
   
     void OnImageEvent(ImagePtr image) {
         ImagePtr *imagePtrAddr = new ImagePtr(image);
@@ -56,7 +47,7 @@ private:
 class ADSpinnaker : public ADGenICam
 {
 public:
-    ADSpinnaker(const char *portName, int cameraId, int numSPBuffers,
+    ADSpinnaker(const char *portName, int cameraId, int traceMask, int memoryChannel,
                 size_t maxMemory, int priority, int stackSize);
 
     // virtual methods to override from ADGenICam
@@ -77,18 +68,9 @@ public:
 private:
     int SPConvertPixelFormat;
 #define FIRST_SP_PARAM SPConvertPixelFormat
-    int SPStartedFrameCount;
-    int SPDeliveredFrameCount;
-    int SPReceivedFrameCount;
-    int SPIncompleteFrameCount;
-    int SPLostFrameCount;
-    int SPDroppedFrameCount;
-    int SPInputBufferCount;
-    int SPOutputBufferCount;
-    int SPReceivedPacketCount;
-    int SPMissedPacketCount;
-    int SPResendRequestedPacketCount;
-    int SPResendReceivedPacketCount;
+    int SPBufferUnderrunCount;
+    int SPFailedBufferCount;
+    int SPFailedPacketCount;
     int SPTimeStampMode;
     int SPUniqueIdMode;
     int SPFrameRateEnable;
@@ -99,18 +81,18 @@ private:
     asynStatus stopCapture();
     asynStatus connectCamera();
     asynStatus disconnectCamera();
+    asynStatus readStatus();
     void imageEventCallback(ImagePtr pImage);
     void reportNode(FILE *fp, INodeMap *pNodeMap, gcstring nodeName, int level);
 
     /* Data */
     int cameraId_;
+    int memoryChannel_;
     
     INodeMap *pNodeMap_;    
-    INodeMap *pTLStreamNodeMap_;    
     SystemPtr system_;
     CameraList camList_;
     CameraPtr pCamera_;
-    int numSPBuffers_;
     ImageEventHandler *pImageEventHandler_;
 
     int exiting_;

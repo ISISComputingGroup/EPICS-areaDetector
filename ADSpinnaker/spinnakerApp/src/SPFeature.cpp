@@ -46,27 +46,27 @@ bool SPFeature::isWritable() {
     return IsWritable(mPBase);
 }
 
-epicsInt64 SPFeature::readInteger() { 
+int SPFeature::readInteger() { 
     CIntegerPtr pNode = (CIntegerPtr)mPBase;
-    return pNode->GetValue();
+    return (int)pNode->GetValue();
 }
 
-epicsInt64 SPFeature::readIntegerMin() {
+int SPFeature::readIntegerMin() {
     CIntegerPtr pNode = (CIntegerPtr)mPBase;
-    return pNode->GetMin();
+    return (int)pNode->GetMin();
 }
 
-epicsInt64 SPFeature::readIntegerMax() {
+int SPFeature::readIntegerMax() {
     CIntegerPtr pNode = (CIntegerPtr)mPBase;
-    return pNode->GetMax();
+    return (int)pNode->GetMax();
 }
 
-epicsInt64 SPFeature::readIncrement() { 
+int SPFeature::readIncrement() { 
     CIntegerPtr pNode = (CIntegerPtr)mPBase;
-    return pNode->GetInc();
+    return (int)pNode->GetInc();
 }
 
-void SPFeature::writeInteger(epicsInt64 value) { 
+void SPFeature::writeInteger(int value) { 
     CIntegerPtr pNode = (CIntegerPtr)mPBase;
     pNode->SetValue(value);
 }

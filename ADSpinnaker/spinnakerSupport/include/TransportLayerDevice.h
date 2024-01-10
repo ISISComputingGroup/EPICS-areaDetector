@@ -1,5 +1,5 @@
 //=============================================================================
-// Copyright (c) 2001-2023 FLIR Systems, Inc. All Rights Reserved.
+// Copyright (c) 2001-2018 FLIR Systems, Inc. All Rights Reserved.
 //
 // This software is the confidential and proprietary information of FLIR
 // Integrated Imaging Solutions, Inc. ("Confidential Information"). You
@@ -14,7 +14,7 @@
 // SUFFERED BY LICENSEE AS A RESULT OF USING, MODIFYING OR DISTRIBUTING
 // THIS SOFTWARE OR ITS DERIVATIVES.
 //=============================================================================
-
+   
 /* Auto-generated file. Do not modify. */
 
 #ifndef FLIR_SPINNAKER_TRANSPORTLAYERDEVICE_H
@@ -69,12 +69,6 @@ namespace Spinnaker
 		GenApi::IString &DeviceSerialNumber;
 
 		/**
-		 * Description: User Defined Name.
-		 * Visibility: Expert
-		 */
-		GenApi::IString &DeviceUserID;
-
-		/**
 		 * Description: Name of the remote device vendor.
 		 * Visibility: Beginner
 		 */
@@ -85,18 +79,6 @@ namespace Spinnaker
 		 * Visibility: Beginner
 		 */
 		GenApi::IString &DeviceModelName;
-
-		/**
-		 * Description: Version of the device.
-		 * Visibility: Beginner
-		 */
-		GenApi::IString &DeviceVersion;
-
-		/**
-		 * Description: Bootloader version for FLIR devices.
-		 * Visibility: Expert
-		 */
-		GenApi::IInteger &DeviceBootloaderVersion;
 
 		/**
 		 * Description: Transport layer type of the device.
@@ -117,10 +99,16 @@ namespace Spinnaker
 		GenApi::IEnumerationT<DeviceAccessStatusEnum> &DeviceAccessStatus;
 
 		/**
-		 * Description: Indicates the speed of transmission negotiated by the given network interface in Mbps.
+		 * Description: Version of the device.
 		 * Visibility: Expert
 		 */
-		GenApi::IInteger &DeviceLinkSpeed;
+		GenApi::IString &DeviceVersion;
+
+		/**
+		 * Description: User Defined Name.
+		 * Visibility: Expert
+		 */
+		GenApi::IString &DeviceUserID;
 
 		/**
 		 * Description: Version of the device driver.
@@ -135,16 +123,10 @@ namespace Spinnaker
 		GenApi::IBoolean &DeviceIsUpdater;
 
 		/**
-		 * Description: Sets the location to load GenICam XML.
+		 * Description: Controls the device access privilege of an application.
 		 * Visibility: Beginner
 		 */
-		GenApi::IEnumerationT<GenICamXMLLocationEnum> &GenICamXMLLocation;
-
-		/**
-		 * Description: GenICam XML Path.
-		 * Visibility: Beginner
-		 */
-		GenApi::IString &GenICamXMLPath;
+		GenApi::IEnumerationT<GevCCPEnum> &GevCCP;
 
 		/**
 		 * Description: Sets the location to load GUI XML.
@@ -159,16 +141,16 @@ namespace Spinnaker
 		GenApi::IString &GUIXMLPath;
 
 		/**
-		 * Description: Controls the device access privilege of an application.
+		 * Description: Sets the location to load GenICam XML.
 		 * Visibility: Beginner
 		 */
-		GenApi::IEnumerationT<GevCCPEnum> &GevCCP;
+		GenApi::IEnumerationT<GenICamXMLLocationEnum> &GenICamXMLLocation;
 
 		/**
-		 * Description: 48-bit MAC address of the GVCP interface of the selected remote device.
-		 * Visibility: Expert
+		 * Description: GenICam XML Path.
+		 * Visibility: Beginner
 		 */
-		GenApi::IInteger &GevDeviceMACAddress;
+		GenApi::IString &GenICamXMLPath;
 
 		/**
 		 * Description: Current IP address of the GVCP interface of the selected remote device.
@@ -183,10 +165,22 @@ namespace Spinnaker
 		GenApi::IInteger &GevDeviceSubnetMask;
 
 		/**
+		 * Description: 48-bit MAC address of the GVCP interface of the selected remote device.
+		 * Visibility: Expert
+		 */
+		GenApi::IInteger &GevDeviceMACAddress;
+
+		/**
 		 * Description: Current gateway IP address of the GVCP interface of the remote device.
 		 * Visibility: Expert
 		 */
 		GenApi::IInteger &GevDeviceGateway;
+
+		/**
+		 * Description: Indicates the speed of transmission negotiated by the given network interface in Mbps.
+		 * Visibility: Expert
+		 */
+		GenApi::IInteger &DeviceLinkSpeed;
 
 		/**
 		 * Description:  Major version of the specification.
@@ -246,31 +240,7 @@ namespace Spinnaker
 		 * Description: Forces the camera to be on the same subnet as its corresponding interface.
 		 * Visibility: Expert
 		 */
-		GenApi::ICommand &GevDeviceAutoForceIP;
-
-		/**
-		 * Description: Apply the force IP settings (GevDeviceForceIPAddress, GevDeviceForceSubnetMask and GevDeviceForceGateway) in the Device using ForceIP command.
-		 * Visibility: Expert
-		 */
 		GenApi::ICommand &GevDeviceForceIP;
-
-		/**
-		 * Description: Static IP address to set for the GVCP interface of the remote device.
-		 * Visibility: Expert
-		 */
-		GenApi::IInteger &GevDeviceForceIPAddress;
-
-		/**
-		 * Description: Static subnet mask to set for GVCP interface of the remote device.
-		 * Visibility: Expert
-		 */
-		GenApi::IInteger &GevDeviceForceSubnetMask;
-
-		/**
-		 * Description: Static gateway IP address to set for the GVCP interface of the remote device.
-		 * Visibility: Expert
-		 */
-		GenApi::IInteger &GevDeviceForceGateway;
 
 		/**
 		 * Description: Controls and indicates if the device is operating in as a Multicast Monitor.
@@ -285,22 +255,10 @@ namespace Spinnaker
 		GenApi::IEnumerationT<DeviceEndianessMechanismEnum> &DeviceEndianessMechanism;
 
 		/**
-		 * Description: Resets and reboots the device.
-		 * Visibility: Beginner
-		 */
-		GenApi::ICommand &DeviceReset;
-
-		/**
-		 * Description: Device Instance Id.
+		 * Description: 
 		 * Visibility: Invisible
 		 */
 		GenApi::IString &DeviceInstanceId;
-
-		/**
-		 * Description: Device Location.
-		 * Visibility: Expert
-		 */
-		GenApi::IString &DeviceLocation;
 
 		/**
 		 * Description: The USB Speed that the device is currently operating at.
@@ -313,12 +271,6 @@ namespace Spinnaker
 		 * Visibility: Expert
 		 */
 		GenApi::IBoolean &DeviceU3VProtocol;
-
-		/**
-		 * Description: Device Port ID.
-		 * Visibility: Expert
-		 */
-		GenApi::IString &DevicePortId;
 
 
 	protected:

@@ -1,5 +1,5 @@
 //=============================================================================
-// Copyright (c) 2001-2023 FLIR Systems, Inc. All Rights Reserved.
+// Copyright (c) 2001-2018 FLIR Systems, Inc. All Rights Reserved.
 //
 // This software is the confidential and proprietary information of FLIR
 // Integrated Imaging Solutions, Inc. ("Confidential Information"). You
@@ -14,7 +14,7 @@
 // SUFFERED BY LICENSEE AS A RESULT OF USING, MODIFYING OR DISTRIBUTING
 // THIS SOFTWARE OR ITS DERIVATIVES.
 //=============================================================================
-
+   
 /* Auto-generated file. Do not modify. */
 
 #ifndef FLIR_SPINNAKER_CAMERA_H
@@ -486,7 +486,7 @@ namespace Spinnaker
         GenApi::IString &DeviceVendorName;
 
         /**
-         * Description: Endianness of the registers of the device.
+         * Description: Endianess of the registers of the device.
          * Visibility: 
          */
         GenApi::IEnumerationT<DeviceRegistersEndiannessEnums> &DeviceRegistersEndianness;
@@ -1159,7 +1159,7 @@ namespace Spinnaker
         GenApi::IInteger &GevMCRC;
 
         /**
-         * Description: Endianness of multi-byte pixel data for this stream.
+         * Description: Endianess of multi-byte pixel data for this stream.
          * Visibility: 
          */
         GenApi::IBoolean &GevSCPSBigEndian;
@@ -1706,18 +1706,6 @@ namespace Spinnaker
         GenApi::IFloat &ChunkExposureTime;
 
         /**
-         * Description: Returns the compression mode of the last image payload.
-         * Visibility: 
-         */
-        GenApi::IInteger &ChunkCompressionMode;
-
-        /**
-         * Description: Returns the compression ratio of the last image payload.
-         * Visibility: 
-         */
-        GenApi::IFloat &ChunkCompressionRatio;
-
-        /**
          * Description: Returns the status of the chunk serial receive overflow.
          * Visibility: 
          */
@@ -1952,12 +1940,6 @@ namespace Spinnaker
          * Visibility: 
          */
         GenApi::IFloat &CompressionRatio;
-
-        /**
-         * Description: When FrameRate is enabled, camera drops frames if datarate is saturated. If FrameRate is disabled, camera adjusts the framerate to match the maximum achievable datarate.
-         * Visibility: 
-         */
-        GenApi::IEnumerationT<CompressionSaturationPriorityEnums> &CompressionSaturationPriority;
 
         /**
          * Description: 
@@ -2254,7 +2236,7 @@ namespace Spinnaker
         GenApi::IFloat &LineFilterWidth;
 
         /**
-         * Description: Selects the activation mode of the trigger to start the counter.
+         * Description: Selects the activation mode of the trigger to start the Counter.
          * Visibility: 
          */
         GenApi::IEnumerationT<CounterTriggerActivationEnums> &CounterTriggerActivation;
@@ -2278,7 +2260,7 @@ namespace Spinnaker
         GenApi::IInteger &CounterValueAtReset;
 
         /**
-         * Description: Returns the current status of the counter.
+         * Description: Returns the current status of the Counter.
          * Visibility: 
          */
         GenApi::IEnumerationT<CounterStatusEnums> &CounterStatus;
@@ -2296,7 +2278,7 @@ namespace Spinnaker
         GenApi::IInteger &CounterDelay;
 
         /**
-         * Description: Selects the signal that will be the source to reset the counter.
+         * Description: Selects the signal that will be the source to reset the Counter.
          * Visibility: 
          */
         GenApi::IEnumerationT<CounterResetSourceEnums> &CounterResetSource;
@@ -2494,7 +2476,7 @@ namespace Spinnaker
         GenApi::IInteger &DeviceStreamChannelLink;
 
         /**
-         * Description: Endianness of multi-byte pixel data for this stream.
+         * Description: Endianess of multi-byte pixel data for this stream.
          * Visibility: Guru
          */
         GenApi::IEnumerationT<DeviceStreamChannelEndiannessEnums> &DeviceStreamChannelEndianness;
@@ -4396,28 +4378,16 @@ namespace Spinnaker
         GenApi::IEnumerationT<CxpPoCxpStatusEnums> &CxpPoCxpStatus;
 
         /**
-         * Description: Returns the frame ID associated with the most recent inference result.
-         * Visibility: Expert
-         */
-        GenApi::IInteger &ChunkInferenceFrameId;
-
-        /**
-         * Description: Returns the chunk data inference result.
+         * Description: 
          * Visibility: Expert
          */
         GenApi::IInteger &ChunkInferenceResult;
 
         /**
-         * Description: Returns the chunk data inference confidence percentage.
+         * Description: 
          * Visibility: Expert
          */
         GenApi::IFloat &ChunkInferenceConfidence;
-
-        /**
-         * Description: Returns the chunk inference bounding box result data.
-         * Visibility: Expert
-         */
-        GenApi::IRegister &ChunkInferenceBoundingBoxResult;
 
     };
     /*@}*/

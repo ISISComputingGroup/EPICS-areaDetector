@@ -34,56 +34,14 @@ using std::vector;
 using std::map;
 using std::pair;
 
-int GenICamFeature::getParam (epicsInt64 & value)
+int GenICamFeature::getParam (int & value)
 {
-    int status = asynError;
-    if (mAsynType == asynParamInt32) {
-        epicsInt32 temp;
-        status = mSet->getPortDriver()->getIntegerParam(mAsynIndex, &temp);
-        value = temp;
-    } else if (mAsynType == asynParamInt64) {
-        status = mSet->getPortDriver()->getInteger64Param(mAsynIndex, &value);
-    } else if (mAsynType == asynParamFloat64) {
-        epicsFloat64 temp;
-        status = mSet->getPortDriver()->getDoubleParam(mAsynIndex, &temp);
-        value = temp;
-    }
-    return status;
-}
-
-int GenICamFeature::getParam (epicsInt32& value)
-{
-    int status = asynError;
-    if (mAsynType == asynParamInt32) {
-        status = mSet->getPortDriver()->getIntegerParam(mAsynIndex, &value);
-    } else if (mAsynType == asynParamInt64) {
-        epicsInt64 temp;
-        status = mSet->getPortDriver()->getInteger64Param(mAsynIndex, &temp);
-        value = temp;
-    } else if (mAsynType == asynParamFloat64) {
-        epicsFloat64 temp;
-        status = mSet->getPortDriver()->getDoubleParam(mAsynIndex, &temp);
-        value = temp;
-    }
-    return status;
+    return (int) mSet->getPortDriver()->getIntegerParam(mAsynIndex, &value);
 }
 
 int GenICamFeature::getParam (double & value)
 {
-
-    int status = asynError;
-    if (mAsynType == asynParamInt32) {
-        epicsInt32 temp;
-        status = mSet->getPortDriver()->getIntegerParam(mAsynIndex, &temp);
-        value = temp;
-    } else if (mAsynType == asynParamInt64) {
-        epicsInt64 temp;
-        status = mSet->getPortDriver()->getInteger64Param(mAsynIndex, &temp);
-        value = temp;
-    } else if (mAsynType == asynParamFloat64) {
-        status = mSet->getPortDriver()->getDoubleParam(mAsynIndex, &value);
-    }
-    return status;
+    return (int) mSet->getPortDriver()->getDoubleParam(mAsynIndex, &value);
 }
 
 int GenICamFeature::getParam (std::string & value)
@@ -91,43 +49,14 @@ int GenICamFeature::getParam (std::string & value)
     return (int) mSet->getPortDriver()->getStringParam(mAsynIndex, value);
 }
 
-int GenICamFeature::setParam (epicsInt64 value)
+int GenICamFeature::setParam (int value)
 {
-    int status = asynError;
-    if (mAsynType == asynParamInt32) {
-       status = mSet->getPortDriver()->setIntegerParam(mAsynIndex, (epicsInt32)value);
-    } else if (mAsynType == asynParamInt64) {
-       status = mSet->getPortDriver()->setInteger64Param(mAsynIndex, value);
-    } else if (mAsynType == asynParamFloat64) {
-      status = mSet->getPortDriver()->setDoubleParam(mAsynIndex, (epicsFloat64)value);
-    }
-    return status;
-}
-
-int GenICamFeature::setParam (epicsInt32 value)
-{
-    int status = asynError;
-    if (mAsynType == asynParamInt32) {
-       status = mSet->getPortDriver()->setIntegerParam(mAsynIndex, value);
-    } else if (mAsynType == asynParamInt64) {
-       status = mSet->getPortDriver()->setInteger64Param(mAsynIndex, (epicsInt64)value);
-    } else if (mAsynType == asynParamFloat64) {
-      status = mSet->getPortDriver()->setDoubleParam(mAsynIndex, (epicsFloat64)value);
-    }
-    return status;
+    return (int) mSet->getPortDriver()->setIntegerParam(mAsynIndex, value);
 }
 
 int GenICamFeature::setParam (double value)
 {
-    int status = asynError;
-    if (mAsynType == asynParamInt32) {
-       status = mSet->getPortDriver()->setIntegerParam(mAsynIndex, (epicsInt32)value);
-    } else if (mAsynType == asynParamInt64) {
-       status = mSet->getPortDriver()->setInteger64Param(mAsynIndex, (epicsInt64)value);
-    } else if (mAsynType == asynParamFloat64) {
-      status = mSet->getPortDriver()->setDoubleParam(mAsynIndex, value);
-    }
-    return status;
+    return (int) mSet->getPortDriver()->setDoubleParam(mAsynIndex, value);
 }
 
 int GenICamFeature::setParam (std::string const & value)
@@ -135,16 +64,11 @@ int GenICamFeature::setParam (std::string const & value)
     return (int) mSet->getPortDriver()->setStringParam(mAsynIndex, value);
 }
 
-int GenICamFeature::setParam (bool value)
-{
-    return (int) mSet->getPortDriver()->setIntegerParam(mAsynIndex, (int) value);
-}
-
 GenICamFeature::GenICamFeature (GenICamFeatureSet *set, 
         string const & asynName, asynParamType asynType, int asynIndex,
         string const &featureName, GCFeatureType_t featureType)
 : mAsynName(asynName), mAsynType(asynType), mAsynIndex(asynIndex),
-  mFeatureName(featureName), mFeatureType(featureType), mImageMode(0), mSet(set)
+  mFeatureName(featureName), mFeatureType(featureType), mSet(set)
 {
     const char *functionName = "GenICamFeature";
 
@@ -204,34 +128,36 @@ int GenICamFeature::write(void *pValue, void *pReadbackValue, bool bSetParam)
         }
         switch (mFeatureType) {
             case GCFeatureTypeInteger: {
-                epicsInt64 value;
+                epicsInt32 value;
                 if (pValue)
-                    value = *(epicsInt64*)pValue;
+                    value = *(epicsInt32*)pValue;
                 else 
-                    getParam(value);
+                    mSet->getPortDriver()->getIntegerParam(mAsynIndex, &value);
+                value = convertUnits(value, GCConvertFromEPICS);
                 // Check against the min and max
-                epicsInt64 max = readIntegerMax();
-                epicsInt64 min = readIntegerMin();
-                epicsInt64 inc = readIncrement();
+                int max = readIntegerMax();
+                int min = readIntegerMin();
+                int inc = readIncrement();
                 if (inc != 1) {
                     value = (value/inc) * inc;
                 }
                 if (value < min) {
-                   WARN_ARGS("node %s value %lld is less than minimum %lld, setting to minimum\n",
+                   WARN_ARGS("node %s value %d is less than minimum %d, setting to minimum\n",
                              mFeatureName.c_str(), value, min);
                     value = min;
                 }
                 if (value > max) {
-                   WARN_ARGS("node %s value %lld is greater than maximum %lld, setting to maximum\n",
+                   WARN_ARGS("node %s value %d is greater than maximum %d, setting to maximum\n",
                              mFeatureName.c_str(), value, max);
                     value = max;
                 }
                 writeInteger(value);
-                TRACEIO_DRIVER_ARGS("set property %s to %lld\n", mFeatureName.c_str(), value);
+                TRACEIO_DRIVER_ARGS("set property %s to %d\n", mFeatureName.c_str(), value);
                 if (isReadable()) {
-                    epicsInt64 readback = readInteger();
-                    if (pReadbackValue) *(epicsInt64*)pReadbackValue = readback;
-                    TRACEIO_DRIVER_ARGS("readback property %s is %lld\n", mFeatureName.c_str(), readback);
+                    epicsInt32 readback = readInteger();
+                    readback = convertUnits(readback, GCConvertToEPICS);
+                    if (pReadbackValue) *(epicsInt32*)pReadbackValue = readback;
+                    TRACEIO_DRIVER_ARGS("readback property %s is %d\n", mFeatureName.c_str(), readback);
                     if (bSetParam) setParam(readback);
                 }
                 break;
@@ -241,7 +167,7 @@ int GenICamFeature::write(void *pValue, void *pReadbackValue, bool bSetParam)
                 if (pValue) 
                     value = *(epicsInt32*)pValue;
                 else
-                    getParam(value);
+                    mSet->getPortDriver()->getIntegerParam(mAsynIndex, &value);
                 bool bValue = value ? true : false;
                 writeBoolean(bValue);
                 TRACEIO_DRIVER_ARGS("set property %s to %s\n", mFeatureName.c_str(), bValue ? "true" : "false");
@@ -258,8 +184,8 @@ int GenICamFeature::write(void *pValue, void *pReadbackValue, bool bSetParam)
                 if (pValue) 
                     value = *(epicsFloat64*)pValue;
                 else
-                    getParam(value);
-                value = convertDoubleUnits(value, GCConvertFromEPICS);
+                    mSet->getPortDriver()->getDoubleParam(mAsynIndex, &value);
+                value = convertUnits(value, GCConvertFromEPICS);
                 // Check against the min and max
                 double max = readDoubleMax();
                 double min = readDoubleMin();
@@ -277,7 +203,7 @@ int GenICamFeature::write(void *pValue, void *pReadbackValue, bool bSetParam)
                 TRACEIO_DRIVER_ARGS("set property %s to %f\n", mFeatureName.c_str(), value);
                 if (isReadable()) {
                     double readback = readDouble();
-                    readback = convertDoubleUnits(readback, GCConvertToEPICS);
+                    readback = convertUnits(readback, GCConvertToEPICS);
                     if (pReadbackValue) *(epicsFloat64*)pReadbackValue = readback;
                     TRACEIO_DRIVER_ARGS("readback property %s is %f\n", mFeatureName.c_str(), readback);
                     if (bSetParam) setParam(readback);
@@ -289,13 +215,13 @@ int GenICamFeature::write(void *pValue, void *pReadbackValue, bool bSetParam)
                 if (pValue) 
                     value = *(epicsInt32*)pValue;
                 else
-                    getParam(value);
-                value = convertEnum(value, GCConvertFromEPICS);
+                    mSet->getPortDriver()->getIntegerParam(mAsynIndex, &value);
+                value = convertUnits(value, GCConvertFromEPICS);
                 writeEnumIndex(value);
                 TRACEIO_DRIVER_ARGS("set property %s to %d\n", mFeatureName.c_str(), value);
                 if (isReadable()) {
                     epicsInt32 readback = readEnumIndex();
-                    readback = convertEnum(readback, GCConvertToEPICS);
+                    readback = convertUnits(readback, GCConvertToEPICS);
                     if (pReadbackValue) *(epicsInt32*)pReadbackValue = readback;
                     TRACEIO_DRIVER_ARGS("readback property %s is %d\n", mFeatureName.c_str(), readback);
                     if (bSetParam) setParam(readback);
@@ -345,7 +271,7 @@ int GenICamFeature::read(void *pValue, bool bSetParam)
     FLOW_ARGS("reading %s", mFeatureName.c_str());
     try {
         if ((mFeatureType == GCFeatureTypeEnum) && (mAsynName != "IMAGE_MODE") &&
-            (!isImplemented() || !isAvailable() || !isReadable())) {
+            (!isImplemented() || !isAvailable() || !isWritable())) {
             if (mEnumStrings.empty() || (mEnumStrings[0] != "N.A.")) {
                 mEnumStrings.clear();
                 mEnumStrings.push_back("N.A.");
@@ -354,13 +280,12 @@ int GenICamFeature::read(void *pValue, bool bSetParam)
                 char *enumStrings[1];
                 int enumValues[1];
                 int enumSeverities[1];
-                enumStrings[0] = (char *)"N.A.";
+                enumStrings[0] = epicsStrDup("N.A.");
                 enumValues[0] = 0;
                 enumSeverities[0] = 0;
                 mSet->getPortDriver()->doCallbacksEnum(enumStrings, enumValues, enumSeverities, 
                                                        1, mAsynIndex, 0);
             }
-            return EXIT_SUCCESS;
         }
         if (!isImplemented()) {
              WARN_ARGS("node %s is not implemented\n", mFeatureName.c_str());
@@ -376,8 +301,9 @@ int GenICamFeature::read(void *pValue, bool bSetParam)
         }
         switch (mFeatureType) {
             case GCFeatureTypeInteger: {
-                epicsInt64 value = readInteger();
-                if (pValue) *(epicsInt64*)pValue = value;
+                epicsInt32 value = readInteger();
+                value = convertUnits(value, GCConvertToEPICS);
+                if (pValue) *(epicsInt32*)pValue = value;
                 if (bSetParam) setParam(value);
                 break;
             }
@@ -389,26 +315,26 @@ int GenICamFeature::read(void *pValue, bool bSetParam)
             }
             case GCFeatureTypeDouble: {
                 epicsFloat64 value = readDouble();
-                value = convertDoubleUnits(value, GCConvertToEPICS);
+                value = convertUnits(value, GCConvertToEPICS);
                 if (pValue) *(epicsFloat64*)pValue = value;
                 if (bSetParam) setParam(value);
                 break;
             }
             case GCFeatureTypeDoubleMin: {
                 epicsFloat64 value = readDoubleMin();
-                value = convertDoubleUnits(value, GCConvertToEPICS);
+                value = convertUnits(value, GCConvertToEPICS);
                 setParam(value);
                 break;
             }
             case GCFeatureTypeDoubleMax: {
                 epicsFloat64 value = readDoubleMax();
-                value = convertDoubleUnits(value, GCConvertToEPICS);
+                value = convertUnits(value, GCConvertToEPICS);
                 setParam(value);
                 break;
             }
             case GCFeatureTypeEnum: {
                 epicsInt32 value = readEnumIndex();
-                value = convertEnum(value, GCConvertToEPICS);
+                value = convertUnits(value, GCConvertToEPICS);
                 if (pValue) *(epicsInt32*)pValue = value;
                 if (bSetParam) setParam(value);
                 // We don't want to replace enum values for EPICS IMAGE_MODE parameter
@@ -424,7 +350,7 @@ int GenICamFeature::read(void *pValue, bool bSetParam)
                     int *enumValues = new int[numEnums];
                     int *enumSeverities = new int[numEnums];
                     for (int i=0; i<numEnums; i++) {
-                        enumStrings[i] = (char *)mEnumStrings[i].c_str();
+                        enumStrings[i] = epicsStrDup(mEnumStrings[i].c_str());
                         enumValues[i] = mEnumValues[i];
                         enumSeverities[i] = 0;
                     }
@@ -468,8 +394,8 @@ std::string GenICamFeature::getValueAsString()
                 break;
                 }
             case  GCFeatureTypeInteger: {
-                epicsInt64 temp = readInteger();
-                sprintf(buff, "%lld", temp);
+                int temp = readInteger();
+                sprintf(buff, "%d", temp);
                 valueString = buff;
                 break; 
                 }
@@ -502,7 +428,7 @@ std::string GenICamFeature::getValueAsString()
 }
 
 
-double GenICamFeature::convertDoubleUnits(double inputValue, GCConvertDirection_t direction)
+double GenICamFeature::convertUnits(double inputValue, GCConvertDirection_t direction)
 {
     double outputValue = inputValue;
     if ((mFeatureName == "ExposureTime") ||
@@ -521,9 +447,9 @@ double GenICamFeature::convertDoubleUnits(double inputValue, GCConvertDirection_
     return outputValue;
 }
 
-int GenICamFeature::convertEnum(epicsInt32 inputValue, GCConvertDirection_t direction)
+int GenICamFeature::convertUnits(int inputValue, GCConvertDirection_t direction)
 {
-    epicsInt32 outputValue = inputValue;
+    int outputValue = inputValue;
     if (mAsynName == "IMAGE_MODE") {
         // We want to use the EPICS enums
         // Cannot use switch because the things we are testing are not constants
@@ -537,38 +463,25 @@ int GenICamFeature::convertEnum(epicsInt32 inputValue, GCConvertDirection_t dire
             else if (inputValue == mSet->mAcquisitionModeContinuous) {
                 outputValue = ADImageContinuous;
             }
-            // If MultiFrame is not supported then we can't use readback.
-            // Use the value that was last stored when converting from EPICS
-            if (mSet->mAcquisitionModeMultiFrame == -1) {
-                outputValue = mImageMode;
-            }
         } else {
             switch (inputValue) {
                 case ADImageSingle:
                     outputValue = mSet->mAcquisitionModeSingleFrame;
                     break;
                 case ADImageMultiple:
-                    // Some cameras, e.g. JAI don't support MultiFrame so we convert to Continuous
-                    if (mSet->mAcquisitionModeMultiFrame != -1) {
-                        outputValue = mSet->mAcquisitionModeMultiFrame;
-                    } else {
-                        outputValue = mSet->mAcquisitionModeContinuous;
-                    }
+                    outputValue = mSet->mAcquisitionModeMultiFrame;
                     break;
                 case ADImageContinuous:
                     outputValue = mSet->mAcquisitionModeContinuous;
                     break;
             }
-            // Need to store the mode that was set because readback won't work if not all modes are supported
-            mImageMode = inputValue;
         }
     }
     return outputValue;
 }
 
 GenICamFeatureSet::GenICamFeatureSet (asynPortDriver *portDriver, asynUser *user)
-: mPortDriver(portDriver), mUser(user), mFeatureMap(), mAsynMap(),
-  mAcquisitionModeSingleFrame(-1), mAcquisitionModeMultiFrame(-1), mAcquisitionModeContinuous(-1)
+: mPortDriver(portDriver), mUser(user), mFeatureMap(), mAsynMap()
 {}
 
 void GenICamFeatureSet::insert(GenICamFeature *pFeature, string const & name)
@@ -645,15 +558,6 @@ void GenICamFeature::report (FILE *fp, int details)
         fprintf(fp, "    isAvailable: %s\n",   isAvailable()   ? "true" : "false");
         fprintf(fp, "     isReadable: %s\n",   isReadable()    ? "true" : "false");
         fprintf(fp, "     isWritable: %s\n",   isWritable()    ? "true" : "false");
-        if ((mFeatureType == GCFeatureTypeInteger) && isReadable()) {
-            fprintf(fp, "        minimum: %lld\n",   readIntegerMin());
-            fprintf(fp, "        maximum: %lld\n",   readIntegerMax());
-            fprintf(fp, "      increment: %lld\n",   readIncrement());
-        }
-        if ((mFeatureType == GCFeatureTypeDouble) && isReadable()) {
-            fprintf(fp, "        minimum: %f\n",   readDoubleMin());
-            fprintf(fp, "        maximum: %f\n",   readDoubleMax());
-        }
         if ((mFeatureType == GCFeatureTypeEnum) && (mEnumStrings.size() > 0)) {
             fprintf(fp, "          enums: %d: %s\n", mEnumValues[0], mEnumStrings[0].c_str());
             for (size_t i=1; i<mEnumStrings.size(); i++) {

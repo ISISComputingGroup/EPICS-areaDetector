@@ -1,5 +1,5 @@
 //=============================================================================
-// Copyright (c) 2001-2021 FLIR Systems, Inc. All Rights Reserved.
+// Copyright © 2017 FLIR Integrated Imaging Solutions, Inc. All Rights Reserved.
 //
 // This software is the confidential and proprietary information of FLIR
 // Integrated Imaging Solutions, Inc. ("Confidential Information"). You
@@ -26,40 +26,40 @@ namespace Spinnaker
      * @defgroup SpinnakerClasses Spinnaker Classes
      */
 
-    /*@{*/
+     /*@{*/
 
-    /**
-     * @defgroup InterfaceList_h InterfaceList Class
-     */
+     /**
+      * @defgroup InterfaceList_h InterfaceList Class
+      */
 
-    /*@{*/
+      /*@{*/
 
-    /**
-     * @brief A list of the available interfaces on the system.
-     */
+      /**
+      * @brief A list of the available interfaces on the system.
+      */
 
     class SPINNAKER_API InterfaceList : public IInterfaceList
     {
-      public:
+    public:
         /*
-         * Default Constructor
-         */
+        * Default Constructor
+        */
         InterfaceList(void);
 
         /*
-         * Virtual Destructor
-         */
+        * Virtual Destructor
+        */
         virtual ~InterfaceList(void);
 
         /*
-         * Copy Constructor
-         */
-        InterfaceList(const InterfaceList& iface);
+        * Copy Constructor
+        */
+        InterfaceList(const InterfaceList & iface);
 
         /**
          * Assignment operator.
          */
-        InterfaceList& operator=(const InterfaceList& iface);
+        InterfaceList&	operator=(const InterfaceList& iface);
 
         /**
          * Array subscription operators
@@ -84,16 +84,6 @@ namespace Spinnaker
         InterfacePtr GetByIndex(unsigned int index) const;
 
         /**
-         * Returns a pointer to a interface object with the specified interface identifier. This
-         * function will return a NULL InterfacePtr if no matching interface identifier is found.
-         *
-         * @param interfaceID The unique interface identifier of the interface object to retrieve
-         *
-         * @return A pointer to an Interface object.
-         */
-        InterfacePtr GetByInterfaceID(std::string interfaceID) const;
-
-        /**
          * Clears the list of interfaces and destroys their corresponding objects.
          * It is important to first make sure there are no referenced cameras still
          * in use before calling Clear().  If a camera on any of the interfaces is still
@@ -102,38 +92,14 @@ namespace Spinnaker
          */
         void Clear();
 
-        /**
-         * Adds a copy of an interface object.
-         *
-         * @param iface An interface object to be added to this list.
-         */
-        void Add(InterfacePtr iface);
-
-        /**
-         * Removes all occurences of an interface that is pointed to by the input interface
-         * pointer and destroys its corresponding reference counted object. This function will
-         * throw a Spinnaker exception with SPINNAKER_ERR_NOT_AVAILABLEerror if no matching 
-         * interface is found.
-         *
-         * @param iface Pointer to the interface that is to be removed
-         */
-        void Remove(InterfacePtr iface);
-
-        /**
-         * Appends a copy of the interfact list.
-         *
-         * @param list Another InterfaceList object, whose elements are added to this list.
-         */
-        void Append(const InterfaceList* list);
-
-      protected:
+    protected:
         friend class SystemImpl;
-        friend class ProducerImpl;
+
     };
 
     /*@}*/
 
     /*@}*/
-} // namespace Spinnaker
+}
 
 #endif // FLIR_SPINNAKER_INTERFACELIST_H

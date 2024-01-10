@@ -17,16 +17,14 @@ LIB_INSTALLS    += ../os/win32-x86/Spinnakerd_v140.lib
 
 else ifeq (linux-x86_64, $(findstring linux-x86_64, $(T_A)))
 LIB_INSTALLS    += ../os/linux-x86_64/libSpinnaker.so
-LIB_INSTALLS    += ../os/linux-x86_64/libSpinnaker.so.3
-LIB_INSTALLS    += ../os/linux-x86_64/libSpinnaker.so.3.1.0.79
-LIB_INSTALLS    += ../os/linux-x86_64/libGenApi_gcc11_v3_0.so
-LIB_INSTALLS    += ../os/linux-x86_64/libGCBase_gcc11_v3_0.so
-LIB_INSTALLS    += ../os/linux-x86_64/libLog_gcc11_v3_0.so
-LIB_INSTALLS    += ../os/linux-x86_64/libMathParser_gcc11_v3_0.so
-LIB_INSTALLS    += ../os/linux-x86_64/libNodeMapData_gcc11_v3_0.so
-LIB_INSTALLS    += ../os/linux-x86_64/libXmlParser_gcc11_v3_0.so
-
-LIB_INSTALLS    +=  ../os/linux-x86_64/FLIR_GenTL.cti
+LIB_INSTALLS    += ../os/linux-x86_64/libSpinnaker.so.1
+LIB_INSTALLS    += ../os/linux-x86_64/libSpinnaker.so.1.20.0.14
+LIB_INSTALLS    += ../os/linux-x86_64/libGenApi_gcc540_v3_0.so
+LIB_INSTALLS    += ../os/linux-x86_64/libGCBase_gcc540_v3_0.so
+LIB_INSTALLS    += ../os/linux-x86_64/libLog_gcc540_v3_0.so
+LIB_INSTALLS    += ../os/linux-x86_64/libMathParser_gcc540_v3_0.so
+LIB_INSTALLS    += ../os/linux-x86_64/libNodeMapData_gcc540_v3_0.so
+LIB_INSTALLS    += ../os/linux-x86_64/libXmlParser_gcc540_v3_0.so
 
 else ifeq (linux-x86, $(findstring linux-x86, $(T_A)))
 

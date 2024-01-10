@@ -6,8 +6,11 @@ from optparse import OptionParser
 # parse args
 parser = OptionParser("""%prog <xmlFile> <adlFileBase>
 
-This script parses a GenICam xml file and creates medm screens to go with it. 
-The medm files will be called:
+This script parses a genicam xml file and creates medm screens to go with it. 
+The medm screen should be used as indication of what
+the driver supports, and the generated summary screen should be edited to make
+a more sensible summary. 
+and the medm files will be called:
     <adlFile>-features_[1-N].adl""")
 options, args = parser.parse_args()
 if len(args) != 2:
@@ -21,8 +24,8 @@ genicam_lines = open(args[0]).readlines()
 try:
     start_line = min(i for i in range(2) if genicam_lines[i].lstrip().startswith("<"))
 except:
-    print("Neither of these lines looks like valid XML:")
-    print("".join(genicam_lines[:2]))
+    print "Neither of these lines looks like valid XML:"
+    print "".join(genicam_lines[:2])
     sys.exit(1)
 
 # parse xml file to dom object
@@ -74,7 +77,7 @@ def handle_node(node):
         if node.nodeName == "Category":
             categories.append(name)
     elif node.nodeName != "StructReg":
-        print("Node has no Name attribute", node)
+        print "Node has no Name attribute", node
 
 # list of all nodes    
 for node in elements(elements(xml_root)[0]):
@@ -115,24 +118,6 @@ def handle_category(category):
 
 for category in categories:
     handle_category(category)
-
-def is_node_readonly(node):
-    ro = False
-    referenced_node_name = ''
-    for n in elements(node):
-        if str(n.nodeName) in ["AccessMode", "ImposedAccessMode"]:
-            ro = (getText(n) == "RO")
-            break
-        elif str(n.nodeName) == "pValue":
-            referenced_node_name = getText(n)
-    else:
-        referenced_node = lookup.get(referenced_node_name)
-        if referenced_node:
-            ro = is_node_readonly(referenced_node)
-        # SwissKnife performs a once-way conversion
-        elif node.nodeName in ["SwissKnife", "IntSwissKnife"]:
-            ro = True
-    return ro
 
 def quoteString(string):
     escape_list = ["\\","{","}",'"']
@@ -433,7 +418,7 @@ def write_adl_file(fileName):
 		}
     """ %globals())
     
-    adl_file.write(text)
+    adl_file.write(text.encode('ascii', 'replace'))
     adl_file.close()
 
 
@@ -493,9 +478,11 @@ for name, nodes in structure:
     for node in nodes:
         nodeName = str(node.getAttribute("Name"))
         recordName = records[nodeName]
-        ro = is_node_readonly(node)
+        ro = False
         desc = ""
         for n in elements(node):
+            if str(n.nodeName) == "AccessMode" and getText(n) == "RO":
+                ro = True
             if str(n.nodeName) in ["ToolTip", "Description"]:
                 desc = getText(n)
         descs = ["%s: "% nodeName, "", "", "", "", ""]
@@ -527,9 +514,9 @@ for name, nodes in structure:
             labelHeight = 10
         text += make_label()
         nx += labelWidth + 5
-        if ro:
+        if node.nodeName in ["StringReg"] or ro:
             text += make_ro()
-        elif node.nodeName in ["Integer", "IntReg", "Float", "Converter", "IntConverter", "IntSwissKnife", "SwissKnife", "StringReg", "String"]:
+        elif node.nodeName in ["Integer", "Float", "Converter", "IntConverter", "IntSwissKnife", "SwissKnife"]:  
             text += make_demand()
             nx += textEntryWidth + 5 
             text += make_rbv() 
@@ -540,7 +527,7 @@ for name, nodes in structure:
         elif node.nodeName in ["Command"]:
             text += make_cmd()
         else:
-            print("Don't know what to do with", node.nodeName)
+            print "Don't know what to do with", node.nodeName
         y += 25
     y += 5
     h = max(y, h)
