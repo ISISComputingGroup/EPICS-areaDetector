@@ -14,6 +14,9 @@ ADGenICam
 .. _ADSpinnaker:  https://github.com/areaDetector/ADSpinnaker
 .. _ADVimba:      https://github.com/areaDetector/ADVimba
 .. _ADSupport:    https://github.com/areaDetector/ADSupport
+.. _ADGenICam class: ../areaDetectorDoxygenHTML/class_a_d_gen_i_cam.html
+.. _meson:        https://mesonbuild.com
+.. _ninja:        https://ninja-build.org
 
 Overview
 --------
@@ -74,6 +77,8 @@ derived classes:
 - ADSpinnaker_: Driver that uses the FLIR Spinnaker SDK.  Runs on Windows and Linux Ubuntu 18. Controls only FLIR/Point Grey cameras.
 - ADVimba_: Driver that uses the AVT Vimba SDK.  Runs on Windows and most Linux systems.  Controls only AVT/Prosilica cameras.
 
+`ADGenICam class`_ describes this class in detail.
+
 ADGenICam and aravis
 --------------------
 A problem with the GenICam standard is that while it provides a reference implementation, it is not
@@ -97,22 +102,36 @@ the XML file from the camera, even when using drivers that are not based on arav
 ADSpinnaker_ driver or the ADVimba_ driver.  ADSpinnaker_ and ADVimba_ can run on Windows, but the XML
 file extraction must be done once on Linux.
 
-The following shows the steps to build and install aravis 0.6.3 on a Centos 7 machine running as root::
+aravis 0.7.x and higher use the meson_ and ninja_ build systems, rather than the autoconf and gnumake 
+systems used in previous versions.
+ 
+The following shows the steps to build and install aravis 0.8.1 on a Centos 7 machine running as root::
 
+  yum install ninja-build
+  yum install meson
+  yum install glib2-devel
   yum install gtk-doc
   yum install libxml2-devel  
-  yum install glib2-devel
+  yum install gtk3-devel
+  yum install gstreamer1
+  yum install gstreamer1-devel
+  yum install gstreamer1-plugins-base-devel
+  yum install libnotify-devel
+  yum install gtk-doc
+  yum install gobject-introspection-devel
   yum install zlib-devel
   cd /usr/local
   git clone https://github.com/AravisProject/aravis
   cd aravis/
-  git checkout ARAVIS_0_6_3
-  ./autogen.sh
-  make -sj
-  make install
+  git checkout ARAVIS_0_8_1
+  meson build
+  cd build
+  ninja-build
+  ninja-build install
 
 The steps above will be different if you do not have root access and need to install elsewhere,
 or if you are running another OS like Ubuntu where `apt install` is used in place of `yum install`.
+The names of the required packages will also be different on another OS like Ubuntu.
 
 .. _ADGenICam_Download_XML:
 
@@ -130,23 +149,27 @@ driver or at run-time.
 To extract the XML file from the camera first run the arv-tool program to make a list of all the 
 GenICam cameras that are visible from the Linux system, for example::
 
-  TahoeU18:/corvette/home/epics/devel/areaDetector/ADGenICam> ../aravisGigE/bin/linux-x86_64/arv-tool-0.6
-  Allied Vision Technologies-02-2142A-06178 (164.54.160.58)
-  Allied Vision Technologies-02-2604A-07008 (164.54.160.104)
-  Allied Vision Technologies-50-0503317598 (164.54.160.62)
-  Allied Vision Technologies-50-0503419258 (164.54.160.21)
-  FLIR-18011754 (192.168.0.2)
-  PointGrey-13481965 (164.54.160.114)
+  TahoeU18:/corvette/home/epics/devel/areaDetector/ADGenICam> arv-tool-0.8
+  Allied Vision Technologies-GC1380H (02-2142A)-02-2142A-06178 (164.54.160.58)
+  Allied Vision Technologies-GT1380 (02-2604A)-02-2604A-07008 (164.54.160.104)
+  Allied Vision Technologies-Manta G-507B (E0022704)-50-0503479161 (164.54.160.4)
+  Allied Vision Technologies-Manta G-507C (E0022705)-50-0503419258 (164.54.160.21)
+  Allied Vision Technologies-Manta_G-146C (E0020011)-50-0503317598 (164.54.160.62)
+  FLIR-Oryx ORX-10G-51S5M-18011754 (192.168.0.2)
+
 
 Then download the XML file with the command `arv-tool -n cameraName genicam > XML_file_name`, for example::
 
-  TahoeU18:/corvette/home/epics/devel/areaDetector/ADGenICam> ../aravisGigE/bin/linux-x86_64/arv-tool-0.6 -n PointGrey-13481965 genicam > xml/PGR_Blackfly_20E4C.xml
+  TahoeU18:/corvette/home/epics/devel/areaDetector/ADGenICam> arv-tool-0.8 -n "Allied Vision Technologies-Manta G-507B (E0022704)-50-0503479161" genicam > xml/AVT_Manta_G507B.xml
   TahoeU18:/corvette/home/epics/devel/areaDetector/ADGenICam> ls -ltr xml
-  total 1780
-  -rw-rw-r-- 1 epics domain users 332287 Oct  7  2018 PGR_Blackfly_50S5C.xml
-  -rw-rw-r-- 1 epics domain users 231493 Oct 29  2018 AVT_Manta_G507C.xml
-  -rw-r--r-- 1 epics domain users 932059 May 31 10:16 FLIR_ORX_10G_51S5.xml
-  -rw-r--r-- 1 epics domain users 317859 Jun  2 09:17 PGR_Blackfly_20E4C.xml
+  total 19496
+  -rw-rw-r-- 1 epics domain users  332287 Oct  7  2018 PGR_Blackfly_50S5C.xml
+  -rw-r--r-- 1 epics domain users  317859 Jun  2  2019 PGR_Blackfly_20E4C.xml
+  ...
+  -rwxrwxr-x 1 epics domain users  202059 May 14 14:59 AVT_Mako_G158C.xml
+  -rw-rw-r-- 1 epics domain users  483863 Sep 15 18:32 Basler_piA640_210gm.xml
+  -rw-rw-r-- 1 epics domain users  924352 Sep 15 18:32 FLIR_BFS_70S7M.xml
+  -rw-r--r-- 1 epics domain users  232180 Sep 29 12:12 AVT_Manta_G507B.xml
 
 .. _ADGenICam_Python_scripts:
 
@@ -157,6 +180,7 @@ Python script to create EPICS database
 ======================================
 **ADGenICam/scripts/makeDb.py** is a Python program to read the XML file and produce an EPICS database (.template) file.
 The first argument is the name of the XML file and the second argument is the name of the .template file.
+
 For example::
 
   TahoeU18:/corvette/home/epics/devel/areaDetector/ADGenICam> python scripts/makeDb.py xml/PGR_Blackfly_20E4C.xml GenICamApp/Db/PGR_Blackfly_20E4C.template
@@ -211,6 +235,16 @@ This is a portion of the PGR_Blackfly_20E4C.template created above for the Expos
     info(autosaveFields, "DESC ZRSV ONSV TWSV THSV FRSV FVSV SXSV SVSV EISV NISV TESV ELSV TVSV TTSV FTSV FFSV TSE PINI VAL")
   }
 
+GenICam integer features are 64 bit integers.  Prior to R1-2 of ADGenICam EPICS longin and longout records were used
+for these features.  However, longin and longout records are limited to 32 bits, and thus cannot represent the features
+when the value is larger than 32 bits.  In EPICS base 3.16.1 or 7.0 and higher int64in and int64out records can be used for
+these 64-bit integer features.  Prior to base 3.6.1 ai and ao record can be used.  These are 64-bit floats, which can exactly
+represent integers up to 52 bits, which is a significant improvement over the 32 bit limitation of longin and longout records.  
+
+In R1-2 makeDb.py makeDb.py was changed to accept a `--devInt64` flag.  If this flag is present then the database will use
+int64in and int64out records.  This is recommended when using base 3.16.1 or 7.0 or higher.  For previous versions of base
+the `--devInt64` flag must not be used, and makeDb.py will create ai and ao records instead.
+
 This Python script, and the one to create medm screens described next, attempt to name the EPICS records as the name of the
 GenICam feature, preceded by the string `GC_` to prevent conflict with any record names already defined in areaDetector.
 However, many GenICam feature names are quite long and this would lead to record names that are too long, particularly
@@ -254,6 +288,17 @@ in makeAdl.py can be edited::
 
   maxScreenWidth = 1600
   maxScreenHeight = 850
+
+Shell scripts
+-------------
+`addCamera.sh` is a simple script that runs both makeDb.py and makeAdl.py.
+It is run from the top-level ADGenICam directory and is passed the name of the camera,
+i.e. the name of the XML file without the path and without the .xml extension.
+It can be edited to enable or disable the --devInt64 flag for makeDb.py.
+
+`updateCameras.sh` is a simple script that runs `addCamera.sh` for all cameras in the 
+xml/ directory.  It is useful for updating all databases and OPI screens when the Python
+scripts are changed.
 
 ADGenICam Classes
 -----------------
@@ -721,6 +766,10 @@ with this::
 Update grub with these settings::
 
   update-grub
+  
+On some Linux systems the update-grub command does not exist, so use this instead:
+
+grub2-mkconfig -o /boot/grub2/grub.cfg
 
 Reboot and test a USB 3 camera.
 

@@ -40,7 +40,8 @@ static const char *driverName = "ADGenICam";
  */
 ADGenICam::ADGenICam(const char *portName, size_t maxMemory, int priority, int stackSize)
     : ADDriver(portName, 1, 0, 0, maxMemory,
-            asynEnumMask, asynEnumMask,
+            asynInt64Mask | asynEnumMask, 
+            asynInt64Mask | asynEnumMask,
             ASYN_CANBLOCK, 1, priority, stackSize),
     mGCFeatureSet(this, pasynUserSelf), mFirstDrvUserCreateCall(true)
 {
@@ -74,13 +75,18 @@ ADGenICam::ADGenICam(const char *portName, size_t maxMemory, int priority, int s
   * \param[in] value The value for this parameter 
   *
   * Takes action if the function code requires it.  ADAcquire, ADSizeX, and many other
-  * function codes make calls to the Spinnaker library from this function. */
+  * function codes make calls to the underlying library from this function. */
 
 asynStatus ADGenICam::writeInt32( asynUser *pasynUser, epicsInt32 value)
 {
     asynStatus status = asynSuccess;
     int function = pasynUser->reason;
+    int acquiring;
     static const char *functionName = "writeInt32";
+
+    //Get current value of acquiring before possibly setting it
+    getIntegerParam(ADAcquire, &acquiring);
+    asynPrint(pasynUserSelf, ASYN_TRACEIO_DRIVER, "%s%s: entry acquiring=%d\n", driverName, functionName, acquiring);
 
     // Set the value in the parameter library.  This may change later but that's OK
     status = setIntegerParam(function, value);
@@ -92,31 +98,48 @@ asynStatus ADGenICam::writeInt32( asynUser *pasynUser, epicsInt32 value)
 
     if (function == ADAcquire) {
         if (value) {
-            // start acquisition
-            status = startCapture();
+            if (!acquiring) {
+                // start acquisition
+                status = startCapture();
+                asynPrint(pasynUserSelf, ASYN_TRACEIO_DRIVER, "%s%s: called startCapture()\n", driverName, functionName);
+            }
         } else {
-            status = stopCapture();
+            if (acquiring) {
+                status = stopCapture();
+                asynPrint(pasynUserSelf, ASYN_TRACEIO_DRIVER, "%s%s: called stopCapture()\n", driverName, functionName);
+            }
         }
-
     } 
     else if ((function == ADSizeX)       ||
              (function == ADSizeY)       ||
              (function == ADMinX)        ||
              (function == ADMinY)        ||
              (function == ADBinX)        ||
-             (function == ADBinY)        ||
-             (function == ADImageMode)   ||
-             (function == ADNumImages)   ||
-             (function == NDDataType)) {    
+             (function == ADBinY)) {    
         status = setImageParams();
-    } 
+    }
     else if (function == ADReadStatus) {
         status = readStatus();
     } 
+   if ((function == GCPixelFormat) ||
+       (function == ADNumImages)) {
+       pauseAcquisition();
+       epicsThreadSleep(0.1);
+    }
     GenICamFeature *pFeature = mGCFeatureSet.getByIndex(function);
     if (pFeature) {
-        pFeature->write(&value, NULL, true);
+        if (pFeature->getFeatureType() == GCFeatureTypeInteger) {
+            epicsInt64 i64value = value;
+            pFeature->write(&i64value, NULL, true);
+        } else {
+            pFeature->write(&value, NULL, true);
+        }
         mGCFeatureSet.readAll();
+    }
+   if ((function == GCPixelFormat) ||
+       (function == ADNumImages)) {
+       epicsThreadSleep(0.1);
+       resumeAcquisition();
     }
 
     asynPrint(pasynUserSelf, ASYN_TRACEIO_DRIVER, 
@@ -126,6 +149,40 @@ asynStatus ADGenICam::writeInt32( asynUser *pasynUser, epicsInt32 value)
     callParamCallbacks();
     return status;
 }
+
+/** Sets an int64 parameter.
+  * \param[in] pasynUser asynUser structure that contains the function code in pasynUser->reason. 
+  * \param[in] value The value for this parameter 
+  */
+
+asynStatus ADGenICam::writeInt64( asynUser *pasynUser, epicsInt64 value)
+{
+    asynStatus status = asynSuccess;
+    int function = pasynUser->reason;
+    static const char *functionName = "writeInt64";
+
+    // Set the value in the parameter library.  This may change later but that's OK
+    status = setInteger64Param(function, value);
+
+    if (function < mFirstParam) {
+        // If this parameter belongs to a base class call its method
+        status = ADDriver::writeInt64(pasynUser, value);
+    } 
+
+    GenICamFeature *pFeature = mGCFeatureSet.getByIndex(function);
+    if (pFeature) {
+        pFeature->write(&value, NULL, true);
+        mGCFeatureSet.readAll();
+    }
+
+    asynPrint(pasynUserSelf, ASYN_TRACEIO_DRIVER, 
+        "%s::%s function=%d, value=%lld, status=%d\n",
+        driverName, functionName, function, value, status);
+            
+    callParamCallbacks();
+    return status;
+}
+
 
 /** Sets an float64 parameter.
   * \param[in] pasynUser asynUser structure that contains the function code in pasynUser->reason. 
@@ -149,7 +206,12 @@ asynStatus ADGenICam::writeFloat64( asynUser *pasynUser, epicsFloat64 value)
 
     GenICamFeature *pFeature = mGCFeatureSet.getByIndex(function);
     if (pFeature) {
-        pFeature->write(&value, NULL, true);
+        if (pFeature->getFeatureType() == GCFeatureTypeInteger) {
+            epicsInt64 i64value = (epicsInt64)value;
+            pFeature->write(&i64value, NULL, true);
+        } else {
+            pFeature->write(&value, NULL, true);
+        }
         mGCFeatureSet.readAll();
     }
 
@@ -185,7 +247,7 @@ asynStatus ADGenICam::readEnum(asynUser *pasynUser, char *strings[], int values[
     }
 
     *nIn = 0;
-    if (!pFeature->isImplemented() || !pFeature->isAvailable() || !pFeature->isWritable()) {
+    if (!pFeature->isImplemented() || !pFeature->isAvailable() || !pFeature->isReadable()) {
         if (strings[0]) free(strings[0]);
         strings[0] = epicsStrDup("N.A.");
         values[0] = 0;
@@ -198,17 +260,33 @@ asynStatus ADGenICam::readEnum(asynUser *pasynUser, char *strings[], int values[
     numEnums = (int)enumStrings.size();
 
     for (i=0; ((i<numEnums) && (i<(int)nElements)); i++) {
-        if (pFeature->isAvailable() && pFeature->isReadable()) {
-            if (strings[*nIn]) free(strings[*nIn]);
-            strings[*nIn] = epicsStrDup(enumStrings[i].c_str());
-            values[*nIn] = enumValues[i];
-            severities[*nIn] = 0;
-            (*nIn)++;
-        }
+        if (strings[*nIn]) free(strings[*nIn]);
+        strings[*nIn] = epicsStrDup(enumStrings[i].c_str());
+        values[*nIn] = enumValues[i];
+        severities[*nIn] = 0;
+        (*nIn)++;
     }
     return asynSuccess;   
 }
 
+asynStatus ADGenICam::pauseAcquisition()
+{
+    int acquiring;
+    getIntegerParam(ADAcquire, &acquiring);
+    mWasAcquiring = acquiring ? true : false;
+    if (mWasAcquiring) {
+        stopCapture();
+    }
+    return asynSuccess;
+}
+
+asynStatus ADGenICam::resumeAcquisition()
+{
+    if (mWasAcquiring) {
+        startCapture();
+    }
+    return asynSuccess;
+}
 
 asynStatus ADGenICam::setImageParams()
 {
@@ -219,7 +297,7 @@ asynStatus ADGenICam::setImageParams()
     unsigned i;
     //if (!pCamera_) return asynError;
     
-    paramIndices.push_back(ADImageMode);
+    pauseAcquisition();
     paramIndices.push_back(ADSizeX);
     paramIndices.push_back(ADSizeY);
     paramIndices.push_back(ADMinX);
@@ -237,7 +315,7 @@ asynStatus ADGenICam::setImageParams()
         pFeature = mGCFeatureSet.getByIndex(paramIndices[i]);
         if (pFeature) pFeature->read(0, true);
     }
- 
+    resumeAcquisition();
     return asynSuccess;
 }
 
@@ -316,7 +394,7 @@ asynStatus ADGenICam::drvUserCreate(asynUser *pasynUser, const char *drvInfo,
             break;
         case 'I':
             featureType = GCFeatureTypeInteger;
-            asynType = asynParamInt32;
+            asynType = asynParamInt64;
             break;
         case 'S':
             featureType = GCFeatureTypeString;
@@ -339,64 +417,24 @@ asynStatus ADGenICam::drvUserCreate(asynUser *pasynUser, const char *drvInfo,
         // Do an initial read of the feature so EPICS output records initialize to this value
         pFeature->read(NULL, true);
         
-        // Process some special cases here
-        // Make a single parameter that maps to either AcquisitionFrameRateEnable or AcquisitionFrameRateEnabled
-        if ((featureName == "AcquisitionFrameRateEnable") || (featureName == "AcquisitionFrameRateEnabled")) {
-            GenICamFeature *p = createFeature(&mGCFeatureSet, GCFrameRateEnableString, asynParamInt32, GCFrameRateEnable,
-                                              featureName, featureType);
-            if (p) mGCFeatureSet.insert(p, featureName);
-            // Do an initial read of the feature so EPICS output records initialize to this value
-            p->read(NULL, true);
-        }
-        
-        // Make a single parameter that maps to either ExposureTime or ExposureTimeAbs
-        if ((featureName == "ExposureTime") || (featureName == "ExposureTimeAbs")) {
-            GenICamFeature *p = createFeature(&mGCFeatureSet, ADAcquireTimeString, asynParamFloat64, ADAcquireTime,
-                                              featureName, featureType);
-            if (p) mGCFeatureSet.insert(p, featureName);
-            // Do an initial read of the feature so EPICS output records initialize to this value
-            p->read(NULL, true);
-        }
-
-        // Make a single parameter that maps to either AcquisitionFrameRate or AcquisitionFrameRateAbs
-        if ((featureName == "AcquisitionFrameRate") || (featureName == "AcquisitionFrameRateAbs")) {
-            GenICamFeature *p = createFeature(&mGCFeatureSet, GCFrameRateString, asynParamFloat64, GCFrameRate,
-                                              featureName, featureType);
-            if (p) mGCFeatureSet.insert(p, featureName);
-            // Do an initial read of the feature so EPICS output records initialize to this value
-            p->read(NULL, true);
-
-            // Make AcquirePeriod map to either FrameRate or FrameRateAbs
-            p = createFeature(&mGCFeatureSet, ADAcquirePeriodString, asynParamFloat64, ADAcquirePeriod,
-                                              featureName, featureType);
-            if (p) mGCFeatureSet.insert(p, featureName);
-            // Do an initial read of the feature so EPICS output records initialize to this value
-            p->read(NULL, true);
-        }
-
-        // Make a single parameter that maps to either DeviceSerialNumber or DeviceID (used by AVT)
-        if ((featureName == "DeviceSerialNumber") || (featureName == "DeviceID")) {
-            GenICamFeature *p = createFeature(&mGCFeatureSet, ADSerialNumberString, asynParamOctet, ADSerialNumber,
-                                              featureName, featureType);
-            if (p) mGCFeatureSet.insert(p, featureName);
-            // Do an initial read of the feature so EPICS output records initialize to this value
-            p->read(NULL, true);
-        }
-
-        // We need to map the areaDetector ImageMode to the GenICam AcquisitionMode.
-        // GenICam seems to use consistent enum strings, but not enum values
-        if (featureName == "AcquisitionMode") {
-            std::vector<std::string> enumStrings;
-            std::vector<int> enumValues;
-            pFeature->readEnumChoices(enumStrings, enumValues);
-            for (size_t i=0; i<enumStrings.size(); i++) {
-                if (enumStrings[i] == "Continuous")  mGCFeatureSet.mAcquisitionModeContinuous  = enumValues[i];
-                if (enumStrings[i] == "MultiFrame")  mGCFeatureSet.mAcquisitionModeMultiFrame  = enumValues[i];
-                if (enumStrings[i] == "SingleFrame") mGCFeatureSet.mAcquisitionModeSingleFrame = enumValues[i];
-            }
-        }
     }
     return ADDriver::drvUserCreate(pasynUser, drvInfo, pptypeName, psize);
+}
+
+asynStatus ADGenICam::createMultiFeature(std::string const & asynName, asynParamType asynType, int asynIndex,
+                                         std::vector<GCFeatureStruct_t> & features)
+{
+    size_t numFeatures = features.size();
+    for (size_t i=0; i<numFeatures; i++) {
+        GenICamFeature *pFeature = createFeature(&mGCFeatureSet, asynName, asynType, asynIndex, features[i].featureName, features[i].featureType);
+        if (pFeature->isImplemented()) {
+            mGCFeatureSet.insert(pFeature, features[i].featureName);
+            // Do an initial read of the feature so EPICS output records initialize to this value
+            pFeature->read(NULL, true);
+            return asynSuccess;
+        }
+    }
+    return asynError;
 }
 
 asynStatus ADGenICam::addADDriverFeatures()
@@ -408,7 +446,6 @@ asynStatus ADGenICam::addADDriverFeatures()
     } stdParam;
     stdParam params[] = {
         {ADImageMode,         "AcquisitionMode",       GCFeatureTypeEnum},
-        {ADFirmwareVersion,   "DeviceFirmwareVersion", GCFeatureTypeString},
         {ADManufacturer,      "DeviceVendorName",      GCFeatureTypeString},
         {ADModel,             "DeviceModelName",       GCFeatureTypeString},
         {ADMaxSizeX,          "WidthMax",              GCFeatureTypeInteger},
@@ -432,18 +469,146 @@ asynStatus ADGenICam::addADDriverFeatures()
         {GCPixelFormat,       "PixelFormat",           GCFeatureTypeEnum},
     };
     int numParams = sizeof(params)/sizeof(params[0]);
+    GenICamFeature *pFeature;
+
     for (int i=0; i<numParams; i++) {
         asynParamType paramType;
         const char *paramName;
         getParamType(params[i].index, &paramType);
         getParamName(params[i].index, &paramName);
-        GenICamFeature *p = createFeature(&mGCFeatureSet, paramName, paramType, params[i].index, 
-                                          params[i].featureName, params[i].featureType);
-        if (!p)
-            return asynError;
-
-        mGCFeatureSet.insert(p, params[i].featureName);
+        pFeature = createFeature(&mGCFeatureSet, paramName, paramType, params[i].index, 
+                                 params[i].featureName, params[i].featureType);
+        if (pFeature->isImplemented()) {
+            mGCFeatureSet.insert(pFeature, params[i].featureName);
+            // We map the areaDetector ImageMode to the GenICam AcquisitionMode.
+            // GenICam seems to use consistent enum strings, but not enum values
+            if (pFeature->getAsynIndex() == ADImageMode) {
+                std::vector<std::string> enumStrings;
+                std::vector<int> enumValues;
+                pFeature->readEnumChoices(enumStrings, enumValues);
+                for (size_t i=0; i<enumStrings.size(); i++) {
+                    if (enumStrings[i] == "Continuous")  mGCFeatureSet.mAcquisitionModeContinuous  = enumValues[i];
+                    if (enumStrings[i] == "MultiFrame")  mGCFeatureSet.mAcquisitionModeMultiFrame  = enumValues[i];
+                    if (enumStrings[i] == "SingleFrame") mGCFeatureSet.mAcquisitionModeSingleFrame = enumValues[i];
+                }
+            }
+            // Do an initial read of the feature so EPICS output records initialize to this value
+            pFeature->read(NULL, true);
+        }
     }
+    
+    std::vector<GCFeatureStruct_t> features;
+    // Make a single parameter that maps to either AcquisitionFrameRateEnable or AcquisitionFrameRateEnabled
+    features = {{"AcquisitionFrameRateEnable",  GCFeatureTypeBoolean},
+                {"AcquisitionFrameRateEnabled", GCFeatureTypeBoolean}};
+    createMultiFeature(GCFrameRateEnableString, asynParamInt32, GCFrameRateEnable, features);
+
+    // Make a single ADAcquire parameter that maps to either ExposureTime or ExposureTimeAbs
+    features = {{"ExposureTime",    GCFeatureTypeDouble},
+                {"ExposureTimeAbs", GCFeatureTypeDouble}};
+    createMultiFeature(ADAcquireTimeString, asynParamFloat64, ADAcquireTime, features);
+
+    // Make a single parameter that maps to either AcquisitionFrameRate or AcquisitionFrameRateAbs
+    features = {{"AcquisitionFrameRate",    GCFeatureTypeDouble},
+                {"AcquisitionFrameRateAbs", GCFeatureTypeDouble}};
+    createMultiFeature(GCFrameRateString, asynParamFloat64, GCFrameRate, features);
+    createMultiFeature(ADAcquirePeriodString, asynParamFloat64, ADAcquirePeriod, features);
+
+    // Make a single parameter that maps to either DeviceSerialNumber or DeviceID (used by AVT)
+    features = {{"DeviceSerialNumber", GCFeatureTypeString},
+                {"DeviceID",           GCFeatureTypeString}};
+    createMultiFeature(ADSerialNumberString, asynParamOctet, ADSerialNumber, features);
+
+    // Make a single parameter that maps to either DeviceFirmwareVersion or DeviceVersion (used by Mikrotron)
+    features = {{"DeviceFirmwareVersion", GCFeatureTypeString},
+                {"DeviceVersion",         GCFeatureTypeString}};
+    createMultiFeature(ADFirmwareVersionString, asynParamOctet, ADFirmwareVersion, features);
+
+    // Make a single parameter that maps to either Gain, GainRaw, or GainRawChannelA
+    features = {{"Gain",            GCFeatureTypeDouble},
+                {"GainRaw",         GCFeatureTypeInteger},
+                {"GainRawChannelA", GCFeatureTypeInteger}};
+    createMultiFeature(ADGainString, asynParamFloat64, ADGain, features);
+
     return asynSuccess;
 }
+
+/* These functions convert Mono12p and Mono12Packed formats to UInt16.
+  The following description of these formats is from this document:
+  http://softwareservices.flir.com/BFS-U3-51S5P/latest/Model/public/ImageFormatControl.html
+   
+  12-bit pixel formats have two different packing formats as defined by USB3 Vision and GigE Vision. 
+  Note: the packing format is not related to the interface of the camera. Both may be available on USB3 or GigE devices.
+
+  The USB3 Vision method is designated with a p. 
+  It is a 12-bit format with its bit-stream following the bit packing method illustrated in Figure 3. 
+  The first byte of the packed stream contains the eight least significant bits (lsb) of the first pixel. 
+  The third byte contains the eight most significant bits (msb) of the second pixel. 
+  The four lsb of the second byte contains four msb of the first pixel, 
+  and the rest of the second byte is packed with the four lsb of the second pixel.
+
+  This packing format is applied to: Mono12p, BayerGR12p, BayerRG12p, BayerGB12p and BayerBG12p.
+
+  The GigE Vision method is designated with Packed. 
+  It is a 12-bit format with its bit-stream following the bit packing method illustrated in Figure 4. 
+  The first byte of the packed stream contains the eight msb of the first pixel. 
+  The third byte contains the eight msb of the second pixel. 
+  The four lsb of the second byte contains four lsb of the first pixel, 
+  and the rest of the second byte is packed with the four lsb of the second pixel.
+
+  This packing format is applied to: Mono12Packed, BayerGR12Packed, BayerRG12Packed, BayerGB12Packed and BayerBG12Packed.
+*/
+
+/** Decompresses Mono12p to epicsUInt16
+ * \param[in] numPixels Number of pixels.
+ * \param[in] leftShift If true left shift 4 bits so bits 0-3 are zero.
+ * \param[in] input Pointer to the Mono12p packed input buffer.
+ * \param[out] output Pointer to the epicUInt16 output buffer that must have already been allocated.
+ */
+
+void ADGenICam::decompressMono12p(int numPixels, bool leftShift, epicsUInt8 *input, epicsUInt16 *output)
+{
+    int i;
+
+    if (leftShift) {
+        for (i=0; i<numPixels/2; i++) {
+            *output++ = (*input << 4) | ((*(input+1) & 0x0f) << 12);
+            *output++ = (*(input+1) & 0xf0) | (*(input+2) << 8);
+            input += 3;
+        }
+    } else {
+        for (i=0; i<numPixels/2; i++) {
+            *output++ = *input | ((*(input+1) & 0x0f) << 8);
+            *output++ = ((*(input+1) & 0xf0) >> 4) | (*(input+2) << 4);
+            input += 3;
+        }
+    }
+}
+
+/** Decompresses Mono12Packed to epicsUInt16
+ * \param[in] numPixels Number of pixels.
+ * \param[in] leftShift If true left shift 4 bits so bits 0-3 are zero.
+ * \param[in] input Pointer to the Mono12Packed packed input buffer.
+ * \param[out] output Pointer to the epicUInt16 output buffer that must have already been allocated.
+ */
+
+void ADGenICam::decompressMono12Packed(int numPixels, bool leftShift, epicsUInt8 *input, epicsUInt16 *output)
+{
+    int i;
+
+    if (leftShift) {
+        for (i=0; i<numPixels/2; i++) {
+            *output++ = (*input << 8) | ((*(input+1) & 0x0f) << 4);
+            *output++ = (*(input+1) & 0xf0) | (*(input+2) << 8);
+            input += 3;
+        }
+    } else {
+        for (i=0; i<numPixels/2; i++) {
+            *output++ = (*input << 4) | (*(input+1) & 0x0f);
+            *output++ = ((*(input+1) & 0xf0) >> 4) | (*(input+2) << 4);
+            input += 3;
+        }
+    }
+}
+
 

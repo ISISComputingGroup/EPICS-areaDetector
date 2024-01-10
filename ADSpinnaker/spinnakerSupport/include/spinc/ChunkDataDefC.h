@@ -1,5 +1,5 @@
 //=============================================================================
-// Copyright (c) 2001-2018 FLIR Systems, Inc. All Rights Reserved.
+// Copyright (c) 2001-2023 FLIR Systems, Inc. All Rights Reserved.
 //
 // This software is the confidential and proprietary information of FLIR
 // Integrated Imaging Solutions, Inc. ("Confidential Information"). You
@@ -14,11 +14,11 @@
 // SUFFERED BY LICENSEE AS A RESULT OF USING, MODIFYING OR DISTRIBUTING
 // THIS SOFTWARE OR ITS DERIVATIVES.
 //=============================================================================
-   
+
 /* Auto-generated file. Do not modify. */
 
-#ifndef PGR_SPINNAKER_CHUNKDATADEF_C_H
-#define PGR_SPINNAKER_CHUNKDATADEF_C_H
+#ifndef FLIR_SPINNAKER_CHUNKDATADEF_C_H
+#define FLIR_SPINNAKER_CHUNKDATADEF_C_H
 
 #include "SpinnakerPlatformC.h"
 
@@ -28,12 +28,12 @@
 *
 * Definitions for Spinnaker C
 */
-/*@{*/
+/**@{*/
 
 /**
 * @defgroup ChunkDataDefC_h Chunk Data Structures
 */
-/*@{*/
+/**@{*/
 
 /**
 * @brief The type of information that can be obtained from image chunk data.
@@ -44,6 +44,8 @@ typedef struct _spinChunkData
     double m_blackLevel;
     int64_t m_frameID;
     double m_exposureTime;
+    int64_t m_compressionMode;
+    double m_compressionRatio;
     int64_t m_timestamp;
     int64_t m_exposureEndLineStatusAll;
     int64_t m_width;
@@ -75,12 +77,13 @@ typedef struct _spinChunkData
     double m_scan3dAxisMax;
     double m_scan3dTransformValue;
     double m_scan3dCoordinateReferenceValue;
+    int64_t m_inferenceFrameId;
     int64_t m_inferenceResult;
     double m_inferenceConfidence;
 } spinChunkData;
 
-/*@}*/
+/**@}*/
 
-/*@}*/
+/**@}*/
 
-#endif // PGR_SPINNAKER_CHUNKDATADEF_C_H
+#endif // FLIR_SPINNAKER_CHUNKDATADEF_C_H

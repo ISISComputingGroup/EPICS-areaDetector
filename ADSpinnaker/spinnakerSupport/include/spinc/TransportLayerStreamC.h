@@ -1,5 +1,5 @@
 //=============================================================================
-// Copyright (c) 2001-2018 FLIR Systems, Inc. All Rights Reserved.
+// Copyright (c) 2001-2023 FLIR Systems, Inc. All Rights Reserved.
 //
 // This software is the confidential and proprietary information of FLIR
 // Integrated Imaging Solutions, Inc. ("Confidential Information"). You
@@ -14,7 +14,7 @@
 // SUFFERED BY LICENSEE AS A RESULT OF USING, MODIFYING OR DISTRIBUTING
 // THIS SOFTWARE OR ITS DERIVATIVES.
 //=============================================================================
-   
+
 /* Auto-generated file. Do not modify. */
 
 #include "QuickSpinC.h"
@@ -26,35 +26,56 @@
 * @defgroup TLStreamC_h TLStream Structures
 * @ingroup CQuickSpin
 */
-/*@{*/
+/**@{*/
 
 typedef struct _quickSpinTLStream
 {
 	quickSpinStringNode StreamID;
 	quickSpinEnumerationNode StreamType;
-	quickSpinIntegerNode StreamTotalBufferCount;
-	quickSpinIntegerNode StreamDefaultBufferCount;
-	quickSpinIntegerNode StreamDefaultBufferCountMax;
-	quickSpinEnumerationNode StreamDefaultBufferCountMode;
+	quickSpinEnumerationNode StreamMode;
 	quickSpinIntegerNode StreamBufferCountManual;
 	quickSpinIntegerNode StreamBufferCountResult;
 	quickSpinIntegerNode StreamBufferCountMax;
 	quickSpinEnumerationNode StreamBufferCountMode;
 	quickSpinEnumerationNode StreamBufferHandlingMode;
+	quickSpinIntegerNode StreamAnnounceBufferMinimum;
+	quickSpinIntegerNode StreamAnnouncedBufferCount;
+	quickSpinIntegerNode StreamStartedFrameCount;
+	quickSpinIntegerNode StreamDeliveredFrameCount;
+	quickSpinIntegerNode StreamReceivedFrameCount;
+	quickSpinIntegerNode StreamIncompleteFrameCount;
+	quickSpinIntegerNode StreamLostFrameCount;
+	quickSpinIntegerNode StreamDroppedFrameCount;
+	quickSpinIntegerNode StreamInputBufferCount;
+	quickSpinIntegerNode StreamOutputBufferCount;
+	quickSpinBooleanNode StreamIsGrabbing;
+	quickSpinIntegerNode StreamChunkCountMaximum;
+	quickSpinIntegerNode StreamBufferAlignment;
 	quickSpinBooleanNode StreamCRCCheckEnable;
-	quickSpinBooleanNode GevPacketResendMode;
-	quickSpinIntegerNode GevMaximumNumberResendRequests;
-	quickSpinIntegerNode GevPacketResendTimeout;
-	quickSpinIntegerNode GevMaximumNumberResendBuffers;
-	quickSpinIntegerNode GevTotalPacketCount;
-	quickSpinIntegerNode GevFailedPacketCount;
-	quickSpinIntegerNode GevResendPacketCount;
-	quickSpinIntegerNode StreamFailedBufferCount;
-	quickSpinIntegerNode StreamBufferUnderrunCount;
-	quickSpinIntegerNode GevResendRequestCount;
+	quickSpinIntegerNode StreamReceivedPacketCount;
+	quickSpinIntegerNode StreamMissedPacketCount;
+	quickSpinBooleanNode StreamPacketResendEnable;
+	quickSpinIntegerNode StreamPacketResendTimeout;
+	quickSpinIntegerNode StreamPacketResendMaxRequests;
+	quickSpinIntegerNode StreamPacketResendRequestCount;
+	quickSpinIntegerNode StreamPacketResendRequestTimeoutCount;
+	quickSpinIntegerNode StreamPacketResendRequestedPacketCount;
+	quickSpinIntegerNode StreamPacketResendReceivedPacketCount;
+	quickSpinIntegerNode StreamPacketsDuplicatedCount;
+	quickSpinIntegerNode StreamPacketsTimeoutCount;
+	quickSpinIntegerNode StreamPacketsNotYetAvailableCount;
+	quickSpinIntegerNode StreamPacketsTemporarilyUnavailableCount;
+	quickSpinIntegerNode StreamPacketsPerFrameCount;
+	quickSpinIntegerNode StreamPacketsUnavailableCount;
+	quickSpinIntegerNode StreamBlocksReceptionTimeLast;
+	quickSpinIntegerNode StreamBlocksReceptionTimeMin;
+	quickSpinIntegerNode StreamBlocksReceptionTimeMax;
+	quickSpinIntegerNode StreamBlocksProcessingTimeLast;
+	quickSpinIntegerNode StreamBlocksProcessingTimeMin;
+	quickSpinIntegerNode StreamBlocksProcessingTimeMax;
 	quickSpinIntegerNode StreamBlockTransferSize;
 } quickSpinTLStream;
 
-/*@}*/
+/**@}*/
 
 #endif // FLIR_SPINNAKERC_TLSTREAM_H
