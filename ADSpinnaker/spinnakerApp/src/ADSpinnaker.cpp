@@ -40,14 +40,14 @@ using namespace std;
 #include "SPFeature.h"
 #include "ADSpinnaker.h"
 
-#define DRIVER_VERSION      2
-#define DRIVER_REVISION     0
+#define DRIVER_VERSION      3
+#define DRIVER_REVISION     4
 #define DRIVER_MODIFICATION 0
 
 static const char *driverName = "ADSpinnaker";
 
 // Size of message queue for callback function
-#define CALLBACK_MESSAGE_QUEUE_SIZE 10
+#define CALLBACK_MESSAGE_QUEUE_SIZE 100
 
 typedef enum {
     SPPixelConvertNone,
@@ -75,22 +75,16 @@ typedef enum {
  * function instantiates one object from the ADSpinnaker class.
  * \param[in] portName asyn port name to assign to the camera.
  * \param[in] cameraId The camera index or serial number; <1000 is assumed to be index, >=1000 is assumed to be serial number.
- * \param[in] traceMask The initial value of the asynTraceMask.  
- *            If set to 0 or 1 then asynTraceMask will be set to ASYN_TRACE_ERROR.
- *            If set to 0x21 (ASYN_TRACE_WARNING | ASYN_TRACE_ERROR) then each call to the
- *            Spinnaker library will be traced including during initialization.
- * \param[in] memoryChannel  The camera memory channel (non-volatile memory containing camera parameters) 
- *            to load during initialization.  If 0 no memory channel is loaded.
- *            If >=1 thenRestoreFromMemoryChannel(memoryChannel-1) is called.  
- *            Set memoryChannel to 1 to work around a bug in the Linux GigE driver in R2.0.
+ * \param[in] numSPBuffers The number of TransportLayer buffers to allocate in Spinnaker.
+ *            If set to 0 or omitted the default of 100 will be used.
  * \param[in] maxMemory Maximum memory (in bytes) that this driver is allowed to allocate. 0=unlimited.
  * \param[in] priority The EPICS thread priority for this driver.  0=use asyn default.
  * \param[in] stackSize The size of the stack for the EPICS port thread. 0=use asyn default.
  */
-extern "C" int ADSpinnakerConfig(const char *portName, int cameraId, int traceMask, int memoryChannel, 
+extern "C" int ADSpinnakerConfig(const char *portName, int cameraId, int numSPBuffers,
                                  size_t maxMemory, int priority, int stackSize)
 {
-    new ADSpinnaker( portName, cameraId, traceMask, memoryChannel, maxMemory, priority, stackSize);
+    new ADSpinnaker( portName, cameraId, numSPBuffers, maxMemory, priority, stackSize);
     return asynSuccess;
 }
 
@@ -112,28 +106,24 @@ static void imageGrabTaskC(void *drvPvt)
 /** Constructor for the ADSpinnaker class
  * \param[in] portName asyn port name to assign to the camera.
  * \param[in] cameraId The camera index or serial number; <1000 is assumed to be index, >=1000 is assumed to be serial number.
- * \param[in] traceMask The initial value of the asynTraceMask.  
- *            If set to 0 or 1 then asynTraceMask will be set to ASYN_TRACE_ERROR.
- *            If set to 0x21 (ASYN_TRACE_WARNING | ASYN_TRACE_ERROR) then each call to the
- *            Spinnaker library will be traced including during initialization.
- * \param[in] memoryChannel  The camera memory channel (non-volatile memory containing camera parameters) 
- *            to load during initialization.  If 0 no memory channel is loaded.
- *            If >=1 thenRestoreFromMemoryChannel(memoryChannel-1) is called.  
- *            Set memoryChannel to 1 to work around a bug in the Linux GigE driver in R2.0.
+ * \param[in] numSPBuffers The number of TransportLayer buffers to allocate in Spinnaker.
+ *            If set to 0 or omitted the default of 100 will be used.
  * \param[in] maxMemory Maximum memory (in bytes) that this driver is allowed to allocate. 0=unlimited.
  * \param[in] priority The EPICS thread priority for this driver.  0=use asyn default.
  * \param[in] stackSize The size of the stack for the EPICS port thread. 0=use asyn default.
  */
-ADSpinnaker::ADSpinnaker(const char *portName, int cameraId, int traceMask, int memoryChannel,
+ADSpinnaker::ADSpinnaker(const char *portName, int cameraId, int numSPBuffers,
                          size_t maxMemory, int priority, int stackSize )
     : ADGenICam(portName, maxMemory, priority, stackSize),
-    cameraId_(cameraId), memoryChannel_(memoryChannel), exiting_(0), pRaw_(NULL), uniqueId_(0)
+    cameraId_(cameraId), numSPBuffers_(numSPBuffers), exiting_(0), pRaw_(NULL), uniqueId_(0)
 {
     static const char *functionName = "ADSpinnaker";
     asynStatus status;
     
-    if (traceMask == 0) traceMask = ASYN_TRACE_ERROR;
-    pasynTrace->setTraceMask(pasynUserSelf, traceMask);
+    //pasynTrace->setTraceMask(pasynUserSelf, ASYN_TRACE_ERROR | ASYN_TRACE_WARNING | ASYN_TRACEIO_DRIVER);
+    
+    if (numSPBuffers_ == 0) numSPBuffers_ = 100;
+    if (numSPBuffers_ < 10) numSPBuffers_ = 10;
 
     // Retrieve singleton reference to system object
     system_ = System::GetInstance();
@@ -148,12 +138,21 @@ ADSpinnaker::ADSpinnaker(const char *portName, int cameraId, int traceMask, int 
         return;
     }
 
-    createParam(SPConvertPixelFormatString,     asynParamInt32,   &SPConvertPixelFormat);
-    createParam(SPBufferUnderrunCountString,    asynParamInt32,   &SPBufferUnderrunCount);
-    createParam(SPFailedBufferCountString,      asynParamInt32,   &SPFailedBufferCount);
-    createParam(SPFailedPacketCountString,      asynParamInt32,   &SPFailedPacketCount);
-    createParam(SPTimeStampModeString,          asynParamInt32,   &SPTimeStampMode);
-    createParam(SPUniqueIdModeString,           asynParamInt32,   &SPUniqueIdMode);
+    createParam(SPConvertPixelFormatString,         asynParamInt32,   &SPConvertPixelFormat);
+    createParam(SPStartedFrameCountString,          asynParamInt32,   &SPStartedFrameCount);
+    createParam(SPDeliveredFrameCountString,        asynParamInt32,   &SPDeliveredFrameCount);
+    createParam(SPReceivedFrameCountString,         asynParamInt32,   &SPReceivedFrameCount);
+    createParam(SPIncompleteFrameCountString,       asynParamInt32,   &SPIncompleteFrameCount);
+    createParam(SPLostFrameCountString,             asynParamInt32,   &SPLostFrameCount);
+    createParam(SPDroppedFrameCountString,          asynParamInt32,   &SPDroppedFrameCount);
+    createParam(SPInputBufferCountString,           asynParamInt32,   &SPInputBufferCount);
+    createParam(SPOutputBufferCountString,          asynParamInt32,   &SPOutputBufferCount);
+    createParam(SPReceivedPacketCountString,        asynParamInt32,   &SPReceivedPacketCount);
+    createParam(SPMissedPacketCountString,          asynParamInt32,   &SPMissedPacketCount);
+    createParam(SPResendRequestedPacketCountString, asynParamInt32,   &SPResendRequestedPacketCount);
+    createParam(SPResendReceivedPacketCountString,  asynParamInt32,   &SPResendReceivedPacketCount);
+    createParam(SPTimeStampModeString,              asynParamInt32,   &SPTimeStampMode);
+    createParam(SPUniqueIdModeString,               asynParamInt32,   &SPUniqueIdMode);
 
     /* Set initial values of some parameters */
     setIntegerParam(NDDataType, NDUInt8);
@@ -170,12 +169,12 @@ ADSpinnaker::ADSpinnaker(const char *portName, int cameraId, int traceMask, int 
         cantProceed("ADSpinnaker::ADSpinnaker epicsMessageQueueCreate failure\n");
     }
 
-    pImageEventHandler_ = new ImageEventHandler(pCallbackMsgQ_);
-    pCamera_->RegisterEvent(*pImageEventHandler_);
+    pImageEventHandler_ = new ADSpinnakerImageEventHandler(pCallbackMsgQ_);
+    pCamera_->RegisterEventHandler(*pImageEventHandler_);
 
     startEventId_ = epicsEventCreate(epicsEventEmpty);
 
-    // launch image read task
+    // launch image read taskp
     epicsThreadCreate("ADSpinnakerImageTask", 
                       epicsThreadPriorityMedium,
                       epicsThreadGetStackSize(epicsThreadStackMedium),
@@ -195,7 +194,7 @@ void ADSpinnaker::shutdown(void)
     lock();
     exiting_ = 1;
     try {
-        pCamera_->UnregisterEvent(*pImageEventHandler_);
+        pCamera_->UnregisterEventHandler(*pImageEventHandler_);
         delete pImageEventHandler_;
         pNodeMap_ = 0;
         pCamera_->DeInit();
@@ -268,6 +267,20 @@ asynStatus ADSpinnaker::connectCamera(void)
         
         // Retrieve GenICam nodemap
         pNodeMap_ = &pCamera_->GetNodeMap();
+
+        // Retrieve TLStream nodemap
+        pTLStreamNodeMap_ = &pCamera_->GetTLStreamNodeMap();
+
+        // Retrieve Buffer Handling Mode Information
+        CEnumerationPtr ptrHandlingMode = pTLStreamNodeMap_->GetNode("StreamBufferHandlingMode");
+        CEnumEntryPtr ptrHandlingModeEntry = ptrHandlingMode->GetCurrentEntry();
+        // Set stream buffer Count Mode to manual
+        CEnumerationPtr ptrStreamBufferCountMode = pTLStreamNodeMap_->GetNode("StreamBufferCountMode");
+        CEnumEntryPtr ptrStreamBufferCountModeManual = ptrStreamBufferCountMode->GetEntryByName("Manual");
+        // Retrieve and modify Stream Buffer Count
+        CIntegerPtr ptrBufferCount = pTLStreamNodeMap_->GetNode("StreamBufferCountManual");
+        ptrStreamBufferCountMode->SetIntValue(ptrStreamBufferCountModeManual->GetValue());
+        ptrBufferCount->SetValue(numSPBuffers_);
     }
 
     catch (Spinnaker::Exception &e) {
@@ -308,6 +321,23 @@ asynStatus ADSpinnaker::connectCamera(void)
     return asynSuccess;
 }
 
+void ADSpinnaker::updateStreamStat(const char *nodeName, int param)
+{
+    static const char *functionName = "updateStreamStat";
+    try {
+        CIntegerPtr pNode = pTLStreamNodeMap_->GetNode(nodeName);
+        if (IsReadable(pNode)) {
+            setIntegerParam(param, (int)pNode->GetValue());
+        } else {
+            setIntegerParam(param, 0);
+        }
+    }
+    catch (Spinnaker::Exception &e) {
+        asynPrint(pasynUserSelf, ASYN_TRACE_ERROR, 
+            "%s::%s exception %s\n",
+            driverName, functionName, e.what());
+    }
+}
 
 /** Task to grab images off the camera and send them up to areaDetector
  *
@@ -395,6 +425,26 @@ void ADSpinnaker::imageGrabTask()
             setIntegerParam(ADStatus, ADStatusIdle);
             status = stopCapture();
         }
+        //epicsTimeStamp tstart, tend;
+        //epicsTimeGetCurrent(&tstart);
+        pTLStreamNodeMap_->InvalidateNodes();
+        updateStreamStat("StreamStartedFrameCount",                 SPStartedFrameCount);
+        updateStreamStat("StreamDeliveredFrameCount",               SPDeliveredFrameCount);
+        updateStreamStat("StreamReceivedFrameCount",                SPReceivedFrameCount);
+        updateStreamStat("StreamIncompleteFrameCount",              SPIncompleteFrameCount);
+        updateStreamStat("StreamLostFrameCount",                    SPLostFrameCount);
+        updateStreamStat("StreamDroppedFrameCount",                 SPDroppedFrameCount);
+        updateStreamStat("StreamInputBufferCount",                  SPInputBufferCount);
+        updateStreamStat("StreamOutputBufferCount",                 SPOutputBufferCount);
+        updateStreamStat("StreamReceivedPacketCount",               SPReceivedPacketCount);
+        updateStreamStat("StreamMissedPacketCount",                 SPMissedPacketCount);
+        updateStreamStat("StreamPacketResendRequestedPacketCount",  SPResendRequestedPacketCount);
+        updateStreamStat("StreamPacketResendReceivedPacketCount",   SPResendReceivedPacketCount);
+        //epicsTimeGetCurrent(&tend);
+        //asynPrint(pasynUserSelf, ASYN_TRACE_ERROR, "%s::%s time to read stats=%f\n", 
+        //          driverName, functionName, epicsTimeDiffInSeconds(&tend, &tstart));
+        // NOTE: Using above timing code I found that it took 120 microseconds to read the stats
+        // It could probably be faster by only checking IsReadable() once when connecting camera, but not worth the complexity
         callParamCallbacks();
     }
 }
@@ -422,36 +472,27 @@ asynStatus ADSpinnaker::grabImage()
     static const char *functionName = "grabImage";
 
     try {
-        while(1) {
-            unlock();
-            int recvSize = pCallbackMsgQ_->receive(&imagePtrAddr, sizeof(imagePtrAddr), 0.1);
-            lock();
-            if (recvSize == sizeof(imagePtrAddr)) {
-                break;
-            } else if (recvSize == -1) {
-                // Timeout
-                int acquire;
-                getIntegerParam(ADAcquire, &acquire);
-                if (acquire == 0) {
-                    return asynError;
-                } else {
-                    continue;
-                }
-            } else {
-                asynPrint(pasynUserSelf, ASYN_TRACE_ERROR,
-                        "%s::%s error receiving from message queue\n",
-                        driverName, functionName);
-                return asynError;
-            }
+        unlock();
+        int recvSize = pCallbackMsgQ_->receive(&imagePtrAddr, sizeof(imagePtrAddr));
+        lock();
+        if (recvSize != sizeof(imagePtrAddr)) {
+            asynPrint(pasynUserSelf, ASYN_TRACE_ERROR,
+                    "%s::%s error receiving from message queue\n",
+                    driverName, functionName);
+            return asynError;
+        }
+        // We are sent a null pointer to flag acquisition complete so return
+        if (imagePtrAddr == NULL)  {
+            return asynError;
         }
         pImage = *imagePtrAddr;
         // Delete the ImagePtr that was passed to us
         delete imagePtrAddr;
         imageStatus = pImage->GetImageStatus();
-        if (imageStatus != IMAGE_NO_ERROR) {
+        if (imageStatus != SPINNAKER_IMAGE_STATUS_NO_ERROR) {
             asynPrint(pasynUserSelf, ASYN_TRACE_ERROR,
-                "%s::%s error GetImageStatus returned %d\n",
-                driverName, functionName, imageStatus);
+                "%s::%s error GetImageStatus  %d, description:  %s\n",
+                driverName, functionName, imageStatus, Image::GetImageStatusDescription(imageStatus));
             pImage->Release();
             return asynError;
         } 
@@ -464,6 +505,9 @@ asynStatus ADSpinnaker::grabImage()
         }
         nCols = pImage->GetWidth();
         nRows = pImage->GetHeight();
+        // Print the first 16 bytes of the buffer in hex
+        //pData = pImage->GetData();
+        //for (int i=0; i<16; i++) printf("%x ", ((epicsUInt8 *)pData)[i]); printf("\n");
      
         // Convert the pixel format if requested
         getIntegerParam(SPConvertPixelFormat, &convertPixelFormat);
@@ -494,8 +538,15 @@ asynStatus ADSpinnaker::grabImage()
             }
     
             pixelFormat = pImage->GetPixelFormat();
+            ImageProcessor processor; 
+            unlock();
             try {
-                pImage  = pImage->Convert(convertedFormat);
+                //epicsTimeStamp tstart, tend;
+                //epicsTimeGetCurrent(&tstart);
+                pImage  = processor.Convert(pImage, convertedFormat);
+                //epicsTimeGetCurrent(&tend);
+                //asynPrint(pasynUserSelf, ASYN_TRACE_ERROR, "%s::%s time for pImage->convert=%f\n", 
+                //    driverName, functionName, epicsTimeDiffInSeconds(&tend, &tstart));
                 imageConverted = true;
             }
             catch (Spinnaker::Exception &e) {
@@ -503,6 +554,7 @@ asynStatus ADSpinnaker::grabImage()
                      "%s::%s pixel format conversion exception %s\n",
                  driverName, functionName, e.what());
             }
+            lock();
         }
     
         pixelFormat = pImage->GetPixelFormat();
@@ -594,6 +646,8 @@ asynStatus ADSpinnaker::grabImage()
             return(asynError);
         }
         pData = pImage->GetData();
+        // Print the first 8 pixels of the buffer in decimal
+        //for (int i=0; i<8; i++) printf("%u ", ((epicsUInt16 *)pData)[i]); printf("\n");
         if (pData) {
             memcpy(pRaw_->pData, pData, dataSize);
         } else {
@@ -694,17 +748,8 @@ asynStatus ADSpinnaker::stopCapture()
 {
     int status;
     static const char *functionName = "stopCapture";
+    ImagePtr *dummy = NULL;
 
-    setIntegerParam(ADAcquire, 0);
-    setShutter(0);
-    // Need to wait for the task to set the status to idle
-    while (1) {
-        getIntegerParam(ADStatus, &status);
-        if (status == ADStatusIdle) break;
-        unlock();
-        epicsThreadSleep(.1);
-        lock();
-    }
     try {
         pCamera_->EndAcquisition();
     }
@@ -716,42 +761,29 @@ asynStatus ADSpinnaker::stopCapture()
                 driverName, functionName, e.what());
         }
     }
-    // Need to empty the message queue it could have some images in it
-    ImagePtr pImage;
-    while(pCallbackMsgQ_->tryReceive(&pImage, sizeof(pImage)) != -1) {}
-    return asynSuccess;
-}
 
+    // Set ADAcquire=0 which will tell the imageGrabTask to stop
+    setIntegerParam(ADAcquire, 0);
+    setShutter(0);
 
-asynStatus ADSpinnaker::readStatus()
-{
-    static const char *functionName = "readStatus";
-
-    try {
-        const TransportLayerStream& camInfo = pCamera_->TLStream;
-//  		  cout << "Stream ID: " << camInfo.StreamID.ToString() << endl;
-//	  	  cout << "Stream Type: " << camInfo.StreamType.ToString() << endl;
-//		    cout << "Stream Buffer Count: " << camInfo.StreamDefaultBufferCount.ToString() << endl;
-//		    cout << "Stream Buffer Handling Mode: " << camInfo.StreamBufferHandlingMode.ToString() << endl;
-//        cout << "Stream Packets Received: " << camInfo.GevTotalPacketCount.ToString() << endl;
-//        getSPProperty(ADTemperatureActual);
-//printf("StreamBufferUnderrunCount = %d\n", (int)camInfo.StreamBufferUnderrunCount.GetValue());
-        setIntegerParam(SPBufferUnderrunCount, (int)camInfo.StreamBufferUnderrunCount.GetValue());
-        setIntegerParam(SPFailedBufferCount,   (int)camInfo.StreamFailedBufferCount.GetValue());
-        if (camInfo.StreamType.GetIntValue() == StreamType_GEV) {
-//printf("GeVFailedPacketCount = %d\n", (int)camInfo.GevFailedPacketCount.GetValue());
-            setIntegerParam(SPFailedPacketCount,   (int)camInfo.GevFailedPacketCount.GetValue());
-//printf("GeVTotalPacketCount = %d\n", (int)camInfo.GevTotalPacketCount.GetValue());
-        }
-    }
-    catch (Spinnaker::Exception &e) {
+    // Send a null image poiner to grabImage to make it exit if it is waiting for an image
+    if (pCallbackMsgQ_->send(&dummy, sizeof(dummy)) != 0) {
         asynPrint(pasynUserSelf, ASYN_TRACE_ERROR, 
-            "%s::%s exception %s\n",
-            driverName, functionName, e.what());
-        return asynError;
+            "%s::%s error calling pCallbackMsgQ_->send()\n",
+            driverName, functionName);
     }
-    ADGenICam::readStatus();
-    callParamCallbacks();
+
+    // Need to wait for the imageGrabTask to set the status to idle
+    while (1) {
+        getIntegerParam(ADStatus, &status);
+        if (status == ADStatusIdle) break;
+        unlock();
+        epicsThreadSleep(.1);
+        lock();
+    }
+
+    // Need to empty the message queue it could have some images in it
+    while(pCallbackMsgQ_->tryReceive(&dummy, sizeof(dummy)) != -1) {}
     return asynSuccess;
 }
 
@@ -847,24 +879,21 @@ void ADSpinnaker::report(FILE *fp, int details)
 
 static const iocshArg configArg0 = {"Port name", iocshArgString};
 static const iocshArg configArg1 = {"cameraId", iocshArgInt};
-static const iocshArg configArg2 = {"traceMask", iocshArgInt};
-static const iocshArg configArg3 = {"memoryChannel", iocshArgInt};
-static const iocshArg configArg4 = {"maxMemory", iocshArgInt};
-static const iocshArg configArg5 = {"priority", iocshArgInt};
-static const iocshArg configArg6 = {"stackSize", iocshArgInt};
+static const iocshArg configArg2 = {"# Spinnaker buffers", iocshArgInt};
+static const iocshArg configArg3 = {"maxMemory", iocshArgInt};
+static const iocshArg configArg4 = {"priority", iocshArgInt};
+static const iocshArg configArg5 = {"stackSize", iocshArgInt};
 static const iocshArg * const configArgs[] = {&configArg0,
                                               &configArg1,
                                               &configArg2,
                                               &configArg3,
                                               &configArg4,
-                                              &configArg5,
-                                              &configArg6};
-static const iocshFuncDef configADSpinnaker = {"ADSpinnakerConfig", 7, configArgs};
+                                              &configArg5};
+static const iocshFuncDef configADSpinnaker = {"ADSpinnakerConfig", 6, configArgs};
 static void configCallFunc(const iocshArgBuf *args)
 {
     ADSpinnakerConfig(args[0].sval, args[1].ival, args[2].ival, 
-                      args[3].ival, args[4].ival, args[5].ival,
-                      args[6].ival);
+                      args[3].ival, args[4].ival, args[5].ival);
 }
 
 
