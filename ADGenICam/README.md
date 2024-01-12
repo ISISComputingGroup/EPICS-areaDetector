@@ -2,7 +2,7 @@ ADGenICam
 ===========
 An 
 [EPICS](http://www.aps.anl.gov/epics)
-[areaDetector](https://cars.uchicago.edu/software/epics/areaDetector.html)
+[areaDetector](https://github.com/areaDetector/areaDetector/blob/master/README.md)
 driver for
 [GenICam](https://www.emva.org/standards-technology/genicam/) cameras.
 This is a base class that actual drivers inherit from.  These actual drivers
@@ -17,5 +17,5 @@ The following drivers currently derive from this base class:
   from AVT/Prosilica on Linux and Windows.  It uses the [Allied Vision's Vimba SDK](https://www.alliedvision.com/en/products/software.html).
 
 Additional information:
-* [Documentation](https://areadetector.github.io/master/ADGenICam/ADGenICam.html)
-* [Release notes](RELEASE.md).
+* [Documentation](https://areadetector.github.io/areaDetector/ADGenICam/ADGenICam.html)
+* [Release notes](RELEASE.md)

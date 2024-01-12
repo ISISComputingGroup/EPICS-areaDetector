@@ -1,5 +1,5 @@
 //=============================================================================
-// Copyright (c) 2001-2018 FLIR Systems, Inc. All Rights Reserved.
+// Copyright (c) 2001-2023 FLIR Systems, Inc. All Rights Reserved.
 //
 // This software is the confidential and proprietary information of FLIR
 // Integrated Imaging Solutions, Inc. ("Confidential Information"). You
@@ -14,27 +14,28 @@
 // SUFFERED BY LICENSEE AS A RESULT OF USING, MODIFYING OR DISTRIBUTING
 // THIS SOFTWARE OR ITS DERIVATIVES.
 //=============================================================================
-   
+
 /* Auto-generated file. Do not modify. */
 
-#ifndef PGR_SPINNAKER_ICHUNKDATA_H
-#define PGR_SPINNAKER_ICHUNKDATA_H
+#ifndef FLIR_SPINNAKER_ICHUNKDATA_H
+#define FLIR_SPINNAKER_ICHUNKDATA_H
 
 #include "SpinGenApi/GCTypes.h"
 #include "SpinGenApi/INodeMap.h"
 #include "CameraDefs.h"
+#include "ChunkDataInference.h"
 
 namespace Spinnaker
 {
     /**
     * @defgroup SpinnakerClasses Spinnaker Classes
     */
-    /*@{*/
+    /**@{*/
 
     /**
     * @defgroup IChunkData_h IChunkData Class
     */
-    /*@{*/
+    /**@{*/
 
     /**
     *@brief The Interface file for ChunkData.
@@ -50,6 +51,8 @@ namespace Spinnaker
         virtual float64_t GetBlackLevel() const = 0;
         virtual int64_t GetFrameID() const = 0;
         virtual float64_t GetExposureTime() const = 0;
+        virtual int64_t GetCompressionMode() const = 0;
+        virtual float64_t GetCompressionRatio() const = 0;
         virtual int64_t GetTimestamp() const = 0;
         virtual int64_t GetExposureEndLineStatusAll() const = 0;
         virtual int64_t GetWidth() const = 0;
@@ -81,16 +84,22 @@ namespace Spinnaker
         virtual float64_t GetScan3dAxisMax() const = 0;
         virtual float64_t GetScan3dTransformValue() const = 0;
         virtual float64_t GetScan3dCoordinateReferenceValue() const = 0;
+        virtual int64_t GetInferenceFrameId() const = 0;
         virtual int64_t GetInferenceResult() const = 0;
         virtual float64_t GetInferenceConfidence() const = 0;
+        virtual InferenceBoundingBoxResult GetInferenceBoundingBoxResult() const = 0;
 
     protected:
+        friend class ChunkDataImpl;
+        friend class ImageImpl;
+        struct ChunkDataData; // forward declaration
+        ChunkDataData* m_pChunkDataData;
         IChunkData() {};
 
     };
-    /*@}*/
+    /**@}*/
 
-    /*@}*/
+    /**@}*/
 
 }
-#endif // PGR_SPINNAKER_ICHUNKDATA_H
+#endif // FLIR_SPINNAKER_ICHUNKDATA_H
