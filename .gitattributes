@@ -34,4 +34,6 @@ Makefile
 *.jpg binary
 *.class binary
 *.vi binary
-
+*.so* binary
+*.dll binary
+*.exe binary
