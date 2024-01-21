@@ -176,3 +176,7 @@ endif
 LIB_SYS_LIBS_WIN32      += gdi32 oleaut32 
 
 USR_LDFLAGS_Darwin      += -framework CoreFoundation
+ifeq ($(STATIC_BUILD),YES)
+  USR_CXXFLAGS_WIN32 += -DSpinnaker_STATIC
+  USR_CFLAGS_WIN32 += -DSpinnaker_STATIC
+endif
