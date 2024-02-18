@@ -250,6 +250,8 @@ class epicsShareClass NDFileHDF5 : public NDPluginFile
 
     std::list<NDFileHDF5AttributeDataset*> attrList;
 
+    asynStatus copyHDF5Object(hdf5::DataSource& src, hid_t dst_root, const std::string& dst_name);
+
     /* HDF5 handles and references */
     hid_t file;
     hid_t dataspace;

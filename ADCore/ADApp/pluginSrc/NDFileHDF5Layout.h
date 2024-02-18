@@ -27,7 +27,8 @@ namespace hdf5
     notset,
     detector,
     ndattribute,
-    constant
+    constant,
+    h5file
   } DataSrc_t;
 
   typedef enum {
@@ -55,6 +56,7 @@ namespace hdf5
       DataSource(DataSrc_t src, const std::string& val);
       DataSource(DataSrc_t src);
       DataSource(DataSrc_t src, DataType_t type);
+      DataSource(DataSrc_t src, const std::string& file, const std::string& path);
       // Copy constructor
       DataSource( const DataSource& src);
       // Assignment operator
@@ -65,11 +67,15 @@ namespace hdf5
       bool is_src_ndattribute();
       bool is_src_constant();
       bool is_src(DataSrc_t src);
+      bool is_src_h5file();
 
       std::string get_src_def(); /** return the string that define the source: either name of NDAttribute or constant value */
       DataType_t get_datatype();
       size_t datatype_size();
       void set_const_datatype_value(DataType_t dtype, const std::string& str_val);
+      void set_h5file_file_path(const std::string& file, const std::string& path);
+      std::string get_h5file_file();
+      std::string get_h5file_path();
 
       void set_when_to_save(When_t when);
       When_t get_when_to_save();
@@ -79,6 +85,8 @@ namespace hdf5
       std::string val;
       DataType_t datatype;
       When_t when_to_save;
+      std::string h5file_file;
+      std::string h5file_path;
   };
 
 
@@ -248,6 +256,9 @@ namespace hdf5
       { out << grp._str_(); return out; }
       std::string _str_();  /** Return a string representation of the object */
 
+      void set_data_source(DataSource& src);
+      DataSource& data_source();
+
       typedef std::map<std::string, Group*> MapGroups_t;
       typedef std::map<std::string, Dataset*> MapDatasets_t;
       typedef std::map<std::string, HardLink*> MapHardLinks_t;
@@ -263,6 +274,7 @@ namespace hdf5
 
     private:
       void _copy(const Group& src);
+      DataSource datasource;
       bool name_exist(const std::string& name);
       bool ndattr_default_container;
       std::map<std::string, Dataset*> datasets;

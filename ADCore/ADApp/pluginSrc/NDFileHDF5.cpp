@@ -656,8 +656,12 @@ asynStatus NDFileHDF5::createTree(hdf5::Group* root, hid_t h5handle)
     hdf5::Group::MapGroups_t::const_iterator it_group;
     hdf5::Group::MapGroups_t& groups = root->get_groups();
     for (it_group = groups.begin(); it_group != groups.end(); ++it_group){
-      // recursively call this function to create all subgroups
-      retcode = this->createTree( it_group->second, h5handle );
+      if (it_group->second->data_source().is_src_h5file()) {
+          retcode = this->copyHDF5Object(it_group->second->data_source(), h5handle, it_group->second->get_name());
+      } else {
+          // recursively call this function to create all subgroups
+          retcode = this->createTree( it_group->second, h5handle );
+      }
     }
   } else {
     //First make the current group inside the given hdf handle.
@@ -681,6 +685,10 @@ asynStatus NDFileHDF5::createTree(hdf5::Group* root, hid_t h5handle)
         // Creation of NDAttribute datasets are deferred to later
         // in createAttributeDataset()
         continue;
+      }
+      if (it_dsets->second->data_source().is_src_h5file()) {
+          this->copyHDF5Object(it_dsets->second->data_source(), new_group, it_dsets->second->get_name());
+          continue;
       }
       hid_t new_dset = this->createDataset(new_group, it_dsets->second);
       if (new_dset <= 0) {
@@ -706,8 +714,12 @@ asynStatus NDFileHDF5::createTree(hdf5::Group* root, hid_t h5handle)
     hdf5::Group::MapGroups_t::const_iterator it_group;
     hdf5::Group::MapGroups_t& groups = root->get_groups();
     for (it_group = groups.begin(); it_group != groups.end(); ++it_group){
-      // recursively call this function to create all subgroups
-      retcode = this->createTree( it_group->second, new_group );
+      if (it_group->second->data_source().is_src_h5file()) {
+          retcode = this->copyHDF5Object(it_group->second->data_source(), new_group, it_group->second->get_name());
+      } else {
+          // recursively call this function to create all subgroups
+          retcode = this->createTree( it_group->second, new_group );
+      }
     }
     // close the handle to the group that we've created in this instance
     // of the function. This is to ensure we're not leaving any hanging,
@@ -715,6 +727,33 @@ asynStatus NDFileHDF5::createTree(hdf5::Group* root, hid_t h5handle)
     H5Gclose(new_group);
   }
   return retcode;
+}
+
+asynStatus NDFileHDF5::copyHDF5Object(hdf5::DataSource& src, hid_t dst_root, const std::string& dst_name)
+{
+    static const char* functionName = "copyHDF5Object";
+    if (!src.is_src_h5file()) {
+        asynPrint(this->pasynUserSelf, ASYN_TRACE_WARNING,
+                  "%s::%s Failed to create object %s as no HDF5 source. Continuing to next.\n",
+                  driverName, functionName, dst_name.c_str());
+        return asynError;
+    }
+    hid_t src_file;
+    if ( (src_file = H5Fopen(src.get_h5file_file().c_str(), H5F_ACC_RDONLY, H5P_DEFAULT)) == H5I_INVALID_HID ) {
+        asynPrint(this->pasynUserSelf, ASYN_TRACE_WARNING,
+                  "%s::%s Failed to create object \"%s\" as cannot open file \"%s\". Continuing to next.\n",
+                  driverName, functionName, dst_name.c_str(), src.get_h5file_file().c_str());
+        return asynError;
+    }
+    asynStatus ret = asynSuccess;
+    if (H5Ocopy(src_file, src.get_h5file_path().c_str(), dst_root, dst_name.c_str(), H5P_DEFAULT, H5P_DEFAULT) < 0) {
+        asynPrint(this->pasynUserSelf, ASYN_TRACE_WARNING,
+                  "%s::%s Failed to create object \"%s\" as cannot copy from path \"%s\" in file \"%s\" . Continuing to next.\n",
+                  driverName, functionName, dst_name.c_str(), src.get_h5file_path().c_str(), src.get_h5file_file().c_str());
+        ret = asynError;
+    }
+    H5Fclose(src_file);
+    return ret;
 }
 
 /** Create the hardlinks in the HDF5 file.
