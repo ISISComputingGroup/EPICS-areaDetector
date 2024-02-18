@@ -537,9 +537,15 @@ namespace hdf5
         h5file_path = xmlTextReaderGetAttribute(this->xmlreader, (const xmlChar*)LayoutXML::ATTR_SRC_H5FILE_PATH.c_str());
         if (h5file_file != NULL && h5file_path != NULL) {
             attrval.set_h5file_file_path((const char*)h5file_file, (const char*)h5file_path);
+        } else {
+            LOG4CXX_ERROR(log, "Missing file and path attributes for h5file datasource");
         }
-        xmlFree(h5file_file);
-        xmlFree(h5file_path);        
+        if (h5file_file!= NULL) {
+            xmlFree(h5file_file);
+        }
+        if (h5file_path != NULL) {
+            xmlFree(h5file_path);
+        }
     }
     new_group->set_data_source(attrval);
     return 0;
@@ -634,9 +640,15 @@ namespace hdf5
         h5file_path = xmlTextReaderGetAttribute(this->xmlreader, (const xmlChar*)LayoutXML::ATTR_SRC_H5FILE_PATH.c_str());
         if (h5file_file != NULL && h5file_path != NULL) {
             attrval.set_h5file_file_path((const char*)h5file_file, (const char*)h5file_path);
+        } else {
+            LOG4CXX_ERROR(log, "Missing file and path attributes for h5file datasource");
         }
-        xmlFree(h5file_file);
-        xmlFree(h5file_path);        
+        if (h5file_file!= NULL) {
+            xmlFree(h5file_file);
+        }
+        if (h5file_path != NULL) {
+            xmlFree(h5file_path);
+        }
     }
     dset->set_data_source(attrval);
     return 0;
