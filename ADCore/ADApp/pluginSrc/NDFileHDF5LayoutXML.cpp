@@ -45,6 +45,9 @@ namespace hdf5
   const std::string LayoutXML::ATTR_SRC_CONST              = "constant";
   const std::string LayoutXML::ATTR_SRC_CONST_VALUE        = "value";
   const std::string LayoutXML::ATTR_SRC_CONST_TYPE         = "type";
+  const std::string LayoutXML::ATTR_SRC_H5FILE             = "h5file";
+  const std::string LayoutXML::ATTR_SRC_H5FILE_FILE        = "file";
+  const std::string LayoutXML::ATTR_SRC_H5FILE_PATH        = "path";
   const std::string LayoutXML::ATTR_GRP_NDATTR_DEFAULT     = "ndattr_default";
   const std::string LayoutXML::ATTR_SRC_WHEN               = "when";
   const std::string LayoutXML::ATTR_GLOBAL_NAME            = "name";
@@ -354,8 +357,36 @@ namespace hdf5
       out = DataSource( constant );
       ret = 0;
     }
+    if (str_attr_src == LayoutXML::ATTR_SRC_H5FILE){
+      out = DataSource( h5file );
+      ret = 0;
+    }
     return ret;
   }
+
+  int LayoutXML::process_group_xml_attribute(DataSource& out)
+  {
+    int ret = -1;
+    if (! xmlTextReaderHasAttributes(this->xmlreader) ) return ret;
+
+    xmlChar *attr_src = NULL;
+    std::string str_attr_src;
+
+    attr_src = xmlTextReaderGetAttribute(this->xmlreader, (const xmlChar*)LayoutXML::ATTR_SOURCE.c_str());
+    if (attr_src == NULL) {
+        out = DataSource( notset );
+        return 0;
+    }
+    str_attr_src = (char*)attr_src;
+    xmlFree(attr_src);
+
+    if (str_attr_src == LayoutXML::ATTR_SRC_H5FILE){
+      out = DataSource( h5file );
+      ret = 0;
+    }
+    return ret;
+  }
+
 
   int LayoutXML::process_attribute_xml_attribute(Attribute& out)
   {
@@ -498,6 +529,19 @@ namespace hdf5
         }
       }
     }
+    DataSource attrval;
+    this->process_group_xml_attribute(attrval);
+    if (attrval.is_src_h5file()){
+        xmlChar *h5file_file = NULL, *h5file_path = NULL;
+        h5file_file = xmlTextReaderGetAttribute(this->xmlreader, (const xmlChar*)LayoutXML::ATTR_SRC_H5FILE_FILE.c_str());
+        h5file_path = xmlTextReaderGetAttribute(this->xmlreader, (const xmlChar*)LayoutXML::ATTR_SRC_H5FILE_PATH.c_str());
+        if (h5file_file != NULL && h5file_path != NULL) {
+            attrval.set_h5file_file_path((const char*)h5file_file, (const char*)h5file_path);
+        }
+        xmlFree(h5file_file);
+        xmlFree(h5file_path);        
+    }
+    new_group->set_data_source(attrval);
     return 0;
   }
 
@@ -584,6 +628,15 @@ namespace hdf5
         else if (str_type == "string") dtype = string;
         attrval.set_const_datatype_value(dtype, str_val);
       }
+    } else if (attrval.is_src_h5file()){
+        xmlChar *h5file_file = NULL, *h5file_path = NULL;
+        h5file_file = xmlTextReaderGetAttribute(this->xmlreader, (const xmlChar*)LayoutXML::ATTR_SRC_H5FILE_FILE.c_str());
+        h5file_path = xmlTextReaderGetAttribute(this->xmlreader, (const xmlChar*)LayoutXML::ATTR_SRC_H5FILE_PATH.c_str());
+        if (h5file_file != NULL && h5file_path != NULL) {
+            attrval.set_h5file_file_path((const char*)h5file_file, (const char*)h5file_path);
+        }
+        xmlFree(h5file_file);
+        xmlFree(h5file_path);        
     }
     dset->set_data_source(attrval);
     return 0;
