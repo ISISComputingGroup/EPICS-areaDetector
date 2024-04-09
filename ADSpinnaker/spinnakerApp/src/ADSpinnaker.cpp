@@ -115,7 +115,7 @@ static void imageGrabTaskC(void *drvPvt)
 ADSpinnaker::ADSpinnaker(const char *portName, int cameraId, int numSPBuffers,
                          size_t maxMemory, int priority, int stackSize )
     : ADGenICam(portName, maxMemory, priority, stackSize),
-    cameraId_(cameraId), numSPBuffers_(numSPBuffers), exiting_(0), pRaw_(NULL), uniqueId_(0)
+    cameraId_(cameraId), numSPBuffers_(numSPBuffers), exiting_(0), pRaw_(NULL), uniqueId_(0), pNodeMap_(nullptr), pTLStreamNodeMap_(nullptr), system_(nullptr)
 {
     static const char *functionName = "ADSpinnaker";
     asynStatus status;
@@ -125,8 +125,25 @@ ADSpinnaker::ADSpinnaker(const char *portName, int cameraId, int numSPBuffers,
     if (numSPBuffers_ == 0) numSPBuffers_ = 100;
     if (numSPBuffers_ < 10) numSPBuffers_ = 10;
 
+    // shutdown on exit
+    epicsAtExit(c_shutdown, this);
+
     // Retrieve singleton reference to system object
-    system_ = System::GetInstance();
+    try {
+        system_ = System::GetInstance();
+    }
+    catch (const std::exception& e) {
+        asynPrint(pasynUserSelf, ASYN_TRACE_ERROR,
+            "%s::%s exception %s\n",
+            driverName, functionName, e.what());
+        return;
+    }
+    catch (...) {
+        asynPrint(pasynUserSelf, ASYN_TRACE_ERROR,
+            "%s::%s exception of UNKNOWN TYPE\n",
+            driverName, functionName);
+        return;
+    }
 
     status = connectCamera();
     if (status) {
@@ -180,9 +197,6 @@ ADSpinnaker::ADSpinnaker(const char *portName, int cameraId, int numSPBuffers,
                       epicsThreadGetStackSize(epicsThreadStackMedium),
                       imageGrabTaskC, this);
 
-    // shutdown on exit
-    epicsAtExit(c_shutdown, this);
-
     return;
 }
 
@@ -194,13 +208,20 @@ void ADSpinnaker::shutdown(void)
     lock();
     exiting_ = 1;
     try {
-        pCamera_->UnregisterEventHandler(*pImageEventHandler_);
-        delete pImageEventHandler_;
+        if (pCamera_ != NULL) {
+            if (pImageEventHandler_ != nullptr) {
+                pCamera_->UnregisterEventHandler(*pImageEventHandler_);
+                delete pImageEventHandler_;
+                pImageEventHandler_ = nullptr;
+            }
+            pCamera_->DeInit();
+            pCamera_ = 0;
+        }
         pNodeMap_ = 0;
-        pCamera_->DeInit();
-        pCamera_ = 0;
         camList_.Clear();
-        system_->ReleaseInstance();
+        if (system_ != nullptr) {
+            system_->ReleaseInstance();
+        }
     }
     catch (Spinnaker::Exception &e) {
       asynPrint(pasynUserSelf, ASYN_TRACE_ERROR, 
@@ -248,6 +269,7 @@ asynStatus ADSpinnaker::connectCamera(void)
         }
     
         if (cameraId_ < 1000) {
+            std::cerr << "Looking up camera by ID " << cameraId_ << std::endl;
             asynPrint(pasynUserSelf, ASYN_TRACE_WARNING,
                 "%s::%s calling camList_.GetByIndex, camList_=%p\n",
                 driverName, functionName, &camList_);
@@ -259,6 +281,7 @@ asynStatus ADSpinnaker::connectCamera(void)
             char tempString[100];
             sprintf(tempString, "%d", cameraId_);
             std::string tempStdString(tempString);
+            std::cerr << "Looking up camera by serial number \"" << tempStdString << "\"" << std::endl;
             pCamera_ = camList_.GetBySerial(tempStdString);
         }
     
@@ -283,7 +306,7 @@ asynStatus ADSpinnaker::connectCamera(void)
         ptrBufferCount->SetValue(numSPBuffers_);
     }
 
-    catch (Spinnaker::Exception &e) {
+    catch (const std::exception &e) {
       asynPrint(pasynUserSelf, ASYN_TRACE_ERROR, 
           "%s::%s exception %s\n",
           driverName, functionName, e.what());

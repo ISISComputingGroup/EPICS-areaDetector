@@ -22,8 +22,14 @@ SPFeature::SPFeature(GenICamFeatureSet *set,
     try {
         ADSpinnaker *pDrv = (ADSpinnaker *) mSet->getPortDriver();
         mNodeName = featureName.c_str();
-        mPBase = (CNodePtr)pDrv->getNodeMap()->GetNode(mNodeName);
-        mIsImplemented = IsImplemented(mPBase);
+        INodeMap* nodeMap = pDrv->getNodeMap();
+        if (nodeMap != NULL) {
+            mPBase = (CNodePtr)nodeMap->GetNode(mNodeName);
+            mIsImplemented = IsImplemented(mPBase);
+        }
+        else {
+            mIsImplemented = false;
+        }
     }
     catch (Spinnaker::Exception &e) {
         printf("SPProperty::SPProperty exception %s\n", e.what());
