@@ -75,6 +75,9 @@ namespace hdf5
       static const std::string ATTR_SRC_CONST;
       static const std::string ATTR_SRC_CONST_VALUE;
       static const std::string ATTR_SRC_CONST_TYPE;
+      static const std::string ATTR_SRC_H5FILE;
+      static const std::string ATTR_SRC_H5FILE_FILE;
+      static const std::string ATTR_SRC_H5FILE_PATH;
       static const std::string ATTR_GRP_NDATTR_DEFAULT;
       static const std::string ATTR_SRC_WHEN;
       static const std::string ATTR_GLOBAL_NAME;
@@ -100,6 +103,7 @@ namespace hdf5
       int process_node();
 
       int process_dset_xml_attribute(DataSource& out);
+      int process_group_xml_attribute(DataSource& out);
       int process_attribute_xml_attribute(Attribute& out);
 
       int parse_root();
