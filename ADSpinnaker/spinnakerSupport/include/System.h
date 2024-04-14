@@ -29,10 +29,10 @@ namespace Spinnaker
     class ISystemImpl;
 
     // Define macros for getting Spinnaker library version
-#define FLIR_SPINNAKER_VERSION_MAJOR 4
-#define FLIR_SPINNAKER_VERSION_MINOR 0
+#define FLIR_SPINNAKER_VERSION_MAJOR 3
+#define FLIR_SPINNAKER_VERSION_MINOR 2
 #define FLIR_SPINNAKER_VERSION_TYPE  0
-#define FLIR_SPINNAKER_VERSION_BUILD 116
+#define FLIR_SPINNAKER_VERSION_BUILD 57
 
     /**
      * @defgroup SpinnakerClasses Spinnaker Classes
@@ -256,7 +256,6 @@ namespace Spinnaker
             unsigned int groupKey,
             unsigned int groupMask,
             unsigned long long actionTime = 0,
-            bool requestAck = false,
             unsigned int* pResultSize = 0,
             ActionCommandResult results[] = NULL);
 

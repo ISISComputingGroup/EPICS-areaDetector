@@ -17,7 +17,7 @@ SPFeature::SPFeature(GenICamFeatureSet *set,
                      std::string const & asynName, asynParamType asynType, int asynIndex,
                      std::string const & featureName, GCFeatureType_t featureType)
                      
-         : GenICamFeature(set, asynName, asynType, asynIndex, featureName, featureType)
+         : GenICamFeature(set, asynName, asynType, asynIndex, featureName, featureType), mPBase(nullptr), mIsImplemented(false)
 {
     try {
         ADSpinnaker *pDrv = (ADSpinnaker *) mSet->getPortDriver();

@@ -32,7 +32,7 @@ class ADSpinnakerImageEventHandler : public ImageEventHandler
 public:
 
     ADSpinnakerImageEventHandler(epicsMessageQueue *pMsgQ) 
-     : pMsgQ_(pMsgQ)
+     : ImageEventHandler(), pMsgQ_(pMsgQ)
     {}
     ~ADSpinnakerImageEventHandler() {}
   

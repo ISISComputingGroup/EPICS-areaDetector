@@ -119,7 +119,7 @@ namespace Spinnaker
          *
          * @return Returns true if the interface is in use and false otherwise.
          */
-        bool IsCameraInUse() const;
+        bool IsInUse() const;
 
         /**
          * Broadcast an Action Command to all devices on interface
@@ -143,7 +143,6 @@ namespace Spinnaker
             unsigned int groupKey,
             unsigned int groupMask,
             unsigned long long actionTime = 0,
-            bool requestAck = false,
             unsigned int* pResultSize = 0,
             ActionCommandResult results[] = NULL) const;
 

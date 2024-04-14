@@ -188,6 +188,8 @@ namespace Spinnaker
          *
          * Note that an error SPINNAKER_ERR_NOT_IMPLEMENTED will be thrown if an
          * unsupported combination of stream mode and buffer ownership is set.
+         * For GigE cameras, user buffers are only supported in the LWF and Socket
+         * stream modes, and MVA stream mode only supports system buffer ownership.
          *
          * @see Init()
          */
@@ -237,6 +239,8 @@ namespace Spinnaker
          * Note that an error SPINNAKER_ERR_NOT_IMPLEMENTED will be thrown during
          * BeginAcquisition() if an unsupported combination of stream mode and buffer
          * ownership is set.
+         * For GigE cameras, user buffers are only supported in the LWF and Socket
+         * stream modes, and MVA stream mode only supports system buffer ownership.
          *
          * @see GetBufferOwnership()
          * @see SetUserBuffers()
@@ -299,13 +303,11 @@ namespace Spinnaker
          *     ((unsigned int) (bufferSize + 1024 - 1) / 1024) * 1024
          * where 1024 is the USB3 packet size.
          *
-         * When working with GigE cameras, allocate memory and set at least 2 buffers
-         * for OldestFirst and NewestFirst stream modes, and 3 buffers for
-         * OldestFirstOverwrite and NewestOnly modes
-         *
          * Note that an error SPINNAKER_ERR_NOT_IMPLEMENTED will be thrown during
          * BeginAcquisition() if an unsupported combination of stream mode and buffer
          * ownership is set.
+         * For GigE cameras, user buffers are only supported in the LWF and Socket
+         * stream modes.
          *
          * @see GetBufferOwnership()
          * @see SetBufferOwnership()
@@ -372,21 +374,13 @@ namespace Spinnaker
         ImageList GetNextImageSync(uint64_t grabTimeout = EVENT_TIMEOUT_INFINITE);
 
         /**
-         * GetDeviceID
-         * This returns a unique id string that identifies the camera;
-         * a unique string for USB devices, and MAC address for GEV devices.
-         *
-         * @return string that uniquely identifies the camera
-         */
-        GenICam::gcstring GetDeviceID();
-
-        /**
          * GetUniqueID
-         * This returns a unique id string that identifies the camera.
+         * This returns a unique id string that identifies the camera.  This is the
+         * camera serial number.
          *
          * @return string that uniquely identifies the camera (serial number)
          */
-        DEPRECATED_FUNC("Use GetDeviceID() instead.", GenICam::gcstring GetUniqueID(););
+        GenICam::gcstring GetUniqueID();
 
         /**
          * IsStreaming

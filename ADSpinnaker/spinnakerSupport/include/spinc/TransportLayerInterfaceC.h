@@ -26,7 +26,7 @@
 * @defgroup TLInterfaceC_h TLInterface Structures
 * @ingroup CQuickSpin
 */
-/**@{*/
+/*@{*/
 
 typedef struct _quickSpinTLInterface
 {
@@ -42,15 +42,12 @@ typedef struct _quickSpinTLInterface
 	quickSpinIntegerNode GevInterfaceTransmitLinkSpeed;
 	quickSpinIntegerNode GevInterfaceReceiveLinkSpeed;
 	quickSpinIntegerNode GevInterfaceMTU;
-	quickSpinBooleanNode GevInterfaceIsIPConflict;
 	quickSpinEnumerationNode POEStatus;
-	quickSpinEnumerationNode FLIRFilterDriverStatus;
-	quickSpinEnumerationNode TeledyneGigeVisionFilterDriverStatus;
+	quickSpinEnumerationNode FilterDriverStatus;
 	quickSpinIntegerNode GevActionDeviceKey;
 	quickSpinIntegerNode GevActionGroupKey;
 	quickSpinIntegerNode GevActionGroupMask;
 	quickSpinIntegerNode GevActionTime;
-	quickSpinBooleanNode GevActionAckRequired;
 	quickSpinCommandNode ActionCommand;
 	quickSpinStringNode DeviceUnlock;
 	quickSpinCommandNode DeviceUpdateList;
@@ -86,6 +83,6 @@ typedef struct _quickSpinTLInterface
 	quickSpinStringNode HostAdapterDriverVersion;
 } quickSpinTLInterface;
 
-/**@}*/
+/*@}*/
 
 #endif // FLIR_SPINNAKERC_TLINTERFACE_H

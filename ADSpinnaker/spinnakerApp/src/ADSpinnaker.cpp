@@ -84,7 +84,15 @@ typedef enum {
 extern "C" int ADSpinnakerConfig(const char *portName, int cameraId, int numSPBuffers,
                                  size_t maxMemory, int priority, int stackSize)
 {
-    new ADSpinnaker( portName, cameraId, numSPBuffers, maxMemory, priority, stackSize);
+    try {
+        new ADSpinnaker(portName, cameraId, numSPBuffers, maxMemory, priority, stackSize);
+    }
+    catch (const std::exception& ex) {
+        std::cerr << "ADSpinnakerConfig() failed: " << ex.what() << std::endl;
+    }
+    catch (...) {
+        std::cerr << "ADSpinnakerConfig() failed" << std::endl;
+    }
     return asynSuccess;
 }
 
@@ -154,6 +162,7 @@ ADSpinnaker::ADSpinnaker(const char *portName, int cameraId, int numSPBuffers,
         report(stdout, 1);
         return;
     }
+    std::cerr << "Successfully connected to camera" << std::endl;
 
     createParam(SPConvertPixelFormatString,         asynParamInt32,   &SPConvertPixelFormat);
     createParam(SPStartedFrameCountString,          asynParamInt32,   &SPStartedFrameCount);
@@ -187,7 +196,14 @@ ADSpinnaker::ADSpinnaker(const char *portName, int cameraId, int numSPBuffers,
     }
 
     pImageEventHandler_ = new ADSpinnakerImageEventHandler(pCallbackMsgQ_);
-    pCamera_->RegisterEventHandler(*pImageEventHandler_);
+    try {
+        pCamera_->RegisterEventHandler(*pImageEventHandler_);
+    }
+    catch (const Spinnaker::Exception& e) {
+        asynPrint(pasynUserSelf, ASYN_TRACE_ERROR,
+            "%s::%s exception registering image event handler: %s\n",
+            driverName, functionName, e.what());
+    }
 
     startEventId_ = epicsEventCreate(epicsEventEmpty);
 
@@ -197,6 +213,7 @@ ADSpinnaker::ADSpinnaker(const char *portName, int cameraId, int numSPBuffers,
                       epicsThreadGetStackSize(epicsThreadStackMedium),
                       imageGrabTaskC, this);
 
+    std::cerr << "Initial setup complete" << std::endl;
     return;
 }
 
@@ -324,6 +341,16 @@ asynStatus ADSpinnaker::connectCamera(void)
         "%s::%s called System::GetLibraryVersion, version=%s\n",
         driverName, functionName, tempString);
     setStringParam(ADSDKVersion, tempString);
+
+    std::cerr << "Connected with library version " << tempString << std::endl;
+    std::cerr << "Driver built with library version " << FLIR_SPINNAKER_VERSION_MAJOR << "." << FLIR_SPINNAKER_VERSION_MINOR
+        << "." << FLIR_SPINNAKER_VERSION_TYPE << "." << FLIR_SPINNAKER_VERSION_BUILD << std::endl;
+
+    if (version.major != FLIR_SPINNAKER_VERSION_MAJOR) {
+        asynPrint(pasynUserSelf, ASYN_TRACE_ERROR,
+            "%s::%s incompatible library major versions, %d != %d\n",
+            driverName, functionName, version.major, FLIR_SPINNAKER_VERSION_MAJOR);
+    }
 
 /*
     // Get and set the embedded image info
