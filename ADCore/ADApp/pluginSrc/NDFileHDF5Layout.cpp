@@ -86,7 +86,13 @@ namespace hdf5
   {
   }
 
-  DataSource::DataSource(const DataSource& src) : data_src(src.data_src), val(src.val), datatype(src.datatype), when_to_save(src.when_to_save)
+  DataSource::DataSource(DataSrc_t src, const std::string& file, const std::string& path) :
+      data_src(src), val(""), datatype(int8), when_to_save(OnFileOpen), h5file_file(file), h5file_path(path)
+  {
+  }
+
+  DataSource::DataSource(const DataSource& src) : data_src(src.data_src), val(src.val), datatype(src.datatype), 
+        when_to_save(src.when_to_save), h5file_file(src.h5file_file), h5file_path(src.h5file_path)
   {
   }
 
@@ -100,6 +106,8 @@ namespace hdf5
     this->val = src.val;
     this->datatype = src.datatype;
     this->when_to_save = src.when_to_save;
+    this->h5file_file = src.h5file_file;
+    this->h5file_path = src.h5file_path;
     return *this;
   };
 
@@ -123,6 +131,11 @@ namespace hdf5
     return this->data_src == ndattribute ? true : false;
   }
 
+  bool DataSource::is_src_h5file()
+  {
+    return this->data_src == h5file ? true : false;
+  }
+
   bool DataSource::is_src(DataSrc_t src)
   {
     return this->data_src == src ? true : false;
@@ -131,6 +144,24 @@ namespace hdf5
   std::string DataSource::get_src_def()
   {
     return this->val;
+  }
+  
+  std::string DataSource::get_h5file_file()
+  {
+    if (this->is_src_h5file()) {
+        return this->h5file_file;
+    } else {
+        return "";
+    }
+  }
+
+  std::string DataSource::get_h5file_path()
+  {
+    if (this->is_src_h5file()) {
+        return this->h5file_path;
+    } else {
+        return "";
+    }
   }
 
   DataType_t DataSource::get_datatype()
@@ -174,6 +205,13 @@ namespace hdf5
     if (this->data_src != constant) return;
     this->set_datatype(dtype);
     this->val = str_val;
+  }
+
+  void DataSource::set_h5file_file_path(const std::string& file, const std::string& path)
+  {
+    if (this->data_src != h5file) return;
+    this->h5file_file = file;
+    this->h5file_path = path;    
   }
 
   void DataSource::set_when_to_save(When_t when)
@@ -603,6 +641,17 @@ namespace hdf5
     }
   }
 
+  void Group::set_data_source(DataSource& src)
+  {
+    this->datasource = src;
+  }
+
+  DataSource& Group::data_source()
+  {
+    return this->datasource;
+  }
+
+
   /* ================== Group Class private methods ==================== */
   void Group::_copy(const Group& src)
   {
@@ -610,6 +659,7 @@ namespace hdf5
     this->datasets = src.datasets;
     this->groups = src.groups;
     this->ndattr_default_container = src.ndattr_default_container;
+    this->datasource = src.datasource;
   }
 
   bool Group::name_exist(const std::string& name)
@@ -623,6 +673,7 @@ namespace hdf5
     }
     return false;
   }
+  
 
   Root::Root() : Group()
   {
