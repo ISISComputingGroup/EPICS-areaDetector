@@ -337,7 +337,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPluginEdge/edgeApp/edgeSrc/NDPluginEdge.h" line="33" column="5" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPluginEdge/edgeApp/edgeSrc/NDPluginEdge.cpp" bodystart="285" bodyend="326"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPluginEdge/edgeApp/edgeSrc/NDPluginEdge.h" line="33" column="5" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPluginEdge/edgeApp/edgeSrc/NDPluginEdge.cpp" bodystart="288" bodyend="329"/>
       </memberdef>
       <memberdef kind="function" id="class_n_d_plugin_edge_1a1c2d16c28609a91b4ccd0f414244c17c" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -384,7 +384,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPluginEdge/edgeApp/edgeSrc/NDPluginEdge.h" line="38" column="10" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPluginEdge/edgeApp/edgeSrc/NDPluginEdge.cpp" bodystart="73" bodyend="262"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPluginEdge/edgeApp/edgeSrc/NDPluginEdge.h" line="38" column="10" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPluginEdge/edgeApp/edgeSrc/NDPluginEdge.cpp" bodystart="76" bodyend="265"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

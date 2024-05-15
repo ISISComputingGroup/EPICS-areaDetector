@@ -214,6 +214,48 @@
         </inbodydescription>
         <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" line="79" column="32" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" bodystart="79" bodyend="-1"/>
       </memberdef>
+      <memberdef kind="variable" id="classhdf5_1_1_layout_x_m_l_1a75756b9244cf3cc4a8292c13fa6acbcf" prot="public" static="yes" mutable="no">
+        <type>const std::string</type>
+        <definition>const std::string hdf5::LayoutXML::ATTR_SRC_H5FILE</definition>
+        <argsstring></argsstring>
+        <name>ATTR_SRC_H5FILE</name>
+        <initializer>= &quot;h5file&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" line="80" column="32" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classhdf5_1_1_layout_x_m_l_1abec5030a3b9c6ce4ed012fdd2888e662" prot="public" static="yes" mutable="no">
+        <type>const std::string</type>
+        <definition>const std::string hdf5::LayoutXML::ATTR_SRC_H5FILE_FILE</definition>
+        <argsstring></argsstring>
+        <name>ATTR_SRC_H5FILE_FILE</name>
+        <initializer>= &quot;file&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" line="81" column="32" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classhdf5_1_1_layout_x_m_l_1a8342e83d6db433afe8faeb72007bcc69" prot="public" static="yes" mutable="no">
+        <type>const std::string</type>
+        <definition>const std::string hdf5::LayoutXML::ATTR_SRC_H5FILE_PATH</definition>
+        <argsstring></argsstring>
+        <name>ATTR_SRC_H5FILE_PATH</name>
+        <initializer>= &quot;path&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" line="82" column="32" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
       <memberdef kind="variable" id="classhdf5_1_1_layout_x_m_l_1ac58a71ff2c29d763a3a692fc795d1ec1" prot="public" static="yes" mutable="no">
         <type>const std::string</type>
         <definition>const std::string hdf5::LayoutXML::ATTR_GRP_NDATTR_DEFAULT</definition>
@@ -226,7 +268,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" line="80" column="32" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" bodystart="80" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" line="83" column="32" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" bodystart="83" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classhdf5_1_1_layout_x_m_l_1ab49bcd2e0d9b36ce15d653a9b6efd149" prot="public" static="yes" mutable="no">
         <type>const std::string</type>
@@ -240,7 +282,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" line="81" column="32" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" bodystart="81" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" line="84" column="32" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" bodystart="84" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classhdf5_1_1_layout_x_m_l_1a62ed376f368a5da9e508847e3d113397" prot="public" static="yes" mutable="no">
         <type>const std::string</type>
@@ -254,7 +296,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" line="82" column="32" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" bodystart="82" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" line="85" column="32" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" bodystart="85" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classhdf5_1_1_layout_x_m_l_1a96ba4c43f818d7bebce2eaf0e323fea3" prot="public" static="yes" mutable="no">
         <type>const std::string</type>
@@ -268,7 +310,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" line="83" column="32" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" bodystart="83" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" line="86" column="32" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" bodystart="86" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classhdf5_1_1_layout_x_m_l_1a98ce096110a792791f1d3243f4946051" prot="public" static="yes" mutable="no">
         <type>const std::string</type>
@@ -282,7 +324,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" line="84" column="32" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" bodystart="84" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" line="87" column="32" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" bodystart="87" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classhdf5_1_1_layout_x_m_l_1ac86788f5b5b71a3974fdabed9f3a7895" prot="public" static="yes" mutable="no">
         <type>const std::string</type>
@@ -296,7 +338,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" line="85" column="32" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" bodystart="85" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" line="88" column="32" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" bodystart="88" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classhdf5_1_1_layout_x_m_l_1a7cc3479c65f50a7a013863c0c776dc2a" prot="public" static="yes" mutable="no">
         <type>const std::string</type>
@@ -337,7 +379,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" line="87" column="32" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" bodystart="87" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" line="90" column="32" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" bodystart="90" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-attrib">
@@ -352,7 +394,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" line="114" column="12" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" bodystart="114" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" line="118" column="12" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" bodystart="118" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classhdf5_1_1_layout_x_m_l_1a4920044a6798ead5f1a1c9ebf5f43b93" prot="private" static="no" mutable="no">
         <type><ref refid="namespacelog4cxx_1a1ad8b77f7d23afe8e2dd37e53fbe4e84" kindref="member">log4cxx::LoggerPtr</ref></type>
@@ -365,7 +407,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" line="115" column="26" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" bodystart="115" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" line="119" column="26" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" bodystart="119" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classhdf5_1_1_layout_x_m_l_1aaaa5808637a17f251032a3228e049fb6" prot="private" static="no" mutable="no">
         <type><ref refid="classhdf5_1_1_root" kindref="compound">Root</ref> *</type>
@@ -378,7 +420,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" line="116" column="12" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" bodystart="116" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" line="120" column="12" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" bodystart="120" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classhdf5_1_1_layout_x_m_l_1a483d534767342514b3fb62ce3db99610" prot="private" static="no" mutable="no">
         <type><ref refid="classhdf5_1_1_element" kindref="compound">Element</ref> *</type>
@@ -391,7 +433,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" line="117" column="15" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" bodystart="117" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" line="121" column="15" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" bodystart="121" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classhdf5_1_1_layout_x_m_l_1a5617a05c6f16347e0f3246723059acc9" prot="private" static="no" mutable="no">
         <type>xmlTextReaderPtr</type>
@@ -404,7 +446,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" line="118" column="24" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" bodystart="118" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" line="122" column="24" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" bodystart="122" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classhdf5_1_1_layout_x_m_l_1af19e004373bad9c72c0d42b6c82e920c" prot="private" static="no" mutable="no">
         <type>std::map&lt; std::string, std::string &gt;</type>
@@ -417,7 +459,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" line="119" column="16" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" bodystart="119" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" line="123" column="16" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" bodystart="123" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -432,7 +474,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" line="89" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.cpp" bodystart="72" bodyend="81"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" line="92" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.cpp" bodystart="75" bodyend="84"/>
       </memberdef>
       <memberdef kind="function" id="classhdf5_1_1_layout_x_m_l_1aef7111930ca87e8062ad8b42bc82ed59" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -445,7 +487,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" line="90" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.cpp" bodystart="83" bodyend="88"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" line="93" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.cpp" bodystart="86" bodyend="91"/>
       </memberdef>
       <memberdef kind="function" id="classhdf5_1_1_layout_x_m_l_1aa4279232e95ec79a9314645dd790d7ba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -458,7 +500,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" line="92" column="11" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.cpp" bodystart="90" bodyend="123"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" line="95" column="11" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.cpp" bodystart="93" bodyend="126"/>
       </memberdef>
       <memberdef kind="function" id="classhdf5_1_1_layout_x_m_l_1abf43f9a6b22b53684876b0cd3ccbc7d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -475,7 +517,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" line="93" column="11" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.cpp" bodystart="125" bodyend="159"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" line="96" column="11" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.cpp" bodystart="128" bodyend="162"/>
       </memberdef>
       <memberdef kind="function" id="classhdf5_1_1_layout_x_m_l_1ae1b05edcdfb82b5d1cbc3fa41ba41e52" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -492,7 +534,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" line="94" column="11" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.cpp" bodystart="161" bodyend="223"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" line="97" column="11" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.cpp" bodystart="164" bodyend="226"/>
       </memberdef>
       <memberdef kind="function" id="classhdf5_1_1_layout_x_m_l_1aded3d446c68fa370982b5fd0e5bbe6d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -506,7 +548,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" line="95" column="11" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.cpp" bodystart="228" bodyend="245"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" line="98" column="11" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.cpp" bodystart="231" bodyend="248"/>
       </memberdef>
       <memberdef kind="function" id="classhdf5_1_1_layout_x_m_l_1ae1ac6a5821c90319b30a33a2877c66de" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classhdf5_1_1_root" kindref="compound">Root</ref> *</type>
@@ -519,7 +561,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" line="97" column="12" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.cpp" bodystart="247" bodyend="250"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" line="100" column="12" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.cpp" bodystart="250" bodyend="253"/>
       </memberdef>
       <memberdef kind="function" id="classhdf5_1_1_layout_x_m_l_1ad268e22eeb298537b4ca608361b43da4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::string</type>
@@ -536,7 +578,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" line="98" column="19" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.cpp" bodystart="252" bodyend="255"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" line="101" column="19" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.cpp" bodystart="255" bodyend="258"/>
       </memberdef>
       <memberdef kind="function" id="classhdf5_1_1_layout_x_m_l_1ab8890ef8d10003fd80ca7d332d5bda9a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -549,7 +591,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" line="99" column="12" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.cpp" bodystart="257" bodyend="260"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" line="102" column="12" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.cpp" bodystart="260" bodyend="263"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -565,7 +607,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" line="102" column="11" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.cpp" bodystart="265" bodyend="333"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" line="105" column="11" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.cpp" bodystart="268" bodyend="336"/>
       </memberdef>
       <memberdef kind="function" id="classhdf5_1_1_layout_x_m_l_1afa3f4bae3d8386bc5e84471632640849" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -583,7 +625,24 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" line="104" column="11" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.cpp" bodystart="338" bodyend="364"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" line="107" column="11" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.cpp" bodystart="341" bodyend="371"/>
+      </memberdef>
+      <memberdef kind="function" id="classhdf5_1_1_layout_x_m_l_1a7d37e796c7319a93f375bd605b0027d6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int hdf5::LayoutXML::process_group_xml_attribute</definition>
+        <argsstring>(DataSource &amp;out)</argsstring>
+        <name>process_group_xml_attribute</name>
+        <param>
+          <type><ref refid="classhdf5_1_1_data_source" kindref="compound">DataSource</ref> &amp;</type>
+          <declname>out</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" line="108" column="11" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.cpp" bodystart="373" bodyend="394"/>
       </memberdef>
       <memberdef kind="function" id="classhdf5_1_1_layout_x_m_l_1ac6e633a8e19abf6f64df9949a588ab1e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -600,7 +659,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" line="105" column="11" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.cpp" bodystart="366" bodyend="433"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" line="109" column="11" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.cpp" bodystart="397" bodyend="464"/>
       </memberdef>
       <memberdef kind="function" id="classhdf5_1_1_layout_x_m_l_1a403e656fc76f3bdc69563c8d08ee8483" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -613,7 +672,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" line="107" column="11" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.cpp" bodystart="435" bodyend="462"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" line="111" column="11" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.cpp" bodystart="466" bodyend="493"/>
       </memberdef>
       <memberdef kind="function" id="classhdf5_1_1_layout_x_m_l_1a086e497c844864064cc045c25fb47689" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -626,7 +685,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" line="108" column="11" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.cpp" bodystart="464" bodyend="508"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" line="112" column="11" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.cpp" bodystart="495" bodyend="558"/>
       </memberdef>
       <memberdef kind="function" id="classhdf5_1_1_layout_x_m_l_1adf3815ce17a8e4d6d65cda685cbd6f51" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -639,7 +698,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" line="109" column="11" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.cpp" bodystart="510" bodyend="596"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" line="113" column="11" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.cpp" bodystart="560" bodyend="661"/>
       </memberdef>
       <memberdef kind="function" id="classhdf5_1_1_layout_x_m_l_1a921646a51f169d77671f8fefd7f684e5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -652,7 +711,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" line="110" column="11" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.cpp" bodystart="598" bodyend="617"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" line="114" column="11" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.cpp" bodystart="663" bodyend="682"/>
       </memberdef>
       <memberdef kind="function" id="classhdf5_1_1_layout_x_m_l_1ad70a102c472ab606dbb96c8afe91ba69" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -665,7 +724,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" line="111" column="11" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.cpp" bodystart="619" bodyend="637"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" line="115" column="11" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.cpp" bodystart="684" bodyend="702"/>
       </memberdef>
       <memberdef kind="function" id="classhdf5_1_1_layout_x_m_l_1a7004f9079d0241b1a3f659a834e5f4ae" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -678,7 +737,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" line="112" column="11" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.cpp" bodystart="639" bodyend="659"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" line="116" column="11" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.cpp" bodystart="704" bodyend="724"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -686,7 +745,7 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" line="61" column="3" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" bodystart="62" bodyend="120"/>
+    <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" line="61" column="3" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5LayoutXML.h" bodystart="62" bodyend="124"/>
     <listofallmembers>
       <member refid="classhdf5_1_1_layout_x_m_l_1a20c7b3c9a1ca2dc4b9496acee7d52ab6" prot="public" virt="non-virtual"><scope>hdf5::LayoutXML</scope><name>ATTR_ATTRIBUTE</name></member>
       <member refid="classhdf5_1_1_layout_x_m_l_1a824cd6a29b89427c889a4ef6c23768ae" prot="public" virt="non-virtual"><scope>hdf5::LayoutXML</scope><name>ATTR_DATASET</name></member>
@@ -707,6 +766,9 @@
       <member refid="classhdf5_1_1_layout_x_m_l_1adceb17777b0fe5346865313bbfcc083d" prot="public" virt="non-virtual"><scope>hdf5::LayoutXML</scope><name>ATTR_SRC_CONST_VALUE</name></member>
       <member refid="classhdf5_1_1_layout_x_m_l_1a5646e0089602d0446527c2971e86feff" prot="public" virt="non-virtual"><scope>hdf5::LayoutXML</scope><name>ATTR_SRC_DET_DEFAULT</name></member>
       <member refid="classhdf5_1_1_layout_x_m_l_1aa8ac7eac71bdf0da10d6a7bb96493e2c" prot="public" virt="non-virtual"><scope>hdf5::LayoutXML</scope><name>ATTR_SRC_DETECTOR</name></member>
+      <member refid="classhdf5_1_1_layout_x_m_l_1a75756b9244cf3cc4a8292c13fa6acbcf" prot="public" virt="non-virtual"><scope>hdf5::LayoutXML</scope><name>ATTR_SRC_H5FILE</name></member>
+      <member refid="classhdf5_1_1_layout_x_m_l_1abec5030a3b9c6ce4ed012fdd2888e662" prot="public" virt="non-virtual"><scope>hdf5::LayoutXML</scope><name>ATTR_SRC_H5FILE_FILE</name></member>
+      <member refid="classhdf5_1_1_layout_x_m_l_1a8342e83d6db433afe8faeb72007bcc69" prot="public" virt="non-virtual"><scope>hdf5::LayoutXML</scope><name>ATTR_SRC_H5FILE_PATH</name></member>
       <member refid="classhdf5_1_1_layout_x_m_l_1a8668609a3e9d54138436a88ca1a8d0de" prot="public" virt="non-virtual"><scope>hdf5::LayoutXML</scope><name>ATTR_SRC_NDATTR</name></member>
       <member refid="classhdf5_1_1_layout_x_m_l_1ab49bcd2e0d9b36ce15d653a9b6efd149" prot="public" virt="non-virtual"><scope>hdf5::LayoutXML</scope><name>ATTR_SRC_WHEN</name></member>
       <member refid="classhdf5_1_1_layout_x_m_l_1ad25853773e593138b235f64c0dcf5901" prot="private" virt="non-virtual"><scope>hdf5::LayoutXML</scope><name>auto_ndattr_default</name></member>
@@ -727,6 +789,7 @@
       <member refid="classhdf5_1_1_layout_x_m_l_1a403e656fc76f3bdc69563c8d08ee8483" prot="private" virt="non-virtual"><scope>hdf5::LayoutXML</scope><name>parse_root</name></member>
       <member refid="classhdf5_1_1_layout_x_m_l_1ac6e633a8e19abf6f64df9949a588ab1e" prot="private" virt="non-virtual"><scope>hdf5::LayoutXML</scope><name>process_attribute_xml_attribute</name></member>
       <member refid="classhdf5_1_1_layout_x_m_l_1afa3f4bae3d8386bc5e84471632640849" prot="private" virt="non-virtual"><scope>hdf5::LayoutXML</scope><name>process_dset_xml_attribute</name></member>
+      <member refid="classhdf5_1_1_layout_x_m_l_1a7d37e796c7319a93f375bd605b0027d6" prot="private" virt="non-virtual"><scope>hdf5::LayoutXML</scope><name>process_group_xml_attribute</name></member>
       <member refid="classhdf5_1_1_layout_x_m_l_1a9ca8c5352680ed4ea64db115b439ba24" prot="private" virt="non-virtual"><scope>hdf5::LayoutXML</scope><name>process_node</name></member>
       <member refid="classhdf5_1_1_layout_x_m_l_1a483d534767342514b3fb62ce3db99610" prot="private" virt="non-virtual"><scope>hdf5::LayoutXML</scope><name>ptr_curr_element</name></member>
       <member refid="classhdf5_1_1_layout_x_m_l_1aaaa5808637a17f251032a3228e049fb6" prot="private" virt="non-virtual"><scope>hdf5::LayoutXML</scope><name>ptr_tree</name></member>

@@ -81,7 +81,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.h" line="16" column="5" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.cpp" bodystart="16" bodyend="31"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.h" line="16" column="5" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.cpp" bodystart="16" bodyend="37"/>
       </memberdef>
       <memberdef kind="function" id="class_s_p_feature_1af5daa9e1c2ee5b2fe973094b5c7bed78" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
@@ -98,7 +98,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.h" line="19" column="18" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.cpp" bodystart="33" bodyend="35"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.h" line="19" column="18" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.cpp" bodystart="39" bodyend="41"/>
       </memberdef>
       <memberdef kind="function" id="class_s_p_feature_1aac7ab88326d3159e70445ee01805f676" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
@@ -115,7 +115,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.h" line="20" column="18" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.cpp" bodystart="37" bodyend="39"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.h" line="20" column="18" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.cpp" bodystart="43" bodyend="45"/>
       </memberdef>
       <memberdef kind="function" id="class_s_p_feature_1a4c9ca56b17752506ec87755b21c85c9b" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
@@ -132,7 +132,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.h" line="21" column="18" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.cpp" bodystart="41" bodyend="43"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.h" line="21" column="18" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.cpp" bodystart="47" bodyend="49"/>
       </memberdef>
       <memberdef kind="function" id="class_s_p_feature_1aca027dec663b93d50efd45e31a6f0538" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
@@ -149,7 +149,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.h" line="22" column="18" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.cpp" bodystart="45" bodyend="47"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.h" line="22" column="18" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.cpp" bodystart="51" bodyend="53"/>
       </memberdef>
       <memberdef kind="function" id="class_s_p_feature_1a4e62ad63eaf367f635ab1644ba29af18" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>epicsInt64</type>
@@ -166,7 +166,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.h" line="23" column="24" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.cpp" bodystart="49" bodyend="52"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.h" line="23" column="24" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.cpp" bodystart="55" bodyend="58"/>
       </memberdef>
       <memberdef kind="function" id="class_s_p_feature_1aa583eccc762ec9981e5f0ea218bbe48a" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>epicsInt64</type>
@@ -183,7 +183,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.h" line="24" column="24" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.cpp" bodystart="54" bodyend="57"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.h" line="24" column="24" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.cpp" bodystart="60" bodyend="63"/>
       </memberdef>
       <memberdef kind="function" id="class_s_p_feature_1a7366a8b2907d8b080dc92bb52e916055" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>epicsInt64</type>
@@ -200,7 +200,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.h" line="25" column="24" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.cpp" bodystart="59" bodyend="62"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.h" line="25" column="24" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.cpp" bodystart="65" bodyend="68"/>
       </memberdef>
       <memberdef kind="function" id="class_s_p_feature_1a0332d03256f04cd7e34c013e2b6d1662" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>epicsInt64</type>
@@ -217,7 +217,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.h" line="26" column="24" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.cpp" bodystart="64" bodyend="67"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.h" line="26" column="24" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.cpp" bodystart="70" bodyend="73"/>
       </memberdef>
       <memberdef kind="function" id="class_s_p_feature_1a1ef811440ec8839608bf1f88ff85f000" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -235,7 +235,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.h" line="27" column="18" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.cpp" bodystart="69" bodyend="72"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.h" line="27" column="18" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.cpp" bodystart="75" bodyend="78"/>
       </memberdef>
       <memberdef kind="function" id="class_s_p_feature_1ad32da3aff0bb8d92f425f9c3a99e4c58" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
@@ -252,7 +252,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.h" line="28" column="18" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.cpp" bodystart="74" bodyend="77"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.h" line="28" column="18" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.cpp" bodystart="80" bodyend="83"/>
       </memberdef>
       <memberdef kind="function" id="class_s_p_feature_1a4c0aea0b0e5eb87ba7a0d678662c2cde" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -270,7 +270,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.h" line="29" column="18" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.cpp" bodystart="79" bodyend="82"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.h" line="29" column="18" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.cpp" bodystart="85" bodyend="88"/>
       </memberdef>
       <memberdef kind="function" id="class_s_p_feature_1a3f5445cae3e3de3a9186457f1ea612f0" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>double</type>
@@ -287,7 +287,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.h" line="30" column="20" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.cpp" bodystart="84" bodyend="87"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.h" line="30" column="20" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.cpp" bodystart="90" bodyend="93"/>
       </memberdef>
       <memberdef kind="function" id="class_s_p_feature_1abeba8dbeceb601341a258496545ec9c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>double</type>
@@ -304,7 +304,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.h" line="31" column="20" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.cpp" bodystart="94" bodyend="97"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.h" line="31" column="20" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.cpp" bodystart="100" bodyend="103"/>
       </memberdef>
       <memberdef kind="function" id="class_s_p_feature_1aa469b0637b86b2736d5bbec9ccff04b3" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>double</type>
@@ -321,7 +321,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.h" line="32" column="20" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.cpp" bodystart="99" bodyend="102"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.h" line="32" column="20" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.cpp" bodystart="105" bodyend="108"/>
       </memberdef>
       <memberdef kind="function" id="class_s_p_feature_1a42fbcb8d84d5704fdb9abd79b3e5c0d2" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -339,7 +339,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.h" line="33" column="18" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.cpp" bodystart="89" bodyend="92"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.h" line="33" column="18" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.cpp" bodystart="95" bodyend="98"/>
       </memberdef>
       <memberdef kind="function" id="class_s_p_feature_1ac7d4eb85e5cb58210835f102d8d0e2bc" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>int</type>
@@ -356,7 +356,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.h" line="34" column="17" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.cpp" bodystart="104" bodyend="107"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.h" line="34" column="17" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.cpp" bodystart="110" bodyend="113"/>
       </memberdef>
       <memberdef kind="function" id="class_s_p_feature_1a3a54767659084e1968fa75c04391a111" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -374,7 +374,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.h" line="35" column="18" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.cpp" bodystart="109" bodyend="112"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.h" line="35" column="18" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.cpp" bodystart="115" bodyend="118"/>
       </memberdef>
       <memberdef kind="function" id="class_s_p_feature_1a7b427c91197f548813d9e437dafee80e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>std::string</type>
@@ -391,7 +391,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.h" line="36" column="25" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.cpp" bodystart="114" bodyend="119"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.h" line="36" column="25" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.cpp" bodystart="120" bodyend="125"/>
       </memberdef>
       <memberdef kind="function" id="class_s_p_feature_1ae7c2da3d4e6db77f9bff77c55d42b41d" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -409,7 +409,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.h" line="37" column="18" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.cpp" bodystart="121" bodyend="125"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.h" line="37" column="18" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.cpp" bodystart="127" bodyend="131"/>
       </memberdef>
       <memberdef kind="function" id="class_s_p_feature_1ac790129625b6df53ae24b728ec9077eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -431,7 +431,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.h" line="38" column="18" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.cpp" bodystart="143" bodyend="156"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.h" line="38" column="18" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.cpp" bodystart="149" bodyend="162"/>
       </memberdef>
       <memberdef kind="function" id="class_s_p_feature_1a4b2a3f63d75d0cd04cf9f03bf191866a" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>std::string</type>
@@ -448,7 +448,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.h" line="39" column="25" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.cpp" bodystart="127" bodyend="130"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.h" line="39" column="25" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.cpp" bodystart="133" bodyend="136"/>
       </memberdef>
       <memberdef kind="function" id="class_s_p_feature_1a7fc3b3ceb15cc3ad3aad66f9a546920f" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -466,7 +466,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.h" line="40" column="18" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.cpp" bodystart="132" bodyend="136"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.h" line="40" column="18" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.cpp" bodystart="138" bodyend="142"/>
       </memberdef>
       <memberdef kind="function" id="class_s_p_feature_1a4110287d09f728c8a47a08affbd0a85a" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -483,7 +483,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.h" line="41" column="18" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.cpp" bodystart="138" bodyend="141"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.h" line="41" column="18" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.cpp" bodystart="144" bodyend="147"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

@@ -154,15 +154,15 @@ dbLoadDatabase(&quot;$(TOP)/dbd/simDetectorApp.dbd&quot;)
 simDetectorApp_registerRecordDeviceDriver(pdbbase) 
 
 # Prefix for all records
-epicsEnvSet(&quot;PREFIX&quot;, &quot;13SIM1:&quot;)
+epicsEnvSet(&quot;PREFIX&quot;, &quot;$(MYPVPREFIX)DAE:&quot;)
 # The port name for the detector
 epicsEnvSet(&quot;PORT&quot;,   &quot;SIM1&quot;)
 # The queue size for all plugins
 epicsEnvSet(&quot;QSIZE&quot;,  &quot;20&quot;)
 # The maximum image width; used to set the maximum size for this driver and for row profiles in the NDPluginStats plugin
-epicsEnvSet(&quot;XSIZE&quot;,  &quot;1024&quot;)
+epicsEnvSet(&quot;XSIZE&quot;,  &quot;512&quot;)
 # The maximum image height; used to set the maximum size for this driver and for column profiles in the NDPluginStats plugin
-epicsEnvSet(&quot;YSIZE&quot;,  &quot;1024&quot;)
+epicsEnvSet(&quot;YSIZE&quot;,  &quot;100&quot;)
 # The maximum number of time series points in the NDPluginStats plugin
 epicsEnvSet(&quot;NCHANS&quot;, &quot;2048&quot;)
 # The maximum number of frames buffered in the NDPluginCircularBuff plugin
@@ -184,7 +184,7 @@ asynSetMinTimerPeriod(0.001)
 # Do not set EPICS_CA_MAX_ARRAY_BYTES to a value much larger than that required, because EPICS Channel Access actually
 # allocates arrays of this size every time it needs a buffer larger than 16K.
 # Uncomment the following line to set it in the IOC.
-#epicsEnvSet(&quot;EPICS_CA_MAX_ARRAY_BYTES&quot;, &quot;10000000&quot;)
+epicsEnvSet(&quot;EPICS_CA_MAX_ARRAY_BYTES&quot;, &quot;100000000&quot;)
 
 # Create a simDetector driver
 # simDetectorConfig(const char *portName, int maxSizeX, int maxSizeY, int dataType,
@@ -206,7 +206,7 @@ NDStdArraysConfigure(&quot;Image1&quot;, 20, 0, &quot;$(PORT)&quot;, 0, 0, 0, 0,
 
 # This creates a waveform large enough for 2000x2000x3 (e.g. RGB color) arrays.
 # This waveform only allows transporting 8-bit images
-dbLoadRecords(&quot;NDStdArrays.template&quot;, &quot;P=$(PREFIX),R=image1:,PORT=Image1,ADDR=0,TIMEOUT=1,NDARRAY_PORT=$(PORT),TYPE=Int8,FTVL=UCHAR,NELEMENTS=12000000&quot;)
+dbLoadRecords(&quot;NDStdArrays.template&quot;, &quot;P=$(PREFIX),R=image1:,PORT=Image1,ADDR=0,TIMEOUT=1,NDARRAY_PORT=$(PORT),TYPE=Int8,FTVL=UCHAR,NELEMENTS=12000000,ENABLED=1&quot;)
 # This waveform only allows transporting 16-bit images
 #dbLoadRecords(&quot;NDStdArrays.template&quot;, &quot;P=$(PREFIX),R=image1:,PORT=Image1,ADDR=0,TIMEOUT=1,NDARRAY_PORT=$(PORT),TYPE=Int16,FTVL=SHORT,NELEMENTS=12000000&quot;)
 # This waveform allows transporting 32-bit images

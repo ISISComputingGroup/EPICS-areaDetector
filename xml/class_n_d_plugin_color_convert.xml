@@ -167,7 +167,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginColorConvert.h" line="28" column="5" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginColorConvert.cpp" bodystart="686" bodyend="713"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginColorConvert.h" line="28" column="5" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginColorConvert.cpp" bodystart="725" bodyend="752"/>
       </memberdef>
       <memberdef kind="function" id="class_n_d_plugin_color_convert_1ad4cd8c3bd583d2b1c69db9dc16fe5378" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -196,7 +196,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginColorConvert.h" line="34" column="10" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginColorConvert.cpp" bodystart="607" bodyend="663"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginColorConvert.h" line="34" column="10" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginColorConvert.cpp" bodystart="646" bodyend="702"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -220,7 +220,29 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginColorConvert.h" line="43" column="22" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginColorConvert.cpp" bodystart="28" bodyend="596"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginColorConvert.h" line="43" column="22" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginColorConvert.cpp" bodystart="59" bodyend="635"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_d_plugin_color_convert_1ac52ea736156fcca2606892bede2e7368" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename epicsType</type>
+          </param>
+        </templateparamlist>
+        <type>unsigned char</type>
+        <definition>unsigned char NDPluginColorConvert::falseColorIndex</definition>
+        <argsstring>(epicsType value)</argsstring>
+        <name>falseColorIndex</name>
+        <param>
+          <type>epicsType</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginColorConvert.h" line="44" column="27" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginColorConvert.cpp" bodystart="51" bodyend="55"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -247,7 +269,7 @@
 <para>RGB3 to RGB1 or RGB2  </para>
 </listitem>
 </itemizedlist>
-It also applies a false color map if requested for 8 bit data If the conversion required by the input color mode and output color mode are not in this supported list then the <ref refid="class_n_d_array" kindref="compound">NDArray</ref> is passed on without conversion. </para>
+It also applies a false color map if requested If the conversion required by the input color mode and output color mode are not in this supported list then the <ref refid="class_n_d_array" kindref="compound">NDArray</ref> is passed on without conversion. </para>
     </detaileddescription>
     <inheritancegraph>
       <node id="2">
@@ -358,7 +380,7 @@ It also applies a false color map if requested for 8 bit data If the conversion 
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginColorConvert.h" line="26" column="1" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginColorConvert.h" bodystart="26" bodyend="44"/>
+    <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginColorConvert.h" line="26" column="1" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginColorConvert.h" bodystart="26" bodyend="46"/>
     <listofallmembers>
       <member refid="classasyn_n_d_array_driver_1aa06c19f650b4619a7bdbf3a79397c3d3" prot="protected" virt="non-virtual"><scope>NDPluginColorConvert</scope><name>ADAcquire</name></member>
       <member refid="classasyn_n_d_array_driver_1aaeb5af71e22323b6a3d4f51be380bc7a" prot="protected" virt="non-virtual"><scope>NDPluginColorConvert</scope><name>ADAcquireBusy</name></member>
@@ -380,6 +402,7 @@ It also applies a false color map if requested for 8 bit data If the conversion 
       <member refid="classasyn_n_d_array_driver_1acc2afad33faf8e45d6f21e251133ed94" prot="public" virt="non-virtual"><scope>NDPluginColorConvert</scope><name>decrementQueuedArrayCount</name></member>
       <member refid="class_n_d_plugin_driver_1aa511b82dd2d49966c199b1ed4f72101f" prot="public" virt="virtual"><scope>NDPluginColorConvert</scope><name>driverCallback</name></member>
       <member refid="class_n_d_plugin_driver_1ad2a1210161a2f542f347482aa93f3797" prot="protected" virt="virtual"><scope>NDPluginColorConvert</scope><name>endProcessCallbacks</name></member>
+      <member refid="class_n_d_plugin_color_convert_1ac52ea736156fcca2606892bede2e7368" prot="private" virt="non-virtual"><scope>NDPluginColorConvert</scope><name>falseColorIndex</name></member>
       <member refid="classasyn_n_d_array_driver_1a7492ba858d885e2ba226a1c7ef9dcf72" prot="public" virt="virtual"><scope>NDPluginColorConvert</scope><name>getAttributes</name></member>
       <member refid="classasyn_n_d_array_driver_1a1a369bc9b605bba000f782c69429622b" prot="public" virt="non-virtual"><scope>NDPluginColorConvert</scope><name>getQueuedArrayCount</name></member>
       <member refid="classasyn_n_d_array_driver_1ad55549fca656bc01cbe0e3c92e4d29e3" prot="public" virt="non-virtual"><scope>NDPluginColorConvert</scope><name>incrementQueuedArrayCount</name></member>

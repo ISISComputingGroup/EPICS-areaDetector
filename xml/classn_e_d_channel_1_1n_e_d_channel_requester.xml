@@ -48,7 +48,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/nEDChannel.h" line="36" column="5" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/nEDChannel.cpp" bodystart="35" bodyend="39"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/nEDChannel.h" line="36" column="5" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/nEDChannel.cpp" bodystart="36" bodyend="40"/>
       </memberdef>
       <memberdef kind="function" id="classn_e_d_channel_1_1n_e_d_channel_requester_1a0c0b942afaa713c58e5b03442b851c5e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type></type>
@@ -61,7 +61,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/nEDChannel.h" line="37" column="13" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/nEDChannel.cpp" bodystart="41" bodyend="44"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/nEDChannel.h" line="37" column="13" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/nEDChannel.cpp" bodystart="42" bodyend="45"/>
       </memberdef>
       <memberdef kind="function" id="classn_e_d_channel_1_1n_e_d_channel_requester_1a631773ba8dcaa4a9a941ad48e93448ce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -82,7 +82,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/nEDChannel.h" line="39" column="10" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/nEDChannel.cpp" bodystart="46" bodyend="49"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/nEDChannel.h" line="39" column="10" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/nEDChannel.cpp" bodystart="47" bodyend="50"/>
       </memberdef>
       <memberdef kind="function" id="classn_e_d_channel_1_1n_e_d_channel_requester_1a69b24631bc410d8e75c337eea275ff34" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -103,7 +103,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/nEDChannel.h" line="40" column="10" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/nEDChannel.cpp" bodystart="51" bodyend="59"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/nEDChannel.h" line="40" column="10" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/nEDChannel.cpp" bodystart="52" bodyend="60"/>
       </memberdef>
       <memberdef kind="function" id="classn_e_d_channel_1_1n_e_d_channel_requester_1a5e42ccd909b6e0fc977f8be62b32c8f8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -120,7 +120,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/nEDChannel.h" line="41" column="10" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/nEDChannel.cpp" bodystart="61" bodyend="65"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/nEDChannel.h" line="41" column="10" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/nEDChannel.cpp" bodystart="62" bodyend="66"/>
       </memberdef>
       <memberdef kind="function" id="classn_e_d_channel_1_1n_e_d_channel_requester_1aba6acba70c0d7b0b1c74209a0d85ae89" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::string</type>
@@ -133,7 +133,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/nEDChannel.h" line="42" column="17" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/nEDChannel.cpp" bodystart="67" bodyend="70"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/nEDChannel.h" line="42" column="17" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/nEDChannel.cpp" bodystart="68" bodyend="71"/>
       </memberdef>
       <memberdef kind="function" id="classn_e_d_channel_1_1n_e_d_channel_requester_1ade2cfd1f4db70b263132eaffb07bae26" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -154,7 +154,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/nEDChannel.h" line="43" column="10" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/nEDChannel.cpp" bodystart="72" bodyend="77"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/nEDChannel.h" line="43" column="10" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/nEDChannel.cpp" bodystart="73" bodyend="78"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

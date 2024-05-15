@@ -1,0 +1,741 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_n_d_plugin_focus_metrics_8cpp" kind="file" language="C++">
+    <compoundname>NDPluginFocusMetrics.cpp</compoundname>
+    <includes local="no">stdlib.h</includes>
+    <includes local="no">string.h</includes>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">math.h</includes>
+    <includes local="no">limits.h</includes>
+    <includes local="no">float.h</includes>
+    <includes local="no">epicsString.h</includes>
+    <includes local="no">epicsMutex.h</includes>
+    <includes local="no">iocsh.h</includes>
+    <includes local="no">asynDriver.h</includes>
+    <includes local="no">epicsExport.h</includes>
+    <includes refid="_n_d_plugin_driver_8h" local="yes">NDPluginDriver.h</includes>
+    <includes refid="_n_d_plugin_focus_metrics_8h" local="yes">NDPluginFocusMetrics.h</includes>
+    <incdepgraph>
+      <node id="10">
+        <label>iocsh.h</label>
+      </node>
+      <node id="15">
+        <label>epicsTypes.h</label>
+      </node>
+      <node id="7">
+        <label>float.h</label>
+      </node>
+      <node id="1">
+        <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginFocusMetrics.cpp</label>
+        <link refid="_n_d_plugin_focus_metrics_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>stdlib.h</label>
+      </node>
+      <node id="9">
+        <label>epicsMutex.h</label>
+      </node>
+      <node id="20">
+        <label>epicsVersion.h</label>
+      </node>
+      <node id="27">
+        <label>string</label>
+      </node>
+      <node id="17">
+        <label>epicsThread.h</label>
+      </node>
+      <node id="30">
+        <label>Codec.h</label>
+        <link refid="_codec_8h"/>
+      </node>
+      <node id="24">
+        <label>NDArray.h</label>
+        <link refid="_n_d_array_8h"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>epicsExport.h</label>
+      </node>
+      <node id="31">
+        <label>ADCoreVersion.h</label>
+        <link refid="_a_d_core_version_8h"/>
+      </node>
+      <node id="6">
+        <label>limits.h</label>
+      </node>
+      <node id="29">
+        <label>NDAttributeList.h</label>
+        <link refid="_n_d_attribute_list_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>epicsString.h</label>
+      </node>
+      <node id="3">
+        <label>string.h</label>
+      </node>
+      <node id="25">
+        <label>ellLib.h</label>
+      </node>
+      <node id="28">
+        <label>ADCoreAPI.h</label>
+        <link refid="_a_d_core_a_p_i_8h"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>asynDriver.h</label>
+      </node>
+      <node id="32">
+        <label>NDPluginFocusMetrics.h</label>
+        <link refid="_n_d_plugin_focus_metrics_8h"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>math.h</label>
+      </node>
+      <node id="19">
+        <label>NDPluginAPI.h</label>
+        <link refid="_n_d_plugin_a_p_i_8h"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>epicsTime.h</label>
+      </node>
+      <node id="23">
+        <label>asynPortDriver.h</label>
+      </node>
+      <node id="26">
+        <label>NDAttribute.h</label>
+        <link refid="_n_d_attribute_8h"/>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>set</label>
+      </node>
+      <node id="13">
+        <label>NDPluginDriver.h</label>
+        <link refid="_n_d_plugin_driver_8h"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>epicsMessageQueue.h</label>
+      </node>
+      <node id="21">
+        <label>asynNDArrayDriver.h</label>
+        <link refid="asyn_n_d_array_driver_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>stdio.h</label>
+      </node>
+      <node id="22">
+        <label>epicsEvent.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_n_d_plugin_focus_metrics_8cpp_1af0e94d13028051cd5339d204bfbb057d" prot="public" static="yes" mutable="no">
+        <type>const char *</type>
+        <definition>const char* driverName</definition>
+        <argsstring></argsstring>
+        <name>driverName</name>
+        <initializer>=&quot;NDPluginFocusMetrics&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginFocusMetrics.cpp" line="27" column="19" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginFocusMetrics.cpp" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_n_d_plugin_focus_metrics_8cpp_1a13021e744179110a6114bf84e9d47f32" prot="public" static="yes" mutable="no">
+        <type>const iocshArg</type>
+        <definition>const iocshArg initArg0</definition>
+        <argsstring></argsstring>
+        <name>initArg0</name>
+        <initializer>= { &quot;portName&quot;,iocshArgString}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginFocusMetrics.cpp" line="229" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginFocusMetrics.cpp" bodystart="229" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_n_d_plugin_focus_metrics_8cpp_1a85f312f39f3c368a5fa10d1039dc40b2" prot="public" static="yes" mutable="no">
+        <type>const iocshArg</type>
+        <definition>const iocshArg initArg1</definition>
+        <argsstring></argsstring>
+        <name>initArg1</name>
+        <initializer>= { &quot;frame queue size&quot;,iocshArgInt}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginFocusMetrics.cpp" line="230" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginFocusMetrics.cpp" bodystart="230" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_n_d_plugin_focus_metrics_8cpp_1a645a7d7d0d71a7522373e2af4008b520" prot="public" static="yes" mutable="no">
+        <type>const iocshArg</type>
+        <definition>const iocshArg initArg2</definition>
+        <argsstring></argsstring>
+        <name>initArg2</name>
+        <initializer>= { &quot;blocking callbacks&quot;,iocshArgInt}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginFocusMetrics.cpp" line="231" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginFocusMetrics.cpp" bodystart="231" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_n_d_plugin_focus_metrics_8cpp_1aaa425474fd6655fa6347e1933b29038a" prot="public" static="yes" mutable="no">
+        <type>const iocshArg</type>
+        <definition>const iocshArg initArg3</definition>
+        <argsstring></argsstring>
+        <name>initArg3</name>
+        <initializer>= { &quot;NDArrayPort&quot;,iocshArgString}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginFocusMetrics.cpp" line="232" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginFocusMetrics.cpp" bodystart="232" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_n_d_plugin_focus_metrics_8cpp_1a945c4d0bc0e2bc869aeaf5c6a815368a" prot="public" static="yes" mutable="no">
+        <type>const iocshArg</type>
+        <definition>const iocshArg initArg4</definition>
+        <argsstring></argsstring>
+        <name>initArg4</name>
+        <initializer>= { &quot;NDArrayAddr&quot;,iocshArgInt}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginFocusMetrics.cpp" line="233" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginFocusMetrics.cpp" bodystart="233" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_n_d_plugin_focus_metrics_8cpp_1ac7e214be38a3b3bface5e0370ae97db0" prot="public" static="yes" mutable="no">
+        <type>const iocshArg</type>
+        <definition>const iocshArg initArg5</definition>
+        <argsstring></argsstring>
+        <name>initArg5</name>
+        <initializer>= { &quot;maxBuffers&quot;,iocshArgInt}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginFocusMetrics.cpp" line="234" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginFocusMetrics.cpp" bodystart="234" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_n_d_plugin_focus_metrics_8cpp_1a43397205694aec859f3b5cb14a85edc3" prot="public" static="yes" mutable="no">
+        <type>const iocshArg</type>
+        <definition>const iocshArg initArg6</definition>
+        <argsstring></argsstring>
+        <name>initArg6</name>
+        <initializer>= { &quot;maxMemory&quot;,iocshArgInt}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginFocusMetrics.cpp" line="235" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginFocusMetrics.cpp" bodystart="235" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_n_d_plugin_focus_metrics_8cpp_1a36049b095d9ed1f56a41821a2c8fc661" prot="public" static="yes" mutable="no">
+        <type>const iocshArg</type>
+        <definition>const iocshArg initArg7</definition>
+        <argsstring></argsstring>
+        <name>initArg7</name>
+        <initializer>= { &quot;priority&quot;,iocshArgInt}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginFocusMetrics.cpp" line="236" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginFocusMetrics.cpp" bodystart="236" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_n_d_plugin_focus_metrics_8cpp_1a62a0c5258a2c1049720be5c31729f76d" prot="public" static="yes" mutable="no">
+        <type>const iocshArg</type>
+        <definition>const iocshArg initArg8</definition>
+        <argsstring></argsstring>
+        <name>initArg8</name>
+        <initializer>= { &quot;stackSize&quot;,iocshArgInt}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginFocusMetrics.cpp" line="237" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginFocusMetrics.cpp" bodystart="237" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_n_d_plugin_focus_metrics_8cpp_1ac0d7f455ac7138e5bcb473b630294718" prot="public" static="yes" mutable="no">
+        <type>const iocshArg *const</type>
+        <definition>const iocshArg* const initArgs[]</definition>
+        <argsstring>[]</argsstring>
+        <name>initArgs</name>
+        <initializer>= {&amp;initArg0,
+                                            &amp;initArg1,
+                                            &amp;initArg2,
+                                            &amp;initArg3,
+                                            &amp;initArg4,
+                                            &amp;initArg5,
+                                            &amp;initArg6,
+                                            &amp;initArg7,
+                                            &amp;initArg8}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginFocusMetrics.cpp" line="238" column="30" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginFocusMetrics.cpp" bodystart="238" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_n_d_plugin_focus_metrics_8cpp_1a469a3ecf9fff33f8f388acddffc8db6a" prot="public" static="yes" mutable="no">
+        <type>const iocshFuncDef</type>
+        <definition>const iocshFuncDef initFuncDef</definition>
+        <argsstring></argsstring>
+        <name>initFuncDef</name>
+        <initializer>= {&quot;NDFocusMetricsConfigure&quot;, 9, initArgs}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginFocusMetrics.cpp" line="248" column="27" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginFocusMetrics.cpp" bodystart="248" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_n_d_plugin_focus_metrics_8cpp_1ac4486cbdddc5e9c62a984cdc546f72a8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int NDFocusMetricsConfigure</definition>
+        <argsstring>(const char *portName, int queueSize, int blockingCallbacks, const char *NDArrayPort, int NDArrayAddr, int maxBuffers, size_t maxMemory, int priority, int stackSize)</argsstring>
+        <name>NDFocusMetricsConfigure</name>
+        <param>
+          <type>const char *</type>
+          <declname>portName</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>queueSize</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>blockingCallbacks</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>NDArrayPort</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>NDArrayAddr</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>maxBuffers</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>maxMemory</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>priority</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>stackSize</declname>
+        </param>
+        <briefdescription>
+<para>Configuration command. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginFocusMetrics.cpp" line="217" column="16" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginFocusMetrics.cpp" bodystart="217" bodyend="226"/>
+      </memberdef>
+      <memberdef kind="function" id="_n_d_plugin_focus_metrics_8cpp_1aeeec53c20b81d2e7f49be49509087df5" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void initCallFunc</definition>
+        <argsstring>(const iocshArgBuf *args)</argsstring>
+        <name>initCallFunc</name>
+        <param>
+          <type>const iocshArgBuf *</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginFocusMetrics.cpp" line="250" column="13" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginFocusMetrics.cpp" bodystart="250" bodyend="255"/>
+      </memberdef>
+      <memberdef kind="function" id="_n_d_plugin_focus_metrics_8cpp_1a3be185a8ee84d095a0c1e511594edb8e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void NDFocusMetricsRegister</definition>
+        <argsstring>(void)</argsstring>
+        <name>NDFocusMetricsRegister</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginFocusMetrics.cpp" line="257" column="17" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginFocusMetrics.cpp" bodystart="257" bodyend="260"/>
+      </memberdef>
+      <memberdef kind="function" id="_n_d_plugin_focus_metrics_8cpp_1a7295b735ce8d125647e93897a363cbed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>epicsExportRegistrar</definition>
+        <argsstring>(NDFocusMetricsRegister)</argsstring>
+        <name>epicsExportRegistrar</name>
+        <param>
+          <type><ref refid="_n_d_plugin_focus_metrics_8cpp_1a3be185a8ee84d095a0c1e511594edb8e" kindref="member">NDFocusMetricsRegister</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginFocusMetrics.cpp" line="263" column="1" declfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginFocusMetrics.cpp" declline="263" declcolumn="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>NDPluginFocusMetrics.cpp</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Focus-metrics<sp/>calculation<sp/>plugin</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Author:<sp/>Gabriele<sp/>Salvato</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>Created<sp/>October<sp/>19,<sp/>2014</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;math.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;limits.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;float.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;epicsString.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;epicsMutex.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iocsh.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;asynDriver.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;epicsExport.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_n_d_plugin_driver_8h" kindref="compound">NDPluginDriver.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_n_d_plugin_focus_metrics_8h" kindref="compound">NDPluginFocusMetrics.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*driverName=</highlight><highlight class="stringliteral">&quot;NDPluginFocusMetrics&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*<sp/>Focus<sp/>Metrics<sp/>Contrast<sp/>Based.<sp/>See:<sp/></highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*<sp/>Xu<sp/>et<sp/>al.</highlight></codeline>
+<codeline lineno="32"><highlight class="comment"><sp/>*<sp/>Robust<sp/>Automatic<sp/>Focus<sp/>Algorithm<sp/>for<sp/>Low<sp/>Contrast<sp/>Images<sp/>Using<sp/>a<sp/>New<sp/>Contrast<sp/>Measure</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*<sp/>Sensors<sp/>2011,<sp/>11,<sp/>8281<sp/>8294</highlight></codeline>
+<codeline lineno="34"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>epicsType&gt;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><ref refid="class_n_d_plugin_focus_metrics_1ada0e1b3e1ff1354b1d10e1eb3fea1284" kindref="member">NDPluginFocusMetrics::doComputeFocusMetricsT</ref>(<ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*pArray,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*pFocusMetrics,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dNormFactor)<sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>n_rows,<sp/>n_columns;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>epicsType<sp/>*pData<sp/>=<sp/>(epicsType<sp/>*)pArray-&gt;<ref refid="class_n_d_array_1a9581f9d8f38225a2c2977bbed70fa2b8" kindref="member">pData</ref>;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_n_d_array_info" kindref="compound">NDArrayInfo</ref><sp/>arrayInfo;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>gXY;<sp/></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>epicsType<sp/>*pRow,<sp/>*pRowM1,<sp/>*pRowP1;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;unlock();</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>*pFocusMetrics<sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>pArray-&gt;<ref refid="class_n_d_array_1a47af97c0e2b8255d756207908f6b470d" kindref="member">getInfo</ref>(&amp;arrayInfo);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>n_rows<sp/><sp/><sp/><sp/>=<sp/>arrayInfo.xSize;</highlight><highlight class="comment">//<sp/>Rows<sp/>of<sp/>the<sp/>image</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>n_columns<sp/>=<sp/>arrayInfo.ySize;</highlight><highlight class="comment">//<sp/>Columns<sp/>of<sp/>the<sp/>image</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>j=1;<sp/>j&lt;n_rows-2;<sp/>j++)<sp/>{</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>pRowM1<sp/>=<sp/>pData+(j-1)*n_columns;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>pRow<sp/><sp/><sp/>=<sp/>pData+j<sp/><sp/><sp/><sp/>*n_columns;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>pRowP1<sp/>=<sp/>pData+(j+1)*n_columns;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>k=1;<sp/>k&lt;n_columns-2;<sp/>k++)<sp/>{</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gXY<sp/><sp/>=<sp/>fabs(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">double</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(*(pRow+k)-(*(pRow+k-1))))<sp/>/<sp/>dNormFactor;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gXY<sp/>+=<sp/>fabs(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">double</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(*(pRow+k)-(*(pRow+k+1))))<sp/>/<sp/>dNormFactor;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gXY<sp/>+=<sp/>fabs(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">double</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(*(pRow+k)-(*(pRowM1+k))))<sp/>/<sp/>dNormFactor;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gXY<sp/>+=<sp/>fabs(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">double</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(*(pRow+k)-(*(pRowP1+k))))<sp/>/<sp/>dNormFactor;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*pFocusMetrics<sp/>+=<sp/>gXY*gXY;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;lock();</highlight></codeline>
+<codeline lineno="64"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><ref refid="class_n_d_plugin_focus_metrics_1aad5db69084fcc278fdfd57826a5ca40f" kindref="member">NDPluginFocusMetrics::doComputeFocusMetrics</ref>(<ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*pArray,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*pFocusMetrics)<sp/>{</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal">(pArray-&gt;<ref refid="class_n_d_array_1ad3757e8e6a87bc8a5889f60a3d0cdb59" kindref="member">dataType</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="_n_d_attribute_8h_1a34b835bcabc3b7f546f4b25c5767cb16aa4bc4803d2c1a0073497f0b4b4d2243f" kindref="member">NDInt8</ref>:</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>doComputeFocusMetricsT&lt;epicsInt8&gt;(pArray,<sp/>pFocusMetrics,<sp/>-</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">(-SCHAR_MIN));</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="_n_d_attribute_8h_1a34b835bcabc3b7f546f4b25c5767cb16aa5f7c86d8f7853be5eb27c00481f93de" kindref="member">NDUInt8</ref>:</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>doComputeFocusMetricsT&lt;epicsUInt8&gt;(pArray,<sp/>pFocusMetrics,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">(UCHAR_MAX));</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="_n_d_attribute_8h_1a34b835bcabc3b7f546f4b25c5767cb16a92d371d7b532347d945fba329d356cd1" kindref="member">NDInt16</ref>:</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>doComputeFocusMetricsT&lt;epicsInt16&gt;(pArray,<sp/>pFocusMetrics,<sp/>-</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">(SHRT_MIN));</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="_n_d_attribute_8h_1a34b835bcabc3b7f546f4b25c5767cb16a174cfb9ba69c78761d4d9d25ec1bd8df" kindref="member">NDUInt16</ref>:</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>doComputeFocusMetricsT&lt;epicsUInt16&gt;(pArray,<sp/>pFocusMetrics,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">(USHRT_MAX));</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="_n_d_attribute_8h_1a34b835bcabc3b7f546f4b25c5767cb16a460cbd8f43b3531669bc85cc3a4e9a80" kindref="member">NDInt32</ref>:</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>doComputeFocusMetricsT&lt;epicsInt32&gt;(pArray,<sp/>pFocusMetrics,<sp/>-</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">(INT_MIN));</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="_n_d_attribute_8h_1a34b835bcabc3b7f546f4b25c5767cb16a0492c093c2dcd6eebcaf15f57a2f359a" kindref="member">NDUInt32</ref>:</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>doComputeFocusMetricsT&lt;epicsUInt32&gt;(pArray,<sp/>pFocusMetrics,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">(UINT_MAX));</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="_n_d_attribute_8h_1a34b835bcabc3b7f546f4b25c5767cb16a9a2e64c19df36030bbd572addce4e835" kindref="member">NDFloat32</ref>:</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>doComputeFocusMetricsT&lt;epicsFloat32&gt;(pArray,<sp/>pFocusMetrics,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">(FLT_MAX));</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="_n_d_attribute_8h_1a34b835bcabc3b7f546f4b25c5767cb16a623c10faaa72cf1b79d5ab4916941298" kindref="member">NDFloat64</ref>:</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>doComputeFocusMetricsT&lt;epicsFloat64&gt;(pArray,<sp/>pFocusMetrics,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">(DBL_MAX));</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">(<ref refid="_n_d_attribute_8h_1abc18066d839f0ee35d8d082524e9fcb2" kindref="member">ND_ERROR</ref>);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">(<ref refid="_n_d_attribute_8h_1a0bcdf5b219c47403272d8eb586395733" kindref="member">ND_SUCCESS</ref>);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><ref refid="class_n_d_plugin_focus_metrics_1a469b6bb48fbe4743d1a9f36f857de79d" kindref="member">NDPluginFocusMetrics::processCallbacks</ref>(<ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*pArray)<sp/>{</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/></highlight></codeline>
+<codeline lineno="109"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>This<sp/>function<sp/>calculates<sp/>the<sp/>focus<sp/>metrics<sp/>of<sp/>a<sp/>given<sp/>image.</highlight></codeline>
+<codeline lineno="110"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>It<sp/>is<sp/>called<sp/>with<sp/>the<sp/>mutex<sp/>already<sp/>locked.<sp/></highlight></codeline>
+<codeline lineno="111"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>It<sp/>unlocks<sp/>it<sp/>during<sp/>long<sp/>calculations<sp/>when<sp/>private</highlight></codeline>
+<codeline lineno="112"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>structures<sp/>don&apos;t<sp/>need<sp/>to<sp/>be<sp/>protected.</highlight></codeline>
+<codeline lineno="113"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>focusMetrics,<sp/>*pFocusMetrics<sp/>=<sp/>&amp;focusMetrics;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>computeFocusMetrics;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_n_d_array_info" kindref="compound">NDArrayInfo</ref><sp/>arrayInfo;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>functionName<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;processCallbacks&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Call<sp/>the<sp/>base<sp/>class<sp/>method<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_n_d_plugin_driver_1a75ed5528f584d90e4f789aef058661cd" kindref="member">NDPluginDriver::processCallbacks</ref>(pArray);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>getIntegerParam(<ref refid="class_n_d_plugin_focus_metrics_1a225e53f636efd510a5c23abb97951334" kindref="member">NDPluginFocusMetricsComputeFocus</ref>,<sp/><sp/>&amp;computeFocusMetrics);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(computeFocusMetrics)<sp/>{</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pArray-&gt;<ref refid="class_n_d_array_1a47af97c0e2b8255d756207908f6b470d" kindref="member">getInfo</ref>(&amp;arrayInfo);</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_n_d_plugin_focus_metrics_1aad5db69084fcc278fdfd57826a5ca40f" kindref="member">doComputeFocusMetrics</ref>(pArray,<sp/>pFocusMetrics);</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>setDoubleParam(<ref refid="class_n_d_plugin_focus_metrics_1a5721b04bdee0033b66edda4ae6f27343" kindref="member">NDPluginFocusMetricsFocusValue</ref>,<sp/>focusMetrics);</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Focus<sp/>Value=<sp/>%f\n&quot;</highlight><highlight class="normal">,<sp/>focusMetrics);</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynPrint(this-&gt;pasynUserSelf,<sp/>ASYN_TRACEIO_DRIVER,</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)pArray-&gt;<ref refid="class_n_d_array_1a9581f9d8f38225a2c2977bbed70fa2b8" kindref="member">pData</ref>,<sp/>arrayInfo.<ref refid="struct_n_d_array_info_1af8f050c2c099f07311a39cc544693d00" kindref="member">totalBytes</ref>,</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s:%s<sp/>focus<sp/>Value=%f&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName,<sp/>focusMetrics);</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>callParamCallbacks();</highlight></codeline>
+<codeline lineno="135"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal">asynStatus</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><ref refid="class_n_d_plugin_focus_metrics_1a6302db29ae541a4960cfaf297ada2fe8" kindref="member">NDPluginFocusMetrics::writeFloat64</ref>(asynUser<sp/>*pasynUser,<sp/>epicsFloat64<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>=<sp/>pasynUser-&gt;reason;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>asynStatus<sp/>status<sp/>=<sp/>asynSuccess;</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*functionName<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;writeFloat64&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Set<sp/>the<sp/>parameter<sp/>and<sp/>readback<sp/>in<sp/>the<sp/>parameter<sp/>library.<sp/><sp/>This<sp/>may<sp/>be<sp/>overwritten<sp/>when<sp/>we<sp/>read<sp/>back<sp/>the</highlight></codeline>
+<codeline lineno="150"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>status<sp/>at<sp/>the<sp/>end,<sp/>but<sp/>that&apos;s<sp/>OK<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/>status<sp/>=<sp/>setDoubleParam(</highlight><highlight class="keyword">function</highlight><highlight class="normal">,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>If<sp/>this<sp/>parameter<sp/>belongs<sp/>to<sp/>a<sp/>base<sp/>class<sp/>call<sp/>its<sp/>method<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>&lt;<sp/><ref refid="_n_d_plugin_focus_metrics_8h_1a667c1f23d05cc33a838b39c4dcbe9e55" kindref="member">FIRST_NDPLUGIN_FOCUS_METRICS_PARAM</ref>)<sp/></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/><ref refid="class_n_d_plugin_driver_1a0d9d826a638226234e48f4d4f41fc4c0" kindref="member">NDPluginDriver::writeFloat64</ref>(pasynUser,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Do<sp/>callbacks<sp/>so<sp/>higher<sp/>layers<sp/>see<sp/>any<sp/>changes<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/>callParamCallbacks();</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(status)<sp/></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynPrint(pasynUser,<sp/>ASYN_TRACE_ERROR,<sp/></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s:%s:<sp/>error,<sp/>status=%d<sp/>function=%d,<sp/>value=%f\n&quot;</highlight><highlight class="normal">,<sp/></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName,<sp/>status,<sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal">,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynPrint(pasynUser,<sp/>ASYN_TRACEIO_DRIVER,<sp/></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s:%s:<sp/>function=%d,<sp/>value=%f\n&quot;</highlight><highlight class="normal">,<sp/></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName,<sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal">,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>status;</highlight></codeline>
+<codeline lineno="168"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp value="12"/></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><ref refid="class_n_d_plugin_focus_metrics_1ab7c178043f8c565b872b50170f5981d7" kindref="member">NDPluginFocusMetrics::NDPluginFocusMetrics</ref>(</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*portName,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>queueSize,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>blockingCallbacks,</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*NDArrayPort,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NDArrayAddr,</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>maxBuffers,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>maxMemory,</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>priority,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>stackSize)</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Invoke<sp/>the<sp/>base<sp/>class<sp/>constructor<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/><ref refid="class_n_d_plugin_driver" kindref="compound">NDPluginDriver</ref>(portName,<sp/>queueSize,<sp/>blockingCallbacks,</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>NDArrayPort,<sp/>NDArrayAddr,<sp/>1,<sp/><ref refid="_n_d_plugin_focus_metrics_8h_1a205caf6893b352e0300210ac3092e310" kindref="member">NUM_NDPLUGIN_FOCUS_METRICS_PARAMS</ref>,<sp/>maxBuffers,<sp/>maxMemory,</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynInt32ArrayMask<sp/>|<sp/>asynFloat64ArrayMask<sp/>|<sp/>asynGenericPointerMask,</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynInt32ArrayMask<sp/>|<sp/>asynFloat64ArrayMask<sp/>|<sp/>asynGenericPointerMask,</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0,<sp/>1,<sp/>priority,<sp/>stackSize)</highlight></codeline>
+<codeline lineno="202"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//static<sp/>const<sp/>char<sp/>*functionName<sp/>=<sp/>&quot;NDPluginStats&quot;;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Focus<sp/>Metrics<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/>createParam(<ref refid="_n_d_plugin_focus_metrics_8h_1a79af2c9e84d316871a62cee731ffe072" kindref="member">NDPluginFocusMetricsComputeFocusString</ref>,<sp/>asynParamInt32,<sp/><sp/><sp/><sp/><sp/><sp/>&amp;NDPluginFocusMetricsComputeFocus);</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/>createParam(<ref refid="_n_d_plugin_focus_metrics_8h_1abbab535cc0eacb64d1888f1e5b8bd5b2" kindref="member">NDPluginFocusMetricsFocusMetricsString</ref>,<sp/>asynParamFloat64,<sp/><sp/><sp/><sp/>&amp;NDPluginFocusMetricsFocusValue);</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Set<sp/>the<sp/>plugin<sp/>type<sp/>string<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/>setStringParam(NDPluginDriverPluginType,<sp/></highlight><highlight class="stringliteral">&quot;NDPluginFocusMetrics&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Try<sp/>to<sp/>connect<sp/>to<sp/>the<sp/>array<sp/>port<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/>connectToArrayPort();</highlight></codeline>
+<codeline lineno="214"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="_n_d_plugin_focus_metrics_8cpp_1ac4486cbdddc5e9c62a984cdc546f72a8" kindref="member">NDFocusMetricsConfigure</ref>(</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*portName,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>queueSize,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>blockingCallbacks,</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*NDArrayPort,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NDArrayAddr,</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>maxBuffers,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>maxMemory,</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>priority,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>stackSize)</highlight></codeline>
+<codeline lineno="222"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_n_d_plugin_focus_metrics" kindref="compound">NDPluginFocusMetrics</ref>(portName,<sp/>queueSize,<sp/>blockingCallbacks,<sp/>NDArrayPort,<sp/>NDArrayAddr,</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>maxBuffers,<sp/>maxMemory,<sp/>priority,<sp/>stackSize);</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">(asynSuccess);</highlight></codeline>
+<codeline lineno="226"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"></highlight></codeline>
+<codeline lineno="228"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>EPICS<sp/>iocsh<sp/>shell<sp/>commands<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="229"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>iocshArg<sp/>initArg0<sp/>=<sp/>{<sp/></highlight><highlight class="stringliteral">&quot;portName&quot;</highlight><highlight class="normal">,iocshArgString};</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>iocshArg<sp/>initArg1<sp/>=<sp/>{<sp/></highlight><highlight class="stringliteral">&quot;frame<sp/>queue<sp/>size&quot;</highlight><highlight class="normal">,iocshArgInt};</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>iocshArg<sp/>initArg2<sp/>=<sp/>{<sp/></highlight><highlight class="stringliteral">&quot;blocking<sp/>callbacks&quot;</highlight><highlight class="normal">,iocshArgInt};</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>iocshArg<sp/>initArg3<sp/>=<sp/>{<sp/></highlight><highlight class="stringliteral">&quot;NDArrayPort&quot;</highlight><highlight class="normal">,iocshArgString};</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>iocshArg<sp/>initArg4<sp/>=<sp/>{<sp/></highlight><highlight class="stringliteral">&quot;NDArrayAddr&quot;</highlight><highlight class="normal">,iocshArgInt};</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>iocshArg<sp/>initArg5<sp/>=<sp/>{<sp/></highlight><highlight class="stringliteral">&quot;maxBuffers&quot;</highlight><highlight class="normal">,iocshArgInt};</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>iocshArg<sp/>initArg6<sp/>=<sp/>{<sp/></highlight><highlight class="stringliteral">&quot;maxMemory&quot;</highlight><highlight class="normal">,iocshArgInt};</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>iocshArg<sp/>initArg7<sp/>=<sp/>{<sp/></highlight><highlight class="stringliteral">&quot;priority&quot;</highlight><highlight class="normal">,iocshArgInt};</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>iocshArg<sp/>initArg8<sp/>=<sp/>{<sp/></highlight><highlight class="stringliteral">&quot;stackSize&quot;</highlight><highlight class="normal">,iocshArgInt};</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>iocshArg<sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>initArgs[]<sp/>=<sp/>{&amp;initArg0,</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;initArg1,</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;initArg2,</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;initArg3,</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;initArg4,</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;initArg5,</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;initArg6,</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;initArg7,</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;initArg8};</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="248"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>iocshFuncDef<sp/>initFuncDef<sp/>=<sp/>{</highlight><highlight class="stringliteral">&quot;NDFocusMetricsConfigure&quot;</highlight><highlight class="normal">,<sp/>9,<sp/>initArgs};</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"></highlight></codeline>
+<codeline lineno="250"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>initCallFunc(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>iocshArgBuf<sp/>*<ref refid="namespacemake_adl_1a1d55f39db2066eab50e6f2b21abc00f1" kindref="member">args</ref>)</highlight></codeline>
+<codeline lineno="251"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_n_d_plugin_focus_metrics_8cpp_1ac4486cbdddc5e9c62a984cdc546f72a8" kindref="member">NDFocusMetricsConfigure</ref>(<ref refid="namespacemake_adl_1a1d55f39db2066eab50e6f2b21abc00f1" kindref="member">args</ref>[0].sval,<sp/><ref refid="namespacemake_adl_1a1d55f39db2066eab50e6f2b21abc00f1" kindref="member">args</ref>[1].ival,<sp/><ref refid="namespacemake_adl_1a1d55f39db2066eab50e6f2b21abc00f1" kindref="member">args</ref>[2].ival,</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacemake_adl_1a1d55f39db2066eab50e6f2b21abc00f1" kindref="member">args</ref>[3].sval,<sp/><ref refid="namespacemake_adl_1a1d55f39db2066eab50e6f2b21abc00f1" kindref="member">args</ref>[4].ival,<sp/><ref refid="namespacemake_adl_1a1d55f39db2066eab50e6f2b21abc00f1" kindref="member">args</ref>[5].ival,</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacemake_adl_1a1d55f39db2066eab50e6f2b21abc00f1" kindref="member">args</ref>[6].ival,<sp/><ref refid="namespacemake_adl_1a1d55f39db2066eab50e6f2b21abc00f1" kindref="member">args</ref>[7].ival,<sp/><ref refid="namespacemake_adl_1a1d55f39db2066eab50e6f2b21abc00f1" kindref="member">args</ref>[8].ival);</highlight></codeline>
+<codeline lineno="255"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"></highlight></codeline>
+<codeline lineno="257"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_n_d_plugin_focus_metrics_8cpp_1a3be185a8ee84d095a0c1e511594edb8e" kindref="member">NDFocusMetricsRegister</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="258"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/>iocshRegister(&amp;initFuncDef,<sp/>initCallFunc);</highlight></codeline>
+<codeline lineno="260"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"></highlight></codeline>
+<codeline lineno="262"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><ref refid="_n_d_plugin_focus_metrics_8cpp_1a7295b735ce8d125647e93897a363cbed" kindref="member">epicsExportRegistrar</ref>(<ref refid="_n_d_plugin_focus_metrics_8cpp_1a3be185a8ee84d095a0c1e511594edb8e" kindref="member">NDFocusMetricsRegister</ref>);</highlight></codeline>
+<codeline lineno="264"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginFocusMetrics.cpp"/>
+  </compounddef>
+</doxygen>

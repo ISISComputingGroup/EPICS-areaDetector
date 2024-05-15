@@ -9,6 +9,8 @@
     <innerfile refid="_n_d_array_ring_8cpp">NDArrayRing.cpp</innerfile>
     <innerfile refid="_n_d_array_ring_8h">NDArrayRing.h</innerfile>
     <innerfile refid="_n_d_file_dummy_8cpp">NDFileDummy.cpp</innerfile>
+    <innerfile refid="_n_d_file_f_i_t_s_8cpp">NDFileFITS.cpp</innerfile>
+    <innerfile refid="_n_d_file_f_i_t_s_8h">NDFileFITS.h</innerfile>
     <innerfile refid="_n_d_file_h_d_f5_8cpp">NDFileHDF5.cpp</innerfile>
     <innerfile refid="_n_d_file_h_d_f5_8h">NDFileHDF5.h</innerfile>
     <innerfile refid="_n_d_file_h_d_f5_attribute_dataset_8cpp">NDFileHDF5AttributeDataset.cpp</innerfile>
@@ -51,6 +53,8 @@
     <innerfile refid="_n_d_plugin_f_f_t_8h">NDPluginFFT.h</innerfile>
     <innerfile refid="_n_d_plugin_file_8cpp">NDPluginFile.cpp</innerfile>
     <innerfile refid="_n_d_plugin_file_8h">NDPluginFile.h</innerfile>
+    <innerfile refid="_n_d_plugin_focus_metrics_8cpp">NDPluginFocusMetrics.cpp</innerfile>
+    <innerfile refid="_n_d_plugin_focus_metrics_8h">NDPluginFocusMetrics.h</innerfile>
     <innerfile refid="_n_d_plugin_gather_8cpp">NDPluginGather.cpp</innerfile>
     <innerfile refid="_n_d_plugin_gather_8h">NDPluginGather.h</innerfile>
     <innerfile refid="_n_d_plugin_overlay_8cpp">NDPluginOverlay.cpp</innerfile>

@@ -359,7 +359,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ffmpegServer/ffmpegServerApp/src/ffmpegServer.h" line="39" column="5" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ffmpegServer/ffmpegServerApp/src/ffmpegServer.cpp" bodystart="601" bodyend="678"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ffmpegServer/ffmpegServerApp/src/ffmpegServer.h" line="39" column="5" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ffmpegServer/ffmpegServerApp/src/ffmpegServer.cpp" bodystart="603" bodyend="681"/>
       </memberdef>
       <memberdef kind="function" id="classffmpeg_stream_1a04f5f241f4da4407726e3426bb5e6365" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -378,7 +378,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ffmpegServer/ffmpegServerApp/src/ffmpegServer.h" line="43" column="10" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ffmpegServer/ffmpegServerApp/src/ffmpegServer.cpp" bodystart="376" bodyend="578"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ffmpegServer/ffmpegServerApp/src/ffmpegServer.h" line="43" column="10" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ffmpegServer/ffmpegServerApp/src/ffmpegServer.cpp" bodystart="376" bodyend="580"/>
       </memberdef>
       <memberdef kind="function" id="classffmpeg_stream_1aee647da4243f5d6c8c33b1bb49e92d1e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>

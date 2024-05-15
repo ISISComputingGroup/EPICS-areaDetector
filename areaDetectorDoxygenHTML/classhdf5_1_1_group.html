@@ -72,7 +72,6 @@ Inheritance diagram for hdf5::Group:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr class="memitem:adb3e2d18f001900a0efaaf14f7d8ea95"><td class="memItemLeft" align="right" valign="top">typedef std::map&lt; std::string, <a class="el" href="classhdf5_1_1_group.html">Group</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhdf5_1_1_group.html#adb3e2d18f001900a0efaaf14f7d8ea95">MapGroups_t</a></td></tr>
-<tr class="memdesc:adb3e2d18f001900a0efaaf14f7d8ea95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a string representation of the object.  <a href="classhdf5_1_1_group.html#adb3e2d18f001900a0efaaf14f7d8ea95">More...</a><br /></td></tr>
 <tr class="separator:adb3e2d18f001900a0efaaf14f7d8ea95"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8920f920aadc199e16bf3584df1071c3"><td class="memItemLeft" align="right" valign="top">typedef std::map&lt; std::string, <a class="el" href="classhdf5_1_1_dataset.html">Dataset</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhdf5_1_1_group.html#a8920f920aadc199e16bf3584df1071c3">MapDatasets_t</a></td></tr>
 <tr class="separator:a8920f920aadc199e16bf3584df1071c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -135,6 +134,11 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a36bbca99ae5b8bed8d32c3a5b4db09b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a19972da87c515ea2dba8c04d782c460e"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhdf5_1_1_group.html#a19972da87c515ea2dba8c04d782c460e">_str_</a> ()</td></tr>
 <tr class="separator:a19972da87c515ea2dba8c04d782c460e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8417b5b8a53c23e540d7155e86a9100"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhdf5_1_1_group.html#af8417b5b8a53c23e540d7155e86a9100">set_data_source</a> (<a class="el" href="classhdf5_1_1_data_source.html">DataSource</a> &amp;src)</td></tr>
+<tr class="memdesc:af8417b5b8a53c23e540d7155e86a9100"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a string representation of the object.  <a href="classhdf5_1_1_group.html#af8417b5b8a53c23e540d7155e86a9100">More...</a><br /></td></tr>
+<tr class="separator:af8417b5b8a53c23e540d7155e86a9100"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a0d2ed8464d4ab05a79efdcf822ef4c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classhdf5_1_1_data_source.html">DataSource</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhdf5_1_1_group.html#a4a0d2ed8464d4ab05a79efdcf822ef4c">data_source</a> ()</td></tr>
+<tr class="separator:a4a0d2ed8464d4ab05a79efdcf822ef4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a592983822af3139f50334202cb106b11"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classhdf5_1_1_group.html#adb3e2d18f001900a0efaaf14f7d8ea95">MapGroups_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhdf5_1_1_group.html#a592983822af3139f50334202cb106b11">get_groups</a> ()</td></tr>
 <tr class="separator:a592983822af3139f50334202cb106b11"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acab43985c80bf58bd5b78aa3db76436b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classhdf5_1_1_group.html#a8920f920aadc199e16bf3584df1071c3">MapDatasets_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhdf5_1_1_group.html#acab43985c80bf58bd5b78aa3db76436b">get_datasets</a> ()</td></tr>
@@ -219,8 +223,6 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Return a string representation of the object. </p>
 
 </div>
 </div>
@@ -360,6 +362,23 @@ Additional Inherited Members</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">std::string hdf5::Group::_str_ </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4a0d2ed8464d4ab05a79efdcf822ef4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a0d2ed8464d4ab05a79efdcf822ef4c">&#9670;&nbsp;</a></span>data_source()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classhdf5_1_1_data_source.html">DataSource</a> &amp; hdf5::Group::data_source </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -806,6 +825,26 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="af8417b5b8a53c23e540d7155e86a9100"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8417b5b8a53c23e540d7155e86a9100">&#9670;&nbsp;</a></span>set_data_source()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void hdf5::Group::set_data_source </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classhdf5_1_1_data_source.html">DataSource</a> &amp;&#160;</td>
+          <td class="paramname"><em>src</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return a string representation of the object. </p>
 
 </div>
 </div>

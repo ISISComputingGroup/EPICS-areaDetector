@@ -106,7 +106,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDFile.h" line="14" column="3" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDFile.cpp" bodystart="44" bodyend="83"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDFile.h" line="14" column="3" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDFile.cpp" bodystart="49" bodyend="88"/>
       </memberdef>
       <memberdef kind="function" id="class_a_dn_e_d_file_1ad74585e5605ba750146fe1cc9645b301" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type></type>
@@ -121,7 +121,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDFile.h" line="15" column="11" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDFile.cpp" bodystart="88" bodyend="101"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDFile.h" line="15" column="11" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDFile.cpp" bodystart="93" bodyend="106"/>
       </memberdef>
       <memberdef kind="function" id="class_a_dn_e_d_file_1a37075a48780bc7a5237ba195d8dd7e24" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -157,7 +157,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDFile.h" line="18" column="15" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDFile.cpp" bodystart="107" bodyend="110"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDFile.h" line="18" column="15" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDFile.cpp" bodystart="112" bodyend="115"/>
       </memberdef>
       <memberdef kind="function" id="class_a_dn_e_d_file_1a4ac7d0fa38b28c7fcef0c899e87bdf5e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -185,7 +185,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDFile.h" line="19" column="8" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDFile.cpp" bodystart="120" bodyend="162"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDFile.h" line="19" column="8" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDFile.cpp" bodystart="125" bodyend="167"/>
       </memberdef>
       <memberdef kind="function" id="class_a_dn_e_d_file_1aa4a1536263d77195454d27eb4eb3a18a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -213,7 +213,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDFile.h" line="20" column="8" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDFile.cpp" bodystart="172" bodyend="214"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDFile.h" line="20" column="8" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDFile.cpp" bodystart="177" bodyend="219"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

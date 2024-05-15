@@ -1757,10 +1757,13 @@
     <member refid="classhdf5_1_1_data_source_1a6fbbd2d59311a78c6b057e15148a61ed" kind="variable"><name>val</name></member>
     <member refid="classhdf5_1_1_data_source_1ab9f992ac76227d10248b5e3aca1c548c" kind="variable"><name>datatype</name></member>
     <member refid="classhdf5_1_1_data_source_1a6c2fdb7d29931264aa8c5951a386a974" kind="variable"><name>when_to_save</name></member>
+    <member refid="classhdf5_1_1_data_source_1a4cc27c26efad94ada8b8dcae09b2704a" kind="variable"><name>h5file_file</name></member>
+    <member refid="classhdf5_1_1_data_source_1a083355d66ba2d13f55fd3888d23204a7" kind="variable"><name>h5file_path</name></member>
     <member refid="classhdf5_1_1_data_source_1adea6bb6f8c4b8ec2c90bc20fcab55a11" kind="function"><name>DataSource</name></member>
     <member refid="classhdf5_1_1_data_source_1a9f53ae734439bf2009ee9b948aa015b4" kind="function"><name>DataSource</name></member>
     <member refid="classhdf5_1_1_data_source_1a791fbb8e2f8090ff80808cd99036bf17" kind="function"><name>DataSource</name></member>
     <member refid="classhdf5_1_1_data_source_1ad2b35eb5fe6c60919e30b217b884ee93" kind="function"><name>DataSource</name></member>
+    <member refid="classhdf5_1_1_data_source_1ad785247f8456aba06ca8bb43c5cff210" kind="function"><name>DataSource</name></member>
     <member refid="classhdf5_1_1_data_source_1a244990abae971a6cd193e87a7d662370" kind="function"><name>DataSource</name></member>
     <member refid="classhdf5_1_1_data_source_1acb7e8881127e64fa4b403dc1aa5c3b08" kind="function"><name>operator=</name></member>
     <member refid="classhdf5_1_1_data_source_1a257b6f1929e58704ad5ad7abd35cf6df" kind="function"><name>~DataSource</name></member>
@@ -1769,10 +1772,14 @@
     <member refid="classhdf5_1_1_data_source_1a2b272c69d4ef77e188279eefb7ce8e03" kind="function"><name>is_src_ndattribute</name></member>
     <member refid="classhdf5_1_1_data_source_1abe042c31fbd8e0da4087c3d0fe3b90f5" kind="function"><name>is_src_constant</name></member>
     <member refid="classhdf5_1_1_data_source_1ae56e55d4c5aed5751c6fcca5415d418a" kind="function"><name>is_src</name></member>
+    <member refid="classhdf5_1_1_data_source_1aa390bed004a062ee7fd86d0cb2fe367c" kind="function"><name>is_src_h5file</name></member>
     <member refid="classhdf5_1_1_data_source_1a2ca7e3229044080797a803652ae794f3" kind="function"><name>get_src_def</name></member>
     <member refid="classhdf5_1_1_data_source_1aa1a15b00cd2808aa1c21a6c8e4a774c4" kind="function"><name>get_datatype</name></member>
     <member refid="classhdf5_1_1_data_source_1a363c8b6944e8e6cb48823848c65dbfdd" kind="function"><name>datatype_size</name></member>
     <member refid="classhdf5_1_1_data_source_1a41b328a16e2e795d821e707a21493d09" kind="function"><name>set_const_datatype_value</name></member>
+    <member refid="classhdf5_1_1_data_source_1a822a3576df3c1c65e479c117494f5fa7" kind="function"><name>set_h5file_file_path</name></member>
+    <member refid="classhdf5_1_1_data_source_1a5bd93c828851846ce9f687ba41ab41f2" kind="function"><name>get_h5file_file</name></member>
+    <member refid="classhdf5_1_1_data_source_1a8ec3680acf27df497925c8f2b870b849" kind="function"><name>get_h5file_path</name></member>
     <member refid="classhdf5_1_1_data_source_1a9dc1aacfc45cb6c949e00c1c8045f2a1" kind="function"><name>set_when_to_save</name></member>
     <member refid="classhdf5_1_1_data_source_1aa404d337b619d5f808017be9065f4697" kind="function"><name>get_when_to_save</name></member>
   </compound>
@@ -2592,6 +2599,7 @@
     <member refid="classhdf5_1_1_group_1a8920f920aadc199e16bf3584df1071c3" kind="typedef"><name>MapDatasets_t</name></member>
     <member refid="classhdf5_1_1_group_1aec9e1d36317084c5051e231594a94dab" kind="typedef"><name>MapHardLinks_t</name></member>
     <member refid="classhdf5_1_1_group_1a3c3cae4020adae2d0c0bf78c52b3be9b" kind="typedef"><name>MapNDAttrSrc_t</name></member>
+    <member refid="classhdf5_1_1_group_1a8e5a84a7912611a1ed5afc1acce96597" kind="variable"><name>datasource</name></member>
     <member refid="classhdf5_1_1_group_1ab07dac9c0143dcfa6a65790c844875f7" kind="variable"><name>ndattr_default_container</name></member>
     <member refid="classhdf5_1_1_group_1ace5deacddb62c84493eabe8437791b79" kind="variable"><name>datasets</name></member>
     <member refid="classhdf5_1_1_group_1a7a44d863577ff52d0a3832e809f89795" kind="variable"><name>groups</name></member>
@@ -2618,6 +2626,8 @@
     <member refid="classhdf5_1_1_group_1ad44a1c2497a79c468e49f6117eeca5b0" kind="function"><name>num_groups</name></member>
     <member refid="classhdf5_1_1_group_1a36bbca99ae5b8bed8d32c3a5b4db09b5" kind="function"><name>num_datasets</name></member>
     <member refid="classhdf5_1_1_group_1a19972da87c515ea2dba8c04d782c460e" kind="function"><name>_str_</name></member>
+    <member refid="classhdf5_1_1_group_1af8417b5b8a53c23e540d7155e86a9100" kind="function"><name>set_data_source</name></member>
+    <member refid="classhdf5_1_1_group_1a4a0d2ed8464d4ab05a79efdcf822ef4c" kind="function"><name>data_source</name></member>
     <member refid="classhdf5_1_1_group_1a592983822af3139f50334202cb106b11" kind="function"><name>get_groups</name></member>
     <member refid="classhdf5_1_1_group_1acab43985c80bf58bd5b78aa3db76436b" kind="function"><name>get_datasets</name></member>
     <member refid="classhdf5_1_1_group_1aa1e43385ca9a6614d0842b6d2bf4d91e" kind="function"><name>get_hardlinks</name></member>
@@ -2670,6 +2680,9 @@
     <member refid="classhdf5_1_1_layout_x_m_l_1a8b5968449dbffa86cef9bcdeb310f6c8" kind="variable"><name>ATTR_SRC_CONST</name></member>
     <member refid="classhdf5_1_1_layout_x_m_l_1adceb17777b0fe5346865313bbfcc083d" kind="variable"><name>ATTR_SRC_CONST_VALUE</name></member>
     <member refid="classhdf5_1_1_layout_x_m_l_1a33895ff08e50f2eddae2927b502bc13f" kind="variable"><name>ATTR_SRC_CONST_TYPE</name></member>
+    <member refid="classhdf5_1_1_layout_x_m_l_1a75756b9244cf3cc4a8292c13fa6acbcf" kind="variable"><name>ATTR_SRC_H5FILE</name></member>
+    <member refid="classhdf5_1_1_layout_x_m_l_1abec5030a3b9c6ce4ed012fdd2888e662" kind="variable"><name>ATTR_SRC_H5FILE_FILE</name></member>
+    <member refid="classhdf5_1_1_layout_x_m_l_1a8342e83d6db433afe8faeb72007bcc69" kind="variable"><name>ATTR_SRC_H5FILE_PATH</name></member>
     <member refid="classhdf5_1_1_layout_x_m_l_1ac58a71ff2c29d763a3a692fc795d1ec1" kind="variable"><name>ATTR_GRP_NDATTR_DEFAULT</name></member>
     <member refid="classhdf5_1_1_layout_x_m_l_1ab49bcd2e0d9b36ce15d653a9b6efd149" kind="variable"><name>ATTR_SRC_WHEN</name></member>
     <member refid="classhdf5_1_1_layout_x_m_l_1a62ed376f368a5da9e508847e3d113397" kind="variable"><name>ATTR_GLOBAL_NAME</name></member>
@@ -2694,6 +2707,7 @@
     <member refid="classhdf5_1_1_layout_x_m_l_1ab8890ef8d10003fd80ca7d332d5bda9a" kind="function"><name>getAutoNDAttrDefault</name></member>
     <member refid="classhdf5_1_1_layout_x_m_l_1a9ca8c5352680ed4ea64db115b439ba24" kind="function"><name>process_node</name></member>
     <member refid="classhdf5_1_1_layout_x_m_l_1afa3f4bae3d8386bc5e84471632640849" kind="function"><name>process_dset_xml_attribute</name></member>
+    <member refid="classhdf5_1_1_layout_x_m_l_1a7d37e796c7319a93f375bd605b0027d6" kind="function"><name>process_group_xml_attribute</name></member>
     <member refid="classhdf5_1_1_layout_x_m_l_1ac6e633a8e19abf6f64df9949a588ab1e" kind="function"><name>process_attribute_xml_attribute</name></member>
     <member refid="classhdf5_1_1_layout_x_m_l_1a403e656fc76f3bdc69563c8d08ee8483" kind="function"><name>parse_root</name></member>
     <member refid="classhdf5_1_1_layout_x_m_l_1a086e497c844864064cc045c25fb47689" kind="function"><name>new_group</name></member>
@@ -2786,6 +2800,15 @@
   </compound>
   <compound refid="classlog4cxx_1_1_logger" kind="class"><name>log4cxx::Logger</name>
     <member refid="classlog4cxx_1_1_logger_1ab0aa82221359b5df41a7047355178730" kind="function"><name>getLogger</name></member>
+  </compound>
+  <compound refid="struct_make_unsigned" kind="struct"><name>MakeUnsigned</name>
+    <member refid="struct_make_unsigned_1a870a7d2f519a9cd2b6ae0bd216b2451f" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="struct_make_unsigned_impl" kind="struct"><name>MakeUnsignedImpl</name>
+    <member refid="struct_make_unsigned_impl_1ae662ff38cac3d1cda2c29a681ab322db" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="struct_make_unsigned_impl_3_01_t_00_01true_01_4" kind="struct"><name>MakeUnsignedImpl&lt; T, true &gt;</name>
+    <member refid="struct_make_unsigned_impl_3_01_t_00_01true_01_4_1a99945010f4e5da751a5a8a00cfe81cde" kind="typedef"><name>type</name></member>
   </compound>
   <compound refid="classmar345" kind="class"><name>mar345</name>
     <member refid="classmar345_1a313c69096737688a299dd904cdc458c4" kind="variable"><name>startEventId</name></member>
@@ -3257,6 +3280,18 @@
     <member refid="class_n_d_driver_std_arrays_1afefc8777c19bdfc53ca28d2d2ea40502" kind="function"><name>doCallbacks</name></member>
     <member refid="class_n_d_driver_std_arrays_1aed77510ce67b0e9f234f45a3df1ce30c" kind="function"><name>setArrayComplete</name></member>
   </compound>
+  <compound refid="class_n_d_file_f_i_t_s" kind="class"><name>NDFileFITS</name>
+    <member refid="class_n_d_file_f_i_t_s_1a9ac8c74a7d661b841dd30587d95fc7e1" kind="variable"><name>NDFITSFileHeaderFullPathname</name></member>
+    <member refid="class_n_d_file_f_i_t_s_1ac0fd515b397dd536fc93bc7b5ab46b66" kind="variable"><name>fits_status_str</name></member>
+    <member refid="class_n_d_file_f_i_t_s_1a8344087ddd9aef4e3f29ce4cafda0d2b" kind="variable"><name>fitsFilePtr</name></member>
+    <member refid="class_n_d_file_f_i_t_s_1a1bc72943aadba134bbe4e7f2bca1745e" kind="variable"><name>fitsStatus</name></member>
+    <member refid="class_n_d_file_f_i_t_s_1a89eeb99591b812614a4a4f68051dddc6" kind="function"><name>NDFileFITS</name></member>
+    <member refid="class_n_d_file_f_i_t_s_1a04dd31c84dd03761ab9603f2096b15db" kind="function"><name>openFile</name></member>
+    <member refid="class_n_d_file_f_i_t_s_1a44f867976b0887225b846ce153f30ca0" kind="function"><name>readFile</name></member>
+    <member refid="class_n_d_file_f_i_t_s_1a93407909b4ea8a137743f43fe285caf5" kind="function"><name>writeFile</name></member>
+    <member refid="class_n_d_file_f_i_t_s_1ae7ac418c3d3d99f8fcc2d13111c6b318" kind="function"><name>closeFile</name></member>
+    <member refid="class_n_d_file_f_i_t_s_1ace1f23c14d5a1881689584c1a9881ad6" kind="function"><name>WriteKeys</name></member>
+  </compound>
   <compound refid="class_n_d_file_h_d_f5" kind="class"><name>NDFileHDF5</name>
     <member refid="class_n_d_file_h_d_f5_1a79151ececf8c85a7ace70647efeeaede" kind="variable"><name>str_NDFileHDF5_chunkSize</name></member>
     <member refid="class_n_d_file_h_d_f5_1a9bc18e92d7bd62066a5633016a8ee832" kind="variable"><name>str_NDFileHDF5_extraDimSize</name></member>
@@ -3411,6 +3446,7 @@
     <member refid="class_n_d_file_h_d_f5_1a5e460b33cf379d7ee428062b509c0f93" kind="function"><name>createAttributeDataset</name></member>
     <member refid="class_n_d_file_h_d_f5_1a038f963eb750c5d72cccbcffed0e5b83" kind="function"><name>isAttributeIndex</name></member>
     <member refid="class_n_d_file_h_d_f5_1abeb6ce9e652eb8d30febe426346e8bdb" kind="function"><name>findPositionIndex</name></member>
+    <member refid="class_n_d_file_h_d_f5_1a733be190dfddadff03f38e156c8d3c2d" kind="function"><name>copyHDF5Object</name></member>
   </compound>
   <compound refid="class_n_d_file_h_d_f5_attribute_dataset" kind="class"><name>NDFileHDF5AttributeDataset</name>
     <member refid="class_n_d_file_h_d_f5_attribute_dataset_1a629ea96943b64099b7309dcd3cbe88cd" kind="variable"><name>name_</name></member>
@@ -3735,6 +3771,7 @@
     <member refid="class_n_d_plugin_color_convert_1a42a9450512a4f1cdaadc9f4d24d0e43e" kind="function"><name>NDPluginColorConvert</name></member>
     <member refid="class_n_d_plugin_color_convert_1ad4cd8c3bd583d2b1c69db9dc16fe5378" kind="function"><name>processCallbacks</name></member>
     <member refid="class_n_d_plugin_color_convert_1ae5958561b06229fe2f4a6803673389f9" kind="function"><name>convertColor</name></member>
+    <member refid="class_n_d_plugin_color_convert_1ac52ea736156fcca2606892bede2e7368" kind="function"><name>falseColorIndex</name></member>
   </compound>
   <compound refid="class_n_d_plugin_driver" kind="class"><name>NDPluginDriver</name>
     <member refid="class_n_d_plugin_driver_1af17c68cbdf44c2d0e5afe616cea59a33" kind="variable"><name>NDPluginDriverArrayPort</name></member>
@@ -3878,6 +3915,15 @@
     <member refid="class_n_d_plugin_file_1aeb844e79c807e79f074fd4388e005c04" kind="function"><name>attrIsProcessingRequired</name></member>
     <member refid="class_n_d_plugin_file_1a514cc9b7bca4716d69c8bc24bfb87797" kind="function"><name>registerInitFrameInfo</name></member>
     <member refid="class_n_d_plugin_file_1af03884f20b8894106c941a16191fa610" kind="function"><name>isFrameValid</name></member>
+  </compound>
+  <compound refid="class_n_d_plugin_focus_metrics" kind="class"><name>NDPluginFocusMetrics</name>
+    <member refid="class_n_d_plugin_focus_metrics_1a225e53f636efd510a5c23abb97951334" kind="variable"><name>NDPluginFocusMetricsComputeFocus</name></member>
+    <member refid="class_n_d_plugin_focus_metrics_1a5721b04bdee0033b66edda4ae6f27343" kind="variable"><name>NDPluginFocusMetricsFocusValue</name></member>
+    <member refid="class_n_d_plugin_focus_metrics_1ab7c178043f8c565b872b50170f5981d7" kind="function"><name>NDPluginFocusMetrics</name></member>
+    <member refid="class_n_d_plugin_focus_metrics_1a469b6bb48fbe4743d1a9f36f857de79d" kind="function"><name>processCallbacks</name></member>
+    <member refid="class_n_d_plugin_focus_metrics_1a6302db29ae541a4960cfaf297ada2fe8" kind="function"><name>writeFloat64</name></member>
+    <member refid="class_n_d_plugin_focus_metrics_1ada0e1b3e1ff1354b1d10e1eb3fea1284" kind="function"><name>doComputeFocusMetricsT</name></member>
+    <member refid="class_n_d_plugin_focus_metrics_1aad5db69084fcc278fdfd57826a5ca40f" kind="function"><name>doComputeFocusMetrics</name></member>
   </compound>
   <compound refid="class_n_d_plugin_gather" kind="class"><name>NDPluginGather</name>
     <member refid="class_n_d_plugin_gather_1a30aee54f13e1066e5ba71279047d57f1" kind="variable"><name>maxPorts_</name></member>
@@ -4348,7 +4394,7 @@
     <member refid="classn_e_d_channel_1_1n_e_d_monitor_requester_1a5c6c0e8ea60a37787e3d4f0637858f50" kind="function"><name>monitorEvent</name></member>
     <member refid="classn_e_d_channel_1_1n_e_d_monitor_requester_1a174e9e785350875785f6fa959566631d" kind="function"><name>unlisten</name></member>
     <member refid="classn_e_d_channel_1_1n_e_d_monitor_requester_1ac625a9a1a8cdac1a0be2855a89c5bd2f" kind="function"><name>waitUntilConnected</name></member>
-    <member refid="classn_e_d_channel_1_1n_e_d_monitor_requester_1a335e96c1137a88e5f276636a50f6868f" kind="function"><name>waitUntilDone</name></member>
+    <member refid="classn_e_d_channel_1_1n_e_d_monitor_requester_1a33e266c270ced2f69dd034375d8eac43" kind="function"><name>waitUntilDone</name></member>
     <member refid="classn_e_d_channel_1_1n_e_d_monitor_requester_1a7cf9f9ce178948305824bcb2f1cc8888" kind="function"><name>getRequesterName</name></member>
     <member refid="classn_e_d_channel_1_1n_e_d_monitor_requester_1ac997fec75508130440ac49681ba2121f" kind="function"><name>message</name></member>
   </compound>
@@ -6402,6 +6448,7 @@
     <member refid="namespacehdf5_1a35f510139e8a82f80a2e0487f82078a8a9b2ce7fbca521a5b3b440b7d598b72df" kind="enumvalue"><name>detector</name></member>
     <member refid="namespacehdf5_1a35f510139e8a82f80a2e0487f82078a8a9666c3192f02a51b1d2fa1907c2c7cc6" kind="enumvalue"><name>ndattribute</name></member>
     <member refid="namespacehdf5_1a35f510139e8a82f80a2e0487f82078a8a3b1821cc8d882b111c088bf5e44c38fa" kind="enumvalue"><name>constant</name></member>
+    <member refid="namespacehdf5_1a35f510139e8a82f80a2e0487f82078a8a6a99b5ce6dc382f4790b2a11df7db44f" kind="enumvalue"><name>h5file</name></member>
     <member refid="namespacehdf5_1abeed318faeb13380e1b4221bd4198bf1" kind="enum"><name>DataType_t</name></member>
     <member refid="namespacehdf5_1abeed318faeb13380e1b4221bd4198bf1a100be3cb84dad1cc0a2466373878f11d" kind="enumvalue"><name>int8</name></member>
     <member refid="namespacehdf5_1abeed318faeb13380e1b4221bd4198bf1a2960b4a30298559c3e0f1f448201d9dc" kind="enumvalue"><name>uint8</name></member>
@@ -7319,6 +7366,29 @@
     <member refid="_n_d_file_dummy_8cpp_1ad94c623eec1a04b85e51550d32468d9a" kind="function"><name>NDFileHDF5Register</name></member>
     <member refid="_n_d_file_dummy_8cpp_1af53a27641854d0fc41933af0577ca0b5" kind="function"><name>epicsExportRegistrar</name></member>
   </compound>
+  <compound refid="_n_d_file_f_i_t_s_8cpp" kind="file"><name>NDFileFITS.cpp</name>
+    <member refid="_n_d_file_f_i_t_s_8cpp_1af0e94d13028051cd5339d204bfbb057d" kind="variable"><name>driverName</name></member>
+    <member refid="_n_d_file_f_i_t_s_8cpp_1a13021e744179110a6114bf84e9d47f32" kind="variable"><name>initArg0</name></member>
+    <member refid="_n_d_file_f_i_t_s_8cpp_1a85f312f39f3c368a5fa10d1039dc40b2" kind="variable"><name>initArg1</name></member>
+    <member refid="_n_d_file_f_i_t_s_8cpp_1a645a7d7d0d71a7522373e2af4008b520" kind="variable"><name>initArg2</name></member>
+    <member refid="_n_d_file_f_i_t_s_8cpp_1aaa425474fd6655fa6347e1933b29038a" kind="variable"><name>initArg3</name></member>
+    <member refid="_n_d_file_f_i_t_s_8cpp_1a945c4d0bc0e2bc869aeaf5c6a815368a" kind="variable"><name>initArg4</name></member>
+    <member refid="_n_d_file_f_i_t_s_8cpp_1ac7e214be38a3b3bface5e0370ae97db0" kind="variable"><name>initArg5</name></member>
+    <member refid="_n_d_file_f_i_t_s_8cpp_1a43397205694aec859f3b5cb14a85edc3" kind="variable"><name>initArg6</name></member>
+    <member refid="_n_d_file_f_i_t_s_8cpp_1ac0d7f455ac7138e5bcb473b630294718" kind="variable"><name>initArgs</name></member>
+    <member refid="_n_d_file_f_i_t_s_8cpp_1a469a3ecf9fff33f8f388acddffc8db6a" kind="variable"><name>initFuncDef</name></member>
+    <member refid="_n_d_file_f_i_t_s_8cpp_1ab445a05116d5445c21f052d31725c131" kind="function"><name>NDFileFITSConfigure</name></member>
+    <member refid="_n_d_file_f_i_t_s_8cpp_1aeeec53c20b81d2e7f49be49509087df5" kind="function"><name>initCallFunc</name></member>
+    <member refid="_n_d_file_f_i_t_s_8cpp_1aaa253be4e9292e1086d6130c9e078398" kind="function"><name>NDFileFITSRegister</name></member>
+    <member refid="_n_d_file_f_i_t_s_8cpp_1abea5cc0598941f69e6cd6c4394b1bc61" kind="function"><name>epicsExportRegistrar</name></member>
+  </compound>
+  <compound refid="_n_d_file_f_i_t_s_8h" kind="file"><name>NDFileFITS.h</name>
+    <member refid="_n_d_file_f_i_t_s_8h_1aa53c195f5bc45b395f8b9aed214e554a" kind="define"><name>NDFITSFileHeaderFullPathnameString</name></member>
+    <member refid="_n_d_file_f_i_t_s_8h_1ab99ded389af74001a6298fc9e44e74e5" kind="define"><name>MAX_PATH</name></member>
+    <member refid="_n_d_file_f_i_t_s_8h_1ac886057e6603468d45e58930846c1ba1" kind="define"><name>FIRST_NDFILE_FITS_PARAM</name></member>
+    <member refid="_n_d_file_f_i_t_s_8h_1a9a7386c646b0ccf3c49059ff51496c8d" kind="define"><name>LAST_NDFILE_FITS_PARAM</name></member>
+    <member refid="_n_d_file_f_i_t_s_8h_1a5fcdcec7be9794984cd694e9d70c1233" kind="define"><name>NUM_NDFILE_FITS_PARAMS</name></member>
+  </compound>
   <compound refid="_n_d_file_h_d_f5_8cpp" kind="file"><name>NDFileHDF5.cpp</name>
     <member refid="_n_d_file_h_d_f5_8cpp_1ae8ec3114e7970ceac40260041d66edbb" kind="define"><name>H5Gcreate_vers</name></member>
     <member refid="_n_d_file_h_d_f5_8cpp_1aced09b01bfb716412520c1f0a4defb99" kind="define"><name>H5Dopen_vers</name></member>
@@ -7872,6 +7942,31 @@
     <member refid="_n_d_plugin_file_8h_1ac965951b58bb219d15d513fb2cccd83a" kind="define"><name>FILEPLUGIN_DESTINATION</name></member>
     <member refid="_n_d_plugin_file_8h_1a1377a8623bcc9d92fae113152fb0b5b6" kind="define"><name>FILEPLUGIN_CLOSE</name></member>
     <member refid="_n_d_plugin_file_8h_1a0585278ac7a80661367c32f62ad6c653" kind="typedef"><name>NDFileOpenMode_t</name></member>
+  </compound>
+  <compound refid="_n_d_plugin_focus_metrics_8cpp" kind="file"><name>NDPluginFocusMetrics.cpp</name>
+    <member refid="_n_d_plugin_focus_metrics_8cpp_1af0e94d13028051cd5339d204bfbb057d" kind="variable"><name>driverName</name></member>
+    <member refid="_n_d_plugin_focus_metrics_8cpp_1a13021e744179110a6114bf84e9d47f32" kind="variable"><name>initArg0</name></member>
+    <member refid="_n_d_plugin_focus_metrics_8cpp_1a85f312f39f3c368a5fa10d1039dc40b2" kind="variable"><name>initArg1</name></member>
+    <member refid="_n_d_plugin_focus_metrics_8cpp_1a645a7d7d0d71a7522373e2af4008b520" kind="variable"><name>initArg2</name></member>
+    <member refid="_n_d_plugin_focus_metrics_8cpp_1aaa425474fd6655fa6347e1933b29038a" kind="variable"><name>initArg3</name></member>
+    <member refid="_n_d_plugin_focus_metrics_8cpp_1a945c4d0bc0e2bc869aeaf5c6a815368a" kind="variable"><name>initArg4</name></member>
+    <member refid="_n_d_plugin_focus_metrics_8cpp_1ac7e214be38a3b3bface5e0370ae97db0" kind="variable"><name>initArg5</name></member>
+    <member refid="_n_d_plugin_focus_metrics_8cpp_1a43397205694aec859f3b5cb14a85edc3" kind="variable"><name>initArg6</name></member>
+    <member refid="_n_d_plugin_focus_metrics_8cpp_1a36049b095d9ed1f56a41821a2c8fc661" kind="variable"><name>initArg7</name></member>
+    <member refid="_n_d_plugin_focus_metrics_8cpp_1a62a0c5258a2c1049720be5c31729f76d" kind="variable"><name>initArg8</name></member>
+    <member refid="_n_d_plugin_focus_metrics_8cpp_1ac0d7f455ac7138e5bcb473b630294718" kind="variable"><name>initArgs</name></member>
+    <member refid="_n_d_plugin_focus_metrics_8cpp_1a469a3ecf9fff33f8f388acddffc8db6a" kind="variable"><name>initFuncDef</name></member>
+    <member refid="_n_d_plugin_focus_metrics_8cpp_1ac4486cbdddc5e9c62a984cdc546f72a8" kind="function"><name>NDFocusMetricsConfigure</name></member>
+    <member refid="_n_d_plugin_focus_metrics_8cpp_1aeeec53c20b81d2e7f49be49509087df5" kind="function"><name>initCallFunc</name></member>
+    <member refid="_n_d_plugin_focus_metrics_8cpp_1a3be185a8ee84d095a0c1e511594edb8e" kind="function"><name>NDFocusMetricsRegister</name></member>
+    <member refid="_n_d_plugin_focus_metrics_8cpp_1a7295b735ce8d125647e93897a363cbed" kind="function"><name>epicsExportRegistrar</name></member>
+  </compound>
+  <compound refid="_n_d_plugin_focus_metrics_8h" kind="file"><name>NDPluginFocusMetrics.h</name>
+    <member refid="_n_d_plugin_focus_metrics_8h_1a79af2c9e84d316871a62cee731ffe072" kind="define"><name>NDPluginFocusMetricsComputeFocusString</name></member>
+    <member refid="_n_d_plugin_focus_metrics_8h_1abbab535cc0eacb64d1888f1e5b8bd5b2" kind="define"><name>NDPluginFocusMetricsFocusMetricsString</name></member>
+    <member refid="_n_d_plugin_focus_metrics_8h_1a667c1f23d05cc33a838b39c4dcbe9e55" kind="define"><name>FIRST_NDPLUGIN_FOCUS_METRICS_PARAM</name></member>
+    <member refid="_n_d_plugin_focus_metrics_8h_1aedc5919ad6402967b9fbf71c4200b7ef" kind="define"><name>LAST_NDPLUGIN_FOCUS_METRICS_PARAM</name></member>
+    <member refid="_n_d_plugin_focus_metrics_8h_1a205caf6893b352e0300210ac3092e310" kind="define"><name>NUM_NDPLUGIN_FOCUS_METRICS_PARAMS</name></member>
   </compound>
   <compound refid="_n_d_plugin_gather_8cpp" kind="file"><name>NDPluginGather.cpp</name>
     <member refid="_n_d_plugin_gather_8cpp_1af0e94d13028051cd5339d204bfbb057d" kind="variable"><name>driverName</name></member>

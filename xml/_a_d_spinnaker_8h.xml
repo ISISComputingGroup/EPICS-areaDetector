@@ -423,7 +423,7 @@
 <codeline lineno="32"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="33"><highlight class="normal"></highlight></codeline>
 <codeline lineno="34" refid="class_a_d_spinnaker_image_event_handler_1a24ffcd773b957e41ddce99d29e4c6bfc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_a_d_spinnaker_image_event_handler_1a24ffcd773b957e41ddce99d29e4c6bfc" kindref="member">ADSpinnakerImageEventHandler</ref>(epicsMessageQueue<sp/>*pMsgQ)<sp/></highlight></codeline>
-<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>:<sp/>pMsgQ_(pMsgQ)</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>:<sp/>ImageEventHandler(),<sp/>pMsgQ_(pMsgQ)</highlight></codeline>
 <codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>{}</highlight></codeline>
 <codeline lineno="37" refid="class_a_d_spinnaker_image_event_handler_1ad46c64886e5058644e0ec659bdaaffb8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_a_d_spinnaker_image_event_handler_1ad46c64886e5058644e0ec659bdaaffb8" kindref="member">~ADSpinnakerImageEventHandler</ref>()<sp/>{}</highlight></codeline>
 <codeline lineno="38"><highlight class="normal"><sp/><sp/></highlight></codeline>

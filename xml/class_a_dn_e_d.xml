@@ -17,7 +17,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="164" column="27" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="164" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="165" column="27" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="165" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1a8a2feda932069ae30d05eebe69baec75" prot="private" static="yes" mutable="no">
         <type>const epicsInt32</type>
@@ -31,7 +31,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="165" column="27" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="165" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="166" column="27" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="166" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1a02aaf29b43cd8d2bfaa1a7d429f52db7" prot="private" static="yes" mutable="no">
         <type>const epicsInt32</type>
@@ -45,7 +45,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="166" column="27" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="166" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="167" column="27" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="167" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1a23f53fb93e86407606984e9fe1c5cfab" prot="private" static="yes" mutable="no">
         <type>const epicsUInt32</type>
@@ -59,7 +59,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="167" column="28" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="167" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="168" column="28" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="168" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1ab607f3b69a7ecd14c6ee7c8f07259f88" prot="private" static="yes" mutable="no">
         <type>const epicsUInt32</type>
@@ -73,7 +73,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="168" column="28" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="168" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="169" column="28" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="169" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1a79246256f21e2c816979d4556a115e93" prot="private" static="yes" mutable="no">
         <type>const epicsUInt32</type>
@@ -87,7 +87,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="169" column="28" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="169" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="170" column="28" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="170" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1aaa628b0d624197b1ea51040c89730550" prot="private" static="yes" mutable="no">
         <type>const epicsUInt32</type>
@@ -101,7 +101,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="170" column="28" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="170" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="171" column="28" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="171" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1a221e13bbc8ad13d83d4890e3d5aba637" prot="private" static="yes" mutable="no">
         <type>const epicsUInt32</type>
@@ -115,7 +115,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="171" column="28" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="171" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="172" column="28" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="172" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1a64f0e4739d8c126f26289699eec0fdec" prot="private" static="yes" mutable="no">
         <type>const epicsUInt32</type>
@@ -129,7 +129,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="172" column="28" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="172" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="173" column="28" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="173" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1a419575005688281490b7919d26c9d69c" prot="private" static="yes" mutable="no">
         <type>const epicsUInt32</type>
@@ -143,7 +143,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="173" column="28" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="173" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="174" column="28" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="174" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-attrib">
@@ -158,7 +158,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="176" column="15" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="176" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="177" column="15" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="177" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1a0ddfe584492bbd1a4d3ca558a6382e21" prot="private" static="no" mutable="no">
         <type>epicsUInt32</type>
@@ -171,7 +171,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="177" column="15" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="177" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="178" column="15" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="178" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1a3479c18729cca5e46a293f564d8c1168" prot="private" static="no" mutable="no">
         <type>epicsUInt32</type>
@@ -184,7 +184,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="178" column="15" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="178" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="179" column="15" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="179" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1a9c08354ad673b278c4eb806691b853f7" prot="private" static="no" mutable="no">
         <type>epicsUInt32</type>
@@ -197,7 +197,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="179" column="15" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="179" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="180" column="15" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="180" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1aa325d3d6279d710427e54b8f2270855a" prot="private" static="no" mutable="no">
         <type>epicsUInt32</type>
@@ -210,7 +210,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="180" column="15" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="180" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="181" column="15" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="181" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1a53b9df586fd933d860a04417a64b11b0" prot="private" static="no" mutable="no">
         <type>epicsFloat64</type>
@@ -223,7 +223,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="181" column="16" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="181" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="182" column="16" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="182" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1a7e1bf5c5ad6df903b59874f5c6e28322" prot="private" static="no" mutable="no">
         <type>epicsTimeStamp</type>
@@ -236,7 +236,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="182" column="18" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="182" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="183" column="18" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="183" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1a63b5f917add3e6c97d2fa3db37ddfd46" prot="private" static="no" mutable="no">
         <type>double</type>
@@ -249,7 +249,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="183" column="10" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="183" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="184" column="10" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="184" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1a4aba4f55be202d82e1c087dc235bb369" prot="private" static="no" mutable="no">
         <type>double</type>
@@ -262,7 +262,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="184" column="10" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="184" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="185" column="10" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="185" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1a6bb06608f506b16efdb57b10b8a458bf" prot="private" static="no" mutable="no">
         <type>epicsUInt32 *</type>
@@ -275,7 +275,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="185" column="15" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="185" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="186" column="15" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="186" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1afd2134f5c52ec12e32cc381752f0aad6" prot="private" static="no" mutable="no">
         <type>epicsUInt32 *</type>
@@ -288,7 +288,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="186" column="15" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="186" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="187" column="15" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="187" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1a045b0eb5ac661d6cefee6003a85b9bd7" prot="private" static="no" mutable="no">
         <type>epicsUInt32</type>
@@ -301,7 +301,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="187" column="15" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="187" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="188" column="15" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="188" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1aa4bfbb6f59cbe6ce74ff13f55cfd5bc4" prot="private" static="no" mutable="no">
         <type>bool</type>
@@ -314,7 +314,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="188" column="8" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="188" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="189" column="8" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="189" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1a3c0bc9ed6e63f4e0ed6fc15b76a497a6" prot="private" static="no" mutable="no">
         <type>epicsUInt32</type>
@@ -327,7 +327,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="189" column="15" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="189" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="190" column="15" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="190" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1a6b72f8c26e9eb7e821870177344e99d9" prot="private" static="no" mutable="no">
         <type>epicsUInt32</type>
@@ -340,7 +340,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="190" column="15" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="190" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="191" column="15" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="191" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1aaa3bfb04e128e2e5d0a09020f0e74534" prot="private" static="no" mutable="no">
         <type>epicsUInt32</type>
@@ -353,7 +353,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="191" column="15" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="191" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="192" column="15" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="192" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1ae2aeb0ea3aaeaf22481598c28639aa42" prot="private" static="no" mutable="no">
         <type>epics::pvData::PVTimeStamp</type>
@@ -366,7 +366,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="192" column="30" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="192" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="193" column="30" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="193" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1a5d4f44c0f749950e901a6185e4e43a1c" prot="private" static="no" mutable="no">
         <type>epics::pvData::TimeStamp</type>
@@ -379,7 +379,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="193" column="28" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="193" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="194" column="28" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="194" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1a6a9f42d4bb1aee38177afc087a9c8b14" prot="private" static="no" mutable="no">
         <type>epics::pvData::TimeStamp</type>
@@ -392,7 +392,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="194" column="28" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="194" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="195" column="28" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="195" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1a8faee4b4ed1555c98aeb84e280902868" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -405,7 +405,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="195" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="195" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="196" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="196" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1a330342163a808623c38c98657d9b3b49" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -418,7 +418,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="196" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="196" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="197" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="197" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1af7ca190baf7259271a2e53ba15508a41" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -431,7 +431,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="197" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="197" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="198" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="198" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1ae11d17693764d4cb1359c14505120aa9" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -444,7 +444,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="198" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="198" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="199" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="199" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1a4b16788b8322698157cd5e76931333cd" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -457,7 +457,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="199" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="199" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="200" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="200" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1ae987790c1dcf8899cdb58b9e89e57f5f" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -470,7 +470,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="200" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="200" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="201" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="201" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1a515dfa130d0310f4e01318f8d5174981" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -483,7 +483,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="201" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="201" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="202" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="202" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1ae13543fe7395596ac10c07fd48ad1f02" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -496,7 +496,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="202" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="202" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="203" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="203" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1ac57403d02516705b0e70671b638af08e" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -509,7 +509,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="203" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="203" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="204" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="204" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1ae533c2ca304bcb19a8cb7847d7eca5d3" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -522,7 +522,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="204" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="204" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="205" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="205" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1a3aee9935a1017709e5e412d45c041ef0" prot="private" static="no" mutable="no">
         <type>double</type>
@@ -535,7 +535,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="205" column="10" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="205" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="206" column="10" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="206" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1a4db8c663d609da94de885bda26a49c36" prot="private" static="no" mutable="no">
         <type>double</type>
@@ -548,7 +548,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="206" column="10" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="206" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="207" column="10" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="207" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1a396711d6339a032cc95d3f36a6da7db3" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -561,7 +561,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="207" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="207" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="208" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="208" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1ad12d3f95d167acdd2cddc1effb4cf121" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -574,7 +574,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="208" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="208" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="209" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="209" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1ac9011c00a41ce0aebd6e6a9b23fb666a" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -587,7 +587,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="209" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="209" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="210" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="210" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1a2cc7a015e18590400b1a9a0c260a7e63" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -600,7 +600,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="210" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="210" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="211" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="211" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1ae8f88818d882d686eded8eff897e6c74" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -613,7 +613,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="211" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="211" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="212" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="212" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1a9a9e145a96974705676700337f30c883" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -626,7 +626,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="212" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="212" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="213" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="213" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1ae7c8d4692fede2b7e349d76bb6c75006" prot="private" static="no" mutable="no">
         <type>epicsUInt32</type>
@@ -639,7 +639,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="213" column="15" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="213" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="214" column="15" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="214" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1a6ca8997a1bdc463b05eb7a7731604c0a" prot="private" static="no" mutable="no">
         <type>epicsUInt32</type>
@@ -652,7 +652,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="214" column="15" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="214" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="215" column="15" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="215" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1a090bb69e120224724ca8413def400947" prot="private" static="no" mutable="no">
         <type>epicsFloat64</type>
@@ -665,7 +665,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="215" column="16" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="215" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="216" column="16" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="216" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1aa23b0aee02c6e44822e51ca2c725ab86" prot="private" static="no" mutable="no">
         <type>epics::pvAccess::ChannelProvider::shared_pointer</type>
@@ -678,7 +678,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="217" column="52" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="217" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="218" column="52" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="218" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1af23e630cbae0ec4f0236650f560f211a" prot="private" static="no" mutable="no">
         <type>std::tr1::shared_ptr&lt; <ref refid="classn_e_d_channel_1_1n_e_d_channel_requester" kindref="compound">nEDChannel::nEDChannelRequester</ref> &gt;</type>
@@ -691,7 +691,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="218" column="24" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="218" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="219" column="24" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="219" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1ae3477b9967feca7ed2eddb53b0988520" prot="private" static="no" mutable="no">
         <type>std::tr1::shared_ptr&lt; <ref refid="classn_e_d_channel_1_1n_e_d_monitor_requester" kindref="compound">nEDChannel::nEDMonitorRequester</ref> &gt;</type>
@@ -704,7 +704,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="219" column="24" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="219" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="220" column="24" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="220" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1a55792f48af542a6a718a0a1667b9b0fe" prot="private" static="no" mutable="no">
         <type>epics::pvData::Monitor::shared_pointer</type>
@@ -717,7 +717,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="220" column="42" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="220" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="221" column="42" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="221" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1a6b7cde7f2f07d008371ed9b6d09c3a1d" prot="private" static="no" mutable="no">
         <type>epics::pvAccess::Channel::shared_pointer</type>
@@ -730,7 +730,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="221" column="44" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="221" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="222" column="44" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="222" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1aa37025a3b78cf4dd653fabfd7408a3f2" prot="private" static="no" mutable="no">
         <type><ref refid="class_a_dn_e_d_transform" kindref="compound">ADnEDTransform</ref> *</type>
@@ -743,7 +743,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="223" column="18" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="223" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="224" column="18" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="224" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1af25c3af26681147a65afe112d92096e6" prot="private" static="no" mutable="no">
         <type>const epicsUInt32</type>
@@ -756,7 +756,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="226" column="21" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="226" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="227" column="21" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="227" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1ac1c493c1416b6b8ecc9156f7a280eb01" prot="private" static="no" mutable="no">
         <type>epicsEventId</type>
@@ -769,7 +769,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="228" column="16" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="228" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="229" column="16" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="229" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1a8d2705ddfa40132d09920a69e6b5f116" prot="private" static="no" mutable="no">
         <type>epicsEventId</type>
@@ -782,7 +782,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="229" column="16" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="229" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="230" column="16" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="230" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1a52359545b6682d7b92a576c24b1a75c4" prot="private" static="no" mutable="no">
         <type>epicsEventId</type>
@@ -795,7 +795,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="230" column="16" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="230" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="231" column="16" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="231" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1a7a30affaceab2a9b8a1b8b844693dfa3" prot="private" static="no" mutable="no">
         <type>epicsEventId</type>
@@ -808,7 +808,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="231" column="16" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="231" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="232" column="16" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="232" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1ac1c88ff5b776cfe31d956706da4bfd8e" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -821,7 +821,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="234" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="234" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="235" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="235" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1ae54db6e6a82fbece824ac3aa6e27932c" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -834,7 +834,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="236" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="236" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="237" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="237" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1a7a99c9a112dff1bcd6e2afe008cac373" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -847,7 +847,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="237" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="237" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="238" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="238" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1ad7bed957fb6bec22b34db392f31e9906" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -860,7 +860,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="238" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="238" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="239" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="239" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1a2dd1d0ad4bd2b45268adde229c2d5465" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -873,7 +873,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="239" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="239" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="240" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="240" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1a61c6110945b1ded4e006ed3361fe9bfc" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -886,7 +886,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="240" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="240" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="241" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="241" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1a3fa544099f10c81b66b3617ee7babdaa" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -899,7 +899,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="241" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="241" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="242" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="242" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1aa925a2a770a64198dc4faae51747f26a" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -912,7 +912,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="242" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="242" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="243" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="243" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1adac3f5aa73048d05264eb5e70c3d038e" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -925,7 +925,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="243" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="243" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="244" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="244" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1a4089f61da61f6224f5864e3ff6d84f84" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -938,7 +938,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="244" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="244" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="245" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="245" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1afd534e66decdff8d76e4ba895bc57e44" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -951,7 +951,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="245" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="245" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="246" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="246" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1a318918376e621313dc70ee79bcd3b9d3" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -964,7 +964,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="246" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="246" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="247" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="247" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1ad993d0986b4ba33622f76b9afa36c7e6" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -977,7 +977,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="247" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="247" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="248" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="248" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1a07642856b8287a116e67078632a12a97" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -990,7 +990,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="248" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="248" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="249" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="249" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1a5166ca02c615b510b9bebd441500fc9e" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -1003,7 +1003,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="249" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="249" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="250" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="250" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1ad3290b68048fccb5290f0c1bb0633292" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -1016,7 +1016,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="250" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="250" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="251" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="251" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1aca0af8cd3c3269650993d0f13f82c5f4" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -1029,7 +1029,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="251" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="251" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="252" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="252" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1a2d87d0ed524703dd42e809ac2787d1c4" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -1042,7 +1042,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="252" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="252" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="253" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="253" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1a505a028cc1e1ae00f50f27cddbb936cd" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -1055,7 +1055,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="253" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="253" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="254" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="254" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1a48de5e11cb9d8afcd0c92f1d00e98db7" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -1068,7 +1068,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="254" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="254" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="255" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="255" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1aeceded15d810629101aa42a664535ea7" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -1081,7 +1081,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="255" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="255" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="256" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="256" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1a633a66bf98798f22d6cb530ea3f6ec58" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -1094,7 +1094,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="256" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="256" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="257" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="257" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1add1b0b647e78d48550aab7926e6e350b" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -1107,7 +1107,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="257" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="257" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="258" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="258" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1a07ccb2a9837b8c775f9e52c359607102" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -1120,7 +1120,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="258" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="258" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="259" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="259" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1aa6fe3517dd5d93ac30f4e8efa3602337" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -1133,7 +1133,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="259" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="259" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="260" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="260" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1a6927cc13bd85629618868671edfc31a3" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -1146,7 +1146,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="260" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="260" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="261" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="261" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1ade6018636baf9e8f6b7b08a8a5965b40" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -1159,7 +1159,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="261" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="261" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="262" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="262" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1aae68e23076eae72272f2c4d7bca0cd0f" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -1172,7 +1172,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="262" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="262" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="263" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="263" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1add57c5259cf62469fdd617b390c8c2d8" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -1185,7 +1185,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="263" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="263" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="264" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="264" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1a1c6876d6792d2982009702082fcf2d74" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -1198,7 +1198,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="264" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="264" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="265" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="265" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1aa7cf2f9b4855e064831eef935611c103" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -1211,7 +1211,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="265" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="265" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="266" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="266" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1a0741cad9dfa0c98d2cfae6dd85cf393c" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -1224,7 +1224,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="266" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="266" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="267" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="267" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1a78a129f9f0f906cea462b4ba3ed12334" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -1237,7 +1237,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="267" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="267" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="268" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="268" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1ac416eb6f4f2149fee377d1b2347cb297" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -1250,7 +1250,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="268" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="268" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="269" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="269" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1aa014063119f5d2d06416bf2f72c0fdf9" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -1263,7 +1263,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="269" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="269" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="270" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="270" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1a9487e93769dd2d710c5ce732ef6799f0" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -1276,7 +1276,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="270" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="270" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="271" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="271" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1a6139934ee9410252cbd0dc3d1d58972e" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -1289,7 +1289,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="272" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="272" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="273" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="273" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1a91e51310e3b71023e069b6ba27eaadb0" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -1302,7 +1302,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="273" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="273" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="274" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="274" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1aa32ae4b8e4a8d9d8eca59612527dd032" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -1315,7 +1315,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="274" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="274" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="275" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="275" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1a436ff6671a825d9ef2525cf667b3cb09" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -1328,7 +1328,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="275" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="275" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="276" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="276" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1abf0b378f08e6a9392e0d57f313507ad3" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -1341,7 +1341,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="276" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="276" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="277" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="277" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1a60920376bed9aadba02ce8f894e5c42e" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -1354,7 +1354,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="277" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="277" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="278" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="278" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1a183cf78fd1e2e708998b5a663ede98df" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -1367,7 +1367,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="278" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="278" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="279" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="279" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1a0ed9cb36d39cd8676d363afcfee92255" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -1380,7 +1380,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="279" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="279" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="280" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="280" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1abf7231528a4dbd5bfc75286729017094" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -1393,7 +1393,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="280" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="280" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="281" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="281" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1ab727955495f54d4c5aa150c272bae25f" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -1406,7 +1406,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="281" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="281" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="282" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="282" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1add6b4e4d45691a448bc0b2b0c0ba14a4" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -1419,7 +1419,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="282" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="282" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="283" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="283" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1a22c8b88eae96e89fb7f98d2b8fd5d20e" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -1432,7 +1432,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="283" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="283" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="284" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="284" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1af7ae65b254f17b8e20bb645e1001a731" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -1445,7 +1445,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="284" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="284" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="285" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="285" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1a792876760cbe84e08f809474c07937a0" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -1458,7 +1458,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="285" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="285" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="286" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="286" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1aae3117fa6acb3d076af71e47aff9d0b0" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -1471,7 +1471,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="286" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="286" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="287" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="287" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1aa13b440b952770b4365255a0093db92f" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -1484,7 +1484,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="287" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="287" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="288" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="288" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1a6203738b8a22830f2ba6369b021c112f" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -1497,7 +1497,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="288" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="288" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="289" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="289" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1a45e0804b267c2c07113d34b9e7082608" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -1510,7 +1510,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="289" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="289" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="290" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="290" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1a8ad7f910d0c5bcbf843fea0265d1ac48" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -1523,7 +1523,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="290" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="290" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="291" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="291" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1ab8040d736e09d6ee36e82e57a67f406b" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -1536,7 +1536,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="291" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="291" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="292" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="292" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1a92a3a1cb916b72ee5bff8e33e497dc4b" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -1549,7 +1549,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="292" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="292" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="293" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="293" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1a1b0171afb331013c2ad07b002b802f30" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -1562,7 +1562,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="293" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="293" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="294" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="294" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1ab08fc55657f8d675d846572f3f0d34a2" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -1575,7 +1575,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="294" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="294" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="295" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="295" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1a155a31f1e1edb07e2baf3ced9825e7d8" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -1588,7 +1588,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="296" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="296" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="297" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="297" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1ad602296551ffa08a09606c4806588a0d" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -1601,7 +1601,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="297" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="297" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="298" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="298" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1a81e07b1c2ad09a40c2e1c33599c52610" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -1614,7 +1614,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="298" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="298" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="299" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="299" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1a5429cb70533413369c9ef8d9218d38c0" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -1627,7 +1627,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="299" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="299" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="300" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="300" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1a5c47f490e0f9e803539d2f5ae15c065c" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -1640,7 +1640,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="300" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="300" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="301" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="301" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1a376c09587c4a569057095fdbf71be5cf" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -1653,7 +1653,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="301" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="301" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="302" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="302" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1a16de91c8f15b5310e9631687fe29b21f" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -1666,7 +1666,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="302" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="302" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="303" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="303" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1a6dbb19dcca8430bb1d79ccf4b9dc47c9" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -1679,7 +1679,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="303" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="303" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="304" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="304" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1a88907fb3e653a86ffd5665a05ac22615" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -1692,7 +1692,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="304" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="304" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="305" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="305" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1a111e635e2b51e87f4139667371ab9b0d" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -1705,7 +1705,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="305" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="305" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="306" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="306" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1aef340c80acbf3c8dc1c1f0c67c527a08" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -1718,7 +1718,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="306" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="306" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="307" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="307" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1a6d8650d18683c57cc2c8c70f601df388" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -1731,7 +1731,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="307" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="307" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="308" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="308" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_a_dn_e_d_1a3c4d0dec3618141da1ff979c30668257" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -1744,7 +1744,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="308" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="308" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="309" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="309" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -1810,7 +1810,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="133" column="3" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.cpp" bodystart="67" bodyend="367"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="134" column="3" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.cpp" bodystart="70" bodyend="370"/>
       </memberdef>
       <memberdef kind="function" id="class_a_dn_e_d_1adde4b69a8f556c8f2b4ac756afcd5728" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type></type>
@@ -1825,7 +1825,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="134" column="11" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.cpp" bodystart="372" bodyend="375"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="135" column="11" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.cpp" bodystart="375" bodyend="378"/>
       </memberdef>
       <memberdef kind="function" id="class_a_dn_e_d_1a6f48d5cb4595d80ac463f6985c2339ef" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>asynStatus</type>
@@ -1848,7 +1848,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="137" column="22" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.cpp" bodystart="423" bodyend="614"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="138" column="22" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.cpp" bodystart="426" bodyend="617"/>
       </memberdef>
       <memberdef kind="function" id="class_a_dn_e_d_1a9b7c29a1d6afe23d441b364dd47abcec" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>asynStatus</type>
@@ -1870,7 +1870,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="138" column="22" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.cpp" bodystart="620" bodyend="668"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="139" column="22" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.cpp" bodystart="623" bodyend="671"/>
       </memberdef>
       <memberdef kind="function" id="class_a_dn_e_d_1a17154f53e46dd486b5b01067cc5dfffb" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>asynStatus</type>
@@ -1901,7 +1901,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="139" column="22" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.cpp" bodystart="675" bodyend="778"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="140" column="22" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.cpp" bodystart="678" bodyend="781"/>
       </memberdef>
       <memberdef kind="function" id="class_a_dn_e_d_1a129d879ea48ad560e096c7601cc3586b" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -1942,7 +1942,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="141" column="16" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.cpp" bodystart="402" bodyend="417"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="142" column="16" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.cpp" bodystart="405" bodyend="420"/>
       </memberdef>
       <memberdef kind="function" id="class_a_dn_e_d_1af03077e4cbf15b0f87276964e9571074" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1959,7 +1959,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="145" column="8" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.cpp" bodystart="1477" bodyend="1638"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="146" column="8" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.cpp" bodystart="1480" bodyend="1641"/>
       </memberdef>
       <memberdef kind="function" id="class_a_dn_e_d_1a7159453bdd7dbc6fb2551259cf09220d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1976,7 +1976,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="146" column="8" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.cpp" bodystart="1716" bodyend="1807"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="147" column="8" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.cpp" bodystart="1723" bodyend="1814"/>
       </memberdef>
       <memberdef kind="function" id="class_a_dn_e_d_1a3ec65c24f2ceb3ff24459e535e62e4c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1998,7 +1998,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="147" column="8" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.cpp" bodystart="981" bodyend="1311"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="148" column="8" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.cpp" bodystart="984" bodyend="1314"/>
       </memberdef>
       <memberdef kind="function" id="class_a_dn_e_d_1a4809a46a01de5350ef9a8c63ead53805" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>asynStatus</type>
@@ -2016,7 +2016,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="148" column="14" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.cpp" bodystart="1318" bodyend="1424"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="149" column="14" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.cpp" bodystart="1321" bodyend="1427"/>
       </memberdef>
       <memberdef kind="function" id="class_a_dn_e_d_1adf510d01ec66f97ead176ec399b6189e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>asynStatus</type>
@@ -2033,7 +2033,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="149" column="14" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.cpp" bodystart="1429" bodyend="1471"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="150" column="14" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.cpp" bodystart="1432" bodyend="1474"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -2049,7 +2049,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="143" column="21" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.cpp" bodystart="380" bodyend="394"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="144" column="21" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.cpp" bodystart="383" bodyend="397"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -2079,7 +2079,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="154" column="8" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.cpp" bodystart="784" bodyend="795"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="155" column="8" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.cpp" bodystart="787" bodyend="798"/>
       </memberdef>
       <memberdef kind="function" id="class_a_dn_e_d_1a6ba9b4e321f331006f0a91f2071a93bf" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -2107,7 +2107,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="155" column="8" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.cpp" bodystart="801" bodyend="805"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="156" column="8" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.cpp" bodystart="804" bodyend="808"/>
       </memberdef>
       <memberdef kind="function" id="class_a_dn_e_d_1a9916b93816d529952a323e08910f77c8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>asynStatus</type>
@@ -2135,7 +2135,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="156" column="14" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.cpp" bodystart="927" bodyend="954"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="157" column="14" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.cpp" bodystart="930" bodyend="957"/>
       </memberdef>
       <memberdef kind="function" id="class_a_dn_e_d_1a72fbac2d6f3cd986624f14a17a4724fa" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>asynStatus</type>
@@ -2177,7 +2177,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="157" column="14" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.cpp" bodystart="1656" bodyend="1710"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="158" column="14" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.cpp" bodystart="1659" bodyend="1717"/>
       </memberdef>
       <memberdef kind="function" id="class_a_dn_e_d_1a9e193a3bc1e483bcf31ccf56f9b40e9c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -2219,7 +2219,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="158" column="8" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.cpp" bodystart="814" bodyend="843"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="159" column="8" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.cpp" bodystart="817" bodyend="846"/>
       </memberdef>
       <memberdef kind="function" id="class_a_dn_e_d_1a72a6d081a7d20bd2bd1321f32ae6ebda" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -2261,7 +2261,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="159" column="8" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.cpp" bodystart="852" bodyend="881"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="160" column="8" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.cpp" bodystart="855" bodyend="884"/>
       </memberdef>
       <memberdef kind="function" id="class_a_dn_e_d_1a27865f00616602db0c7b47145da2edc7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -2303,7 +2303,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="160" column="8" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.cpp" bodystart="890" bodyend="919"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="161" column="8" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.cpp" bodystart="893" bodyend="922"/>
       </memberdef>
       <memberdef kind="function" id="class_a_dn_e_d_1a7ac25bd27525bc997e0938def14c0326" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -2331,7 +2331,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="161" column="8" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.cpp" bodystart="960" bodyend="976"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="162" column="8" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.cpp" bodystart="963" bodyend="979"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -2434,7 +2434,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="130" column="1" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="130" bodyend="311"/>
+    <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" line="131" column="1" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h" bodystart="131" bodyend="312"/>
     <listofallmembers>
       <member refid="classasyn_n_d_array_driver_1aa06c19f650b4619a7bdbf3a79397c3d3" prot="protected" virt="non-virtual"><scope>ADnED</scope><name>ADAcquire</name></member>
       <member refid="classasyn_n_d_array_driver_1aaeb5af71e22323b6a3d4f51be380bc7a" prot="protected" virt="non-virtual"><scope>ADnED</scope><name>ADAcquireBusy</name></member>

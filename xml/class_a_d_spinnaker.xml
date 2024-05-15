@@ -470,7 +470,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.h" line="59" column="5" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.cpp" bodystart="115" bodyend="187"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.h" line="59" column="5" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.cpp" bodystart="123" bodyend="218"/>
       </memberdef>
       <memberdef kind="function" id="class_a_d_spinnaker_1aaf4b46ecf92f6e19a704d2dae1655e84" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>asynStatus</type>
@@ -511,7 +511,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.h" line="65" column="24" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.cpp" bodystart="725" bodyend="737"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.h" line="65" column="24" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.cpp" bodystart="775" bodyend="787"/>
       </memberdef>
       <memberdef kind="function" id="class_a_d_spinnaker_1a10ee13de89989f8262bc23e141b8efc8" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -552,7 +552,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.h" line="67" column="10" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.cpp" bodystart="857" bodyend="891"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.h" line="67" column="10" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.cpp" bodystart="907" bodyend="941"/>
       </memberdef>
       <memberdef kind="function" id="class_a_d_spinnaker_1aab1fc231e184c00fbf20681af8831b4d" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type><ref refid="class_gen_i_cam_feature" kindref="compound">GenICamFeature</ref> *</type>
@@ -590,7 +590,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.h" line="68" column="28" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.cpp" bodystart="213" bodyend="217"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.h" line="68" column="28" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.cpp" bodystart="251" bodyend="255"/>
       </memberdef>
       <memberdef kind="function" id="class_a_d_spinnaker_1a08535d78883bdf897d6edc33ba51f7eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>INodeMap *</type>
@@ -604,7 +604,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.h" line="71" column="14" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.cpp" bodystart="219" bodyend="221"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.h" line="71" column="14" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.cpp" bodystart="257" bodyend="259"/>
       </memberdef>
       <memberdef kind="function" id="class_a_d_spinnaker_1a7ad0d7b9238eb9ed3dd4020282c4e8f9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -618,7 +618,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.h" line="74" column="10" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.cpp" bodystart="346" bodyend="450"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.h" line="74" column="10" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.cpp" bodystart="396" bodyend="500"/>
       </memberdef>
       <memberdef kind="function" id="class_a_d_spinnaker_1a41fd9b61d47d6d2b0798cdf8b534fff4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -631,7 +631,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.h" line="75" column="10" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.cpp" bodystart="190" bodyend="211"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.h" line="75" column="10" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.cpp" bodystart="221" bodyend="249"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -646,7 +646,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.h" line="97" column="16" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.cpp" bodystart="452" bodyend="723"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.h" line="97" column="16" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.cpp" bodystart="502" bodyend="773"/>
       </memberdef>
       <memberdef kind="function" id="class_a_d_spinnaker_1a5d442adb176d1f49b63cccb3df4081ee" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>asynStatus</type>
@@ -660,7 +660,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.h" line="98" column="16" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.cpp" bodystart="739" bodyend="757"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.h" line="98" column="16" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.cpp" bodystart="789" bodyend="807"/>
       </memberdef>
       <memberdef kind="function" id="class_a_d_spinnaker_1aba6221c401b9e483ca11f50ddbed87cc" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>asynStatus</type>
@@ -674,7 +674,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.h" line="99" column="16" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.cpp" bodystart="760" bodyend="801"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.h" line="99" column="16" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.cpp" bodystart="810" bodyend="851"/>
       </memberdef>
       <memberdef kind="function" id="class_a_d_spinnaker_1aa072555b9d9d02e47b3d1155ae139e34" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>asynStatus</type>
@@ -687,7 +687,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.h" line="100" column="16" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.cpp" bodystart="224" bodyend="322"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.h" line="100" column="16" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.cpp" bodystart="262" bodyend="372"/>
       </memberdef>
       <memberdef kind="function" id="class_a_d_spinnaker_1acf39537045ff0587231d9048cec932ec" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>asynStatus</type>
@@ -746,7 +746,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.h" line="103" column="10" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.cpp" bodystart="803" bodyend="848"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.h" line="103" column="10" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.cpp" bodystart="853" bodyend="898"/>
       </memberdef>
       <memberdef kind="function" id="class_a_d_spinnaker_1ae26ad632ead8c58f78672cef95706aa8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -767,7 +767,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.h" line="104" column="10" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.cpp" bodystart="324" bodyend="340"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.h" line="104" column="10" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.cpp" bodystart="374" bodyend="390"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

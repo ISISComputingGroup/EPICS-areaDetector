@@ -17,36 +17,40 @@
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="99">
+      <node id="98">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginFile.h</label>
         <link refid="_n_d_plugin_file_8h"/>
+        <childnode refid="99" relation="include">
+        </childnode>
         <childnode refid="100" relation="include">
         </childnode>
-        <childnode refid="102" relation="include">
+        <childnode refid="101" relation="include">
         </childnode>
-        <childnode refid="104" relation="include">
+        <childnode refid="103" relation="include">
         </childnode>
         <childnode refid="105" relation="include">
         </childnode>
         <childnode refid="106" relation="include">
         </childnode>
-        <childnode refid="108" relation="include">
+        <childnode refid="107" relation="include">
         </childnode>
         <childnode refid="109" relation="include">
         </childnode>
         <childnode refid="110" relation="include">
         </childnode>
-        <childnode refid="112" relation="include">
+        <childnode refid="111" relation="include">
         </childnode>
-        <childnode refid="114" relation="include">
+        <childnode refid="113" relation="include">
         </childnode>
-        <childnode refid="116" relation="include">
+        <childnode refid="115" relation="include">
         </childnode>
         <childnode refid="117" relation="include">
         </childnode>
         <childnode refid="118" relation="include">
         </childnode>
         <childnode refid="119" relation="include">
+        </childnode>
+        <childnode refid="120" relation="include">
         </childnode>
       </node>
       <node id="17">
@@ -59,11 +63,11 @@
         <childnode refid="51" relation="include">
         </childnode>
       </node>
-      <node id="141">
+      <node id="144">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginTimeSeries.cpp</label>
         <link refid="_n_d_plugin_time_series_8cpp"/>
       </node>
-      <node id="107">
+      <node id="108">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileMagick.cpp</label>
         <link refid="_n_d_file_magick_8cpp"/>
       </node>
@@ -71,7 +75,7 @@
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADGenICam/GenICamApp/src/ADGenICam.cpp</label>
         <link refid="_a_d_gen_i_cam_8cpp"/>
       </node>
-      <node id="139">
+      <node id="142">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginStdArrays.cpp</label>
         <link refid="_n_d_plugin_std_arrays_8cpp"/>
       </node>
@@ -97,17 +101,17 @@
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.cpp</label>
         <link refid="_a_d_lambda_8cpp"/>
       </node>
-      <node id="127">
+      <node id="130">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginPva.h</label>
         <link refid="_n_d_plugin_pva_8h"/>
-        <childnode refid="128" relation="include">
+        <childnode refid="131" relation="include">
         </childnode>
       </node>
-      <node id="98">
+      <node id="97">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginFFT.cpp</label>
         <link refid="_n_d_plugin_f_f_t_8cpp"/>
       </node>
-      <node id="158">
+      <node id="161">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDArrayRing.cpp</label>
         <link refid="_n_d_array_ring_8cpp"/>
       </node>
@@ -115,14 +119,14 @@
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADMythen/mythenApp/src/mythen.cpp</label>
         <link refid="mythen_8cpp"/>
       </node>
-      <node id="169">
+      <node id="172">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5AttributeDataset.cpp</label>
         <link refid="_n_d_file_h_d_f5_attribute_dataset_8cpp"/>
       </node>
-      <node id="142">
+      <node id="145">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginTransform.h</label>
         <link refid="_n_d_plugin_transform_8h"/>
-        <childnode refid="143" relation="include">
+        <childnode refid="146" relation="include">
         </childnode>
       </node>
       <node id="56">
@@ -137,6 +141,10 @@
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPSL/pslApp/src/PSL.cpp</label>
         <link refid="_p_s_l_8cpp"/>
       </node>
+      <node id="122">
+        <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginFocusMetrics.cpp</label>
+        <link refid="_n_d_plugin_focus_metrics_8cpp"/>
+      </node>
       <node id="69">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h</label>
         <link refid="_a_dn_e_d_8h"/>
@@ -144,25 +152,23 @@
         </childnode>
         <childnode refid="71" relation="include">
         </childnode>
-        <childnode refid="72" relation="include">
-        </childnode>
       </node>
-      <node id="102">
+      <node id="103">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5Dataset.h</label>
         <link refid="_n_d_file_h_d_f5_dataset_8h"/>
-        <childnode refid="100" relation="include">
+        <childnode refid="101" relation="include">
         </childnode>
-        <childnode refid="103" relation="include">
+        <childnode refid="104" relation="include">
         </childnode>
       </node>
-      <node id="147">
+      <node id="149">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPluginEdge/edgeApp/edgeSrc/NDPluginEdge.cpp</label>
         <link refid="_n_d_plugin_edge_8cpp"/>
       </node>
-      <node id="109">
+      <node id="110">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileNetCDF.h</label>
         <link refid="_n_d_file_net_c_d_f_8h"/>
-        <childnode refid="108" relation="include">
+        <childnode refid="109" relation="include">
         </childnode>
       </node>
       <node id="50">
@@ -171,17 +177,17 @@
         <childnode refid="49" relation="include">
         </childnode>
       </node>
-      <node id="86">
+      <node id="85">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginAttrPlot.h</label>
         <link refid="_n_d_plugin_attr_plot_8h"/>
-        <childnode refid="87" relation="include">
+        <childnode refid="86" relation="include">
         </childnode>
       </node>
       <node id="60">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADQImaging/App/src/QImaging.cpp</label>
         <link refid="_q_imaging_8cpp"/>
       </node>
-      <node id="113">
+      <node id="114">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileNull.cpp</label>
         <link refid="_n_d_file_null_8cpp"/>
       </node>
@@ -189,10 +195,10 @@
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADmarCCD/marCCDApp/src/marCCD.cpp</label>
         <link refid="mar_c_c_d_8cpp"/>
       </node>
-      <node id="131">
+      <node id="134">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginROIStat.h</label>
         <link refid="_n_d_plugin_r_o_i_stat_8h"/>
-        <childnode refid="132" relation="include">
+        <childnode refid="135" relation="include">
         </childnode>
       </node>
       <node id="19">
@@ -201,83 +207,83 @@
         <childnode refid="18" relation="include">
         </childnode>
       </node>
-      <node id="126">
+      <node id="129">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginProcess.cpp</label>
         <link refid="_n_d_plugin_process_8cpp"/>
       </node>
-      <node id="133">
+      <node id="136">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginScatter.h</label>
         <link refid="_n_d_plugin_scatter_8h"/>
-        <childnode refid="134" relation="include">
+        <childnode refid="137" relation="include">
         </childnode>
       </node>
       <node id="64">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSimDetector/simDetectorApp/src/simDetector.cpp</label>
         <link refid="sim_detector_8cpp"/>
       </node>
-      <node id="121">
+      <node id="124">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginGather.h</label>
         <link refid="_n_d_plugin_gather_8h"/>
-        <childnode refid="122" relation="include">
+        <childnode refid="125" relation="include">
         </childnode>
       </node>
-      <node id="123">
+      <node id="126">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginOverlay.h</label>
         <link refid="_n_d_plugin_overlay_8h"/>
-        <childnode refid="124" relation="include">
+        <childnode refid="127" relation="include">
         </childnode>
       </node>
-      <node id="134">
+      <node id="137">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginScatter.cpp</label>
         <link refid="_n_d_plugin_scatter_8cpp"/>
       </node>
-      <node id="90">
+      <node id="89">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginCircularBuff.h</label>
         <link refid="_n_d_plugin_circular_buff_8h"/>
-        <childnode refid="91" relation="include">
+        <childnode refid="90" relation="include">
         </childnode>
       </node>
-      <node id="73">
+      <node id="72">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/aravisGigE/aravisGigEApp/src/aravisCamera.cpp</label>
         <link refid="aravis_camera_8cpp"/>
       </node>
-      <node id="157">
+      <node id="160">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDArrayRing.h</label>
         <link refid="_n_d_array_ring_8h"/>
-        <childnode refid="158" relation="include">
+        <childnode refid="161" relation="include">
         </childnode>
-        <childnode refid="90" relation="include">
+        <childnode refid="89" relation="include">
         </childnode>
       </node>
       <node id="18">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADDexela/dexelaApp/src/Dexela.cpp</label>
         <link refid="_dexela_8cpp"/>
       </node>
-      <node id="166">
+      <node id="169">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/ADSrc/PVAttribute.h</label>
         <link refid="_p_v_attribute_8h"/>
         <childnode refid="8" relation="include">
         </childnode>
-        <childnode refid="167" relation="include">
+        <childnode refid="170" relation="include">
         </childnode>
       </node>
-      <node id="78">
+      <node id="77">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/specsAnalyser/specsAnalyserApp/src/specsAnalyser.h</label>
         <link refid="specs_analyser_8h"/>
-        <childnode refid="79" relation="include">
+        <childnode refid="78" relation="include">
         </childnode>
       </node>
-      <node id="76">
+      <node id="75">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/NDDriverStdArrays/NDDriverStdArraysApp/src/NDDriverStdArrays.h</label>
         <link refid="_n_d_driver_std_arrays_8h"/>
-        <childnode refid="75" relation="include">
+        <childnode refid="74" relation="include">
         </childnode>
       </node>
-      <node id="149">
+      <node id="152">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDPixelROI.cpp</label>
         <link refid="_a_dn_e_d_pixel_r_o_i_8cpp"/>
       </node>
-      <node id="145">
+      <node id="148">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPosPlugin.cpp</label>
         <link refid="_n_d_pos_plugin_8cpp"/>
       </node>
@@ -289,7 +295,7 @@
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp</label>
         <link refid="point_grey_8cpp"/>
       </node>
-      <node id="153">
+      <node id="156">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ffmpegServer/ffmpegServerApp/src/ffmpegServer.cpp</label>
         <link refid="ffmpeg_server_8cpp"/>
       </node>
@@ -309,13 +315,9 @@
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPICam/PICamApp/src/ADPICam.cpp</label>
         <link refid="_a_d_p_i_cam_8cpp"/>
       </node>
-      <node id="87">
+      <node id="86">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginAttrPlot.cpp</label>
         <link refid="_n_d_plugin_attr_plot_8cpp"/>
-      </node>
-      <node id="71">
-        <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDTransform.cpp</label>
-        <link refid="_a_dn_e_d_transform_8cpp"/>
       </node>
       <node id="62">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADRIXSCam/rixscamApp/src/rixscam.h</label>
@@ -323,25 +325,25 @@
         <childnode refid="61" relation="include">
         </childnode>
       </node>
-      <node id="138">
+      <node id="141">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginStdArrays.h</label>
         <link refid="_n_d_plugin_std_arrays_8h"/>
-        <childnode refid="139" relation="include">
+        <childnode refid="142" relation="include">
         </childnode>
       </node>
-      <node id="136">
+      <node id="139">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginStats.cpp</label>
         <link refid="_n_d_plugin_stats_8cpp"/>
       </node>
-      <node id="129">
+      <node id="132">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginROI.cpp</label>
         <link refid="_n_d_plugin_r_o_i_8cpp"/>
       </node>
-      <node id="72">
+      <node id="71">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/nEDChannel.cpp</label>
         <link refid="n_e_d_channel_8cpp"/>
       </node>
-      <node id="143">
+      <node id="146">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginTransform.cpp</label>
         <link refid="_n_d_plugin_transform_8cpp"/>
       </node>
@@ -372,23 +374,23 @@
         <link refid="_n_d_array_8h"/>
         <childnode refid="12" relation="include">
         </childnode>
-        <childnode refid="156" relation="include">
-        </childnode>
-        <childnode refid="80" relation="include">
-        </childnode>
-        <childnode refid="82" relation="include">
-        </childnode>
-        <childnode refid="157" relation="include">
-        </childnode>
-        <childnode refid="100" relation="include">
-        </childnode>
         <childnode refid="159" relation="include">
         </childnode>
-        <childnode refid="147" relation="include">
+        <childnode refid="79" relation="include">
+        </childnode>
+        <childnode refid="81" relation="include">
+        </childnode>
+        <childnode refid="160" relation="include">
+        </childnode>
+        <childnode refid="101" relation="include">
+        </childnode>
+        <childnode refid="162" relation="include">
         </childnode>
         <childnode refid="149" relation="include">
         </childnode>
-        <childnode refid="161" relation="include">
+        <childnode refid="152" relation="include">
+        </childnode>
+        <childnode refid="164" relation="include">
         </childnode>
       </node>
       <node id="59">
@@ -397,27 +399,27 @@
         <childnode refid="60" relation="include">
         </childnode>
       </node>
-      <node id="161">
+      <node id="164">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ffmpegServer/ffmpegServerApp/src/ffmpegCommon.h</label>
         <link refid="ffmpeg_common_8h"/>
-        <childnode refid="162" relation="include">
+        <childnode refid="165" relation="include">
+        </childnode>
+        <childnode refid="121" relation="include">
         </childnode>
         <childnode refid="120" relation="include">
         </childnode>
-        <childnode refid="119" relation="include">
-        </childnode>
-        <childnode refid="152" relation="include">
+        <childnode refid="155" relation="include">
         </childnode>
       </node>
-      <node id="104">
+      <node id="105">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileJPEG.cpp</label>
         <link refid="_n_d_file_j_p_e_g_8cpp"/>
       </node>
-      <node id="89">
+      <node id="88">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginBadPixel.cpp</label>
         <link refid="_n_d_plugin_bad_pixel_8cpp"/>
       </node>
-      <node id="122">
+      <node id="125">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginGather.cpp</label>
         <link refid="_n_d_plugin_gather_8cpp"/>
       </node>
@@ -429,23 +431,27 @@
         <childnode refid="34" relation="include">
         </childnode>
       </node>
-      <node id="77">
+      <node id="76">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/pvaDriver/pvaDriverApp/src/pvaDriver.cpp</label>
         <link refid="pva_driver_8cpp"/>
       </node>
-      <node id="110">
+      <node id="111">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileNexus.h</label>
         <link refid="_n_d_file_nexus_8h"/>
-        <childnode refid="111" relation="include">
+        <childnode refid="112" relation="include">
         </childnode>
       </node>
-      <node id="74">
+      <node id="73">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/firewireDCAM/firewireDCAMApp/src/firewireDCAM.cpp</label>
         <link refid="firewire_d_c_a_m_8cpp"/>
       </node>
       <node id="9">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/ADSrc/functAttribute.cpp</label>
         <link refid="funct_attribute_8cpp"/>
+      </node>
+      <node id="99">
+        <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileFITS.cpp</label>
+        <link refid="_n_d_file_f_i_t_s_8cpp"/>
       </node>
       <node id="36">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADVimba/vimbaApp/src/ADVimba.h</label>
@@ -455,17 +461,17 @@
         <childnode refid="37" relation="include">
         </childnode>
       </node>
-      <node id="163">
+      <node id="166">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/ADSrc/NDAttribute.cpp</label>
         <link refid="_n_d_attribute_8cpp"/>
       </node>
-      <node id="140">
+      <node id="143">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginTimeSeries.h</label>
         <link refid="_n_d_plugin_time_series_8h"/>
-        <childnode refid="141" relation="include">
+        <childnode refid="144" relation="include">
         </childnode>
       </node>
-      <node id="85">
+      <node id="84">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginAttribute.cpp</label>
         <link refid="_n_d_plugin_attribute_8cpp"/>
       </node>
@@ -475,28 +481,28 @@
         <childnode refid="64" relation="include">
         </childnode>
       </node>
-      <node id="164">
+      <node id="167">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/ADSrc/NDAttributeList.h</label>
         <link refid="_n_d_attribute_list_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
         <childnode refid="11" relation="include">
         </childnode>
-        <childnode refid="165" relation="include">
+        <childnode refid="168" relation="include">
         </childnode>
       </node>
       <node id="35">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADVimba/vimbaApp/src/ADVimba.cpp</label>
         <link refid="_a_d_vimba_8cpp"/>
       </node>
-      <node id="162">
+      <node id="165">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ffmpegServer/ffmpegServerApp/src/ffmpegCommon.cpp</label>
         <link refid="ffmpeg_common_8cpp"/>
       </node>
-      <node id="105">
+      <node id="106">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileJPEG.h</label>
         <link refid="_n_d_file_j_p_e_g_8h"/>
-        <childnode refid="104" relation="include">
+        <childnode refid="105" relation="include">
         </childnode>
       </node>
       <node id="4">
@@ -509,97 +515,97 @@
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADFastCCD/FastCCDApp/src/FastCCD.cpp</label>
         <link refid="_fast_c_c_d_8cpp"/>
       </node>
-      <node id="84">
+      <node id="83">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginAttribute.h</label>
         <link refid="_n_d_plugin_attribute_8h"/>
-        <childnode refid="85" relation="include">
+        <childnode refid="84" relation="include">
         </childnode>
       </node>
       <node id="3">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/ADSrc/CCDMultiTrack.cpp</label>
         <link refid="_c_c_d_multi_track_8cpp"/>
       </node>
-      <node id="115">
+      <node id="116">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileTIFF.cpp</label>
         <link refid="_n_d_file_t_i_f_f_8cpp"/>
       </node>
-      <node id="80">
+      <node id="79">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/ADSrc/NDArrayPool.cpp</label>
         <link refid="_n_d_array_pool_8cpp"/>
       </node>
-      <node id="132">
+      <node id="135">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginROIStat.cpp</label>
         <link refid="_n_d_plugin_r_o_i_stat_8cpp"/>
       </node>
-      <node id="75">
+      <node id="74">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/NDDriverStdArrays/NDDriverStdArraysApp/src/NDDriverStdArrays.cpp</label>
         <link refid="_n_d_driver_std_arrays_8cpp"/>
       </node>
-      <node id="151">
+      <node id="154">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDPluginMask.h</label>
         <link refid="_a_dn_e_d_plugin_mask_8h"/>
-        <childnode refid="150" relation="include">
+        <childnode refid="153" relation="include">
         </childnode>
       </node>
       <node id="31">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPylon/pylonApp/src/PylonFeature.cpp</label>
         <link refid="_pylon_feature_8cpp"/>
       </node>
-      <node id="125">
+      <node id="128">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginProcess.h</label>
         <link refid="_n_d_plugin_process_8h"/>
-        <childnode refid="126" relation="include">
+        <childnode refid="129" relation="include">
         </childnode>
       </node>
       <node id="46">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPCO/pcoApp/src/pco.cpp</label>
         <link refid="pco_8cpp"/>
       </node>
-      <node id="124">
+      <node id="127">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginOverlay.cpp</label>
         <link refid="_n_d_plugin_overlay_8cpp"/>
       </node>
-      <node id="92">
+      <node id="91">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginCodec.h</label>
         <link refid="_n_d_plugin_codec_8h"/>
-        <childnode refid="93" relation="include">
+        <childnode refid="92" relation="include">
         </childnode>
       </node>
-      <node id="154">
+      <node id="157">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCSimDetector/ADCSimDetectorApp/src/ADCSimDetector.cpp</label>
         <link refid="_a_d_c_sim_detector_8cpp"/>
       </node>
-      <node id="91">
+      <node id="90">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginCircularBuff.cpp</label>
         <link refid="_n_d_plugin_circular_buff_8cpp"/>
       </node>
-      <node id="168">
+      <node id="171">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5AttributeDataset.h</label>
         <link refid="_n_d_file_h_d_f5_attribute_dataset_8h"/>
-        <childnode refid="100" relation="include">
+        <childnode refid="101" relation="include">
         </childnode>
-        <childnode refid="169" relation="include">
+        <childnode refid="172" relation="include">
         </childnode>
       </node>
-      <node id="167">
+      <node id="170">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/ADSrc/PVAttribute.cpp</label>
         <link refid="_p_v_attribute_8cpp"/>
       </node>
-      <node id="135">
+      <node id="138">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginStats.h</label>
         <link refid="_n_d_plugin_stats_8h"/>
-        <childnode refid="136" relation="include">
+        <childnode refid="139" relation="include">
         </childnode>
-        <childnode refid="137" relation="include">
+        <childnode refid="140" relation="include">
         </childnode>
       </node>
-      <node id="130">
+      <node id="133">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginROI.h</label>
         <link refid="_n_d_plugin_r_o_i_8h"/>
-        <childnode refid="129" relation="include">
+        <childnode refid="132" relation="include">
         </childnode>
       </node>
-      <node id="111">
+      <node id="112">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileNexus.cpp</label>
         <link refid="_n_d_file_nexus_8cpp"/>
       </node>
@@ -615,10 +621,10 @@
         <childnode refid="6" relation="include">
         </childnode>
       </node>
-      <node id="119">
+      <node id="120">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ffmpegServer/ffmpegServerApp/src/ffmpegFile.h</label>
         <link refid="ffmpeg_file_8h"/>
-        <childnode refid="120" relation="include">
+        <childnode refid="121" relation="include">
         </childnode>
       </node>
       <node id="67">
@@ -637,7 +643,7 @@
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADMerlin/merlinApp/src/merlinDetector.cpp</label>
         <link refid="merlin_detector_8cpp"/>
       </node>
-      <node id="117">
+      <node id="118">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPCO/pcoApp/src/pcoEdgePlugin.cpp</label>
         <link refid="pco_edge_plugin_8cpp"/>
       </node>
@@ -647,7 +653,7 @@
         <childnode refid="41" relation="include">
         </childnode>
       </node>
-      <node id="93">
+      <node id="92">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginCodec.cpp</label>
         <link refid="_n_d_plugin_codec_8cpp"/>
       </node>
@@ -675,38 +681,50 @@
         <childnode refid="4" relation="include">
         </childnode>
       </node>
+      <node id="123">
+        <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginFocusMetrics.h</label>
+        <link refid="_n_d_plugin_focus_metrics_8h"/>
+        <childnode refid="122" relation="include">
+        </childnode>
+      </node>
       <node id="16">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADAndor3/andor3App/src/andor3.cpp</label>
         <link refid="andor3_8cpp"/>
       </node>
-      <node id="95">
+      <node id="94">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginColorConvert.h</label>
         <link refid="_n_d_plugin_color_convert_8h"/>
-        <childnode refid="94" relation="include">
+        <childnode refid="93" relation="include">
         </childnode>
       </node>
       <node id="10">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/ADSrc/myAttributeFunctions.cpp</label>
         <link refid="my_attribute_functions_8cpp"/>
       </node>
-      <node id="108">
+      <node id="109">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileNetCDF.cpp</label>
         <link refid="_n_d_file_net_c_d_f_8cpp"/>
+      </node>
+      <node id="100">
+        <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileFITS.h</label>
+        <link refid="_n_d_file_f_i_t_s_8h"/>
+        <childnode refid="99" relation="include">
+        </childnode>
       </node>
       <node id="27">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADAravis/aravisApp/src/ADAravis.cpp</label>
         <link refid="_a_d_aravis_8cpp"/>
       </node>
-      <node id="112">
+      <node id="113">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileNull.h</label>
         <link refid="_n_d_file_null_8h"/>
-        <childnode refid="113" relation="include">
+        <childnode refid="114" relation="include">
         </childnode>
       </node>
-      <node id="146">
+      <node id="150">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPluginEdge/edgeApp/edgeSrc/NDPluginEdge.h</label>
         <link refid="_n_d_plugin_edge_8h"/>
-        <childnode refid="147" relation="include">
+        <childnode refid="149" relation="include">
         </childnode>
       </node>
       <node id="70">
@@ -717,48 +735,48 @@
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADRIXSCam/rixscamApp/src/rixscam.cpp</label>
         <link refid="rixscam_8cpp"/>
       </node>
-      <node id="150">
+      <node id="153">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDPluginMask.cpp</label>
         <link refid="_a_dn_e_d_plugin_mask_8cpp"/>
       </node>
-      <node id="148">
+      <node id="151">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDPixelROI.h</label>
         <link refid="_a_dn_e_d_pixel_r_o_i_8h"/>
-        <childnode refid="149" relation="include">
+        <childnode refid="152" relation="include">
         </childnode>
       </node>
-      <node id="159">
+      <node id="162">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/ntndArrayConverterSrc/ntndArrayConverter.h</label>
         <link refid="ntnd_array_converter_8h"/>
-        <childnode refid="128" relation="include">
+        <childnode refid="131" relation="include">
         </childnode>
-        <childnode refid="160" relation="include">
+        <childnode refid="163" relation="include">
         </childnode>
-        <childnode refid="77" relation="include">
+        <childnode refid="76" relation="include">
         </childnode>
       </node>
-      <node id="100">
+      <node id="101">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5.h</label>
         <link refid="_n_d_file_h_d_f5_8h"/>
-        <childnode refid="101" relation="include">
+        <childnode refid="102" relation="include">
         </childnode>
       </node>
-      <node id="96">
+      <node id="95">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginDriver.cpp</label>
         <link refid="_n_d_plugin_driver_8cpp"/>
       </node>
-      <node id="101">
+      <node id="102">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5.cpp</label>
         <link refid="_n_d_file_h_d_f5_8cpp"/>
       </node>
-      <node id="165">
+      <node id="168">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/ADSrc/NDAttributeList.cpp</label>
         <link refid="_n_d_attribute_list_8cpp"/>
       </node>
-      <node id="114">
+      <node id="115">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileTIFF.h</label>
         <link refid="_n_d_file_t_i_f_f_8h"/>
-        <childnode refid="115" relation="include">
+        <childnode refid="116" relation="include">
         </childnode>
       </node>
       <node id="57">
@@ -787,7 +805,7 @@
         <childnode refid="36" relation="include">
         </childnode>
       </node>
-      <node id="160">
+      <node id="163">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/ntndArrayConverterSrc/ntndArrayConverter.cpp</label>
         <link refid="ntnd_array_converter_8cpp"/>
       </node>
@@ -795,16 +813,16 @@
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADFireWireWin/firewireWinApp/src/firewireWinDCAM.cpp</label>
         <link refid="firewire_win_d_c_a_m_8cpp"/>
       </node>
-      <node id="106">
+      <node id="107">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileMagick.h</label>
         <link refid="_n_d_file_magick_8h"/>
-        <childnode refid="107" relation="include">
+        <childnode refid="108" relation="include">
         </childnode>
       </node>
-      <node id="97">
+      <node id="96">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginFFT.h</label>
         <link refid="_n_d_plugin_f_f_t_8h"/>
-        <childnode refid="98" relation="include">
+        <childnode refid="97" relation="include">
         </childnode>
       </node>
       <node id="32">
@@ -823,34 +841,34 @@
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADMerlin/merlinApp/src/mpxConnection.cpp</label>
         <link refid="mpx_connection_8cpp"/>
       </node>
-      <node id="152">
+      <node id="155">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ffmpegServer/ffmpegServerApp/src/ffmpegServer.h</label>
         <link refid="ffmpeg_server_8h"/>
-        <childnode refid="153" relation="include">
+        <childnode refid="156" relation="include">
         </childnode>
       </node>
-      <node id="116">
+      <node id="117">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginFile.cpp</label>
         <link refid="_n_d_plugin_file_8cpp"/>
       </node>
-      <node id="103">
+      <node id="104">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5Dataset.cpp</label>
         <link refid="_n_d_file_h_d_f5_dataset_8cpp"/>
       </node>
-      <node id="144">
+      <node id="147">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPosPlugin.h</label>
         <link refid="_n_d_pos_plugin_8h"/>
-        <childnode refid="145" relation="include">
+        <childnode refid="148" relation="include">
         </childnode>
       </node>
-      <node id="156">
+      <node id="159">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/ADSrc/NDArray.cpp</label>
         <link refid="_n_d_array_8cpp"/>
       </node>
-      <node id="118">
+      <node id="119">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPCO/pcoApp/src/pcoEdgePlugin.h</label>
         <link refid="pco_edge_plugin_8h"/>
-        <childnode refid="117" relation="include">
+        <childnode refid="118" relation="include">
         </childnode>
       </node>
       <node id="6">
@@ -860,18 +878,18 @@
         </childnode>
         <childnode refid="11" relation="include">
         </childnode>
-        <childnode refid="163" relation="include">
-        </childnode>
-        <childnode refid="164" relation="include">
-        </childnode>
-        <childnode refid="81" relation="include">
-        </childnode>
         <childnode refid="166" relation="include">
         </childnode>
-        <childnode refid="168" relation="include">
+        <childnode refid="167" relation="include">
+        </childnode>
+        <childnode refid="80" relation="include">
+        </childnode>
+        <childnode refid="169" relation="include">
+        </childnode>
+        <childnode refid="171" relation="include">
         </childnode>
       </node>
-      <node id="120">
+      <node id="121">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ffmpegServer/ffmpegServerApp/src/ffmpegFile.cpp</label>
         <link refid="ffmpeg_file_8cpp"/>
       </node>
@@ -962,6 +980,8 @@
         </childnode>
         <childnode refid="69" relation="include">
         </childnode>
+        <childnode refid="72" relation="include">
+        </childnode>
         <childnode refid="73" relation="include">
         </childnode>
         <childnode refid="74" relation="include">
@@ -972,27 +992,27 @@
         </childnode>
         <childnode refid="77" relation="include">
         </childnode>
-        <childnode refid="78" relation="include">
-        </childnode>
       </node>
-      <node id="155">
+      <node id="158">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCSimDetector/ADCSimDetectorApp/src/ADCSimDetector.h</label>
         <link refid="_a_d_c_sim_detector_8h"/>
-        <childnode refid="154" relation="include">
+        <childnode refid="157" relation="include">
         </childnode>
       </node>
-      <node id="83">
+      <node id="82">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginDriver.h</label>
         <link refid="_n_d_plugin_driver_8h"/>
-        <childnode refid="84" relation="include">
+        <childnode refid="83" relation="include">
         </childnode>
-        <childnode refid="86" relation="include">
+        <childnode refid="85" relation="include">
         </childnode>
-        <childnode refid="88" relation="include">
+        <childnode refid="87" relation="include">
         </childnode>
-        <childnode refid="90" relation="include">
+        <childnode refid="89" relation="include">
         </childnode>
-        <childnode refid="92" relation="include">
+        <childnode refid="91" relation="include">
+        </childnode>
+        <childnode refid="93" relation="include">
         </childnode>
         <childnode refid="94" relation="include">
         </childnode>
@@ -1000,47 +1020,51 @@
         </childnode>
         <childnode refid="96" relation="include">
         </childnode>
-        <childnode refid="97" relation="include">
+        <childnode refid="98" relation="include">
         </childnode>
-        <childnode refid="99" relation="include">
-        </childnode>
-        <childnode refid="121" relation="include">
+        <childnode refid="122" relation="include">
         </childnode>
         <childnode refid="123" relation="include">
         </childnode>
-        <childnode refid="125" relation="include">
+        <childnode refid="124" relation="include">
         </childnode>
-        <childnode refid="127" relation="include">
+        <childnode refid="126" relation="include">
         </childnode>
-        <childnode refid="129" relation="include">
+        <childnode refid="128" relation="include">
         </childnode>
         <childnode refid="130" relation="include">
         </childnode>
-        <childnode refid="131" relation="include">
+        <childnode refid="132" relation="include">
         </childnode>
         <childnode refid="133" relation="include">
         </childnode>
-        <childnode refid="135" relation="include">
+        <childnode refid="134" relation="include">
+        </childnode>
+        <childnode refid="136" relation="include">
         </childnode>
         <childnode refid="138" relation="include">
         </childnode>
-        <childnode refid="140" relation="include">
+        <childnode refid="141" relation="include">
         </childnode>
-        <childnode refid="142" relation="include">
+        <childnode refid="143" relation="include">
         </childnode>
-        <childnode refid="144" relation="include">
+        <childnode refid="145" relation="include">
+        </childnode>
+        <childnode refid="147" relation="include">
         </childnode>
         <childnode refid="45" relation="include">
         </childnode>
-        <childnode refid="146" relation="include">
-        </childnode>
-        <childnode refid="148" relation="include">
+        <childnode refid="149" relation="include">
         </childnode>
         <childnode refid="150" relation="include">
         </childnode>
         <childnode refid="151" relation="include">
         </childnode>
-        <childnode refid="152" relation="include">
+        <childnode refid="153" relation="include">
+        </childnode>
+        <childnode refid="154" relation="include">
+        </childnode>
+        <childnode refid="155" relation="include">
         </childnode>
       </node>
       <node id="34">
@@ -1054,26 +1078,26 @@
         </childnode>
         <childnode refid="8" relation="include">
         </childnode>
+        <childnode refid="79" relation="include">
+        </childnode>
         <childnode refid="80" relation="include">
         </childnode>
-        <childnode refid="81" relation="include">
+        <childnode refid="82" relation="include">
         </childnode>
-        <childnode refid="83" relation="include">
+        <childnode refid="157" relation="include">
         </childnode>
-        <childnode refid="154" relation="include">
-        </childnode>
-        <childnode refid="155" relation="include">
+        <childnode refid="158" relation="include">
         </childnode>
       </node>
-      <node id="137">
+      <node id="140">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/test_forward_reference.cpp</label>
         <link refid="test__forward__reference_8cpp"/>
       </node>
-      <node id="79">
+      <node id="78">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/specsAnalyser/specsAnalyserApp/src/specsAnalyser.cpp</label>
         <link refid="specs_analyser_8cpp"/>
       </node>
-      <node id="82">
+      <node id="81">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/ADSrc/paramAttribute.cpp</label>
         <link refid="param_attribute_8cpp"/>
       </node>
@@ -1081,17 +1105,17 @@
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPhotonII/PhotonIIApp/src/PhotonII.cpp</label>
         <link refid="_photon_i_i_8cpp"/>
       </node>
-      <node id="94">
+      <node id="93">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginColorConvert.cpp</label>
         <link refid="_n_d_plugin_color_convert_8cpp"/>
       </node>
-      <node id="88">
+      <node id="87">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginBadPixel.h</label>
         <link refid="_n_d_plugin_bad_pixel_8h"/>
-        <childnode refid="89" relation="include">
+        <childnode refid="88" relation="include">
         </childnode>
       </node>
-      <node id="128">
+      <node id="131">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginPva.cpp</label>
         <link refid="_n_d_plugin_pva_8cpp"/>
       </node>
@@ -1107,12 +1131,12 @@
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPixirad/pixiradApp/src/pixirad.cpp</label>
         <link refid="pixirad_8cpp"/>
       </node>
-      <node id="81">
+      <node id="80">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/ADSrc/paramAttribute.h</label>
         <link refid="param_attribute_8h"/>
         <childnode refid="8" relation="include">
         </childnode>
-        <childnode refid="82" relation="include">
+        <childnode refid="81" relation="include">
         </childnode>
       </node>
     </invincdepgraph>

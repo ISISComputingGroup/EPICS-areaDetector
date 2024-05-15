@@ -293,29 +293,31 @@ $(function() {
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160; </div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    std::list&lt;NDFileHDF5AttributeDataset*&gt; attrList;</div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160; </div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <span class="comment">/* HDF5 handles and references */</span></div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    hid_t file;</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    hid_t dataspace;</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    hid_t datatype;</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    hid_t cparms;</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    <span class="keywordtype">void</span> *ptrFillValue;</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    hid_t perf_dataset_id;</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160; </div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    <span class="comment">/* dimension descriptors */</span></div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    <span class="keywordtype">int</span> rank;               </div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    <span class="keywordtype">int</span> nvirtual;           </div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    hsize_t *dims;          </div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    hsize_t *maxdims;       </div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    hsize_t *chunkdims;     </div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    hsize_t *offset;        </div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    hsize_t *framesize;     </div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    hsize_t *virtualdims;   </div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    <span class="keywordtype">char</span> *ptrDimensionNames[<a class="code" href="_n_d_array_8h.html#ac4d72230192b5a071cf82e445b44ad2e">ND_ARRAY_MAX_DIMS</a> + <a class="code" href="_n_d_file_h_d_f5_8h.html#a47e15720a540f460a594f84ec6152818">MAXEXTRADIMS</a>]; </div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    <span class="keywordtype">char</span> *dimsreport;       </div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;};</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160; </div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    asynStatus copyHDF5Object(<a class="code" href="classhdf5_1_1_data_source.html">hdf5::DataSource</a>&amp; src, hid_t dst_root, <span class="keyword">const</span> <a class="code" href="namespacehdf5.html#abeed318faeb13380e1b4221bd4198bf1aea271040d7a5b8d9af9cbf6564d262d5">std::string</a>&amp; dst_name);</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160; </div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    <span class="comment">/* HDF5 handles and references */</span></div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    hid_t file;</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    hid_t dataspace;</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    hid_t datatype;</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    hid_t cparms;</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    <span class="keywordtype">void</span> *ptrFillValue;</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    hid_t perf_dataset_id;</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160; </div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    <span class="comment">/* dimension descriptors */</span></div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    <span class="keywordtype">int</span> rank;               </div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    <span class="keywordtype">int</span> nvirtual;           </div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    hsize_t *dims;          </div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    hsize_t *maxdims;       </div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    hsize_t *chunkdims;     </div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    hsize_t *offset;        </div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    hsize_t *framesize;     </div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    hsize_t *virtualdims;   </div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    <span class="keywordtype">char</span> *ptrDimensionNames[<a class="code" href="_n_d_array_8h.html#ac4d72230192b5a071cf82e445b44ad2e">ND_ARRAY_MAX_DIMS</a> + <a class="code" href="_n_d_file_h_d_f5_8h.html#a47e15720a540f460a594f84ec6152818">MAXEXTRADIMS</a>]; </div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    <span class="keywordtype">char</span> *dimsreport;       </div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;};</div>
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160; </div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160; </div>
 <div class="ttc" id="a_codec_8h_html"><div class="ttname"><a href="_codec_8h.html">Codec.h</a></div></div>
 <div class="ttc" id="a_n_d_array_8h_html"><div class="ttname"><a href="_n_d_array_8h.html">NDArray.h</a></div></div>
 <div class="ttc" id="a_n_d_array_8h_html_ac4d72230192b5a071cf82e445b44ad2e"><div class="ttname"><a href="_n_d_array_8h.html#ac4d72230192b5a071cf82e445b44ad2e">ND_ARRAY_MAX_DIMS</a></div><div class="ttdeci">#define ND_ARRAY_MAX_DIMS</div><div class="ttdoc">NDArray.h.</div><div class="ttdef"><b>Definition:</b> NDArray.h:26</div></div>
@@ -381,13 +383,14 @@ $(function() {
 <div class="ttc" id="aclass_n_d_plugin_file_html_aa4492e7f3b478ba3d9cd5f7a179c469b"><div class="ttname"><a href="class_n_d_plugin_file.html#aa4492e7f3b478ba3d9cd5f7a179c469b">NDPluginFile::writeFile</a></div><div class="ttdeci">virtual asynStatus writeFile(NDArray *pArray)=0</div><div class="ttdoc">Write NDArray data to a file; pure virtual function that must be implemented by derived classes.</div></div>
 <div class="ttc" id="aclass_n_d_plugin_file_html_ab94ee0e792cf736d95885c61f89dbeac"><div class="ttname"><a href="class_n_d_plugin_file.html#ab94ee0e792cf736d95885c61f89dbeac">NDPluginFile::writeInt32</a></div><div class="ttdeci">virtual asynStatus writeInt32(asynUser *pasynUser, epicsInt32 value)</div><div class="ttdoc">Called when asyn clients call pasynInt32-&gt;write().</div><div class="ttdef"><b>Definition:</b> NDPluginFile.cpp:786</div></div>
 <div class="ttc" id="aclassasyn_n_d_array_driver_html_ac3f2d73a05eb54357ec3f052e1b000f2"><div class="ttname"><a href="classasyn_n_d_array_driver.html#ac3f2d73a05eb54357ec3f052e1b000f2">asynNDArrayDriver::report</a></div><div class="ttdeci">virtual void report(FILE *fp, int details)</div><div class="ttdoc">Report status of the driver.</div><div class="ttdef"><b>Definition:</b> asynNDArrayDriver.cpp:753</div></div>
-<div class="ttc" id="aclasshdf5_1_1_dataset_html"><div class="ttname"><a href="classhdf5_1_1_dataset.html">hdf5::Dataset</a></div><div class="ttdoc">Class used for writing a DataSet with the NDFileHDF5 plugin.</div><div class="ttdef"><b>Definition:</b> NDFileHDF5Layout.h:149</div></div>
-<div class="ttc" id="aclasshdf5_1_1_element_html"><div class="ttname"><a href="classhdf5_1_1_element.html">hdf5::Element</a></div><div class="ttdoc">Describe a generic structure element with the NDFileHDF5 plugin.</div><div class="ttdef"><b>Definition:</b> NDFileHDF5Layout.h:115</div></div>
-<div class="ttc" id="aclasshdf5_1_1_group_html"><div class="ttname"><a href="classhdf5_1_1_group.html">hdf5::Group</a></div><div class="ttdoc">Describe a group element.</div><div class="ttdef"><b>Definition:</b> NDFileHDF5Layout.h:221</div></div>
+<div class="ttc" id="aclasshdf5_1_1_data_source_html"><div class="ttname"><a href="classhdf5_1_1_data_source.html">hdf5::DataSource</a></div><div class="ttdoc">Class used for writing a DataSource with the NDFileHDF5 plugin.</div><div class="ttdef"><b>Definition:</b> NDFileHDF5Layout.h:51</div></div>
+<div class="ttc" id="aclasshdf5_1_1_dataset_html"><div class="ttname"><a href="classhdf5_1_1_dataset.html">hdf5::Dataset</a></div><div class="ttdoc">Class used for writing a DataSet with the NDFileHDF5 plugin.</div><div class="ttdef"><b>Definition:</b> NDFileHDF5Layout.h:157</div></div>
+<div class="ttc" id="aclasshdf5_1_1_element_html"><div class="ttname"><a href="classhdf5_1_1_element.html">hdf5::Element</a></div><div class="ttdoc">Describe a generic structure element with the NDFileHDF5 plugin.</div><div class="ttdef"><b>Definition:</b> NDFileHDF5Layout.h:123</div></div>
+<div class="ttc" id="aclasshdf5_1_1_group_html"><div class="ttname"><a href="classhdf5_1_1_group.html">hdf5::Group</a></div><div class="ttdoc">Describe a group element.</div><div class="ttdef"><b>Definition:</b> NDFileHDF5Layout.h:229</div></div>
 <div class="ttc" id="aclasshdf5_1_1_layout_x_m_l_html"><div class="ttname"><a href="classhdf5_1_1_layout_x_m_l.html">hdf5::LayoutXML</a></div><div class="ttdoc">Used to define layout of HDF5 file with NDFileHDF5 plugin.</div><div class="ttdef"><b>Definition:</b> NDFileHDF5LayoutXML.h:62</div></div>
 <div class="ttc" id="anamespacehdf5_html_ab51726310ac9f6d97ac953d29c93ade5"><div class="ttname"><a href="namespacehdf5.html#ab51726310ac9f6d97ac953d29c93ade5">hdf5::When_t</a></div><div class="ttdeci">When_t</div><div class="ttdef"><b>Definition:</b> NDFileHDF5Layout.h:20</div></div>
-<div class="ttc" id="anamespacehdf5_html_abeed318faeb13380e1b4221bd4198bf1"><div class="ttname"><a href="namespacehdf5.html#abeed318faeb13380e1b4221bd4198bf1">hdf5::DataType_t</a></div><div class="ttdeci">DataType_t</div><div class="ttdef"><b>Definition:</b> NDFileHDF5Layout.h:33</div></div>
-<div class="ttc" id="anamespacehdf5_html_abeed318faeb13380e1b4221bd4198bf1aea271040d7a5b8d9af9cbf6564d262d5"><div class="ttname"><a href="namespacehdf5.html#abeed318faeb13380e1b4221bd4198bf1aea271040d7a5b8d9af9cbf6564d262d5">hdf5::string</a></div><div class="ttdeci">@ string</div><div class="ttdef"><b>Definition:</b> NDFileHDF5Layout.h:44</div></div>
+<div class="ttc" id="anamespacehdf5_html_abeed318faeb13380e1b4221bd4198bf1"><div class="ttname"><a href="namespacehdf5.html#abeed318faeb13380e1b4221bd4198bf1">hdf5::DataType_t</a></div><div class="ttdeci">DataType_t</div><div class="ttdef"><b>Definition:</b> NDFileHDF5Layout.h:34</div></div>
+<div class="ttc" id="anamespacehdf5_html_abeed318faeb13380e1b4221bd4198bf1aea271040d7a5b8d9af9cbf6564d262d5"><div class="ttname"><a href="namespacehdf5.html#abeed318faeb13380e1b4221bd4198bf1aea271040d7a5b8d9af9cbf6564d262d5">hdf5::string</a></div><div class="ttdeci">@ string</div><div class="ttdef"><b>Definition:</b> NDFileHDF5Layout.h:45</div></div>
 <div class="ttc" id="anamespacemake_db_and_edl_html_a2832407c256551abb325d5ee9e587443"><div class="ttname"><a href="namespacemake_db_and_edl.html#a2832407c256551abb325d5ee9e587443">makeDbAndEdl.name</a></div><div class="ttdeci">name</div><div class="ttdef"><b>Definition:</b> makeDbAndEdl.py:232</div></div>
 <div class="ttc" id="anamespacemake_db_and_edl_html_a7cc19c5fdb190aab14fe515dd85b45b7"><div class="ttname"><a href="namespacemake_db_and_edl.html#a7cc19c5fdb190aab14fe515dd85b45b7">makeDbAndEdl.value</a></div><div class="ttdeci">list value</div><div class="ttdef"><b>Definition:</b> makeDbAndEdl.py:234</div></div>
 <div class="ttc" id="astruct_codec__t_html"><div class="ttname"><a href="struct_codec__t.html">Codec_t</a></div><div class="ttdef"><b>Definition:</b> Codec.h:20</div></div>

@@ -45,6 +45,7 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">NDPluginColorConvert.cpp File Reference</div>  </div>
@@ -54,12 +55,26 @@ $(function() {
 <code>#include &lt;string.h&gt;</code><br />
 <code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;math.h&gt;</code><br />
+<code>#include &lt;limits&gt;</code><br />
+<code>#include &lt;type_traits&gt;</code><br />
 <code>#include &lt;iocsh.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="_n_d_plugin_driver_8h_source.html">NDPluginDriver.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="color_maps_8h_source.html">colorMaps.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_n_d_plugin_color_convert_8h_source.html">NDPluginColorConvert.h</a>&quot;</code><br />
 <code>#include &lt;epicsExport.h&gt;</code><br />
 </div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_make_unsigned_impl.html">MakeUnsignedImpl&lt; T, is_integral &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">default case handles already OK types i.e. &lt;T,false&gt;  <a href="struct_make_unsigned_impl.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_make_unsigned_impl_3_01_t_00_01true_01_4.html">MakeUnsignedImpl&lt; T, true &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">specialisation of <a class="el" href="struct_make_unsigned_impl.html" title="default case handles already OK types i.e. &lt;T,false&gt;">MakeUnsignedImpl</a> for integral types i.e. &lt;T,true&gt;  <a href="struct_make_unsigned_impl_3_01_t_00_01true_01_4.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_make_unsigned.html">MakeUnsigned&lt; T &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">like std::make_unsigned but passing unconvertable types through rather than producing an error  <a href="struct_make_unsigned.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a071af41fddd962232d3893fcde7e34d5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_n_d_plugin_color_convert_8cpp.html#a071af41fddd962232d3893fcde7e34d5">NDColorConvertConfigure</a> (const char *portName, int queueSize, int blockingCallbacks, const char *NDArrayPort, int NDArrayAddr, int maxBuffers, size_t maxMemory, int priority, int stackSize, int maxThreads)</td></tr>
