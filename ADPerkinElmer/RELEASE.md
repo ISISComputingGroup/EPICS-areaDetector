@@ -22,6 +22,25 @@ files respectively, in the configure/ directory of the appropriate release of th
 
 Release Notes
 =============
+R2-11 (22-January-2022)
+----
+* Updated vendor files to those in XIS_Inst_Package_X33.5.1479.16862.zip.
+  That installation file can be found here: https://cars.uchicago.edu/data/PerkinElmer
+* Added new records to control trigger output signal
+  - PETrigOutSignal
+  - PETrigOutEPLength
+  - PETrigOutEPFirstFrame
+  - PETrigOutEPLastFrame
+  - PETrigOutEPDelay1
+  - PETrigOutEPDelay2
+  - PETrigOutDDDDelay
+  - PETrigOutEdge
+
+R2-10 (9-January-2020)
+----
+* Updated vendor files to release 3.3.13115.  This release is compatible with Windows 10.
+* Converted documentation to ReST.
+
 R2-9 (29-May-2019)
 ----
 * Fixed error reading bad pixel file.  There were 2 problems:

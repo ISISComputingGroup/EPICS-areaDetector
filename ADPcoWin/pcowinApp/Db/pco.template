@@ -1,0 +1,1447 @@
+
+# Macros:
+#% macro, P, Device Prefix
+#% macro, R, Device Suffix
+#% macro, PORT, Asyn Port name
+#% macro, TIMEOUT, Timeout
+#% macro, ADDR, Asyn Port address
+
+## Dummy records for archiver
+## CCD Temperature is defined in ADBase.template
+# % archiver 10 monitor
+record(ai, "$(P)$(R)Temperature_RBV")
+{
+     info("archiver", "10 Monitor")
+}
+## End dummy records for archiver
+
+include "ADBase.template"
+
+# Only 1 data type is supported, unsigned 16 bit integers
+record(mbbo, "$(P)$(R)DataType")
+{
+    field(ZRST, "UInt16")
+    field(ZRVL, "3")
+    field(ONST, "")
+    field(ONVL, "")
+    field(TWST, "")
+    field(TWVL, "")
+    field(THST, "")
+    field(THVL, "")
+    field(FRST, "")
+    field(FRVL, "")
+    field(FVST, "")
+    field(FVVL, "")
+    field(SXST, "")
+    field(SXVL, "")
+    field(SVST, "")
+    field(SVVL, "")
+}
+
+record(mbbi, "$(P)$(R)DataType_RBV")
+{
+    field(ZRST, "UInt16")
+    field(ZRVL, "3")
+    field(ONST, "")
+    field(ONVL, "")
+    field(TWST, "")
+    field(TWVL, "")
+    field(THST, "")
+    field(THVL, "")
+    field(FRST, "")
+    field(FRVL, "")
+    field(FVST, "")
+    field(FVVL, "")
+    field(SXST, "")
+    field(SXVL, "")
+    field(SVST, "")
+    field(SVVL, "")
+}
+
+# Overwrite ADBase.template TriggerMode definition strings
+record(mbbo, "$(P)$(R)TriggerMode")
+{
+     field(ZRST, "Auto")
+     field(ZRVL, "0")
+     field(ONST, "Soft")
+     field(ONVL, "1")
+     field(TWST, "Ext + Soft")
+     field(TWVL, "2")
+     field(THST, "Ext Pulse")
+     field(THVL, "3")
+     field(FRST, "Ext Only")
+     field(FRVL, "5")
+}
+record(mbbi, "$(P)$(R)TriggerMode_RBV")
+{
+     field(ZRST, "Auto")
+     field(ZRVL, "0")
+     field(ONST, "Soft")
+     field(ONVL, "1")
+     field(TWST, "Ext + Soft")
+     field(TWVL, "2")
+     field(THST, "Ext Pulse")
+     field(THVL, "3")
+     field(FRST, "Ext Only")
+     field(FRVL, "5")
+}
+
+# % gdatag, pv, rw, $(PORT)_pcocam, PIX_RATE, Set pixel rate
+# % archiver 10 Monitor
+record(mbbo, "$(P)$(R)PIX_RATE")
+{
+     field(DTYP, "asynInt32")
+     field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_PIX_RATE")
+     field(VAL, "0")
+     field(ZRST, "Unset")
+     field(ZRVL, 0)
+}
+
+# % gdatag, pv, ro, $(PORT)_pcocam, PIX_RATE_RBV, Readback for pixel rate
+# % archiver 10 Monitor
+record(mbbi, "$(P)$(R)PIX_RATE_RBV")
+{
+     field(DTYP, "asynInt32")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_PIX_RATE")
+     field(SCAN, "I/O Intr")
+     field(ZRST, "Unset")
+     field(ZRVL, 0)
+}
+
+# % gdatag, mbbinary, rw, $(PORT)_pcocam, ADC_MODE, Set adc mode
+# % archiver 10 Monitor
+record(mbbo, "$(P)$(R)ADC_MODE") 
+{
+     field(DESC, "mode select")
+     field(DTYP, "asynInt32")
+     field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_ADC_MODE")
+     field(ZRST, "One ADC")
+     field(ZRVL, "1")
+     field(ONVL, "2")
+     field(ONST, "Two ADC")
+     field(IVOA, "Don't drive outputs")
+     field(VAL,  "1")
+     field(PINI, "YES")
+}
+
+# % gdatag, mbbinary, ro, $(PORT)_pcocam, ADC_MODE_RBV, Readback for adc mode
+# % archiver 10 Monitor
+record(mbbi, "$(P)$(R)ADC_MODE_RBV") 
+{
+     field(DESC, "mode select")
+     field(DTYP, "asynInt32")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_ADC_MODE")
+     field(ZRST, "One ADC")
+     field(ZRVL, "1")
+     field(ONVL, "2")
+     field(ONST, "Two ADC")
+     field(SCAN, "I/O Intr")
+}
+
+# % gdatag, pv, ro, $(PORT)_pcocam, CAM_RAM_USE_RBV, Readback for cam ram usage
+record(ai, "$(P)$(R)CAM_RAM_USE_RBV") 
+{
+     field(DTYP, "asynInt32")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_CAM_RAM_USE")
+     field(PREC, "0")
+     field(EGU, "%")
+     field(SCAN, "I/O Intr")
+}
+
+# % gdatag, pv, ro, $(PORT)_pcocam, CAM_RAM_USE_FRAMES_RBV, Readback for cam ram usage
+record(ai, "$(P)$(R)CAM_RAM_USE_FRAMES_RBV") 
+{
+     field(DTYP, "asynInt32")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_CAM_RAM_USE_FRAMES")
+     field(PREC, "0")
+     field(SCAN, "I/O Intr")
+}
+
+# % gdatag, pv, ro, $(PORT)_pcocam, ELEC_TEMP_RBV, Readback for elec temp
+# % archiver 10 Monitor
+record(ai, "$(P)$(R)ELEC_TEMP_RBV") 
+{
+     field(DTYP, "asynFloat64")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_ELECTRONICS_TEMP")
+     field(PREC, "0")
+     field(EGU, "C")
+     field(SCAN, "I/O Intr")
+}
+
+# % gdatag, pv, ro, $(PORT)_pcocam, POWER_TEMP_RBV, Readback for power temp
+# % archiver 10 Monitor
+record(ai, "$(P)$(R)POWER_TEMP_RBV") 
+{
+     field(DTYP, "asynFloat64")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_POWER_TEMP")
+     field(PREC, "0")
+     field(EGU, "C")
+     field(SCAN, "I/O Intr")
+}
+
+# % gdatag, mbbinary, rw, $(PORT)_pcocam, STORAGE_MODE, Set storage mode
+# % archiver 10 Monitor
+record(mbbo, "$(P)$(R)STORAGE_MODE") 
+{
+     field(DESC, "mode select")
+     field(DTYP, "asynInt32")
+     field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_STORAGE_MODE")
+     field(ZRST, "Recorder")
+     field(ZRVL, "0")
+     field(ONVL, "1")
+     field(ONST, "FIFO buffer")
+     field(IVOA, "Don't drive outputs")
+     field(VAL,  "0")
+     field(PINI, "YES")
+}
+
+# % gdatag, mbbinary, ro, $(PORT)_pcocam, STORAGE_MODE_RBV, Readback for storage mode
+# % archiver 10 Monitor
+record(mbbi, "$(P)$(R)STORAGE_MODE_RBV") 
+{
+     field(DESC, "mode select")
+     field(DTYP, "asynInt32")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_STORAGE_MODE")
+     field(ZRST, "Recorder")
+     field(ZRVL, "0")
+     field(ONVL, "1")
+     field(ONST, "FIFO buffer")
+     field(SCAN, "I/O Intr")
+}
+
+# % gdatag, mbbinary, rw, $(PORT)_pcocam, RECORDER_MODE, Set recorder mode
+# % archiver 10 Monitor
+record(mbbo, "$(P)$(R)RECORDER_MODE") 
+{
+     field(DESC, "mode select")
+     field(DTYP, "asynInt32")
+     field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_RECORDER_SUBMODE")
+     field(ZRST, "Sequence")
+     field(ZRVL, "0")
+     field(ONVL, "1")
+     field(ONST, "Ring buffer")
+     field(IVOA, "Don't drive outputs")
+     field(VAL,  "1")
+     field(PINI, "YES")
+}
+
+# % gdatag, mbbinary, ro, $(PORT)_pcocam, RECORDER_MODE_RBV, Readback for recorder mode
+# % archiver 10 Monitor
+record(mbbi, "$(P)$(R)RECORDER_MODE_RBV") 
+{
+     field(DESC, "mode select")
+     field(DTYP, "asynInt32")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_RECORDER_SUBMODE")
+     field(ZRST, "Sequence")
+     field(ZRVL, "0")
+     field(ONVL, "1")
+     field(ONST, "Ring buffer")
+     field(SCAN, "I/O Intr")
+}
+
+# % gdatag, mbbinary, rw, $(PORT)_pcocam, TIMESTAMP_MODE, Set timestamp mode
+# % archiver 10 Monitor
+record(mbbo, "$(P)$(R)TIMESTAMP_MODE") 
+{
+     field(DESC, "mode select")
+     field(DTYP, "asynInt32")
+     field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_TIMESTAMP_MODE")
+     field(ZRST, "None")
+     field(ONST, "BCD")
+     field(TWST, "BCD+ASCII")
+     field(THST, "ASCII")
+     field(ZRVL, "0")
+     field(ONVL, "1")
+     field(TWVL, "2")
+     field(THVL, "3")
+     field(IVOA, "Don't drive outputs")
+     field(VAL,  "2")
+     field(PINI, "YES")
+}
+
+# % gdatag, mbbinary, ro, $(PORT)_pcocam, TIMESTAMP_MODE_RBV, Readback for timestamp mode
+# % archiver 10 Monitor
+record(mbbi, "$(P)$(R)TIMESTAMP_MODE_RBV") 
+{
+     field(DESC, "mode select")
+     field(DTYP, "asynInt32")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_TIMESTAMP_MODE")
+     field(ZRST, "None")
+     field(ONST, "BCD")
+     field(TWST, "BCD+ASCII")
+     field(THST, "ASCII")
+     field(ZRVL, "0")
+     field(ONVL, "1")
+     field(TWVL, "2")
+     field(THVL, "3")
+     field(SCAN, "I/O Intr")
+}
+
+# % gdatag, mbbinary, rw, $(PORT)_pcocam, ACQUIRE_MODE, Set acquire mode
+# % archiver 10 Monitor
+record(mbbo, "$(P)$(R)ACQUIRE_MODE") 
+{
+     field(DESC, "mode select")
+     field(DTYP, "asynInt32")
+     field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_ACQUIRE_MODE")
+     field(ZRST, "Auto")
+     field(ZRVL, "0")
+     field(ONVL, "1")
+     field(TWVL, "2")
+     field(ONST, "Ext. enable")
+     field(TWST, "Ext. trigger")
+     field(IVOA, "Don't drive outputs")
+     field(VAL,  "0")
+     field(PINI, "YES")
+}
+
+# % gdatag, mbbinary, ro, $(PORT)_pcocam, ACQUIRE_MODE_RBV, Readback for acquire mode
+# % archiver 10 Monitor
+record(mbbi, "$(P)$(R)ACQUIRE_MODE_RBV") 
+{
+     field(DESC, "acquire mode select")
+     field(DTYP, "asynInt32")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_ACQUIRE_MODE")
+     field(ZRST, "Auto")
+     field(ZRVL, "0")
+     field(ONVL, "1")
+     field(TWVL, "2")
+     field(ONST, "Ext. enable")
+     field(TWST, "Ext. trigger")
+     field(SCAN, "I/O Intr")
+}
+
+# % gdatag, mbbinary, rw, $(PORT)_pcocam, ARM_MODE, Set arm mode
+record(bo, "$(P)$(R)ARM_MODE")
+{
+     field(DESC, "arm mode select")
+     field(DTYP, "asynInt32")
+     field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_ARM_MODE")
+     field(ZNAM, "Disarmed")
+     field(ONAM, "Armed")
+     field(VAL,  "0")
+     field(PINI, "YES")
+     field(FLNK, "$(P)$(R)ARM_STARTBUSY")
+}
+
+# These records keep the ARM_MODE busy until it has completed
+record(calcout, "$(P)$(R)ARM_STARTBUSY")
+{
+     field(INPA, "$(P)$(R)ARM_MODE")
+     field(CALC, "A")
+     field(OOPT, "Transition To Non-zero")
+     field(DOPT, "Use OCAL")
+     field(OCAL, "1")
+     field(OUT,  "$(P)$(R)ARM_BUSY PP")
+}
+record(busy, "$(P)$(R)ARM_BUSY")
+{
+     field(ZNAM, "Idle")
+     field(ONAM, "Arming")
+     field(VAL,  "0")
+}
+record(bi, "$(P)$(R)ARM_COMPLETE")
+{
+     field(DTYP, "asynInt32")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_ARM_COMPLETE")
+     field(SCAN, "I/O Intr")
+     field(FLNK, "$(P)$(R)ARM_ENDBUSY")
+}
+record(dfanout, "$(P)$(R)ARM_ENDBUSY")
+{
+     field(DOL,  "0")
+     field(OUTA, "$(P)$(R)ARM_BUSY CA")
+}
+
+# % gdatag, mbbinary, ro, $(PORT)_pcocam, ARM_MODE_RBV, Readback for arm mode
+record(bi, "$(P)$(R)ARM_MODE_RBV")
+{
+     field(DESC, "arm mode select")
+     field(DTYP, "asynInt32")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_ARM_MODE")
+     field(ZNAM, "Disarmed")
+     field(ONAM, "Armed")
+     field(SCAN, "I/O Intr")
+}
+
+# % gdatag, pv, rw, $(PORT)_pcocam, DELAY_TIME, Set delay time
+# % archiver 10 Monitor
+record(ao, "$(P)$(R)DELAY_TIME") 
+{
+     field(DTYP, "asynFloat64")
+     field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_DELAY_TIME")
+     field(VAL, "0")
+     field(PREC, "6")
+     field(EGU,  "")
+}
+
+# % gdatag, pv, ro, $(PORT)_pcocam, DELAY_TIME_RBV, Readback for delay time
+# % archiver 10 Monitor
+record(ai, "$(P)$(R)DELAY_TIME_RBV") 
+{
+     field(DTYP, "asynFloat64")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_DELAY_TIME")
+     field(PREC, "6")
+     field(EGU, "")
+     field(SCAN, "I/O Intr")
+}
+
+# % gdatag, pv, ro, $(PORT)_pcocam, IMAGE_NUMBER_RBV, Readback for image number
+record(ai, "$(P)$(R)IMAGE_NUMBER_RBV") 
+{
+     field(PINI, "YES")
+     field(DTYP, "asynInt32")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_IMAGE_NUMBER")
+     field(PREC, "0")
+     field(EGU, "")
+     field(SCAN, "I/O Intr")
+}
+
+# % gdatag, mbbinary, rw, $(PORT)_pcocam, CAMERA_SETUP, Set camera shutter setup
+# % archiver 10 Monitor
+record(mbbo, "$(P)$(R)CAMERA_SETUP") 
+{
+     field(DESC, "shutter mode select")
+     field(DTYP, "asynInt32")
+     field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_CAMERA_SETUP")
+     field(ZRST, "Rolling Shutter")
+     field(ZRVL, "1")
+     field(ONST, "Global Shutter")
+     field(ONVL, "2")
+     field(TWST, "Global Reset")
+     field(TWVL, "4")
+     field(IVOA, "Don't drive outputs")
+     field(VAL,  "0")
+}
+
+# % gdatag, mbbinary, ro, $(PORT)_pcocam, CAMERA_SETUP_RBV, Readback for camera shutter setup
+# % archiver 10 Monitor
+record(mbbi, "$(P)$(R)CAMERA_SETUP_RBV") 
+{
+     field(DESC, "shutter mode readback")
+     field(DTYP, "asynInt32")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_CAMERA_SETUP")
+     field(ZRST, "Rolling Shutter")
+     field(ZRVL, "1")
+     field(ONST, "Global Shutter")
+     field(ONVL, "2")
+     field(TWST, "Global Reset")
+     field(TWVL, "4")
+     field(SCAN, "I/O Intr")
+}
+
+# % gdatag, mbbinary, ro, $(PORT)_pcocam, CAMERA_SETUP_RBV, Readback for camera shutter setup
+# % archiver 10 Monitor
+record(mbbi, "$(P)$(R)DATAFORMAT_RBV") 
+{
+     field(DESC, "Data format")
+     field(DTYP, "asynInt32")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_DATAFORMAT")
+     field(ZRST, "Default")
+     field(ONST, "5x12")
+     field(TWST, "5x12sqrtLUT")
+     field(THST, "5x16")
+     field(ZRVL, "0")
+     field(ONVL, "1")
+     field(TWVL, "2")
+     field(THVL, "3")
+     field(SCAN, "I/O Intr")
+}
+
+# % gdatag, mbbinary, rw, $(PORT)_pcocam, BIT_ALIGNMENT, Set camera bit alignment
+# % archiver 10 Monitor
+record(mbbo, "$(P)$(R)BIT_ALIGNMENT") 
+{
+     field(DESC, "bit alignment select")
+     field(DTYP, "asynInt32")
+     field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_BIT_ALIGNMENT")
+     field(ZRST, "MSB")
+     field(ZRVL, "0")
+     field(ONVL, "1")
+     field(ONST, "LSB")
+     field(IVOA, "Don't drive outputs")
+}
+
+# % gdatag, mbbinary, ro, $(PORT)_pcocam, BIT_ALIGNMENT_RBV, Readback for camera bit alignment
+# % archiver 10 Monitor
+record(mbbi, "$(P)$(R)BIT_ALIGNMENT_RBV") 
+{
+     field(DESC, "bit alignment readback")
+     field(DTYP, "asynInt32")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_BIT_ALIGNMENT")
+     field(ZRST, "MSB")
+     field(ZRVL, "0")
+     field(ONVL, "1")
+     field(ONST, "LSB")
+     field(SCAN, "I/O Intr")
+}
+
+# State record
+record(stringin, "$(P)$(R)STATE_RECORD_RBV")
+{
+     field(DTYP, "asynOctetRead")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_STATERECORD")
+     field(SCAN, "I/O Intr")
+}
+
+# Clear the state record
+record(longout, "$(P)$(R)CLEAR_STATE_RECORD")
+{
+     field(DTYP, "asynInt32")
+     field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_CLEARSTATERECORD")
+}
+
+# Hardware binning X
+# % archiver 10 Monitor
+record(longin, "$(P)$(R)HWBINX_RBV")
+{
+     field(DTYP, "asynInt32")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_HWBINX")
+     field(SCAN, "I/O Intr")
+}
+
+# Hardware binning Y
+# % archiver 10 Monitor
+record(longin, "$(P)$(R)HWBINY_RBV")
+{
+     field(DTYP, "asynInt32")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_HWBINY")
+     field(SCAN, "I/O Intr")
+}
+
+# Hardware ROI X1
+# % archiver 10 Monitor
+record(longin, "$(P)$(R)HWROIX1_RBV")
+{
+     field(DTYP, "asynInt32")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_HWROIX1")
+     field(SCAN, "I/O Intr")
+}
+
+# Hardware ROI Y1
+# % archiver 10 Monitor
+record(longin, "$(P)$(R)HWROIY1_RBV")
+{
+     field(DTYP, "asynInt32")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_HWROIY1")
+     field(SCAN, "I/O Intr")
+}
+
+# Hardware ROI X2
+# % archiver 10 Monitor
+record(longin, "$(P)$(R)HWROIX2_RBV")
+{
+     field(DTYP, "asynInt32")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_HWROIX2")
+     field(SCAN, "I/O Intr")
+}
+
+# Hardware ROI Y2
+# % archiver 10 Monitor
+record(longin, "$(P)$(R)HWROIY2_RBV")
+{
+     field(DTYP, "asynInt32")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_HWROIY2")
+     field(SCAN, "I/O Intr")
+}
+
+# Hardware image size X
+# % archiver 10 Monitor
+record(longin, "$(P)$(R)XCAMSIZE_RBV")
+{
+     field(DTYP, "asynInt32")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_XCAMSIZE")
+     field(SCAN, "I/O Intr")
+}
+
+# Hardware image size Y
+# % archiver 10 Monitor
+record(longin, "$(P)$(R)YCAMSIZE_RBV")
+{
+     field(DTYP, "asynInt32")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_YCAMSIZE")
+     field(SCAN, "I/O Intr")
+}
+
+# Camlink clock rate
+# % archiver 10 Monitor
+record(longin, "$(P)$(R)CAMLINKCLOCK_RBV")
+{
+     field(DTYP, "asynInt32")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_CAMLINKCLOCK")
+     field(SCAN, "I/O Intr")
+     field(EGU, "Hz")
+}
+
+# Parameters that are not implemented and are disabled to remove them
+# from the GUI.
+
+record(mbbo, "$(P)$(R)ColorMode")
+{
+    field(DISA, "1")
+}
+
+# CCD Cooling parameters
+
+# % archiver 10 Monitor
+record(ai, "$(P)$(R)MINCOOLINGSETPOINT_RBV")
+{
+     field(DTYP, "asynInt32")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_MINCOOLINGSETPOINT")
+     field(PREC, "0")
+     field(EGU, "C")
+     field(SCAN, "I/O Intr")
+}
+
+# % archiver 10 Monitor
+record(ai, "$(P)$(R)MAXCOOLINGSETPOINT_RBV")
+{
+     field(DTYP, "asynInt32")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_MAXCOOLINGSETPOINT")
+     field(PREC, "0")
+     field(EGU, "C")
+     field(SCAN, "I/O Intr")
+}
+
+# % archiver 10 Monitor
+record(ai, "$(P)$(R)DEFAULTCOOLINGSETPOINT_RBV")
+{
+     field(DTYP, "asynInt32")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_DEFAULTCOOLINGSETPOINT")
+     field(PREC, "0")
+     field(EGU, "C")
+     field(SCAN, "I/O Intr")
+}
+
+# % archiver 10 Monitor
+record(ai, "$(P)$(R)COOLINGSETPOINT_RBV")
+{
+     field(DTYP, "asynInt32")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_COOLINGSETPOINT")
+     field(PREC, "0")
+     field(EGU, "C")
+     field(SCAN, "I/O Intr")
+}
+
+# % archiver 10 Monitor
+record(ao, "$(P)$(R)COOLINGSETPOINT")
+{
+     field(DTYP, "asynInt32")
+     field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_COOLINGSETPOINT")
+     field(VAL, "0")
+     field(PREC, "0")
+     field(EGU,  "C")
+}
+
+# Exposure control parameter ranges
+
+record(ai, "$(P)$(R)DELAYTIMEMIN_RBV")
+{
+     field(DTYP, "asynFloat64")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_DELAYTIMEMIN")
+     field(PREC, "4")
+     field(EGU, "s")
+     field(SCAN, "I/O Intr")
+}
+
+record(ai, "$(P)$(R)DELAYTIMEMAX_RBV")
+{
+     field(DTYP, "asynFloat64")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_DELAYTIMEMAX")
+     field(PREC, "4")
+     field(EGU, "s")
+     field(SCAN, "I/O Intr")
+}
+
+record(ai, "$(P)$(R)DELAYTIMESTEP_RBV")
+{
+     field(DTYP, "asynFloat64")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_DELAYTIMESTEP")
+     field(PREC, "4")
+     field(EGU, "s")
+     field(SCAN, "I/O Intr")
+}
+
+record(ai, "$(P)$(R)EXPTIMEMIN_RBV")
+{
+     field(DTYP, "asynFloat64")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_EXPTIMEMIN")
+     field(PREC, "4")
+     field(EGU, "s")
+     field(SCAN, "I/O Intr")
+}
+
+record(ai, "$(P)$(R)EXPTIMEMAX_RBV")
+{
+     field(DTYP, "asynFloat64")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_EXPTIMEMAX")
+     field(PREC, "4")
+     field(EGU, "s")
+     field(SCAN, "I/O Intr")
+}
+
+record(ai, "$(P)$(R)EXPTIMESTEP_RBV")
+{
+     field(DTYP, "asynFloat64")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_EXPTIMESTEP")
+     field(PREC, "4")
+     field(EGU, "s")
+     field(SCAN, "I/O Intr")
+}
+
+# Binning and ROI capabilities
+
+record(longin, "$(P)$(R)MAXBINHORZ_RBV")
+{
+     field(DTYP, "asynInt32")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_MAXBINHORZ")
+     field(SCAN, "I/O Intr")
+}
+
+record(longin, "$(P)$(R)MAXBINVERT_RBV")
+{
+     field(DTYP, "asynInt32")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_MAXBINVERT")
+     field(SCAN, "I/O Intr")
+}
+
+record(bi, "$(P)$(R)BINHORZSTEPPING_RBV")
+{
+     field(DTYP, "asynInt32")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_BINHORZSTEPPING")
+     field(SCAN, "I/O Intr")
+     field(ZNAM, "Binary")
+     field(ONAM, "Linear")
+}
+
+record(bi, "$(P)$(R)BINVERTSTEPPING_RBV")
+{
+     field(DTYP, "asynInt32")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_BINVERTSTEPPING")
+     field(SCAN, "I/O Intr")
+     field(ZNAM, "Binary")
+     field(ONAM, "Linear")
+}
+
+record(longin, "$(P)$(R)ROIHORZSTEPS_RBV")
+{
+     field(DTYP, "asynInt32")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_ROIHORZSTEPS")
+     field(SCAN, "I/O Intr")
+}
+
+record(longin, "$(P)$(R)ROIVERTSTEPS_RBV")
+{
+     field(DTYP, "asynInt32")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_ROIVERTSTEPS")
+     field(SCAN, "I/O Intr")
+}
+
+# Extend the precision of the acquisition time PVs
+record(ao, "$(P)$(R)AcquireTime")
+{
+    field(PREC, "5")
+}
+record(ai, "$(P)$(R)AcquireTime_RBV")
+{
+    field(PREC, "5")
+}
+
+# Extend the precision of the acquisition period PVs
+record(ao, "$(P)$(R)AcquirePeriod")
+{
+    field(PREC, "5")
+}
+record(ai, "$(P)$(R)AcquirePeriod_RBV")
+{
+    field(PREC, "5")
+}
+
+# Reboot command
+record(bo, "$(P)$(R)REBOOT")
+{
+     field(DTYP, "asynInt32")
+     field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_REBOOT")
+     field(ZNAM, "Running")
+     field(ONAM, "Booting")
+}
+record(bi, "$(P)$(R)REBOOT_RBV")
+{
+     field(DTYP, "asynInt32")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_REBOOT")
+     field(SCAN, "I/O Intr")
+     field(ZNAM, "Running")
+     field(ONAM, "Booting")
+}
+
+# Camlink Long Gap mode
+# % archiver 10 Monitor
+record(bo, "$(P)$(R)CAMLINKLONGGAP")
+{
+     field(DTYP, "asynInt32")
+     field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_CAMLINKLONGGAP")
+     field(ZNAM, "Disabled")
+     field(ONAM, "Enabled")
+}
+# % archiver 10 Monitor
+record(bi, "$(P)$(R)CAMLINKLONGGAP_RBV")
+{
+     field(DTYP, "asynInt32")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_CAMLINKLONGGAP")
+     field(SCAN, "I/O Intr")
+     field(ZNAM, "Disabled")
+     field(ONAM, "Enabled")
+}
+
+# The gang mode
+# % archiver 10 Monitor
+record(mbbi, "$(P)$(R)GANGMODE_RBV")
+{
+     field(DTYP, "asynInt32")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_GANGMODE")
+     field(SCAN, "I/O Intr")
+     field(ZRST, "None")
+     field(ZRVL, "0")
+     field(ONST, "Server")
+     field(ONVL, "1")
+     field(TWST, "Connection")
+     field(TWVL, "2")
+}
+
+# % gdatag, pv, ro, $(PORT)_pcocam, CAM_RAM_RBV, Camera RAM size
+# % archiver 10 Monitor
+record(longin, "$(P)$(R)CAM_RAM_RBV") 
+{
+     field(DTYP, "asynInt32")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_CAM_RAM")
+     field(EGU, "MBytes")
+     field(SCAN, "I/O Intr")
+}
+
+# Camera busy
+record(mbbi, "$(P)$(R)CAM_BUSY_RBV")
+{
+     field(DTYP, "asynInt32")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_CAM_BUSY")
+     field(SCAN, "I/O Intr")
+     field(ZRST, "Idle")
+     field(ZRVL, "0")
+     field(ONST, "Busy")
+     field(ONVL, "1")
+}
+
+# Exposure trigger signal
+record(mbbi, "$(P)$(R)EXP_TRIGGER_RBV")
+{
+     field(DTYP, "asynInt32")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_EXP_TRIGGER")
+     field(SCAN, "I/O Intr")
+     field(ZRST, "Inactive")
+     field(ZRVL, "0")
+     field(ONST, "Active")
+     field(ONVL, "1")
+}
+
+# Acquisition enable signal
+record(mbbi, "$(P)$(R)ACQ_ENABLE_RBV")
+{
+     field(DTYP, "asynInt32")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_ACQ_ENABLE")
+     field(SCAN, "I/O Intr")
+     field(ZRST, "Inactive")
+     field(ZRVL, "0")
+     field(ONST, "Active")
+     field(ONVL, "1")
+}
+
+# Camera serial number
+# % archiver 10 Monitor
+record(longin, "$(P)$(R)SERIAL_NUMBER_RBV") 
+{
+     field(DTYP, "asynInt32")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_SERIAL_NUMBER")
+     field(SCAN, "I/O Intr")
+}
+
+# Camera hardware version
+# % archiver 10 Monitor
+record(longin, "$(P)$(R)HARDWARE_VERSION_RBV") 
+{
+     field(DTYP, "asynInt32")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_HARDWARE_VERSION")
+     field(SCAN, "I/O Intr")
+}
+
+# Camera firmware version
+# % archiver 10 Monitor
+record(longin, "$(P)$(R)FIRMWARE_VERSION_RBV") 
+{
+     field(DTYP, "asynInt32")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_FIRMWARE_VERSION")
+     field(SCAN, "I/O Intr")
+}
+
+# Camera connection state
+# % archiver 10 Monitor
+record(bi, "$(P)$(R)CONNECTED_RBV")
+{
+     field(DTYP, "asynInt32")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_CONNECTED")
+     field(SCAN, "I/O Intr")
+     field(ZNAM, "Disconnected")
+     field(ONAM, "Connected")
+}
+
+# Buffer status
+record(longin, "$(P)$(R)BUFFERS_READY_RBV") 
+{
+     field(DTYP, "asynInt32")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_BUFFERS_READY")
+     field(SCAN, "I/O Intr")
+}
+
+# The camera is an Edge
+# % archiver 10 Monitor
+record(longin, "$(P)$(R)IS_EDGE_RBV") 
+{
+     field(DTYP, "asynInt32")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_IS_EDGE")
+     field(SCAN, "I/O Intr")
+}
+
+# Get image command
+record(longout, "$(P)$(R)GET_IMAGE")
+{
+     field(DTYP, "asynInt32")
+     field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_GET_IMAGE")
+}
+
+# Buffers in use
+record(longin, "$(P)$(R)BUFFERS_IN_USE_RBV") 
+{
+     field(DTYP, "asynInt32")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_BUFFERS_IN_USE")
+     field(SCAN, "I/O Intr")
+}
+
+# Confirmed stop command
+# % gdatag, mbbinary, rw, $(PORT)_pcocam, CONFIRMED_STOP, Stop acquisition
+record(busy, "$(P)$(R)CONFIRMED_STOP")
+{
+     field(DESC, "Stop acquisition")
+     field(DTYP, "asynInt32")
+     field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_CONFIRMEDSTOP")
+     field(ZNAM, "Ready")
+     field(ONAM, "Stop")
+     field(VAL,  "0")
+}
+
+## Apply requested binning and ROI settings
+## n.b. they also get applied 
+record(longout, "$(P)$(R)APPLY_BIN_ROI")
+{
+     field(DTYP, "asynInt32")
+     field(DESC, "Apply binning+ROI")
+     field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_APPLY_BIN_ROI")
+}
+
+## Symmetrical ROI request in percent, X
+record(longout, "$(P)$(R)ROIPCX")
+{
+     field(DTYP, "asynInt32")
+     field(DESC, "ROI X demand %")
+     field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_ROIPCX")
+     field(EGU, "%")
+}
+## Symmetrical ROI request in percent, Y
+record(longout, "$(P)$(R)ROIPCY")
+{
+     field(DTYP, "asynInt32")
+     field(DESC, "ROI Y demand %")
+     field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_ROIPCY")
+     field(EGU, "%")
+}
+## If true ROI will be set from percentage.
+record(longout, "$(P)$(R)ROI_FRIENDLY")
+{
+     field(DTYP, "asynInt32")
+     field(DESC, "ROI control from %?")
+     field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_ROI_FRIENDLY")
+}
+## Show that we will use the percentage
+record(longin, "$(P)$(R)ROI_FRIENDLY_RBV")
+{
+     field(DTYP, "asynInt32")
+     field(DESC, "ROI control from %?")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_ROI_FRIENDLY")
+     field(SCAN, "I/O Intr")
+}
+## Read back ROI horizontal symmetry requirement
+record(bi, "$(P)$(R)ROI_SYMMETRYX_RBV")
+{
+     field(DTYP, "asynInt32")
+     field(DESC, "ROI symmetry X req?")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_ROI_SYMMETRY_X")
+     field(SCAN, "I/O Intr")
+     field(ZNAM, "Not required")
+     field(ONAM, "Required")
+}
+## Read back ROI vertical symmetry requirement
+record(bi, "$(P)$(R)ROI_SYMMETRYY_RBV")
+{
+     field(DTYP, "asynInt32")
+     field(DESC, "ROI symmetry Y req?")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_ROI_SYMMETRY_Y")
+     field(SCAN, "I/O Intr")
+     field(ZNAM, "Not required")
+     field(ONAM, "Required")
+}
+
+############################
+# Performance monitoring PVs
+
+# Number of reboots
+# % autosave 2 VAL
+record(longout, "$(P)$(R)PERF:ACC:REBOOT")
+{
+     field(DTYP, "asynInt32")
+     field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_PERFACC_REBOOT")
+     field(PINI, "1")
+}
+# % archiver 10 Monitor
+record(longin, "$(P)$(R)PERF:ACC:REBOOT_RBV")
+{
+     field(DTYP, "asynInt32")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_PERFACC_REBOOT")
+     field(SCAN, "I/O Intr")
+     field(FLNK, "$(P)$(R)PERF:ACC:REBOOT_TFR")
+}
+record(seq, "$(P)$(R)PERF:ACC:REBOOT_TFR")
+{
+     field(SELM, "All")
+     field(DOL1, "$(P)$(R)PERF:ACC:REBOOT_RBV")
+     field(LNK1, "$(P)$(R)PERF:ACC:REBOOT PP")
+}
+
+# Number of camera connects
+# % autosave 2 VAL
+record(longout, "$(P)$(R)PERF:ACC:CONNECT")
+{
+     field(DTYP, "asynInt32")
+     field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_PERFACC_CONNECT")
+     field(PINI, "1")
+}
+# % archiver 10 Monitor
+record(longin, "$(P)$(R)PERF:ACC:CONNECT_RBV")
+{
+     field(DTYP, "asynInt32")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_PERFACC_CONNECT")
+     field(SCAN, "I/O Intr")
+     field(FLNK, "$(P)$(R)PERF:ACC:CONNECT_TFR")
+}
+record(seq, "$(P)$(R)PERF:ACC:CONNECT_TFR")
+{
+     field(SELM, "All")
+     field(DOL1, "$(P)$(R)PERF:ACC:CONNECT_RBV")
+     field(LNK1, "$(P)$(R)PERF:ACC:CONNECT PP")
+}
+
+# Number of arm attempts
+# % autosave 2 VAL
+record(longout, "$(P)$(R)PERF:ACC:ARM")
+{
+     field(DTYP, "asynInt32")
+     field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_PERFACC_ARM")
+     field(PINI, "1")
+}
+# % archiver 10 Monitor
+record(longin, "$(P)$(R)PERF:ACC:ARM_RBV")
+{
+     field(DTYP, "asynInt32")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_PERFACC_ARM")
+     field(SCAN, "I/O Intr")
+     field(FLNK, "$(P)$(R)PERF:ACC:ARM_TFR")
+}
+record(seq, "$(P)$(R)PERF:ACC:ARM_TFR")
+{
+     field(SELM, "All")
+     field(DOL1, "$(P)$(R)PERF:ACC:ARM_RBV")
+     field(LNK1, "$(P)$(R)PERF:ACC:ARM PP")
+}
+
+# Number of camera start attempts
+# % autosave 2 VAL
+record(longout, "$(P)$(R)PERF:ACC:START")
+{
+     field(DTYP, "asynInt32")
+     field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_PERFACC_START")
+     field(PINI, "1")
+}
+# % archiver 10 Monitor
+record(longin, "$(P)$(R)PERF:ACC:START_RBV")
+{
+     field(DTYP, "asynInt32")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_PERFACC_START")
+     field(SCAN, "I/O Intr")
+     field(FLNK, "$(P)$(R)PERF:ACC:START_TFR")
+}
+record(seq, "$(P)$(R)PERF:ACC:START_TFR")
+{
+     field(SELM, "All")
+     field(DOL1, "$(P)$(R)PERF:ACC:START_RBV")
+     field(LNK1, "$(P)$(R)PERF:ACC:START PP")
+}
+
+# Number of good frames captured
+# % autosave 2 VAL
+record(longout, "$(P)$(R)PERF:ACC:GOODFRAME")
+{
+     field(DTYP, "asynInt32")
+     field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_PERFACC_GOODFRAME")
+     field(PINI, "1")
+}
+# % archiver 10 Monitor
+record(longin, "$(P)$(R)PERF:ACC:GOODFRAME_RBV")
+{
+     field(DTYP, "asynInt32")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_PERFACC_GOODFRAME")
+     field(SCAN, "I/O Intr")
+     field(FLNK, "$(P)$(R)PERF:ACC:GOODFRAME_TFR")
+}
+record(seq, "$(P)$(R)PERF:ACC:GOODFRAME_TFR")
+{
+     field(SELM, "All")
+     field(DOL1, "$(P)$(R)PERF:ACC:GOODFRAME_RBV")
+     field(LNK1, "$(P)$(R)PERF:ACC:GOODFRAME PP")
+}
+# % archiver 10 Monitor
+record(longin, "$(P)$(R)PERF:CNT:GOODFRAME_RBV")
+{
+     field(DTYP, "asynInt32")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_PERFCNT_GOODFRAME")
+     field(SCAN, "I/O Intr")
+}
+
+# Number of missing frames detected
+# % autosave 2 VAL
+record(longout, "$(P)$(R)PERF:ACC:MISSING") 
+{
+     field(DTYP, "asynInt32")
+     field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_PERFACC_MISSINGFRAME")
+     field(PINI, "1")
+}
+# % archiver 10 Monitor
+record(longin, "$(P)$(R)PERF:ACC:MISSING_RBV") 
+{
+     field(DTYP, "asynInt32")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_PERFACC_MISSINGFRAME")
+     field(SCAN, "I/O Intr")
+     field(FLNK, "$(P)$(R)PERF:ACC:MISSING_TFR")
+}
+record(seq, "$(P)$(R)PERF:ACC:MISSING_TFR")
+{
+     field(SELM, "All")
+     field(DOL1, "$(P)$(R)PERF:ACC:MISSING_RBV")
+     field(LNK1, "$(P)$(R)PERF:ACC:MISSING PP")
+}
+# % archiver 10 Monitor
+record(longin, "$(P)$(R)PERF:CNT:MISSING_RBV") 
+{
+     field(DTYP, "asynInt32")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_PERFCNT_MISSINGFRAME")
+     field(SCAN, "I/O Intr")
+}
+
+# Attempts to allocate an NDArray that fail
+# % autosave 2 VAL
+record(longout, "$(P)$(R)PERF:ACC:OUTOFARRAYS") 
+{
+     field(DTYP, "asynInt32")
+     field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_PERFACC_OUTOFARRAYS")
+     field(PINI, "1")
+}
+# % archiver 10 Monitor
+record(longin, "$(P)$(R)PERF:ACC:OUTOFARRAYS_RBV") 
+{
+     field(DTYP, "asynInt32")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_PERFACC_OUTOFARRAYS")
+     field(SCAN, "I/O Intr")
+     field(FLNK, "$(P)$(R)PERF:ACC:OUTOFARRAYS_TFR")
+}
+record(seq, "$(P)$(R)PERF:ACC:OUTOFARRAYS_TFR")
+{
+     field(SELM, "All")
+     field(DOL1, "$(P)$(R)PERF:ACC:OUTOFARRAYS_RBV")
+     field(LNK1, "$(P)$(R)PERF:ACC:OUTOFARRAYS PP")
+}
+# % archiver 10 Monitor
+record(longin, "$(P)$(R)PERF:CNT:OUTOFARRAYS_RBV") 
+{
+     field(DTYP, "asynInt32")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_PERFCNT_OUTOFARRAYS")
+     field(SCAN, "I/O Intr")
+}
+
+# Frames detected as invalid by the lack of a timestamp
+# % autosave 2 VAL
+record(longout, "$(P)$(R)PERF:ACC:INVALID") 
+{
+     field(DTYP, "asynInt32")
+     field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_PERFACC_INVALIDFRAME")
+     field(PINI, "1")
+}
+# % archiver 10 Monitor
+record(longin, "$(P)$(R)PERF:ACC:INVALID_RBV") 
+{
+     field(DTYP, "asynInt32")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_PERFACC_INVALIDFRAME")
+     field(SCAN, "I/O Intr")
+     field(FLNK, "$(P)$(R)PERF:ACC:INVALID_TFR")
+}
+record(seq, "$(P)$(R)PERF:ACC:INVALID_TFR")
+{
+     field(SELM, "All")
+     field(DOL1, "$(P)$(R)PERF:ACC:INVALID_RBV")
+     field(LNK1, "$(P)$(R)PERF:ACC:INVALID PP")
+}
+# % archiver 10 Monitor
+record(longin, "$(P)$(R)PERF:CNT:INVALID_RBV") 
+{
+     field(DTYP, "asynInt32")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_PERFCNT_INVALIDFRAME")
+     field(SCAN, "I/O Intr")
+}
+
+# Frame status error count
+# % autosave 2 VAL
+record(longout, "$(P)$(R)PERF:ACC:FRAMESTATUS") 
+{
+     field(DTYP, "asynInt32")
+     field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_PERFACC_FRAMESTATUSERROR")
+     field(PINI, "1")
+}
+# % archiver 10 Monitor
+record(longin, "$(P)$(R)PERF:ACC:FRAMESTATUS_RBV") 
+{
+     field(DTYP, "asynInt32")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_PERFACC_FRAMESTATUSERROR")
+     field(SCAN, "I/O Intr")
+     field(FLNK, "$(P)$(R)PERF:ACC:FRAMESTATUS_TFR")
+}
+record(seq, "$(P)$(R)PERF:ACC:FRAMESTATUS_TFR")
+{
+     field(SELM, "All")
+     field(DOL1, "$(P)$(R)PERF:ACC:FRAMESTATUS_RBV")
+     field(LNK1, "$(P)$(R)PERF:ACC:FRAMESTATUS PP")
+}
+# % archiver 10 Monitor
+record(longin, "$(P)$(R)PERF:CNT:FRAMESTATUS_RBV") 
+{
+     field(DTYP, "asynInt32")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_PERFCNT_FRAMESTATUSERROR")
+     field(SCAN, "I/O Intr")
+}
+
+# Faults during wait for frame event
+# % autosave 2 VAL
+record(longout, "$(P)$(R)PERF:ACC:WAITFAULT") 
+{
+     field(DTYP, "asynInt32")
+     field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_PERFACC_WAITFAULT")
+     field(PINI, "1")
+}
+# % archiver 10 Monitor
+record(longin, "$(P)$(R)PERF:ACC:WAITFAULT_RBV") 
+{
+     field(DTYP, "asynInt32")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_PERFACC_WAITFAULT")
+     field(SCAN, "I/O Intr")
+     field(FLNK, "$(P)$(R)PERF:ACC:WAITFAULT_TFR")
+}
+record(seq, "$(P)$(R)PERF:ACC:WAITFAULT_TFR")
+{
+     field(SELM, "All")
+     field(DOL1, "$(P)$(R)PERF:ACC:WAITFAULT_RBV")
+     field(LNK1, "$(P)$(R)PERF:ACC:WAITFAULT PP")
+}
+# % archiver 10 Monitor
+record(longin, "$(P)$(R)PERF:CNT:WAITFAULT_RBV") 
+{
+     field(DTYP, "asynInt32")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_PERFCNT_WAITFAULT")
+     field(SCAN, "I/O Intr")
+}
+
+# PCO driver errors during capture
+# % autosave 2 VAL
+record(longout, "$(P)$(R)PERF:ACC:DRIVERERROR") 
+{
+     field(DTYP, "asynInt32")
+     field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_PERFACC_DRIVERERROR")
+     field(PINI, "1")
+}
+# % archiver 10 Monitor
+record(longin, "$(P)$(R)PERF:ACC:DRIVERERROR_RBV") 
+{
+     field(DTYP, "asynInt32")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_PERFACC_DRIVERERROR")
+     field(SCAN, "I/O Intr")
+     field(FLNK, "$(P)$(R)PERF:ACC:DRIVERERROR_TFR")
+}
+record(seq, "$(P)$(R)PERF:ACC:DRIVERERROR_TFR")
+{
+     field(SELM, "All")
+     field(DOL1, "$(P)$(R)PERF:ACC:DRIVERERROR_RBV")
+     field(LNK1, "$(P)$(R)PERF:ACC:DRIVERERROR PP")
+}
+# % archiver 10 Monitor
+record(longin, "$(P)$(R)PERF:CNT:DRIVERERROR_RBV") 
+{
+     field(DTYP, "asynInt32")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_PERFCNT_DRIVERERROR")
+     field(SCAN, "I/O Intr")
+}
+
+# Frame event receive but buffer not released to us
+# % autosave 2 VAL
+record(longout, "$(P)$(R)PERF:ACC:CAPTUREERROR") 
+{
+     field(DTYP, "asynInt32")
+     field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_PERFACC_CAPTUREERROR")
+     field(PINI, "1")
+}
+# % archiver 10 Monitor
+record(longin, "$(P)$(R)PERF:ACC:CAPTUREERROR_RBV") 
+{
+     field(DTYP, "asynInt32")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_PERFACC_CAPTUREERROR")
+     field(SCAN, "I/O Intr")
+     field(FLNK, "$(P)$(R)PERF:ACC:CAPTUREERROR_TFR")
+}
+record(seq, "$(P)$(R)PERF:ACC:CAPTUREERROR_TFR")
+{
+     field(SELM, "All")
+     field(DOL1, "$(P)$(R)PERF:ACC:CAPTUREERROR_RBV")
+     field(LNK1, "$(P)$(R)PERF:ACC:CAPTUREERROR PP")
+}
+# % archiver 10 Monitor
+record(longin, "$(P)$(R)PERF:CNT:CAPTUREERROR_RBV") 
+{
+     field(DTYP, "asynInt32")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_PERFCNT_CAPTUREERROR")
+     field(SCAN, "I/O Intr")
+}
+
+# Frames acquired through polling after a jam detection
+# % autosave 2 VAL
+record(longout, "$(P)$(R)PERF:ACC:POLLGETFRAME") 
+{
+     field(DTYP, "asynInt32")
+     field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_PERFACC_POLLGETFRAME")
+     field(PINI, "1")
+}
+# % archiver 10 Monitor
+record(longin, "$(P)$(R)PERF:ACC:POLLGETFRAME_RBV") 
+{
+     field(DTYP, "asynInt32")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_PERFACC_POLLGETFRAME")
+     field(SCAN, "I/O Intr")
+     field(FLNK, "$(P)$(R)PERF:ACC:POLLGETFRAME_TFR")
+}
+record(seq, "$(P)$(R)PERF:ACC:POLLGETFRAME_TFR")
+{
+     field(SELM, "All")
+     field(DOL1, "$(P)$(R)PERF:ACC:POLLGETFRAME_RBV")
+     field(LNK1, "$(P)$(R)PERF:ACC:POLLGETFRAME PP")
+}
+# % archiver 10 Monitor
+record(longin, "$(P)$(R)PERF:CNT:POLLGETFRAME_RBV") 
+{
+     field(DTYP, "asynInt32")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_PERFCNT_POLLGETFRAME")
+     field(SCAN, "I/O Intr")
+}
+
+# Overall fault counter
+# % autosave 2 VAL
+record(longout, "$(P)$(R)PERF:ACC:FAULT") 
+{
+     field(DTYP, "asynInt32")
+     field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_PERFACC_FAULT")
+     field(PINI, "1")
+}
+# % archiver 10 Monitor
+record(longin, "$(P)$(R)PERF:ACC:FAULT_RBV") 
+{
+     field(DTYP, "asynInt32")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_PERFACC_FAULT")
+     field(SCAN, "I/O Intr")
+     field(FLNK, "$(P)$(R)PERF:ACC:FAULT_TFR")
+}
+record(seq, "$(P)$(R)PERF:ACC:FAULT_TFR")
+{
+     field(SELM, "All")
+     field(DOL1, "$(P)$(R)PERF:ACC:FAULT_RBV")
+     field(LNK1, "$(P)$(R)PERF:ACC:FAULT PP")
+}
+# % archiver 10 Monitor
+record(longin, "$(P)$(R)PERF:CNT:FAULT_RBV") 
+{
+     field(DTYP, "asynInt32")
+     field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_PERFCNT_FAULT")
+     field(SCAN, "I/O Intr")
+     field(HIGH, "1")
+     field(HIHI, "10")
+     field(HSV, "MINOR")
+     field(HHSV, "MAJOR")
+}
+
+# Reset the accumulated performance information
+# % archiver 10 Monitor
+record(longout, "$(P)$(R)PERF:RESET") 
+{
+     field(DTYP, "asynInt32")
+     field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_PERF_RESET")
+}
+
+# Backdoor increment a counter
+# % archiver 10 Monitor
+record(longout, "$(P)$(R)PERF:TESTCOUNT") 
+{
+     field(DTYP, "asynInt32")
+     field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_PERF_TESTCOUNT")
+}
+
+# Camera interface
+record(mbbi, "$(P)$(R)INTERFACE")
+{
+    field(DTYP, asynInt32)
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_INTERFACE")
+    field(SCAN, "I/O Intr")
+    field(ZRST, "Unknown")
+    field(ZRVL, "0")
+    field(ONST, "FireWire")
+    field(ONVL, "1")
+    field(TWST, "Camera Link")
+    field(TWVL, "2")
+    field(THST, "USB 2.0")
+    field(THVL, "3")
+    field(FRST, "GigE")
+    field(FRVL, "4")
+    field(FVST, "Serial")
+    field(FVVL, "5")
+    field(SXST, "USB 3.0")
+    field(SXVL, "6")
+    field(SVST, "CLHS")
+    field(SVVL, "7")
+}
+
+# Uses Camera Link
+record(bi, "$(P)$(R)USESCAMERALINK")
+{
+    field(DTYP, asynInt32)
+    field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))PCO_USES_CAMERALINK")
+    field(SCAN, "I/O Intr")
+    field(ZNAM, "No")
+    field(ONAM, "Yes")
+}

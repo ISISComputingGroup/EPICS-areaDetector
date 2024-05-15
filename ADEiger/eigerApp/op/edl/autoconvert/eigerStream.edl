@@ -6,7 +6,7 @@ release 1
 x 1276
 y 227
 w 350
-h 130
+h 155
 font "helvetica-medium-r-18.0"
 ctlFont "helvetica-bold-r-10.0"
 btnFont "helvetica-medium-r-18.0"
@@ -66,9 +66,9 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 5
+x 85
 y 30
-w 140
+w 60
 h 20
 font "helvetica-medium-r-14.0"
 fontAlign "right"
@@ -76,7 +76,7 @@ fgColor rgb 0 0 0
 bgColor index 3
 useDisplayBg
 value {
-  "Enable/Disable"
+  "Enable"
 }
 endObjectProperties
 
@@ -86,22 +86,38 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 215
+x 235
 y 31
-w 60
+w 80
 h 18
 controlPv "$(P)$(R)StreamEnable_RBV"
 format "string"
 font "helvetica-medium-r-14.0"
 fontAlign "left"
-fgColor rgb 2560 0 47104
-bgColor rgb 47872 47872 47872
+fgColor rgb 0 65535 0
+fgAlarm
+bgColor rgb 17920 17920 17920
 limitsFromDb
 nullColor rgb 60928 46592 11008
 smartRefresh
 fastUpdate
 newPos
 objType "controls"
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 0
+y 0
+w 350
+h 155
+lineColor rgb 0 0 0
+fillColor rgb 0 0 0
+lineWidth 0
 endObjectProperties
 
 # (Static Text)
@@ -111,7 +127,7 @@ major 4
 minor 1
 release 1
 x 5
-y 80
+y 130
 w 140
 h 20
 font "helvetica-medium-r-14.0"
@@ -131,7 +147,7 @@ major 4
 minor 7
 release 0
 x 150
-y 81
+y 131
 w 60
 h 18
 controlPv "$(P)$(R)StreamDropped_RBV"
@@ -192,19 +208,48 @@ newPos
 objType "controls"
 endObjectProperties
 
-# (Rectangle)
-object activeRectangleClass
+# (Static Text)
+object activeXTextClass
 beginObjectProperties
 major 4
-minor 0
+minor 1
+release 1
+x 15
+y 80
+w 130
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "Header Detail"
+}
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
 release 0
-x 0
-y 0
-w 350
-h 130
-lineColor rgb 0 0 0
-fillColor rgb 0 0 0
-lineWidth 0
+x 235
+y 81
+w 80
+h 18
+controlPv "$(P)$(R)StreamHdrDetail_RBV"
+format "string"
+font "helvetica-medium-r-14.0"
+fontAlign "left"
+fgColor rgb 2560 0 47104
+bgColor rgb 47872 47872 47872
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
 endObjectProperties
 
 # (Static Text)
@@ -213,9 +258,9 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 35
-y 106
-w 110
+x 45
+y 105
+w 100
 h 20
 font "helvetica-medium-r-14.0"
 fontAlign "right"
@@ -233,16 +278,17 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 255
-y 107
+x 235
+y 106
 w 80
 h 18
 controlPv "$(P)$(R)StreamDecompress_RBV"
 format "string"
 font "helvetica-medium-r-14.0"
 fontAlign "left"
-fgColor rgb 2560 0 47104
-bgColor rgb 47872 47872 47872
+fgColor rgb 0 65535 0
+fgAlarm
+bgColor rgb 17920 17920 17920
 limitsFromDb
 nullColor rgb 60928 46592 11008
 smartRefresh
@@ -259,7 +305,7 @@ minor 0
 release 0
 x 150
 y 30
-w 60
+w 80
 h 20
 fgColor rgb 0 0 0
 bgColor rgb 29440 57088 65280
@@ -278,8 +324,28 @@ major 4
 minor 0
 release 0
 x 150
-y 106
-w 100
+y 80
+w 80
+h 20
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+inconsistentColor rgb 17920 17920 17920
+topShadowColor rgb 55808 55808 55808
+botShadowColor rgb 17920 17920 17920
+controlPv "$(P)$(R)StreamHdrDetail"
+indicatorPv "$(P)$(R)StreamHdrDetail"
+font "helvetica-medium-r-12.0"
+endObjectProperties
+
+# (Menu Button)
+object activeMenuButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 150
+y 105
+w 80
 h 20
 fgColor rgb 0 0 0
 bgColor rgb 29440 57088 65280

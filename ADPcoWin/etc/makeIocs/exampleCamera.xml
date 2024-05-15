@@ -1,9 +1,0 @@
-<?xml version="1.0" ?>
-<components arch="windows-x64">
-	<EPICS_BASE.EpicsEnvSet key="EPICS_CA_MAX_ARRAY_BYTES" name="EPICS_CA_MAX_ARRAY_BYTES" value="50000000"/>
-	<pcocam2.pcocam2 ADDR="0" P="PCO" PORT="pco.CAM" R=":CAM:" TIMEOUT="1"/>
-	<ADCore.NDPvaPlugin ADDR="0" NDARRAY_PORT="pco.CAM" P="PCO" PORT="pco.TX" PVNAME="PCO:PVA:ARRAY" R=":TX:" TIMEOUT="1"/>
-	<autosave.Autosave iocName="exampleCamera" name="Autosave" path="c:\autosave"/>
-	<EPICS_BASE.dbpf pv="PCO:CAM:ArrayCallbacks" value="Enable"/>
-	<EPICS_BASE.dbpf pv="PCO:TX:ArrayCallbacks" value="Enable"/>
-</components>

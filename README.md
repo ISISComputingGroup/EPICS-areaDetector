@@ -5,7 +5,7 @@ areaDetector
 
 The top-level repository for the
 [EPICS](http://www.aps.anl.gov/epics/) 
-[areaDetector](https://cars.uchicago.edu/software/epics/areaDetector.html) 
+[areaDetector](https://github.com/areaDetector/areaDetector/blob/master/README.md) 
 software.  This repository contains mostly documentation, configuration files,
 and a top-level Makefile to build the entire areaDetector package.
 
@@ -25,18 +25,17 @@ of these are "core" submodules:
 All of the other submodules (ADProsilica, ADPilatus, etc.) contain drivers and EPICS IOC applications
 for specific detectors.
 
-The [Installation Guide](INSTALL_GUIDE.md) provides build and install
-instructions.
-
 Additional information:
-* [Overview documentation](https://cars.uchicago.edu/software/epics/areaDetector.html).
-* [Detailed documentation](https://cars.uchicago.edu/software/epics/areaDetectorDoc.html).
+* [Documentation home](https://areadetector.github.io/areaDetector/index.html).
+* [Installation Guide](https://areadetector.github.io/areaDetector/install_guide.html)
+* [User Guide](https://areadetector.github.io/areaDetector/user_guide.html).
 * [Release notes and links to source and binary releases](RELEASE.md).
 
 See the following documentation about the git submodule feature and how it can 
 be used: 
-* [The Git Book](http://git-scm.com/docs/git-submodule)
-* [Kernel.org Git tutorial on submodules](https://git.wiki.kernel.org/index.php/GitSubmoduleTutorial)
+* [The Git Book](https://git-scm.com/docs/git-submodule)
+* [Git Book tutorial on submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules)
 
 To get a clone of the full areaDetector distribution (core, plugins and drivers) do a recursive clone of this repository:
+
 `git clone --recursive https://github.com/areaDetector/areaDetector.git`

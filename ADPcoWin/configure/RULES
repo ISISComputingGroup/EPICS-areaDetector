@@ -1,5 +1,4 @@
 #CONFIG
--include $(CONFIG)/RULES.Dls
 include  $(CONFIG)/RULES
 
 # Library should be rebuilt because LIBOBJS may have changed.

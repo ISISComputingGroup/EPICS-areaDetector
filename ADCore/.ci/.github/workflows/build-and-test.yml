@@ -1,0 +1,143 @@
+name: ci-scripts build/test
+
+on: [push, pull_request]
+
+env:
+  SETUP_PATH: .:.ci
+  SET: test01
+  VV: 1
+  BASE_RECURSIVE: NO
+  CMP: gcc
+  APT: re2c
+  CHOCO: re2c
+  BREW: re2c
+
+jobs:
+  unit-test:
+    name: Unit tests on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-22.04, ubuntu-20.04, windows-2022, windows-2019, macos-12, macos-11]
+    steps:
+    - uses: actions/checkout@v3
+    - name: Show initial environment
+      run: python cue-test.py env
+    - name: Run unit tests
+      run: python cue-test.py
+
+  build-linux:
+    name: ${{ matrix.cmp }} / ${{ matrix.configuration }} / ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    env:
+      CMP: ${{ matrix.cmp }}
+      BCFG: ${{ matrix.configuration }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-22.04, ubuntu-20.04]
+        cmp: [gcc, clang]
+        configuration: [default, static, debug, static-debug]
+    steps:
+    - uses: actions/checkout@v3
+    - name: Prepare and compile dependencies
+      run: python cue.py prepare
+    - name: Build main module (example app)
+      run: python cue.py build
+    - name: Run main module tests
+      run: python cue.py -T 15M test
+    - name: Collect and show test results
+      run: python cue.py test-results
+
+  build-macos:
+    name: ${{ matrix.cmp }} / ${{ matrix.configuration }} / ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    env:
+      CMP: ${{ matrix.cmp }}
+      BCFG: ${{ matrix.configuration }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-12, macos-11]
+        cmp: [clang]
+        configuration: [default, debug]
+    steps:
+    - uses: actions/checkout@v3
+    - name: Prepare and compile dependencies
+      run: python cue.py prepare
+    - name: Build main module (example app)
+      run: python cue.py build
+    - name: Run main module tests
+      run: python cue.py -T 15M test
+    - name: Collect and show test results
+      run: python cue.py test-results
+
+  build-windows:
+    name: ${{ matrix.cmp }} / ${{ matrix.configuration }} / ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    env:
+      CMP: ${{ matrix.cmp }}
+      BCFG: ${{ matrix.configuration }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-2022, windows-2019]
+        cmp: [gcc, vs2022, vs2019]
+        configuration: [default, static, debug, static-debug]
+        exclude:
+          - os: windows-2022
+            cmp: vs2019
+
+          - os: windows-2019
+            cmp: vs2022
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Prepare and compile dependencies
+      run: python cue.py prepare
+    - name: Build main module (example app)
+      run: python cue.py build
+    - name: Run main module tests
+      run: python cue.py -T 15M test
+    - name: Collect and show test results
+      run: python cue.py test-results
+
+  build-cross:
+    name: cross ${{ matrix.cross }} / ${{ matrix.cmp }} / ${{ matrix.configuration }}
+    runs-on: ubuntu-latest
+    env:
+      CMP: gcc
+      BCFG: default
+      CI_CROSS_TARGETS: ${{ matrix.cross }}
+      TEST: ${{ matrix.test }}
+      APT: re2c
+    strategy:
+      fail-fast: false
+      matrix:
+        # configuration: [default, static, debug, static-debug]
+        configuration: [default]
+        cross:
+        - linux-aarch64
+        - linux-arm@arm-linux-gnueabi
+        - linux-arm@arm-linux-gnueabihf
+        - linux-ppc
+        - linux-ppc64
+        - win32-x86-mingw
+        - windows-x64-mingw
+        - RTEMS-pc386-qemu@4.9
+        - RTEMS-pc386-qemu@4.10
+        - RTEMS-pc686-qemu@5
+        include:
+        - cross: RTEMS-pc386-qemu@4.10
+          test: NO
+    steps:
+    - uses: actions/checkout@v3
+    - name: Prepare and compile dependencies
+      run: python cue.py prepare
+    - name: Build main module (example app)
+      run: python cue.py build
+    - name: Run main module tests
+      run: python cue.py -T 15M test
+    - name: Collect and show test results
+      run: python cue.py test-results

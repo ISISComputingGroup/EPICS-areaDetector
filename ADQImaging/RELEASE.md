@@ -17,13 +17,13 @@ files respectively, in the configure/ directory of the appropriate release of th
 Compile Note
 =============
 The QImaging SDK (http://www.qimaging.com/support/downloads/sdk.php) is required to compile.
--From C:\Program Files\QImaging\SDK\Headers copy QCamApi.h to ADQImaging/Support
--From C:\Program Files\QImaging\SDK\libs\i386 copy QCamDriver.lib to ADQImaging\Support\os\win32-x86
--From C:\Program Files\QImaging\SDK\libs\AMD64 copy QCamDriver64.lib to ADQImaging\Support\os\windows-x64
+* From C:\Program Files\QImaging\SDK\Headers copy QCamApi.h to ADQImaging/Support
+* From C:\Program Files\QImaging\SDK\libs\i386 copy QCamDriver.lib to ADQImaging\Support\os\win32-x86
+* From C:\Program Files\QImaging\SDK\libs\AMD64 copy QCamDriver64.lib to ADQImaging\Support\os\windows-x64
 
 DLLs are located at
--C:\Windows\Systems32\QCamDriver.dll
--C:\Windows\SysWOW64\QCamDriver64.dll, and QCamChildDriverx64.dll
+* C:\Windows\Systems32\QCamDriver.dll
+* C:\Windows\SysWOW64\QCamDriver64.dll, and QCamChildDriverx64.dll
 
 Release Notes
 =============

@@ -6,7 +6,7 @@ release 1
 x 249
 y 74
 w 1070
-h 825
+h 830
 font "helvetica-medium-r-18.0"
 ctlFont "helvetica-bold-r-10.0"
 btnFont "helvetica-medium-r-18.0"
@@ -60,24 +60,11 @@ value {
 }
 endObjectProperties
 
-# (Group)
-object activeGroupClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 5
-y 380
-w 350
-h 80
-
-beginGroup
-
 # (Embedded Window)
 object activePipClass
 beginObjectProperties
 major 4
-minor 1
+minor 0
 release 0
 x 5
 y 380
@@ -97,30 +84,11 @@ displayFileName {
 noScroll
 endObjectProperties
 
-endGroup
-
-visMin "A"
-visMax "1"
-endObjectProperties
-
-# (Group)
-object activeGroupClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 360
-y 35
-w 350
-h 165
-
-beginGroup
-
 # (Embedded Window)
 object activePipClass
 beginObjectProperties
 major 4
-minor 1
+minor 0
 release 0
 x 360
 y 35
@@ -140,30 +108,11 @@ displayFileName {
 noScroll
 endObjectProperties
 
-endGroup
-
-visMin "A"
-visMax "1"
-endObjectProperties
-
-# (Group)
-object activeGroupClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 360
-y 710
-w 350
-h 110
-
-beginGroup
-
 # (Embedded Window)
 object activePipClass
 beginObjectProperties
 major 4
-minor 1
+minor 0
 release 0
 x 360
 y 710
@@ -183,30 +132,11 @@ displayFileName {
 noScroll
 endObjectProperties
 
-endGroup
-
-visMin "A"
-visMax "1"
-endObjectProperties
-
-# (Group)
-object activeGroupClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 5
-y 625
-w 350
-h 160
-
-beginGroup
-
 # (Embedded Window)
 object activePipClass
 beginObjectProperties
 major 4
-minor 1
+minor 0
 release 0
 x 5
 y 625
@@ -226,30 +156,11 @@ displayFileName {
 noScroll
 endObjectProperties
 
-endGroup
-
-visMin "A"
-visMax "1"
-endObjectProperties
-
-# (Group)
-object activeGroupClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 6
-y 35
-w 350
-h 340
-
-beginGroup
-
 # (Embedded Window)
 object activePipClass
 beginObjectProperties
 major 4
-minor 1
+minor 0
 release 0
 x 6
 y 35
@@ -267,12 +178,6 @@ displayFileName {
   0 "ADSetup.edl"
 }
 noScroll
-endObjectProperties
-
-endGroup
-
-visMin "A"
-visMax "1"
 endObjectProperties
 
 # (Group)
@@ -364,114 +269,6 @@ fillColor rgb 0 0 0
 lineWidth 0
 endObjectProperties
 
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 770
-y 65
-w 110
-h 20
-font "helvetica-medium-r-14.0"
-fontAlign "right"
-fgColor rgb 0 0 0
-bgColor index 3
-useDisplayBg
-value {
-  "Status rate"
-}
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 720
-y 90
-w 160
-h 20
-font "helvetica-medium-r-14.0"
-fontAlign "right"
-fgColor rgb 0 0 0
-bgColor index 3
-useDisplayBg
-value {
-  "Frames completed"
-}
-endObjectProperties
-
-# (Text Monitor)
-object activeXTextDspClass:noedit
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 885
-y 91
-w 120
-h 18
-controlPv "$(P)$(R)ARFramesCompleted"
-format "decimal"
-font "helvetica-medium-r-14.0"
-fontAlign "left"
-fgColor rgb 2560 0 47104
-bgColor rgb 47872 47872 47872
-limitsFromDb
-nullColor rgb 60928 46592 11008
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 740
-y 115
-w 140
-h 20
-font "helvetica-medium-r-14.0"
-fontAlign "right"
-fgColor rgb 0 0 0
-bgColor index 3
-useDisplayBg
-value {
-  "Frame failures"
-}
-endObjectProperties
-
-# (Text Monitor)
-object activeXTextDspClass:noedit
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 885
-y 116
-w 120
-h 18
-controlPv "$(P)$(R)ARFrameFailures"
-format "decimal"
-font "helvetica-medium-r-14.0"
-fontAlign "left"
-fgColor rgb 2560 0 47104
-bgColor rgb 47872 47872 47872
-limitsFromDb
-nullColor rgb 60928 46592 11008
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
-endObjectProperties
-
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -497,7 +294,7 @@ release 0
 x 715
 y 350
 w 350
-h 450
+h 475
 lineColor rgb 0 0 0
 fillColor rgb 0 0 0
 lineWidth 0
@@ -1305,50 +1102,6 @@ newPos
 objType "controls"
 endObjectProperties
 
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 730
-y 720
-w 120
-h 20
-font "helvetica-medium-r-14.0"
-fontAlign "right"
-fgColor rgb 0 0 0
-bgColor index 3
-useDisplayBg
-value {
-  "Pixel format"
-}
-endObjectProperties
-
-# (Text Monitor)
-object activeXTextDspClass:noedit
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 960
-y 721
-w 100
-h 18
-controlPv "$(P)$(R)PixelFormat_RBV"
-format "string"
-font "helvetica-medium-r-14.0"
-fontAlign "left"
-fgColor rgb 2560 0 47104
-bgColor rgb 47872 47872 47872
-limitsFromDb
-nullColor rgb 60928 46592 11008
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
-endObjectProperties
-
 # (Text Monitor)
 object activeXTextDspClass:noedit
 beginObjectProperties
@@ -1393,6 +1146,180 @@ value {
 }
 endObjectProperties
 
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 360
+y 205
+w 350
+h 500
+fgColor rgb 0 0 0
+bgColor rgb 65280 65280 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+displaySource "file"
+file "ADGenICamCollect.edl"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "ADGenICamCollect.edl"
+}
+noScroll
+endObjectProperties
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 5
+y 465
+w 350
+h 155
+fgColor rgb 0 0 0
+bgColor rgb 65280 65280 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+displaySource "file"
+file "ADGenICamTrigger.edl"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "ADGenICamTrigger.edl"
+}
+noScroll
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 750
+y 290
+w 215
+h 20
+
+beginGroup
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 750
+y 290
+w 130
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "Poll features"
+}
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 720
+y 65
+w 160
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "Frames completed"
+}
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 885
+y 66
+w 120
+h 18
+controlPv "$(P)$(R)ARFramesCompleted"
+format "decimal"
+font "helvetica-medium-r-14.0"
+fontAlign "left"
+fgColor rgb 2560 0 47104
+bgColor rgb 47872 47872 47872
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 740
+y 90
+w 140
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "Frame failures"
+}
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 885
+y 91
+w 120
+h 18
+controlPv "$(P)$(R)ARFrameFailures"
+format "decimal"
+font "helvetica-medium-r-14.0"
+fontAlign "left"
+fgColor rgb 2560 0 47104
+bgColor rgb 47872 47872 47872
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
 # (Static Text)
 object activeXTextClass
 beginObjectProperties
@@ -1400,7 +1327,7 @@ major 4
 minor 1
 release 1
 x 730
-y 140
+y 115
 w 150
 h 20
 font "helvetica-medium-r-14.0"
@@ -1420,7 +1347,7 @@ major 4
 minor 7
 release 0
 x 885
-y 141
+y 116
 w 120
 h 18
 controlPv "$(P)$(R)ARFrameUnderruns"
@@ -1444,7 +1371,7 @@ major 4
 minor 1
 release 1
 x 730
-y 165
+y 140
 w 150
 h 20
 font "helvetica-medium-r-14.0"
@@ -1464,7 +1391,7 @@ major 4
 minor 7
 release 0
 x 885
-y 166
+y 141
 w 120
 h 18
 controlPv "$(P)$(R)ARMissingPackets"
@@ -1488,7 +1415,7 @@ major 4
 minor 1
 release 1
 x 740
-y 190
+y 165
 w 140
 h 20
 font "helvetica-medium-r-14.0"
@@ -1508,7 +1435,7 @@ major 4
 minor 7
 release 0
 x 885
-y 191
+y 166
 w 120
 h 18
 controlPv "$(P)$(R)ARResentPackets"
@@ -1532,7 +1459,7 @@ major 4
 minor 1
 release 1
 x 750
-y 215
+y 190
 w 130
 h 20
 font "helvetica-medium-r-14.0"
@@ -1552,7 +1479,7 @@ major 4
 minor 1
 release 1
 x 740
-y 240
+y 215
 w 140
 h 20
 font "helvetica-medium-r-14.0"
@@ -1572,7 +1499,7 @@ major 4
 minor 1
 release 1
 x 730
-y 265
+y 240
 w 150
 h 20
 font "helvetica-medium-r-14.0"
@@ -1592,7 +1519,7 @@ major 4
 minor 1
 release 1
 x 760
-y 290
+y 265
 w 120
 h 20
 font "helvetica-medium-r-14.0"
@@ -1612,7 +1539,7 @@ major 4
 minor 7
 release 0
 x 885
-y 240
+y 215
 w 120
 h 20
 controlPv "$(P)$(R)ARPacketTimeout"
@@ -1638,7 +1565,7 @@ major 4
 minor 7
 release 0
 x 885
-y 265
+y 240
 w 120
 h 20
 controlPv "$(P)$(R)ARFrameRetention"
@@ -1663,9 +1590,9 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 750
-y 745
-w 100
+x 730
+y 720
+w 120
 h 20
 font "helvetica-medium-r-14.0"
 fontAlign "right"
@@ -1673,7 +1600,7 @@ fgColor rgb 0 0 0
 bgColor index 3
 useDisplayBg
 value {
-  "Left shift"
+  "Pixel format"
 }
 endObjectProperties
 
@@ -1684,10 +1611,10 @@ major 4
 minor 7
 release 0
 x 960
-y 746
-w 60
+y 721
+w 100
 h 18
-controlPv "$(P)$(R)ARLeftShift_RBV"
+controlPv "$(P)$(R)PixelFormat_RBV"
 format "string"
 font "helvetica-medium-r-14.0"
 fontAlign "left"
@@ -1707,9 +1634,9 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 720
-y 770
-w 130
+x 730
+y 745
+w 120
 h 20
 font "helvetica-medium-r-14.0"
 fontAlign "right"
@@ -1717,7 +1644,7 @@ fgColor rgb 0 0 0
 bgColor index 3
 useDisplayBg
 value {
-  "HW image mode"
+  "Convert fmt."
 }
 endObjectProperties
 
@@ -1728,10 +1655,10 @@ major 4
 minor 7
 release 0
 x 960
-y 771
-w 60
+y 746
+w 100
 h 18
-controlPv "$(P)$(R)ARHWImageMode_RBV"
+controlPv "$(P)$(R)ARConvertPixelFormat_RBV"
 format "string"
 font "helvetica-medium-r-14.0"
 fontAlign "left"
@@ -1745,90 +1672,92 @@ newPos
 objType "controls"
 endObjectProperties
 
-# (Group)
-object activeGroupClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 360
-y 205
-w 350
-h 500
-
-beginGroup
-
-# (Embedded Window)
-object activePipClass
+# (Static Text)
+object activeXTextClass
 beginObjectProperties
 major 4
 minor 1
-release 0
-x 360
-y 205
-w 350
-h 500
+release 1
+x 750
+y 770
+w 100
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "right"
 fgColor rgb 0 0 0
-bgColor rgb 65280 65280 65280
-topShadowColor rgb 65280 65280 65280
-botShadowColor rgb 0 0 0
-displaySource "file"
-file "ADGenICamCollect.edl"
-sizeOfs 5
-numDsps 1
-displayFileName {
-  0 "ADGenICamCollect.edl"
+bgColor index 3
+useDisplayBg
+value {
+  "Shift dir."
 }
-noScroll
 endObjectProperties
 
-endGroup
-
-visMin "A"
-visMax "1"
-endObjectProperties
-
-# (Group)
-object activeGroupClass
+# (Text Monitor)
+object activeXTextDspClass:noedit
 beginObjectProperties
 major 4
-minor 0
+minor 7
 release 0
-x 5
-y 465
-w 350
-h 155
+x 960
+y 771
+w 100
+h 18
+controlPv "$(P)$(R)ARShiftDir_RBV"
+format "string"
+font "helvetica-medium-r-14.0"
+fontAlign "left"
+fgColor rgb 2560 0 47104
+bgColor rgb 47872 47872 47872
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
 
-beginGroup
-
-# (Embedded Window)
-object activePipClass
+# (Static Text)
+object activeXTextClass
 beginObjectProperties
 major 4
 minor 1
-release 0
-x 5
-y 465
-w 350
-h 155
+release 1
+x 750
+y 795
+w 100
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "right"
 fgColor rgb 0 0 0
-bgColor rgb 65280 65280 65280
-topShadowColor rgb 65280 65280 65280
-botShadowColor rgb 0 0 0
-displaySource "file"
-file "ADGenICamTrigger.edl"
-sizeOfs 5
-numDsps 1
-displayFileName {
-  0 "ADGenICamTrigger.edl"
+bgColor index 3
+useDisplayBg
+value {
+  "Shift bits"
 }
-noScroll
 endObjectProperties
 
-endGroup
-
-visMin "A"
-visMax "1"
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 960
+y 796
+w 100
+h 18
+controlPv "$(P)$(R)ARShiftBits_RBV"
+format "string"
+font "helvetica-medium-r-14.0"
+fontAlign "left"
+fgColor rgb 2560 0 47104
+bgColor rgb 47872 47872 47872
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
 endObjectProperties
 # (Group)
 object activeGroupClass
@@ -1862,26 +1791,26 @@ icon
 numPvs 18
 numDsps 9
 displayFileName {
-  0 $(C)-features.edl
-  1 $(C)-features_1.edl
-  2 $(C)-features_2.edl
-  3 $(C)-features_3.edl
-  4 $(C)-features_4.edl
-  5 $(C)-features_5.edl
-  6 $(C)-features_6.edl
-  7 $(C)-features_7.edl
-  8 $(C)-features_8.edl
+  0 "$(C)-features.edl"
+  1 "$(C)-features_1.edl"
+  2 "$(C)-features_2.edl"
+  3 "$(C)-features_3.edl"
+  4 "$(C)-features_4.edl"
+  5 "$(C)-features_5.edl"
+  6 "$(C)-features_6.edl"
+  7 "$(C)-features_7.edl"
+  8 "$(C)-features_8.edl"
 }
 menuLabel {
-  0 Features (custom)
-  1 Features #1
-  2 Features #2
-  3 Features #3
-  4 Features #4
-  5 Features #5
-  6 Features #6
-  7 Features #7
-  8 Features #8
+  0 "Features (custom)"
+  1 "Features #1"
+  2 "Features #2"
+  3 "Features #3"
+  4 "Features #4"
+  5 "Features #5"
+  6 "Features #6"
+  7 "Features #7"
+  8 "Features #8"
 }
 symbols {
   0 "P=$(P),R=$(R)"
@@ -1918,8 +1847,40 @@ beginObjectProperties
 major 4
 minor 0
 release 0
+x 855
+y 645
+w 100
+h 20
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+inconsistentColor rgb 17920 17920 17920
+topShadowColor rgb 55808 55808 55808
+botShadowColor rgb 17920 17920 17920
+controlPv "$(P)$(R)GainAuto"
+indicatorPv "$(P)$(R)GainAuto"
+font "helvetica-medium-r-12.0"
+endObjectProperties
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 750
+y 290
+w 215
+h 20
+
+beginGroup
+
+# (Menu Button)
+object activeMenuButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
 x 885
-y 65
+y 290
 w 80
 h 20
 fgColor rgb 0 0 0
@@ -1932,23 +1893,53 @@ indicatorPv "$(P)$(R)ReadStatus.SCAN"
 font "helvetica-medium-r-12.0"
 endObjectProperties
 
+endGroup
+
+endObjectProperties
+
+
 # (Menu Button)
 object activeMenuButtonClass
 beginObjectProperties
 major 4
 minor 0
 release 0
-x 855
-y 645
-w 100
+x 885
+y 190
+w 120
 h 20
-fgColor rgb 0 0 0
-bgColor rgb 29440 57088 65280
+fgColor rgb 2560 0 47104
+bgColor rgb 47872 47872 47872
 inconsistentColor rgb 17920 17920 17920
 topShadowColor rgb 55808 55808 55808
 botShadowColor rgb 17920 17920 17920
-controlPv "$(P)$(R)GainAuto"
-indicatorPv "$(P)$(R)GainAuto"
+controlPv "$(P)$(R)ARPacketResendEnable"
+indicatorPv "$(P)$(R)ARPacketResendEnable"
+font "helvetica-medium-r-12.0"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 885
+y 265
+w 120
+h 20
+fgColor rgb 0 0 0
+onColor rgb 29440 57088 65280
+offColor rgb 29440 57088 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+controlPv "$(P)$(R)ARResetCamera"
+pressValue "1"
+releaseValue 
+onLabel "Reset camera"
+offLabel "Reset camera"
+3d
+useEnumNumeric
 font "helvetica-medium-r-12.0"
 endObjectProperties
 
@@ -1978,53 +1969,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 885
-y 215
-w 120
-h 20
-fgColor rgb 2560 0 47104
-bgColor rgb 47872 47872 47872
-inconsistentColor rgb 17920 17920 17920
-topShadowColor rgb 55808 55808 55808
-botShadowColor rgb 17920 17920 17920
-controlPv "$(P)$(R)ARPacketResendEnable"
-indicatorPv "$(P)$(R)ARPacketResendEnable"
-font "helvetica-medium-r-12.0"
-endObjectProperties
-
-# (Message Button)
-object activeMessageButtonClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 885
-y 290
-w 120
-h 20
-fgColor rgb 0 0 0
-onColor rgb 29440 57088 65280
-offColor rgb 29440 57088 65280
-topShadowColor rgb 65280 65280 65280
-botShadowColor rgb 0 0 0
-controlPv "$(P)$(R)ARResetCamera"
-pressValue 
-releaseValue 
-onLabel "Reset camera"
-offLabel "Reset camera"
-3d
-useEnumNumeric
-font "helvetica-medium-r-12.0"
-endObjectProperties
-
-# (Menu Button)
-object activeMenuButtonClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 855
-y 745
+x 856
+y 746
 w 100
 h 20
 fgColor rgb 0 0 0
@@ -2032,8 +1978,8 @@ bgColor rgb 29440 57088 65280
 inconsistentColor rgb 17920 17920 17920
 topShadowColor rgb 55808 55808 55808
 botShadowColor rgb 17920 17920 17920
-controlPv "$(P)$(R)ARLeftShift"
-indicatorPv "$(P)$(R)ARLeftShift"
+controlPv "$(P)$(R)ARConvertPixelFormat"
+indicatorPv "$(P)$(R)ARConvertPixelFormat"
 font "helvetica-medium-r-12.0"
 endObjectProperties
 
@@ -2052,8 +1998,28 @@ bgColor rgb 29440 57088 65280
 inconsistentColor rgb 17920 17920 17920
 topShadowColor rgb 55808 55808 55808
 botShadowColor rgb 17920 17920 17920
-controlPv "$(P)$(R)ARHWImageMode"
-indicatorPv "$(P)$(R)ARHWImageMode"
+controlPv "$(P)$(R)ARShiftDir"
+indicatorPv "$(P)$(R)ARShiftDir"
+font "helvetica-medium-r-12.0"
+endObjectProperties
+
+# (Menu Button)
+object activeMenuButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 855
+y 795
+w 100
+h 20
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+inconsistentColor rgb 17920 17920 17920
+topShadowColor rgb 55808 55808 55808
+botShadowColor rgb 17920 17920 17920
+controlPv "$(P)$(R)ARShiftBits"
+indicatorPv "$(P)$(R)ARShiftBits"
 font "helvetica-medium-r-12.0"
 endObjectProperties
 

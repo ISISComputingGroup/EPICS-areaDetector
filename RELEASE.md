@@ -19,8 +19,7 @@ https://cars.uchicago.edu/software/pub/.  For example the Pilatus binaries are i
 https://cars.uchicago.edu/software/pub/ADPilatus.
 
 The versions of EPICS base, asyn, and other synApps modules used for each release can be obtained from 
-the EXAMPLE_RELEASE_PATHS.local, EXAMPLE_RELEASE_LIBS.local, and EXAMPLE_RELEASE_PRODS.local
-files respectively, in the appropriate release of the 
+the EXAMPLE_RELEASE_LIBS.local, and EXAMPLE_RELEASE_PRODS.local files respectively, in the appropriate release of the 
 [top-level areaDetector](https://github.com/areaDetector/areaDetector) repository.
 
 
@@ -30,9 +29,153 @@ Versions
 Each submodule contains detailed release notes for each release of that submodule.  The release notes below
 only provide a short summary of the most significant items from the submodules.
 
+### R3-13 (February 9, 2024)
+
+* ADCore R3-13
+* ADSpinnaker R3-5
+
+### R3-12-1 (January 22, 2022)
+
+* ADCore R3-12, R3-12-1
+  * ADAutoSaveMenu to save and restore configurations.
+  * Bug fixes.
+
+* ADEiger R3-2.
+  * Fixed race condition on Stream interface.
+
+* ADPerkinElmer R2-11.
+  * Added trigger modes.
+  * New vendor release.
+
+* ADGenICam R1-8
+  * Allow the asyn parameter datatype and the GenICam feature datatype to be different.
+    Needed for the areaDetector Gain feature (double) on GenICam cameras that do not implement the
+    GenICam Gain feature (also a double), but rather only implement the integer GainRaw or GainRawChannelA features.
+
+* ADSpinnaker R3-3
+  * Fixed a problem reading Integer GenICam feature values, and their min and max, when they exceed 2^32.
+  
+### R3-11 (May 26, 2021)
+
+* ADSupport R1-9-1, R1-10
+  * Changed the support for reading MJPEG streams in GraphicsMagickSrc and xml2Src.
+  * Fixed compilation errors with EPICS base 7.0.5 which changed the use of undefined functions
+    from being a warning to being an error.
+
+* ADCore R3-11
+  * New plugin NDPluginBadPixel.
+
+* ADGenICam R1-6, R1-7, and R1-7-1
+  * Added support for converting Mono12p and Mono12Packed formats to Mono16,
+    with optional left-shift operation.
+  * Fixed memory leak.
+
+* ADAravis R2-1, R2-2, R2-2-1
+  * Added support for PixelFormat=Mono12Packed and Mono12p.
+  * Added new ConvertPixelFormat mbbo record with choices of Mono16Low and Mono16High.
+    This record controls how Mono12Packed and Mono12p pixel formats are decompressed.
+  * Added continuous integration via Github Actions.  Thanks to Michael Davidsaver for this.
+  * Improve error reporting by fetching the underlying error from aravis.
+
+* ADSpinnaker R3-1, R3-2
+  * Added support for specifying the number of transport layer buffers in the configuration command.
+    This may require changes to startup scripts.
+  * Improved reporting of transport layer statistics.
+  * Updated Spinnaker version from 2.0.0.147 to 2.4.0.147.
+
+* ADURL R2-3
+  * Converted documentation to ReST, include in documentation on github.io.
+  * Added autoconverted OPI files for css/BOY, css/Phoebus, edm, and caQtDM.
+  * Fix to release the lock at least briefly between each image, otherwise EPICS puts don't get processed.
+
+* ADVimba R1-3
+  * Updated the version of the Vimba SDK being used to 4.0 (Windows) and 4.1 (Linux).
+  * Added automatic packet size negotiation for GigE cameras in the constructor.
+    Previously cameras would default to jumbo packets, and if the network did not support that
+    then streaming would fail until the packet size feature was decreased.
+
+* ADViewers R1-7
+  * Many enhancements to the Python PY_NTNDA_Viewer.
+  * Updated to the latest versions of the EPICS Java libraries.
+
+### R3-10 (September 20, 2020)
+
+* ADCore R3-10
+  * Numerous new features and bug fixes.
+
+* ADGenICam R1-4 and R1-5
+  * Added logic to pause and resume acquisition when any of the following parameters are changed:
+      - ADMinX, ADMinY 
+      - ADSizeX, ADSizeY
+      - ADBinX, ADBinY
+      - ADNumImages
+      - GCPixelFormat
+
+    Previously changing these parameters while acquiring had no effect.
+  * Added fix for cameras that don't support GenICam feature AcquisitionMode=MultiFrame.
+  * Added support for new cameras.
+
+* ADSpinnaker R2-2 and R3-0
+  * Updated Spinnaker version from 1.2.0 to 2.0.0.147.
+  * Worked around a bug that in epicsMessageQueueWaitWithTimeout that is present in
+    most versions of EPICS base.
+  * Tested that ADSpinnaker runs on Centos 8. 
+    It should also work on other Linux versions with gcc 7.5 and up, e.g. RHEL 8 and Debian 10.
+
+* ADAravis R1-3 and R2-0
+  * Updated from aravis 0.7.2 to 0.8.1.  The aravis API has changed, so sites will need to update their
+    local aravis installation to 0.8.1.
+  * Fixed a problem with GenICam boolean features.  Previously the code was calling the aravis functions
+    for integer features, which did not work.  It was changed to call the functions for boolean features,
+    and it now works correctly.
+  * Added .bob files for Phoebus Display Manager
+
+### R3-9 (February 24, 2020)
+
+* All modules.
+  * Added .bob files for Phoebus, autoconverted from .adl files.
+
+* Documentation
+  * Converted more of the driver HTML documentation hosted at cars.uchicago.edu 
+    to ReST hosted at areaDetector.githun.io.  Much of this work was done at the recent Codeathon
+    at Diamond Light Source.  Thanks to Andy Wilson, Gary Yendell, and Timo Korhonen for work on this.
+  * Updated the install_guide.rst to reflect the changes to the configure/ directory described below.
+  * Changes to Sphinx settings to make Web pages wider, improving appearance of tables.
+  * Change from Sphinx 1.8.4 to 1.8.5.
+
+* configure/ directory
+  * Fixed problems with EXAMPLE_RELEASE_LIBS.local and EXAMPLE_RELEASE_PRODS.local.
+    They were missing the definition of SUPPORT.
+  * Removed EXAMPLE_RELEASE_SUPPORT.local and EXAMPLE_RELEASE_BASE.local. 
+    RELEASE_SUPPORT.local and RELEASE_BASE.local are not longer used.  They were previously
+    used, for example, to allow building Linux and Windows in the same tree where the definition
+    of SUPPORT and EPICS_BASE would have a different syntax.  This is now handled in the more
+    standard way of optionally including $(TOP)/../RELEASE.local and $(TOP)/../RELEASE.$(EPICS_HOST_ARCH).local.
+  * RELEASE_LIBS_INCLUDE and RELEASE_PRODS_INCLUDE were changed to also optionally include these files from
+    the level above $(AREA_DETECTOR).
+
+* ADCore R3-9
+  * Added Int64 support to NDFileNetCDF.
+  * Support for compressed NDArrays in NDPluginStdArrays (Channel Access)
+
+* ADGenICam R1-2 and R1-3
+  * Change integer features from epicsInt32 to epicsInt64.  Requires asyn R4-38.
+  * Added databases and OPI files for many more FLIR and AVT cameras.
+
+* ADSpinnaker R2-1
+  * Change integer features from epicsInt32 to epicsInt64.  Requires asyn R4-38.
+  * Added vendor SFNC_GenTL*.xml files which are required to be present in the lib directory on Linux.
+
+* ADAravis R1-2
+  * Change integer features from epicsInt32 to epicsInt64.  Requires asyn R4-38.
+
+* ADUVC
+  * New driver for USB Video Class devices from Jakub Wlodek.
+ 
+
 ### R3-8 (October 22, 2019)
 
-* ADCore R3-8.
+* ADCore R3-8
   * Int64 support.  Requires asyn R4-37.
 * ADGenICam R1-1
   * Minor updates

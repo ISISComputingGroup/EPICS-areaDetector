@@ -1,0 +1,77 @@
+file "ADBase_settings.req", P=$(P), R=$(R)
+file "NDFile_settings.req", P=$(P), R=$(R)
+
+#####################
+# Acquisition Setup #
+#####################
+$(P)$(R)PhotonEnergy
+$(P)$(R)ThresholdEnergy
+
+#################
+# Trigger Setup #
+#################
+$(P)$(R)NumTriggers
+$(P)$(R)ManualTrigger
+$(P)$(R)TriggerExposure
+
+#################
+# Readout Setup #
+#################
+$(P)$(R)DataSource
+$(P)$(R)StreamDecompress
+$(P)$(R)ROIMode
+$(P)$(R)CompressionAlgo
+$(P)$(R)FlatfieldApplied
+$(P)$(R)CountrateCorrApplied
+$(P)$(R)PixelMaskApplied
+$(P)$(R)AutoSummation
+
+####################
+# FileWriter Setup #
+####################
+$(P)$(R)FWEnable
+$(P)$(R)FWCompression
+$(P)$(R)FWNamePattern
+$(P)$(R)FWNImagesPerFile
+$(P)$(R)FWAutoRemove
+$(P)$(R)SaveFiles
+$(P)$(R)FileOwner
+$(P)$(R)FileOwnerGrp
+$(P)$(R)FilePerms
+
+################
+# Stream Setup #
+################
+$(P)$(R)StreamEnable
+$(P)$(R)StreamHdrDetail
+$(P)$(R)StreamHdrAppendix
+$(P)$(R)StreamImgAppendix
+
+#################
+# Monitor Setup #
+#################
+$(P)$(R)MonitorEnable
+$(P)$(R)MonitorTimeout
+
+#####################
+# Detector Metadata #
+#####################
+$(P)$(R)DetDist
+$(P)$(R)BeamX
+$(P)$(R)BeamY
+$(P)$(R)ChiStart
+$(P)$(R)ChiIncr
+$(P)$(R)KappaStart
+$(P)$(R)KappaIncr
+$(P)$(R)PhiStart
+$(P)$(R)PhiIncr
+$(P)$(R)OmegaStart
+$(P)$(R)OmegaIncr
+$(P)$(R)TwoThetaStart
+$(P)$(R)TwoThetaIncr
+
+##################################################
+# Minimum adjustment size to wavelength / energy #
+##################################################
+$(P)$(R)WavelengthEps
+$(P)$(R)EnergyEps

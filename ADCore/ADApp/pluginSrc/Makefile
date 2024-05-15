@@ -7,9 +7,22 @@ include $(TOP)/configure/CONFIG
 LIBRARY_IOC += NDPlugin
 DBD         += NDPluginSupport.dbd
 
-# Persuade travis (ubuntu 12.04) to use HDF5 API V2 (1.8 rather than default 1.6)
-USR_CXXFLAGS_Linux += -DH5_NO_DEPRECATED_SYMBOLS -DH5Gopen_vers=2
+# Use HDF5 API V2
+USR_CXXFLAGS_Linux += -DH5Gopen_vers=2
 
+# json.hpp requires C++11
+NDPluginBadPixel_CXXFLAGS_Linux += -std=c++11
+NDPluginBadPixel_CXXFLAGS_Darwin += -std=c++11
+
+ifneq ($(SHARED_LIBRARIES), YES)
+   USR_CFLAGS_WIN32 += -DLIBXML_STATIC
+   USR_CXXFLAGS_WIN32 += -DLIBXML_STATIC
+endif
+
+# This flag is what switches to declspec(dllexport) when building the library
+USR_CPPFLAGS += -DBUILDING_NDPlugin_API
+
+INC      += NDPluginAPI.h
 INC      += NDPluginDriver.h
 LIB_SRCS += NDPluginDriver.cpp
 LIB_SRCS += throttler.cpp
@@ -17,6 +30,13 @@ LIB_SRCS += throttler.cpp
 NDPluginSupport_DBD += NDPluginAttribute.dbd
 INC      += NDPluginAttribute.h
 LIB_SRCS += NDPluginAttribute.cpp
+
+ifeq ($(WITH_JSON), YES)
+  NDPluginSupport_DBD += NDPluginBadPixel.dbd
+  INC      += NDPluginBadPixel.h
+  INC      += json.hpp
+  LIB_SRCS += NDPluginBadPixel.cpp
+endif
 
 NDPluginSupport_DBD += NDPluginCircularBuff.dbd
 INC      += NDArrayRing.h
@@ -217,6 +237,11 @@ NDPlugin_SYS_LIBS_WIN32 += user32
 # This is what we want for the source files that define template functions.
 ifeq (vxWorks,$(findstring vxWorks, $(T_A)))
   CODE_CXXFLAGS=
+endif
+
+# Hack to allow multiple definition of _Unwind_Resume produced by MingW on Linux.
+ifeq (mingw,$(findstring mingw, $(T_A)))
+  USR_LDFLAGS += -Wl,-allow-multiple-definition
 endif
 
 include $(TOP)/ADApp/commonLibraryMakefile

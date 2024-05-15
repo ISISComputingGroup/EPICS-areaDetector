@@ -158,20 +158,26 @@ dbLoadRecords("NDCodec.template", "P=$(PREFIX), R=Codec1:, PORT=CODEC1, ADDR=0, 
 NDCodecConfigure("CODEC2", $(QSIZE), 0, "$(PORT)", 0, 0, 0, 0, 0, 5)
 dbLoadRecords("NDCodec.template", "P=$(PREFIX), R=Codec2:, PORT=CODEC2, ADDR=0, TIMEOUT=1, NDARRAY_PORT=$(PORT)")
 
+# Create a bad pixel plugin
+NDBadPixelConfigure("BADPIX1", $(QSIZE), 0, "$(PORT)", 0, 0, 0, 0, 0, 5)
+dbLoadRecords("NDBadPixel.template", "P=$(PREFIX), R=BadPix1:, PORT=BADPIX1, ADDR=0, TIMEOUT=1, NDARRAY_PORT=$(PORT)")
+
 set_requestfile_path("./")
-set_requestfile_path("$(ADCORE)/ADApp/Db")
+set_requestfile_path("$(ADCORE)/db")
 set_requestfile_path("$(ADCORE)/iocBoot")
+set_requestfile_path("$(AUTOSAVE)/db")
 set_savefile_path("./autosave")
 set_pass0_restoreFile("auto_settings.sav")
 set_pass1_restoreFile("auto_settings.sav")
 save_restoreSet_status_prefix("$(PREFIX)")
-dbLoadRecords("$(AUTOSAVE)/asApp/Db/save_restoreStatus.db", "P=$(PREFIX)")
+dbLoadRecords("$(AUTOSAVE)/db/save_restoreStatus.db", "P=$(PREFIX)")
+dbLoadRecords("$(AUTOSAVE)/db/configMenu.db", "P=$(PREFIX), CONFIG=ADAutoSave")
 
-# Optional: load NDPluginPva plugin
-#NDPvaConfigure("PVA1", $(QSIZE), 0, "$(PORT)", 0, $(PREFIX)Pva1:Image, 0, 0, 0)
-#dbLoadRecords("NDPva.template",  "P=$(PREFIX),R=Pva1:, PORT=PVA1,ADDR=0,TIMEOUT=1,NDARRAY_PORT=$(PORT)")
-# Must start PVA server if this is enabled
-#startPVAServer
+# Load NDPluginPva plugin
+NDPvaConfigure("PVA1", $(QSIZE), 0, "$(PORT)", 0, $(PREFIX)Pva1:Image, 0, 0, 0)
+dbLoadRecords("NDPva.template",  "P=$(PREFIX),R=Pva1:, PORT=PVA1,ADDR=0,TIMEOUT=1,NDARRAY_PORT=$(PORT)")
+#Must start PVA server if this is enabled
+startPVAServer
 
 # Optional: load ffmpegServer plugin
 #ffmpegServerConfigure(8081)
@@ -179,32 +185,37 @@ dbLoadRecords("$(AUTOSAVE)/asApp/Db/save_restoreStatus.db", "P=$(PREFIX)")
 #dbLoadRecords("$(FFMPEGSERVER)/db/ffmpegStream.template", "P=$(PREFIX),R=ffmstream1:,PORT=FfmStream1,NDARRAY_PORT=$(PORT)")
 #ffmpegFileConfigure("FfmFile1", 16, 0, "$(PORT)", 0, -1, 0)
 #dbLoadRecords("$(FFMPEGSERVER)/db/ffmpegFile.template", "P=$(PREFIX),R=ffmfile1:,PORT=FfmFile1,NDARRAY_PORT=$(PORT)")
+#set_requestfile_path("$(FFMPEGSERVER)/db")
 
 # Optional: load NDPluginEdge plugin
 #NDEdgeConfigure("EDGE1", $(QSIZE), 0, "$(PORT)", 0, 0, 0, 0)
 #dbLoadRecords("$(ADPLUGINEDGE)/db/NDEdge.template",  "P=$(PREFIX),R=Edge1:, PORT=EDGE1,ADDR=0,TIMEOUT=1,NDARRAY_PORT=$(PORT)")
-#set_requestfile_path("$(ADPLUGINEDGE)/edgeApp/Db")
+#set_requestfile_path("$(ADPLUGINEDGE)/db")
 
 # Optional: load NDPluginCV plugin
 #NDCVConfigure("CV1", $(QSIZE), 0, "$(PORT)", 0, 0, 0, 0, 0, $(MAX_THREADS=5))
 #dbLoadRecords("$(ADCOMPVISION)/db/NDCV.template",  "P=$(PREFIX),R=CV1:, PORT=CV1,ADDR=0,TIMEOUT=1,NDARRAY_PORT=$(PORT)")
-#set_requestfile_path("$(ADCOMPVISION)/adcvApp/Db")
+#set_requestfile_path("$(ADCOMPVISION)/db")
 
 # Optional: load NDPluginBar plugin
 #NDBarConfigure("BAR1", $(QSIZE), 0, "$(PORT)", 0, 0, 0, 0, 0, $(MAX_THREADS=5))
 #dbLoadRecords("$(ADPLUGINBAR)/db/NDBar.template",  "P=$(PREFIX),R=Bar1:, PORT=BAR1,ADDR=0,TIMEOUT=1,NDARRAY_PORT=$(PORT)")
-#set_requestfile_path("$(ADPLUGINBAR)/barApp/Db")
+#set_requestfile_path("$(ADPLUGINBAR)/db")
 
 # Optional: load scan records
-#dbLoadRecords("$(SSCAN)/sscanApp/Db/scan.db", "P=$(PREFIX),MAXPTS1=2000,MAXPTS2=200,MAXPTS3=20,MAXPTS4=10,MAXPTSH=10")
-#set_requestfile_path("$(SSCAN)/sscanApp/Db")
+#dbLoadRecords("$(SSCAN)/db/scan.db", "P=$(PREFIX),MAXPTS1=2000,MAXPTS2=200,MAXPTS3=20,MAXPTS4=10,MAXPTSH=10")
+#set_requestfile_path("$(SSCAN)/db")
 
 # Optional: load sseq record for acquisition sequence
-#dbLoadRecords("$(CALC)/calcApp/Db/sseqRecord.db", "P=$(PREFIX), S=AcquireSequence")
-#set_requestfile_path("$(CALC)/calcApp/Db")
+#dbLoadRecords("$(CALC)/db/sseqRecord.db", "P=$(PREFIX), S=AcquireSequence")
+#set_requestfile_path("$(CALC)/db")
 
 # Optional: load devIocStats records (requires DEVIOCSTATS module)
 #dbLoadRecords("$(DEVIOCSTATS)/db/iocAdminSoft.db", "IOC=$(PREFIX)")
 
 # Optional: load alive record (requires ALIVE module)
-#dbLoadRecords("$(ALIVE)/aliveApp/Db/alive.db", "P=$(PREFIX),RHOST=192.168.1.254")
+#dbLoadRecords("$(ALIVE)/db/alive.db", "P=$(PREFIX),RHOST=192.168.1.254")
+
+# Set the callback queue size to 5000, up from default of 2000 in base.
+# This can be needed to avoid errors "callbackRequest: cbLow ring buffer full".
+callbackSetQueueSize(5000)

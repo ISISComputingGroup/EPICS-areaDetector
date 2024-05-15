@@ -1,0 +1,175 @@
+# Database for the records specific to the ADPylon driver
+# Macros:
+#% macro, P, Device Prefix
+#% macro, R, Device Suffix
+#% macro, PORT, Asyn Port name
+#% macro, TIMEOUT, Timeout, default 1
+#% macro, ADDR, Asyn Port address, default 0
+
+include "ADGenICam.template"
+
+record(bo, "$(P)$(R)TimeStampMode")
+{
+   field(PINI, "YES")
+   field(DTYP, "asynInt32")
+   field(OUT,  "@asyn($(PORT) 0)PYLON_TIME_STAMP_MODE")
+   field(ZNAM, "Camera")
+   field(ONAM, "EPICS")
+}
+
+record(bi, "$(P)$(R)TimeStampMode_RBV")
+{
+   field(DTYP, "asynInt32")
+   field(INP,  "@asyn($(PORT) 0)PYLON_TIME_STAMP_MODE")
+   field(ZNAM, "Camera")
+   field(ONAM, "EPICS")
+   field(SCAN, "I/O Intr")
+}
+
+record(bo, "$(P)$(R)UniqueIdMode")
+{
+   field(PINI, "YES")
+   field(DTYP, "asynInt32")
+   field(OUT,  "@asyn($(PORT) 0)PYLON_UNIQUE_ID_MODE")
+   field(ZNAM, "Camera")
+   field(ONAM, "Driver")
+}
+
+record(bi, "$(P)$(R)UniqueIdMode_RBV")
+{
+   field(DTYP, "asynInt32")
+   field(INP,  "@asyn($(PORT) 0)PYLON_UNIQUE_ID_MODE")
+   field(ZNAM, "Camera")
+   field(ONAM, "Driver")
+   field(SCAN, "I/O Intr")
+}
+
+## Convert pixel format
+record(mbbo, "$(P)$(R)ConvertPixelFormat") {
+  field(PINI, "YES")
+  field(DTYP, "asynInt32")
+  field(ZRVL, "0")
+  field(ZRST, "None")
+  field(ONVL, "1")
+  field(ONST, "Mono8")
+  field(TWVL, "2")
+  field(TWST, "Mono16")
+  field(THVL, "3")
+  field(THST, "RGB8")
+  field(FRVL, "4")
+  field(FRST, "RGB16")
+  field(OUT,  "@asyn($(PORT) 0)PYLON_CONVERT_PIXEL_FORMAT")
+}
+
+record(mbbi, "$(P)$(R)ConvertPixelFormat_RBV") {
+  field(SCAN, "I/O Intr")
+  field(DTYP, "asynInt32")
+  field(ZRVL, "0")
+  field(ZRST, "None")
+  field(ONVL, "1")
+  field(ONST, "Mono8")
+  field(TWVL, "2")
+  field(TWST, "Mono16")
+  field(THVL, "3")
+  field(THST, "RGB8")
+  field(FRVL, "4")
+  field(FRST, "RGB16")
+  field(INP,  "@asyn($(PORT) 0)PYLON_CONVERT_PIXEL_FORMAT")
+}
+
+record(mbbo, "$(P)$(R)ConvertBitAlign") {
+  field(PINI, "YES")
+  field(DTYP, "asynInt32")
+  field(ZRVL, "0")
+  field(ZRST, "LSB")
+  field(ONVL, "1")
+  field(ONST, "MSB")
+  field(OUT,  "@asyn($(PORT) 0)PYLON_CONVERT_BIT_ALIGN")
+}
+
+record(mbbi, "$(P)$(R)ConvertBitAlign_RBV") {
+  field(SCAN, "I/O Intr")
+  field(DTYP, "asynInt32")
+  field(ZRVL, "0")
+  field(ZRST, "LSB")
+  field(ONVL, "1")
+  field(ONST, "MSB")
+  field(INP,  "@asyn($(PORT) 0)PYLON_CONVERT_BIT_ALIGN")
+}
+
+record(longout, "$(P)$(R)ConvertShiftBits") {
+  field(PINI, "YES")
+  field(DTYP, "asynInt32")
+  field(DRVL, "-16")
+  field(DRVH, "16")
+  field(LOPR, "-16")
+  field(HOPR, "16")
+  field(OUT,  "@asyn($(PORT) 0)PYLON_CONVERT_SHIFT_BITS")
+}
+
+record(longin, "$(P)$(R)ConvertShiftBits_RBV") {
+  field(SCAN, "I/O Intr")
+  field(DTYP, "asynInt32")
+  field(LOPR, "-16")
+  field(HOPR, "16")
+  field(INP,  "@asyn($(PORT) 0)PYLON_CONVERT_SHIFT_BITS")
+}
+
+# Stream grabber statistics
+record(longin, "$(P)$(R)GC_StatBufferReceived_RBV") {
+  field(DTYP, "asynInt64")
+  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_I_Statistic_Total_Buffer_Count")
+  field(SCAN, "I/O Intr")
+  field(DISA, "0")
+  info(autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE")
+}
+
+record(longin, "$(P)$(R)GC_StatBufferFailed_RBV") {
+  field(DTYP, "asynInt64")
+  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_I_Statistic_Failed_Buffer_Count")
+  field(SCAN, "I/O Intr")
+  field(DISA, "0")
+  info(autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE")
+}
+
+# GigE specific statistics
+record(longin, "$(P)$(R)GC_StatBufferUnderrun_RBV") {
+  field(DTYP, "asynInt64")
+  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_I_Statistic_Buffer_Underrun_Count")
+  field(SCAN, "I/O Intr")
+  field(DISA, "0")
+  info(autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE")
+}
+
+record(longin, "$(P)$(R)GC_StatPacketReceived_RBV") {
+  field(DTYP, "asynInt64")
+  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_I_Statistic_Total_Packet_Count")
+  field(SCAN, "I/O Intr")
+  field(DISA, "0")
+  info(autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE")
+}
+
+record(longin, "$(P)$(R)GC_StatPacketFailed_RBV") {
+  field(DTYP, "asynInt64")
+  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_I_Statistic_Failed_Packet_Count")
+  field(SCAN, "I/O Intr")
+  field(DISA, "0")
+  info(autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE")
+}
+
+record(longin, "$(P)$(R)GC_StatPacketRequested_RBV") {
+  field(DTYP, "asynInt64")
+  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_I_Statistic_Resend_Request_Count")
+  field(SCAN, "I/O Intr")
+  field(DISA, "0")
+  info(autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE")
+}
+
+record(longin, "$(P)$(R)GC_StatPacketResent_RBV") {
+  field(DTYP, "asynInt64")
+  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_I_Statistic_Resend_Packet_Count")
+  field(SCAN, "I/O Intr")
+  field(DISA, "0")
+  info(autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE")
+}
+

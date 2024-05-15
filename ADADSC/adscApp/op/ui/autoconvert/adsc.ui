@@ -14,7 +14,6 @@
         <string>
 
 QWidget#centralWidget {background: rgba(187, 187, 187, 255);}
-QPushButton::menu-indicator {image: url(none.png); width: 0}
 
 caTable {
        font: 10pt;
@@ -138,7 +137,7 @@ border-radius: 2px;
                 <rect>
                     <x>162</x>
                     <y>5</y>
-                    <width>195</width>
+                    <width>156</width>
                     <height>25</height>
                 </rect>
             </property>
@@ -870,7 +869,7 @@ border-radius: 2px;
                 <rect>
                     <x>192</x>
                     <y>35</y>
-                    <width>120</width>
+                    <width>96</width>
                     <height>25</height>
                 </rect>
             </property>

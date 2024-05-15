@@ -1,0 +1,14 @@
+~*
+*~
+bin/
+O.*
+lib/
+db/
+dbd/
+include/
+.vscode/
+TemplateReadme.md
+cpr
+json/
+autosave/
+envPaths
