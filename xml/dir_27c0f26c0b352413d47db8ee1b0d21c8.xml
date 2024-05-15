@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_27c0f26c0b352413d47db8ee1b0d21c8" kind="dir">
+    <compoundname>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADAndor3/andor3App/src</compoundname>
+    <innerfile refid="andor3_8cpp">andor3.cpp</innerfile>
+    <innerfile refid="bin_test_8cpp">binTest.cpp</innerfile>
+    <innerfile refid="listdevices_8cpp">listdevices.cpp</innerfile>
+    <innerfile refid="rate_test_8cpp">rateTest.cpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADAndor3/andor3App/src/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_e50086170a33a6324350410c72bf58a4" kind="dir">
+    <compoundname>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADQImaging</compoundname>
+    <innerdir refid="dir_a5dd5f18721c818e3940ee5521485dec">/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADQImaging/App</innerdir>
+    <innerdir refid="dir_910997aa2e2bd9260950b01848b2fb01">/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADQImaging/Support</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADQImaging/"/>
+  </compounddef>
+</doxygen>

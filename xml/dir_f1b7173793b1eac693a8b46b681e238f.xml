@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_f1b7173793b1eac693a8b46b681e238f" kind="dir">
+    <compoundname>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPluginEdge</compoundname>
+    <innerdir refid="dir_833c7db2a60f1c09a3cd06861bd2044e">/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPluginEdge/edgeApp</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPluginEdge/"/>
+  </compounddef>
+</doxygen>

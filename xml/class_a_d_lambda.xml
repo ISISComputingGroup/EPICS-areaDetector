@@ -1,0 +1,1043 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="class_a_d_lambda" kind="class" language="C++" prot="public">
+    <compoundname>ADLambda</compoundname>
+    <basecompoundref refid="class_a_d_driver" prot="public" virt="non-virtual">ADDriver</basecompoundref>
+    <includes refid="_a_d_lambda_8h" local="no">ADLambda.h</includes>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="class_a_d_lambda_1a99ce6b087b1085f5feb5adc3f928d74e" prot="public" static="yes" mutable="no">
+        <type>const char *</type>
+        <definition>const char * ADLambda::driverName</definition>
+        <argsstring></argsstring>
+        <name>driverName</name>
+        <initializer>= &quot;Lambda&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="43" column="19" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="class_a_d_lambda_1a091601e7cbb0da051fa51e8762d9c79c" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ADLambda::LAMBDA_ConfigFilePath</definition>
+        <argsstring></argsstring>
+        <name>LAMBDA_ConfigFilePath</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="62" column="9" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_d_lambda_1a11e4ac5288bcfbdb010cfee9411d9429" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ADLambda::LAMBDA_DecoderDetected</definition>
+        <argsstring></argsstring>
+        <name>LAMBDA_DecoderDetected</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="64" column="9" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_d_lambda_1a8b9041616880e03d2b9635409a710269" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ADLambda::LAMBDA_EnergyThreshold</definition>
+        <argsstring></argsstring>
+        <name>LAMBDA_EnergyThreshold</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="65" column="9" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_d_lambda_1a8a729aa535960123bacf32414f9a3d1f" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ADLambda::LAMBDA_DualThreshold</definition>
+        <argsstring></argsstring>
+        <name>LAMBDA_DualThreshold</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="66" column="9" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_d_lambda_1a9ee7e6f2d35ae0f3f241c63e2b9dcfc6" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ADLambda::LAMBDA_DecodedQueueDepth</definition>
+        <argsstring></argsstring>
+        <name>LAMBDA_DecodedQueueDepth</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="67" column="9" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_d_lambda_1af74f2473a424ea66871a3e5e97e05826" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ADLambda::LAMBDA_OperatingMode</definition>
+        <argsstring></argsstring>
+        <name>LAMBDA_OperatingMode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="68" column="9" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_d_lambda_1a5e3b2abf1a3338058afb7fc84337c334" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ADLambda::LAMBDA_DualMode</definition>
+        <argsstring></argsstring>
+        <name>LAMBDA_DualMode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="69" column="9" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_d_lambda_1ab8822032c5fab5f74284abc288d3a709" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ADLambda::LAMBDA_ChargeSumming</definition>
+        <argsstring></argsstring>
+        <name>LAMBDA_ChargeSumming</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="70" column="9" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_d_lambda_1ace561eb074fb8f6cd685d0e558402887" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ADLambda::LAMBDA_GatingEnable</definition>
+        <argsstring></argsstring>
+        <name>LAMBDA_GatingEnable</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="71" column="9" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_d_lambda_1a1dd37faa49ea724a978d18d96c503137" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ADLambda::LAMBDA_BadFrameCounter</definition>
+        <argsstring></argsstring>
+        <name>LAMBDA_BadFrameCounter</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="72" column="9" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_d_lambda_1a66fc459ad189fc77f57ae038bd93d9c4" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ADLambda::LAMBDA_BadImage</definition>
+        <argsstring></argsstring>
+        <name>LAMBDA_BadImage</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="73" column="9" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_d_lambda_1a5fdd23d0275c57719c87cd1d028368df" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ADLambda::LAMBDA_ReadoutThreads</definition>
+        <argsstring></argsstring>
+        <name>LAMBDA_ReadoutThreads</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="74" column="9" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_d_lambda_1a400a949137fac7c615f86f612b43a3f7" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ADLambda::LAMBDA_StitchedWidth</definition>
+        <argsstring></argsstring>
+        <name>LAMBDA_StitchedWidth</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="75" column="9" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_d_lambda_1af9096ff1513cb2d064417088ac9ec1b8" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ADLambda::LAMBDA_StitchedHeight</definition>
+        <argsstring></argsstring>
+        <name>LAMBDA_StitchedHeight</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="76" column="9" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_a_d_lambda_1af5444421fb6399d52ebd1f30bffede0c" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool ADLambda::connected</definition>
+        <argsstring></argsstring>
+        <name>connected</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="79" column="6" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_d_lambda_1a2569ddb3fb65eeb3a83628d1d71bfd30" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool ADLambda::hasDecoder</definition>
+        <argsstring></argsstring>
+        <name>hasDecoder</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="80" column="6" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_d_lambda_1ab85b0476fdca7e13b88838c5278cc931" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ADLambda::fake</definition>
+        <argsstring></argsstring>
+        <name>fake</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="92" column="5" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_d_lambda_1aa547f97fcac96ab0ab74698d6e29002b" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; xsp::System &gt;</type>
+        <definition>std::unique_ptr&lt;xsp::System&gt; ADLambda::sys</definition>
+        <argsstring></argsstring>
+        <name>sys</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="97" column="17" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_d_lambda_1a8cbe6c5a11c241ff34fd4a83a3414fd9" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; xsp::lambda::Detector &gt;</type>
+        <definition>std::shared_ptr&lt;xsp::lambda::Detector&gt; ADLambda::det</definition>
+        <argsstring></argsstring>
+        <name>det</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="98" column="17" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_d_lambda_1ae92bc3da90fddcd8cd3f9a6049a5d745" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="_a_d_lambda_8h_1a8f74045056811164fadc69864af063e3" kindref="member">lambda_input</ref> &gt;</type>
+        <definition>std::vector&lt; lambda_input &gt; ADLambda::inputs</definition>
+        <argsstring></argsstring>
+        <name>inputs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="100" column="13" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_d_lambda_1a5f2b1fa41c7884e268bd262af2e05f3f" prot="private" static="no" mutable="no">
+        <type>std::map&lt; int, <ref refid="class_n_d_array" kindref="compound">NDArray</ref> * &gt;</type>
+        <definition>std::map&lt;int, NDArray*&gt; ADLambda::frames</definition>
+        <argsstring></argsstring>
+        <name>frames</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="102" column="10" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_d_lambda_1a03f93f4ae98a04ab227e46fde0058185" prot="private" static="no" mutable="no">
+        <type>std::deque&lt; <ref refid="class_n_d_array" kindref="compound">NDArray</ref> * &gt;</type>
+        <definition>std::deque&lt;NDArray*&gt; ADLambda::export_queue</definition>
+        <argsstring></argsstring>
+        <name>export_queue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="103" column="12" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_d_lambda_1af254350b861bc7cc92ae8dc0fe3342ce" prot="private" static="no" mutable="no">
+        <type>epicsEvent *</type>
+        <definition>epicsEvent* ADLambda::startAcquireEvent</definition>
+        <argsstring></argsstring>
+        <name>startAcquireEvent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="105" column="12" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_d_lambda_1a83590c9af33ce991aba31863ca0f2f17" prot="private" static="no" mutable="no">
+        <type>epicsEvent *</type>
+        <definition>epicsEvent* ADLambda::stopAcquireEvent</definition>
+        <argsstring></argsstring>
+        <name>stopAcquireEvent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="106" column="12" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_d_lambda_1aedeeed6a538b56dfeb24842ee28e3118" prot="private" static="no" mutable="no">
+        <type>epicsEvent **</type>
+        <definition>epicsEvent** ADLambda::threadFinishEvents</definition>
+        <argsstring></argsstring>
+        <name>threadFinishEvents</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="107" column="13" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_d_lambda_1aabca859dfced6192be2564abe7353342" prot="private" static="no" mutable="no">
+        <type>epicsMutex *</type>
+        <definition>epicsMutex* ADLambda::dequeLock</definition>
+        <argsstring></argsstring>
+        <name>dequeLock</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="108" column="13" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_d_lambda_1a728bbc2c4713689bb6f4bb22eca0f6d8" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string ADLambda::configFileName</definition>
+        <argsstring></argsstring>
+        <name>configFileName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="110" column="13" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_d_lambda_1a8d1f8dc049e747d35fd163c08c5e348f" prot="private" static="no" mutable="no">
+        <type><ref refid="class_n_d_array" kindref="compound">NDArray</ref> *</type>
+        <definition>NDArray* ADLambda::pImage</definition>
+        <argsstring></argsstring>
+        <name>pImage</name>
+        <initializer>= NULL</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="111" column="9" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" bodystart="111" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_a_d_lambda_1a6950cfc3c8cf305e9847ac99130e1ca6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ADLambda::ADLambda</definition>
+        <argsstring>(const char *portName, const char *configPath, int numModules, int fake)</argsstring>
+        <name>ADLambda</name>
+        <param>
+          <type>const char *</type>
+          <declname>portName</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>configPath</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>numModules</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>fake</declname>
+        </param>
+        <briefdescription>
+<para>Constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">portName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the asyn port driver to be created. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">configPath</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>directory containing configuration file location </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">numModules</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of individual camera modules the system contains </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="45" column="1" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.cpp" bodystart="75" bodyend="158"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_d_lambda_1acb209577ebd621f178458dbfd793cb0f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ADLambda::~ADLambda</definition>
+        <argsstring>()</argsstring>
+        <name>~ADLambda</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="46" column="1" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.cpp" bodystart="160" bodyend="160"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_d_lambda_1ae161dd8d1d8e25cc72ac617e48fa64e7" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>asynStatus</type>
+        <definition>asynStatus ADLambda::disconnect</definition>
+        <argsstring>()</argsstring>
+        <name>disconnect</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="48" column="20" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.cpp" bodystart="294" bodyend="301"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_d_lambda_1a498f06095d84ade1a04c132ff7736463" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>asynStatus</type>
+        <definition>asynStatus ADLambda::connect</definition>
+        <argsstring>()</argsstring>
+        <name>connect</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="49" column="20" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.cpp" bodystart="162" bodyend="170"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_d_lambda_1a197f8803a5966047bd6a1a52649f0264" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ADLambda::waitAcquireThread</definition>
+        <argsstring>()</argsstring>
+        <name>waitAcquireThread</name>
+        <briefdescription>
+<para>Background thread to wait until an acquire signal is recieved. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Afterwards, start the acquisition and create an acquire thread for each receiver. Then, wait until the threads all finish. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="51" column="6" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.cpp" bodystart="529" bodyend="629"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_d_lambda_1a4e42531e9cc9c44e1b33ba85955d5561" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ADLambda::tryConnect</definition>
+        <argsstring>()</argsstring>
+        <name>tryConnect</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>Set up Detector</para>
+        </inbodydescription>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="52" column="6" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.cpp" bodystart="173" bodyend="292"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_d_lambda_1ad9780aa98434ee9628499147bcaf0c31" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ADLambda::acquireThread</definition>
+        <argsstring>(int receiver)</argsstring>
+        <name>acquireThread</name>
+        <param>
+          <type>int</type>
+          <declname>receiver</declname>
+        </param>
+        <briefdescription>
+<para>Thread spawned per detector module, acquires frames from indexed receiver and copies the data to the correct spot in the stitched image. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>Grab parameters that will be used for the entirety of the acquisition</para>
+        </inbodydescription>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="53" column="6" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.cpp" bodystart="670" bodyend="866"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_d_lambda_1a96a52230e256f120df414261bb9b8420" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ADLambda::acquireDecoderThread</definition>
+        <argsstring>()</argsstring>
+        <name>acquireDecoderThread</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="54" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_d_lambda_1adb8fa00e7c0829d30690a57fcbb6af9f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ADLambda::exportThread</definition>
+        <argsstring>()</argsstring>
+        <name>exportThread</name>
+        <briefdescription>
+<para>Thread to pull and export NDArrays being generated by the acquisition threads. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="55" column="6" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.cpp" bodystart="634" bodyend="663"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_d_lambda_1a165f9372f162630f5f916fc1d569afb8" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void ADLambda::report</definition>
+        <argsstring>(FILE *fp, int details)</argsstring>
+        <name>report</name>
+        <reimplements refid="classasyn_n_d_array_driver_1ac3f2d73a05eb54357ec3f052e1b000f2">report</reimplements>
+        <param>
+          <type>FILE *</type>
+          <declname>fp</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>details</declname>
+        </param>
+        <briefdescription>
+<para>Override super class&apos;s report method to provide detector specific info. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>When done, call <ref refid="class_a_d_driver" kindref="compound">ADDriver</ref> (direct super class) method to provide info from the upper classes. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="57" column="6" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.cpp" bodystart="873" bodyend="876"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_d_lambda_1a4f652225af17f8946d97fb89ff347f4b" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>asynStatus</type>
+        <definition>asynStatus ADLambda::writeInt32</definition>
+        <argsstring>(asynUser *pasynUser, epicsInt32 value)</argsstring>
+        <name>writeInt32</name>
+        <reimplements refid="class_a_d_driver_1abef6916bb90d032a1aeb6894adef12a6">writeInt32</reimplements>
+        <param>
+          <type>asynUser *</type>
+          <declname>pasynUser</declname>
+        </param>
+        <param>
+          <type>epicsInt32</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Override from super class to handle detector specific parameters. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If the parameter is from one of the super classes and is not handled here, then pass along to <ref refid="class_a_d_driver" kindref="compound">ADDriver</ref> (direct super class) </para>
+        </detaileddescription>
+        <inbodydescription>
+<para>Make sure that we write the value to the param</para>
+        </inbodydescription>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="59" column="20" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.cpp" bodystart="894" bodyend="942"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_a_d_lambda_1ad3c6e9e846e35a759617d08dac01ee9e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ADLambda::setSizes</definition>
+        <argsstring>()</argsstring>
+        <name>setSizes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="82" column="9" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.cpp" bodystart="303" bodyend="323"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_d_lambda_1ae1d4e7a47f0ad79f32e1037c3ffb172a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ADLambda::incrementValue</definition>
+        <argsstring>(int param)</argsstring>
+        <name>incrementValue</name>
+        <param>
+          <type>int</type>
+          <declname>param</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="83" column="9" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.cpp" bodystart="325" bodyend="331"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_d_lambda_1aaf90ce33d5860a9fb46da757f066ee39" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ADLambda::decrementValue</definition>
+        <argsstring>(int param)</argsstring>
+        <name>decrementValue</name>
+        <param>
+          <type>int</type>
+          <declname>param</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="84" column="9" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.cpp" bodystart="333" bodyend="339"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_d_lambda_1acd56c5e23cc00202f7dc6f81d950533c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ADLambda::readParameters</definition>
+        <argsstring>()</argsstring>
+        <name>readParameters</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="85" column="9" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.cpp" bodystart="341" bodyend="398"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_d_lambda_1af3af26862045e906ca8da6f2ab460a23" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ADLambda::sendParameters</definition>
+        <argsstring>()</argsstring>
+        <name>sendParameters</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="86" column="9" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.cpp" bodystart="401" bodyend="484"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_d_lambda_1a627cb8886f77455ec89be3ce7da2c556" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ADLambda::writeDepth</definition>
+        <argsstring>(int depth)</argsstring>
+        <name>writeDepth</name>
+        <param>
+          <type>int</type>
+          <declname>depth</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="87" column="9" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.cpp" bodystart="878" bodyend="886"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_d_lambda_1a7d07e1cc6b3fbb714ea80fb0ca49ea15" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ADLambda::tryStartAcquire</definition>
+        <argsstring>()</argsstring>
+        <name>tryStartAcquire</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="89" column="6" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.cpp" bodystart="486" bodyend="503"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_d_lambda_1a074ec1e71f3c09488445d6ba940fab6b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ADLambda::tryStopAcquire</definition>
+        <argsstring>()</argsstring>
+        <name>tryStopAcquire</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="90" column="6" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.cpp" bodystart="505" bodyend="521"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_d_lambda_1aeb1078ba9fb127593f2bc57b9a9bf1e0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ADLambda::spawnAcquireThread</definition>
+        <argsstring>(int receiver)</argsstring>
+        <name>spawnAcquireThread</name>
+        <param>
+          <type>int</type>
+          <declname>receiver</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="94" column="6" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.cpp" bodystart="35" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_d_lambda_1a88835f28fc17c69c4e8e2ee6dcdb8612" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ADLambda::spawnAcquireDecoderThread</definition>
+        <argsstring>()</argsstring>
+        <name>spawnAcquireDecoderThread</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="95" column="6"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Class to wrap Lambda detector library provided by X-Spectrum. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="4">
+        <label>asynPortDriver</label>
+      </node>
+      <node id="3">
+        <label>asynNDArrayDriver</label>
+        <link refid="classasyn_n_d_array_driver"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>ADLambda</label>
+        <link refid="class_a_d_lambda"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>ADDriver</label>
+        <link refid="class_a_d_driver"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="8">
+        <label>NDDimension</label>
+        <link refid="struct_n_d_dimension"/>
+      </node>
+      <node id="4">
+        <label>asynPortDriver</label>
+      </node>
+      <node id="10">
+        <label>string</label>
+      </node>
+      <node id="9">
+        <label>Codec_t</label>
+        <link refid="struct_codec__t"/>
+        <childnode refid="10" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
+      </node>
+      <node id="7">
+        <label>NDArray</label>
+        <link refid="class_n_d_array"/>
+        <childnode refid="5" relation="usage">
+          <edgelabel>pNDArrayPool</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>dims</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>pAttributeList</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>codec</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>pDriver</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>asynNDArrayDriver</label>
+        <link refid="classasyn_n_d_array_driver"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>pNDArrayPool</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>pAttributeList</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>pArrays</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>NDArrayPool</label>
+        <link refid="class_n_d_array_pool"/>
+      </node>
+      <node id="1">
+        <label>ADLambda</label>
+        <link refid="class_a_d_lambda"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>ADDriver</label>
+        <link refid="class_a_d_driver"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>NDAttributeList</label>
+        <link refid="class_n_d_attribute_list"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" line="40" column="1" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda/LambdaApp/src/ADLambda.h" bodystart="41" bodyend="112"/>
+    <listofallmembers>
+      <member refid="class_a_d_lambda_1a96a52230e256f120df414261bb9b8420" prot="public" virt="non-virtual"><scope>ADLambda</scope><name>acquireDecoderThread</name></member>
+      <member refid="class_a_d_lambda_1ad9780aa98434ee9628499147bcaf0c31" prot="public" virt="non-virtual"><scope>ADLambda</scope><name>acquireThread</name></member>
+      <member refid="classasyn_n_d_array_driver_1aa06c19f650b4619a7bdbf3a79397c3d3" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>ADAcquire</name></member>
+      <member refid="classasyn_n_d_array_driver_1aaeb5af71e22323b6a3d4f51be380bc7a" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>ADAcquireBusy</name></member>
+      <member refid="class_a_d_driver_1a8d5333aa86509cbd8f5fd824e79b2799" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>ADAcquirePeriod</name></member>
+      <member refid="class_a_d_driver_1a922005db3a5a52dd24e6706fdfe1a160" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>ADAcquireTime</name></member>
+      <member refid="class_a_d_driver_1a11d483194e60669d11e0a4ff4bb919f3" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>ADBinX</name></member>
+      <member refid="class_a_d_driver_1a0001097ff0ab8b55e564057699655c83" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>ADBinY</name></member>
+      <member refid="class_a_d_driver_1acc898497d3369c2f6f6ab1d83effdd25" prot="public" virt="non-virtual"><scope>ADLambda</scope><name>ADDriver</name></member>
+      <member refid="classasyn_n_d_array_driver_1a4eadbf94d756dcf7b61d624f791fd516" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>ADFirmwareVersion</name></member>
+      <member refid="class_a_d_driver_1ae246f999cf99d4e97594beb939f15f21" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>ADFrameType</name></member>
+      <member refid="class_a_d_driver_1af7a169a1ab5a9069c5d556bf5c7ac387" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>ADGain</name></member>
+      <member refid="class_a_d_driver_1a7dcba273d750e726bb3f5e4b7a38f53a" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>ADImageMode</name></member>
+      <member refid="class_a_d_lambda_1a6950cfc3c8cf305e9847ac99130e1ca6" prot="public" virt="non-virtual"><scope>ADLambda</scope><name>ADLambda</name></member>
+      <member refid="classasyn_n_d_array_driver_1a2deb25acd798e9e0da6c52741a07b915" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>ADManufacturer</name></member>
+      <member refid="class_a_d_driver_1a535f4c7d03e30b1efe4f7dad854cfc3f" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>ADMaxSizeX</name></member>
+      <member refid="class_a_d_driver_1a93caa26e32c3765ba19e1ac74a2f50cc" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>ADMaxSizeY</name></member>
+      <member refid="class_a_d_driver_1a23f8a7537c0c221ed3c5a72af90e276e" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>ADMinX</name></member>
+      <member refid="class_a_d_driver_1ae1b0c891ee0ecd596439b29e32e068e4" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>ADMinY</name></member>
+      <member refid="classasyn_n_d_array_driver_1a4c15720b7002ec1ff9278058240d82da" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>ADModel</name></member>
+      <member refid="class_a_d_driver_1a25e11dff81ea84715fc8fe5ca290bacb" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>ADNumExposures</name></member>
+      <member refid="class_a_d_driver_1a17625c89904128e0d5ecb935c475e4b7" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>ADNumExposuresCounter</name></member>
+      <member refid="class_a_d_driver_1a46e8f2fa100c21f2f0689c415b441fb0" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>ADNumImages</name></member>
+      <member refid="class_a_d_driver_1a8cdc9e9fbabaadaa3c87108aad2e2895" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>ADNumImagesCounter</name></member>
+      <member refid="class_a_d_driver_1adbd8c8af9cf7a17913f16ecd0252eaba" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>ADReadStatus</name></member>
+      <member refid="class_a_d_driver_1a52d579907f81c30b4b2df2dd0a3b4a3f" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>ADReverseX</name></member>
+      <member refid="class_a_d_driver_1ad6b830a6234b468e3390839204d5a768" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>ADReverseY</name></member>
+      <member refid="classasyn_n_d_array_driver_1a89d5bd570163bd569bc6d2a2163da9c2" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>ADSDKVersion</name></member>
+      <member refid="classasyn_n_d_array_driver_1aa4d910fd087c8eb02f3437b18b80bba1" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>ADSerialNumber</name></member>
+      <member refid="class_a_d_driver_1a4c4ffb55296fb91e113df88de960384a" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>ADShutterCloseDelay</name></member>
+      <member refid="class_a_d_driver_1aba1af712aed9f9374e5fea5dfc8c1bbd" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>ADShutterControl</name></member>
+      <member refid="class_a_d_driver_1aec7d41ff8a2b3059270450275160092f" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>ADShutterControlEPICS</name></member>
+      <member refid="class_a_d_driver_1a3a1afea96c657c64ab8dea2ee54d1ace" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>ADShutterMode</name></member>
+      <member refid="class_a_d_driver_1ac95c27f778d15963a1d9dd3a61c17d23" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>ADShutterOpenDelay</name></member>
+      <member refid="class_a_d_driver_1a13c7b3852b0a6662a701f8b0fd71eac2" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>ADShutterStatus</name></member>
+      <member refid="class_a_d_driver_1a918ef4b3d80695f6872fd169b09b639a" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>ADSizeX</name></member>
+      <member refid="class_a_d_driver_1a59ba3ba61b2b6f51dc9d88d81680b632" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>ADSizeY</name></member>
+      <member refid="class_a_d_driver_1a6a532aae0f51273450f4e897bf0aed1d" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>ADStatus</name></member>
+      <member refid="class_a_d_driver_1af8ca049bdf54eede6611e50a284152bc" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>ADStatusMessage</name></member>
+      <member refid="class_a_d_driver_1adb837da5ddf5ba868ea2dea316254c41" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>ADStringFromServer</name></member>
+      <member refid="class_a_d_driver_1a9f521abfc93c9ccba2b0e83acace6d0e" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>ADStringToServer</name></member>
+      <member refid="class_a_d_driver_1aef042b68b6b77d7b39dfaeceaa097a38" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>ADTemperature</name></member>
+      <member refid="class_a_d_driver_1a625f815727135a2af747ae5086bf21d5" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>ADTemperatureActual</name></member>
+      <member refid="class_a_d_driver_1a143d4816efe3d5e98f4e6656b0f1d539" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>ADTimeRemaining</name></member>
+      <member refid="class_a_d_driver_1ae191abe1436e6dd02510fcbbac59dbc1" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>ADTriggerMode</name></member>
+      <member refid="classasyn_n_d_array_driver_1adb00dde7e1d46856e0bd4b586aff6bd2" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>ADWaitForPlugins</name></member>
+      <member refid="classasyn_n_d_array_driver_1aaaccd27681be8d91d10246e1aad72034" prot="public" virt="non-virtual"><scope>ADLambda</scope><name>asynNDArrayDriver</name></member>
+      <member refid="classasyn_n_d_array_driver_1aba7309da5e7c5571fc693b1998c9d236" prot="public" virt="virtual"><scope>ADLambda</scope><name>checkPath</name></member>
+      <member refid="classasyn_n_d_array_driver_1aaca89f35ddf4c5a1c22374ff608593cd" prot="public" virt="virtual"><scope>ADLambda</scope><name>checkPath</name></member>
+      <member refid="class_a_d_lambda_1a728bbc2c4713689bb6f4bb22eca0f6d8" prot="private" virt="non-virtual"><scope>ADLambda</scope><name>configFileName</name></member>
+      <member refid="class_a_d_lambda_1a498f06095d84ade1a04c132ff7736463" prot="public" virt="virtual"><scope>ADLambda</scope><name>connect</name></member>
+      <member refid="class_a_d_driver_1a619dfbdc35605a104d2a07ea46f37b5f" prot="public" virt="virtual" ambiguityscope="ADDriver::"><scope>ADLambda</scope><name>connect</name></member>
+      <member refid="class_a_d_lambda_1af5444421fb6399d52ebd1f30bffede0c" prot="private" virt="non-virtual"><scope>ADLambda</scope><name>connected</name></member>
+      <member refid="classasyn_n_d_array_driver_1a813f6c84e96329cd89653a3b0497f8a9" prot="public" virt="virtual"><scope>ADLambda</scope><name>createFileName</name></member>
+      <member refid="classasyn_n_d_array_driver_1af5494c8e3b3f317e049a5c336d8065f4" prot="public" virt="virtual"><scope>ADLambda</scope><name>createFileName</name></member>
+      <member refid="classasyn_n_d_array_driver_1a42b3686c9c08b14ba054dd005a30fa0d" prot="public" virt="virtual"><scope>ADLambda</scope><name>createFilePath</name></member>
+      <member refid="classasyn_n_d_array_driver_1acc2afad33faf8e45d6f21e251133ed94" prot="public" virt="non-virtual"><scope>ADLambda</scope><name>decrementQueuedArrayCount</name></member>
+      <member refid="class_a_d_lambda_1aaf90ce33d5860a9fb46da757f066ee39" prot="private" virt="non-virtual"><scope>ADLambda</scope><name>decrementValue</name></member>
+      <member refid="class_a_d_lambda_1aabca859dfced6192be2564abe7353342" prot="private" virt="non-virtual"><scope>ADLambda</scope><name>dequeLock</name></member>
+      <member refid="class_a_d_lambda_1a8cbe6c5a11c241ff34fd4a83a3414fd9" prot="private" virt="non-virtual"><scope>ADLambda</scope><name>det</name></member>
+      <member refid="class_a_d_driver_1ad387fa6e2e45c812ba82adba2cc74bd0" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>deviceIsReachable</name></member>
+      <member refid="class_a_d_lambda_1ae161dd8d1d8e25cc72ac617e48fa64e7" prot="public" virt="virtual"><scope>ADLambda</scope><name>disconnect</name></member>
+      <member refid="class_a_d_lambda_1a99ce6b087b1085f5feb5adc3f928d74e" prot="public" virt="non-virtual"><scope>ADLambda</scope><name>driverName</name></member>
+      <member refid="class_a_d_lambda_1a03f93f4ae98a04ab227e46fde0058185" prot="private" virt="non-virtual"><scope>ADLambda</scope><name>export_queue</name></member>
+      <member refid="class_a_d_lambda_1adb8fa00e7c0829d30690a57fcbb6af9f" prot="public" virt="non-virtual"><scope>ADLambda</scope><name>exportThread</name></member>
+      <member refid="class_a_d_lambda_1ab85b0476fdca7e13b88838c5278cc931" prot="private" virt="non-virtual"><scope>ADLambda</scope><name>fake</name></member>
+      <member refid="class_a_d_lambda_1a5f2b1fa41c7884e268bd262af2e05f3f" prot="private" virt="non-virtual"><scope>ADLambda</scope><name>frames</name></member>
+      <member refid="classasyn_n_d_array_driver_1a7492ba858d885e2ba226a1c7ef9dcf72" prot="public" virt="virtual"><scope>ADLambda</scope><name>getAttributes</name></member>
+      <member refid="classasyn_n_d_array_driver_1a1a369bc9b605bba000f782c69429622b" prot="public" virt="non-virtual"><scope>ADLambda</scope><name>getQueuedArrayCount</name></member>
+      <member refid="class_a_d_lambda_1a2569ddb3fb65eeb3a83628d1d71bfd30" prot="private" virt="non-virtual"><scope>ADLambda</scope><name>hasDecoder</name></member>
+      <member refid="classasyn_n_d_array_driver_1ad55549fca656bc01cbe0e3c92e4d29e3" prot="public" virt="non-virtual"><scope>ADLambda</scope><name>incrementQueuedArrayCount</name></member>
+      <member refid="class_a_d_lambda_1ae1d4e7a47f0ad79f32e1037c3ffb172a" prot="private" virt="non-virtual"><scope>ADLambda</scope><name>incrementValue</name></member>
+      <member refid="class_a_d_lambda_1ae92bc3da90fddcd8cd3f9a6049a5d745" prot="private" virt="non-virtual"><scope>ADLambda</scope><name>inputs</name></member>
+      <member refid="class_a_d_lambda_1a1dd37faa49ea724a978d18d96c503137" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>LAMBDA_BadFrameCounter</name></member>
+      <member refid="class_a_d_lambda_1a66fc459ad189fc77f57ae038bd93d9c4" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>LAMBDA_BadImage</name></member>
+      <member refid="class_a_d_lambda_1ab8822032c5fab5f74284abc288d3a709" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>LAMBDA_ChargeSumming</name></member>
+      <member refid="class_a_d_lambda_1a091601e7cbb0da051fa51e8762d9c79c" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>LAMBDA_ConfigFilePath</name></member>
+      <member refid="class_a_d_lambda_1a9ee7e6f2d35ae0f3f241c63e2b9dcfc6" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>LAMBDA_DecodedQueueDepth</name></member>
+      <member refid="class_a_d_lambda_1a11e4ac5288bcfbdb010cfee9411d9429" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>LAMBDA_DecoderDetected</name></member>
+      <member refid="class_a_d_lambda_1a5e3b2abf1a3338058afb7fc84337c334" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>LAMBDA_DualMode</name></member>
+      <member refid="class_a_d_lambda_1a8a729aa535960123bacf32414f9a3d1f" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>LAMBDA_DualThreshold</name></member>
+      <member refid="class_a_d_lambda_1a8b9041616880e03d2b9635409a710269" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>LAMBDA_EnergyThreshold</name></member>
+      <member refid="class_a_d_lambda_1ace561eb074fb8f6cd685d0e558402887" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>LAMBDA_GatingEnable</name></member>
+      <member refid="class_a_d_lambda_1af74f2473a424ea66871a3e5e97e05826" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>LAMBDA_OperatingMode</name></member>
+      <member refid="class_a_d_lambda_1a5fdd23d0275c57719c87cd1d028368df" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>LAMBDA_ReadoutThreads</name></member>
+      <member refid="class_a_d_lambda_1af9096ff1513cb2d064417088ac9ec1b8" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>LAMBDA_StitchedHeight</name></member>
+      <member refid="class_a_d_lambda_1a400a949137fac7c615f86f612b43a3f7" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>LAMBDA_StitchedWidth</name></member>
+      <member refid="classasyn_n_d_array_driver_1ad472f633149cd560959721e589d9ea54" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>NDADCoreVersion</name></member>
+      <member refid="classasyn_n_d_array_driver_1af2354f73acece6ee2427f5069b16fdb5" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>NDArrayCallbacks</name></member>
+      <member refid="classasyn_n_d_array_driver_1abec5f5fc9922549d745d7dc7f19243ea" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>NDArrayCounter</name></member>
+      <member refid="classasyn_n_d_array_driver_1a2b2fe51fba9a6ee4146813eac0c47fd1" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>NDArrayData</name></member>
+      <member refid="classasyn_n_d_array_driver_1abf6f05821c7d1a9ab6aef60c9374281e" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>NDArraySize</name></member>
+      <member refid="classasyn_n_d_array_driver_1a79c89c00ea62734d82c89e09ea8aa47b" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>NDArraySizeX</name></member>
+      <member refid="classasyn_n_d_array_driver_1a75753778fe16182d0771e924f05bde33" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>NDArraySizeY</name></member>
+      <member refid="classasyn_n_d_array_driver_1a72fac0fbaa730672f9a3a6da8c1d1a97" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>NDArraySizeZ</name></member>
+      <member refid="classasyn_n_d_array_driver_1a4fae01b5b72053b6ae11dcd37ff6aff0" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>NDAttributesFile</name></member>
+      <member refid="classasyn_n_d_array_driver_1abba302aca48e561ee5b40794db9f0708" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>NDAttributesMacros</name></member>
+      <member refid="classasyn_n_d_array_driver_1a0875da7319e3cc7f54212629208b1d95" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>NDAttributesStatus</name></member>
+      <member refid="classasyn_n_d_array_driver_1a9966536066c350fc218d3d7cb4d66aaf" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>NDAutoIncrement</name></member>
+      <member refid="classasyn_n_d_array_driver_1a73da5c2affb0342b82b470f96a068d1a" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>NDAutoSave</name></member>
+      <member refid="classasyn_n_d_array_driver_1a6e584ca2489de3a5e3e9d4d4e00bb7c0" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>NDBayerPattern</name></member>
+      <member refid="classasyn_n_d_array_driver_1a43641411ca31d630cbf30adab5e553b2" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>NDCodec</name></member>
+      <member refid="classasyn_n_d_array_driver_1abf7b27064b0d69440f16feb1e19f6cf2" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>NDColorMode</name></member>
+      <member refid="classasyn_n_d_array_driver_1a2a9b3db5995b201c2e153decfd79391e" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>NDCompressedSize</name></member>
+      <member refid="classasyn_n_d_array_driver_1af71358738ff1dbe4c9185f105807f799" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>NDDataType</name></member>
+      <member refid="classasyn_n_d_array_driver_1a23727b6252a78b74fc40868f15e656dc" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>NDDimensions</name></member>
+      <member refid="classasyn_n_d_array_driver_1a2be0f672f139c59f942bedfd7d94ff0f" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>NDDriverVersion</name></member>
+      <member refid="classasyn_n_d_array_driver_1a436f60f2a566a9be759c2dad9a9cbbaf" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>NDEpicsTSNsec</name></member>
+      <member refid="classasyn_n_d_array_driver_1af9d5abcc0a9ef2a21abce8607fd7650e" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>NDEpicsTSSec</name></member>
+      <member refid="classasyn_n_d_array_driver_1adc503aa2621ea29c553514b09784229a" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>NDFileCapture</name></member>
+      <member refid="classasyn_n_d_array_driver_1a726ad8d1b09b0fc5e08e0561e9bc255f" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>NDFileCreateDir</name></member>
+      <member refid="classasyn_n_d_array_driver_1a1ce29ba9f5d31b52628ae76129d15fa2" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>NDFileDeleteDriverFile</name></member>
+      <member refid="classasyn_n_d_array_driver_1a8911e3455de6adbfcb21093da9ff0500" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>NDFileFormat</name></member>
+      <member refid="classasyn_n_d_array_driver_1aea93433ae4832940b7cb47173396c050" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>NDFileFreeCapture</name></member>
+      <member refid="classasyn_n_d_array_driver_1a8f5e5a7aae6848a12e55012273ab06c5" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>NDFileLazyOpen</name></member>
+      <member refid="classasyn_n_d_array_driver_1a513d2b4cc04ba240f434394c715f733f" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>NDFileName</name></member>
+      <member refid="classasyn_n_d_array_driver_1a6d7cf0fea0eba3eb69fe69a60b89b30c" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>NDFileNumber</name></member>
+      <member refid="classasyn_n_d_array_driver_1abd42667177a6b0ea88888487511514cd" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>NDFileNumCapture</name></member>
+      <member refid="classasyn_n_d_array_driver_1aa392d8dfaa3d659958deddf100d54aed" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>NDFileNumCaptured</name></member>
+      <member refid="classasyn_n_d_array_driver_1ac511e9800761d6cb070d3540940b24c3" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>NDFilePath</name></member>
+      <member refid="classasyn_n_d_array_driver_1a3cf47b7e4df08a87b0585c62509878bf" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>NDFilePathExists</name></member>
+      <member refid="classasyn_n_d_array_driver_1a2db8828aac3ad3c3df409291395fcb4d" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>NDFileTemplate</name></member>
+      <member refid="classasyn_n_d_array_driver_1a5523209bde8cdb69b0ea275628422e9f" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>NDFileTempSuffix</name></member>
+      <member refid="classasyn_n_d_array_driver_1a392868002486b6c806c587ef3f73c320" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>NDFileWriteMessage</name></member>
+      <member refid="classasyn_n_d_array_driver_1ae446f2d56cfb91299839a1a3fea72a62" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>NDFileWriteMode</name></member>
+      <member refid="classasyn_n_d_array_driver_1ab5b4722576613c52894c55da7153a05f" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>NDFileWriteStatus</name></member>
+      <member refid="classasyn_n_d_array_driver_1ad109404880a23929fc17dea1f09e0775" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>NDFullFileName</name></member>
+      <member refid="classasyn_n_d_array_driver_1aa13dc824ba27681f894f8319f3f13a8c" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>NDNDimensions</name></member>
+      <member refid="classasyn_n_d_array_driver_1aff0d6045cf18c21959a8c21228549ecd" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>NDNumQueuedArrays</name></member>
+      <member refid="classasyn_n_d_array_driver_1adf264650a61fe86c37dbc7a4e5c1fbd0" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>NDPoolAllocBuffers</name></member>
+      <member refid="classasyn_n_d_array_driver_1af3cacda934695b472269d32ba2d94a86" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>NDPoolEmptyFreeList</name></member>
+      <member refid="classasyn_n_d_array_driver_1a9514efd0d89337677ccb428b8b3ac518" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>NDPoolFreeBuffers</name></member>
+      <member refid="classasyn_n_d_array_driver_1a5ab509aca13c1642449253f6ce6eca2c" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>NDPoolMaxBuffers</name></member>
+      <member refid="classasyn_n_d_array_driver_1a7267d600284240edc0f0abe484dff2ee" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>NDPoolMaxMemory</name></member>
+      <member refid="classasyn_n_d_array_driver_1a2a7b868b8d6c542fff28993e1c977e4b" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>NDPoolUsedMemory</name></member>
+      <member refid="classasyn_n_d_array_driver_1acefc2096d9db2fd102542a957722ceef" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>NDPortNameSelf</name></member>
+      <member refid="classasyn_n_d_array_driver_1acdf9d2f3575481f29544c56c9fe46c5c" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>NDReadFile</name></member>
+      <member refid="classasyn_n_d_array_driver_1a9b5492ae014f21d0843658f19e955dc1" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>NDTimeStamp</name></member>
+      <member refid="classasyn_n_d_array_driver_1a8d713b9cc045417a599c91aacc98b08b" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>NDUniqueId</name></member>
+      <member refid="classasyn_n_d_array_driver_1a5d1ec3e763ea9aef2f3fd576611baeb5" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>NDWriteFile</name></member>
+      <member refid="classasyn_n_d_array_driver_1a6f5685f9951f6b3b897e85425b59ad69" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>pArrays</name></member>
+      <member refid="classasyn_n_d_array_driver_1a7bed3ca3a144124eb31053eeecc990e9" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>pAttributeList</name></member>
+      <member refid="class_a_d_lambda_1a8d1f8dc049e747d35fd163c08c5e348f" prot="private" virt="non-virtual"><scope>ADLambda</scope><name>pImage</name></member>
+      <member refid="classasyn_n_d_array_driver_1ad3969854a37329ef4061cc560e9022dc" prot="public" virt="non-virtual"><scope>ADLambda</scope><name>pNDArrayPool</name></member>
+      <member refid="classasyn_n_d_array_driver_1a5aeb82d51c34b79b77433e121722a141" prot="public" virt="virtual"><scope>ADLambda</scope><name>readFloat64</name></member>
+      <member refid="classasyn_n_d_array_driver_1acac9d5044d62734723404ef7e53ee4e8" prot="public" virt="virtual"><scope>ADLambda</scope><name>readGenericPointer</name></member>
+      <member refid="classasyn_n_d_array_driver_1a4c0e7e85f9f4a988614a273c035be813" prot="public" virt="virtual"><scope>ADLambda</scope><name>readInt32</name></member>
+      <member refid="classasyn_n_d_array_driver_1a1da351ae597074c829204945f700098b" prot="public" virt="virtual"><scope>ADLambda</scope><name>readNDAttributesFile</name></member>
+      <member refid="class_a_d_lambda_1acd56c5e23cc00202f7dc6f81d950533c" prot="private" virt="non-virtual"><scope>ADLambda</scope><name>readParameters</name></member>
+      <member refid="class_a_d_lambda_1a165f9372f162630f5f916fc1d569afb8" prot="public" virt="virtual"><scope>ADLambda</scope><name>report</name></member>
+      <member refid="class_a_d_lambda_1af3af26862045e906ca8da6f2ab460a23" prot="private" virt="non-virtual"><scope>ADLambda</scope><name>sendParameters</name></member>
+      <member refid="classasyn_n_d_array_driver_1abf87462bc5853f8e5a56db5e93acd956" prot="public" virt="virtual"><scope>ADLambda</scope><name>setIntegerParam</name></member>
+      <member refid="classasyn_n_d_array_driver_1a3732469004adb2cd7eb5d5f047385915" prot="public" virt="virtual"><scope>ADLambda</scope><name>setIntegerParam</name></member>
+      <member refid="class_a_d_driver_1ac05bfd5d3c6bc63910d6fbd4fb909d50" prot="public" virt="virtual"><scope>ADLambda</scope><name>setShutter</name></member>
+      <member refid="class_a_d_lambda_1ad3c6e9e846e35a759617d08dac01ee9e" prot="private" virt="non-virtual"><scope>ADLambda</scope><name>setSizes</name></member>
+      <member refid="class_a_d_lambda_1a88835f28fc17c69c4e8e2ee6dcdb8612" prot="private" virt="non-virtual"><scope>ADLambda</scope><name>spawnAcquireDecoderThread</name></member>
+      <member refid="class_a_d_lambda_1aeb1078ba9fb127593f2bc57b9a9bf1e0" prot="private" virt="non-virtual"><scope>ADLambda</scope><name>spawnAcquireThread</name></member>
+      <member refid="class_a_d_lambda_1af254350b861bc7cc92ae8dc0fe3342ce" prot="private" virt="non-virtual"><scope>ADLambda</scope><name>startAcquireEvent</name></member>
+      <member refid="class_a_d_lambda_1a83590c9af33ce991aba31863ca0f2f17" prot="private" virt="non-virtual"><scope>ADLambda</scope><name>stopAcquireEvent</name></member>
+      <member refid="class_a_d_lambda_1aa547f97fcac96ab0ab74698d6e29002b" prot="private" virt="non-virtual"><scope>ADLambda</scope><name>sys</name></member>
+      <member refid="class_a_d_lambda_1aedeeed6a538b56dfeb24842ee28e3118" prot="private" virt="non-virtual"><scope>ADLambda</scope><name>threadFinishEvents</name></member>
+      <member refid="classasyn_n_d_array_driver_1aa52489ae8673348bf596faf63b94e85e" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>threadPriority_</name></member>
+      <member refid="classasyn_n_d_array_driver_1a467b05b088bb8cf97e2fcad07a4a432f" prot="protected" virt="non-virtual"><scope>ADLambda</scope><name>threadStackSize_</name></member>
+      <member refid="class_a_d_lambda_1a4e42531e9cc9c44e1b33ba85955d5561" prot="public" virt="non-virtual"><scope>ADLambda</scope><name>tryConnect</name></member>
+      <member refid="class_a_d_lambda_1a7d07e1cc6b3fbb714ea80fb0ca49ea15" prot="private" virt="non-virtual"><scope>ADLambda</scope><name>tryStartAcquire</name></member>
+      <member refid="class_a_d_lambda_1a074ec1e71f3c09488445d6ba940fab6b" prot="private" virt="non-virtual"><scope>ADLambda</scope><name>tryStopAcquire</name></member>
+      <member refid="classasyn_n_d_array_driver_1a688578d794900c0671da8dfaf771912b" prot="public" virt="non-virtual"><scope>ADLambda</scope><name>updateQueuedArrayCount</name></member>
+      <member refid="classasyn_n_d_array_driver_1aae633d40e7b086edf7e1e8998b6e9a01" prot="public" virt="virtual"><scope>ADLambda</scope><name>updateTimeStamps</name></member>
+      <member refid="class_a_d_lambda_1a197f8803a5966047bd6a1a52649f0264" prot="public" virt="non-virtual"><scope>ADLambda</scope><name>waitAcquireThread</name></member>
+      <member refid="class_a_d_lambda_1a627cb8886f77455ec89be3ce7da2c556" prot="private" virt="non-virtual"><scope>ADLambda</scope><name>writeDepth</name></member>
+      <member refid="classasyn_n_d_array_driver_1ad95feb77baff701f85641ef5fc3d5c65" prot="public" virt="virtual"><scope>ADLambda</scope><name>writeGenericPointer</name></member>
+      <member refid="class_a_d_lambda_1a4f652225af17f8946d97fb89ff347f4b" prot="public" virt="virtual"><scope>ADLambda</scope><name>writeInt32</name></member>
+      <member refid="classasyn_n_d_array_driver_1a84d981f8995d984035bb9feff727d520" prot="public" virt="virtual"><scope>ADLambda</scope><name>writeOctet</name></member>
+      <member refid="class_a_d_lambda_1acb209577ebd621f178458dbfd793cb0f" prot="public" virt="non-virtual"><scope>ADLambda</scope><name>~ADLambda</name></member>
+      <member refid="classasyn_n_d_array_driver_1ab392c48715c896b8f58c0456b7889723" prot="public" virt="virtual"><scope>ADLambda</scope><name>~asynNDArrayDriver</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_d3d4cfb219ba490466e7f217611d7576" kind="dir">
+    <compoundname>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADDexela/dexelaApp</compoundname>
+    <innerdir refid="dir_8716aab5ad649c6099bcee4258b2734e">/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADDexela/dexelaApp/src</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADDexela/dexelaApp/"/>
+  </compounddef>
+</doxygen>

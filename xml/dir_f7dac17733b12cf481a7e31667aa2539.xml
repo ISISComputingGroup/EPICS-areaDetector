@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_f7dac17733b12cf481a7e31667aa2539" kind="dir">
+    <compoundname>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADMythen</compoundname>
+    <innerdir refid="dir_405b585eb534ccebe7eb4420601ed2d5">/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADMythen/mythenApp</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADMythen/"/>
+  </compounddef>
+</doxygen>

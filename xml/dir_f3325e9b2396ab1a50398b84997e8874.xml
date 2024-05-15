@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_f3325e9b2396ab1a50398b84997e8874" kind="dir">
+    <compoundname>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADVimba</compoundname>
+    <innerdir refid="dir_20820a683738f9de73b4f270bdb10a32">/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADVimba/vimbaApp</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADVimba/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_710d48b0409a3931ccaf4f64677f49cc" kind="dir">
+    <compoundname>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADMerlin</compoundname>
+    <innerdir refid="dir_c97eeff8cae88fe5e64834f18fa1686a">/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADMerlin/merlinApp</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADMerlin/"/>
+  </compounddef>
+</doxygen>

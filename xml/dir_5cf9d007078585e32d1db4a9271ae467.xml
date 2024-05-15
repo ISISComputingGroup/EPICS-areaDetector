@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_5cf9d007078585e32d1db4a9271ae467" kind="dir">
+    <compoundname>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPixirad</compoundname>
+    <innerdir refid="dir_bd51844858f4e41d1dc26f374af5439d">/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPixirad/pixiradApp</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPixirad/"/>
+  </compounddef>
+</doxygen>

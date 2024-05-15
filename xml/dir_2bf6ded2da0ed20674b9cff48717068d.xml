@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_2bf6ded2da0ed20674b9cff48717068d" kind="dir">
+    <compoundname>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector</compoundname>
+    <innerdir refid="dir_ce65513ab81da2ba16c943d4c92fabac">/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADADSC</innerdir>
+    <innerdir refid="dir_732ef7d2f16834b00ca42ee9288f9a49">/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADAndor</innerdir>
+    <innerdir refid="dir_162a3b85fbc74f4ba284b0cf1389c750">/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADAndor3</innerdir>
+    <innerdir refid="dir_8cb3f7240793b677fc85bbd38410372c">/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADAravis</innerdir>
+    <innerdir refid="dir_5c8af7dc50d342a09219d93fe0644b93">/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADBruker</innerdir>
+    <innerdir refid="dir_152da63e2e6e2fd82d5a6eda6ac75baf">/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore</innerdir>
+    <innerdir refid="dir_b997a4ec94b5a57fd2a020c4dfcf77e3">/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCSimDetector</innerdir>
+    <innerdir refid="dir_09304af002dc2e5ab739a63aa3cedd8f">/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADDexela</innerdir>
+    <innerdir refid="dir_c8e1d511daf4144b79073efe5ac8fa2c">/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADEiger</innerdir>
+    <innerdir refid="dir_d30f88d67ed365232c70749f278b2c33">/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADFastCCD</innerdir>
+    <innerdir refid="dir_f0c33d3fd63094f938d5dd0b3b68410b">/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADFireWireWin</innerdir>
+    <innerdir refid="dir_78689bf8cf57268e51c06bb4b50b92a1">/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADGenICam</innerdir>
+    <innerdir refid="dir_a1e93c8cc068795565c48d2893ba310e">/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLambda</innerdir>
+    <innerdir refid="dir_9d2aa94d09c3d47553e673455881bf47">/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADLightField</innerdir>
+    <innerdir refid="dir_5165a0bfa9892df38af25cecc825117e">/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADmar345</innerdir>
+    <innerdir refid="dir_f5300b83769b3337a9b5dc24bd04243d">/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADmarCCD</innerdir>
+    <innerdir refid="dir_710d48b0409a3931ccaf4f64677f49cc">/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADMerlin</innerdir>
+    <innerdir refid="dir_f7dac17733b12cf481a7e31667aa2539">/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADMythen</innerdir>
+    <innerdir refid="dir_9a65295b059e41f9ff4c15a92b597742">/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED</innerdir>
+    <innerdir refid="dir_f2df2db211be67e5236ef3b5f7596d4d">/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPCO</innerdir>
+    <innerdir refid="dir_a1037ea32279e581f68ddfa035b62b3a">/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPerkinElmer</innerdir>
+    <innerdir refid="dir_668280b5d27c81af8620484ee4e10c6d">/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPhotonII</innerdir>
+    <innerdir refid="dir_1952263a6f295f2c3d3a61aea7a00e12">/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPICam</innerdir>
+    <innerdir refid="dir_caed91c91254bd272ef54d57741a5d68">/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPilatus</innerdir>
+    <innerdir refid="dir_5cf9d007078585e32d1db4a9271ae467">/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPixirad</innerdir>
+    <innerdir refid="dir_f1b7173793b1eac693a8b46b681e238f">/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPluginEdge</innerdir>
+    <innerdir refid="dir_c2239ec4a252821fa24183c5a258a937">/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey</innerdir>
+    <innerdir refid="dir_0846688077600ceefb56a6dd9ef5a67d">/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADProsilica</innerdir>
+    <innerdir refid="dir_d7dbfd3a6c45e7a2f2825af80f59bdf5">/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPSL</innerdir>
+    <innerdir refid="dir_2e3646683152f6487dd49c0f2b8f9055">/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPvCam</innerdir>
+    <innerdir refid="dir_72737bafe4f8ed8e06b8f08c7391dcbd">/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPylon</innerdir>
+    <innerdir refid="dir_e50086170a33a6324350410c72bf58a4">/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADQImaging</innerdir>
+    <innerdir refid="dir_3fc4d5f7ad6f9bbc8c773ac573894930">/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADRIXSCam</innerdir>
+    <innerdir refid="dir_1f256bc32df905f8ccfe34a04d5a51ca">/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADRoper</innerdir>
+    <innerdir refid="dir_49f81558a839c1d3ffeb130eecc8854d">/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSimDetector</innerdir>
+    <innerdir refid="dir_3cf0c598a29ace800ac2d4b9ff1a069c">/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker</innerdir>
+    <innerdir refid="dir_7531a2cbcfe0db2f3225513f382e7c2e">/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADURL</innerdir>
+    <innerdir refid="dir_f3325e9b2396ab1a50398b84997e8874">/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADVimba</innerdir>
+    <innerdir refid="dir_3c2d644ef5ecb5504f42e60b6dd5645a">/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/aravisGigE</innerdir>
+    <innerdir refid="dir_26a70366cf145c74a68688d41b4d3181">/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ffmpegServer</innerdir>
+    <innerdir refid="dir_9990de52d1ca1f7058cbf173e19ef6f8">/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/firewireDCAM</innerdir>
+    <innerdir refid="dir_4e55ff8556a8699ecd41c4357c1c1d6e">/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/NDDriverStdArrays</innerdir>
+    <innerdir refid="dir_3cb3ddca0fbce493397ba285c6a6c0ba">/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/pvaDriver</innerdir>
+    <innerdir refid="dir_7411b746631cd1c929aeeffcd66a182d">/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/specsAnalyser</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_162a3b85fbc74f4ba284b0cf1389c750" kind="dir">
+    <compoundname>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADAndor3</compoundname>
+    <innerdir refid="dir_755e5e2e1ba814cf01880312ddb7f23c">/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADAndor3/andor3App</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADAndor3/"/>
+  </compounddef>
+</doxygen>

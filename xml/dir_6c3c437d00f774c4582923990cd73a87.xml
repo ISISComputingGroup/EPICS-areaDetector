@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_6c3c437d00f774c4582923990cd73a87" kind="dir">
+    <compoundname>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADEiger/eigerApp</compoundname>
+    <innerdir refid="dir_8dea9f2c6fddbaaf2f0a063844c73df3">/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADEiger/eigerApp/src</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADEiger/eigerApp/"/>
+  </compounddef>
+</doxygen>

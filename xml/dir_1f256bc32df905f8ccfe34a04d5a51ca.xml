@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_1f256bc32df905f8ccfe34a04d5a51ca" kind="dir">
+    <compoundname>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADRoper</compoundname>
+    <innerdir refid="dir_a95c53ce0ade56e12cd2d9f58d7ed8ab">/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADRoper/roperApp</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADRoper/"/>
+  </compounddef>
+</doxygen>

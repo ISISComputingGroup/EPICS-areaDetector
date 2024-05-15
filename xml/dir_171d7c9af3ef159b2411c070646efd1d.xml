@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_171d7c9af3ef159b2411c070646efd1d" kind="dir">
+    <compoundname>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPhotonII/PhotonIIApp/src</compoundname>
+    <innerfile refid="_photon_i_i_8cpp">PhotonII.cpp</innerfile>
+    <innerfile refid="_photon_i_i_8h">PhotonII.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPhotonII/PhotonIIApp/src/"/>
+  </compounddef>
+</doxygen>
