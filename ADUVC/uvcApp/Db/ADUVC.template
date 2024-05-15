@@ -1,0 +1,423 @@
+#
+# EPICS records used by the UVC EPICS driver
+#
+# Author: Jakub Wlodek
+# Created: July 2018
+#
+
+################################################################################################
+# Camera Device Information
+################################################################################################
+
+###################################################
+# record that stores framerate. (UVC cameras only support certain framerates)
+################################################
+record(ao, "$(P)$(R)UVCFramerate"){
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))UVC_FRAMERATE")
+}
+
+record(ai, "$(P)$(R)UVCFramerate_RBV"){
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))UVC_FRAMERATE")
+    field(SCAN, "I/O Intr")
+}
+
+###################################################
+# record that stores to what level of UVC the camera complies
+################################################
+record(ao, "$(P)$(R)UVCComplianceLevel"){
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))UVC_COMPLIANCE")
+}
+
+record(ai, "$(P)$(R)UVCComplianceLevel_RBV"){
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))UVC_COMPLIANCE")
+    field(SCAN, "I/O Intr")
+}
+
+##############################################
+# stores the number of reference counts for the UVC device
+################################################
+record(ao, "$(P)$(R)UVCReferenceCount"){
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))UVC_REFCOUNT")
+}
+
+record(ai, "$(P)$(R)UVCReferenceCount_RBV"){
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))UVC_REFCOUNT")
+    field(SCAN, "I/O Intr")
+}
+
+##############################################
+# stores the image data type collected from the UVC Camera
+################################################
+record(mbbo, "$(P)$(R)UVCImageFormat"){
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))UVC_FORMAT")
+    field(ZRST, "MJPEG")
+    field(ZRVL, "0")
+    field(ONST, "RGB")
+    field(ONVL, "1")
+    field(TWST, "YUYV")
+    field(TWVL, "2")
+    field(THST, "Grayscale 8-bit")
+    field(THVL, "3")
+    field(FRST, "Grayscale 16-bit")
+    field(FRVL, "4")
+    field(FVST, "UYVY")
+    field(FVVL, "5")
+    field(SXST, "Uncompressed")
+    field(SXVL, "6")
+    field(VAL,  "0")
+    info(autosaveFields, "VAL")
+}
+record(mbbi, "$(P)$(R)UVCImageFormat_RBV"){
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))UVC_FORMAT")
+    field(ZRST, "MJPEG")
+    field(ZRVL, "0")
+    field(ONST, "RBG")
+    field(ONVL, "1")
+    field(TWST, "YUYV")
+    field(TWVL, "2")
+    field(THST, "Grayscale 8-bit")
+    field(THVL, "3")
+    field(FRST, "Grayscale 16-bit")
+    field(FRVL, "4")
+    field(FVST, "UYVY")
+    field(FVVL, "5")
+    field(SXST, "Uncompressed")
+    field(SXVL, "6")
+    field(SCAN, "I/O Intr")
+}
+
+##############################################
+# Stores supported camera modes for easier switching
+################################################
+record(mbbo, "$(P)$(R)UVCCameraFormat"){
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))UVC_CAMERA_FORMAT")
+    field(ZRST, "Supported Mode 1")
+    field(ZRVL, "0")
+    field(ONST, "Supported Mode 2")
+    field(ONVL, "1")
+    field(TWST, "Supported Mode 3")
+    field(TWVL, "2")
+    field(THST, "Supported Mode 4")
+    field(THVL, "3")
+    field(FRST, "Supported Mode 5")
+    field(FRVL, "4")
+    field(FVST, "Supported Mode 6")
+    field(FVVL, "5")
+    field(SXST, "Supported Mode 7")
+    field(SXVL, "6")
+    field(VAL,  "0")
+    info(autosaveFields, "VAL")
+}
+
+record(mbbi, "$(P)$(R)UVCCameraFormat_RBV"){
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))UVC_CAMERA_FORMAT")
+    field(ZRST, "Supported Mode 1")
+    field(ZRVL, "0")
+    field(ONST, "Supported Mode 2")
+    field(ONVL, "1")
+    field(TWST, "Supported Mode 3")
+    field(TWVL, "2")
+    field(THST, "Supported Mode 4")
+    field(THVL, "3")
+    field(FRST, "Supported Mode 5")
+    field(FRVL, "4")
+    field(FVST, "Supported Mode 6")
+    field(FVVL, "5")
+    field(SXST, "Supported Mode 7")
+    field(SXVL, "6")
+    field(SCAN, "I/O Intr")
+}
+
+##############################################
+# Shows information regarding the currently selected supported format
+################################################
+record(waveform, "$(P)$(R)UVCFormatDescription_RBV"){
+    field(DTYP, "asynOctetRead")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))UVC_FORMAT_DESCRIPTION")
+    field(FTVL, "CHAR")
+    field(NELM, "256")
+    field(SCAN, "I/O Intr")
+}
+
+##############################################
+# Applies the supported format to the IOC
+##############################################
+record(ao, "$(P)$(R)UVCApplyFormat"){
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))UVC_APPLY_FORMAT")
+    field(VAL,  "0")
+}
+
+record(ai, "$(P)$(R)UVCApplyFormat_RBV"){
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))UVC_APPLY_FORMAT")
+    field(SCAN, "I/O Intr")
+}
+
+##############################################
+# Toggles auto adjusting Color Mode, Data Type
+##############################################
+record(bo, "$(P)$(R)UVCAutoAdjust"){
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))UVC_AUTO_ADJUST")
+    field(ZNAM, "Disable")
+    field(ONAM, "Enable")
+    field(VAL,  "1")
+    field(OSV,  "MINOR")
+    info(autosaveFields, "VAL")
+}
+
+record(bi, "$(P)$(R)UVCAutoAdjust_RBV"){
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))UVC_AUTO_ADJUST")
+    field(ZNAM, "Disable")
+    field(ONAM, "Enable")
+    field(SCAN, "I/O Intr")
+}
+
+################################################################################################
+# Additional Camera Functions -> used by getter and setter functions in the driver
+################################################################################################
+
+##################################################
+# Stores the degree of Gamma
+##################################################
+record(ao, "$(P)$(R)UVCGamma"){
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))UVC_GAMMA")
+}
+
+record(ai, "$(P)$(R)UVCGamma_RBV"){
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))UVC_GAMMA")
+    field(SCAN, "I/O Intr")
+}
+
+##################################################
+# Stores the degree of Backlight compensation
+##################################################
+record(ao, "$(P)$(R)UVCBacklightCompensation"){
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))UVC_BACKLIGHT")
+}
+
+record(ai, "$(P)$(R)UVCBacklightCompensation_RBV"){
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))UVC_BACKLIGHT")
+    field(SCAN, "I/O Intr")
+}
+
+#####################################
+# Stores the Brightness value
+#####################################
+record(ao, "$(P)$(R)UVCBrightness"){
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))UVC_BRIGHTNESS")
+}
+
+record(ai, "$(P)$(R)UVCBrightness_RBV"){
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))UVC_BRIGHTNESS")
+    field(SCAN, "I/O Intr")
+}
+
+######################################
+# Stores the Contrast value
+######################################
+record(ao, "$(P)$(R)UVCContrast"){
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))UVC_CONTRAST")
+}
+
+record(ai, "$(P)$(R)UVCContrast_RBV"){
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))UVC_CONTRAST")
+    field(SCAN, "I/O Intr")
+}
+
+######################################
+# Stores the Power line frequency value
+######################################
+record(ao, "$(P)$(R)UVCPowerLine"){
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))UVC_POWER")
+}
+
+record(ai, "$(P)$(R)UVCPowerLine_RBV"){
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))UVC_POWER")
+    field(SCAN, "I/O Intr")
+}
+
+######################################
+# Stores the Hue value
+######################################
+record(ao, "$(P)$(R)UVCHue"){
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))UVC_HUE")
+}
+
+record(ai, "$(P)$(R)UVCHue_RBV"){
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))UVC_HUE")
+    field(SCAN, "I/O Intr")
+}
+
+######################################
+# Stores the Saturation value
+######################################
+record(ao, "$(P)$(R)UVCSaturation"){
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))UVC_SATURATION")
+}
+
+record(ai, "$(P)$(R)UVCSaturation_RBV"){
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))UVC_SATURATION")
+    field(SCAN, "I/O Intr")
+}
+
+######################################
+# Stores the Sharpness value
+######################################
+record(ao, "$(P)$(R)UVCSharpness"){
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))UVC_SHARPNESS")
+}
+
+record(ai, "$(P)$(R)UVCSharpness_RBV"){
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))UVC_SHARPNESS")
+    field(SCAN, "I/O Intr")
+}
+
+
+######################################
+# Stores the Pan value
+######################################
+record(ao, "$(P)$(R)UVCPanLeft"){
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))UVC_PAN_LEFT")
+}
+
+record(ao, "$(P)$(R)UVCPanRight"){
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))UVC_PAN_RIGHT")
+}
+
+
+
+######################################
+# Stores the PanSpeed value
+######################################
+record(ao, "$(P)$(R)UVCPanSpeed"){
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))UVC_PAN_SPEED")
+}
+
+record(ai, "$(P)$(R)UVCPanSpeed_RBV"){
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))UVC_PAN_SPEED")
+    field(SCAN, "I/O Intr")
+}
+
+
+######################################
+# Stores the Tilt value
+######################################
+record(ao, "$(P)$(R)UVCTiltUp"){
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))UVC_TILT_UP")
+}
+
+
+record(ao, "$(P)$(R)UVCTiltDown"){
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))UVC_TILT_DOWN")
+}
+
+
+######################################
+# Stores the TiltSpeed value
+######################################
+record(ao, "$(P)$(R)UVCTiltSpeed"){
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))UVC_TILT_SPEED")
+}
+
+record(ai, "$(P)$(R)UVCTiltSpeed_RBV"){
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))UVC_TILT_SPEED")
+    field(SCAN, "I/O Intr")
+}
+
+
+######################################
+# Stores the PanTilt Step length value
+######################################
+record(ao, "$(P)$(R)UVCPanTiltStep"){
+    field(PINI, "YES")
+    field(DTYP, "asynFloat64")
+    field(VAL, "0.25")
+    field(HIGH, "1.0")
+    field(LOW, "0.01")
+    field(HSV, "INVALID")
+    field(LSV, "INVALID")
+    field(PREC, "3")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))UVC_PAN_TILT_STEP")
+}
+
+record(ai, "$(P)$(R)UVCPanTiltStep_RBV"){
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))UVC_PAN_TILT_STEP")
+    field(VAL, "0.25")
+    field(HIGH, "1.0")
+    field(LOW, "0.01")
+    field(HSV, "INVALID")
+    field(LSV, "INVALID")
+    field(PREC, "3")
+    field(SCAN, "I/O Intr")
+}
+
+
+######################################
+# Stores the Zoom value
+######################################
+record(ao, "$(P)$(R)UVCZoomIn"){
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))UVC_ZOOM_IN")
+}
+
+record(ao, "$(P)$(R)UVCZoomOut"){
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))UVC_ZOOM_OUT")
+}
+
+

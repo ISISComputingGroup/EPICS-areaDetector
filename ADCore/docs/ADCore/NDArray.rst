@@ -177,6 +177,11 @@ demonstates how to write such functions. The `functAttribute class
 documentation <../areaDetectorDoxygenHTML/classfunct_attribute.html>`__
 describes this class in detail.
 
+constAttribute
+--------------
+
+This type of attribute obtains its value directly from the "source" value in the XML file.
+
 asynNDArrayDriver
 -----------------
 
@@ -531,6 +536,9 @@ loading ADBase.template.
     - The name of an XML file defining the NDAttributes to be added to each NDArray by
       this driver or plugin. The format of the XML file is described in the documentation
       for `asynNDArrayDriver::readNDAttributesFile() <../areaDetectorDoxygenHTML/classasyn_n_d_array_driver.html>`__ 
+      It is also possible for this parameter to directly contain the XML content, rather than the name of the
+      file with the XML content.  
+      The software interprets the content as XML rather than a file name if it contains the string "\<Attributes\>".
     - ND_ATTRIBUTES_FILE
     - $(P)$(R)NDAttributesFile
     - waveform
@@ -770,6 +778,13 @@ loading ADBase.template.
     - NUM_CAPTURED
     - $(P)$(R)NumCaptured_RBV
     - longin
+  * - NDFileFreeCapture
+    - asynInt32
+    - r/w
+    - Release all of the NDArrays in the capture buffer to the free pool.
+    - FREE_CAPTURE
+    - $(P)$(R)FreeCapture
+    - bo
   * - NDFileDeleteDriverFile
     - asynInt32
     - r/w

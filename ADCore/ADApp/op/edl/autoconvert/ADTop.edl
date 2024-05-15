@@ -6,7 +6,7 @@ release 1
 x 280
 y 87
 w 225
-h 765
+h 790
 font "helvetica-medium-r-18.0"
 ctlFont "helvetica-bold-r-10.0"
 btnFont "helvetica-medium-r-18.0"
@@ -150,66 +150,6 @@ major 4
 minor 1
 release 1
 x 60
-y 260
-w 80
-h 20
-font "helvetica-medium-r-14.0"
-fontAlign "right"
-fgColor rgb 0 0 0
-bgColor index 3
-useDisplayBg
-value {
-  "Firewire"
-}
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 80
-y 209
-w 60
-h 20
-font "helvetica-medium-r-14.0"
-fontAlign "right"
-fgColor rgb 0 0 0
-bgColor index 3
-useDisplayBg
-value {
-  "Dexela"
-}
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 90
-y 235
-w 50
-h 20
-font "helvetica-medium-r-14.0"
-fontAlign "right"
-fgColor rgb 0 0 0
-bgColor index 3
-useDisplayBg
-value {
-  "Eiger"
-}
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 60
 y 160
 w 80
 h 20
@@ -229,8 +169,68 @@ beginObjectProperties
 major 4
 minor 1
 release 1
+x 60
+y 285
+w 80
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "Firewire"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 80
+y 234
+w 60
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "Dexela"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 90
+y 260
+w 50
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "Eiger"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
 x 76
-y 310
+y 335
 w 64
 h 20
 font "helvetica-medium-r-14.0"
@@ -250,7 +250,7 @@ major 4
 minor 1
 release 1
 x 39
-y 285
+y 310
 w 100
 h 20
 font "helvetica-medium-r-14.0"
@@ -270,7 +270,7 @@ major 4
 minor 1
 release 1
 x 20
-y 410
+y 435
 w 120
 h 20
 font "helvetica-medium-r-14.0"
@@ -290,7 +290,7 @@ major 4
 minor 1
 release 1
 x 30
-y 385
+y 410
 w 110
 h 20
 font "helvetica-medium-r-14.0"
@@ -310,7 +310,7 @@ major 4
 minor 1
 release 1
 x 50
-y 535
+y 560
 w 90
 h 20
 font "helvetica-medium-r-14.0"
@@ -330,7 +330,7 @@ major 4
 minor 1
 release 1
 x 70
-y 460
+y 485
 w 70
 h 20
 font "helvetica-medium-r-14.0"
@@ -350,7 +350,7 @@ major 4
 minor 1
 release 1
 x 69
-y 485
+y 510
 w 70
 h 20
 font "helvetica-medium-r-14.0"
@@ -370,7 +370,7 @@ major 4
 minor 1
 release 1
 x 39
-y 510
+y 535
 w 100
 h 20
 font "helvetica-medium-r-14.0"
@@ -390,7 +390,7 @@ major 4
 minor 1
 release 1
 x 50
-y 660
+y 685
 w 90
 h 20
 font "helvetica-medium-r-14.0"
@@ -410,7 +410,7 @@ major 4
 minor 1
 release 1
 x 88
-y 635
+y 660
 w 52
 h 20
 font "helvetica-medium-r-14.0"
@@ -430,7 +430,7 @@ major 4
 minor 1
 release 1
 x 99
-y 610
+y 635
 w 40
 h 20
 font "helvetica-medium-r-14.0"
@@ -450,7 +450,7 @@ major 4
 minor 1
 release 1
 x 72
-y 585
+y 610
 w 68
 h 20
 font "helvetica-medium-r-14.0"
@@ -470,7 +470,7 @@ major 4
 minor 1
 release 1
 x 50
-y 560
+y 585
 w 90
 h 20
 font "helvetica-medium-r-14.0"
@@ -490,7 +490,7 @@ major 4
 minor 1
 release 1
 x 50
-y 435
+y 460
 w 90
 h 20
 font "helvetica-medium-r-14.0"
@@ -510,7 +510,7 @@ major 4
 minor 1
 release 1
 x 99
-y 710
+y 735
 w 41
 h 20
 font "helvetica-medium-r-14.0"
@@ -530,7 +530,7 @@ major 4
 minor 1
 release 1
 x 50
-y 735
+y 760
 w 90
 h 20
 font "helvetica-medium-r-14.0"
@@ -550,7 +550,7 @@ major 4
 minor 1
 release 1
 x 70
-y 335
+y 360
 w 70
 h 20
 font "helvetica-medium-r-14.0"
@@ -570,7 +570,7 @@ major 4
 minor 1
 release 1
 x 70
-y 360
+y 385
 w 70
 h 20
 font "helvetica-medium-r-14.0"
@@ -590,7 +590,7 @@ major 4
 minor 1
 release 1
 x 50
-y 685
+y 710
 w 90
 h 20
 font "helvetica-medium-r-14.0"
@@ -600,6 +600,26 @@ bgColor index 3
 useDisplayBg
 value {
   "Spinnaker"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 68
+y 209
+w 70
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "BitFlow"
 }
 endObjectProperties
 
@@ -622,18 +642,18 @@ icon
 numPvs 10
 numDsps 5
 displayFileName {
-  0 ADBase.edl
-  1 Andor.edl
-  2 ADBase.edl
-  3 Andor3.edl
-  4 Shamrock.edl
+  0 "ADBase.edl"
+  1 "Andor.edl"
+  2 "ADBase.edl"
+  3 "Andor3.edl"
+  4 "Shamrock.edl"
 }
 menuLabel {
-  0 Andor #1 general
-  1 Andor #1 specific
-  2 Andor3 #1 general
-  3 Andor3 #1 specific
-  4 Shamrock #1
+  0 "Andor #1 general"
+  1 "Andor #1 specific"
+  2 "Andor3 #1 general"
+  3 "Andor3 #1 specific"
+  4 "Shamrock #1"
 }
 symbols {
   0 "P=13ANDOR1:,R=cam1:"
@@ -670,12 +690,12 @@ icon
 numPvs 4
 numDsps 2
 displayFileName {
-  0 ADBase.edl
-  1 adsc.edl
+  0 "ADBase.edl"
+  1 "adsc.edl"
 }
 menuLabel {
-  0 ADSC general
-  1 ADSC specific
+  0 "ADSC general"
+  1 "ADSC specific"
 }
 symbols {
   0 "P=13ADSC1:,R=cam1:"
@@ -706,10 +726,10 @@ icon
 numPvs 2
 numDsps 1
 displayFileName {
-  0 ADCSimDetector.edl
+  0 "ADCSimDetector.edl"
 }
 menuLabel {
-  0 ADC simulator
+  0 "ADC simulator"
 }
 symbols {
   0 "P=13ADCSIM1:,R=det1:"
@@ -738,12 +758,12 @@ icon
 numPvs 4
 numDsps 2
 displayFileName {
-  0 ADBase.edl
-  1 ADBase.edl
+  0 "ADBase.edl"
+  1 "ADBase.edl"
 }
 menuLabel {
-  0 aravisGigE #1 general
-  1 aravisGigE #1 specific
+  0 "aravisGigE #1 general"
+  1 "aravisGigE #1 specific"
 }
 symbols {
   0 "P=13ARV1:,R=cam1:"
@@ -774,124 +794,16 @@ icon
 numPvs 4
 numDsps 2
 displayFileName {
-  0 ADBase.edl
-  1 BIS.edl
+  0 "ADBase.edl"
+  1 "BIS.edl"
 }
 menuLabel {
-  0 BIS #1 general
-  1 BIS #1 specific
+  0 "BIS #1 general"
+  1 "BIS #1 specific"
 }
 symbols {
   0 "P=BIS:,R=cam1:"
   1 "P=BIS:,R=cam1:"
-}
-replaceSymbols {
-  0 1
-  1 1
-}
-endObjectProperties
-
-# (Related Display)
-object relatedDisplayClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 145
-y 260
-w 64
-h 20
-fgColor rgb 0 0 0
-bgColor rgb 29440 57088 65280
-topShadowColor rgb 55808 55808 55808
-botShadowColor rgb 17920 17920 17920
-font "helvetica-medium-r-8.0"
-icon
-numPvs 4
-numDsps 2
-displayFileName {
-  0 ADBase.edl
-  1 firewire.edl
-}
-menuLabel {
-  0 Firewire #1 general
-  1 Firewire #1 specific
-}
-symbols {
-  0 "P=13FW1:,R=cam1:"
-  1 "P=13FW1:,R=cam1:"
-}
-replaceSymbols {
-  0 1
-  1 1
-}
-endObjectProperties
-
-# (Related Display)
-object relatedDisplayClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 145
-y 209
-w 64
-h 20
-fgColor rgb 0 0 0
-bgColor rgb 29440 57088 65280
-topShadowColor rgb 55808 55808 55808
-botShadowColor rgb 17920 17920 17920
-font "helvetica-medium-r-8.0"
-icon
-numPvs 4
-numDsps 2
-displayFileName {
-  0 ADBase.edl
-  1 Dexela.edl
-}
-menuLabel {
-  0 Dexela #1 general
-  1 Dexela #1 specific
-}
-symbols {
-  0 "P=13DEX1:,R=cam1:"
-  1 "P=13DEX1:,R=cam1:"
-}
-replaceSymbols {
-  0 1
-  1 1
-}
-endObjectProperties
-
-# (Related Display)
-object relatedDisplayClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 145
-y 235
-w 64
-h 20
-fgColor rgb 0 0 0
-bgColor rgb 29440 57088 65280
-topShadowColor rgb 55808 55808 55808
-botShadowColor rgb 17920 17920 17920
-font "helvetica-medium-r-8.0"
-icon
-numPvs 4
-numDsps 2
-displayFileName {
-  0 ADBase.edl
-  1 eigerDetector.edl
-}
-menuLabel {
-  0 Eiger #1 general
-  1 Eiger #1 specific
-}
-symbols {
-  0 "P=13EIG1:,R=cam1:"
-  1 "P=13EIG1:,R=cam1:"
 }
 replaceSymbols {
   0 1
@@ -915,23 +827,27 @@ topShadowColor rgb 55808 55808 55808
 botShadowColor rgb 17920 17920 17920
 font "helvetica-medium-r-8.0"
 icon
-numPvs 12
-numDsps 6
+numPvs 16
+numDsps 8
 displayFileName {
-  0 ADAravis.edl
-  1 ADAravis.edl
-  2 ADAravis.edl
-  3 ADAravis.edl
-  4 ADAravis.edl
-  5 ADAravis.edl
+  0 "ADAravis.edl"
+  1 "ADAravis.edl"
+  2 "ADAravis.edl"
+  3 "ADAravis.edl"
+  4 "ADAravis.edl"
+  5 "ADAravis.edl"
+  6 "ADAravis.edl"
+  7 "ADAravis.edl"
 }
 menuLabel {
-  0 Blackfly 20E4C
-  1 Manta G507C
-  2 BlackflyS 13Y3M
-  3 Grasshopper3 23S6M
-  4 Oryx 51S5M
-  5 BlackflyS 50S5C
+  0 "Blackfly 20E4C"
+  1 "Manta G507C"
+  2 "BlackflyS 13Y3M"
+  3 "Grasshopper3 23S6M"
+  4 "Oryx 51S5M"
+  5 "BlackflyS 50S5C"
+  6 "Grasshopper3 51S5M"
+  7 "AVT GC1380CH"
 }
 symbols {
   0 "P=13ARV1:,R=cam1:,C=PGR_Blackfly_20E4C"
@@ -940,6 +856,8 @@ symbols {
   3 "P=13ARV1:,R=cam1:,C=PGR_GS3_U3_23S6M"
   4 "P=13ARV1:,R=cam1:,C=FLIR_ORX_10G_51S5M"
   5 "P=13ARV1:,R=cam1:,C=PGR_BlackflyS_50S5C"
+  6 "P=13ARV1:,R=cam1:,P=13ARV1:,R=cam1:,C=PGR_GS3_U3_51S5M"
+  7 "P=13ARV1:,R=cam1:,P=13ARV1:,R=cam1:,C=AVT_GC1380CH"
 }
 replaceSymbols {
   0 1
@@ -948,42 +866,8 @@ replaceSymbols {
   3 1
   4 1
   5 1
-}
-endObjectProperties
-
-# (Related Display)
-object relatedDisplayClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 145
-y 310
-w 64
-h 20
-fgColor rgb 0 0 0
-bgColor rgb 29440 57088 65280
-topShadowColor rgb 55808 55808 55808
-botShadowColor rgb 17920 17920 17920
-font "helvetica-medium-r-8.0"
-icon
-numPvs 4
-numDsps 2
-displayFileName {
-  0 ADBase.edl
-  1 mar345.edl
-}
-menuLabel {
-  0 mar345 #1 general
-  1 mar345 #1 specific
-}
-symbols {
-  0 "P=13MAR345_1:,R=cam1:"
-  1 "P=13MAR345_1:,R=cam1:"
-}
-replaceSymbols {
-  0 1
-  1 1
+  6 1
+  7 1
 }
 endObjectProperties
 
@@ -1003,17 +887,169 @@ topShadowColor rgb 55808 55808 55808
 botShadowColor rgb 17920 17920 17920
 font "helvetica-medium-r-8.0"
 icon
+numPvs 4
+numDsps 2
+displayFileName {
+  0 "ADBase.edl"
+  1 "firewire.edl"
+}
+menuLabel {
+  0 "Firewire #1 general"
+  1 "Firewire #1 specific"
+}
+symbols {
+  0 "P=13FW1:,R=cam1:"
+  1 "P=13FW1:,R=cam1:"
+}
+replaceSymbols {
+  0 1
+  1 1
+}
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 145
+y 234
+w 64
+h 20
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+topShadowColor rgb 55808 55808 55808
+botShadowColor rgb 17920 17920 17920
+font "helvetica-medium-r-8.0"
+icon
+numPvs 4
+numDsps 2
+displayFileName {
+  0 "ADBase.edl"
+  1 "Dexela.edl"
+}
+menuLabel {
+  0 "Dexela #1 general"
+  1 "Dexela #1 specific"
+}
+symbols {
+  0 "P=13DEX1:,R=cam1:"
+  1 "P=13DEX1:,R=cam1:"
+}
+replaceSymbols {
+  0 1
+  1 1
+}
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 145
+y 260
+w 64
+h 20
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+topShadowColor rgb 55808 55808 55808
+botShadowColor rgb 17920 17920 17920
+font "helvetica-medium-r-8.0"
+icon
+numPvs 8
+numDsps 4
+displayFileName {
+  0 "ADBase.edl"
+  1 "eigerDetector.edl"
+  2 "ADBase.edl"
+  3 "eiger2Detector.edl"
+}
+menuLabel {
+  0 "Eiger #1 general"
+  1 "Eiger #1 specific"
+  2 "Eiger #2 general"
+  3 "Eiger #2 specific"
+}
+symbols {
+  0 "P=13EIG1:,R=cam1:"
+  1 "P=13EIG1:,R=cam1:"
+  2 "P=13EIG2:,R=cam1:"
+  3 "P=13EIG2:,R=cam1:"
+}
+replaceSymbols {
+  0 1
+  1 1
+  2 1
+  3 1
+}
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 145
+y 335
+w 64
+h 20
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+topShadowColor rgb 55808 55808 55808
+botShadowColor rgb 17920 17920 17920
+font "helvetica-medium-r-8.0"
+icon
+numPvs 4
+numDsps 2
+displayFileName {
+  0 "ADBase.edl"
+  1 "mar345.edl"
+}
+menuLabel {
+  0 "mar345 #1 general"
+  1 "mar345 #1 specific"
+}
+symbols {
+  0 "P=13MAR345_1:,R=cam1:"
+  1 "P=13MAR345_1:,R=cam1:"
+}
+replaceSymbols {
+  0 1
+  1 1
+}
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 145
+y 310
+w 64
+h 20
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+topShadowColor rgb 55808 55808 55808
+botShadowColor rgb 17920 17920 17920
+font "helvetica-medium-r-8.0"
+icon
 numPvs 6
 numDsps 3
 displayFileName {
-  0 ADBase.edl
-  1 LightField.edl
-  2 LightField.edl
+  0 "ADBase.edl"
+  1 "LightField.edl"
+  2 "LightField.edl"
 }
 menuLabel {
-  0 LightField #1 general
-  1 LightField #1 specific
-  2 LightField #2 specific
+  0 "LightField #1 general"
+  1 "LightField #1 specific"
+  2 "LightField #2 specific"
 }
 symbols {
   0 "P=13LF1:,R=cam1:"
@@ -1024,6 +1060,42 @@ replaceSymbols {
   0 1
   1 1
   2 1
+}
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 145
+y 435
+w 64
+h 20
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+topShadowColor rgb 55808 55808 55808
+botShadowColor rgb 17920 17920 17920
+font "helvetica-medium-r-8.0"
+icon
+numPvs 4
+numDsps 2
+displayFileName {
+  0 "ADBase.edl"
+  1 "PerkinElmer.edl"
+}
+menuLabel {
+  0 "Perkin Elmer #1 general"
+  1 "Perkin Elmer #1 specific"
+}
+symbols {
+  0 "P=13PE1:,R=cam1:"
+  1 "P=13PE1:,R=cam1:"
+}
+replaceSymbols {
+  0 1
+  1 1
 }
 endObjectProperties
 
@@ -1046,48 +1118,12 @@ icon
 numPvs 4
 numDsps 2
 displayFileName {
-  0 ADBase.edl
-  1 PerkinElmer.edl
+  0 "ADBase.edl"
+  1 "NDDriverStdArrays.edl"
 }
 menuLabel {
-  0 Perkin Elmer #1 general
-  1 Perkin Elmer #1 specific
-}
-symbols {
-  0 "P=13PE1:,R=cam1:"
-  1 "P=13PE1:,R=cam1:"
-}
-replaceSymbols {
-  0 1
-  1 1
-}
-endObjectProperties
-
-# (Related Display)
-object relatedDisplayClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 145
-y 385
-w 64
-h 20
-fgColor rgb 0 0 0
-bgColor rgb 29440 57088 65280
-topShadowColor rgb 55808 55808 55808
-botShadowColor rgb 17920 17920 17920
-font "helvetica-medium-r-8.0"
-icon
-numPvs 4
-numDsps 2
-displayFileName {
-  0 ADBase.edl
-  1 NDDriverStdArrays.edl
-}
-menuLabel {
-  0 NDStdArrays #1 general
-  1 NDStdArrays #1 specific
+  0 "NDStdArrays #1 general"
+  1 "NDStdArrays #1 specific"
 }
 symbols {
   0 "P=13NDSA1:,R=cam1:"
@@ -1106,7 +1142,7 @@ major 4
 minor 0
 release 0
 x 145
-y 535
+y 560
 w 64
 h 20
 fgColor rgb 0 0 0
@@ -1118,16 +1154,16 @@ icon
 numPvs 8
 numDsps 4
 displayFileName {
-  0 ADBase.edl
-  1 prosilica.edl
-  2 ADBase.edl
-  3 prosilica.edl
+  0 "ADBase.edl"
+  1 "prosilica.edl"
+  2 "ADBase.edl"
+  3 "prosilica.edl"
 }
 menuLabel {
-  0 Prosilica #1 general
-  1 Prosilica #1 specific
-  2 Prosilica #2 general
-  3 Prosilica #2 specific
+  0 "Prosilica #1 general"
+  1 "Prosilica #1 specific"
+  2 "Prosilica #2 general"
+  3 "Prosilica #2 specific"
 }
 symbols {
   0 "P=13PS1:,R=cam1:"
@@ -1150,42 +1186,6 @@ major 4
 minor 0
 release 0
 x 145
-y 460
-w 64
-h 20
-fgColor rgb 0 0 0
-bgColor rgb 29440 57088 65280
-topShadowColor rgb 55808 55808 55808
-botShadowColor rgb 17920 17920 17920
-font "helvetica-medium-r-8.0"
-icon
-numPvs 4
-numDsps 2
-displayFileName {
-  0 ADBase.edl
-  1 pilatusDetector.edl
-}
-menuLabel {
-  0 Pilatus #1 general
-  1 Pilatus #1 specific
-}
-symbols {
-  0 "P=13PIL1:,R=cam1:"
-  1 "P=13PIL1:,R=cam1:"
-}
-replaceSymbols {
-  0 1
-  1 1
-}
-endObjectProperties
-
-# (Related Display)
-object relatedDisplayClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 145
 y 485
 w 64
 h 20
@@ -1198,16 +1198,16 @@ icon
 numPvs 4
 numDsps 2
 displayFileName {
-  0 ADBase.edl
-  1 pixirad.edl
+  0 "ADBase.edl"
+  1 "pilatusDetector.edl"
 }
 menuLabel {
-  0 Pixirad #1 general
-  1 Pixirad #1 specific
+  0 "Pilatus #1 general"
+  1 "Pilatus #1 specific"
 }
 symbols {
-  0 "P=13PR1:,R=cam1:"
-  1 "P=13PR1:,R=cam1:"
+  0 "P=13PIL1:,R=cam1:"
+  1 "P=13PIL1:,R=cam1:"
 }
 replaceSymbols {
   0 1
@@ -1234,12 +1234,48 @@ icon
 numPvs 4
 numDsps 2
 displayFileName {
-  0 ADBase.edl
-  1 pointGrey.edl
+  0 "ADBase.edl"
+  1 "pixirad.edl"
 }
 menuLabel {
-  0 Point Grey #1 general
-  1 Point Grey #1 specific
+  0 "Pixirad #1 general"
+  1 "Pixirad #1 specific"
+}
+symbols {
+  0 "P=13PR1:,R=cam1:"
+  1 "P=13PR1:,R=cam1:"
+}
+replaceSymbols {
+  0 1
+  1 1
+}
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 145
+y 535
+w 64
+h 20
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+topShadowColor rgb 55808 55808 55808
+botShadowColor rgb 17920 17920 17920
+font "helvetica-medium-r-8.0"
+icon
+numPvs 4
+numDsps 2
+displayFileName {
+  0 "ADBase.edl"
+  1 "pointGrey.edl"
+}
+menuLabel {
+  0 "Point Grey #1 general"
+  1 "Point Grey #1 specific"
 }
 symbols {
   0 "P=13PG1:,R=cam1:"
@@ -1258,7 +1294,7 @@ major 4
 minor 0
 release 0
 x 145
-y 660
+y 685
 w 64
 h 20
 fgColor rgb 0 0 0
@@ -1270,16 +1306,16 @@ icon
 numPvs 8
 numDsps 4
 displayFileName {
-  0 ADBase.edl
-  1 simDetector.edl
-  2 ADBase.edl
-  3 simDetector.edl
+  0 "ADBase.edl"
+  1 "simDetector.edl"
+  2 "ADBase.edl"
+  3 "simDetector.edl"
 }
 menuLabel {
-  0 Simulator #1 General
-  1 Simulator #1 Specific
-  2 Simulator #2 General
-  3 Simulator #2 Specific
+  0 "Simulator #1 General"
+  1 "Simulator #1 Specific"
+  2 "Simulator #2 General"
+  3 "Simulator #2 Specific"
 }
 symbols {
   0 "P=13SIM1:,R=cam1:"
@@ -1302,6 +1338,42 @@ major 4
 minor 0
 release 0
 x 145
+y 660
+w 64
+h 20
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+topShadowColor rgb 55808 55808 55808
+botShadowColor rgb 17920 17920 17920
+font "helvetica-medium-r-8.0"
+icon
+numPvs 4
+numDsps 2
+displayFileName {
+  0 "ADBase.edl"
+  1 "Roper.edl"
+}
+menuLabel {
+  0 "Roper #1 general"
+  1 "Roper #1 specific"
+}
+symbols {
+  0 "P=13ROPER1:,R=cam1:"
+  1 "P=13ROPER1:,R=cam1:"
+}
+replaceSymbols {
+  0 1
+  1 1
+}
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 145
 y 635
 w 64
 h 20
@@ -1314,16 +1386,16 @@ icon
 numPvs 4
 numDsps 2
 displayFileName {
-  0 ADBase.edl
-  1 Roper.edl
+  0 "ADBase.edl"
+  1 "PSL.edl"
 }
 menuLabel {
-  0 Roper #1 general
-  1 Roper #1 specific
+  0 "PSL #1 general"
+  1 "PSL #1 specific"
 }
 symbols {
-  0 "P=13ROPER1:,R=cam1:"
-  1 "P=13ROPER1:,R=cam1:"
+  0 "P=13PSL1:,R=cam1:"
+  1 "P=13PSL1:,R=cam1:"
 }
 replaceSymbols {
   0 1
@@ -1350,16 +1422,16 @@ icon
 numPvs 4
 numDsps 2
 displayFileName {
-  0 ADBase.edl
-  1 PSL.edl
+  0 "ADBase.edl"
+  1 "pvCam.edl"
 }
 menuLabel {
-  0 PSL #1 general
-  1 PSL #1 specific
+  0 "PVCAM #1 general"
+  1 "PVCAM #1 specific"
 }
 symbols {
-  0 "P=13PSL1:,R=cam1:"
-  1 "P=13PSL1:,R=cam1:"
+  0 "P=13PVCAM1:,R=cam1:"
+  1 "P=13PVCAM1:,R=cam1:"
 }
 replaceSymbols {
   0 1
@@ -1386,48 +1458,12 @@ icon
 numPvs 4
 numDsps 2
 displayFileName {
-  0 ADBase.edl
-  1 pvCam.edl
+  0 "ADBase.edl"
+  1 "ADPvaDriver.edl"
 }
 menuLabel {
-  0 PVCAM #1 general
-  1 PVCAM #1 specific
-}
-symbols {
-  0 "P=13PVCAM1:,R=cam1:"
-  1 "P=13PVCAM1:,R=cam1:"
-}
-replaceSymbols {
-  0 1
-  1 1
-}
-endObjectProperties
-
-# (Related Display)
-object relatedDisplayClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 145
-y 560
-w 64
-h 20
-fgColor rgb 0 0 0
-bgColor rgb 29440 57088 65280
-topShadowColor rgb 55808 55808 55808
-botShadowColor rgb 17920 17920 17920
-font "helvetica-medium-r-8.0"
-icon
-numPvs 4
-numDsps 2
-displayFileName {
-  0 ADBase.edl
-  1 ADPvaDriver.edl
-}
-menuLabel {
-  0 PvaDriver #1 general
-  1 PvaDriver #1 specific
+  0 "PvaDriver #1 general"
+  1 "PvaDriver #1 specific"
 }
 symbols {
   0 "P=13PVA1:,R=cam1:"
@@ -1446,7 +1482,7 @@ major 4
 minor 0
 release 0
 x 145
-y 435
+y 460
 w 64
 h 20
 fgColor rgb 0 0 0
@@ -1458,52 +1494,16 @@ icon
 numPvs 4
 numDsps 2
 displayFileName {
-  0 ADBase.edl
-  1 PhotonII.edl
+  0 "ADBase.edl"
+  1 "PhotonII.edl"
 }
 menuLabel {
-  0 Photon II #1 general
-  1 Photon II #1 specific
+  0 "Photon II #1 general"
+  1 "Photon II #1 specific"
 }
 symbols {
   0 "P=13PII_1:,R=cam1:"
   1 "P=13PII_1:,R=cam1:"
-}
-replaceSymbols {
-  0 1
-  1 1
-}
-endObjectProperties
-
-# (Related Display)
-object relatedDisplayClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 145
-y 710
-w 64
-h 20
-fgColor rgb 0 0 0
-bgColor rgb 29440 57088 65280
-topShadowColor rgb 55808 55808 55808
-botShadowColor rgb 17920 17920 17920
-font "helvetica-medium-r-8.0"
-icon
-numPvs 4
-numDsps 2
-displayFileName {
-  0 ADBase.edl
-  1 URLDriver.edl
-}
-menuLabel {
-  0 URL #1 general
-  1 URL #1 specific
-}
-symbols {
-  0 "P=13URL1:,R=cam1:"
-  1 "P=13URL1:,R=cam1:"
 }
 replaceSymbols {
   0 1
@@ -1530,16 +1530,16 @@ icon
 numPvs 4
 numDsps 2
 displayFileName {
-  0 ADVimba.edl
-  1 ADVimba.edl
+  0 "ADBase.edl"
+  1 "URLDriver.edl"
 }
 menuLabel {
-  0 Manta G507C
-  1 GC1380CH
+  0 "URL #1 general"
+  1 "URL #1 specific"
 }
 symbols {
-  0 "P=13VMB1:,R=cam1:,C=AVT_Manta_G507C"
-  1 "P=13VMB1:,R=cam1:,C=AVT_GC1380CH"
+  0 "P=13URL1:,R=cam1:"
+  1 "P=13URL1:,R=cam1:"
 }
 replaceSymbols {
   0 1
@@ -1554,7 +1554,7 @@ major 4
 minor 0
 release 0
 x 145
-y 335
+y 760
 w 64
 h 20
 fgColor rgb 0 0 0
@@ -1563,23 +1563,31 @@ topShadowColor rgb 55808 55808 55808
 botShadowColor rgb 17920 17920 17920
 font "helvetica-medium-r-8.0"
 icon
-numPvs 4
-numDsps 2
+numPvs 8
+numDsps 4
 displayFileName {
-  0 ADBase.edl
-  1 marCCD.edl
+  0 "ADVimba.edl"
+  1 "ADVimba.edl"
+  2 "ADVimba.edl"
+  3 "ADVimba.edl"
 }
 menuLabel {
-  0 marCCD #1 general
-  1 marCCD #1 specific
+  0 "Manta G507C"
+  1 "GC1380CH"
+  2 "Manta G146C"
+  3 "GC1380H"
 }
 symbols {
-  0 "P=13MARCCD1:,R=cam1:"
-  1 "P=13MARCCD1:,R=cam1:"
+  0 "P=13VMB1:,R=cam1:,C=AVT_Manta_G507C"
+  1 "P=13VMB1:,R=cam1:,C=AVT_GC1380CH"
+  2 "P=13VMB1:,R=cam1:,C=AVT_Manta_G146C"
+  3 "P=13VMB1:,R=cam1:,C=AVT_GC1380H"
 }
 replaceSymbols {
   0 1
   1 1
+  2 1
+  3 1
 }
 endObjectProperties
 
@@ -1602,12 +1610,48 @@ icon
 numPvs 4
 numDsps 2
 displayFileName {
-  0 ADBase.edl
-  1 mmpadDetector.edl
+  0 "ADBase.edl"
+  1 "marCCD.edl"
 }
 menuLabel {
-  0 MMPAD #1 general
-  1 MMPAD #1 specific
+  0 "marCCD #1 general"
+  1 "marCCD #1 specific"
+}
+symbols {
+  0 "P=13MARCCD1:,R=cam1:"
+  1 "P=13MARCCD1:,R=cam1:"
+}
+replaceSymbols {
+  0 1
+  1 1
+}
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 145
+y 385
+w 64
+h 20
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+topShadowColor rgb 55808 55808 55808
+botShadowColor rgb 17920 17920 17920
+font "helvetica-medium-r-8.0"
+icon
+numPvs 4
+numDsps 2
+displayFileName {
+  0 "ADBase.edl"
+  1 "mmpadDetector.edl"
+}
+menuLabel {
+  0 "MMPAD #1 general"
+  1 "MMPAD #1 specific"
 }
 symbols {
   0 "P=MMPAD3x2:,R=cam1:"
@@ -1626,7 +1670,7 @@ major 4
 minor 0
 release 0
 x 145
-y 685
+y 710
 w 64
 h 20
 fgColor rgb 0 0 0
@@ -1635,23 +1679,25 @@ topShadowColor rgb 55808 55808 55808
 botShadowColor rgb 17920 17920 17920
 font "helvetica-medium-r-8.0"
 icon
-numPvs 12
-numDsps 6
+numPvs 14
+numDsps 7
 displayFileName {
-  0 ADSpinnaker.edl
-  1 ADSpinnaker.edl
-  2 ADSpinnaker.edl
-  3 ADSpinnaker.edl
-  4 ADSpinnaker.edl
-  5 ADSpinnaker.edl
+  0 "ADSpinnaker.edl"
+  1 "ADSpinnaker.edl"
+  2 "ADSpinnaker.edl"
+  3 "ADSpinnaker.edl"
+  4 "ADSpinnaker.edl"
+  5 "ADSpinnaker.edl"
+  6 "ADSpinnaker.edl"
 }
 menuLabel {
-  0 Blackfly 20E4C
-  1 Oryx 51S5
-  2 BlackflyS 13Y3M
-  3 Grasshopper3 U3 23S6M
-  4 BlackflyS 50S5C
-  5 Grasshopper3 PGE 23S6C
+  0 "Blackfly 20E4C"
+  1 "Oryx 51S5"
+  2 "BlackflyS 13Y3M"
+  3 "Grasshopper3 U3 23S6M"
+  4 "BlackflyS 50S5C"
+  5 "Grasshopper3 PGE 23S6C"
+  6 "Grasshopper3 U3 51S5M"
 }
 symbols {
   0 "P=13SP1:,R=cam1:,C=PGR_Blackfly_20E4C"
@@ -1660,6 +1706,7 @@ symbols {
   3 "P=13SP1:,R=cam1:,C=PGR_GS3_U3_23S6M"
   4 "P=13SP1:,R=cam1:,C=PGR_BlackflyS_50S5C"
   5 "P=13SP1:,R=cam1:,C=PGR_GS3_PGE_23S6C"
+  6 "P=13SP1:,R=cam1:,C=PGR_GS3_PGE_51S5M"
 }
 replaceSymbols {
   0 1
@@ -1668,6 +1715,39 @@ replaceSymbols {
   3 1
   4 1
   5 1
+  6 1
+}
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 143
+y 209
+w 64
+h 20
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+topShadowColor rgb 55808 55808 55808
+botShadowColor rgb 17920 17920 17920
+font "helvetica-medium-r-8.0"
+icon
+numPvs 2
+numDsps 1
+displayFileName {
+  0 "ADBitFlow.edl"
+}
+menuLabel {
+  0 "Mikrotron MC2066"
+}
+symbols {
+  0 "P=13BF1:,R=cam1:,C=Mikrotron_CXP_MC206xS11"
+}
+replaceSymbols {
+  0 1
 }
 endObjectProperties
 

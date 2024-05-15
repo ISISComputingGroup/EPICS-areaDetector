@@ -27,7 +27,7 @@ using namespace Magick;
 #include <epicsExport.h>
 
 #define DRIVER_VERSION      2
-#define DRIVER_REVISION     2
+#define DRIVER_REVISION     3
 #define DRIVER_MODIFICATION 0
 
 static const char *driverName = "URLDriver";
@@ -287,14 +287,14 @@ void URLDriver::URLTask()
             asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW,
                      "%s:%s: delay=%f\n",
                       driverName, functionName, delay);
-            if (delay >= 0.0) {
-                /* We set the status to readOut to indicate we are in the period delay */
-                setIntegerParam(ADStatus, ADStatusWaiting);
-                callParamCallbacks();
-                this->unlock();
-                epicsEventWaitWithTimeout(this->stopEventId, delay);
-                this->lock();
-            }
+            // Need at least a short delay to release the lock
+            if (delay <= 0.0) delay = 0.001;
+            /* We set the status to readOut to indicate we are in the period delay */
+            setIntegerParam(ADStatus, ADStatusWaiting);
+            callParamCallbacks();
+            this->unlock();
+            epicsEventWaitWithTimeout(this->stopEventId, delay);
+            this->lock();
         }
     }
 }
@@ -398,10 +398,6 @@ URLDriver::URLDriver(const char *portName, int maxBuffers, size_t maxMemory,
     char versionString[20];
     const char *functionName = "URLDriver";
 
-
-    /* Initialize GraphicsMagick */
-    InitializeMagick(NULL);
-
     /* Create the epicsEvents for signaling to the acquisition task when acquisition starts and stops */
     this->startEventId = epicsEventCreate(epicsEventEmpty);
     if (!this->startEventId) {
@@ -449,6 +445,9 @@ URLDriver::URLDriver(const char *portName, int maxBuffers, size_t maxMemory,
 extern "C" int URLDriverConfig(const char *portName, int maxBuffers, size_t maxMemory, 
                                int priority, int stackSize)
 {
+    /* Initialize GraphicsMagick */
+    InitializeMagick(NULL);
+
     new URLDriver(portName, maxBuffers, maxMemory, priority, stackSize);
     return(asynSuccess);
 }

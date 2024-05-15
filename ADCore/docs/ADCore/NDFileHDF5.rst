@@ -90,8 +90,8 @@ of the same names.
     - Enum string: "constant", "ndattribute"
   * - when
     - optional
-    - Event when the attribute data is updated
-    - Enum string: "OnFileOpen", "OnFileClose", "OnFileWrite"
+    - Event when the attribute data is written
+    - Enum string: "OnFileOpen" (default), "OnFileClose"
   * - value
     - Required only if source="constant"
     - The constant value to give the attribute
@@ -135,6 +135,10 @@ of the same names.
     - yes
     - Definition of where the dataset gets its data values from
     - string enum: "detector", "ndattribute", "constant"
+  * - when
+    - optional
+    - Event when the dataset data is written
+    - Enum string: "OnFileOpen", "OnFileClose", "OnFileWrite" (default)
   * - value
     - Required only if source="constant"
     - Constant value to write directly into the HDF5 dataset
@@ -479,7 +483,7 @@ Storing Attributes with Dataset Dimensions
    dataset would be a single dimension array of 60 items.
 -  If however, the NDAttribute dataset is stored with the same
    dimensionality as the main dataset then the NDAttribute dataset will
-   have the dimensions of 5x4x3x1x1.
+   have the dimensions of 5x4x3.
 
 Selective Positional Placement of Individual Frames
 ---------------------------------------------------

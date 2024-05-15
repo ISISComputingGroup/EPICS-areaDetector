@@ -31,6 +31,9 @@ public class EPICS_AD_Viewer implements PlugIn
     int colorMode;
     DBRType dataType;
     int ADDataType;
+    byte[] colorLUT = new byte[256];
+    double prevDispMin = 0.;
+    double prevDispMax = 255.;
 
     FileOutputStream debugFile;
     PrintStream debugPrintStream;
@@ -474,6 +477,28 @@ public class EPICS_AD_Viewer implements PlugIn
             {
                 int[] pixels = (int[])img.getProcessor().getPixels();
                 byte inpixels[] = epicsGetByteArray(ch_image, getsize);
+                double dispMin = img.getDisplayRangeMin();
+                double dispMax = img.getDisplayRangeMax();
+                if ((dispMin != 0) || (dispMax != 255)) {
+                    int i;
+                    if ((dispMin != prevDispMin) || (dispMax != prevDispMax)) {
+                        // Recompute LUT
+                        prevDispMin = dispMin;
+                        prevDispMax = dispMax;
+                        double slope = 255/(dispMax - dispMin);
+                        for (i=0; i<256; i++) {
+                            if (i<dispMin) 
+                                colorLUT[i] = 0;
+                            else if (i>dispMax)
+                                colorLUT[i] = (byte)255;
+                            else 
+                                colorLUT[i] = (byte)((i-dispMin)*slope + 0.5);
+                        }
+                    }
+                    for (i=0; i<getsize; i++) {
+                        inpixels[i] = colorLUT[inpixels[i] & 0xff];
+                    }
+                }
                 switch (colorMode)
                 {
                     case 2:
@@ -522,6 +547,10 @@ public class EPICS_AD_Viewer implements PlugIn
             img.setSlice(img.getNSlices());
             img.show();
             img.updateAndDraw();
+            ImageCanvas ic = img.getCanvas();
+            Point loc = ic!=null ? ic.getCursorLoc() : null;
+            if (loc!=null)
+                img.mouseMoved(loc.x,loc.y);
             img.updateStatusbarValue();
             numImageUpdates++;
             // Automatically set brightness and contrast if we made a new window

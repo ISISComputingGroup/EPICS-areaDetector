@@ -154,7 +154,7 @@ ifeq ($(WITH_GRAPHICSMAGICK),YES)
         USR_INCLUDES += $(addprefix -I, $(TIFF_INCLUDE))
       endif
       ifdef TIFF_LIB
-        jpeg_DIR     = $(TIFF_LIB)
+        tiff_DIR     = $(TIFF_LIB)
         LIB_LIBS     += tiff
       else
         LIB_SYS_LIBS += tiff
@@ -188,6 +188,7 @@ ifeq ($(WITH_GRAPHICSMAGICK),YES)
         LIB_SYS_LIBS += xml2
       endif
     endif
+    LIB_LIBS += nanohttp_stream
     
     ifeq ($(ZLIB_EXTERNAL),NO)
       LIB_LIBS += zlib

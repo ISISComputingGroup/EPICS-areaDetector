@@ -4,14 +4,34 @@ Detector Drivers
 .. toctree::
     :maxdepth: 2
 
-    ADCore/ADDriver
     ADCore/guidelines
+    ADCore/ADDriver
+    ADAndor/andorDoc
+    ADAndor3/ADAndorDoc
+    ADAravis/ADAravis
+    ADCSimDetector/ADCSimDetectorDoc
+    ADDexela/ADDexela
+    ADEiger/eiger
     ADFastCCD/index
     ADGenICam/ADGenICam
-    ADAravis/ADAravis
+    ADLambda/ADLambda
+    ADLightField/ADLightField
+    ADmarCCD/marCCDDoc
+    ADmar345/mar345Doc
+    ADPerkinElmer/PerkinElmerDoc
+    ADPICam/PICamDoc
+    ADPilatus/pilatusDoc
+    ADPixirad/ADPixirad
+    ADPointGrey/PointGreyDoc
+    ADProsilica/ADProsilica
+    ADPvCam/pvcamDoc
+    ADPylon/ADPylon
+    ADQImaging/QImagingDoc
+    ADRIXSCam/ADRIXSCam
+    ADSimDetector/simDetector
     ADSpinnaker/ADSpinnaker
     ADVimba/ADVimba
-    ADProsilica/ADProsilica
-    ADPointGrey/PointGreyDoc
+    ADURL/ADURL
+    NDDriverStdArrays/NDDriverStdArraysDoc
+    pvaDriver/pvaDriver
     specsAnalyser/index
-    ADRIXSCam/ADRIXSCam

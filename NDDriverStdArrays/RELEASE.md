@@ -16,7 +16,11 @@ files respectively, in the configure/ directory of the appropriate release of th
 Release Notes
 =============
 
-R1-3 (January XXX, 2018)
+R1-4 (January XXX, 2020)
+====================
+* Fixed initialization problem in the driver.
+
+R1-3 (December 19, 2018)
 ====================
 * Fixed layout of medm screen.
 * Added op/edl/autoconvert, op/opi/autoconvert, and op/ui/autoconvert files.

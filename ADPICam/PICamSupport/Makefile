@@ -14,6 +14,8 @@ ifeq (windows-x64, $(findstring windows-x64, $(T_A)))
 LIB_INSTALLS_WIN32    += ../os/windows-x64/Picam.lib
 endif
 
+
+
 #=============================
 
 include $(TOP)/configure/RULES

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>camera pco</name>
+  <x>1028</x>
+  <y>189</y>
+  <width>400</width>
+  <height>865</height>
+  <background_color>
+    <color name="GLOBAL canvas" red="200" green="200" blue="200">
+    </color>
+  </background_color>
+  <grid_step_x>5</grid_step_x>
+  <grid_step_y>5</grid_step_y>
+  <widget type="choice" version="2.0.0">
+    <name>EDM activeChoiceButtonClass</name>
+    <pv_name>LOC\\$(!W)menu=e:0,Camera,ROI0,ROI1,Waveform,HDF5,TIFF1,sim</pv_name>
+    <x>4</x>
+    <y>3</y>
+    <width>391</width>
+    <height>25</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="GLOBAL canvas" red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <items>
+      <item>Item 1</item>
+      <item>Item 2</item>
+    </items>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>EDM activeLineClass</name>
+    <x>4</x>
+    <y>29</y>
+    <width>392</width>
+    <height>832</height>
+    <line_width>1</line_width>
+    <line_color>
+      <color name="grey-1" red="236" green="236" blue="236">
+      </color>
+    </line_color>
+    <arrow_length>15</arrow_length>
+    <points>
+      <point x="0.0" y="832.0">
+      </point>
+      <point x="392.0" y="832.0">
+      </point>
+      <point x="392.0" y="0.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>EDM activeLineClass</name>
+    <x>4</x>
+    <y>29</y>
+    <width>392</width>
+    <height>832</height>
+    <line_width>1</line_width>
+    <line_color>
+      <color name="grey-11" red="90" green="90" blue="90">
+      </color>
+    </line_color>
+    <arrow_length>15</arrow_length>
+    <points>
+      <point x="0.0" y="832.0">
+      </point>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="392.0" y="0.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="navtabs" version="2.0.0">
+    <name>EDM activePipClass</name>
+    <tabs>
+      <tab>
+        <name>Tab 1</name>
+        <file>pcoDetector.bob</file>
+        <macros>
+          <R>PCO1:</R>
+          <label>pco</label>
+        </macros>
+        <group_name></group_name>
+      </tab>
+      <tab>
+        <name>Tab 2</name>
+        <file>NDROI.bob</file>
+        <macros>
+          <R>ROI:</R>
+          <label>roi</label>
+        </macros>
+        <group_name></group_name>
+      </tab>
+      <tab>
+        <name>Tab 3</name>
+        <file>NDROI.bob</file>
+        <macros>
+          <R>ROI1:</R>
+          <label>roi1</label>
+        </macros>
+        <group_name></group_name>
+      </tab>
+      <tab>
+        <name>Tab 4</name>
+        <file>NDStdArrays.bob</file>
+        <macros>
+          <R>ARR1:</R>
+          <label>array</label>
+        </macros>
+        <group_name></group_name>
+      </tab>
+      <tab>
+        <name>Tab 5</name>
+        <file>NDFileHDF5.bob</file>
+        <macros>
+          <R>HDF5:</R>
+          <label>HDF5</label>
+        </macros>
+        <group_name></group_name>
+      </tab>
+      <tab>
+        <name>Tab 6</name>
+        <file>NDFileTIFF.bob</file>
+        <macros>
+          <R>TIFF1:</R>
+          <label>tiff1</label>
+        </macros>
+        <group_name></group_name>
+      </tab>
+      <tab>
+        <name>Tab 7</name>
+        <file>simDetector.bob</file>
+        <macros>
+          <R>PCOSIM1:</R>
+          <label>sim</label>
+        </macros>
+        <group_name></group_name>
+      </tab>
+    </tabs>
+    <x>5</x>
+    <y>30</y>
+    <width>390</width>
+    <height>830</height>
+    <tab_width>0</tab_width>
+    <tab_height>0</tab_height>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+widget.setPropertyValue('active_tab', PVUtil.getInt(pvs[0]))
+]]></text>
+        <pv_name>loc://$(DID)menu</pv_name>
+      </script>
+    </scripts>
+  </widget>
+</display>

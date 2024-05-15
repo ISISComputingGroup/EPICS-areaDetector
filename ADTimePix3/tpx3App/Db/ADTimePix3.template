@@ -1,0 +1,596 @@
+# Database for the records specific to the TimePix3 driver
+# Author: K. Gofron
+# Date: 2022/6/4
+
+record(stringin, "$(P)$(R)ServerURL_RBV"){
+  field(DTYP, "asynOctetRead")
+  field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))TPX3_SERVER_NAME")
+  field(SCAN, "I/O Intr")
+}
+
+record(stringin, "$(P)$(R)DetType_RBV"){
+  field(DTYP, "asynOctetRead")
+  field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))TPX3_DETECTOR_TYPE")
+  field(SCAN, "I/O Intr")
+}
+
+record(stringin, "$(P)$(R)FwTS_RBV"){
+  field(DTYP, "asynOctetRead")
+  field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))TPX3_FW_TIMESTAMP")
+  field(SCAN, "I/O Intr")
+}
+
+record(ai, "$(P)$(R)HttpCode_RBV"){
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))TPX3_HTTP_CODE")
+  field(SCAN, "I/O Intr")
+}
+
+# Detector Health
+record(ai, "$(P)$(R)LocalTemp_RBV"){
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))TPX3_LOCAL_TEMP")
+  field(SCAN, "I/O Intr")
+}
+
+record(ai, "$(P)$(R)FPGATemp_RBV"){
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))TPX3_FPGA_TEMP")
+  field(SCAN, "I/O Intr")
+}
+
+record(ai, "$(P)$(R)Fan1Speed_RBV"){
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))TPX3_FAN1_SPEED")
+  field(SCAN, "I/O Intr")
+}
+
+record(ai, "$(P)$(R)Fan2Speed_RBV"){
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))TPX3_FAN2_SPEED")
+  field(SCAN, "I/O Intr")
+}
+
+record(ai, "$(P)$(R)BiasVoltage_RBV"){
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))TPX3_BIAS_VOLT_H")
+  field(SCAN, "I/O Intr")
+}
+
+record(longin, "$(P)$(R)Humidity_RBV"){
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))TPX3_HUMIDITY")
+  field(SCAN, "I/O Intr")
+}
+
+# Arrays of values
+record(stringin, "$(P)$(R)ChipTemps_RBV"){
+  field(DTYP, "asynOctetRead")
+  field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))TPX3_CHIP_TEMPS")
+  field(SCAN, "I/O Intr")
+}
+
+record(stringin, "$(P)$(R)VDD_RBV"){
+  field(DTYP, "asynOctetRead")
+  field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))TPX3_VDD")
+  field(SCAN, "I/O Intr")
+}
+
+record(stringin, "$(P)$(R)AVDD_RBV"){
+  field(DTYP, "asynOctetRead")
+  field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))TPX3_AVDD")
+  field(SCAN, "I/O Intr")
+}
+
+# Health scanner - processes detector health PVs, or detector PVs TBD
+record(bo, "$(P)$(R)Health"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))TPX3_HEALTH")
+  field(SCAN, "1 second")
+}
+
+# Detector Info
+record(stringin, "$(P)$(R)Iface_RBV"){
+  field(DTYP, "asynOctetRead")
+  field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))TPX3_IFACE")
+  field(SCAN, "I/O Intr")
+}
+record(stringin, "$(P)$(R)SW_ver_RBV"){
+  field(DTYP, "asynOctetRead")
+  field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))TPX3_SW_VER")
+  field(SCAN, "I/O Intr")
+}
+record(stringin, "$(P)$(R)FW_ver_RBV"){
+  field(DTYP, "asynOctetRead")
+  field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))TPX3_FW_VER")
+  field(SCAN, "I/O Intr")
+}
+record(longin, "$(P)$(R)PixCount_RBV"){
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))TPX3_PEL_CNT")
+  field(SCAN, "I/O Intr")
+}
+record(longin, "$(P)$(R)RowLen_RBV"){
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))TPX3_ROWLEN")
+  field(SCAN, "I/O Intr")
+}
+record(longin, "$(P)$(R)NChips_RBV"){
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))TPX3_NUM_CHIPS")
+  field(SCAN, "I/O Intr")
+}
+record(longin, "$(P)$(R)NRows_RBV"){
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))TPX3_NUM_ROWS")
+  field(SCAN, "I/O Intr")
+}
+record(longin, "$(P)$(R)MpxType_RBV"){
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))TPX3_MPX_TYPE")
+  field(SCAN, "I/O Intr")
+}
+record(stringin, "$(P)$(R)BChBoardId_RBV"){
+  field(DTYP, "asynOctetRead")
+  field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))TPX3_BOARDS_ID")
+  field(SCAN, "I/O Intr")
+}
+record(stringin, "$(P)$(R)IpAddr_RBV"){
+  field(DTYP, "asynOctetRead")
+  field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))TPX3_BOARDS_IP")
+  field(SCAN, "I/O Intr")
+}
+record(stringin, "$(P)$(R)Chip1_RBV"){
+  field(DTYP, "asynOctetRead")
+  field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))TPX3_BOARDS_CH1")
+  field(SCAN, "I/O Intr")
+}
+record(stringin, "$(P)$(R)Chip2_RBV"){
+  field(DTYP, "asynOctetRead")
+  field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))TPX3_BOARDS_CH2")
+  field(SCAN, "I/O Intr")
+}
+record(stringin, "$(P)$(R)Chip3_RBV"){
+  field(DTYP, "asynOctetRead")
+  field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))TPX3_BOARDS_CH3")
+  field(SCAN, "I/O Intr")
+}
+record(stringin, "$(P)$(R)Chip4_RBV"){
+  field(DTYP, "asynOctetRead")
+  field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))TPX3_BOARDS_CH4")
+  field(SCAN, "I/O Intr")
+}
+
+record(longin, "$(P)$(R)AcqModes_RBV"){
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))TPX3_ACQ_MODES")
+  field(SCAN, "I/O Intr")
+}
+record(ai, "$(P)$(R)ClockRead_RBV"){
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))TPX3_CLOCK_READ")
+  field(SCAN, "I/O Intr")
+}
+record(longin, "$(P)$(R)MaxPulseCnt_RBV"){
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))TPX3_PULSE_CNT")
+  field(SCAN, "I/O Intr")
+}
+record(ai, "$(P)$(R)MaxPulseHgt_RBV"){
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))TPX3_PULSE_HIGHT")
+  field(SCAN, "I/O Intr")
+}
+record(ai, "$(P)$(R)MaxPulsePeriod_RBV"){
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))TPX3_PULSE_PERIOD")
+  field(SCAN, "I/O Intr")
+}
+record(ai, "$(P)$(R)TimerMaxVal_RBV"){
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))TPX3_TIME_MAX")
+  field(SCAN, "I/O Intr")
+}
+record(ai, "$(P)$(R)TimerMinVal_RBV"){
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))TPX3_TIME_MIN")
+  field(SCAN, "I/O Intr")
+}
+record(ai, "$(P)$(R)TimerStep_RBV"){
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))TPX3_TIME_STEP")
+  field(SCAN, "I/O Intr")
+}
+record(ai, "$(P)$(R)ClockTimepix_RBV"){
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))TPX3_CLOCK")
+  field(SCAN, "I/O Intr")
+}
+
+# Detector Config
+record(longin, "$(P)$(R)Fan1PWM_RBV"){
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))TPX3_FAN1PWM")
+  field(SCAN, "I/O Intr")
+}
+record(longin, "$(P)$(R)Fan2PWM_RBV"){
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))TPX3_FAN2PWM")
+  field(SCAN, "I/O Intr")
+}
+record(longout, "$(P)$(R)BiasVolt"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))TPX3_BIAS_VOLT_R")
+}
+record(longin, "$(P)$(R)BiasVolt_RBV"){
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))TPX3_BIAS_VOLT_R")
+  field(SCAN, "I/O Intr")
+}
+record(bo, "$(P)$(R)BiasEnbl"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))TPX3_BIAS_ENBL")
+  field(ZNAM, "false")
+  field(ONAM, "true")  
+}
+record(bi, "$(P)$(R)BiasEnbl_RBV"){
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))TPX3_BIAS_ENBL")
+  field(ZNAM, "false")
+  field(ONAM, "true")    
+  field(SCAN, "I/O Intr")
+}
+
+record(mbbo, "$(P)$(R)ChainMode")
+{
+   field(PINI, "YES")
+   field(DTYP, "asynInt32")
+   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))TPX3_CHAIN_MODE")  
+   field(ZRST, "NONE") 
+   field(ZRVL, "0")
+   field(ONST, "LEADER") 
+   field(ONVL, "1")
+   field(TWST, "FOLLOWER")    
+   field(TWVL, "2")
+   info(autosaveFields, "VAL")
+}
+record(mbbi, "$(P)$(R)ChainMode_RBV")
+{
+   field(DTYP, "asynInt32")
+   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))TPX3_CHAIN_MODE")  
+   field(ZRST, "NONE") 
+   field(ZRVL, "0")
+   field(ONST, "LEADER") 
+   field(ONVL, "1")
+   field(TWST, "FOLLOWER")    
+   field(TWVL, "2")
+   field(SCAN, "I/O Intr")
+}
+
+record(mbbo, "$(P)$(R)TriggerIn")
+{
+   field(PINI, "YES")
+   field(DTYP, "asynInt32")
+   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))TPX3_TRIGGER_IN")  
+   field(ZRST, "0") 
+   field(ZRVL, "0")
+   field(ONST, "1") 
+   field(ONVL, "1")
+   field(TWST, "2")    
+   field(TWVL, "2")
+   field(THST, "3")    
+   field(THVL, "3")
+   field(FRST, "4") 
+   field(FRVL, "4")
+   field(FVST, "5")    
+   field(FVVL, "5")
+   field(SXST, "6") 
+   field(SXVL, "6")
+   info(autosaveFields, "VAL")
+}
+record(mbbi, "$(P)$(R)TriggerIn_RBV")
+{
+   field(DTYP, "asynInt32")
+   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))TPX3_TRIGGER_IN")  
+   field(ZRST, "0") 
+   field(ZRVL, "0")
+   field(ONST, "1") 
+   field(ONVL, "1")
+   field(TWST, "2")    
+   field(TWVL, "2")
+   field(THST, "3")    
+   field(THVL, "3")
+   field(FRST, "4") 
+   field(FRVL, "4")
+   field(FVST, "5")    
+   field(FVVL, "5")
+   field(SXST, "6") 
+   field(SXVL, "6")
+   field(SCAN, "I/O Intr")
+}
+
+record(mbbo, "$(P)$(R)TriggerOut")
+{
+   field(PINI, "YES")
+   field(DTYP, "asynInt32")
+   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))TPX3_TRIGGER_OUT")  
+   field(ZRST, "0") 
+   field(ZRVL, "0")
+   field(ONST, "1") 
+   field(ONVL, "1")
+   field(TWST, "2")    
+   field(TWVL, "2")
+   field(THST, "3")    
+   field(THVL, "3")
+   field(FRST, "4") 
+   field(FRVL, "4")
+   field(FVST, "5")    
+   field(FVVL, "5")
+   field(SXST, "6") 
+   field(SXVL, "6")
+   info(autosaveFields, "VAL")
+}
+record(mbbi, "$(P)$(R)TriggerOut_RBV")
+{
+   field(DTYP, "asynInt32")
+   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))TPX3_TRIGGER_OUT")  
+   field(ZRST, "0") 
+   field(ZRVL, "0")
+   field(ONST, "1") 
+   field(ONVL, "1")
+   field(TWST, "2")    
+   field(TWVL, "2")
+   field(THST, "3")    
+   field(THVL, "3")
+   field(FRST, "4") 
+   field(FRVL, "4")
+   field(FVST, "5")    
+   field(FVVL, "5")
+   field(SXST, "6") 
+   field(SXVL, "6")
+   field(SCAN, "I/O Intr")
+}
+
+record(bo, "$(P)$(R)Polarity"){   
+  field(PINI, "YES")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))TPX3_POLARITY")
+  field(ZNAM, "Positive")
+  field(ONAM, "Negative")  
+}
+record(bi, "$(P)$(R)Polarity_RBV"){
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))TPX3_POLARITY")
+  field(ZNAM, "Positive")
+  field(ONAM, "Negative")    
+  field(SCAN, "I/O Intr")
+}
+
+record(stringin, "$(P)$(R)TriggerModeC_RBV"){
+  field(DTYP, "asynOctetRead")
+  field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))TPX3_TRIGGER_MODE")
+  field(SCAN, "I/O Intr")
+}
+
+record(ai, "$(P)$(R)ExposureTime_RBV"){
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))TPX3_EXPOSURE_TIME")
+  field(SCAN, "I/O Intr")
+}
+record(ai, "$(P)$(R)TriggerPeriod_RBV"){
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))TPX3_TRIGGER_PERIOD")
+  field(SCAN, "I/O Intr")
+}
+
+record(longin, "$(P)$(R)nTriggers_RBV"){
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))TPX3_NTRIGGERS")
+  field(SCAN, "I/O Intr")
+}
+
+record(bo, "$(P)$(R)PeriphClk80"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))TPX3_PERIPH_CLK80")
+  field(ZNAM, "false")
+  field(ONAM, "true")  
+  info(autosaveFields, "VAL")
+}
+record(bi, "$(P)$(R)PeriphClk80_RBV"){
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))TPX3_PERIPH_CLK80")
+  field(ZNAM, "false")
+  field(ONAM, "true")    
+  field(SCAN, "I/O Intr")
+}
+
+record(ao, "$(P)$(R)TriggerDelay"){
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))TPX3_TRIG_DELAY")
+}
+record(ai, "$(P)$(R)TriggerDelay_RBV"){
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))TPX3_TRIG_DELAY")
+  field(SCAN, "I/O Intr")
+}
+
+record(stringin, "$(P)$(R)Tdc_RBV"){
+  field(DTYP, "asynOctetRead")
+  field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))TPX3_TDC")
+  field(SCAN, "I/O Intr")
+}
+
+record(mbbo, "$(P)$(R)Tdc0")
+{
+   field(PINI, "YES")
+   field(DTYP, "asynInt32")
+   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))TPX3_TDC0")  
+   field(ZRST, "P0123") 
+   field(ZRVL, "0")
+   field(ONST, "N0123") 
+   field(ONVL, "1")
+   field(TWST, "PN0123")    
+   field(TWVL, "2")
+   field(THST, "P0") 
+   field(THVL, "3")
+   field(FRST, "N0") 
+   field(FRVL, "4")
+   field(FVST, "PN0")    
+   field(FVVL, "5")
+   info(autosaveFields, "VAL")
+}
+record(mbbi, "$(P)$(R)Tdc0_RBV")
+{
+   field(DTYP, "asynInt32")
+   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))TPX3_TDC0")  
+   field(ZRST, "P0123") 
+   field(ZRVL, "0")
+   field(ONST, "N0123") 
+   field(ONVL, "1")
+   field(TWST, "PN0123")    
+   field(TWVL, "2")
+   field(THST, "P0") 
+   field(THVL, "3")
+   field(FRST, "N0") 
+   field(FRVL, "4")
+   field(FVST, "PN0")    
+   field(FVVL, "5")
+   field(SCAN, "I/O Intr")
+}
+
+record(mbbo, "$(P)$(R)Tdc1")
+{
+   field(PINI, "YES")
+   field(DTYP, "asynInt32")
+   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))TPX3_TDC1")  
+   field(ZRST, "P0123") 
+   field(ZRVL, "0")
+   field(ONST, "N0123") 
+   field(ONVL, "1")
+   field(TWST, "PN0123")    
+   field(TWVL, "2")
+   field(THST, "P0") 
+   field(THVL, "3")
+   field(FRST, "N0") 
+   field(FRVL, "4")
+   field(FVST, "PN0")    
+   field(FVVL, "5")
+   info(autosaveFields, "VAL")
+}
+record(mbbi, "$(P)$(R)Tdc1_RBV")
+{
+   field(DTYP, "asynInt32")
+   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))TPX3_TDC1")  
+   field(ZRST, "P0123") 
+   field(ZRVL, "0")
+   field(ONST, "N0123") 
+   field(ONVL, "1")
+   field(TWST, "PN0123")    
+   field(TWVL, "2")
+   field(THST, "P0") 
+   field(THVL, "3")
+   field(FRST, "N0") 
+   field(FRVL, "4")
+   field(FVST, "PN0")    
+   field(FVVL, "5")
+   field(SCAN, "I/O Intr")
+}
+
+record(ao, "$(P)$(R)GlblTimestampIntvl"){
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))TPX3_GL_TIMESTAMP_INT")
+  info(autosaveFields, "VAL")
+}
+record(ai, "$(P)$(R)GlblTimestampIntvl_RBV"){
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))TPX3_GL_TIMESTAMP_INT")
+  field(SCAN, "I/O Intr")
+}
+
+record(bo, "$(P)$(R)RefClock"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))TPX3_EXT_REF_CLOCK")
+  field(ZNAM, "false")
+  field(ONAM, "true")  
+  info(autosaveFields, "VAL")
+}
+record(bi, "$(P)$(R)RefClock_RBV"){
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))TPX3_EXT_REF_CLOCK")
+  field(ZNAM, "false")
+  field(ONAM, "true")    
+  field(SCAN, "I/O Intr")
+}
+
+record(mbbo, "$(P)$(R)LogLevel")
+{
+   field(PINI, "YES")
+   field(DTYP, "asynInt32")
+   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))TPX3_LOG_LEVEL")  
+   field(ZRST, "0") 
+   field(ZRVL, "0")
+   field(ONST, "1") 
+   field(ONVL, "1")
+   field(TWST, "2")    
+   field(TWVL, "2")
+   info(autosaveFields, "VAL")
+}
+record(mbbi, "$(P)$(R)LogLevel_RBV")
+{
+   field(DTYP, "asynInt32")
+   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))TPX3_LOG_LEVEL")  
+   field(ZRST, "0") 
+   field(ZRVL, "0")
+   field(ONST, "1") 
+   field(ONVL, "1")
+   field(TWST, "2")    
+   field(TWVL, "2")
+   field(SCAN, "I/O Intr")
+}
+
+record(mbbo, "$(P)$(R)DetOrient")
+{
+   field(PINI, "YES")
+   field(DTYP, "asynInt32")
+   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))TPX3_DET_ORIENTATION")
+   field(ZRST, "UP")
+   field(ZRVL, "0")
+   field(ONST, "RIGHT")
+   field(ONVL, "1")
+   field(TWST, "DOWN")
+   field(TWVL, "2")
+   field(THST, "LEFT")
+   field(THVL, "3")
+   field(FRST, "UP_MIRRORED")
+   field(FRVL, "4")
+   field(FVST, "RIGHT_MIRRORED")
+   field(FVVL, "5")
+   field(SXST, "DOWN_MIRRORED")
+   field(SXVL, "6")
+   field(SVST, "LEFT_MIRRORED")
+   field(SVVL, "7")
+   info(autosaveFields, "VAL")
+}
+record(mbbi, "$(P)$(R)DetOrient_RBV")
+{
+   field(DTYP, "asynInt32")
+   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))TPX3_DET_ORIENTATION")
+   field(ZRST, "UP")
+   field(ZRVL, "0")
+   field(ONST, "RIGHT")
+   field(ONVL, "1")
+   field(TWST, "DOWN")
+   field(TWVL, "2")
+   field(THST, "LEFT")
+   field(THVL, "3")
+   field(FRST, "UP_MIRRORED")
+   field(FRVL, "4")
+   field(FVST, "RIGHT_MIRRORED")
+   field(FVVL, "5")
+   field(SXST, "DOWN_MIRRORED")
+   field(SXVL, "6")
+   field(SVST, "LEFT_MIRRORED")
+   field(SVVL, "7")
+   field(SCAN, "I/O Intr")
+}
+

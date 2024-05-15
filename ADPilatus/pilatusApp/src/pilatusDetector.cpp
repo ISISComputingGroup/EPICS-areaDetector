@@ -39,7 +39,7 @@
 #include "ADDriver.h"
 
 #define DRIVER_VERSION      2
-#define DRIVER_REVISION     6
+#define DRIVER_REVISION     9
 #define DRIVER_MODIFICATION 0
 
 /** Messages to/from camserver */
@@ -229,7 +229,9 @@ protected:
     double demandedThreshold;
     double demandedEnergy;
     int firstStatusCall;
-    double camserverVersion;
+    int camserverMajor;
+    int camserverMinor;
+    int camserverPatch;
 };
 
 void pilatusDetector::readBadPixelFile(const char *badPixelFile)
@@ -646,6 +648,9 @@ asynStatus pilatusDetector::readTiff(const char *fileName, epicsTimeStamp *pStar
     char tempBuffer[2048];
     TIFF *tiff=NULL;
     epicsUInt32 uval;
+    NDArrayInfo arrayInfo;
+    
+    pImage->getInfo(&arrayInfo);
 
     deltaTime = 0.;
     epicsTimeGetCurrent(&tStart);
@@ -686,8 +691,8 @@ asynStatus pilatusDetector::readTiff(const char *fileName, epicsTimeStamp *pStar
         numStrips= TIFFNumberOfStrips(tiff);
         buffer = (char *)pImage->pData;
         totalSize = 0;
-        for (strip=0; (strip < numStrips) && (totalSize < pImage->dataSize); strip++) {
-            size = TIFFReadEncodedStrip(tiff, 0, buffer, pImage->dataSize-totalSize);
+        for (strip=0; (strip < numStrips) && (totalSize < arrayInfo.totalBytes); strip++) {
+            size = TIFFReadEncodedStrip(tiff, 0, buffer, arrayInfo.totalBytes-totalSize);
             if (size == -1) {
                 /* There was an error reading the file.  Most commonly this is because the file
                  * was not yet completely written.  Try again. */
@@ -699,11 +704,11 @@ asynStatus pilatusDetector::readTiff(const char *fileName, epicsTimeStamp *pStar
             buffer += size;
             totalSize += size;
         }
-        if (totalSize != pImage->dataSize) {
+        if (totalSize != arrayInfo.totalBytes) {
             status = asynError;
             asynPrint(this->pasynUserSelf, ASYN_TRACE_ERROR,
                 "%s::%s, file size incorrect =%lu, should be %lu\n",
-                driverName, functionName, (unsigned long)totalSize, (unsigned long)pImage->dataSize);
+                driverName, functionName, (unsigned long)totalSize, (unsigned long)arrayInfo.totalBytes);
             goto retry;
         }
         /* Sucesss! Read the IMAGEDESCRIPTION tag if it exists */
@@ -891,10 +896,10 @@ asynStatus pilatusDetector::resetModulePower()
     static const char *functionName="resetModulePower";
 
     // This command only exists on camserver 7.9.0 and higher
-    if (camserverVersion < 7.9) {
+    if ((camserverMajor < 7) || ((camserverMajor == 7) && (camserverMinor < 9))) {
         asynPrint(pasynUserSelf, ASYN_TRACE_ERROR,
-            "%s::%s ResetModulePower not supported on version %f of camserver\n",
-            driverName, functionName, camserverVersion);
+            "%s::%s ResetModulePower not supported on version %d.%d.%d of camserver\n",
+            driverName, functionName, camserverMajor, camserverMinor, camserverPatch);
         return asynError;
     }
     setStringParam(ADStatusMessage, "Resetting module power");
@@ -1199,6 +1204,14 @@ void pilatusDetector::pilatusTask()
                     continue;
                 }
 
+                /* We successfully read an image - increment the array counter */
+                getIntegerParam(NDArrayCounter, &imageCounter);
+                imageCounter++;
+                setIntegerParam(NDArrayCounter, imageCounter);
+                /* Call the callbacks to update any changes */
+                callParamCallbacks();
+
+                /* Now assemble the NDArray */
                 getIntegerParam(PilatusFlatFieldValid, &flatFieldValid);
                 if (flatFieldValid) {
                     epicsInt32 *pData, *pFlat;
@@ -1211,18 +1224,11 @@ void pilatusDetector::pilatusTask()
                 } 
                 /* Put the frame number and time stamp into the buffer */
                 pImage->uniqueId = imageCounter;
-                pImage->timeStamp = startTime.secPastEpoch + startTime.nsec / 1.e9;
-                updateTimeStamp(&pImage->epicsTS);
+                updateTimeStamps(pImage);
 
                 /* Get any attributes that have been defined for this driver */        
                 this->getAttributes(pImage->pAttributeList);
                 
-                getIntegerParam(NDArrayCounter, &imageCounter);
-                imageCounter++;
-                setIntegerParam(NDArrayCounter, imageCounter);
-                /* Call the callbacks to update any changes */
-                callParamCallbacks();
-
                 /* Call the NDArray callback */
                 asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW, 
                      "%s:%s: calling NDArray callback\n", driverName, functionName);
@@ -1314,7 +1320,7 @@ asynStatus pilatusDetector::pilatusStatus()
       setStringParam(PilatusTvxVersion, substr);
       setStringParam(ADSDKVersion, substr);
       if (substr[0] == 't') substr += 4;
-      sscanf(substr, "%lf", &camserverVersion);
+      sscanf(substr, "%d.%d.%d", &camserverMajor, &camserverMinor, &camserverPatch);
       setIntegerParam(ADStatus, ADStatusIdle);
     } else {
       setIntegerParam(ADStatus, ADStatusError);
@@ -1325,7 +1331,6 @@ asynStatus pilatusDetector::pilatusStatus()
   /* Read temp and humidity.*/
   epicsSnprintf(this->toCamserver, sizeof(this->toCamserver), "thread");
   status=writeReadCamserver(1.0); 
-
   /* Response should contain: 
      Channel 0: Temperature = 31.4C, Rel. Humidity = 22.1%;\n
      Channel 1: Temperature = 25.8C, Rel. Humidity = 33.5%;\n
@@ -1349,6 +1354,11 @@ asynStatus pilatusDetector::pilatusStatus()
         sscanf(substr, "Channel 2: Temperature = %fC, Rel. Humidity = %f", &temp, &humid);
         setDoubleParam(PilatusThTemp2, temp);
         setDoubleParam(PilatusThHumid2, humid);
+    }
+    if ((substr = strstr(this->fromCamserver, "Channel 3")) != NULL) {
+        sscanf(substr, "Channel 3: Temperature = %fC, Rel. Humidity = %f", &temp, &humid);
+        setDoubleParam(PilatusThTemp0, temp);
+        setDoubleParam(PilatusThHumid0, humid);
     }
 
   } else {
@@ -1673,7 +1683,6 @@ extern "C" int pilatusDetectorConfig(const char *portName, const char *camserver
   *            communicate with camserver.
   * \param[in] maxSizeX The size of the Pilatus detector in the X direction.
   * \param[in] maxSizeY The size of the Pilatus detector in the Y direction.
-  * \param[in] portName The name of the asyn port driver to be created.
   * \param[in] maxBuffers The maximum number of NDArray buffers that the NDArrayPool for this driver is 
   *            allowed to allocate. Set this to -1 to allow an unlimited number of buffers.
   * \param[in] maxMemory The maximum amount of memory that the NDArrayPool for this driver is 

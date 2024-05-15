@@ -1,0 +1,118 @@
+Benchmark with Euresys CoaxLink CXP-12 card.
+
+Microtron MC2066 camera.  1920x1080 pixels
+HDF5 test: 50,000 frames, 2000 frame queue, no lost frames
+
+Mono8 mode, Linux
+Max frame rate: 2247 frames/s
+Max HDF5 rate: 1400 frames/s
+Max JRaw rate: 1400 frames/s
+Capture mode.  Runs at full 2247 frames/s
+Time to save 50000 frames in HDF5:  35 seconds
+Time to save 50000 frames in JRaw:  26 seconds
+
+Mono8 mode, Windows
+Max frame rate: 2247 frames/s
+Max HDF5 rate: 1700 frames/s
+Max JRaw rate: 1700 frames/s
+Capture mode.  Runs at full 2247 frames/s
+Time to save 50000 frames in HDF5:  28 seconds
+Time to save 50000 frames in JRaw:  32 seconds
+
+Mono10 mode, Linux
+Max frame rate: 1668 (should be 1798 no rejected frames)
+Max HDF5 rate: 650
+Max JRaw rate: 650
+Max Capture rate: 1668 (no rejected frames)
+Time to save 30000 frames in HDF5:  45 seconds
+Time to save 30000 frames in JRaw:  41 seconds
+
+Mono10 mode, Windows
+Max frame rate: 1703 (1798)
+Max HDF5 rate: 800
+Max JRaw rate: 650
+Max Capture rate: 1703
+Time to save 30000 frames in HDF5:  33 seconds
+Time to save 30000 frames in JRaw:  31 seconds
+
+
+Adimec camera.  4096x3072 pixels
+HDF5 test: 10,000 frames, 2000 frame queue, no lost frames
+
+Mono8 mode, Linux
+Max frame rate: 187 frames/s
+Max HDF5 rate: 187 frames/s
+Max JRaw rate:   frames/s
+Capture mode.  Runs at full 187 frames/s
+Time to save 10000 frames in HDF5:  35 seconds
+Time to save 10000 frames in JRaw:  26 seconds
+
+Mono8 mode, Windows
+Max frame rate: 187 frames/s
+Max HDF5 rate: 187 frames/s
+Max JRaw rate: 187 frames/s
+Capture mode.  Runs at full 187 frames/s
+Time to save 10000 frames in HDF5:  32 seconds
+Time to save 10000 frames in JRaw:  35 seconds
+
+Mono10 mode, Linux
+Max frame rate: 150
+Max HDF5 rate: 120 (90 at end)
+Max JRaw rate: 120 (90 at end)
+Max Capture rate: 150
+Time to save 10000 frames in HDF5:  109 seconds
+Time to save 10000 frames in JRaw:  112 seconds
+
+Mono10 mode, Windows
+Max frame rate: 150
+Max HDF5 rate: 90
+Max JRaw rate: 90
+Max Capture rate: 150
+Time to save 10000 frames in HDF5:  119 seconds
+Time to save 10000 frames in JRaw:  211 seconds
+
+
+
+ViewWorks camera.  14192 x 10640 pixels
+HDF5 test: 1,000 frames, 2000 frame queue, no lost frames
+
+Mono8 mode, Linux
+Max frame rate: 6.2 frames/s
+Max HDF5 rate: 6.2 frames/s
+Max JRaw rate: 6.2  frames/s
+Capture mode.  Runs at full 6.2 frames/s
+Time to save 1000 frames in HDF5:  60 seconds
+Time to save 1000 frames in JRaw:  60 seconds
+
+Mono8 mode, Windows
+Max frame rate: 6.2 frames/s
+Max HDF5 rate: 6.2 frames/s
+Max JRaw rate: 6.2  frames/s
+Capture mode.  Runs at full 6.2 frames/s
+Time to save 1000 frames in HDF5: 103 seconds
+Time to save 1000 frames in JRaw:  98 seconds
+
+Mono12 mode, Linux
+Max frame rate: 6.2
+Max HDF5 rate: 6.2
+Max JRaw rate: 6.2
+Max Capture rate: 6.2
+Time to save 500 frames in HDF5:  57 seconds
+Time to save 500 frames in JRaw:  62 seconds
+
+Mono12 mode, Windows
+Max frame rate: 6.2
+Max HDF5 rate: 5.0
+Max JRaw rate: 5.0
+Max Capture rate: 6.2
+Time to save 500 frames in HDF5: 136 seconds
+Time to save 500 frames in JRaw: 126 seconds
+
+Tried using NDPluginScatter and 2 HDF5 plugins.  
+This does not improve the speed, each plugin begins to drop frames above
+about 700 frames/s.  Each is only using about 40% of a core, so they are not CPU bound.
+This must be due to a global HDF5 mutex.
+
+The only solution would seem to be to use different IOCs running pvaDriver.
+Tried pvaDriver.  It loses frames even at 100 Hz.  Need to track this down.
+

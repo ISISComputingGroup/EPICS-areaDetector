@@ -139,7 +139,6 @@ Dexela::Dexela(const char *portName,  int detIndex,
   int numDevices;
   
   /* Add parameters for this driver */
-  createParam(DEX_SerialNumberString,                asynParamInt32,   &DEX_SerialNumber);
   createParam(DEX_BinningModeString,                 asynParamInt32,   &DEX_BinningMode);
   createParam(DEX_FullWellModeString,                asynParamInt32,   &DEX_FullWellMode);
   createParam(DEX_AcquireOffsetString,               asynParamInt32,   &DEX_AcquireOffset);
@@ -184,17 +183,14 @@ Dexela::Dexela(const char *portName,  int detIndex,
     pBusScanner_ = new BusScanner();
     numDevices = pBusScanner_->EnumerateDevices();
     if (numDevices <= 0) {
-      asynPrint(pasynUserSelf, ASYN_TRACE_ERROR,
-        "%s::%s Error: no Dexela devices found\n",
-        driverName, functionName);
-      return;
+      throwNewEr("No Dexela devices found", BAD_COMMS, 0, "");
     }
 
     if (detIndex > numDevices-1) {
       asynPrint(pasynUserSelf, ASYN_TRACE_ERROR,
         "%s::%s Error: detector index %d not available, only %d devices found\n",
         driverName, functionName, detIndex, numDevices);
-      return;
+      throwNewEr("Invalid device index", BAD_COMMS, 0, "");
     }
     
     devInfo_ = pBusScanner_->GetDevice(detIndex);
@@ -212,7 +208,11 @@ Dexela::Dexela(const char *portName,  int detIndex,
     setStringParam(ADManufacturer, "Perkin Elmer");
     sprintf(modelName_, "Dexela %d", modelNumber_);
     setStringParam(ADModel, modelName_);
-    setIntegerParam(DEX_SerialNumber, serialNumber_);
+    char tempString[40];
+    sprintf(tempString, "%d", serialNumber_);
+    setStringParam(ADSerialNumber, tempString);
+    sprintf(tempString, "%d", firmwareVersion_);
+    setStringParam(ADFirmwareVersion, tempString);
     snapBuffer_ = 0;
 
     // Set callback
@@ -227,6 +227,8 @@ Dexela::Dexela(const char *portName,  int detIndex,
 
   } catch (DexelaException &e) {
     reportError(functionName, e);
+    this->deviceIsReachable = false;
+    this->disconnect(pasynUserSelf);
     return;
   }
  
@@ -485,7 +487,7 @@ void Dexela::newFrameCallback(int frameCounter, int bufferNumber)
       dims[1] = pDetector_->GetBufferYdim();
       asynPrint(pasynUserSelf, ASYN_TRACEIO_DRIVER,
         "%s::%s called DexelaDetector::GetBufferYdim() returned dims[1]=%d\n",
-        driverName, functionName, dims[0]);
+        driverName, functionName, dims[1]);
 
       this->pArrays[0] = pNDArrayPool->alloc(2, dims, dataType, 0, NULL);
       if (this->pArrays[0] == NULL) {

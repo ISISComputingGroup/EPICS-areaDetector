@@ -1,0 +1,21 @@
+< envPaths
+errlogInit(20000)
+
+dbLoadDatabase("$(TOP)/dbd/pylonApp.dbd")
+pylonApp_registerRecordDeviceDriver(pdbbase)
+
+# The maximum image width; used for row profiles in the NDPluginStats plugin
+epicsEnvSet("XSIZE",  "1280")
+# The maximum image height; used for column profiles in the NDPluginStats plugin
+epicsEnvSet("YSIZE",  "1024")
+# Define NELEMENTS to be enough for a 1280x1024x3 (color) image
+epicsEnvSet("NELEMENTS", "3932160")
+
+# The CAMERA_ID can be either of the following:
+#  Camera serial number
+#  Camera index number, starting from 0
+epicsEnvSet("CAMERA_ID", "23524298")
+
+epicsEnvSet("GENICAM_DB_FILE", "$(ADGENICAM)/db/Basler_acA1300_200uc.template")
+
+< st.cmd.base

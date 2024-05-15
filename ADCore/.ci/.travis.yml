@@ -1,0 +1,179 @@
+# .travis.yml for testing EPICS Base ci-scripts
+# (see: https://github.com/epics-base/ci-scripts)
+
+# Note:
+# Paths to scripts are different in this test configuration
+# (your module has one more directory level: .ci)
+
+language: cpp
+compiler: gcc
+dist: bionic
+
+cache:
+  directories:
+  - $HOME/.cache
+
+env:
+  global:
+    - SETUP_PATH=.:.ci
+    - VV=1
+    - CHOCO=re2c
+    - BASE_RECURSIVE=NO
+
+addons:
+  apt:
+    packages:
+    - libreadline6-dev
+    - libncurses5-dev
+    - perl
+    - clang
+    - g++-mingw-w64-i686
+    - g++-mingw-w64-x86-64
+    - qemu-system-x86
+    - p7zip-full
+  homebrew:
+    packages:
+    - re2c
+    - p7zip
+
+install:
+  - python cue.py prepare
+
+script:
+  - python cue.py build
+  - python cue.py test
+  - python cue.py test-results
+
+# If you need to do more during install and build,
+# add a local directory to your module and do e.g.
+#  - ./.ci-local/travis/install-extras.sh
+
+# Define build jobs
+
+# Well-known variables to use
+# SET         source setup file
+# ADD_MODULES extra modules (for a specific job)
+# EXTRA       content will be added to make command line
+# BCFG        build configuration (static/debug/static-debug;
+#             default: shared-optimized)
+# TEST        set to NO to skip running the tests (default: YES)
+# VV          set to make build scripts verbose (default: unset)
+
+# Usually from setup files, but may be specified or overridden
+#  on a job line
+# MODULES     list of dependency modules
+# BASE        branch or release tag name of the EPICS Base to use
+# <MODULE>    branch or release tag for a specific module
+# ...         see README for setup file syntax description
+
+jobs:
+  include:
+
+# Run unit tests
+
+  - env: SET=test00
+    install: python cue-test.py env
+    script: python cue-test.py
+
+  - env: SET=test00 TRAVIS_COMPILER=gcc
+    language: python
+    python: "3.7"
+    install: python cue-test.py env
+    script: python cue-test.py
+
+  - env: SET=test00
+    os: osx
+    osx_image: xcode11.3
+    install: python cue-test.py env
+    script: python cue-test.py
+
+  - env: SET=test00
+    os: windows
+    install: python cue-test.py env
+    script: python cue-test.py
+
+# Compile example
+
+  - env: SET=test01
+    dist: focal
+
+  - env: SET=test01 BCFG=static-debug
+    dist: focal
+
+  - env: SET=test01 CLEAN_DEPS=NO
+    dist: trusty
+
+  - env: SET=test01 BCFG=static-debug
+    dist: trusty
+
+  - env: SET=test01 TRAVIS_COMPILER=gcc
+    language: python
+    python: "3.7"
+
+  - env: SET=test01 EXTRA="CMD_CXXFLAGS=-std=c++11"
+  - env: SET=test01 BCFG=static
+  - env: SET=test01 BCFG=debug
+  - env: SET=test01 BCFG=static-debug
+
+  - env: SET=test01
+    compiler: clang
+
+  - env: SET=test01 BCFG=static-debug
+    compiler: clang
+
+  - os: osx
+    osx_image: xcode11.3
+    env:
+      - SET=test01
+      - EXTRA=CMD_CFLAGS="-mmacosx-version-min=10.7"
+      - EXTRA1=CMD_CXXFLAGS="-mmacosx-version-min=10.7 -std=c++11 -stdlib=libc++"
+      - EXTRA2=CMD_LDXFLAGS="-mmacosx-version-min=10.7 -std=c++11 -stdlib=libc++"
+    compiler: clang
+
+  - env: SET=test01 BCFG=debug
+    os: osx
+    osx_image: xcode11.3
+    compiler: clang
+
+  - env: SET=test01 WINE=32 TEST=NO
+  - env: SET=test01 WINE=32 TEST=NO BCFG=static
+  - env: SET=test01 WINE=32 TEST=NO BCFG=debug
+  - env: SET=test01 WINE=32 TEST=NO BCFG=static-debug
+
+  - env: SET=test01 WINE=64 TEST=NO
+  - env: SET=test01 WINE=64 TEST=NO BCFG=static
+  - env: SET=test01 WINE=64 TEST=NO BCFG=debug
+  - env: SET=test01 WINE=64 TEST=NO BCFG=static-debug
+
+  - env: SET=test01 RTEMS=4.9 BASE=3.15 TEST=NO APT=usrmerge
+  - env: SET=test01 RTEMS=4.9 BASE=3.15 TEST=NO BCFG=debug APT=usrmerge
+
+  - env: SET=test01 RTEMS=4.10 APT=usrmerge
+  - env: SET=test01 RTEMS=4.10 BCFG=debug APT=usrmerge
+
+  - env: SET=test01 RTEMS=5 RTEMS_TARGET=RTEMS-pc686-qemu
+    dist: focal
+  - env: SET=test01 RTEMS=5 RTEMS_TARGET=RTEMS-pc686-qemu BCFG=debug
+    dist: focal
+
+  - env: SET=test01
+    os: windows
+  - env: SET=test01 BCFG=static
+    os: windows
+  - env: SET=test01 BCFG=debug
+    os: windows
+  - env: SET=test01 BCFG=static-debug
+    os: windows
+
+  - env: SET=test01
+    compiler: vs2017
+    os: windows
+  - env: SET=test01 BCFG=static
+    compiler: vs2017
+    os: windows
+  - env: SET=test01 BCFG=debug
+    compiler: vs2017
+    os: windows
+  - env: SET=test01 BCFG=static-debug
+    compiler: vs2017
+    os: windows

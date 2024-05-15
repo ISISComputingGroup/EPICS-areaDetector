@@ -42,6 +42,7 @@ import org.epics.pvaClient.PvaClientMonitorData;
 import org.epics.pvdata.factory.ConvertFactory;
 import org.epics.pvdata.pv.Convert;
 import org.epics.pvdata.pv.PVInt;
+import org.epics.pvdata.pv.PVScalar;
 import org.epics.pvdata.pv.PVScalarArray;
 import org.epics.pvdata.pv.PVString;
 import org.epics.pvdata.pv.PVStructure;
@@ -54,6 +55,7 @@ import ij.IJ;
 import ij.ImagePlus;
 import ij.ImageStack;
 import ij.gui.ImageWindow;
+import ij.gui.ImageCanvas;
 import ij.plugin.ContrastEnhancer;
 import ij.plugin.PlugIn;
 import ij.process.ByteProcessor;
@@ -88,6 +90,9 @@ public class EPICS_NTNDA_Viewer
     private int imageSizeY = 0;
     private int imageSizeZ = 0;
     private int colorMode = 0;
+    private byte[] colorLUT = new byte[256];
+    private double prevDispMin = 0.;
+    private double prevDispMax = 255.;
     private ScalarType dataType = ScalarType.pvBoolean;
     private FileOutputStream debugFile = null;
     private PrintStream debugPrintStream = null;
@@ -123,7 +128,12 @@ public class EPICS_NTNDA_Viewer
      */
     public EPICS_NTNDA_Viewer()
     {
+        String temp=null;
         readProperties();
+        temp = System.getenv("EPICS_NTNDA_VIEWER_CHANNELNAME");
+        if (temp != null) {
+            channelName = temp;
+        }
         createAndShowGUI();
     }
     /* (non-Javadoc)
@@ -371,12 +381,12 @@ public class EPICS_NTNDA_Viewer
                 if(!name.equals("ColorMode")) continue;
                 PVUnion pvUnion = pvAttr.getSubField(PVUnion.class,"value");
                 if(pvUnion==null) continue;
-                PVInt pvcm = pvUnion.get(PVInt.class);
+                PVScalar pvcm = pvUnion.get(PVScalar.class);
                 if(pvcm==null) {
-                    logMessage("color mode is not an int",true,true);
+                    logMessage("color mode is not a PVScalar",true,true);
                     continue;
                 }
-                cm = pvcm.get();
+                cm = ConvertFactory.getConvert().toInt(pvcm);
                 break;
             }
         }
@@ -545,6 +555,29 @@ public class EPICS_NTNDA_Viewer
             byte inpixels[]=new byte[numElements];
 
             convert.toByteArray(imagedata, 0, numElements, inpixels, 0);
+            double dispMin = img.getDisplayRangeMin();
+            double dispMax = img.getDisplayRangeMax();
+            if ((dispMin != 0) || (dispMax != 255)) {
+                int i;
+                if ((dispMin != prevDispMin) || (dispMax != prevDispMax)) {
+                    // Recompute LUT
+                    prevDispMin = dispMin;
+                    prevDispMax = dispMax;
+                    double slope = 255/(dispMax - dispMin);
+                    for (i=0; i<256; i++) {
+                        if (i<dispMin) 
+                            colorLUT[i] = 0;
+                        else if (i>dispMax)
+                            colorLUT[i] = (byte)255;
+                        else 
+                            colorLUT[i] = (byte)((i-dispMin)*slope + 0.5);
+                    }
+                }
+                for (i=0; i<numElements; i++) {
+                    inpixels[i] = colorLUT[inpixels[i] & 0xff];
+                }
+            }
+
             switch (colorMode)
             {
             case 2:
@@ -594,12 +627,17 @@ public class EPICS_NTNDA_Viewer
         img.setSlice(img.getNSlices());
         img.show();
         img.updateAndDraw();
+        ImageCanvas ic = img.getCanvas();
+        Point loc = ic!=null ? ic.getCursorLoc() : null;
+        if (loc!=null)
+            img.mouseMoved(loc.x,loc.y);
         img.updateStatusbarValue();
         numImageUpdates++;
         // Automatically set brightness and contrast if we made a new window
         if (madeNewWindow) new ContrastEnhancer().stretchHistogram(img, 0.5);
         return true;
     }
+
     /**
      * Create the GUI and show it.  For thread safety,
      * this method should be invoked from the

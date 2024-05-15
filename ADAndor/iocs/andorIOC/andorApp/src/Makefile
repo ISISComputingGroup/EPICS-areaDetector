@@ -22,10 +22,10 @@ $(PROD_NAME)_SRCS += $(PROD_NAME)_registerRecordDeviceDriver.cpp $(PROD_NAME)Mai
 # Add locally compiled object code
 PROD_LIBS       += andorCCD
 
-ifeq (win32-x86, $(findstring win32-x86, $(T_A)))
+ifneq (, $(findstring win32-x86, $(T_A)))
   PROD_LIBS  += atmcd32m
 
-else ifeq (windows-x64, $(findstring windows-x64, $(T_A)))
+else ifneq (, $(findstring windows-x64, $(T_A)))
   # Note: we must built the application without GraphicsMagick for windows-x64.  
   # This is because of a conflict with the Andor library (SetImage function) 
   # that only occurs on windows-x64.

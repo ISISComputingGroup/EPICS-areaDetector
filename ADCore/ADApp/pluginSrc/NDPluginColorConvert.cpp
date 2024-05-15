@@ -1,6 +1,6 @@
 /*
  * NDPluginColorConvert.cpp
- * 
+ *
  * Plugin to convert from one color mode to another
  *
  * Author: Mark Rivers
@@ -15,19 +15,13 @@
 #include <limits>
 #include <type_traits>
 
-#include <epicsTypes.h>
-#include <epicsMessageQueue.h>
-#include <epicsThread.h>
-#include <epicsEvent.h>
-#include <epicsTime.h>
 #include <iocsh.h>
 
-#include <asynDriver.h>
-
-#include <epicsExport.h>
 #include "NDPluginDriver.h"
 #include "colorMaps.h"
 #include "NDPluginColorConvert.h"
+
+#include <epicsExport.h>
 
 static const char *driverName="NDPluginColorConvert";
 
@@ -84,36 +78,37 @@ void NDPluginColorConvert::convertColor(NDArray *pArray)
     int changedColorMode=0;
     const unsigned char *colorMapR=NULL;
     const unsigned char *colorMapG=NULL;
-    const unsigned char *colorMapB=NULL;        
-    const unsigned char *colorMapRGB=NULL;     
+    const unsigned char *colorMapB=NULL;
+    const unsigned char *colorMapRGB=NULL;
     NDAttribute *pAttribute;
-     
+
     getIntegerParam(NDPluginColorConvertColorModeOut, (int *)&colorModeOut);
     pAttribute = pArray->pAttributeList->find("ColorMode");
     if (pAttribute) pAttribute->getValue(NDAttrInt32, &colorMode);
     pAttribute = pArray->pAttributeList->find("BayerPattern");
     if (pAttribute) pAttribute->getValue(NDAttrInt32, &bayerPattern);
-    
-/* check for false color */
-	getIntegerParam(NDPluginColorConvertFalseColor, &falseColor);            
-    switch (falseColor) {
+
+    /* check for false color */
+    if (true /*pArray->dataType == NDInt8 || pArray->dataType == NDUInt8*/) {
+        getIntegerParam(NDPluginColorConvertFalseColor, &falseColor);
+        switch (falseColor) {
         case 1:
             colorMapR = RainbowColorR;
             colorMapG = RainbowColorG;
             colorMapB = RainbowColorB;
-            colorMapRGB = RainbowColorRGB;      
+            colorMapRGB = RainbowColorRGB;
             break;
         case 2:
             colorMapR = IronColorR;
             colorMapG = IronColorG;
             colorMapB = IronColorB;
-            colorMapRGB = IronColorRGB;                        
+            colorMapRGB = IronColorRGB;
             break;
         default:
             falseColor = 0;
+        }
     }
-
-	/* This function is called with the lock taken, and it must be set when we exit.
+    /* This function is called with the lock taken, and it must be set when we exit.
      * The following code can be exected without the mutex because we are not accessing elements of
      * pPvt that other threads can access. */
     this->unlock();
@@ -142,11 +137,11 @@ void NDPluginColorConvert::convertColor(NDArray *pArray)
                     pIn  = pDataIn;
                     if (falseColor) {
                         for (i=0; i<imageSize; i++) {
-							ind = falseColorIndex(*pIn);
+                            ind = falseColorIndex(*pIn);
                             *pOut++ = colorMapR[ind];
                             *pOut++ = colorMapG[ind];
                             *pOut++ = colorMapB[ind];
-							++pIn;								
+                            ++pIn;
                         }                                       
                     } else {
                         for (i=0; i<imageSize; i++) {
@@ -184,7 +179,7 @@ void NDPluginColorConvert::convertColor(NDArray *pArray)
                                 *pBlueOut++  = colorMapB[ind];
 								++pIn;								
                             }
-                        }                                
+                        }
                     } else {
                         for (i=0; i<numRows; i++) {
                             pRedOut   = pDataOut + 3*i*rowSize;
@@ -196,7 +191,7 @@ void NDPluginColorConvert::convertColor(NDArray *pArray)
                                 *pBlueOut++  = *pIn++;
                             }
                         }
-                    }                    
+                    }
                     changedColorMode = 1;
                     break;
                 case NDColorModeRGB3:
@@ -218,11 +213,11 @@ void NDPluginColorConvert::convertColor(NDArray *pArray)
                     pIn  = pDataIn;
                     if (falseColor) {  
                         for (i=0; i<imageSize; i++) {                    
-							ind = falseColorIndex(*pIn);
+                            ind = falseColorIndex(*pIn);
                             *pRedOut++   = colorMapR[ind];
                             *pGreenOut++ = colorMapG[ind];
                             *pBlueOut++  = colorMapB[ind];
-							++pIn;								
+                            ++pIn;								
                         }                                                   
                     } else {                                      
                         for (i=0; i<imageSize; i++) {
@@ -230,7 +225,7 @@ void NDPluginColorConvert::convertColor(NDArray *pArray)
                             *pGreenOut++ = *pIn;
                             *pBlueOut++  = *pIn++;
                         }
-                    }                        
+                    }
                     changedColorMode = 1;
                     break;
                 default:
@@ -257,7 +252,7 @@ void NDPluginColorConvert::convertColor(NDArray *pArray)
                     dims[0] = 3;
                     dims[1] = rowSize;
                     dims[2] = numRows;
-                    // There is a problem: the uniqueId and timeStamp are not preserved! 
+                    // There is a problem: the uniqueId and timeStamp are not preserved!
                     pArrayOut = this->pNDArrayPool->alloc(3, dims, pArray->dataType, 0, NULL);
                     tmpDim = pArrayOut->dims[0];
                     this->pNDArrayPool->copy(pArray, pArrayOut, 0);
@@ -318,10 +313,10 @@ void NDPluginColorConvert::convertColor(NDArray *pArray)
             // loop over each pixel
             for(unsigned int ipixel=0; ipixel<imageSize; ipixel++) {
                 unsigned int x = ipixel % rowSize;
-                unsigned int y = ipixel / rowSize;
+                unsigned int y = (unsigned int)(ipixel / rowSize);
                 // x and y value used for determining pixel colour w.r.t. bayer pattern & offsets
-                unsigned int bx = x + pArray->dims[0].offset; // original x before offset
-                unsigned int by = y + pArray->dims[1].offset; // original y before offset
+                unsigned int bx = (unsigned int)(x + pArray->dims[0].offset); // original x before offset
+                unsigned int by = (unsigned int)(y + pArray->dims[1].offset); // original y before offset
                 // account for bayer pattern in x and y
                 // bayerPattern = {0:RGGB, 1:GBRG. 2:GRBG, 3:BGGR}
                 bx += int(bayerPattern>>1)&1; // first bit of bayer pattern enum
@@ -341,31 +336,31 @@ void NDPluginColorConvert::convertColor(NDArray *pArray)
                 p9 = pIn+rowSize+1; // below right of pixel
 
                 // coordinates from original image to get colour type
-                if (bx%2==0 && by%2==0) { rvalue = *pIn; whatcolour = red; }
-                else if (bx%2==1 && by%2==1) { bvalue = *pIn; whatcolour = blue; }
-                else if (bx%2 != by%2) { gvalue = *pIn; whatcolour = green; }
+                if (bx%2==0 && by%2==0) { rvalue = (unsigned int)*pIn; whatcolour = red; }
+                else if (bx%2==1 && by%2==1) { bvalue = (unsigned int)*pIn; whatcolour = blue; }
+                else if (bx%2 != by%2) { gvalue = (unsigned int)*pIn; whatcolour = green; }
 
                 // only interpolate pixels not touching a border
                 if (x>0 && x<rowSize-1 && y>0 && y<numRows-1) {
                     if (whatcolour == red) {
                         // if pixel is red
-                        bvalue = (*p1 + *p3 + *p7 + *p9) / 4;
-                        gvalue = (*p2 + *p4 + *p6 + *p8) / 4;
+                        bvalue = (unsigned int)(*p1 + *p3 + *p7 + *p9) / 4;
+                        gvalue = (unsigned int)(*p2 + *p4 + *p6 + *p8) / 4;
                     }
                     if (whatcolour == blue) {
                         // if pixel is blue
-                        rvalue = (*p1 + *p3 + *p7 + *p9) / 4;
-                        gvalue = (*p2 + *p4 + *p6 + *p8) / 4;
+                        rvalue = (unsigned int)(*p1 + *p3 + *p7 + *p9) / 4;
+                        gvalue = (unsigned int)(*p2 + *p4 + *p6 + *p8) / 4;
                     }
                     if (whatcolour == green && bx%2 == 1) {
                         // if pixel is green (next to red)
-                        rvalue = (*p4 + *p6) / 2;
-                        bvalue = (*p2 + *p8) / 2;
+                        rvalue = (unsigned int)(*p4 + *p6) / 2;
+                        bvalue = (unsigned int)(*p2 + *p8) / 2;
                     }
                     if (whatcolour == green && bx%2 == 0) {
                         // if pixel is green (next to blue)
-                        bvalue = (*p4 + *p6) / 2;
-                        rvalue = (*p2 + *p8) / 2;
+                        bvalue = (unsigned int)(*p4 + *p6) / 2;
+                        rvalue = (unsigned int)(*p2 + *p8) / 2;
                     }
                 }
 
@@ -478,7 +473,7 @@ void NDPluginColorConvert::convertColor(NDArray *pArray)
                     break;
                 default:
                     break;
-            }        
+            }
             break;
         case NDColorModeRGB2:
             if (pArray->ndims != 3) break;
@@ -551,7 +546,7 @@ void NDPluginColorConvert::convertColor(NDArray *pArray)
                     break;
                 default:
                     break;
-            }        
+            }
             break;
         case NDColorModeRGB3:
             if (pArray->ndims != 3) break;
@@ -634,7 +629,7 @@ void NDPluginColorConvert::convertColor(NDArray *pArray)
 
     // Do NDArray callbacks.  We don't need to copy the array or get the attributes
     NDPluginDriver::endProcessCallbacks(pArrayOut, false, false);
-    asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW, 
+    asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW,
               "%s:%s: pArray->colorMode=%d, colorModeOut=%d, pArrayOut=%p\n",
               driverName, functionName, colorMode, colorModeOut, pArrayOut);
 }
@@ -647,7 +642,7 @@ void NDPluginColorConvert::convertColor(NDArray *pArray)
   * being changed.  Does callbacks to all registered clients on the asynGenericPointer
   * interface with the output array.
   * \param[in] pArray  The NDArray from the callback.
-  */ 
+  */
 void NDPluginColorConvert::processCallbacks(NDArray *pArray)
 {
     /* This function converts the color mode.
@@ -655,13 +650,13 @@ void NDPluginColorConvert::processCallbacks(NDArray *pArray)
      * It is called with the mutex already locked.  It unlocks it during long calculations when private
      * structures don't need to be protected.
      */
-    
+
     static const char* functionName = "processCallbacks";
-         
+
     /* Call the base class method */
     NDPluginDriver::beginProcessCallbacks(pArray);
 
-    asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW, 
+    asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW,
               "%s:%s: dataType=%d\n",
               driverName, functionName, pArray->dataType);
 
@@ -697,21 +692,21 @@ void NDPluginColorConvert::processCallbacks(NDArray *pArray)
             this->convertColor<epicsFloat64>(pArray);
             break;
         default:
-            asynPrint(this->pasynUserSelf, ASYN_TRACE_ERROR, 
+            asynPrint(this->pasynUserSelf, ASYN_TRACE_ERROR,
                       "%s:%s: ERROR: unknown data type=%d\n",
                       driverName, functionName, pArray->dataType);
             break;
     }
-   
+
     callParamCallbacks();
 }
 
-
+
 /** Constructor for NDPluginColorConvert; most parameters are simply passed to NDPluginDriver::NDPluginDriver.
-  * After calling the base class constructor this method sets reasonable default values for all of the 
+  * After calling the base class constructor this method sets reasonable default values for all of the
   * ROI parameters.
   * \param[in] portName The name of the asyn port driver to be created.
-  * \param[in] queueSize The number of NDArrays that the input queue for this plugin can hold when 
+  * \param[in] queueSize The number of NDArrays that the input queue for this plugin can hold when
   *            NDPluginDriverBlockingCallbacks=0.  Larger queues can decrease the number of dropped arrays,
   *            at the expense of more NDArray buffers being allocated from the underlying driver's NDArrayPool.
   * \param[in] blockingCallbacks Initial setting for the NDPluginDriverBlockingCallbacks flag.
@@ -719,36 +714,36 @@ void NDPluginColorConvert::processCallbacks(NDArray *pArray)
   *            of the driver doing the callbacks.
   * \param[in] NDArrayPort Name of asyn port driver for initial source of NDArray callbacks.
   * \param[in] NDArrayAddr asyn port driver address for initial source of NDArray callbacks.
-  * \param[in] maxBuffers The maximum number of NDArray buffers that the NDArrayPool for this driver is 
+  * \param[in] maxBuffers The maximum number of NDArray buffers that the NDArrayPool for this driver is
   *            allowed to allocate. Set this to 0 to allow an unlimited number of buffers.
-  * \param[in] maxMemory The maximum amount of memory that the NDArrayPool for this driver is 
+  * \param[in] maxMemory The maximum amount of memory that the NDArrayPool for this driver is
   *            allowed to allocate. Set this to 0 to allow an unlimited amount of memory.
   * \param[in] priority The thread priority for the asyn port driver thread if ASYN_CANBLOCK is set in asynFlags.
   * \param[in] stackSize The stack size for the asyn port driver thread if ASYN_CANBLOCK is set in asynFlags.
   * \param[in] maxThreads The maximum number of threads this driver is allowed to use. If 0 then 1 will be used.
   */
-NDPluginColorConvert::NDPluginColorConvert(const char *portName, int queueSize, int blockingCallbacks, 
-                                           const char *NDArrayPort, int NDArrayAddr, 
+NDPluginColorConvert::NDPluginColorConvert(const char *portName, int queueSize, int blockingCallbacks,
+                                           const char *NDArrayPort, int NDArrayAddr,
                                            int maxBuffers, size_t maxMemory,
                                            int priority, int stackSize, int maxThreads)
     /* Invoke the base class constructor */
-    : NDPluginDriver(portName, queueSize, blockingCallbacks, 
+    : NDPluginDriver(portName, queueSize, blockingCallbacks,
                    NDArrayPort, NDArrayAddr, 1, maxBuffers, maxMemory,
-                   asynGenericPointerMask, 
+                   asynGenericPointerMask,
                    asynGenericPointerMask,
                    0, 1, priority, stackSize, maxThreads)  /* Not ASYN_CANBLOCK or ASYN_MULTIDEVICE, do autoConnect */
 {
     //static const char *functionName = "NDPluginColorConvert";
 
     createParam(NDPluginColorConvertColorModeOutString, asynParamInt32, &NDPluginColorConvertColorModeOut);
-    createParam(NDPluginColorConvertFalseColorString,   asynParamInt32, &NDPluginColorConvertFalseColor);    
+    createParam(NDPluginColorConvertFalseColorString,   asynParamInt32, &NDPluginColorConvertFalseColor);
 
-    /* Set the plugin type string */    
+    /* Set the plugin type string */
     setStringParam(NDPluginDriverPluginType, "NDPluginColorConvert");
-    
+
     setIntegerParam(NDPluginColorConvertColorModeOut, NDColorModeMono);
 
-    // Enable ArrayCallbacks.  
+    // Enable ArrayCallbacks.
     // This plugin currently ignores this setting and always does callbacks, so make the setting reflect the behavior
     setIntegerParam(NDArrayCallbacks, 1);
 
@@ -756,12 +751,12 @@ NDPluginColorConvert::NDPluginColorConvert(const char *portName, int queueSize, 
     connectToArrayPort();
 }
 
-extern "C" int NDColorConvertConfigure(const char *portName, int queueSize, int blockingCallbacks, 
-                                          const char *NDArrayPort, int NDArrayAddr, 
+extern "C" int NDColorConvertConfigure(const char *portName, int queueSize, int blockingCallbacks,
+                                          const char *NDArrayPort, int NDArrayAddr,
                                           int maxBuffers, size_t maxMemory,
                                           int priority, int stackSize, int maxThreads)
 {
-    NDPluginColorConvert *pPlugin = new NDPluginColorConvert(portName, queueSize, blockingCallbacks, NDArrayPort, NDArrayAddr, 
+    NDPluginColorConvert *pPlugin = new NDPluginColorConvert(portName, queueSize, blockingCallbacks, NDArrayPort, NDArrayAddr,
                                                              maxBuffers, maxMemory, priority, stackSize, maxThreads);
     return pPlugin->start();
 }
@@ -790,8 +785,8 @@ static const iocshArg * const initArgs[] = {&initArg0,
 static const iocshFuncDef initFuncDef = {"NDColorConvertConfigure",10,initArgs};
 static void initCallFunc(const iocshArgBuf *args)
 {
-    NDColorConvertConfigure(args[0].sval, args[1].ival, args[2].ival, 
-                               args[3].sval, args[4].ival, args[5].ival, 
+    NDColorConvertConfigure(args[0].sval, args[1].ival, args[2].ival,
+                               args[3].sval, args[4].ival, args[5].ival,
                                args[6].ival, args[7].ival, args[8].ival,
                                args[9].ival);
 }

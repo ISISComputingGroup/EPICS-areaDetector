@@ -1,0 +1,22 @@
+# Template for storing firmware for a single device from PCO_GetFirmwareInfo (PCO_SC2_Firmware_DESC structure)
+
+record(stringin, "$(P)$(R)DEVICE$(N):NAME") {
+    field(DESC, "Device name")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynOctetRead")
+    field(INP, "@asyn($(PORT),0)PCO_CAMDEV$(N):NAME")
+}
+
+record(longin, "$(P)$(R)DEVICE$(N):VARIANT") {
+    field(DESC, "Device variant")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynInt32")
+    field(INP, "@asyn($(PORT),0)PCO_CAMDEV$(N):VARIANT")
+}
+
+record(stringin, "$(P)$(R)DEVICE$(N):VERSION") {
+    field(DESC, "Device version")
+    field(SCAN, "I/O Intr")
+    field(DTYP, "asynOctetRead")
+    field(INP, "@asyn($(PORT),0)PCO_CAMDEV$(N):VERSION")
+}

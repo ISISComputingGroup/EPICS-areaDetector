@@ -65,30 +65,30 @@ template <typename epicsType> int simDetector::computeArray(int sizeX, int sizeY
         if ((noise != 0.) || (offset != 0)) {
             useBackground_ = true;
             if (noise == 0) {
-                for (i=0; i<arrayInfo_.nElements; i++) {
+                for (i=0; (size_t)i<arrayInfo_.nElements; i++) {
                     pBackgroundData[i] = offset;
                 }
             } else {
-                for (i=0; i<arrayInfo_.nElements; i++) {
+                for (i=0; (size_t)i<arrayInfo_.nElements; i++) {
                     pBackgroundData[i] = (epicsType)((noise * (rand() / (double)RAND_MAX)) + offset);
                 }
             }
-        } 
+        }
     }
-            
+
     if (useBackground_) {
         // Copy the pre-computed random noise array starting at a random location
         int backgroundStart = (int)((arrayInfo_.nElements) * (rand() / (double)RAND_MAX));
         int numCopy1 = (arrayInfo_.nElements - backgroundStart) * arrayInfo_.bytesPerElement;
         int numCopy2 = backgroundStart * arrayInfo_.bytesPerElement;
-        memcpy(pRawData, pBackgroundData + backgroundStart, numCopy1); 
-        memcpy(pRawData + arrayInfo_.nElements - backgroundStart, pBackgroundData, numCopy2); 
+        memcpy(pRawData, pBackgroundData + backgroundStart, numCopy1);
+        memcpy(pRawData + arrayInfo_.nElements - backgroundStart, pBackgroundData, numCopy2);
     } else {
         if (simMode != SimModeLinearRamp) {
             memset(pRawData, 0, arrayInfo_.totalBytes);
         }
     }
-             
+
     switch(simMode) {
         case SimModeLinearRamp:
             status = computeLinearRampArray<epicsType>(sizeX, sizeY);
@@ -128,14 +128,14 @@ template <typename epicsType> int simDetector::computeLinearRampArray(int sizeX,
     status = getDoubleParam (SimGainBlue,   &gainBlue);
     status = getIntegerParam(SimResetImage, &resetImage);
     status = getIntegerParam(NDColorMode,   &colorMode);
- 
+
     /* The intensity at each pixel[i,j] is:
      * (i * gainX + j* gainY) + imageCounter * gain */
     incMono  = (epicsType) (gain);
     incRed   = (epicsType) gainRed   * incMono;
     incGreen = (epicsType) gainGreen * incMono;
     incBlue  = (epicsType) gainBlue  * incMono;
-    
+
     if (useBackground_) {
         pData = pRampData;
     } else {
@@ -222,7 +222,7 @@ template <typename epicsType> int simDetector::computeLinearRampArray(int sizeX,
         }
     }
     if (useBackground_) {
-        for (i=0; i<arrayInfo_.nElements; i++) {
+        for (i=0; (size_t)i<arrayInfo_.nElements; i++) {
             pRawData[i] += pRampData[i];
         }
     }
@@ -351,7 +351,7 @@ template <typename epicsType> int simDetector::computeSineArray(int sizeX, int s
     epicsType *pMono=NULL, *pRed=NULL, *pGreen=NULL, *pBlue=NULL;
     int columnStep=0, rowStep=0, colorMode;
     int status = asynSuccess;
-    int xSineOperation, ySineOperation;   
+    int xSineOperation, ySineOperation;
     double exposureTime, gain, gainX, gainY, gainRed, gainGreen, gainBlue;
     double xSine1Amplitude, xSine1Frequency, xSine1Phase;
     double xSine2Amplitude, xSine2Frequency, xSine2Phase;
@@ -424,8 +424,8 @@ template <typename epicsType> int simDetector::computeSineArray(int sizeX, int s
       ySine2_ = (double *)calloc(sizeY, sizeof(double));
       xSineCounter_ = 0;
       ySineCounter_ = 0;
-    } 
-    
+    }
+
     for (i=0; i<sizeX; i++) {
         xTime = xSineCounter_++ * gainX / sizeX;
         xSine1_[i] = xSine1Amplitude * sin((xTime  * xSine1Frequency + xSine1Phase/360.) * 2. * M_PI);
@@ -435,8 +435,8 @@ template <typename epicsType> int simDetector::computeSineArray(int sizeX, int s
         yTime = ySineCounter_++ * gainY / sizeY;
         ySine1_[i] = ySine1Amplitude * sin((yTime  * ySine1Frequency + ySine1Phase/360.) * 2. * M_PI);
         ySine2_[i] = ySine2Amplitude * sin((yTime  * ySine2Frequency + ySine2Phase/360.) * 2. * M_PI);
-    }                             
-    
+    }
+
     if (colorMode == NDColorModeMono) {
         if (xSineOperation == SimSineOperationAdd) {
             for (i=0; i<sizeX; i++) {
@@ -539,14 +539,6 @@ int simDetector::computeImage()
                     driverName, functionName);
 
     /* Make sure parameters are consistent, fix them if they are not */
-    if (binX < 1) {
-        binX = 1;
-        status |= setIntegerParam(ADBinX, binX);
-    }
-    if (binY < 1) {
-        binY = 1;
-        status |= setIntegerParam(ADBinY, binY);
-    }
     if (minX < 0) {
         minX = 0;
         status |= setIntegerParam(ADMinX, minX);
@@ -563,12 +555,44 @@ int simDetector::computeImage()
         minY = maxSizeY-1;
         status |= setIntegerParam(ADMinY, minY);
     }
-    if (minX+sizeX > maxSizeX) {
+    if (sizeX < 1) {
+	sizeX = 1;
+        status |= setIntegerParam(ADSizeX, sizeX);
+    }
+    if (sizeY < 1) {
+	sizeY = 1;
+        status |= setIntegerParam(ADSizeY, sizeY);
+    }
+    if (sizeX > maxSizeX-minX) {
         sizeX = maxSizeX-minX;
         status |= setIntegerParam(ADSizeX, sizeX);
     }
-    if (minY+sizeY > maxSizeY) {
+    if (sizeY > maxSizeY-minY) {
         sizeY = maxSizeY-minY;
+        status |= setIntegerParam(ADSizeY, sizeY);
+    }
+    if (binX < 1) {
+        binX = 1;
+        status |= setIntegerParam(ADBinX, binX);
+    }
+    if (binY < 1) {
+        binY = 1;
+        status |= setIntegerParam(ADBinY, binY);
+    }
+    if (binX > sizeX) {
+	binX = sizeX;
+        status |= setIntegerParam(ADBinX, binX);
+    }
+    if (binY > sizeY) {
+	binY = sizeY;
+        status |= setIntegerParam(ADBinY, binY);
+    }
+    if (sizeX % binX != 0) {
+	sizeX = (sizeX / binX) * binX;
+        status |= setIntegerParam(ADSizeX, sizeX);
+    }
+    if (sizeY % binY != 0) {
+	sizeY = (sizeY / binY) * binY;
         status |= setIntegerParam(ADSizeY, sizeY);
     }
 
@@ -599,8 +623,11 @@ int simDetector::computeImage()
     }
 
     if (resetImage) {
-    /* Free the previous raw buffer */
+        /* Free the previous buffers */
         if (pRaw_) pRaw_->release();
+        if (pBackground_) pBackground_->release();
+        if (pRamp_) pRamp_->release();
+        if (pPeak_) pPeak_->release();
         /* Allocate the raw buffer we use to compute images. */
         dims[xDim] = maxSizeX;
         dims[yDim] = maxSizeY;
@@ -774,7 +801,7 @@ void simDetector::simTask()
 
         /* Close the shutter */
         setShutter(ADShutterClosed);
-        
+
         if (!acquire) continue;
 
         setIntegerParam(ADStatus, ADStatusReadout);
@@ -795,8 +822,7 @@ void simDetector::simTask()
 
         /* Put the frame number and time stamp into the buffer */
         pImage->uniqueId = imageCounter;
-        pImage->timeStamp = startTime.secPastEpoch + startTime.nsec / 1.e9;
-        updateTimeStamp(&pImage->epicsTS);
+        updateTimeStamps(pImage);
 
         /* Get any attributes that have been defined for this driver */
         this->getAttributes(pImage->pAttributeList);
@@ -817,7 +843,7 @@ void simDetector::simTask()
             setStringParam(ADStatusMessage, "Waiting for acquisition");
             setIntegerParam(ADStatus, ADStatusIdle);
             callParamCallbacks();
-  
+
             acquire = 0;
             setIntegerParam(ADAcquire, acquire);
             asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW,
@@ -856,7 +882,7 @@ void simDetector::simTask()
     }
 }
 
-
+
 /** Called when asyn clients call pasynInt32->write().
   * This function performs actions for some parameters, including ADAcquire, ADColorMode, etc.
   * For all parameters it sets the value in the parameter library and calls any registered callbacks..
@@ -885,11 +911,11 @@ asynStatus simDetector::writeInt32(asynUser *pasynUser, epicsInt32 value)
         } else {
           setIntegerParam(ADStatus, ADStatusAborted);
         }
-        setIntegerParam(ADStatus, ADStatusAcquire); 
+        setIntegerParam(ADStatus, ADStatusAcquire);
       }
     }
     callParamCallbacks();
- 
+
     /* Set the parameter and readback in the parameter library.  This may be overwritten when we read back the
      * status at the end, but that's OK */
     status = setIntegerParam(function, value);
@@ -899,14 +925,14 @@ asynStatus simDetector::writeInt32(asynUser *pasynUser, epicsInt32 value)
         if (value && !acquiring) {
             /* Send an event to wake up the simulation task.
              * It won't actually start generating new images until we release the lock below */
-            epicsEventSignal(startEventId_); 
+            epicsEventSignal(startEventId_);
         }
         if (!value && acquiring) {
             /* This was a command to stop acquisition */
             /* Send the stop event */
-            epicsEventSignal(stopEventId_); 
+            epicsEventSignal(stopEventId_);
         }
-    } else if ((function == NDDataType) || 
+    } else if ((function == NDDataType) ||
                (function == NDColorMode) ||
                (function == SimMode) ||
                ((function >= SimPeakStartX) && (function <= SimPeakStepY))) {  // This assumes order in simDetector.h!
@@ -966,7 +992,7 @@ asynStatus simDetector::writeFloat64(asynUser *pasynUser, epicsFloat64 value)
     return status;
 }
 
-
+
 /** Report status of the driver.
   * Prints details about the driver if details>0.
   * It then calls the ADDriver::report() method.
@@ -1010,8 +1036,7 @@ simDetector::simDetector(const char *portName, int maxSizeX, int maxSizeY, NDDat
                0, 0, /* No interfaces beyond those set in ADDriver.cpp */
                0, 1, /* ASYN_CANBLOCK=0, ASYN_MULTIDEVICE=0, autoConnect=1 */
                priority, stackSize),
-      pRaw_(NULL), xSine1_(0), xSine2_(0), ySine1_(0), ySine2_(0)
-
+      pRaw_(NULL), pBackground_(NULL), pRamp_(NULL), pPeak_(NULL), xSine1_(0), xSine2_(0), ySine1_(0), ySine2_(0)
 {
     int status = asynSuccess;
     char versionString[20];
@@ -1067,7 +1092,7 @@ simDetector::simDetector(const char *portName, int maxSizeX, int maxSizeY, NDDat
     /* Set some default values for parameters */
     status =  setStringParam (ADManufacturer, "Simulated detector");
     status |= setStringParam (ADModel, "Basic simulator");
-    epicsSnprintf(versionString, sizeof(versionString), "%d.%d.%d", 
+    epicsSnprintf(versionString, sizeof(versionString), "%d.%d.%d",
                   DRIVER_VERSION, DRIVER_REVISION, DRIVER_MODIFICATION);
     setStringParam(NDDriverVersion, versionString);
     setStringParam(ADSDKVersion, versionString);
@@ -1113,6 +1138,11 @@ simDetector::simDetector(const char *portName, int maxSizeX, int maxSizeY, NDDat
         return;
     }
 
+    // Test setting the device connected to false.  
+    // Real drivers should do this if they fail to connect to the hardware
+    //this->deviceIsConnected = false;
+    //this->disconnect(pasynUserSelf);
+
     /* Create the thread that updates the images */
     status = (epicsThreadCreate("SimDetTask",
                                 epicsThreadPriorityMedium,
@@ -1132,7 +1162,7 @@ extern "C" int simDetectorConfig(const char *portName, int maxSizeX, int maxSize
 {
     new simDetector(portName, maxSizeX, maxSizeY, (NDDataType_t)dataType,
                     (maxBuffers < 0) ? 0 : maxBuffers,
-                    (maxMemory < 0) ? 0 : maxMemory, 
+                    (maxMemory < 0) ? 0 : maxMemory,
                     priority, stackSize);
     return(asynSuccess);
 }

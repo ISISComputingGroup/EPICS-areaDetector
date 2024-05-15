@@ -38,7 +38,7 @@ using namespace std;
 #include "ADVimba.h"
 
 #define DRIVER_VERSION      1
-#define DRIVER_REVISION     0
+#define DRIVER_REVISION     4
 #define DRIVER_MODIFICATION 0
 
 static const char *driverName = "ADVimba";
@@ -55,16 +55,6 @@ typedef enum {
     VMBPixelConvertRGB8,
     VMBPixelConvertRGB16
 } VMBPixelConvert_t;
-
-
-/*
-static const char *gigEPropertyTypeStrings[NUM_GIGE_PROPERTIES] = {
-    "Heartbeat",
-    "HeartbeatTimeout",
-    "PacketSize",
-    "PacketDelay"
-};
-*/
 
 typedef enum {
     TimeStampCamera,
@@ -98,14 +88,6 @@ void ADVimbaFrameObserver::FrameReceived(const FramePtr pFrame) {
  * function instanciates one object from the ADVimba class.
  * \param[in] portName asyn port name to assign to the camera.
  * \param[in] cameraId The camera index or serial number; <1000 is assumed to be index, >=1000 is assumed to be serial number.
- * \param[in] traceMask The initial value of the asynTraceMask.  
- *            If set to 0 or 1 then asynTraceMask will be set to ASYN_TRACE_ERROR.
- *            If set to 0x21 (ASYN_TRACE_WARNING | ASYN_TRACE_ERROR) then each call to the
- *            FlyCap2 library will be traced including during initialization.
- * \param[in] memoryChannel  The camera memory channel (non-volatile memory containing camera parameters) 
- *            to load during initialization.  If 0 no memory channel is loaded.
- *            If >=1 thenRestoreFromMemoryChannel(memoryChannel-1) is called.  
- *            Set memoryChannel to 1 to work around a bug in the Linux GigE driver in R2.0.
  * \param[in] maxMemory Maximum memory (in bytes) that this driver is allowed to allocate. So if max. size = 1024x768 (8bpp)
  *            and maxBuffers is, say 14. maxMemory = 1024x768x14 = 11010048 bytes (~11MB). 0=unlimited.
  * \param[in] priority The EPICS thread priority for this driver.  0=use asyn default.
@@ -136,14 +118,6 @@ static void imageGrabTaskC(void *drvPvt)
 /** Constructor for the ADVimba class
  * \param[in] portName asyn port name to assign to the camera.
  * \param[in] cameraId The camera index or serial number; <1000 is assumed to be index, >=1000 is assumed to be serial number.
- * \param[in] traceMask The initial value of the asynTraceMask.  
- *            If set to 0 or 1 then asynTraceMask will be set to ASYN_TRACE_ERROR.
- *            If set to 0x21 (ASYN_TRACE_WARNING | ASYN_TRACE_ERROR) then each call to the
- *            FlyCap2 library will be traced including during initialization.
- * \param[in] memoryChannel  The camera memory channel (non-volatile memory containing camera parameters) 
- *            to load during initialization.  If 0 no memory channel is loaded.
- *            If >=1 thenRestoreFromMemoryChannel(memoryChannel-1) is called.  
- *            Set memoryChannel to 1 to work around a bug in the Linux GigE driver in R2.0.
  * \param[in] maxMemory Maximum memory (in bytes) that this driver is allowed to allocate. So if max. size = 1024x768 (8bpp)
  *            and maxBuffers is, say 14. maxMemory = 1024x768x14 = 11010048 bytes (~11MB). 0=unlimited.
  * \param[in] priority The EPICS thread priority for this driver.  0=use asyn default.
@@ -178,6 +152,11 @@ ADVimba::ADVimba(const char *portName, const char *cameraId,
         asynPrint(pasynUserSelf, ASYN_TRACE_ERROR,
             "%s:%s:  camera connection failed (%d)\n",
             driverName, functionName, status);
+        // Mark camera unreachable
+        this->deviceIsReachable = false;
+        this->disconnect(pasynUserSelf);
+        setIntegerParam(ADStatus, ADStatusDisconnected);
+        setStringParam(ADStatusMessage, "Camera disconnected");
         // Call report() to get a list of available cameras
         report(stdout, 1);
         return;
@@ -199,15 +178,14 @@ ADVimba::ADVimba(const char *portName, const char *cameraId,
     startEventId_ = epicsEventCreate(epicsEventEmpty);
     newFrameEventId_ = epicsEventCreate(epicsEventEmpty);
 
-    statusFeatureNames_.push_back("StatFrameDelivered");
-    statusFeatureNames_.push_back("StatFrameDropped");
-    statusFeatureNames_.push_back("StatFrameUnderrun");
-    statusFeatureNames_.push_back("StatPacketErrors");
-    statusFeatureNames_.push_back("StatPacketMissed");
-    statusFeatureNames_.push_back("StatPacketReceived");
-    statusFeatureNames_.push_back("StatPacketRequested");
-    statusFeatureNames_.push_back("StatPacketResent");
-    statusFeatureNames_.push_back("DeviceTemperature");
+    TLStatisticsFeatureNames_.push_back("StatFrameDelivered");
+    TLStatisticsFeatureNames_.push_back("StatFrameDropped");
+    TLStatisticsFeatureNames_.push_back("StatFrameUnderrun");
+    TLStatisticsFeatureNames_.push_back("StatPacketErrors");
+    TLStatisticsFeatureNames_.push_back("StatPacketMissed");
+    TLStatisticsFeatureNames_.push_back("StatPacketReceived");
+    TLStatisticsFeatureNames_.push_back("StatPacketRequested");
+    TLStatisticsFeatureNames_.push_back("StatPacketResent");
 
     // launch image read task
     epicsThreadCreate("VimbaImageTask", 
@@ -258,7 +236,20 @@ asynStatus ADVimba::connectCamera(void)
                    "VimbaSystem::OpenCameraByID")) {
         asynPrint(pasynUserSelf, ASYN_TRACE_ERROR, 
             "%s::%s error opening camera %s\n", driverName, functionName, cameraId_);
+       return asynError;
     }
+    // Set the GeV packet size to the highest value that works
+    FeaturePtr pFeature;
+    bool done;
+    VmbInterfaceType interfaceType;
+    pCamera_->GetInterfaceType(interfaceType);
+    if (interfaceType != VmbInterfaceEthernet) goto finished;
+    if (pCamera_->GetFeatureByName("GVSPAdjustPacketSize", pFeature) != VmbErrorSuccess) goto finished;
+    if (pFeature->RunCommand() != VmbErrorSuccess) goto finished;
+    do {
+       if (pFeature->IsCommandDone(done) != VmbErrorSuccess) goto finished;
+    } while (!done);
+    finished:
     return asynSuccess;
 }
 
@@ -308,9 +299,9 @@ void ADVimba::imageGrabTask()
 
         // Wait for event saying image has been collected
         unlock();
-        epicsEventStatus waitStatus = epicsEventWaitWithTimeout(newFrameEventId_, 0.1);
+        epicsEventWaitStatus waitStatus = epicsEventWaitWithTimeout(newFrameEventId_, 0.1);
         lock();
-        if (waitStatus == epicsEventOK) {
+        if (waitStatus == epicsEventWaitOK) {
             getIntegerParam(ADNumImages, &numImages);
             getIntegerParam(ADNumImagesCounter, &numImagesCounter);
             getIntegerParam(ADImageMode, &imageMode);
@@ -558,6 +549,12 @@ asynStatus ADVimba::processFrame(FramePtr pFrame)
     }
 
     done:
+
+    for (size_t i=0; i<TLStatisticsFeatureNames_.size(); i++) {
+         GenICamFeature *pFeature = mGCFeatureSet.getByName(TLStatisticsFeatureNames_[i]);
+         if (pFeature) pFeature->read(0, true);
+    }
+
     callParamCallbacks();
     // Release the NDArray buffer now that we are done with it.
     // After the callback just above we don't need it anymore
@@ -626,27 +623,6 @@ asynStatus ADVimba::stopCapture()
 }
 
 
-asynStatus ADVimba::readStatus()
-{
-    GenICamFeature *pFeature;
-    unsigned i;
-    //static const char *functionName = "readStatus";
-
-    if (exiting_) return asynSuccess;
-
-    // If acquiring then just read a small set of status features, else read all features
-    if (acquiring_) {
-        for (i=0; i<statusFeatureNames_.size(); i++) {
-            pFeature = mGCFeatureSet.getByName(statusFeatureNames_[i]);
-            if (pFeature) pFeature->read(0, true);
-        }
-    }
-    else {
-        ADGenICam::readStatus();
-    }
-    return asynSuccess;
-}
-
 void ADVimba::report(FILE *fp, int details)
 {
     int numCameras;
@@ -659,6 +635,7 @@ void ADVimba::report(FILE *fp, int details)
     fprintf(fp, "\nNumber of cameras detected: %d\n", numCameras);
     if (details > 1) {
         CameraPtr pCamera;
+        VmbInterfaceType interfaceType;
         for (i=0; i<numCameras; i++) {
             pCamera = cameras[i];
             fprintf(fp, "Camera %d\n", i);
@@ -671,8 +648,8 @@ void ADVimba::report(FILE *fp, int details)
             fprintf(fp, "        Serial #: %s\n", str.c_str());
             pCamera->GetInterfaceID(str);
             fprintf(fp, "    Interface ID: %s\n", str.c_str());
-            //pCamera->GetInterfaceType(str);
-            //fprintf(fp, "  Interface type: %s\n", str.c_str());
+            pCamera->GetInterfaceType(interfaceType);
+            fprintf(fp, "  Interface type: %d\n", interfaceType);
         }
     }
     

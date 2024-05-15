@@ -38,7 +38,7 @@ PROJECT_NAME           = areaDetector
 # could be handy for archiving the generated documentation or if some version
 # control system is used.
 
-PROJECT_NUMBER         = 3-8-0
+PROJECT_NUMBER         = 3-12-1
 
 # Using the PROJECT_BRIEF tag one can provide an optional one line description
 # for a project that appears at the top of each page and should give viewer a
@@ -58,7 +58,7 @@ PROJECT_LOGO           =
 # entered, it will be relative to the location where doxygen was started. If
 # left blank the current directory will be used.
 
-OUTPUT_DIRECTORY       = ./doxy_output
+OUTPUT_DIRECTORY       = _build/html
 
 # If the CREATE_SUBDIRS tag is set to YES then doxygen will create 4096 sub-
 # directories (in 2 levels) under the output directory of each output format and
@@ -816,36 +816,38 @@ WARN_LOGFILE           =
 INPUT                  = ../ADCore/ADApp/ADSrc \
                          ../ADCore/ADApp/pluginSrc \
                          ../ADCore/ADApp/ntndArrayConverterSrc \
-                         ../ADFastCCD/FastCCDApp/src \
-                         ../ADProsilica/prosilicaApp/src \
-                         ../ADSimDetector/simDetectorApp/src \
                          ../ADADSC/adscApp/src \
                          ../ADAndor/andorApp/src \
                          ../ADAndor3/andor3App/src \
+                         ../ADAravis/aravisApp/src \
                          ../ADBruker/brukerApp/src \
-                         ../ADCameraLink/cameralinkApp/src \
                          ../ADCSimDetector/ADCSimDetectorApp/src \
                          ../ADDexela/dexelaApp/src \
                          ../ADEiger/eigerApp/src \
                          ../ADFastCCD/FastCCDApp/src \
                          ../ADFireWireWin/firewireWinApp/src \
+                         ../ADGenICam/GenICamApp/src \
                          ../ADLambda/LambdaApp/src \
                          ../ADLightField/lightFieldApp/src \
-                         ../ADMerlin/medipixApp/src \
+                         ../ADMerlin/merlinApp/src \
                          ../ADMythen/mythenApp/src \
+                         ../ADPCO/pcoApp/src \
                          ../ADPICam/PICamApp/src \
                          ../ADPSL/pslApp/src \
-                         ../ADPCO/pcoApp/src \
                          ../ADPerkinElmer/perkinElmerApp/src \
                          ../ADPhotonII/PhotonIIApp/src \
                          ../ADPilatus/pilatusApp/src \
                          ../ADPixirad/pixiradApp/src \
                          ../ADPluginEdge/edgeApp/edgeSrc \
                          ../ADPointGrey/pointGreyApp/src \
+                         ../ADProsilica/prosilicaApp/src \
                          ../ADPvCam/pvcamApp/src \
+                         ../ADPylon/pylonApp/src \
                          ../ADQImaging/Support \
                          ../ADQImaging/App/src \
+                         ../ADRIXSCam/rixscamApp/src \
                          ../ADRoper/roperApp/src \
+                         ../ADSimDetector/simDetectorApp/src \
                          ../ADSpinnaker/spinnakerApp/src \
                          ../ADURL/urlApp/src \
                          ../ADVimba/vimbaApp/src \
@@ -854,10 +856,16 @@ INPUT                  = ../ADCore/ADApp/ADSrc \
                          ../ADnED/ADnEDApp/src \
                          ../aravisGigE/aravisGigEApp/src \
                          ../ffmpegServer/ffmpegServerApp/src \
-                         ../ffmpegViewer/ffmpegViewer/ \
                          ../firewireDCAM/firewireDCAMApp/src \
                          ../NDDriverStdArrays/NDDriverStdArraysApp/src \
-                         ../pvaDriver/pvaDriverApp/src
+                         ../pvaDriver/pvaDriverApp/src \
+                         ../specsAnalyser/specsAnalyserApp/src
+
+# These are left out because they don't have useful Doxygen comments and generate many errors
+#                         ../ADCameraLink/cameralinkApp/src \
+#                         ../ADPcoWin/pcowinApp/src \
+#                         ../ADPluginBar/barApp/barSrc \
+#                         ../ffmpegViewer/ffmpegViewer/ \
 
 # This tag can be used to specify the character encoding of the source files
 # that doxygen parses. Internally doxygen uses the UTF-8 encoding. Doxygen uses
@@ -949,7 +957,8 @@ EXCLUDE_PATTERNS       = */CDocFile40.h \
                          */CWinx32App20.h \
                          */tiny* \
                          */1394*.h \
-                         */stdafx.h
+                         */stdafx.h \
+                         */json.hpp
 
 # The EXCLUDE_SYMBOLS tag can be used to specify one or more symbol names
 # (namespaces, classes, functions, etc.) that should be excluded from the
@@ -1171,7 +1180,7 @@ GENERATE_HTML          = YES
 # The default directory is: html.
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
-HTML_OUTPUT            = html
+HTML_OUTPUT            = areaDetectorDoxygenHTML
 
 # The HTML_FILE_EXTENSION tag can be used to specify the file extension for each
 # generated HTML page (for example: .htm, .php, .asp).

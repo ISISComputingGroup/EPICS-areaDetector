@@ -5,12 +5,163 @@ The latest untagged master branch can be obtained at
 https://github.com/areaDetector/ADEiger.
 
 Tagged source code can be obtained at
-https://github.com/areaDetector/ADEiger/releases.
+https://github.com/areaDetector/ADEiger/tags
 
 Release Notes
 =============
+R3-5 (July XXX, 2022)
+----
+* Increased the number of retries from 1 to 2 when waiting for the FileWriter interface to receive a
+  file after acquisition completes.
+  This fixed the problem for the Eiger2 16M with 1 second acquisition time.
+* Restored logic that sets NumImages=1 when selecting Internal Enable or External Enable trigger mode.
+  This logic was accidentally removed when adding support for Continuous trigger mode.
+* Fix to only create and access High Voltage parameters on Eiger2.
+  This fixes error messages when creating the detector object on Eiger detectors.
 
-R2-7 (January XXX, 2018)
+R3-4 (June 10, 2022)
+----
+* Added a new Continuous mode choice for TriggerMode.  In Continuous mode acquisition continues
+  indefinitely once it is started, until the Acquire record is set to 0 (Done).
+  If NumImages=1 and NumTriggers=1 then acquisition is rather slow, about 1 Hz,
+  because of the overhead in the detector server.  However, if NumImages or NumTriggers
+  is greater than 1 then it will collect NumImages*NumTriggers images quickly, and then have 
+  about a 1 second delay before collecting the next set.
+* Fixed a problem where the AcquireTime, AcquirePeriod, and ThresholdEnergy would not have the
+  previous values when the IOC restarted.  This is because these can be set automatically when
+  other parameters are changed, and so the readback values did not match the drive values.
+  Added the asyn:READBACK info tag to these records so the drive values update when the
+  readbacks are changed.  The correct values are now saved with autosave.
+
+R3-3 (May 10, 2022)
+----
+* Fixed a problem with the Stream interface when stopping series acquisitions.
+  - The problem was introduced in R3-1 when the ZMQ socket was no longer closed
+    and re-opened for each acquisition.  
+  - When stopping an acquisition series the streamTask could exit before all messages
+    had been read from the ZMQ socket.  
+  - When the next acquisition started it read stale messages from the socket.
+    The only way to recover was to restart the IOC.
+  - Now the streamTask does not exit when it detects that acquisition has been stopped.
+    It relies on the fact that the Eiger server will always send an end frame when
+    acquisition has been aborted.
+  - This seems to work fine in testing Eiger 500K, and Eiger2 500K, 1M, and 9M.  
+  - If it proves not to be reliable there is commented out code in streamTask that
+    will close and reopen the ZMQ socket and exit the thread when acquisition is aborted.
+
+R3-2 (January 22, 2022)
+----
+* Improved the R3-1 fix for the race condition with the Stream interface.
+  In R3-1 the ZMQ socket was always created, whether or not DataSource was set to Stream.
+  This introduced a problem for users who want to use ADEiger to control the detector,
+  but use another ZMQ client to receive the data.
+  It caused the other client to only receive every other ZMQ message.
+  Now the ZMQ socket is only created when DataSource is set to Stream, and it is
+  deleted when DataSource is set to anything except Stream.  This allows use of other ZMQ clients.
+* Changed FWFree_RBV from asynInt32 to asynFloat64 interface.  The previous version had 2 problems:
+  - There was integer overflow if the free disk space exceeded 2^32.
+  - The scaling from device units to GB was done in the record with a fixed value of the ASLO field.
+    This does not work because the device units are kilobytes for the 1.6.0 API, but bytes for the 1.8.0 API.
+    The conversion to GB is now done in the driver, because it knows which API is in use.
+* The FileWriter interface can now handle HDF5 files compressed with the bslz4 codec.
+  Previously it was an error to set DataSource=FileWriter, FWCompression=Enabled, and CompressionAlgo=bslz4.
+  This was because ADEiger did not know how to decompress such HDF5 files.
+  However, the required decompressor is actually built as part of ADSupport, if it is built with HDF_EXTERNAL=NO.
+  Now if the files are encoded with bslz4 then the environment variable HDF5_PLUGIN_PATH must be set to find 
+  the decompression libraries. This is typically ADSupport/lib/linux-x86_64 or ADSupport/bin/windows-x64.
+  The HDF5 library will then decompress the HDF5 file correctly using those libraries.
+* Changed WavelengthEps_RBV and EnergyEps_RBV to have SCAN=I/O Intr and remove PINI=YES and FLNK from
+  the ao records.  The previous version gave warnings at iocInit.
+
+R3-1 (November 18, 2021)
+----
+* Fixed a race condition with the Stream interface.
+  - The detector sends the first message over the ZMQ socket as soon as the "arm" command is sent when starting acquisition.
+  - However, the driver was not creating the ZMQ socket to receive those messages until after the "arm" command was sent.
+    This was a race condition.  It was failing on an Eiger2 at APS sector 34.
+  - This release creates the ZMQ socket before acquisition begins.
+* Added "epsilon" PVs EnergyEps and WavelengthEps. Thanks to Bruno Martins for this.
+  - These are used to prevent minute or accidental changes to Energy and Wavelength from taking
+    too long to be applied.  Their values are now only updated if the difference between the
+    desired and current value is greater than some configurable parameters. Specifically,
+    changes in Wavelength only take effect if they result in a difference greater than
+    WavelengthEps (default: 0.0005 Angstroms). Similarly, changes to PhotonEnergy, Threshold
+    and Threshold2 only take effect if they are greater than EnergyEps (default: 0.05 eV).
+* Improved the error diagnostic messages in the Stream API.
+
+R3-0 (June 25, 2021)
+----
+* Added support for Eiger2 detectors.
+  These use a different version of the Simplon API (1.8.0) from most Eiger1 detectors which use 1.6.0.
+  However, some Eiger1 detectors do use the 1.8.0 Simplon API.
+  The Eiger2 detectors also have new features such as 2 energy thresholds rather than just 1.
+  * The driver automatically detects which version of the API is in use (1.8.0 or 1.6.0) and what Eiger
+    model is being used (Eiger1 or Eiger2).
+  * The startup script loads either the eiger1.template or eiger2.template database file.
+    Both of these load eigerBase.template, which contains the records that are common to both models.
+  * The iocBoot/iocEiger directory has been renamed to iocEiger1 and is configured for an Eiger1 detector.
+  * The new iocBoot/iocEiger2 directory is configured for an Eiger2 detector.
+  * The following records have been added for both Eiger models:
+    - CountrateCorrApplied (enable/disable the countrate correction)
+    - PixelMaskApplied (enable/disable the pixel mask)
+    - BitDepthImage_RBV (Bit depth for images on the Stream interface)
+    - Initialize (initializes the server)
+    - AutoSummation (enable/disable autosummation)
+  * The following records are present only on the Eiger1:
+    - FWClear (erase all files on the server)
+    - Link0_RBV, Link1_RBV, Link2_RBV, Link3_RBV (status of the detector links)
+    - DCUBufferFree_RBV (number of free buffers on the server)
+  * The following records are present only on the Eiger2:
+    - CountingMode (sets the counting mode to "normal" or "retrigger")
+    - TriggerStartDelay (sets the delay time after a trigger is received)
+    - Threshold1Enable (enables the first threshold)
+    - Threshold2Energy (energy of the second threshold)
+    - Threshold2Enable (enables the second threshold)
+    - ThresholdDiffEnable (enables calculation of difference image, threshold1-threshold2)
+    - HVResetTime (set the time that the high voltage is off when HVReset is executed)
+    - HVReset (resets the high voltage.  Meant for use with CdTe models)
+    - HVState (the current state of the high voltage)
+    - CompressionAlgo has an additional choice, "None", which sends uncompressed arrays over the Stream interface.
+      The stream interface now supports uncompressed arrays.
+  * The following records are supported in new Eiger2 firmware that will be released in early 2021, but
+    is currently available for testing.  The records are present in ADBase.template or eiger2.template but
+    a flag must be set in the driver to enable the logic for them.
+    - TriggerMode has an additional option, ExternalGate.
+    - ExtGateMode (selects "Pump & Probe" or "HDR" for high dynamic range)
+    - NumExposures (selects the number of exposures per image)
+  * Created new top-level medm screen, eiger2Detector.adl, and also the auto-converted OPI screens.
+  * Created new eiger1_settings.req and eiger2_settings.req for autosave.
+    These both load eigerBase_settings.req for records common to both models.
+* Added support for frames with UInt8 datatype.  At very high frame rates the Eiger sends 8-bit data,
+  but the driver was not handling this, and would crash.
+* Fixed an issue with acquisition not stopping automatically when TriggerMode=External Series or External Enable.
+  - Previously it was necessary to manually set Acquire=0 to stop acquisition in these modes.
+  - Now acquisition will automatically stop when the value of NumImagesCounter_RBV equals the expected
+    number of images to be collected, which is NumTriggers_RBV * NumImages_RBV.
+    This mechanism has been tested in both External Series and External Enable mode, with DataSource=Stream or
+    DataSource=FileWriter.  It will not work with DataSource=None because then there is nothing updating
+    NumImagesCounter_RBV.  In that case manually setting Acquire=0 is still necessary.
+* The PREC fields for a number of records with units of time were decreased, and the OPI screens were
+  changed to use exponential notation, which is easier to read and modify.
+* The enum choices for records that enable/disable a feature were not consistent.
+  Some used Enable/Disable (which is the standard in ADCore), some used Enabled/Disabled, and some used Yes/No.
+  Changed so all records now use Enable/Disable.  
+  Set the disabled (0) state to have NO_ALARM and the enabled state to have MINOR alarm.
+  OPI screens now use alarm color mode, which makes it easier to see the state at a glance.
+  The numeric values associated with the logical states have not changed, 0=Disable, 1=Enable. 
+  NOTE: This may break backwards compatibility with clients if they use the strings rather than
+  the numeric value to set the state.
+* Added additional records to the OPI screens that were already present in the template files:
+  - FileOwner, FileOwnerGrp, FilePerms
+  - DeadTime_RBV
+  - StreamHdrDetail
+* Fixed a problem that occurs with 2020.2.2 firmware on the Eiger2.  
+  Changing the TriggerMode to Internal Enable ("inte") or External Enable ("exte") fails if NumImages is not 1.
+  The driver was changed to set NumImages=1 just before changing TriggerMode to either of these values.
+* Improved the layout of eigerDetector.adl, with new widgets and new sub-screens,
+  some of which are common to the Eiger2 and some specific to the Eiger1.
+
+R2-7 (December 22, 2020)
 ----
 * Added support for decompressing bitshuffle/lz4 compressed files on the Stream interface.
   Previously it could only decompress lz4 without bitshuffle.
@@ -21,7 +172,7 @@ R2-7 (January XXX, 2018)
   * If StreamDecompress=Yes (default), then the NDArrays received by plugins are decompressed. This was the previous behavior.
   * If StreamDecompress=No then the NDArrays received by plugins are compressed,
     with the .codec and .compressedSize fields set appropriately. This mode can be useful for passing
-    compressed arrays directly to NDPluginPva (and then to ImageJ) and to NDFileHDF5 once that supports DirectChunkWrite.
+    compressed arrays directly to NDPluginPva (and then to ImageJ) and to NDFileHDF5 since that supports DirectChunkWrite.
   * Other plugins that do not support compressed arrays will need to get their data from an NDPluginCodec plugin
     that is configured to decompress the NDArrays from ADEiger.
     This configuration has the advantage that the decompression is offloaded from the driver, and hence can use 

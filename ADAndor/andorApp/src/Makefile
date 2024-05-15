@@ -29,6 +29,11 @@ endif
 
 include $(ADCORE)/ADApp/commonLibraryMakefile
 
+PROD_IOC_Linux += linuxTest
+PROD_IOC_Linux += FKTest
+PROD_IOC_Linux += accumTest
+PROD_SYS_LIBS += andor
+
 #=============================
 
 include $(TOP)/configure/RULES
