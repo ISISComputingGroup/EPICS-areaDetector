@@ -3,12 +3,13 @@
 
 #include <string>
 #include <hdf5.h>
+#include <NDPluginAPI.h>
 #include "NDPluginFile.h"
 #include "NDFileHDF5VersionCheck.h"
 
 /** Class used for writing a Dataset with the NDFileHDF5 plugin.
   */
-class NDFileHDF5Dataset
+class NDPLUGIN_API NDFileHDF5Dataset
 {
   public:
     NDFileHDF5Dataset(asynUser *pAsynUser, const std::string& name, hid_t dataset);
@@ -32,8 +33,7 @@ class NDFileHDF5Dataset
     asynUser    *pAsynUser_;   // Pointer to the asynUser structure
     std::string name_;         // Name of this dataset
     hid_t       dataset_;      // Dataset handle
-    int         nextRecord_; 
-    int         arrayDims[ND_ARRAY_MAX_DIMS];
+    int         nextRecord_;
     bool        multiFrame_;   // Whether this is a multi frame dataset
     int         rank_;         // number of dimensions
     int         extra_rank_;   // number of extra dimensions
@@ -45,8 +45,6 @@ class NDFileHDF5Dataset
     hsize_t     *virtualdims_; // The desired sizes of the extra (virtual) dimensions: {Y, X, n}
     hsize_t     *virtualchunkdims_;   // The chunk sizes of the extra (virtual) dimensions: {Y, X, n}
     Codec_t codec;             // Definition of codec used to compress the data.
-    char        *ptrDimensionNames[ND_ARRAY_MAX_DIMS]; // Array of strings with human readable names for each dimension
-    char        *dimsreport_;  // A string which contain a verbose report of all dimension sizes. The method getDimsReport fill in this
 };
 
 

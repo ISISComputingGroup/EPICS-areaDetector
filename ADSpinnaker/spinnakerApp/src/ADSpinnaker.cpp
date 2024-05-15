@@ -41,7 +41,7 @@ using namespace std;
 #include "ADSpinnaker.h"
 
 #define DRIVER_VERSION      3
-#define DRIVER_REVISION     4
+#define DRIVER_REVISION     5
 #define DRIVER_MODIFICATION 0
 
 static const char *driverName = "ADSpinnaker";
@@ -131,7 +131,7 @@ ADSpinnaker::ADSpinnaker(const char *portName, int cameraId, int numSPBuffers,
     //pasynTrace->setTraceMask(pasynUserSelf, ASYN_TRACE_ERROR | ASYN_TRACE_WARNING | ASYN_TRACEIO_DRIVER);
     
     if (numSPBuffers_ == 0) numSPBuffers_ = 100;
-    if (numSPBuffers_ < 10) numSPBuffers_ = 10;
+    //if (numSPBuffers_ < 10) numSPBuffers_ = 10;
 
     // shutdown on exit
     epicsAtExit(c_shutdown, this);
@@ -207,7 +207,7 @@ ADSpinnaker::ADSpinnaker(const char *portName, int cameraId, int numSPBuffers,
 
     startEventId_ = epicsEventCreate(epicsEventEmpty);
 
-    // launch image read taskp
+    // launch image read task
     epicsThreadCreate("ADSpinnakerImageTask", 
                       epicsThreadPriorityMedium,
                       epicsThreadGetStackSize(epicsThreadStackMedium),
@@ -515,6 +515,7 @@ asynStatus ADSpinnaker::grabImage()
     PixelFormatEnums pixelFormat;
     int pixelSize;
     size_t dataSize, dataSizePG;
+    int acquiring;
     void *pData;
     int nDims;
     ImagePtr pImage;
@@ -553,6 +554,18 @@ asynStatus ADSpinnaker::grabImage()
             pImage->Release();
             return asynError;
         }
+        // There is a problem on Windows in SDK 4.0.
+        // If acquisition has stopped we can receive an image,
+        // but when we try to read the data we get an access violation
+        // Prevent that by ignoring this image.
+        getIntegerParam(ADAcquire, &acquiring);
+        if (!acquiring) {
+            asynPrint(pasynUserSelf, ASYN_TRACE_ERROR,
+                "%s::%s received image after acquisition stopped, ignoring\n",
+                driverName, functionName);
+            return asynError;
+        }
+
         nCols = pImage->GetWidth();
         nRows = pImage->GetHeight();
         // Print the first 16 bytes of the buffer in hex
@@ -816,7 +829,7 @@ asynStatus ADSpinnaker::stopCapture()
     setIntegerParam(ADAcquire, 0);
     setShutter(0);
 
-    // Send a null image poiner to grabImage to make it exit if it is waiting for an image
+    // Send a null image pointer to grabImage to make it exit if it is waiting for an image
     if (pCallbackMsgQ_->send(&dummy, sizeof(dummy)) != 0) {
         asynPrint(pasynUserSelf, ASYN_TRACE_ERROR, 
             "%s::%s error calling pCallbackMsgQ_->send()\n",

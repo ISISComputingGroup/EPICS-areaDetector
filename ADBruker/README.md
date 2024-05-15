@@ -2,7 +2,7 @@ ADBruker
 ===========
 An 
 [EPICS](http://www.aps.anl.gov/epics/) 
-[areaDetector](https://cars.uchicago.edu/software/epics/areaDetector.html) 
+[areaDetector](https://github.com/areaDetector/areaDetector/blob/master/README.md) 
 driver for detectors from 
 [BrukerAXS](http://www.bruker-axs.com)
 using the Bruker Instrument Server (BIS).

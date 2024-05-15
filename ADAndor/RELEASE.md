@@ -22,6 +22,20 @@ files respectively, in the configure/ directory of the appropriate release of th
 
 Release Notes
 =============
+R2-9 (December XXX, 2019)
+----
+* This release **requires** ADCore R3-9 or later, because it uses the CCDMultiTrack support.
+* Added new cameraSerial argument to the constructor and to andorCCDConfig to specify the camera serial number.
+  This will require changing the startup script if more than 2 arguments were passed to andorCCDConfigure.
+  (Hinko Kocevar).
+* Added support for VSAmplitude.  (Peter Heesterman)
+* Added support for MultiTrack readout.  Added "Random Track" to AndorReadoutMode. (Peter Heesterman).
+* Fixed bug which caused hang when exiting. (Peter Heesterman).
+* Fixed shutter bug.  setupShutter() was not being called when ADShutterMode changed (Mark Koennecke)
+* Converted documentation from HTML to ReST. (Stuart Wilkins, Mark Rivers)
+* Fixed error in src/Makefile for XML2.
+
+
 R2-8 (July 1, 2018)
 ----
 * Added support for new PVs in ADCore R3-3 in opi files (NumQueuedArrays, EmptyFreeList, etc.)
@@ -54,11 +68,11 @@ R2-5 (February 19, 2017)
 * Fix bug when setting MinX and MinY with binning.  There was an incorrect factor of 2 present.
   Thanks to Hinko Kocevar for this fix.
 * Implemented ReverseX and ReverseY.
-* Fixed bug with AndorPreAmpGain; previously it was not actually calling SetPreAmpGain().
+* Fixed bug with AndorPreAmpGain; previously it was not actually calling SetPreAmpGain(). Previously the ADBase record Gain was used to set the Andor specific PreAmpGain, so to retain the previous default behaviour of x2 PreAmpGain make sure that AndorPreAmpGain is set to 2.0.
 * Added support for SerialNumber, FirmwareVersion, SDKVersion, DriverVersion, and ADCoreVersion which
   were added in ADCore R2-6. 
 * Added support for Full Vertical Binning (FVB) readout mode. Thanks to Hinko Kocevar for this.
-* Added support for EPICS shutter control.
+* Added support for EPICS shutter control. Note: To ensure the camera shutter opens and closes, make sure the ShutterMode is set to Detector and that AndorShutterMode is set to Fully Auto.
 
 R2-4 (September 15, 2015)
 ----

@@ -1,0 +1,670 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2023-06-26 08:22:11 by epics-->
+<display version="2.0.0">
+  <name>PICAMBase</name>
+  <x>409</x>
+  <y>105</y>
+  <width>1070</width>
+  <height>790</height>
+  <background_color>
+    <color red="187" green="187" blue="187">
+    </color>
+  </background_color>
+  <grid_visible>false</grid_visible>
+  <grid_step_x>5</grid_step_x>
+  <widget type="rectangle" version="2.0.0">
+    <name>rectangle #6</name>
+    <x>266</x>
+    <y>25</y>
+    <width>500</width>
+    <height>25</height>
+    <line_color>
+      <color red="218" green="218" blue="218">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="218" green="218" blue="218">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>rectangle #9</name>
+    <x>266</x>
+    <width>500</width>
+    <height>25</height>
+    <line_color>
+      <color red="218" green="218" blue="218">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="218" green="218" blue="218">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #12</name>
+    <text>PICam Driver - $(P)$(R)</text>
+    <x>324</x>
+    <y>1</y>
+    <width>384</width>
+    <height>25</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="10" green="0" blue="184">
+      </color>
+    </foreground_color>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>text update #15</name>
+    <pv_name>$(P)$(R)AvailableCameras_RBV</pv_name>
+    <x>390</x>
+    <y>23</y>
+    <width>286</width>
+    <height>22</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="10" green="0" blue="184">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="218" green="218" blue="218">
+      </color>
+    </background_color>
+    <format>1</format>
+    <show_units>false</show_units>
+    <horizontal_alignment>1</horizontal_alignment>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #19</name>
+    <file>ADSetup.bob</file>
+    <x>5</x>
+    <y>53</y>
+    <width>350</width>
+    <height>340</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #21</name>
+    <file>ADPlugins.bob</file>
+    <x>5</x>
+    <y>398</y>
+    <width>350</width>
+    <height>80</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #23</name>
+    <file>PICAM_ShutterParams.bob</file>
+    <x>360</x>
+    <y>53</y>
+    <width>350</width>
+    <height>250</height>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>rectangle #25</name>
+    <x>745</x>
+    <y>53</y>
+    <width>290</width>
+    <height>21</height>
+    <line_color>
+      <color red="218" green="218" blue="218">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="218" green="218" blue="218">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #28</name>
+    <text>Analog to Digital Conversion</text>
+    <x>750</x>
+    <y>54</y>
+    <width>280</width>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="10" green="0" blue="184">
+      </color>
+    </foreground_color>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #31</name>
+    <text>Analog Gain</text>
+    <x>764</x>
+    <y>90</y>
+    <width>70</width>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #34</name>
+    <text>Bit Depth</text>
+    <x>765</x>
+    <y>114</y>
+    <width>70</width>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #37</name>
+    <text>Speed</text>
+    <x>766</x>
+    <y>138</y>
+    <width>70</width>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>rectangle #40</name>
+    <x>715</x>
+    <y>53</y>
+    <width>351</width>
+    <height>205</height>
+    <line_width>1</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #43</name>
+    <text>Quality</text>
+    <x>766</x>
+    <y>161</y>
+    <width>70</width>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #46</name>
+    <text>EM Gain</text>
+    <x>765</x>
+    <y>184</y>
+    <width>70</width>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #49</name>
+    <text>Correct</text>
+    <x>769</x>
+    <y>207</y>
+    <width>70</width>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>composite #52</name>
+    <x>851</x>
+    <y>91</y>
+    <width>198</width>
+    <height>20</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="vis_if_not_zero" prop_id="visible" out_exp="false">
+        <exp bool_exp="!(pv0!=0)">
+          <value>false</value>
+        </exp>
+        <pv_name>$(P)$(R)AdcAnalogGain_PR</pv_name>
+      </rule>
+    </rules>
+    <widget type="combo" version="2.0.0">
+      <name>menu #55</name>
+      <pv_name>$(P)$(R)AdcAnalogGain</pv_name>
+      <width>84</width>
+      <height>20</height>
+      <background_color>
+        <color red="115" green="223" blue="255">
+        </color>
+      </background_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>text update #58</name>
+      <pv_name>$(P)$(R)AdcAnalogGain_RBV</pv_name>
+      <x>103</x>
+      <y>2</y>
+      <width>95</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color red="10" green="0" blue="184">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color red="187" green="187" blue="187">
+        </color>
+      </background_color>
+      <format>1</format>
+      <show_units>false</show_units>
+      <horizontal_alignment>2</horizontal_alignment>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>composite #63</name>
+    <x>851</x>
+    <y>112</y>
+    <width>198</width>
+    <height>23</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="vis_if_not_zero" prop_id="visible" out_exp="false">
+        <exp bool_exp="!(pv0!=0)">
+          <value>false</value>
+        </exp>
+        <pv_name>$(P)$(R)AdcBitDepth_PR</pv_name>
+      </rule>
+    </rules>
+    <widget type="combo" version="2.0.0">
+      <name>menu #66</name>
+      <pv_name>$(P)$(R)AdcBitDepth</pv_name>
+      <y>3</y>
+      <width>84</width>
+      <height>20</height>
+      <background_color>
+        <color red="115" green="223" blue="255">
+        </color>
+      </background_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>text update #69</name>
+      <pv_name>$(P)$(R)AdcBitDepth_RBV</pv_name>
+      <x>103</x>
+      <width>95</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color red="10" green="0" blue="184">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color red="187" green="187" blue="187">
+        </color>
+      </background_color>
+      <format>1</format>
+      <show_units>false</show_units>
+      <horizontal_alignment>2</horizontal_alignment>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>composite #74</name>
+    <x>851</x>
+    <y>134</y>
+    <width>198</width>
+    <height>23</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="vis_if_not_zero" prop_id="visible" out_exp="false">
+        <exp bool_exp="!(pv0!=0)">
+          <value>false</value>
+        </exp>
+        <pv_name>$(P)$(R)AdcSpeed_PR</pv_name>
+      </rule>
+    </rules>
+    <widget type="combo" version="2.0.0">
+      <name>menu #77</name>
+      <pv_name>$(P)$(R)AdcSpeed</pv_name>
+      <y>3</y>
+      <width>84</width>
+      <height>20</height>
+      <background_color>
+        <color red="115" green="223" blue="255">
+        </color>
+      </background_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>text update #80</name>
+      <pv_name>$(P)$(R)AdcSpeed_RBV</pv_name>
+      <x>103</x>
+      <width>95</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color red="10" green="0" blue="184">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color red="187" green="187" blue="187">
+        </color>
+      </background_color>
+      <format>1</format>
+      <show_units>false</show_units>
+      <horizontal_alignment>2</horizontal_alignment>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>composite #85</name>
+    <x>850</x>
+    <y>157</y>
+    <width>197</width>
+    <height>23</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="vis_if_not_zero" prop_id="visible" out_exp="false">
+        <exp bool_exp="!(pv0!=0)">
+          <value>false</value>
+        </exp>
+        <pv_name>$(P)$(R)AdcQuality_PR</pv_name>
+      </rule>
+    </rules>
+    <widget type="combo" version="2.0.0">
+      <name>menu #88</name>
+      <pv_name>$(P)$(R)AdcQuality</pv_name>
+      <y>3</y>
+      <width>84</width>
+      <height>20</height>
+      <background_color>
+        <color red="115" green="223" blue="255">
+        </color>
+      </background_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>text update #91</name>
+      <pv_name>$(P)$(R)AdcQuality_RBV</pv_name>
+      <x>102</x>
+      <width>95</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color red="10" green="0" blue="184">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color red="187" green="187" blue="187">
+        </color>
+      </background_color>
+      <format>1</format>
+      <show_units>false</show_units>
+      <horizontal_alignment>2</horizontal_alignment>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>composite #96</name>
+    <x>852</x>
+    <y>184</y>
+    <width>199</width>
+    <height>20</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="vis_if_not_zero" prop_id="visible" out_exp="false">
+        <exp bool_exp="!(pv0!=0)">
+          <value>false</value>
+        </exp>
+        <pv_name>$(P)$(R)AdcEMGain_PR</pv_name>
+      </rule>
+    </rules>
+    <widget type="textupdate" version="2.0.0">
+      <name>text update #99</name>
+      <pv_name>$(P)$(R)EMGain_RBV</pv_name>
+      <x>99</x>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color red="10" green="0" blue="184">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color red="187" green="187" blue="187">
+        </color>
+      </background_color>
+      <format>1</format>
+      <show_units>false</show_units>
+      <horizontal_alignment>2</horizontal_alignment>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>composite #103</name>
+      <width>80</width>
+      <height>20</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <rules>
+        <rule name="vis_if_not_zero" prop_id="visible" out_exp="false">
+          <exp bool_exp="!(pv0!=0)">
+            <value>false</value>
+          </exp>
+          <pv_name>$(P)$(R)EMGain</pv_name>
+        </rule>
+      </rules>
+      <widget type="textentry" version="3.0.0">
+        <name>text entry #106</name>
+        <pv_name>$(P)$(R)SizeX</pv_name>
+        <width>80</width>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="16.0">
+          </font>
+        </font>
+        <background_color>
+          <color red="115" green="223" blue="255">
+          </color>
+        </background_color>
+        <format>1</format>
+        <show_units>false</show_units>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>composite #112</name>
+    <x>853</x>
+    <y>216</y>
+    <width>197</width>
+    <height>20</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="vis_if_not_zero" prop_id="visible" out_exp="false">
+        <exp bool_exp="!(pv0!=0)">
+          <value>false</value>
+        </exp>
+        <pv_name>$(P)$(R)CorrectPixelBias_PR</pv_name>
+      </rule>
+    </rules>
+    <widget type="combo" version="2.0.0">
+      <name>menu #115</name>
+      <pv_name>$(P)$(R)CorrectPixelBias</pv_name>
+      <width>84</width>
+      <height>20</height>
+      <background_color>
+        <color red="115" green="223" blue="255">
+        </color>
+      </background_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>text update #118</name>
+      <pv_name>$(P)$(R)CorrectPixelBias_RBV</pv_name>
+      <x>102</x>
+      <width>95</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color red="10" green="0" blue="184">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color red="187" green="187" blue="187">
+        </color>
+      </background_color>
+      <format>1</format>
+      <show_units>false</show_units>
+      <horizontal_alignment>2</horizontal_alignment>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #123</name>
+    <text>Pixel Bias</text>
+    <x>767</x>
+    <y>228</y>
+    <width>70</width>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #126</name>
+    <file>PICAM_Collect.bob</file>
+    <x>360</x>
+    <y>308</y>
+    <width>350</width>
+    <height>405</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #128</name>
+    <file>ADAttrFile.bob</file>
+    <x>715</x>
+    <y>264</y>
+    <width>350</width>
+    <height>110</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #130</name>
+    <file>ADBuffers.bob</file>
+    <x>715</x>
+    <y>379</y>
+    <width>350</width>
+    <height>160</height>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>related display #132</name>
+    <actions>
+      <action type="open_display">
+        <file>PICAM_ParameterRelevance.opi</file>
+        <target>tab</target>
+        <description>ParameterRelevance</description>
+      </action>
+      <action type="open_display">
+        <file>PICam_AcquisitionParams.opi</file>
+        <target>tab</target>
+        <description>Data Acquisition</description>
+      </action>
+      <action type="open_display">
+        <file>PICam_SensorInformation.opi</file>
+        <target>tab</target>
+        <description>Sensor Information</description>
+      </action>
+      <action type="open_display">
+        <file>PICam_SensorLayout.opi</file>
+        <target>tab</target>
+        <description>Sensor Layout</description>
+      </action>
+      <action type="open_display">
+        <file>PICam_SensorCleaning.opi</file>
+        <target>tab</target>
+        <description>Sensor Cleaning</description>
+      </action>
+      <action type="open_display">
+        <file>PICam_SensorTemperature.opi</file>
+        <target>tab</target>
+        <description>Sensor Temperature</description>
+      </action>
+      <action type="open_display">
+        <file>PICam_HardwareIO.opi</file>
+        <target>tab</target>
+        <description>Hardware I/O</description>
+      </action>
+      <action type="open_display">
+        <file>PICAM_ShutterParams.opi</file>
+        <target>tab</target>
+        <description>Shutter</description>
+      </action>
+      <action type="open_display">
+        <file>PICAM_ReadoutParams.opi</file>
+        <target>tab</target>
+        <description>Readout Parameters</description>
+      </action>
+      <action type="open_display">
+        <file>PICAM_AdcParams.opi</file>
+        <target>tab</target>
+        <description>ADC Parameters</description>
+      </action>
+      <action type="open_display">
+        <file>PICAM.opi</file>
+        <target>tab</target>
+        <description>Available Detectors</description>
+      </action>
+    </actions>
+    <text>PICAM Specific Parameters</text>
+    <x>744</x>
+    <y>544</y>
+    <width>300</width>
+    <height>27</height>
+    <background_color>
+      <color red="187" green="187" blue="187">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #145</name>
+    <file>PICAM_Readout.bob</file>
+    <x>5</x>
+    <y>483</y>
+    <width>350</width>
+  </widget>
+</display>

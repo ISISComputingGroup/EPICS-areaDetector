@@ -1,0 +1,30 @@
+# .travis.xml for use with EPICS Base ci-scripts
+# (see: https://github.com/epics-base/ci-scripts)
+
+language: cpp
+compiler: gcc
+dist: bionic
+
+# Minimal set of packages needed to compile EPICS Base
+
+addons:
+  apt:
+    packages:
+    - libreadline6-dev
+    - libncurses5-dev
+    - perl
+
+install:
+  - python .ci/cue.py prepare
+
+script:
+  - python .ci/cue.py build
+  - python .ci/cue.py test
+  - python .ci/cue.py test-results
+
+# Build on Linux using default gcc for Base branches 7.0 and 3.15
+
+jobs:
+  include:
+  - env: BASE=7.0
+  - env: BASE=3.15

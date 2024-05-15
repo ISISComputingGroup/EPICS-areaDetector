@@ -1,0 +1,6 @@
+#!/bin/bash
+
+export GENICAM_ROOT_V2_4=/opt/pleora/ebus_sdk/x86_64/lib/genicam
+export LD_LIBRARY_PATH=../../../../lib/linux-x86_64:$LD_LIBRARY_PATH
+
+../../bin/linux-x86_64/PICamApp st.cmd

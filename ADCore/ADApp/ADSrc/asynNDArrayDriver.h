@@ -31,8 +31,8 @@ typedef enum {
     NDAttributesMacroError
 } NDAttributesStatus_t;
 
-/** Strings defining parameters that affect the behaviour of the detector. 
-  * These are the values passed to drvUserCreate. 
+/** Strings defining parameters that affect the behaviour of the detector.
+  * These are the values passed to drvUserCreate.
   * The driver will place in pasynUser->reason an integer to be used when the
   * standard asyn interface methods are called. */
  /*                               String                 asyn interface  access   Description  */
@@ -99,6 +99,7 @@ typedef enum {
 #define NDFileWriteMessageString "WRITE_MESSAGE"    /**< (asynOctet,    r/w) File write message */
 #define NDFileNumCaptureString  "NUM_CAPTURE"       /**< (asynInt32,    r/w) Number of arrays to capture */
 #define NDFileNumCapturedString "NUM_CAPTURED"      /**< (asynInt32,    r/o) Number of arrays already captured */
+#define NDFileFreeCaptureString "FREE_CAPTURE"      /**< (asynInt32,    r/o) Free the capture buffer */
 #define NDFileCaptureString     "CAPTURE"           /**< (asynInt32,    r/w) Start or stop capturing arrays */
 #define NDFileDeleteDriverFileString  "DELETE_DRIVER_FILE"  /**< (asynInt32,    r/w) Delete driver file */
 #define NDFileLazyOpenString    "FILE_LAZY_OPEN"    /**< (asynInt32,    r/w) Don't open file until first frame arrives in Stream mode */
@@ -124,12 +125,12 @@ typedef enum {
 /* Queued arrays */
 #define NDNumQueuedArraysString     "NUM_QUEUED_ARRAYS"
 
-/** This is the class from which NDArray drivers are derived; implements the asynGenericPointer functions 
-  * for NDArray objects. 
+/** This is the class from which NDArray drivers are derived; implements the asynGenericPointer functions
+  * for NDArray objects.
   * For areaDetector, both plugins and detector drivers are indirectly derived from this class.
   * asynNDArrayDriver inherits from asynPortDriver.
   */
-class epicsShareFunc asynNDArrayDriver : public asynPortDriver {
+class ADCORE_API asynNDArrayDriver : public asynPortDriver {
 public:
     asynNDArrayDriver(const char *portName, int maxAddr, int maxBuffers, size_t maxMemory,
                       int interfaceMask, int interruptMask,
@@ -155,12 +156,13 @@ public:
     virtual asynStatus createFileName(int maxChars, char *filePath, char *fileName);
     virtual asynStatus readNDAttributesFile();
     virtual asynStatus getAttributes(NDAttributeList *pAttributeList);
+    virtual void updateTimeStamps(NDArray *pArray);
 
     asynStatus incrementQueuedArrayCount();
     asynStatus decrementQueuedArrayCount();
     int getQueuedArrayCount();
     void updateQueuedArrayCount();
-    
+
     class NDArrayPool *pNDArrayPool;     /**< An NDArrayPool pointer that is initialized to pNDArrayPoolPvt_ in the constructor.
                                      * Plugins change this pointer to the one passed in NDArray::pNDArrayPool */
 
@@ -209,7 +211,8 @@ protected:
     int NDFileWriteMessage;
     int NDFileNumCapture;
     int NDFileNumCaptured;
-    int NDFileCapture;   
+    int NDFileFreeCapture;
+    int NDFileCapture;
     int NDFileDeleteDriverFile;
     int NDFileLazyOpen;
     int NDFileCreateDir;
@@ -237,7 +240,7 @@ private:
     epicsMutex *queuedArrayCountMutex_;
     epicsEventId queuedArrayEvent_;
     int queuedArrayCount_;
-    
+
     bool queuedArrayUpdateRun_;
     epicsEventId queuedArrayUpdateDone_;
 

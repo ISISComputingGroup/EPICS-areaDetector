@@ -1,31 +1,9 @@
-#include <math.h>
-#include <epicsTime.h>
-
-#include <epicsExport.h>
-#include <pv/pvaVersion.h>
-
 #include "ntndArrayConverter.h"
 
 using namespace std;
 using namespace epics::nt;
 using namespace epics::pvData;
 using tr1::static_pointer_cast;
-
-// Maps the selected index of the value field to its type.
-static const NDDataType_t scalarToNDDataType[pvString+1] = {
-        NDInt8,     // 0:  pvBoolean (not supported)
-        NDInt8,     // 1:  pvByte
-        NDInt16,    // 2:  pvShort
-        NDInt32,    // 3:  pvInt
-        NDInt64,    // 4:  pvLong
-        NDUInt8,    // 5:  pvUByte
-        NDUInt16,   // 6:  pvUShort
-        NDUInt32,   // 7:  pvUInt
-        NDUInt64,   // 8:  pvULong
-        NDFloat32,  // 9:  pvFloat
-        NDFloat64,  // 10: pvDouble
-        NDInt8,     // 11: pvString (notSupported)
-};
 
 // Maps ScalarType to NDAttrDataType_t
 static const NDAttrDataType_t scalarToNDAttrDataType[pvString+1] = {
@@ -325,7 +303,8 @@ void NTNDArrayConverter::toTimeStamp (NDArray *dest)
     TimeStamp ts;
     pvSrc.get(ts);
 
-    dest->epicsTS.secPastEpoch = (epicsUInt32)ts.getSecondsPastEpoch();
+    // NDArray uses EPICS time, pvAccess uses Posix time, need to convert
+    dest->epicsTS.secPastEpoch = (epicsUInt32)ts.getSecondsPastEpoch() - POSIX_TIME_AT_EPICS_EPOCH;
     dest->epicsTS.nsec = ts.getNanoseconds();
 }
 
@@ -338,7 +317,8 @@ void NTNDArrayConverter::toDataTimeStamp (NDArray *dest)
     TimeStamp ts;
     pvSrc.get(ts);
 
-    dest->timeStamp = ts.toSeconds();
+    // NDArray uses EPICS time, pvAccess uses Posix time, need to convert
+    dest->timeStamp = ts.toSeconds() - POSIX_TIME_AT_EPICS_EPOCH;
 }
 
 template <typename pvAttrType, typename valueType>
@@ -439,7 +419,7 @@ void NTNDArrayConverter::fromValue (NDArray *src)
     codec->getSubField<PVUnion>("parameters")->set(uncompressedType);
     codec->getSubField<PVString>("name")->put(src->codec.name);
 
-    size_t count = src->codec.empty() ? arrayInfo.nElements : compressedSize;
+    size_t count = src->codec.empty() ? arrayInfo.nElements : (size_t)compressedSize;
 
     src->reserve();
     shared_vector<arrayValType> temp((srcDataType*)src->pData,

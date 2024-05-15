@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ADUVC Documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="uvcDoc.css" />
+</head>
+<body>
+    <h1>ADUVC</h1>
+    <h4>An EPICS driver for USB Video Class (UVC) devices</h4>
+    <hr/>
+    <h4>Author: Jakub Wlodek</h4>
+    <h4>Corresponding author: Kazimierz Gofron</h4>
+    <hr/>
+    <h4>Introduction:</h4>
+    <p class="text-section-local">
+        UVC, or USB Video Class is an open Video connection standard used for USB based cameras and webcams. Almost all consumer webcams support 
+        UVC, along with a large number of other consumer USB cameras of different form factors, ranging from pencil cameras to micro cameras.
+        Some industrial cameras support the format as well. ADUVC is an area detector driver that adds support for UVC based cameras.
+        It also includes some useful test programs to check if your UVC device is being recognized correctly.
+    </p>
+    <hr />
+    <h4>Installation:</h4>
+    <p class="text-section-local">
+        Detailed installation instructions for the ADUVC driver can be seen in the <a href="https://github.com/epicsNSLS2-areaDetector/ADUVC/blob/master/README.md">README</a>
+        file. To install ADUVC, you must first install libuvc and its dependancies. The simplest way to do this is to run the provided
+        bash script in the adUVCSupport directory of the repository. This installs libusub, libjpeg, and cmake, clones the
+        <a href="https://github.com/ktossell/libuvc">libuvc repository on github</a>, and then builds it using cmake. The dynamic library files
+        resulting from the build are placed in the /usr/local directory (on Linux), and include files must be placed in adUVCSupport/include. 
+        From here you may compile the support programs or the driver itself by entering the appropriate directory (the top ADUVC dir. for the 
+        driver), and compiling by switching to root and typing 'make'. The driver is now installed.
+    </p>
+    <hr />
+    <h4>Driver Contents:</h4>
+    <ul>
+        <li>install-libuvc.sh    ->  Installation script for libuvc and its dependancies.</li>
+        <li>cameraDetector      ->  C++ program that detects all connected UVC devices. Useful for finding serial/product number for IOC</li>
+        <li>imageCaptureTest    ->  C++ program that uses OpenCV to capture 200 frames from the camera to test if libuvc has been installed and the 
+            camera is connected.
+        </li>
+        <li>ADUVC driver        ->  The source code for the area detector driver itself in the uvcApp/src directory.</li>
+        <li>iocUVC            ->  Example ioc for use with the ADUVC driver. Shows how to connect to a camera in the EPICS IOC shell</li>
+    </ul>
+    <hr />
+    <h4>Usage:</h4>
+    <p class="text-section-local">
+        Once the driver is installed, you may start the ioc by entering the IOC folder and running 'sudo ./st.cmd'. Sudo access is important
+        because access to UVC devices is limited to users with root permissions. You may then integrate ADUVC into your area detector screen setup.
+        Below is an image of the ADUVC base control screen. It extends the standard ADBase screen with UVC controls for various camera functionality,
+        such as brightness, exposure, backlight compenstation, saturation, etc. The driver supports a variety of UVC formats, though the two that are used
+        the most often are MJPEG and Uncompressed. Because acquisition modes are locked down in most UVC cameras, as of R1-2 there has been added a section
+        to the screen that allows for selecting from up to the 7 most useful acquisition modes supported by the camera. If the camera has fewer than 7 modes,
+        the remaining ones will show as Unused.
+    </p>
+    <img src="assets/ADUVCBase.png" alt="ADUVC base screen" />
+    <p class="text-section-local">The ADUVC Base screen. Based on the ADBase screen with added controls specific to ADUVC.</p>
+    <hr />
+    <h4>Release Notes:</h4>
+    <div class="text-section-local">
+    <!--RELEASE START-->
+<h1>Release Notes</h1>
+<h4>R1-6 (1-December-2020)</h4>
+<ul>
+<li>Features Added<ul>
+<li><code>libuvc</code> now builds via the EPICS build system</li>
+</ul>
+</li>
+</ul>
+<h4>R1-5 (29-October-2020)</h4>
+<ul>
+<li>
+<p>Features Added</p>
+<ul>
+<li>Pan/Tilt/Zoom control (PTZ)</li>
+<li>Improved static build control</li>
+<li>Improved helper tools</li>
+<li>Improved script for building libuvc</li>
+</ul>
+</li>
+<li>
+<p>Fixes/Improvements</p>
+<ul>
+<li>Minor code changes to remove tabs and replace with spaces</li>
+</ul>
+</li>
+</ul>
+<h4>R1-4 (18-August-2020)</h4>
+<ul>
+<li>
+<p>Features Added</p>
+<ul>
+<li>Added ReST based documentation for new areaDetector doc format</li>
+<li>Static build support (for libuvc)</li>
+</ul>
+</li>
+<li>
+<p>Fixes/Improvement</p>
+<ul>
+<li>Fix segmentation fault caused by disconnect</li>
+<li>Libuvc install script fixed to support include files from build</li>
+<li>Minor fixes to build system to allow for static building</li>
+<li>Folder + file name changes to better follow AD naming standard</li>
+<li>Many code readability improvements</li>
+<li>Allow for helper utilities to compile with non-system installed libuvc</li>
+</ul>
+</li>
+<li>
+<p>Known Issues</p>
+<ul>
+<li><code>libuvc</code> relies on <code>libusb-1.0</code>, not <code>libusb</code>. </li>
+<li>When camera is not connected, driver segmentation faults - should be handled more gracefully.</li>
+</ul>
+</li>
+</ul>
+<h4>R1-3 (06-September-2019)</h4>
+<ul>
+<li>
+<p>Key detector features implemented:</p>
+<ul>
+<li>Added IOC feature to auto-adjust camera settings based on operating mode.</li>
+</ul>
+</li>
+<li>
+<p>Key fixes and improvements</p>
+<ul>
+<li>Minor screen updates</li>
+<li>Repoint libuvc upstream repo. New repo has issues with CMake file</li>
+<li>Add documentation for fixing root ownership issues of UVC devices</li>
+</ul>
+</li>
+<li>
+<p>Known Issues</p>
+<ul>
+<li>Auto adjust feature can break with certain odd configurations of the camera</li>
+<li>Uses array size to determine 8/16 bit and Mono/RGB, but certain compressed formats break the adjuster.</li>
+</ul>
+</li>
+</ul>
+<h4>R1-2 (11-June-2019)</h4>
+<ul>
+<li>
+<p>Key detector features implemented:</p>
+<ul>
+<li>Camera modes now read into structs at startup</li>
+<li>Valid camera mode structs selectable from dropdown in CSS - improves usability</li>
+<li>Autosave functionality tested and working.</li>
+<li>More extensive status messages/detector feedback</li>
+</ul>
+</li>
+<li>
+<p>Key fixes and improvements</p>
+<ul>
+<li>Removed unused PVs (ADUVC_VendorID, ADUVC_ProductID)</li>
+<li>Fixed memory leak caused by early return from frame conversion function on error</li>
+<li>Added Makefiles to the support modules</li>
+<li>Documentation updates</li>
+<li>Added information on using camera with Virtual Box</li>
+<li>Removed newlines from status messages for better readability.</li>
+<li>CSS screen updated</li>
+</ul>
+</li>
+</ul>
+<h4>R1-1 (28-January-2019)</h4>
+<ul>
+<li>
+<p>Key detector features implemented:</p>
+<ul>
+<li>Support for Uncompressed and Grayscale images</li>
+<li>Support for 16-bit images</li>
+<li>Image timestamps</li>
+</ul>
+</li>
+<li>
+<p>Key fixes and improvements</p>
+<ul>
+<li>Memory copying fixed to remove race condition that could cause plugins to crash</li>
+<li>Improved conversion between frame format and PV</li>
+<li>Updated documentation with params[in]/[out]</li>
+<li>Added LICENSE</li>
+<li>Code formatting cleaned up (removed all tab characters)</li>
+</ul>
+</li>
+</ul>
+<h4>R1-0 (7-December-2018)</h4>
+<ul>
+<li>
+<p>Key detector features implemented:</p>
+<ul>
+<li>UVC Camera features (Sharpness, Backlight, Brightness, Gain, etc.)</li>
+<li>More format support (MJPEG, RGB, YUYV)</li>
+<li>Frame size and framerate selection (Previously only 640x480 @ 30 fps)</li>
+<li>Custom CSS Screen Added</li>
+</ul>
+</li>
+<li>
+<p>Key fixes and improvements</p>
+<ul>
+<li>Fixed error where first frame in stream was corrupt</li>
+<li>Fixed IOC autosave feature</li>
+<li>Resolved frame drop due to motion (camera dependant)</li>
+</ul>
+</li>
+</ul>
+<h4>R0-1 (Beta) (5-November-2018)</h4>
+<ul>
+<li>
+<p>Key detector features implemented:  </p>
+<ul>
+<li>Image Acquisition supported and tested.</li>
+<li>Acquisition mode selection supported and tested</li>
+<li>Diagnostic information acquisition</li>
+<li>Plugin interoperability tested</li>
+<li>Detector IOC written and tested</li>
+<li>Driver report function implemented</li>
+</ul>
+</li>
+<li>
+<p>Key Support Features Added</p>
+<ul>
+<li>Documentation for installation and usage</li>
+<li>Camera Detector program for detecting UVC cameras and diagnostics</li>
+<li>Image Acquisition program for testing camera image acquisition</li>
+<li>libuvc installation script included</li>
+</ul>
+</li>
+<li>
+<p>Limitations</p>
+<ul>
+<li>Only tested on linux-x86_64 systems</li>
+<li>Framerate goes down during motion (likely due to mjpeg compression)</li>
+<li>IOC autosave feature not working correctly</li>
+<li>Many UVC camera functions not yet implemented</li>
+<li>Limited format support (only mjpeg)</li>
+<li>Frame size must be specified in the IOC</li>
+<li>No custom screens (uses ADBase screen)</li>
+</ul>
+</li>
+</ul></ul></ul>    <!--RELEASE END-->
+    </div>
+    <hr />
+    <h4>Issues and pull requests:</h4>
+    <p class="text-section-local">
+        To submit an issue or a pull request for ADUVC, please do so at the source fork on <a href = "https://github.com/epicsNSLS2-areaDetector/ADUVC">Github</a>.
+    </p>
+    <h4>Important links:</h4>
+    <ul>
+        <li><a href="https://github.com/ktossell/libuvc">Libuvc, a cross-platform library for USB video devices</a></li>
+        <li><a href="https://github.com/epicsNSLS2-areaDetector/ADUVC">ADUVC on Github</a></li>
+        <li><a href="https://github.com/areaDetector">areaDetector on Github</a></li>
+    </ul>
+    
+</body>
+</html>

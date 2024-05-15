@@ -3,10 +3,10 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 20
-y 92
+x 10
+y 64
 w 1425
-h 840
+h 935
 font "helvetica-medium-r-18.0"
 ctlFont "helvetica-bold-r-10.0"
 btnFont "helvetica-medium-r-18.0"
@@ -56,7 +56,7 @@ fgColor rgb 2560 0 47104
 bgColor index 3
 useDisplayBg
 value {
-  "Eiger Detector Control $(P)$(R)"
+  "Eiger1 Detector Control $(P)$(R)"
 }
 endObjectProperties
 
@@ -66,8 +66,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 715
-y 670
+x 5
+y 705
 w 350
 h 165
 
@@ -79,8 +79,8 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 715
-y 670
+x 5
+y 705
 w 350
 h 165
 fgColor rgb 0 0 0
@@ -93,49 +93,6 @@ sizeOfs 5
 numDsps 1
 displayFileName {
   0 "ADShutter.edl"
-}
-noScroll
-endObjectProperties
-
-endGroup
-
-visMin "A"
-visMax "1"
-endObjectProperties
-
-# (Group)
-object activeGroupClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 360
-y 40
-w 350
-h 780
-
-beginGroup
-
-# (Embedded Window)
-object activePipClass
-beginObjectProperties
-major 4
-minor 1
-release 0
-x 360
-y 40
-w 350
-h 780
-fgColor rgb 0 0 0
-bgColor rgb 65280 65280 65280
-topShadowColor rgb 65280 65280 65280
-botShadowColor rgb 0 0 0
-displaySource "file"
-file "eigerAcquisition.edl"
-sizeOfs 5
-numDsps 1
-displayFileName {
-  0 "eigerAcquisition.edl"
 }
 noScroll
 endObjectProperties
@@ -196,9 +153,9 @@ major 4
 minor 0
 release 0
 x 715
-y 425
+y 525
 w 350
-h 130
+h 155
 
 beginGroup
 
@@ -209,9 +166,9 @@ major 4
 minor 1
 release 0
 x 715
-y 425
+y 525
 w 350
-h 130
+h 155
 fgColor rgb 0 0 0
 bgColor rgb 65280 65280 65280
 topShadowColor rgb 65280 65280 65280
@@ -239,7 +196,7 @@ major 4
 minor 0
 release 0
 x 1070
-y 415
+y 440
 w 350
 h 155
 
@@ -252,7 +209,7 @@ major 4
 minor 1
 release 0
 x 1070
-y 415
+y 440
 w 350
 h 155
 fgColor rgb 0 0 0
@@ -284,7 +241,7 @@ release 0
 x 5
 y 470
 w 350
-h 210
+h 230
 
 beginGroup
 
@@ -297,17 +254,17 @@ release 0
 x 5
 y 470
 w 350
-h 210
+h 230
 fgColor rgb 0 0 0
 bgColor rgb 65280 65280 65280
 topShadowColor rgb 65280 65280 65280
 botShadowColor rgb 0 0 0
 displaySource "file"
-file "eigerDetectorStatus.edl"
+file "eiger1DetectorStatus.edl"
 sizeOfs 5
 numDsps 1
 displayFileName {
-  0 "eigerDetectorStatus.edl"
+  0 "eiger1DetectorStatus.edl"
 }
 noScroll
 endObjectProperties
@@ -325,7 +282,7 @@ major 4
 minor 0
 release 0
 x 715
-y 560
+y 685
 w 350
 h 105
 
@@ -338,7 +295,7 @@ major 4
 minor 1
 release 0
 x 715
-y 560
+y 685
 w 350
 h 105
 fgColor rgb 0 0 0
@@ -370,7 +327,7 @@ release 0
 x 715
 y 40
 w 350
-h 380
+h 480
 
 beginGroup
 
@@ -383,17 +340,17 @@ release 0
 x 715
 y 40
 w 350
-h 380
+h 480
 fgColor rgb 0 0 0
 bgColor rgb 65280 65280 65280
 topShadowColor rgb 65280 65280 65280
 botShadowColor rgb 0 0 0
 displaySource "file"
-file "eigerFileWriter.edl"
+file "eiger1FileWriter.edl"
 sizeOfs 5
 numDsps 1
 displayFileName {
-  0 "eigerFileWriter.edl"
+  0 "eiger1FileWriter.edl"
 }
 noScroll
 endObjectProperties
@@ -413,7 +370,7 @@ release 0
 x 1070
 y 40
 w 350
-h 370
+h 395
 
 beginGroup
 
@@ -426,7 +383,7 @@ release 0
 x 1070
 y 40
 w 350
-h 370
+h 395
 fgColor rgb 0 0 0
 bgColor rgb 65280 65280 65280
 topShadowColor rgb 65280 65280 65280
@@ -453,8 +410,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 1070
-y 575
+x 360
+y 770
 w 350
 h 160
 
@@ -466,8 +423,8 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 1070
-y 575
+x 360
+y 770
 w 350
 h 160
 fgColor rgb 0 0 0
@@ -539,8 +496,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 5
-y 685
+x 715
+y 795
 w 350
 h 110
 
@@ -552,8 +509,8 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 5
-y 685
+x 715
+y 795
 w 350
 h 110
 fgColor rgb 0 0 0
@@ -566,6 +523,178 @@ sizeOfs 5
 numDsps 1
 displayFileName {
   0 "ADAttrFile.edl"
+}
+noScroll
+endObjectProperties
+
+endGroup
+
+visMin "A"
+visMax "1"
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 360
+y 40
+w 350
+h 180
+
+beginGroup
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 360
+y 40
+w 350
+h 180
+fgColor rgb 0 0 0
+bgColor rgb 65280 65280 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+displaySource "file"
+file "eiger1AcquisitionSetup.edl"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "eiger1AcquisitionSetup.edl"
+}
+noScroll
+endObjectProperties
+
+endGroup
+
+visMin "A"
+visMax "1"
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 360
+y 225
+w 350
+h 155
+
+beginGroup
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 360
+y 225
+w 350
+h 155
+fgColor rgb 0 0 0
+bgColor rgb 65280 65280 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+displaySource "file"
+file "eiger1Trigger.edl"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "eiger1Trigger.edl"
+}
+noScroll
+endObjectProperties
+
+endGroup
+
+visMin "A"
+visMax "1"
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 360
+y 385
+w 350
+h 380
+
+beginGroup
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 360
+y 385
+w 350
+h 380
+fgColor rgb 0 0 0
+bgColor rgb 65280 65280 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+displaySource "file"
+file "eigerAcquisitionStatus.edl"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "eigerAcquisitionStatus.edl"
+}
+noScroll
+endObjectProperties
+
+endGroup
+
+visMin "A"
+visMax "1"
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 1070
+y 600
+w 350
+h 230
+
+beginGroup
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 1070
+y 600
+w 350
+h 230
+fgColor rgb 0 0 0
+bgColor rgb 65280 65280 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+displaySource "file"
+file "eigerReadout.edl"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "eigerReadout.edl"
 }
 noScroll
 endObjectProperties

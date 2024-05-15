@@ -1,7 +1,6 @@
 #ifndef NDPluginProcess_H
 #define NDPluginProcess_H
 
-#include <epicsTypes.h>
 #include "NDPluginDriver.h"
 
 /* Background array subtraction */
@@ -22,11 +21,13 @@
 #define NDPluginProcessOffsetString             "OFFSET"            /* (asynFloat64, r/w) Offset value */
 
 /* High and low clipping */
-#define NDPluginProcessLowClipString            "LOW_CLIP"          /* (asynFloat64, r/w) Low clip value */
+#define NDPluginProcessLowClipThreshString      "LOW_CLIP_THRESH"   /* (asynFloat64, r/w) Low clip threshold */
+#define NDPluginProcessLowClipValueString       "LOW_CLIP_VALUE"    /* (asynFloat64, r/w) Low clip replacement value */
 #define NDPluginProcessEnableLowClipString      "ENABLE_LOW_CLIP"   /* (asynInt32,   r/w) Enable low clipping? */
-#define NDPluginProcessHighClipString           "HIGH_CLIP"         /* (asynFloat64, r/w) High clip value */
+#define NDPluginProcessHighClipThreshString     "HIGH_CLIP_THRESH"  /* (asynFloat64, r/w) High clip threshold */
+#define NDPluginProcessHighClipValueString      "HIGH_CLIP_VALUE"   /* (asynFloat64, r/w) High clip replacement value */
 #define NDPluginProcessEnableHighClipString     "ENABLE_HIGH_CLIP"  /* (asynInt32,   r/w) Enable high clipping? */
-    
+
 /* Recursive filter */
 #define NDPluginProcessEnableFilterString       "ENABLE_FILTER"     /* (asynInt32,   r/w) Enable frame filtering? */
 #define NDPluginProcessResetFilterString        "RESET_FILTER"      /* (asynInt32,   r/w) Reset frame filtering when 1 */
@@ -52,7 +53,7 @@
 
 /* Output data type */
 #define NDPluginProcessDataTypeString           "PROCESS_DATA_TYPE" /* (asynInt32,   r/w) Output type.  -1 means automatic. */
-   
+
 
 /** Does image processing operations.  These include
   * Background subtraction
@@ -60,16 +61,16 @@
   * Low clipping
   * High clipping
   * Frame averaging */
-class epicsShareClass NDPluginProcess : public NDPluginDriver {
+class NDPLUGIN_API NDPluginProcess : public NDPluginDriver {
 public:
-    NDPluginProcess(const char *portName, int queueSize, int blockingCallbacks, 
+    NDPluginProcess(const char *portName, int queueSize, int blockingCallbacks,
                  const char *NDArrayPort, int NDArrayAddr,
                  int maxBuffers, size_t maxMemory,
                  int priority, int stackSize);
     /* These methods override the virtual methods in the base class */
     void processCallbacks(NDArray *pArray);
     asynStatus writeInt32(asynUser *pasynUser, epicsInt32 value);
-    
+
 protected:
     /* Background array subtraction */
     int NDPluginProcessSaveBackground;
@@ -90,9 +91,11 @@ protected:
     int NDPluginProcessOffset;
 
     /* High and low clipping */
-    int NDPluginProcessLowClip;
+    int NDPluginProcessLowClipThresh;
+    int NDPluginProcessLowClipValue;
     int NDPluginProcessEnableLowClip;
-    int NDPluginProcessHighClip;
+    int NDPluginProcessHighClipThresh;
+    int NDPluginProcessHighClipValue;
     int NDPluginProcessEnableHighClip;
 
     /* Frame filtering */
@@ -117,7 +120,7 @@ protected:
     int NDPluginProcessROffset;
     int NDPluginProcessRC1;
     int NDPluginProcessRC2;
-    
+
     /* Output data type */
     int NDPluginProcessDataType;
 
@@ -129,5 +132,5 @@ private:
     NDArray *pFilter;
     int  numFiltered;
 };
-    
+
 #endif

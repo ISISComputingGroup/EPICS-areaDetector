@@ -17,7 +17,7 @@
     mAsynName.c_str(), functionName, msg)
 
 #define ERR_ARGS(fmt,...) asynPrint(mSet->getUser(), ASYN_TRACE_ERROR, \
-    "Param[%s]::%s: "fmt"\n", mAsynName.c_str(), functionName, __VA_ARGS__);
+    "Param[%s]::%s: " fmt "\n", mAsynName.c_str(), functionName, __VA_ARGS__);
 
 // Flow message formatters
 #define FLOW(msg) asynPrint(mSet->getUser(), ASYN_TRACE_FLOW, \
@@ -25,7 +25,7 @@
     mAsynName.c_str(), functionName, msg)
 
 #define FLOW_ARGS(fmt,...) asynPrint(mSet->getUser(), ASYN_TRACE_FLOW, \
-    "Param[%s]::%s: "fmt"\n", mAsynName.c_str(), functionName, __VA_ARGS__);
+    "Param[%s]::%s: " fmt "\n", mAsynName.c_str(), functionName, __VA_ARGS__);
 
 
 #define MAX_BUFFER_SIZE 128
@@ -88,6 +88,8 @@ int EigerParam::parseType (struct json_token *tokens, eiger_param_type_t & type)
     switch(typeStr[0])
     {
     case 's': type = EIGER_P_STRING;  break;
+    // "string" changed to "list" in 1.8.0 as of EIGER2 v2020.1
+    case 'l': type = EIGER_P_STRING;  break;
     case 'f': type = EIGER_P_DOUBLE;  break;
     case 'b': type = EIGER_P_BOOL;    break;
     case 'u': type = EIGER_P_UINT;    break;
@@ -164,7 +166,7 @@ int EigerParam::parseMinMax (struct json_token *tokens, string const & key,
     return EXIT_SUCCESS;
 }
 
-int EigerParam::parseValue (struct json_token *tokens, string & rawValue)
+int EigerParam::parseValue (struct json_token *tokens, std::string & rawValue)
 {
     const char *functionName = "parseValue";
 
@@ -178,7 +180,7 @@ int EigerParam::parseValue (struct json_token *tokens, string & rawValue)
     return EXIT_SUCCESS;
 }
 
-int EigerParam::parseValue (string const & rawValue, bool & value)
+int EigerParam::parseValue (std::string const & rawValue, bool & value)
 {
     const char *functionName = "parseValue";
 
@@ -194,7 +196,7 @@ int EigerParam::parseValue (string const & rawValue, bool & value)
     return EXIT_SUCCESS;
 }
 
-int EigerParam::parseValue (string const & rawValue, int & value)
+int EigerParam::parseValue (std::string const & rawValue, int & value)
 {
     const char *functionName = "parseValue";
 
@@ -206,7 +208,7 @@ int EigerParam::parseValue (string const & rawValue, int & value)
     return EXIT_SUCCESS;
 }
 
-int EigerParam::parseValue (string const & rawValue, double & value)
+int EigerParam::parseValue (std::string const & rawValue, double & value)
 {
     const char *functionName = "parseValue";
 
@@ -621,7 +623,8 @@ int EigerParam::fetch (double & value, int timeout)
     const char *functionName = "fetch<double>";
     if(mRemote && mType != EIGER_P_COMMAND)
     {
-        if(mType != EIGER_P_DOUBLE && mType != EIGER_P_UNINIT)
+        // We allow mType to be int or uint because the Eiger can return integers > 2^32 so we convert to double
+        if(mType != EIGER_P_DOUBLE && mType != EIGER_P_INT && mType != EIGER_P_UINT && mType != EIGER_P_UNINIT)
         {
             ERR_ARGS("[param=%s] unexpected type %d", mAsynName.c_str(),
                     mType);
@@ -639,6 +642,15 @@ int EigerParam::fetch (double & value, int timeout)
         if(parseValue(rawValue, value))
             return EXIT_FAILURE;
 
+        // This is a bit ugly, but we need to handle FW_FREE specially because the units depend on the API version
+        if (mAsynName.compare("FW_FREE") == 0) {
+            if (mSet->getApi()->getAPIVersion() == API_1_6_0) {
+                // 1.6.0 returns size in KB
+                value = value * 1024 / 1e9;
+            } else {
+                value = value / 1e9;
+            }
+        }
         if(setParam(value))
         {
             ERR_ARGS("[param=%s] failed to set asyn parameter",
@@ -651,7 +663,7 @@ int EigerParam::fetch (double & value, int timeout)
     return get(value);
 }
 
-int EigerParam::fetch (string & value, int timeout)
+int EigerParam::fetch (std::string & value, int timeout)
 {
     const char *functionName = "fetch<string>";
 
@@ -728,7 +740,7 @@ int EigerParam::basePut (const std::string & rawValue, int timeout)
     }
 
     // Parse JSON
-    if(!reply.empty())
+    if(!(reply.empty() || reply == "\"\""))
     {
         struct json_token tokens[MAX_JSON_TOKENS];
         int err = parse_json(reply.c_str(), reply.size(), tokens, MAX_JSON_TOKENS);
@@ -888,7 +900,7 @@ int EigerParam::put (double value, int timeout)
     return EXIT_SUCCESS;
 }
 
-int EigerParam::put (string const & value, int timeout)
+int EigerParam::put (std::string const & value, int timeout)
 {
     const char *functionName = "put<string>";
     FLOW_ARGS("%s", value.c_str());

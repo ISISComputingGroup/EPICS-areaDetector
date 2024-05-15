@@ -1,8 +1,0 @@
-<?xml version="1.0" ?>
-<components arch="linux-x86_64">
-	<ADCore.pvaDetector ADDR="0" P="PCO" PORT="pco.RX" PVNAME="PCO:PVA:ARRAY" R=":RX:" TIMEOUT="1"/>
-	<ADCore.NDPosPlugin ADDR="0" NDARRAY_PORT="pco.RX" P="PCO" PORT="pco.POS" R=":POS:" TIMEOUT="1"/>
-	<adUtil.gdaPlugins ARRFTVL="LONG" ARRTYPE="Int32" CAM="pco.RX" HTTP_PORT="8080" NELEMENTS="10709376" P="PCO" PORTPREFIX="pco" XSIZE="4008" YSIZE="2672" name="GDA"/>
-	<EPICS_BASE.dbpf name="DBPF1" pv="PCO:RX:ArrayCallbacks" value="Enable"/>
-	<EPICS_BASE.EpicsEnvSet key="EPICS_CA_MAX_ARRAY_BYTES" name="ENV1" value="10000000"/>
-</components>

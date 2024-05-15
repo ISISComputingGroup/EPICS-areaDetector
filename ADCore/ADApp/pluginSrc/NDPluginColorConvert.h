@@ -10,22 +10,22 @@
 
 /** Convert NDArrays from one NDColorMode to another.
   * This plugin is as source of NDArray callbacks, passing the (possibly converted) NDArray
-  * data to clients that register for callbacks. 
+  * data to clients that register for callbacks.
   * The plugin currently supports the following conversions
   * <ul>
   *  <li> Mono to RGB1, RGB2 or RGB3 </li>
   *  <li> RGB1, RGB2 or RGB3 to mono</li>
   *  <li> Bayer color to RGB1, RGB2 or RGB3 (Windows and Linux only)</li>
-  *  <li> RGB1 to RGB2 or RGB3 </li> 
-  *  <li> RGB2 to RGB1 or RGB3 </li> 
-  *  <li> RGB3 to RGB1 or RGB2 </li> 
-  * </ul> 
-  * It also applies a false color map if requested  
+  *  <li> RGB1 to RGB2 or RGB3 </li>
+  *  <li> RGB2 to RGB1 or RGB3 </li>
+  *  <li> RGB3 to RGB1 or RGB2 </li>
+  * </ul>
+  * It also applies a false color map if requested
   * If the conversion required by the input color mode and output color mode are not
   * in this supported list then the NDArray is passed on without conversion. */
-class epicsShareClass NDPluginColorConvert : public NDPluginDriver {
+class NDPLUGIN_API NDPluginColorConvert : public NDPluginDriver {
 public:
-    NDPluginColorConvert(const char *portName, int queueSize, int blockingCallbacks, 
+    NDPluginColorConvert(const char *portName, int queueSize, int blockingCallbacks,
                          const char *NDArrayPort, int NDArrayAddr,
                          int maxBuffers, size_t maxMemory,
                          int priority, int stackSize, int maxThreads);
@@ -36,7 +36,7 @@ public:
 protected:
     int NDPluginColorConvertColorModeOut;
     #define FIRST_NDPLUGIN_COLOR_CONVERT_PARAM NDPluginColorConvertColorModeOut
-    int NDPluginColorConvertFalseColor;    
+    int NDPluginColorConvertFalseColor;
 
 private:
     /* These methods are just for this class */
@@ -44,5 +44,5 @@ private:
 	template <typename epicsType> unsigned char falseColorIndex(epicsType value);
 
 };
- 
+
 #endif

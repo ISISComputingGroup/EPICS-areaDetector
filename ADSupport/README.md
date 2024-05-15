@@ -2,7 +2,7 @@ ADSupport
 ======
 The home of the support libraries for the 
 [EPICS](http://www.aps.anl.gov/epics/) 
-[areaDetector](https://cars.uchicago.edu/software/epics/areaDetector.html) 
+[areaDetector](https://github.com/areaDetector/areaDetector/blob/master/README.md) 
 software.  It contains third party libraries required for some plugins and
 drivers.  These are provided in source-code form compatible with the EPICS
 build system.  This makes it convenient to use these libraries on systems
@@ -13,18 +13,18 @@ has a different version from the one required by areaDetector.
 
 This module contains the following libraries:
 
-- [Bitshuffle and lz4] (https://github.com/kiyo-masui/bitshuffle/)
-- [Blosc] (https://github.com/Blosc/c-blosc)
-- [CBF] (https://sourceforge.net/projects/cbflib/)
-- [GraphicsMagick] (http://www.graphicsmagick.org/)
-- [HDF5]   (https://support.hdfgroup.org/HDF5/)
-- [JPEG]   (http://www.ijg.org/)
-- [netCDF] (http://www.unidata.ucar.edu/software/netcdf/)  
-- [NeXus]  (http://www.nexusformat.org/)
-- [SZIP]   (https://support.hdfgroup.org/doc_resource/SZIP/)
-- [TIFF]   (http://simplesystems.org/libtiff/)
-- [XML2]   (http://www.xmlsoft.org/index.html)
-- [ZLIB]   (http://www.zlib.net/)
+- [Bitshuffle and lz4](https://github.com/kiyo-masui/bitshuffle/)
+- [Blosc](https://github.com/Blosc/c-blosc)
+- [CBF](https://sourceforge.net/projects/cbflib/)
+- [GraphicsMagick](http://www.graphicsmagick.org/)
+- [HDF5](https://support.hdfgroup.org/HDF5/)
+- [JPEG](http://www.ijg.org/)
+- [netCDF](http://www.unidata.ucar.edu/software/netcdf/)
+- [NeXus](http://www.nexusformat.org/)
+- [SZIP](https://support.hdfgroup.org/doc_resource/SZIP/)
+- [TIFF](http://simplesystems.org/libtiff/)
+- [XML2](http://www.xmlsoft.org/index.html)
+- [ZLIB](http://www.zlib.net/)
 
 These libraries have had minor changes made so they will build with the EPICS
 build system on all of the supported platforms.  These changes are documented
@@ -71,5 +71,5 @@ The files can be compressed in the HDF5 library, or compressed elsewhere (e.g. N
 ADEiger compressed NDArrays) and written with HDF5 direct chunk write.
 
 Additional information:
-* [Documentation](https://cars.uchicago.edu/software/epics/areaDetectorDoc.html).
-* [Release notes and links to source code releases](RELEASE.md).
+* [Documentation](https://areadetector.github.io)
+* [Release notes and links to source code releases](RELEASE.md)
