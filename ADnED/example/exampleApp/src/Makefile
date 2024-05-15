@@ -7,7 +7,9 @@ include $(TOP)/configure/CONFIG
 #=============================
 # Build the IOC application
 
-PROD_IOC = example
+PROD_NAME = example
+PROD_IOC = $(PROD_NAME)
+
 # example.dbd will be created and installed
 DBD += example.dbd
 
