@@ -26,7 +26,8 @@ ifeq ($(WITH_NEXUS),YES)
     USR_CFLAGS += -DHDF5 -D_FILE_OFFSET_BITS=64
 
     # Travis/ubuntu 12.04 tweak: persuade the hdf5 library build to use API v18 over v16
-    USR_CFLAGS += -DH5_NO_DEPRECATED_SYMBOLS -DH5Gopen_vers=2
+    # -DH5_NO_DEPRECATED_SYMBOLS
+    USR_CFLAGS += -DH5Gopen_vers=2 -DH5Oget_info_by_name_vers=1 -DH5Oget_info_vers=1
 
     ifeq ($(SHARED_LIBRARIES),YES)
       USR_CFLAGS_WIN32 += -DDLL_NEXUS
