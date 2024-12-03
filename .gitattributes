@@ -37,3 +37,5 @@ Makefile
 *.so* binary
 *.dll binary
 *.exe binary
+
+/ADSupport/supportApp/GraphicsMagickSrc/ttf/docs/VERSION.DLL text
