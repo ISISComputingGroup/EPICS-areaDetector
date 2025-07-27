@@ -11,9 +11,12 @@ LIB_SRCS_WIN32 += SPFeature.cpp ADSpinnaker.cpp
 
 ifeq (debug, $(findstring debug, $(T_A)))
   LIB_LIBS_WIN32 += Spinnakerd_v140
+  LIB_LDFLAGS_WIN32 += /delayload:Spinnakerd_v140.dll
 else
   LIB_LIBS_WIN32 += Spinnaker_v140
+  LIB_LDFLAGS_WIN32 += /delayload:Spinnaker_v140.dll
 endif
+LIB_SYS_LIBS_WIN32 += delayimp
 
 LIB_LIBS += ADGenICam
 
@@ -26,9 +29,12 @@ USR_CXXFLAGS_Linux += -std=c++11 -Wno-unknown-pragmas
 
 ifeq (debug, $(findstring debug, $(T_A)))
   PROD_LIBS_WIN32 += Spinnakerd_v140
+  PROD_LDFLAGS_WIN32 += /delayload:Spinnakerd_v140.dll
 else
   PROD_LIBS_WIN32 += Spinnaker_v140
+  PROD_LDFLAGS_WIN32 += /delayload:Spinnaker_v140.dll
 endif
+PROD_SYS_LIBS_WIN32 += delayimp
 
 PROD_SYS_LIBS_Linux += Spinnaker
 PROD_SYS_LIBS_Linux += GCBase_gcc11_v3_0
