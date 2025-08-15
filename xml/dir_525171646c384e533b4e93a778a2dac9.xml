@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="dir_525171646c384e533b4e93a778a2dac9" kind="dir">
     <compoundname>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPylon/pylonApp</compoundname>
     <innerdir refid="dir_5714feb70965bf0e260732c15a6346bc">/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPylon/pylonApp/src</innerdir>

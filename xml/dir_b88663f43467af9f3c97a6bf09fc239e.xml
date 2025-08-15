@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="dir_b88663f43467af9f3c97a6bf09fc239e" kind="dir">
     <compoundname>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPSL/pslApp</compoundname>
     <innerdir refid="dir_3943b2ca1343dbb4969b1b0cc4141108">/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPSL/pslApp/src</innerdir>

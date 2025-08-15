@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="dir_33243fdba870860264502b0b90ce2b45" kind="dir">
     <compoundname>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPhotonII/PhotonIIApp</compoundname>
     <innerdir refid="dir_171d7c9af3ef159b2411c070646efd1d">/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPhotonII/PhotonIIApp/src</innerdir>

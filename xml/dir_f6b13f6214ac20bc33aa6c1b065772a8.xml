@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="dir_f6b13f6214ac20bc33aa6c1b065772a8" kind="dir">
     <compoundname>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPixirad/pixiradApp/src</compoundname>
     <innerfile refid="_p_i_x_i_e__data__utilities_8cpp">PIXIE_data_utilities.cpp</innerfile>

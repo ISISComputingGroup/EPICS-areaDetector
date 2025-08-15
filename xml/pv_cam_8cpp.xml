@@ -1,45 +1,30 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="pv_cam_8cpp" kind="file" language="C++">
     <compoundname>pvCam.cpp</compoundname>
     <includes refid="pv_cam_src_8h" local="yes">pvCamSrc.h</includes>
     <incdepgraph>
-      <node id="33">
-        <label>drvPVCam.h</label>
-        <link refid="drv_p_v_cam_8h"/>
+      <node id="28">
+        <label>ADCoreAPI.h</label>
+        <link refid="_a_d_core_a_p_i_8h"/>
+        <childnode refid="29" relation="include">
+        </childnode>
       </node>
-      <node id="5">
-        <label>stdarg.h</label>
+      <node id="32">
+        <label>ADCoreVersion.h</label>
+        <link refid="_a_d_core_version_8h"/>
       </node>
-      <node id="18">
-        <label>epicsTypes.h</label>
-      </node>
-      <node id="34">
-        <label>master.h</label>
-      </node>
-      <node id="16">
-        <label>cantProceed.h</label>
-      </node>
-      <node id="4">
-        <label>stdlib.h</label>
-      </node>
-      <node id="13">
-        <label>epicsMutex.h</label>
-      </node>
-      <node id="8">
-        <label>errno.h</label>
-      </node>
-      <node id="29">
-        <label>epicsVersion.h</label>
-      </node>
-      <node id="26">
-        <label>string</label>
-      </node>
-      <node id="11">
-        <label>epicsThread.h</label>
-      </node>
-      <node id="3">
-        <label>stddef.h</label>
+      <node id="17">
+        <label>ADDriver.h</label>
+        <link refid="_a_d_driver_8h"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
       </node>
       <node id="31">
         <label>Codec.h</label>
@@ -63,9 +48,21 @@
         <childnode refid="31" relation="include">
         </childnode>
       </node>
-      <node id="32">
-        <label>ADCoreVersion.h</label>
-        <link refid="_a_d_core_version_8h"/>
+      <node id="25">
+        <label>NDAttribute.h</label>
+        <link refid="_n_d_attribute_8h"/>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
       </node>
       <node id="30">
         <label>NDAttributeList.h</label>
@@ -79,35 +76,29 @@
         <childnode refid="25" relation="include">
         </childnode>
       </node>
-      <node id="14">
-        <label>epicsString.h</label>
-      </node>
-      <node id="9">
-        <label>string.h</label>
-      </node>
-      <node id="24">
-        <label>ellLib.h</label>
-      </node>
-      <node id="28">
-        <label>ADCoreAPI.h</label>
-        <link refid="_a_d_core_a_p_i_8h"/>
-        <childnode refid="29" relation="include">
+      <node id="20">
+        <label>asynNDArrayDriver.h</label>
+        <link refid="asyn_n_d_array_driver_8h"/>
+        <childnode refid="13" relation="include">
         </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+      </node>
+      <node id="33">
+        <label>drvPVCam.h</label>
+        <link refid="drv_p_v_cam_8h"/>
       </node>
       <node id="1">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPvCam/pvcamApp/src/pvCam.cpp</label>
         <link refid="pv_cam_8cpp"/>
         <childnode refid="2" relation="include">
         </childnode>
-      </node>
-      <node id="27">
-        <label>asynDriver.h</label>
-      </node>
-      <node id="6">
-        <label>math.h</label>
-      </node>
-      <node id="35">
-        <label>pvcam.h</label>
       </node>
       <node id="2">
         <label>pvCamSrc.h</label>
@@ -149,71 +140,80 @@
         <childnode refid="35" relation="include">
         </childnode>
       </node>
-      <node id="10">
-        <label>epicsTime.h</label>
+      <node id="27">
+        <label>asynDriver.h</label>
       </node>
       <node id="21">
         <label>asynPortDriver.h</label>
       </node>
-      <node id="15">
-        <label>epicsStdio.h</label>
+      <node id="16">
+        <label>cantProceed.h</label>
       </node>
-      <node id="25">
-        <label>NDAttribute.h</label>
-        <link refid="_n_d_attribute_8h"/>
-        <childnode refid="26" relation="include">
-        </childnode>
-        <childnode refid="7" relation="include">
-        </childnode>
-        <childnode refid="24" relation="include">
-        </childnode>
-        <childnode refid="18" relation="include">
-        </childnode>
-        <childnode refid="27" relation="include">
-        </childnode>
-        <childnode refid="28" relation="include">
-        </childnode>
-      </node>
-      <node id="23">
-        <label>set</label>
-      </node>
-      <node id="17">
-        <label>ADDriver.h</label>
-        <link refid="_a_d_driver_8h"/>
-        <childnode refid="18" relation="include">
-        </childnode>
-        <childnode refid="19" relation="include">
-        </childnode>
-        <childnode refid="10" relation="include">
-        </childnode>
-        <childnode refid="20" relation="include">
-        </childnode>
-      </node>
-      <node id="19">
-        <label>epicsMessageQueue.h</label>
-      </node>
-      <node id="20">
-        <label>asynNDArrayDriver.h</label>
-        <link refid="asyn_n_d_array_driver_8h"/>
-        <childnode refid="13" relation="include">
-        </childnode>
-        <childnode refid="12" relation="include">
-        </childnode>
-        <childnode refid="21" relation="include">
-        </childnode>
-        <childnode refid="22" relation="include">
-        </childnode>
-        <childnode refid="32" relation="include">
-        </childnode>
-      </node>
-      <node id="7">
-        <label>stdio.h</label>
+      <node id="24">
+        <label>ellLib.h</label>
       </node>
       <node id="12">
         <label>epicsEvent.h</label>
       </node>
+      <node id="19">
+        <label>epicsMessageQueue.h</label>
+      </node>
+      <node id="13">
+        <label>epicsMutex.h</label>
+      </node>
+      <node id="15">
+        <label>epicsStdio.h</label>
+      </node>
+      <node id="14">
+        <label>epicsString.h</label>
+      </node>
+      <node id="11">
+        <label>epicsThread.h</label>
+      </node>
+      <node id="10">
+        <label>epicsTime.h</label>
+      </node>
+      <node id="18">
+        <label>epicsTypes.h</label>
+      </node>
+      <node id="29">
+        <label>epicsVersion.h</label>
+      </node>
+      <node id="8">
+        <label>errno.h</label>
+      </node>
+      <node id="34">
+        <label>master.h</label>
+      </node>
+      <node id="6">
+        <label>math.h</label>
+      </node>
+      <node id="35">
+        <label>pvcam.h</label>
+      </node>
+      <node id="23">
+        <label>set</label>
+      </node>
+      <node id="5">
+        <label>stdarg.h</label>
+      </node>
+      <node id="3">
+        <label>stddef.h</label>
+      </node>
+      <node id="7">
+        <label>stdio.h</label>
+      </node>
+      <node id="4">
+        <label>stdlib.h</label>
+      </node>
+      <node id="26">
+        <label>string</label>
+      </node>
+      <node id="9">
+        <label>string.h</label>
+      </node>
     </incdepgraph>
-      <sectiondef kind="func">
+    <sectiondef kind="func">
       <memberdef kind="function" id="pv_cam_8cpp_1ac053bc3996189737d9f695d8f0ada287" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
         <definition>int pvCamConfig</definition>
@@ -293,7 +293,7 @@
         </inbodydescription>
         <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPvCam/pvcamApp/src/pvCam.cpp" line="33" column="13" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPvCam/pvcamApp/src/pvCam.cpp" bodystart="33" bodyend="38"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
@@ -873,22 +873,22 @@
 <codeline lineno="572"><highlight class="normal"></highlight></codeline>
 <codeline lineno="573"><highlight class="normal"></highlight><highlight class="comment">//_____________________________________________________________________________________________</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="574"><highlight class="normal"></highlight></codeline>
-<codeline lineno="575"><highlight class="normal">asynStatus<sp/><ref refid="classpv_cam_1acb17a84fdd24ddcb2bf7c5195c629fb1" kindref="member">pvCam::writeInt32</ref>(asynUser<sp/>*pasynUser,<sp/>epicsInt32<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>)</highlight></codeline>
+<codeline lineno="575"><highlight class="normal">asynStatus<sp/><ref refid="classpv_cam_1acb17a84fdd24ddcb2bf7c5195c629fb1" kindref="member">pvCam::writeInt32</ref>(asynUser<sp/>*pasynUser,<sp/>epicsInt32<sp/>value)</highlight></codeline>
 <codeline lineno="576"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="577"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//const<sp/>char<sp/>*functionName<sp/>=<sp/>&quot;pvCam::writeInt32()&quot;;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="578"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>=<sp/>pasynUser-&gt;reason;</highlight></codeline>
+<codeline lineno="578"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>function<sp/>=<sp/>pasynUser-&gt;reason;</highlight></codeline>
 <codeline lineno="579"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>adstatus;</highlight></codeline>
 <codeline lineno="580"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>addr=0;</highlight></codeline>
 <codeline lineno="581"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>status<sp/>=<sp/>0;</highlight></codeline>
 <codeline lineno="582"><highlight class="normal"></highlight></codeline>
 <codeline lineno="583"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Set<sp/>the<sp/>parameter<sp/>and<sp/>readback<sp/>in<sp/>the<sp/>parameter<sp/>library.<sp/><sp/>This<sp/>may<sp/>be<sp/>overwritten<sp/>when<sp/>we<sp/>read<sp/>back<sp/>the</highlight></codeline>
 <codeline lineno="584"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>status<sp/>at<sp/>the<sp/>end,<sp/>but<sp/>that&apos;s<sp/>OK<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="585"><highlight class="normal"><sp/><sp/><sp/><sp/>status<sp/>=<sp/><ref refid="classasyn_n_d_array_driver_1abf87462bc5853f8e5a56db5e93acd956" kindref="member">setIntegerParam</ref>(addr,<sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal">,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="585"><highlight class="normal"><sp/><sp/><sp/><sp/>status<sp/>=<sp/><ref refid="classasyn_n_d_array_driver_1abf87462bc5853f8e5a56db5e93acd956" kindref="member">setIntegerParam</ref>(addr,<sp/>function,<sp/>value);</highlight></codeline>
 <codeline lineno="586"><highlight class="normal"></highlight></codeline>
 <codeline lineno="587"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>For<sp/>a<sp/>real<sp/>detector<sp/>this<sp/>is<sp/>where<sp/>the<sp/>parameter<sp/>is<sp/>sent<sp/>to<sp/>the<sp/>hardware<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="588"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="classasyn_n_d_array_driver_1aa06c19f650b4619a7bdbf3a79397c3d3" kindref="member">ADAcquire</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="588"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(function<sp/>==<sp/><ref refid="classasyn_n_d_array_driver_1aa06c19f650b4619a7bdbf3a79397c3d3" kindref="member">ADAcquire</ref>)<sp/>{</highlight></codeline>
 <codeline lineno="589"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>getIntegerParam(addr,<sp/><ref refid="class_a_d_driver_1a6a532aae0f51273450f4e897bf0aed1d" kindref="member">ADStatus</ref>,<sp/>&amp;adstatus);</highlight></codeline>
-<codeline lineno="590"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref><sp/>&amp;&amp;<sp/>(adstatus<sp/>==<sp/><ref refid="_a_d_driver_8h_1a69820e97c7282152e222297a6d36f72eae5aabf2281b95d16f607f1a7b1c5a8bd" kindref="member">ADStatusIdle</ref>))</highlight></codeline>
+<codeline lineno="590"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(value<sp/>&amp;&amp;<sp/>(adstatus<sp/>==<sp/><ref refid="_a_d_driver_8h_1a69820e97c7282152e222297a6d36f72eae5aabf2281b95d16f607f1a7b1c5a8bd" kindref="member">ADStatusIdle</ref>))</highlight></codeline>
 <codeline lineno="591"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="592"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>We<sp/>need<sp/>to<sp/>set<sp/>the<sp/>number<sp/>of<sp/>images<sp/>we<sp/>expect<sp/>to<sp/>collect,<sp/>so<sp/>the<sp/>image<sp/>callback<sp/>function</highlight></codeline>
 <codeline lineno="593"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>can<sp/>know<sp/>when<sp/>acquisition<sp/>is<sp/>complete.<sp/><sp/>We<sp/>need<sp/>to<sp/>find<sp/>out<sp/>what<sp/>mode<sp/>we<sp/>are<sp/>in<sp/>and<sp/>how</highlight></codeline>
@@ -918,7 +918,7 @@
 <codeline lineno="617"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Send<sp/>the<sp/>stop<sp/>event<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="618"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>epicsEventSignal(this-&gt;<ref refid="classpv_cam_1a8956515a74ea71b9aca7a5136724835f" kindref="member">stopEventId</ref>);</highlight></codeline>
 <codeline lineno="619"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="620"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="class_a_d_driver_1a7dcba273d750e726bb3f5e4b7a38f53a" kindref="member">ADImageMode</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="620"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(function<sp/>==<sp/><ref refid="class_a_d_driver_1a7dcba273d750e726bb3f5e4b7a38f53a" kindref="member">ADImageMode</ref>)<sp/>{</highlight></codeline>
 <codeline lineno="621"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>The<sp/>image<sp/>mode<sp/>may<sp/>have<sp/>changed<sp/>while<sp/>we<sp/>are<sp/>acquiring,</highlight></codeline>
 <codeline lineno="622"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>set<sp/>the<sp/>images<sp/>remaining<sp/>appropriately.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="623"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(value)</highlight></codeline>
@@ -934,7 +934,7 @@
 <codeline lineno="633"><highlight class="normal"></highlight></codeline>
 <codeline lineno="634"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="_a_d_driver_8h_1a4e304cb4683f0862cc3ca9b5fff213e2a09274bf54e26793fae63922fee5c603b" kindref="member">ADImageContinuous</ref>:<sp/>this-&gt;<ref refid="classpv_cam_1ad6f616342856b70cf431c58cee5ce7f7" kindref="member">imagesRemaining</ref><sp/>=<sp/>-1;<sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="635"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="636"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="classpv_cam_1a8e55b9c1c13675e74c8a014a29080876" kindref="member">PVCamInitDetector</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="636"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(function<sp/>==<sp/><ref refid="classpv_cam_1a8e55b9c1c13675e74c8a014a29080876" kindref="member">PVCamInitDetector</ref>)<sp/>{</highlight></codeline>
 <codeline lineno="637"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>initializeDetector<sp/>();</highlight></codeline>
 <codeline lineno="638"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="639"><highlight class="normal"></highlight></codeline>
@@ -944,33 +944,33 @@
 <codeline lineno="643"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(status)</highlight></codeline>
 <codeline lineno="644"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynPrint(pasynUser,<sp/>ASYN_TRACE_ERROR,</highlight></codeline>
 <codeline lineno="645"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s:writeInt32<sp/>error,<sp/>status=%d<sp/>function=%d,<sp/>value=%d\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="646"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>status,<sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal">,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="646"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>status,<sp/>function,<sp/>value);</highlight></codeline>
 <codeline lineno="647"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="648"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynPrint(pasynUser,<sp/>ASYN_TRACEIO_DRIVER,</highlight></codeline>
 <codeline lineno="649"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s:writeInt32:<sp/>function=%d,<sp/>value=%d\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="650"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal">,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="650"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>function,<sp/>value);</highlight></codeline>
 <codeline lineno="651"><highlight class="normal"></highlight></codeline>
 <codeline lineno="652"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>((asynStatus)<sp/>status);</highlight></codeline>
 <codeline lineno="653"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="654"><highlight class="normal"></highlight></codeline>
 <codeline lineno="655"><highlight class="normal"></highlight><highlight class="comment">//_____________________________________________________________________________________________</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="656"><highlight class="normal"></highlight></codeline>
-<codeline lineno="657"><highlight class="normal">asynStatus<sp/><ref refid="classpv_cam_1a02a70919d94b9c4f7d5e5bb7e1998393" kindref="member">pvCam::writeFloat64</ref>(asynUser<sp/>*pasynUser,<sp/>epicsFloat64<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>)</highlight></codeline>
+<codeline lineno="657"><highlight class="normal">asynStatus<sp/><ref refid="classpv_cam_1a02a70919d94b9c4f7d5e5bb7e1998393" kindref="member">pvCam::writeFloat64</ref>(asynUser<sp/>*pasynUser,<sp/>epicsFloat64<sp/>value)</highlight></codeline>
 <codeline lineno="658"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="659"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//const<sp/>char<sp/>*functionName<sp/>=<sp/>&quot;pvCam::writeFloat64()&quot;;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="660"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>=<sp/>pasynUser-&gt;reason;</highlight></codeline>
+<codeline lineno="660"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>function<sp/>=<sp/>pasynUser-&gt;reason;</highlight></codeline>
 <codeline lineno="661"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>status<sp/>=<sp/>0;</highlight></codeline>
 <codeline lineno="662"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>addr=0;</highlight></codeline>
 <codeline lineno="663"><highlight class="normal"></highlight></codeline>
 <codeline lineno="664"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Set<sp/>the<sp/>parameter<sp/>and<sp/>readback<sp/>in<sp/>the<sp/>parameter<sp/>library.<sp/><sp/>This<sp/>may<sp/>be<sp/>overwritten<sp/>when<sp/>we<sp/>read<sp/>back<sp/>the</highlight></codeline>
 <codeline lineno="665"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>status<sp/>at<sp/>the<sp/>end,<sp/>but<sp/>that&apos;s<sp/>OK<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="666"><highlight class="normal"><sp/><sp/><sp/><sp/>status<sp/>=<sp/>setDoubleParam(addr,<sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal">,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="666"><highlight class="normal"><sp/><sp/><sp/><sp/>status<sp/>=<sp/>setDoubleParam(addr,<sp/>function,<sp/>value);</highlight></codeline>
 <codeline lineno="667"><highlight class="normal"></highlight></codeline>
 <codeline lineno="668"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Changing<sp/>any<sp/>of<sp/>the<sp/>following<sp/>parameters<sp/>requires<sp/>recomputing<sp/>the<sp/>base<sp/>image<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="669"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="class_a_d_driver_1a922005db3a5a52dd24e6706fdfe1a160" kindref="member">ADAcquireTime</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="670"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf<sp/>(</highlight><highlight class="stringliteral">&quot;Setting<sp/>proposed<sp/>exposure<sp/>time<sp/>to<sp/>%e\n&quot;</highlight><highlight class="normal">,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="669"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(function<sp/>==<sp/><ref refid="class_a_d_driver_1a922005db3a5a52dd24e6706fdfe1a160" kindref="member">ADAcquireTime</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="670"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf<sp/>(</highlight><highlight class="stringliteral">&quot;Setting<sp/>proposed<sp/>exposure<sp/>time<sp/>to<sp/>%e\n&quot;</highlight><highlight class="normal">,<sp/>value);</highlight></codeline>
 <codeline lineno="671"><highlight class="normal"></highlight></codeline>
-<codeline lineno="672"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>|=<sp/>setDoubleParam(addr,<sp/><ref refid="class_a_d_driver_1a922005db3a5a52dd24e6706fdfe1a160" kindref="member">ADAcquireTime</ref>,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="672"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>|=<sp/>setDoubleParam(addr,<sp/><ref refid="class_a_d_driver_1a922005db3a5a52dd24e6706fdfe1a160" kindref="member">ADAcquireTime</ref>,<sp/>value);</highlight></codeline>
 <codeline lineno="673"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="674"><highlight class="normal"></highlight></codeline>
 <codeline lineno="675"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Do<sp/>callbacks<sp/>so<sp/>higher<sp/>layers<sp/>see<sp/>any<sp/>changes<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
@@ -978,11 +978,11 @@
 <codeline lineno="677"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(status)</highlight></codeline>
 <codeline lineno="678"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynPrint(pasynUser,<sp/>ASYN_TRACE_ERROR,</highlight></codeline>
 <codeline lineno="679"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s:writeFloat64<sp/>error,<sp/>status=%d<sp/>function=%d,<sp/>value=%f\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="680"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>status,<sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal">,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="680"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>status,<sp/>function,<sp/>value);</highlight></codeline>
 <codeline lineno="681"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="682"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynPrint(pasynUser,<sp/>ASYN_TRACEIO_DRIVER,</highlight></codeline>
 <codeline lineno="683"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s:writeFloat64:<sp/>function=%d,<sp/>value=%f\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="684"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal">,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="684"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>function,<sp/>value);</highlight></codeline>
 <codeline lineno="685"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>((asynStatus)<sp/>status);</highlight></codeline>
 <codeline lineno="686"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="687"><highlight class="normal"></highlight></codeline>
@@ -995,10 +995,10 @@
 <codeline lineno="694"><highlight class="normal"><sp/><sp/><sp/><sp/>fprintf(fp,<sp/></highlight><highlight class="stringliteral">&quot;PVCam<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>this-&gt;portName);</highlight></codeline>
 <codeline lineno="695"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(details<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
 <codeline lineno="696"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespacemake_adl_1a3c7364e67c0570681ac29158f738bff6" kindref="member">nx</ref>,<sp/>ny,<sp/><ref refid="_a_d_pylon_8cpp_1a048925b4357a1b4d6015c2113e05ce9f" kindref="member">dataType</ref>;</highlight></codeline>
-<codeline lineno="697"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>getIntegerParam(addr,<sp/><ref refid="class_a_d_driver_1a918ef4b3d80695f6872fd169b09b639a" kindref="member">ADSizeX</ref>,<sp/>&amp;<ref refid="namespacemake_adl_1a3c7364e67c0570681ac29158f738bff6" kindref="member">nx</ref>);</highlight></codeline>
+<codeline lineno="697"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>getIntegerParam(addr,<sp/><ref refid="class_a_d_driver_1a918ef4b3d80695f6872fd169b09b639a" kindref="member">ADSizeX</ref>,<sp/>&amp;nx);</highlight></codeline>
 <codeline lineno="698"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>getIntegerParam(addr,<sp/><ref refid="class_a_d_driver_1a59ba3ba61b2b6f51dc9d88d81680b632" kindref="member">ADSizeY</ref>,<sp/>&amp;ny);</highlight></codeline>
 <codeline lineno="699"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>getIntegerParam(addr,<sp/><ref refid="classasyn_n_d_array_driver_1af71358738ff1dbe4c9185f105807f799" kindref="member">NDDataType</ref>,<sp/>&amp;<ref refid="_a_d_pylon_8cpp_1a048925b4357a1b4d6015c2113e05ce9f" kindref="member">dataType</ref>);</highlight></codeline>
-<codeline lineno="700"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fprintf(fp,<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/>NX,<sp/>NY:<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>%d<sp/><sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/><ref refid="namespacemake_adl_1a3c7364e67c0570681ac29158f738bff6" kindref="member">nx</ref>,<sp/>ny);</highlight></codeline>
+<codeline lineno="700"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fprintf(fp,<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/>NX,<sp/>NY:<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>%d<sp/><sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>nx,<sp/>ny);</highlight></codeline>
 <codeline lineno="701"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fprintf(fp,<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/>Data<sp/>type:<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/><ref refid="_a_d_pylon_8cpp_1a048925b4357a1b4d6015c2113e05ce9f" kindref="member">dataType</ref>);</highlight></codeline>
 <codeline lineno="702"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="703"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Invoke<sp/>the<sp/>base<sp/>class<sp/>method<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
@@ -1721,7 +1721,7 @@
 <codeline lineno="1420"><highlight class="normal"><sp/><sp/><sp/><sp/>int16Parm2<sp/>=<sp/>iValue;</highlight></codeline>
 <codeline lineno="1421"><highlight class="normal"><sp/><sp/><sp/><sp/>printf<sp/>(</highlight><highlight class="stringliteral">&quot;binX:<sp/>%d,<sp/>binY:<sp/>%d,<sp/>minx:<sp/>%d,<sp/>miny:<sp/>%d,<sp/>sizex:<sp/>%d,<sp/>sizey:<sp/>%d,<sp/>triggerMode:<sp/>%d,<sp/>exposureTime:<sp/>%d\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
 <codeline lineno="1422"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>binX,<sp/>binY,<sp/>minX,<sp/>minY,<sp/>sizeX,<sp/>sizeY,<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)int16Parm2,<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)int16Parm);</highlight></codeline>
-<codeline lineno="1423"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!pl_exp_setup_seq<sp/>(detectorHandle,<sp/>1,<sp/>1,<sp/>&amp;roi,<sp/>(<ref refid="namespacehdf5_1abeed318faeb13380e1b4221bd4198bf1a280d85dc4e09e5ab478883241958dd5e" kindref="member">int16</ref>)int16Parm2,<sp/>int16Parm,<sp/>&amp;rawDataSize))</highlight></codeline>
+<codeline lineno="1423"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!pl_exp_setup_seq<sp/>(detectorHandle,<sp/>1,<sp/>1,<sp/>&amp;roi,<sp/>(int16)int16Parm2,<sp/>int16Parm,<sp/>&amp;rawDataSize))</highlight></codeline>
 <codeline lineno="1424"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>outputErrorMessage<sp/>(functionName,<sp/></highlight><highlight class="stringliteral">&quot;pl_exp_setup_seq&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="1425"><highlight class="normal"><sp/><sp/><sp/><sp/>status<sp/>|=<sp/><ref refid="classasyn_n_d_array_driver_1abf87462bc5853f8e5a56db5e93acd956" kindref="member">setIntegerParam</ref>(<ref refid="classpv_cam_1afccd6d729cd0e226b3991bb28db2da33" kindref="member">PVCamTriggerModeRBV</ref>,<sp/>iValue);</highlight></codeline>
 <codeline lineno="1426"><highlight class="normal"></highlight></codeline>

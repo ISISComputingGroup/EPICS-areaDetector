@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="dir_4e55ff8556a8699ecd41c4357c1c1d6e" kind="dir">
     <compoundname>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/NDDriverStdArrays</compoundname>
     <innerdir refid="dir_af46f3f1557b394ffe93ac0c902dba57">/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/NDDriverStdArrays/NDDriverStdArraysApp</innerdir>

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="class_a_d_gen_i_cam" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>ADGenICam</compoundname>
     <basecompoundref refid="class_a_d_driver" prot="public" virt="non-virtual">ADDriver</basecompoundref>
@@ -8,12 +8,13 @@
     <derivedcompoundref refid="class_a_d_spinnaker" prot="public" virt="non-virtual">ADSpinnaker</derivedcompoundref>
     <derivedcompoundref refid="class_a_d_vimba" prot="public" virt="non-virtual">ADVimba</derivedcompoundref>
     <includes refid="_a_d_gen_i_cam_8h" local="no">ADGenICam.h</includes>
-      <sectiondef kind="protected-attrib">
+    <sectiondef kind="protected-attrib">
       <memberdef kind="variable" id="class_a_d_gen_i_cam_1ae5e880ae91fff8958c40b8fec4391432" prot="protected" static="no" mutable="no">
         <type>int</type>
         <definition>int ADGenICam::GCFrameRate</definition>
         <argsstring></argsstring>
         <name>GCFrameRate</name>
+        <qualifiedname>ADGenICam::GCFrameRate</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -27,6 +28,7 @@
         <definition>int ADGenICam::GCFrameRateEnable</definition>
         <argsstring></argsstring>
         <name>GCFrameRateEnable</name>
+        <qualifiedname>ADGenICam::GCFrameRateEnable</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -40,6 +42,7 @@
         <definition>int ADGenICam::GCTriggerSource</definition>
         <argsstring></argsstring>
         <name>GCTriggerSource</name>
+        <qualifiedname>ADGenICam::GCTriggerSource</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -53,6 +56,7 @@
         <definition>int ADGenICam::GCTriggerOverlap</definition>
         <argsstring></argsstring>
         <name>GCTriggerOverlap</name>
+        <qualifiedname>ADGenICam::GCTriggerOverlap</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -66,6 +70,7 @@
         <definition>int ADGenICam::GCTriggerSoftware</definition>
         <argsstring></argsstring>
         <name>GCTriggerSoftware</name>
+        <qualifiedname>ADGenICam::GCTriggerSoftware</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -79,6 +84,7 @@
         <definition>int ADGenICam::GCExposureMode</definition>
         <argsstring></argsstring>
         <name>GCExposureMode</name>
+        <qualifiedname>ADGenICam::GCExposureMode</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -92,6 +98,7 @@
         <definition>int ADGenICam::GCExposureAuto</definition>
         <argsstring></argsstring>
         <name>GCExposureAuto</name>
+        <qualifiedname>ADGenICam::GCExposureAuto</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -105,6 +112,7 @@
         <definition>int ADGenICam::GCGainAuto</definition>
         <argsstring></argsstring>
         <name>GCGainAuto</name>
+        <qualifiedname>ADGenICam::GCGainAuto</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -118,6 +126,7 @@
         <definition>int ADGenICam::GCPixelFormat</definition>
         <argsstring></argsstring>
         <name>GCPixelFormat</name>
+        <qualifiedname>ADGenICam::GCPixelFormat</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -131,6 +140,7 @@
         <definition>GenICamFeatureSet ADGenICam::mGCFeatureSet</definition>
         <argsstring></argsstring>
         <name>mGCFeatureSet</name>
+        <qualifiedname>ADGenICam::mGCFeatureSet</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -139,13 +149,14 @@
         </inbodydescription>
         <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADGenICam/GenICamApp/src/ADGenICam.h" line="66" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADGenICam/GenICamApp/src/ADGenICam.h" bodystart="66" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="private-attrib">
+    </sectiondef>
+    <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="class_a_d_gen_i_cam_1ac9a3ccd5f22ac998d2df55ffc2b4d177" prot="private" static="no" mutable="no">
         <type>int</type>
         <definition>int ADGenICam::mFirstParam</definition>
         <argsstring></argsstring>
         <name>mFirstParam</name>
+        <qualifiedname>ADGenICam::mFirstParam</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -159,6 +170,7 @@
         <definition>bool ADGenICam::mFirstDrvUserCreateCall</definition>
         <argsstring></argsstring>
         <name>mFirstDrvUserCreateCall</name>
+        <qualifiedname>ADGenICam::mFirstDrvUserCreateCall</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -172,6 +184,7 @@
         <definition>bool ADGenICam::mWasAcquiring</definition>
         <argsstring></argsstring>
         <name>mWasAcquiring</name>
+        <qualifiedname>ADGenICam::mWasAcquiring</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -180,13 +193,14 @@
         </inbodydescription>
         <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADGenICam/GenICamApp/src/ADGenICam.h" line="73" column="10" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADGenICam/GenICamApp/src/ADGenICam.h" bodystart="73" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="public-func">
+    </sectiondef>
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="class_a_d_gen_i_cam_1a11bf34b8a6493bfbf090852e2f82dd61" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>ADGenICam::ADGenICam</definition>
         <argsstring>(const char *portName, size_t maxMemory, int priority, int stackSize)</argsstring>
         <name>ADGenICam</name>
+        <qualifiedname>ADGenICam::ADGenICam</qualifiedname>
         <param>
           <type>const char *</type>
           <declname>portName</declname>
@@ -251,6 +265,7 @@
         <definition>asynStatus ADGenICam::writeInt32</definition>
         <argsstring>(asynUser *pasynUser, epicsInt32 value)</argsstring>
         <name>writeInt32</name>
+        <qualifiedname>ADGenICam::writeInt32</qualifiedname>
         <reimplements refid="class_a_d_driver_1abef6916bb90d032a1aeb6894adef12a6">writeInt32</reimplements>
         <reimplementedby refid="class_a_d_aravis_1ab3aace6e7a423f12be0713deb4409bac">writeInt32</reimplementedby>
         <param>
@@ -293,6 +308,7 @@ Takes action if the function code requires it. ADAcquire, ADSizeX, and many othe
         <definition>asynStatus ADGenICam::writeInt64</definition>
         <argsstring>(asynUser *pasynUser, epicsInt64 value)</argsstring>
         <name>writeInt64</name>
+        <qualifiedname>ADGenICam::writeInt64</qualifiedname>
         <param>
           <type>asynUser *</type>
           <declname>pasynUser</declname>
@@ -333,6 +349,7 @@ Takes action if the function code requires it. ADAcquire, ADSizeX, and many othe
         <definition>asynStatus ADGenICam::writeFloat64</definition>
         <argsstring>(asynUser *pasynUser, epicsFloat64 value)</argsstring>
         <name>writeFloat64</name>
+        <qualifiedname>ADGenICam::writeFloat64</qualifiedname>
         <param>
           <type>asynUser *</type>
           <declname>pasynUser</declname>
@@ -373,6 +390,7 @@ Takes action if the function code requires it. </para>
         <definition>asynStatus ADGenICam::readEnum</definition>
         <argsstring>(asynUser *pasynUser, char *strings[], int values[], int severities[], size_t nElements, size_t *nIn)</argsstring>
         <name>readEnum</name>
+        <qualifiedname>ADGenICam::readEnum</qualifiedname>
         <reimplementedby refid="class_a_d_pylon_1a9673c67d48ee837b6b0e7485a75b7b15">readEnum</reimplementedby>
         <reimplementedby refid="class_a_d_spinnaker_1aaf4b46ecf92f6e19a704d2dae1655e84">readEnum</reimplementedby>
         <reimplementedby refid="class_a_d_vimba_1afdc27f413f3ef9e4f381e76484cd5c1b">readEnum</reimplementedby>
@@ -416,6 +434,7 @@ Takes action if the function code requires it. </para>
         <definition>void ADGenICam::report</definition>
         <argsstring>(FILE *fp, int details)</argsstring>
         <name>report</name>
+        <qualifiedname>ADGenICam::report</qualifiedname>
         <reimplements refid="classasyn_n_d_array_driver_1ac3f2d73a05eb54357ec3f052e1b000f2">report</reimplements>
         <reimplementedby refid="class_a_d_pylon_1ace2474a62d9b3918de94fab432b1654d">report</reimplementedby>
         <reimplementedby refid="class_a_d_spinnaker_1a10ee13de89989f8262bc23e141b8efc8">report</reimplementedby>
@@ -460,6 +479,7 @@ Takes action if the function code requires it. </para>
         <definition>asynStatus ADGenICam::drvUserCreate</definition>
         <argsstring>(asynUser *pasynUser, const char *drvInfo, const char **pptypeName, size_t *psize)</argsstring>
         <name>drvUserCreate</name>
+        <qualifiedname>ADGenICam::drvUserCreate</qualifiedname>
         <param>
           <type>asynUser *</type>
           <declname>pasynUser</declname>
@@ -489,6 +509,7 @@ Takes action if the function code requires it. </para>
         <definition>asynStatus ADGenICam::readStatus</definition>
         <argsstring>()</argsstring>
         <name>readStatus</name>
+        <qualifiedname>ADGenICam::readStatus</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -502,6 +523,7 @@ Takes action if the function code requires it. </para>
         <definition>asynStatus ADGenICam::setImageParams</definition>
         <argsstring>()</argsstring>
         <name>setImageParams</name>
+        <qualifiedname>ADGenICam::setImageParams</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -515,6 +537,7 @@ Takes action if the function code requires it. </para>
         <definition>asynStatus ADGenICam::pauseAcquisition</definition>
         <argsstring>()</argsstring>
         <name>pauseAcquisition</name>
+        <qualifiedname>ADGenICam::pauseAcquisition</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -528,6 +551,7 @@ Takes action if the function code requires it. </para>
         <definition>asynStatus ADGenICam::resumeAcquisition</definition>
         <argsstring>()</argsstring>
         <name>resumeAcquisition</name>
+        <qualifiedname>ADGenICam::resumeAcquisition</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -541,6 +565,7 @@ Takes action if the function code requires it. </para>
         <definition>void ADGenICam::decompressMono12p</definition>
         <argsstring>(int numPixels, bool leftShift, epicsUInt8 *input, epicsUInt16 *output)</argsstring>
         <name>decompressMono12p</name>
+        <qualifiedname>ADGenICam::decompressMono12p</qualifiedname>
         <param>
           <type>int</type>
           <declname>numPixels</declname>
@@ -605,6 +630,7 @@ Takes action if the function code requires it. </para>
         <definition>void ADGenICam::decompressMono12Packed</definition>
         <argsstring>(int numPixels, bool leftShift, epicsUInt8 *input, epicsUInt16 *output)</argsstring>
         <name>decompressMono12Packed</name>
+        <qualifiedname>ADGenICam::decompressMono12Packed</qualifiedname>
         <param>
           <type>int</type>
           <declname>numPixels</declname>
@@ -664,11 +690,12 @@ Takes action if the function code requires it. </para>
         </inbodydescription>
         <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADGenICam/GenICamApp/src/ADGenICam.h" line="45" column="18" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADGenICam/GenICamApp/src/ADGenICam.cpp" bodystart="595" bodyend="612"/>
       </memberdef>
-      <memberdef kind="function" id="class_a_d_gen_i_cam_1a1989d94807c08ce3f12ee6e950cda256" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+      <memberdef kind="function" id="class_a_d_gen_i_cam_1ac8b9a510f256e303219f4f3dbf225ebb" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="class_gen_i_cam_feature" kindref="compound">GenICamFeature</ref> *</type>
-        <definition>virtual GenICamFeature* ADGenICam::createFeature</definition>
+        <definition>virtual GenICamFeature * ADGenICam::createFeature</definition>
         <argsstring>(GenICamFeatureSet *set, std::string const &amp;asynName, asynParamType asynType, int asynIndex, std::string const &amp;featureName, GCFeatureType_t featureType)=0</argsstring>
         <name>createFeature</name>
+        <qualifiedname>ADGenICam::createFeature</qualifiedname>
         <reimplementedby refid="class_a_d_aravis_1a9d4a3a1e849cd4f72633daa1436ecc17">createFeature</reimplementedby>
         <reimplementedby refid="class_a_d_pylon_1a5771133b2027b907d26e97068b28d17c">createFeature</reimplementedby>
         <reimplementedby refid="class_a_d_spinnaker_1aab1fc231e184c00fbf20681af8831b4d">createFeature</reimplementedby>
@@ -710,6 +737,7 @@ Takes action if the function code requires it. </para>
         <definition>asynStatus ADGenICam::addADDriverFeatures</definition>
         <argsstring>()</argsstring>
         <name>addADDriverFeatures</name>
+        <qualifiedname>ADGenICam::addADDriverFeatures</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -723,6 +751,7 @@ Takes action if the function code requires it. </para>
         <definition>virtual asynStatus ADGenICam::startCapture</definition>
         <argsstring>()=0</argsstring>
         <name>startCapture</name>
+        <qualifiedname>ADGenICam::startCapture</qualifiedname>
         <reimplementedby refid="class_a_d_aravis_1a406c3466598cee023c85cdc33c400416">startCapture</reimplementedby>
         <reimplementedby refid="class_a_d_pylon_1a792e89d193b67d82bc97f3f8a3439c36">startCapture</reimplementedby>
         <reimplementedby refid="class_a_d_spinnaker_1a5d442adb176d1f49b63cccb3df4081ee">startCapture</reimplementedby>
@@ -740,6 +769,7 @@ Takes action if the function code requires it. </para>
         <definition>virtual asynStatus ADGenICam::stopCapture</definition>
         <argsstring>()=0</argsstring>
         <name>stopCapture</name>
+        <qualifiedname>ADGenICam::stopCapture</qualifiedname>
         <reimplementedby refid="class_a_d_aravis_1ab8242a3112e1133438eeda81e011831b">stopCapture</reimplementedby>
         <reimplementedby refid="class_a_d_pylon_1ae3729d1917a60826b621975586a4d7f5">stopCapture</reimplementedby>
         <reimplementedby refid="class_a_d_spinnaker_1aba6221c401b9e483ca11f50ddbed87cc">stopCapture</reimplementedby>
@@ -752,13 +782,14 @@ Takes action if the function code requires it. </para>
         </inbodydescription>
         <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADGenICam/GenICamApp/src/ADGenICam.h" line="53" column="24"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="private-func">
+    </sectiondef>
+    <sectiondef kind="private-func">
       <memberdef kind="function" id="class_a_d_gen_i_cam_1a94a7c6370c393b47f4e72b9ca86e2ab4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>asynStatus</type>
         <definition>asynStatus ADGenICam::createMultiFeature</definition>
         <argsstring>(std::string const &amp;asynName, asynParamType asynType, int asynIndex, std::vector&lt; GCFeatureStruct_t &gt; &amp;features)</argsstring>
         <name>createMultiFeature</name>
+        <qualifiedname>ADGenICam::createMultiFeature</qualifiedname>
         <param>
           <type>std::string const &amp;</type>
           <declname>asynName</declname>
@@ -783,12 +814,36 @@ Takes action if the function code requires it. </para>
         </inbodydescription>
         <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADGenICam/GenICamApp/src/ADGenICam.h" line="69" column="16" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADGenICam/GenICamApp/src/ADGenICam.cpp" bodystart="424" bodyend="438"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
+      <node id="5">
+        <label>ADAravis</label>
+        <link refid="class_a_d_aravis"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>ADDriver</label>
+        <link refid="class_a_d_driver"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>ADGenICam</label>
+        <link refid="class_a_d_gen_i_cam"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>ADPylon</label>
+        <link refid="class_a_d_pylon"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
       <node id="7">
         <label>ADSpinnaker</label>
         <link refid="class_a_d_spinnaker"/>
@@ -801,109 +856,22 @@ Takes action if the function code requires it. </para>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="4">
-        <label>asynPortDriver</label>
-      </node>
-      <node id="6">
-        <label>ADPylon</label>
-        <link refid="class_a_d_pylon"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
       <node id="3">
         <label>asynNDArrayDriver</label>
         <link refid="classasyn_n_d_array_driver"/>
         <childnode refid="4" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="2">
-        <label>ADDriver</label>
-        <link refid="class_a_d_driver"/>
-        <childnode refid="3" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="5">
-        <label>ADAravis</label>
-        <link refid="class_a_d_aravis"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="1">
-        <label>ADGenICam</label>
-        <link refid="class_a_d_gen_i_cam"/>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
+      <node id="4">
+        <label>asynPortDriver</label>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="8">
-        <label>NDDimension</label>
-        <link refid="struct_n_d_dimension"/>
-      </node>
-      <node id="4">
-        <label>asynPortDriver</label>
-      </node>
-      <node id="10">
-        <label>string</label>
-      </node>
-      <node id="9">
-        <label>Codec_t</label>
-        <link refid="struct_codec__t"/>
-        <childnode refid="10" relation="usage">
-          <edgelabel>name</edgelabel>
-        </childnode>
-      </node>
-      <node id="7">
-        <label>NDArray</label>
-        <link refid="class_n_d_array"/>
-        <childnode refid="5" relation="usage">
-          <edgelabel>pNDArrayPool</edgelabel>
-        </childnode>
-        <childnode refid="8" relation="usage">
-          <edgelabel>dims</edgelabel>
-        </childnode>
-        <childnode refid="6" relation="usage">
-          <edgelabel>pAttributeList</edgelabel>
-        </childnode>
-        <childnode refid="9" relation="usage">
-          <edgelabel>codec</edgelabel>
-        </childnode>
-        <childnode refid="3" relation="usage">
-          <edgelabel>pDriver</edgelabel>
-        </childnode>
-      </node>
-      <node id="3">
-        <label>asynNDArrayDriver</label>
-        <link refid="classasyn_n_d_array_driver"/>
-        <childnode refid="4" relation="public-inheritance">
-        </childnode>
-        <childnode refid="5" relation="usage">
-          <edgelabel>pNDArrayPool</edgelabel>
-        </childnode>
-        <childnode refid="6" relation="usage">
-          <edgelabel>pAttributeList</edgelabel>
-        </childnode>
-        <childnode refid="7" relation="usage">
-          <edgelabel>pArrays</edgelabel>
-        </childnode>
-      </node>
-      <node id="11">
-        <label>GenICamFeatureSet</label>
-        <link refid="class_gen_i_cam_feature_set"/>
-      </node>
-      <node id="5">
-        <label>NDArrayPool</label>
-        <link refid="class_n_d_array_pool"/>
-      </node>
       <node id="2">
         <label>ADDriver</label>
         <link refid="class_a_d_driver"/>
         <childnode refid="3" relation="public-inheritance">
         </childnode>
-      </node>
-      <node id="6">
-        <label>NDAttributeList</label>
-        <link refid="class_n_d_attribute_list"/>
       </node>
       <node id="1">
         <label>ADGenICam</label>
@@ -913,6 +881,69 @@ Takes action if the function code requires it. </para>
         <childnode refid="11" relation="usage">
           <edgelabel>mGCFeatureSet</edgelabel>
         </childnode>
+      </node>
+      <node id="9">
+        <label>Codec_t</label>
+        <link refid="struct_codec__t"/>
+        <childnode refid="10" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
+      </node>
+      <node id="11">
+        <label>GenICamFeatureSet</label>
+        <link refid="class_gen_i_cam_feature_set"/>
+      </node>
+      <node id="6">
+        <label>NDArray</label>
+        <link refid="class_n_d_array"/>
+        <childnode refid="5" relation="usage">
+          <edgelabel>pNDArrayPool</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>pDriver</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>dims</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>pAttributeList</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>codec</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>NDArrayPool</label>
+        <link refid="class_n_d_array_pool"/>
+      </node>
+      <node id="8">
+        <label>NDAttributeList</label>
+        <link refid="class_n_d_attribute_list"/>
+      </node>
+      <node id="7">
+        <label>NDDimension</label>
+        <link refid="struct_n_d_dimension"/>
+      </node>
+      <node id="3">
+        <label>asynNDArrayDriver</label>
+        <link refid="classasyn_n_d_array_driver"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>pNDArrayPool</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>pArrays</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>pAttributeList</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>asynPortDriver</label>
+      </node>
+      <node id="10">
+        <label>string</label>
       </node>
     </collaborationgraph>
     <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADGenICam/GenICamApp/src/ADGenICam.h" line="24" column="1" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADGenICam/GenICamApp/src/ADGenICam.h" bodystart="25" bodyend="74"/>
@@ -966,7 +997,7 @@ Takes action if the function code requires it. </para>
       <member refid="classasyn_n_d_array_driver_1aba7309da5e7c5571fc693b1998c9d236" prot="public" virt="virtual"><scope>ADGenICam</scope><name>checkPath</name></member>
       <member refid="classasyn_n_d_array_driver_1aaca89f35ddf4c5a1c22374ff608593cd" prot="public" virt="virtual"><scope>ADGenICam</scope><name>checkPath</name></member>
       <member refid="class_a_d_driver_1a619dfbdc35605a104d2a07ea46f37b5f" prot="public" virt="virtual"><scope>ADGenICam</scope><name>connect</name></member>
-      <member refid="class_a_d_gen_i_cam_1a1989d94807c08ce3f12ee6e950cda256" prot="public" virt="pure-virtual"><scope>ADGenICam</scope><name>createFeature</name></member>
+      <member refid="class_a_d_gen_i_cam_1ac8b9a510f256e303219f4f3dbf225ebb" prot="public" virt="pure-virtual"><scope>ADGenICam</scope><name>createFeature</name></member>
       <member refid="classasyn_n_d_array_driver_1a813f6c84e96329cd89653a3b0497f8a9" prot="public" virt="virtual"><scope>ADGenICam</scope><name>createFileName</name></member>
       <member refid="classasyn_n_d_array_driver_1af5494c8e3b3f317e049a5c336d8065f4" prot="public" virt="virtual"><scope>ADGenICam</scope><name>createFileName</name></member>
       <member refid="classasyn_n_d_array_driver_1a42b3686c9c08b14ba054dd005a30fa0d" prot="public" virt="virtual"><scope>ADGenICam</scope><name>createFilePath</name></member>

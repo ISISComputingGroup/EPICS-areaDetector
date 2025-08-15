@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="class_n_d_plugin_driver" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>NDPluginDriver</compoundname>
     <basecompoundref refid="classasyn_n_d_array_driver" prot="public" virt="non-virtual">asynNDArrayDriver</basecompoundref>
@@ -30,12 +30,13 @@
     <derivedcompoundref refid="class_n_d_pos_plugin" prot="public" virt="non-virtual">NDPosPlugin</derivedcompoundref>
     <derivedcompoundref refid="classffmpeg_stream" prot="public" virt="non-virtual">ffmpegStream</derivedcompoundref>
     <includes refid="_n_d_plugin_driver_8h" local="no">NDPluginDriver.h</includes>
-      <sectiondef kind="protected-attrib">
+    <sectiondef kind="protected-attrib">
       <memberdef kind="variable" id="class_n_d_plugin_driver_1af17c68cbdf44c2d0e5afe616cea59a33" prot="protected" static="no" mutable="no">
         <type>int</type>
         <definition>int NDPluginDriver::NDPluginDriverArrayPort</definition>
         <argsstring></argsstring>
         <name>NDPluginDriverArrayPort</name>
+        <qualifiedname>NDPluginDriver::NDPluginDriverArrayPort</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -49,6 +50,7 @@
         <definition>int NDPluginDriver::NDPluginDriverArrayAddr</definition>
         <argsstring></argsstring>
         <name>NDPluginDriverArrayAddr</name>
+        <qualifiedname>NDPluginDriver::NDPluginDriverArrayAddr</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -62,6 +64,7 @@
         <definition>int NDPluginDriver::NDPluginDriverPluginType</definition>
         <argsstring></argsstring>
         <name>NDPluginDriverPluginType</name>
+        <qualifiedname>NDPluginDriver::NDPluginDriverPluginType</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -75,6 +78,7 @@
         <definition>int NDPluginDriver::NDPluginDriverDroppedArrays</definition>
         <argsstring></argsstring>
         <name>NDPluginDriverDroppedArrays</name>
+        <qualifiedname>NDPluginDriver::NDPluginDriverDroppedArrays</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -88,6 +92,7 @@
         <definition>int NDPluginDriver::NDPluginDriverQueueSize</definition>
         <argsstring></argsstring>
         <name>NDPluginDriverQueueSize</name>
+        <qualifiedname>NDPluginDriver::NDPluginDriverQueueSize</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -101,6 +106,7 @@
         <definition>int NDPluginDriver::NDPluginDriverQueueFree</definition>
         <argsstring></argsstring>
         <name>NDPluginDriverQueueFree</name>
+        <qualifiedname>NDPluginDriver::NDPluginDriverQueueFree</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -114,6 +120,7 @@
         <definition>int NDPluginDriver::NDPluginDriverMaxThreads</definition>
         <argsstring></argsstring>
         <name>NDPluginDriverMaxThreads</name>
+        <qualifiedname>NDPluginDriver::NDPluginDriverMaxThreads</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -127,6 +134,7 @@
         <definition>int NDPluginDriver::NDPluginDriverNumThreads</definition>
         <argsstring></argsstring>
         <name>NDPluginDriverNumThreads</name>
+        <qualifiedname>NDPluginDriver::NDPluginDriverNumThreads</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -140,6 +148,7 @@
         <definition>int NDPluginDriver::NDPluginDriverSortMode</definition>
         <argsstring></argsstring>
         <name>NDPluginDriverSortMode</name>
+        <qualifiedname>NDPluginDriver::NDPluginDriverSortMode</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -153,6 +162,7 @@
         <definition>int NDPluginDriver::NDPluginDriverSortTime</definition>
         <argsstring></argsstring>
         <name>NDPluginDriverSortTime</name>
+        <qualifiedname>NDPluginDriver::NDPluginDriverSortTime</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -166,6 +176,7 @@
         <definition>int NDPluginDriver::NDPluginDriverSortSize</definition>
         <argsstring></argsstring>
         <name>NDPluginDriverSortSize</name>
+        <qualifiedname>NDPluginDriver::NDPluginDriverSortSize</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -179,6 +190,7 @@
         <definition>int NDPluginDriver::NDPluginDriverSortFree</definition>
         <argsstring></argsstring>
         <name>NDPluginDriverSortFree</name>
+        <qualifiedname>NDPluginDriver::NDPluginDriverSortFree</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -192,6 +204,7 @@
         <definition>int NDPluginDriver::NDPluginDriverDisorderedArrays</definition>
         <argsstring></argsstring>
         <name>NDPluginDriverDisorderedArrays</name>
+        <qualifiedname>NDPluginDriver::NDPluginDriverDisorderedArrays</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -205,6 +218,7 @@
         <definition>int NDPluginDriver::NDPluginDriverDroppedOutputArrays</definition>
         <argsstring></argsstring>
         <name>NDPluginDriverDroppedOutputArrays</name>
+        <qualifiedname>NDPluginDriver::NDPluginDriverDroppedOutputArrays</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -218,6 +232,7 @@
         <definition>int NDPluginDriver::NDPluginDriverEnableCallbacks</definition>
         <argsstring></argsstring>
         <name>NDPluginDriverEnableCallbacks</name>
+        <qualifiedname>NDPluginDriver::NDPluginDriverEnableCallbacks</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -231,6 +246,7 @@
         <definition>int NDPluginDriver::NDPluginDriverBlockingCallbacks</definition>
         <argsstring></argsstring>
         <name>NDPluginDriverBlockingCallbacks</name>
+        <qualifiedname>NDPluginDriver::NDPluginDriverBlockingCallbacks</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -244,6 +260,7 @@
         <definition>int NDPluginDriver::NDPluginDriverProcessPlugin</definition>
         <argsstring></argsstring>
         <name>NDPluginDriverProcessPlugin</name>
+        <qualifiedname>NDPluginDriver::NDPluginDriverProcessPlugin</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -257,6 +274,7 @@
         <definition>int NDPluginDriver::NDPluginDriverExecutionTime</definition>
         <argsstring></argsstring>
         <name>NDPluginDriverExecutionTime</name>
+        <qualifiedname>NDPluginDriver::NDPluginDriverExecutionTime</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -270,6 +288,7 @@
         <definition>int NDPluginDriver::NDPluginDriverMinCallbackTime</definition>
         <argsstring></argsstring>
         <name>NDPluginDriverMinCallbackTime</name>
+        <qualifiedname>NDPluginDriver::NDPluginDriverMinCallbackTime</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -283,6 +302,7 @@
         <definition>int NDPluginDriver::NDPluginDriverMaxByteRate</definition>
         <argsstring></argsstring>
         <name>NDPluginDriverMaxByteRate</name>
+        <qualifiedname>NDPluginDriver::NDPluginDriverMaxByteRate</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -296,6 +316,7 @@
         <definition>NDArray* NDPluginDriver::pPrevInputArray_</definition>
         <argsstring></argsstring>
         <name>pPrevInputArray_</name>
+        <qualifiedname>NDPluginDriver::pPrevInputArray_</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -304,13 +325,14 @@
         </inbodydescription>
         <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginDriver.h" line="110" column="13" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginDriver.h" bodystart="110" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="private-attrib">
+    </sectiondef>
+    <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="class_n_d_plugin_driver_1aaa38e788dacc40d9369ed3e4270b8596" prot="private" static="no" mutable="no">
         <type>void *</type>
         <definition>void* NDPluginDriver::asynGenericPointerInterruptPvt_</definition>
         <argsstring></argsstring>
         <name>asynGenericPointerInterruptPvt_</name>
+        <qualifiedname>NDPluginDriver::asynGenericPointerInterruptPvt_</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -324,6 +346,7 @@
         <definition>int NDPluginDriver::numThreads_</definition>
         <argsstring></argsstring>
         <name>numThreads_</name>
+        <qualifiedname>NDPluginDriver::numThreads_</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -337,6 +360,7 @@
         <definition>bool NDPluginDriver::pluginStarted_</definition>
         <argsstring></argsstring>
         <name>pluginStarted_</name>
+        <qualifiedname>NDPluginDriver::pluginStarted_</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -350,6 +374,7 @@
         <definition>bool NDPluginDriver::firstOutputArray_</definition>
         <argsstring></argsstring>
         <name>firstOutputArray_</name>
+        <qualifiedname>NDPluginDriver::firstOutputArray_</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -363,6 +388,7 @@
         <definition>asynUser* NDPluginDriver::pasynUserGenericPointer_</definition>
         <argsstring></argsstring>
         <name>pasynUserGenericPointer_</name>
+        <qualifiedname>NDPluginDriver::pasynUserGenericPointer_</qualifiedname>
         <briefdescription>
 <para>asynUser for connecting to <ref refid="class_n_d_array" kindref="compound">NDArray</ref> driver </para>
         </briefdescription>
@@ -377,6 +403,7 @@
         <definition>void* NDPluginDriver::asynGenericPointerPvt_</definition>
         <argsstring></argsstring>
         <name>asynGenericPointerPvt_</name>
+        <qualifiedname>NDPluginDriver::asynGenericPointerPvt_</qualifiedname>
         <briefdescription>
 <para>Handle for connecting to <ref refid="class_n_d_array" kindref="compound">NDArray</ref> driver. </para>
         </briefdescription>
@@ -391,6 +418,7 @@
         <definition>asynGenericPointer* NDPluginDriver::pasynGenericPointer_</definition>
         <argsstring></argsstring>
         <name>pasynGenericPointer_</name>
+        <qualifiedname>NDPluginDriver::pasynGenericPointer_</qualifiedname>
         <briefdescription>
 <para>asyn interface for connecting to <ref refid="class_n_d_array" kindref="compound">NDArray</ref> driver </para>
         </briefdescription>
@@ -405,6 +433,7 @@
         <definition>bool NDPluginDriver::connectedToArrayPort_</definition>
         <argsstring></argsstring>
         <name>connectedToArrayPort_</name>
+        <qualifiedname>NDPluginDriver::connectedToArrayPort_</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -418,6 +447,7 @@
         <definition>std::vector&lt;epicsThread*&gt; NDPluginDriver::pThreads_</definition>
         <argsstring></argsstring>
         <name>pThreads_</name>
+        <qualifiedname>NDPluginDriver::pThreads_</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -431,6 +461,7 @@
         <definition>epicsMessageQueue* NDPluginDriver::pToThreadMsgQ_</definition>
         <argsstring></argsstring>
         <name>pToThreadMsgQ_</name>
+        <qualifiedname>NDPluginDriver::pToThreadMsgQ_</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -444,6 +475,7 @@
         <definition>epicsMessageQueue* NDPluginDriver::pFromThreadMsgQ_</definition>
         <argsstring></argsstring>
         <name>pFromThreadMsgQ_</name>
+        <qualifiedname>NDPluginDriver::pFromThreadMsgQ_</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -457,6 +489,7 @@
         <definition>std::multiset&lt;sortedListElement&gt; NDPluginDriver::sortedNDArrayList_</definition>
         <argsstring></argsstring>
         <name>sortedNDArrayList_</name>
+        <qualifiedname>NDPluginDriver::sortedNDArrayList_</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -470,6 +503,7 @@
         <definition>int NDPluginDriver::prevUniqueId_</definition>
         <argsstring></argsstring>
         <name>prevUniqueId_</name>
+        <qualifiedname>NDPluginDriver::prevUniqueId_</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -483,6 +517,7 @@
         <definition>epicsThreadId NDPluginDriver::sortingThreadId_</definition>
         <argsstring></argsstring>
         <name>sortingThreadId_</name>
+        <qualifiedname>NDPluginDriver::sortingThreadId_</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -496,6 +531,7 @@
         <definition>epicsTimeStamp NDPluginDriver::lastProcessTime_</definition>
         <argsstring></argsstring>
         <name>lastProcessTime_</name>
+        <qualifiedname>NDPluginDriver::lastProcessTime_</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -509,6 +545,7 @@
         <definition>int NDPluginDriver::dimsPrev_[ND_ARRAY_MAX_DIMS]</definition>
         <argsstring>[ND_ARRAY_MAX_DIMS]</argsstring>
         <name>dimsPrev_</name>
+        <qualifiedname>NDPluginDriver::dimsPrev_</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -522,6 +559,7 @@
         <definition>bool NDPluginDriver::compressionAware_</definition>
         <argsstring></argsstring>
         <name>compressionAware_</name>
+        <qualifiedname>NDPluginDriver::compressionAware_</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -535,6 +573,7 @@
         <definition>Throttler* NDPluginDriver::throttler_</definition>
         <argsstring></argsstring>
         <name>throttler_</name>
+        <qualifiedname>NDPluginDriver::throttler_</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -543,13 +582,14 @@
         </inbodydescription>
         <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginDriver.h" line="140" column="15" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginDriver.h" bodystart="140" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="public-func">
+    </sectiondef>
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="class_n_d_plugin_driver_1a64f942bde94593fdb0b5ff5c677197d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>NDPluginDriver::NDPluginDriver</definition>
         <argsstring>(const char *portName, int queueSize, int blockingCallbacks, const char *NDArrayPort, int NDArrayAddr, int maxAddr, int maxBuffers, size_t maxMemory, int interfaceMask, int interruptMask, int asynFlags, int autoConnect, int priority, int stackSize, int maxThreads, bool compressionAware=false)</argsstring>
         <name>NDPluginDriver</name>
+        <qualifiedname>NDPluginDriver::NDPluginDriver</qualifiedname>
         <param>
           <type>const char *</type>
           <declname>portName</declname>
@@ -759,6 +799,7 @@
         <definition>NDPluginDriver::~NDPluginDriver</definition>
         <argsstring>()</argsstring>
         <name>~NDPluginDriver</name>
+        <qualifiedname>NDPluginDriver::~NDPluginDriver</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -772,6 +813,7 @@
         <definition>asynStatus NDPluginDriver::writeInt32</definition>
         <argsstring>(asynUser *pasynUser, epicsInt32 value)</argsstring>
         <name>writeInt32</name>
+        <qualifiedname>NDPluginDriver::writeInt32</qualifiedname>
         <reimplements refid="classasyn_n_d_array_driver_1a36610c94479e66123d75057595f39f70">writeInt32</reimplements>
         <reimplementedby refid="class_n_d_file_h_d_f5_1a93b912985918638c2043e9ffd10d5550">writeInt32</reimplementedby>
         <reimplementedby refid="class_n_d_plugin_attribute_1ae6384816548704d81a071f7b953da188">writeInt32</reimplementedby>
@@ -826,6 +868,7 @@
         <definition>asynStatus NDPluginDriver::writeFloat64</definition>
         <argsstring>(asynUser *pasynUser, epicsFloat64 value)</argsstring>
         <name>writeFloat64</name>
+        <qualifiedname>NDPluginDriver::writeFloat64</qualifiedname>
         <reimplementedby refid="class_n_d_plugin_focus_metrics_1a6302db29ae541a4960cfaf297ada2fe8">writeFloat64</reimplementedby>
         <reimplementedby refid="class_n_d_plugin_stats_1a440c32f49dfb67fa285ae16ba82067e2">writeFloat64</reimplementedby>
         <reimplementedby refid="class_n_d_plugin_time_series_1a1e5aa73cb3f0cbc660556e364002fcc9">writeFloat64</reimplementedby>
@@ -870,6 +913,7 @@
         <definition>asynStatus NDPluginDriver::writeOctet</definition>
         <argsstring>(asynUser *pasynUser, const char *value, size_t maxChars, size_t *nActual)</argsstring>
         <name>writeOctet</name>
+        <qualifiedname>NDPluginDriver::writeOctet</qualifiedname>
         <reimplements refid="classasyn_n_d_array_driver_1a84d981f8995d984035bb9feff727d520">writeOctet</reimplements>
         <reimplementedby refid="class_n_d_file_h_d_f5_1a2fa826f0152ca52e084a63c58f9004b3">writeOctet</reimplementedby>
         <reimplementedby refid="class_n_d_file_nexus_1a87844e2ea40bfc624a833f0b039c607a">writeOctet</reimplementedby>
@@ -941,6 +985,7 @@
         <definition>asynStatus NDPluginDriver::readInt32Array</definition>
         <argsstring>(asynUser *pasynUser, epicsInt32 *value, size_t nElements, size_t *nIn)</argsstring>
         <name>readInt32Array</name>
+        <qualifiedname>NDPluginDriver::readInt32Array</qualifiedname>
         <reimplementedby refid="class_n_d_plugin_std_arrays_1a4108becd00af1138e9f7e0a9357e4c65">readInt32Array</reimplementedby>
         <param>
           <type>asynUser *</type>
@@ -1006,6 +1051,7 @@
         <definition>void NDPluginDriver::driverCallback</definition>
         <argsstring>(asynUser *pasynUser, void *genericPointer)</argsstring>
         <name>driverCallback</name>
+        <qualifiedname>NDPluginDriver::driverCallback</qualifiedname>
         <param>
           <type>asynUser *</type>
           <declname>pasynUser</declname>
@@ -1046,6 +1092,7 @@
         <definition>void NDPluginDriver::run</definition>
         <argsstring>(void)</argsstring>
         <name>run</name>
+        <qualifiedname>NDPluginDriver::run</qualifiedname>
         <param>
           <type>void</type>
         </param>
@@ -1063,6 +1110,7 @@
         <definition>asynStatus NDPluginDriver::start</definition>
         <argsstring>(void)</argsstring>
         <name>start</name>
+        <qualifiedname>NDPluginDriver::start</qualifiedname>
         <param>
           <type>void</type>
         </param>
@@ -1081,6 +1129,7 @@
         <definition>void NDPluginDriver::sortingTask</definition>
         <argsstring>()</argsstring>
         <name>sortingTask</name>
+        <qualifiedname>NDPluginDriver::sortingTask</qualifiedname>
         <briefdescription>
 <para>Method runs as a separate thread, periodically doing <ref refid="class_n_d_array" kindref="compound">NDArray</ref> callbacks to downstream plugins. </para>
         </briefdescription>
@@ -1091,13 +1140,14 @@
         </inbodydescription>
         <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginDriver.h" line="78" column="10" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginDriver.cpp" bodystart="619" bodyend="670"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="protected-func">
+    </sectiondef>
+    <sectiondef kind="protected-func">
       <memberdef kind="function" id="class_n_d_plugin_driver_1a75ed5528f584d90e4f789aef058661cd" prot="protected" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>void</type>
         <definition>virtual void NDPluginDriver::processCallbacks</definition>
         <argsstring>(NDArray *pArray)=0</argsstring>
         <name>processCallbacks</name>
+        <qualifiedname>NDPluginDriver::processCallbacks</qualifiedname>
         <reimplementedby refid="class_n_d_plugin_attribute_1a468b7e706cb6d70fbe2457fe86b5f49f">processCallbacks</reimplementedby>
         <reimplementedby refid="class_n_d_plugin_attr_plot_1a020304d5151936f11d73e94f73e03006">processCallbacks</reimplementedby>
         <reimplementedby refid="class_n_d_plugin_bad_pixel_1ae5f4ab5b4080f72692a844aac47f54ff">processCallbacks</reimplementedby>
@@ -1141,6 +1191,7 @@
         <definition>void NDPluginDriver::beginProcessCallbacks</definition>
         <argsstring>(NDArray *pArray)</argsstring>
         <name>beginProcessCallbacks</name>
+        <qualifiedname>NDPluginDriver::beginProcessCallbacks</qualifiedname>
         <param>
           <type><ref refid="class_n_d_array" kindref="compound">NDArray</ref> *</type>
           <declname>pArray</declname>
@@ -1169,6 +1220,7 @@ This method takes care of some bookkeeping for callbacks, updating parameters fr
         <definition>asynStatus NDPluginDriver::endProcessCallbacks</definition>
         <argsstring>(NDArray *pArray, bool copyArray=false, bool readAttributes=true)</argsstring>
         <name>endProcessCallbacks</name>
+        <qualifiedname>NDPluginDriver::endProcessCallbacks</qualifiedname>
         <param>
           <type><ref refid="class_n_d_array" kindref="compound">NDArray</ref> *</type>
           <declname>pArray</declname>
@@ -1223,6 +1275,7 @@ This method does <ref refid="class_n_d_array" kindref="compound">NDArray</ref> c
         <definition>asynStatus NDPluginDriver::connectToArrayPort</definition>
         <argsstring>(void)</argsstring>
         <name>connectToArrayPort</name>
+        <qualifiedname>NDPluginDriver::connectToArrayPort</qualifiedname>
         <reimplementedby refid="class_n_d_plugin_gather_1a7fee396fc4e9331c8f0bcc7c8e5c7017">connectToArrayPort</reimplementedby>
         <param>
           <type>void</type>
@@ -1241,6 +1294,7 @@ This method does <ref refid="class_n_d_array" kindref="compound">NDArray</ref> c
         <definition>asynStatus NDPluginDriver::setArrayInterrupt</definition>
         <argsstring>(int connect)</argsstring>
         <name>setArrayInterrupt</name>
+        <qualifiedname>NDPluginDriver::setArrayInterrupt</qualifiedname>
         <reimplementedby refid="class_n_d_plugin_gather_1a33090027ac2ed9dce73d4c74f1287bf8">setArrayInterrupt</reimplementedby>
         <param>
           <type>int</type>
@@ -1271,6 +1325,7 @@ This method does <ref refid="class_n_d_array" kindref="compound">NDArray</ref> c
         <definition>bool NDPluginDriver::throttled</definition>
         <argsstring>(NDArray *pArray)</argsstring>
         <name>throttled</name>
+        <qualifiedname>NDPluginDriver::throttled</qualifiedname>
         <param>
           <type><ref refid="class_n_d_array" kindref="compound">NDArray</ref> *</type>
           <declname>pArray</declname>
@@ -1283,13 +1338,14 @@ This method does <ref refid="class_n_d_array" kindref="compound">NDArray</ref> c
         </inbodydescription>
         <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginDriver.h" line="111" column="10" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginDriver.cpp" bodystart="342" bodyend="358"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="private-func">
+    </sectiondef>
+    <sectiondef kind="private-func">
       <memberdef kind="function" id="class_n_d_plugin_driver_1ac5ae57c46f56358bd56f71066635c656" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void NDPluginDriver::processTask</definition>
         <argsstring>()</argsstring>
         <name>processTask</name>
+        <qualifiedname>NDPluginDriver::processTask</qualifiedname>
         <briefdescription>
 <para>Method runs as a separate thread, waiting for NDArrays to arrive in a message queue and processing them. </para>
         </briefdescription>
@@ -1305,6 +1361,7 @@ This method does <ref refid="class_n_d_array" kindref="compound">NDArray</ref> c
         <definition>asynStatus NDPluginDriver::createCallbackThreads</definition>
         <argsstring>()</argsstring>
         <name>createCallbackThreads</name>
+        <qualifiedname>NDPluginDriver::createCallbackThreads</qualifiedname>
         <briefdescription>
 <para>Creates the plugin threads. </para>
         </briefdescription>
@@ -1320,6 +1377,7 @@ This method does <ref refid="class_n_d_array" kindref="compound">NDArray</ref> c
         <definition>asynStatus NDPluginDriver::startCallbackThreads</definition>
         <argsstring>()</argsstring>
         <name>startCallbackThreads</name>
+        <qualifiedname>NDPluginDriver::startCallbackThreads</qualifiedname>
         <briefdescription>
 <para>Starts the plugin threads. </para>
         </briefdescription>
@@ -1335,6 +1393,7 @@ This method does <ref refid="class_n_d_array" kindref="compound">NDArray</ref> c
         <definition>asynStatus NDPluginDriver::deleteCallbackThreads</definition>
         <argsstring>()</argsstring>
         <name>deleteCallbackThreads</name>
+        <qualifiedname>NDPluginDriver::deleteCallbackThreads</qualifiedname>
         <briefdescription>
 <para>Deletes the plugin threads. </para>
         </briefdescription>
@@ -1350,6 +1409,7 @@ This method does <ref refid="class_n_d_array" kindref="compound">NDArray</ref> c
         <definition>asynStatus NDPluginDriver::createSortingThread</definition>
         <argsstring>()</argsstring>
         <name>createSortingThread</name>
+        <qualifiedname>NDPluginDriver::createSortingThread</qualifiedname>
         <briefdescription>
 <para>Creates the sorting thread. </para>
         </briefdescription>
@@ -1360,7 +1420,7 @@ This method does <ref refid="class_n_d_array" kindref="compound">NDArray</ref> c
         </inbodydescription>
         <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginDriver.h" line="118" column="16" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginDriver.cpp" bodystart="1079" bodyend="1100"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
 <para>Class from which actual plugin drivers are derived; derived from <ref refid="classasyn_n_d_array_driver" kindref="compound">asynNDArrayDriver</ref>. </para>
     </briefdescription>
@@ -1373,9 +1433,87 @@ This method does <ref refid="class_n_d_array" kindref="compound">NDArray</ref> c
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
+      <node id="15">
+        <label>NDFileFITS</label>
+        <link refid="class_n_d_file_f_i_t_s"/>
+        <childnode refid="14" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>NDFileHDF5</label>
+        <link refid="class_n_d_file_h_d_f5"/>
+        <childnode refid="14" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>NDFileJPEG</label>
+        <link refid="class_n_d_file_j_p_e_g"/>
+        <childnode refid="14" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>NDFileMagick</label>
+        <link refid="class_n_d_file_magick"/>
+        <childnode refid="14" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>NDFileNetCDF</label>
+        <link refid="class_n_d_file_net_c_d_f"/>
+        <childnode refid="14" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>NDFileNexus</label>
+        <link refid="class_n_d_file_nexus"/>
+        <childnode refid="14" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>NDFileNull</label>
+        <link refid="class_n_d_file_null"/>
+        <childnode refid="14" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>NDFileTIFF</label>
+        <link refid="class_n_d_file_t_i_f_f"/>
+        <childnode refid="14" relation="public-inheritance">
+        </childnode>
+      </node>
       <node id="6">
         <label>NDPluginAttrPlot</label>
         <link refid="class_n_d_plugin_attr_plot"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>NDPluginAttribute</label>
+        <link refid="class_n_d_plugin_attribute"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>NDPluginBadPixel</label>
+        <link refid="class_n_d_plugin_bad_pixel"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>NDPluginCircularBuff</label>
+        <link refid="class_n_d_plugin_circular_buff"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>NDPluginCodec</label>
+        <link refid="class_n_d_plugin_codec"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>NDPluginColorConvert</label>
+        <link refid="class_n_d_plugin_color_convert"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
@@ -1387,54 +1525,15 @@ This method does <ref refid="class_n_d_array" kindref="compound">NDArray</ref> c
         <childnode refid="4" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="32">
-        <label>NDPluginROIStat</label>
-        <link refid="class_n_d_plugin_r_o_i_stat"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="23">
-        <label>ffmpegFile</label>
-        <link refid="classffmpeg_file"/>
-        <childnode refid="14" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="4">
-        <label>epicsThreadRunable</label>
-      </node>
-      <node id="35">
-        <label>NDPluginStdArrays</label>
-        <link refid="class_n_d_plugin_std_arrays"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="27">
-        <label>NDPluginMask</label>
-        <link refid="class_n_d_plugin_mask"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="8">
-        <label>NDPluginBadPixel</label>
-        <link refid="class_n_d_plugin_bad_pixel"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="30">
-        <label>NDPluginPva</label>
-        <link refid="class_n_d_plugin_pva"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="38">
-        <label>NDPosPlugin</label>
-        <link refid="class_n_d_pos_plugin"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
       <node id="12">
         <label>NDPluginEdge</label>
         <link refid="class_n_d_plugin_edge"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>NDPluginFFT</label>
+        <link refid="class_n_d_plugin_f_f_t"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
@@ -1450,60 +1549,21 @@ This method does <ref refid="class_n_d_array" kindref="compound">NDArray</ref> c
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="3">
-        <label>asynPortDriver</label>
-      </node>
-      <node id="36">
-        <label>NDPluginTimeSeries</label>
-        <link refid="class_n_d_plugin_time_series"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="33">
-        <label>NDPluginScatter</label>
-        <link refid="class_n_d_plugin_scatter"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="10">
-        <label>NDPluginCodec</label>
-        <link refid="class_n_d_plugin_codec"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="13">
-        <label>NDPluginFFT</label>
-        <link refid="class_n_d_plugin_f_f_t"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="2">
-        <label>asynNDArrayDriver</label>
-        <link refid="classasyn_n_d_array_driver"/>
-        <childnode refid="3" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="31">
-        <label>NDPluginROI</label>
-        <link refid="class_n_d_plugin_r_o_i"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="9">
-        <label>NDPluginCircularBuff</label>
-        <link refid="class_n_d_plugin_circular_buff"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="21">
-        <label>NDFileNull</label>
-        <link refid="class_n_d_file_null"/>
-        <childnode refid="14" relation="public-inheritance">
-        </childnode>
-      </node>
       <node id="26">
         <label>NDPluginGather</label>
         <link refid="class_n_d_plugin_gather"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="27">
+        <label>NDPluginMask</label>
+        <link refid="class_n_d_plugin_mask"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>NDPluginOverlay</label>
+        <link refid="class_n_d_plugin_overlay"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
@@ -1513,57 +1573,27 @@ This method does <ref refid="class_n_d_array" kindref="compound">NDArray</ref> c
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="24">
-        <label>pcoEdgePlugin</label>
-        <link refid="classpco_edge_plugin"/>
-        <childnode refid="14" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="20">
-        <label>NDFileNexus</label>
-        <link refid="class_n_d_file_nexus"/>
-        <childnode refid="14" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="22">
-        <label>NDFileTIFF</label>
-        <link refid="class_n_d_file_t_i_f_f"/>
-        <childnode refid="14" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="28">
-        <label>NDPluginOverlay</label>
-        <link refid="class_n_d_plugin_overlay"/>
+      <node id="30">
+        <label>NDPluginPva</label>
+        <link refid="class_n_d_plugin_pva"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="17">
-        <label>NDFileJPEG</label>
-        <link refid="class_n_d_file_j_p_e_g"/>
-        <childnode refid="14" relation="public-inheritance">
+      <node id="31">
+        <label>NDPluginROI</label>
+        <link refid="class_n_d_plugin_r_o_i"/>
+        <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="19">
-        <label>NDFileNetCDF</label>
-        <link refid="class_n_d_file_net_c_d_f"/>
-        <childnode refid="14" relation="public-inheritance">
+      <node id="32">
+        <label>NDPluginROIStat</label>
+        <link refid="class_n_d_plugin_r_o_i_stat"/>
+        <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="16">
-        <label>NDFileHDF5</label>
-        <link refid="class_n_d_file_h_d_f5"/>
-        <childnode refid="14" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="18">
-        <label>NDFileMagick</label>
-        <link refid="class_n_d_file_magick"/>
-        <childnode refid="14" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="7">
-        <label>NDPluginAttribute</label>
-        <link refid="class_n_d_plugin_attribute"/>
+      <node id="33">
+        <label>NDPluginScatter</label>
+        <link refid="class_n_d_plugin_scatter"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
@@ -1573,21 +1603,15 @@ This method does <ref refid="class_n_d_array" kindref="compound">NDArray</ref> c
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="15">
-        <label>NDFileFITS</label>
-        <link refid="class_n_d_file_f_i_t_s"/>
-        <childnode refid="14" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="39">
-        <label>ffmpegStream</label>
-        <link refid="classffmpeg_stream"/>
+      <node id="35">
+        <label>NDPluginStdArrays</label>
+        <link refid="class_n_d_plugin_std_arrays"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="11">
-        <label>NDPluginColorConvert</label>
-        <link refid="class_n_d_plugin_color_convert"/>
+      <node id="36">
+        <label>NDPluginTimeSeries</label>
+        <link refid="class_n_d_plugin_time_series"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
@@ -1597,32 +1621,44 @@ This method does <ref refid="class_n_d_array" kindref="compound">NDArray</ref> c
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-    </inheritancegraph>
-    <collaborationgraph>
-      <node id="1">
-        <label>NDPluginDriver</label>
-        <link refid="class_n_d_plugin_driver"/>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
-        <childnode refid="10" relation="public-inheritance">
-        </childnode>
-        <childnode refid="6" relation="usage">
-          <edgelabel>pPrevInputArray_</edgelabel>
+      <node id="38">
+        <label>NDPosPlugin</label>
+        <link refid="class_n_d_pos_plugin"/>
+        <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="10">
-        <label>epicsThreadRunable</label>
-      </node>
-      <node id="7">
-        <label>NDDimension</label>
-        <link refid="struct_n_d_dimension"/>
+      <node id="2">
+        <label>asynNDArrayDriver</label>
+        <link refid="classasyn_n_d_array_driver"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
       </node>
       <node id="3">
         <label>asynPortDriver</label>
       </node>
-      <node id="9">
-        <label>string</label>
+      <node id="4">
+        <label>epicsThreadRunable</label>
       </node>
+      <node id="23">
+        <label>ffmpegFile</label>
+        <link refid="classffmpeg_file"/>
+        <childnode refid="14" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="39">
+        <label>ffmpegStream</label>
+        <link refid="classffmpeg_stream"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="24">
+        <label>pcoEdgePlugin</label>
+        <link refid="classpco_edge_plugin"/>
+        <childnode refid="14" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
       <node id="8">
         <label>Codec_t</label>
         <link refid="struct_codec__t"/>
@@ -1630,23 +1666,46 @@ This method does <ref refid="class_n_d_array" kindref="compound">NDArray</ref> c
           <edgelabel>name</edgelabel>
         </childnode>
       </node>
-      <node id="6">
+      <node id="5">
         <label>NDArray</label>
         <link refid="class_n_d_array"/>
         <childnode refid="4" relation="usage">
           <edgelabel>pNDArrayPool</edgelabel>
         </childnode>
-        <childnode refid="7" relation="usage">
+        <childnode refid="2" relation="usage">
+          <edgelabel>pDriver</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
           <edgelabel>dims</edgelabel>
         </childnode>
-        <childnode refid="5" relation="usage">
+        <childnode refid="7" relation="usage">
           <edgelabel>pAttributeList</edgelabel>
         </childnode>
         <childnode refid="8" relation="usage">
           <edgelabel>codec</edgelabel>
         </childnode>
-        <childnode refid="2" relation="usage">
-          <edgelabel>pDriver</edgelabel>
+      </node>
+      <node id="4">
+        <label>NDArrayPool</label>
+        <link refid="class_n_d_array_pool"/>
+      </node>
+      <node id="7">
+        <label>NDAttributeList</label>
+        <link refid="class_n_d_attribute_list"/>
+      </node>
+      <node id="6">
+        <label>NDDimension</label>
+        <link refid="struct_n_d_dimension"/>
+      </node>
+      <node id="1">
+        <label>NDPluginDriver</label>
+        <link refid="class_n_d_plugin_driver"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="10" relation="public-inheritance">
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>pPrevInputArray_</edgelabel>
         </childnode>
       </node>
       <node id="2">
@@ -1658,19 +1717,20 @@ This method does <ref refid="class_n_d_array" kindref="compound">NDArray</ref> c
           <edgelabel>pNDArrayPool</edgelabel>
         </childnode>
         <childnode refid="5" relation="usage">
-          <edgelabel>pAttributeList</edgelabel>
-        </childnode>
-        <childnode refid="6" relation="usage">
           <edgelabel>pArrays</edgelabel>
         </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>pAttributeList</edgelabel>
+        </childnode>
       </node>
-      <node id="4">
-        <label>NDArrayPool</label>
-        <link refid="class_n_d_array_pool"/>
+      <node id="3">
+        <label>asynPortDriver</label>
       </node>
-      <node id="5">
-        <label>NDAttributeList</label>
-        <link refid="class_n_d_attribute_list"/>
+      <node id="10">
+        <label>epicsThreadRunable</label>
+      </node>
+      <node id="9">
+        <label>string</label>
       </node>
     </collaborationgraph>
     <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginDriver.h" line="57" column="1" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginDriver.h" bodystart="57" bodyend="141"/>

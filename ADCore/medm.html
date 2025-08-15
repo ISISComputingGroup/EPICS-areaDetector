@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="../">
 <head>
@@ -5,19 +7,15 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MEDM screens &mdash; areaDetector Support</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme_overrides.css?v=254ed751" />
 
   
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
-        <script src="../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -100,7 +98,8 @@
 screens for most of the detectors and plugins that areaDetector
 supports. This screen is useful for testing, and as a source for copying
 related-display menus to be placed in application-specific MEDM screens.</p>
-<a class="reference internal image-reference" href="../_images/ADTop.png"><img alt="../_images/ADTop.png" class="align-center" src="../_images/ADTop.png" style="width: 200px;" /></a>
+<a class="reference internal image-reference" href="../_images/ADTop.png"><img alt="../_images/ADTop.png" class="align-center" src="../_images/ADTop.png" style="width: 200px;" />
+</a>
 <p>The following is the MEDM screen that provides access to the parameters
 in asynNDArrayDriver.h and ADDriver.h through records in
 ADBase.template. This is a top-level MEDM screen that will work with any
@@ -109,12 +108,14 @@ all of these parameters, and there will usually be detector-specific
 parameters not shown in this screen, so detector-specific MEDM screens
 should generally be created that display the EPICS PVs for the features
 implemented for that detector.</p>
-<a class="reference internal image-reference" href="../_images/ADBase.png"><img alt="../_images/ADBase.png" class="align-center" src="../_images/ADBase.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../_images/ADBase.png"><img alt="../_images/ADBase.png" class="align-center" src="../_images/ADBase.png" style="width: 600px;" />
+</a>
 <p>The following is the MEDM screen that provides access to the
 file-related parameters in asynNDArrayDriver.h through records in
 NDFile.template. This screen is for use with detector drivers that
 directly implement file I/O.</p>
-<a class="reference internal image-reference" href="../_images/NDFile.png"><img alt="../_images/NDFile.png" class="align-center" src="../_images/NDFile.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../_images/NDFile.png"><img alt="../_images/NDFile.png" class="align-center" src="../_images/NDFile.png" style="width: 600px;" />
+</a>
 <p>The following is the MEDM screen that provides access to the EPICS
 shutter parameters in ADDriver.h through records in ADBase.template.
 This screen allows one to define the EPICS PVs to open the shutter,
@@ -123,7 +124,8 @@ PVs for open and close drive and status can also be defined. Note that
 in many cases the same PV will be used for open and close drive, but in
 some cases (e.g. APS safety shutters) different PVs are used for open
 and close.</p>
-<a class="reference internal image-reference" href="../_images/ADEpicsShutter.png"><img alt="../_images/ADEpicsShutter.png" class="align-center" src="../_images/ADEpicsShutter.png" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="../_images/ADEpicsShutter.png"><img alt="../_images/ADEpicsShutter.png" class="align-center" src="../_images/ADEpicsShutter.png" style="width: 400px;" />
+</a>
 </section>
 
 
@@ -138,7 +140,7 @@ and close.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Mark Rivers.
-      <span class="lastupdated">Last updated on 2024-August-21.
+      <span class="lastupdated">Last updated on 2025-August-15.
       </span></p>
   </div>
 

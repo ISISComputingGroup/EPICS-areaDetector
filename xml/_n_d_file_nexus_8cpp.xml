@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="_n_d_file_nexus_8cpp" kind="file" language="C++">
     <compoundname>NDFileNexus.cpp</compoundname>
     <includes local="no">stdio.h</includes>
@@ -10,36 +10,15 @@
     <includes refid="_n_d_file_nexus_8h" local="yes">NDFileNexus.h</includes>
     <includes local="no">epicsExport.h</includes>
     <incdepgraph>
-      <node id="8">
-        <label>NDPluginFile.h</label>
-        <link refid="_n_d_plugin_file_8h"/>
-        <childnode refid="9" relation="include">
-        </childnode>
-        <childnode refid="10" relation="include">
-        </childnode>
-        <childnode refid="11" relation="include">
+      <node id="26">
+        <label>ADCoreAPI.h</label>
+        <link refid="_a_d_core_a_p_i_8h"/>
+        <childnode refid="17" relation="include">
         </childnode>
       </node>
-      <node id="6">
-        <label>iocsh.h</label>
-      </node>
-      <node id="9">
-        <label>epicsTypes.h</label>
-      </node>
-      <node id="10">
-        <label>epicsMutex.h</label>
-      </node>
-      <node id="4">
-        <label>libxml/parser.h</label>
-      </node>
-      <node id="17">
-        <label>epicsVersion.h</label>
-      </node>
-      <node id="24">
-        <label>string</label>
-      </node>
-      <node id="14">
-        <label>epicsThread.h</label>
+      <node id="29">
+        <label>ADCoreVersion.h</label>
+        <link refid="_a_d_core_version_8h"/>
       </node>
       <node id="28">
         <label>Codec.h</label>
@@ -63,21 +42,20 @@
         <childnode refid="28" relation="include">
         </childnode>
       </node>
-      <node id="30">
-        <label>epicsExport.h</label>
-      </node>
-      <node id="29">
-        <label>ADCoreVersion.h</label>
-        <link refid="_a_d_core_version_8h"/>
-      </node>
-      <node id="7">
-        <label>NDFileNexus.h</label>
-        <link refid="_n_d_file_nexus_8h"/>
-        <childnode refid="8" relation="include">
+      <node id="23">
+        <label>NDAttribute.h</label>
+        <link refid="_n_d_attribute_8h"/>
+        <childnode refid="24" relation="include">
         </childnode>
-        <childnode refid="5" relation="include">
+        <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="4" relation="include">
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
         </childnode>
       </node>
       <node id="27">
@@ -92,11 +70,19 @@
         <childnode refid="23" relation="include">
         </childnode>
       </node>
-      <node id="3">
-        <label>string.h</label>
-      </node>
-      <node id="22">
-        <label>ellLib.h</label>
+      <node id="18">
+        <label>asynNDArrayDriver.h</label>
+        <link refid="asyn_n_d_array_driver_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
       </node>
       <node id="1">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileNexus.cpp</label>
@@ -116,45 +102,21 @@
         <childnode refid="30" relation="include">
         </childnode>
       </node>
-      <node id="26">
-        <label>ADCoreAPI.h</label>
-        <link refid="_a_d_core_a_p_i_8h"/>
-        <childnode refid="17" relation="include">
+      <node id="7">
+        <label>NDFileNexus.h</label>
+        <link refid="_n_d_file_nexus_8h"/>
+        <childnode refid="8" relation="include">
         </childnode>
-      </node>
-      <node id="25">
-        <label>asynDriver.h</label>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
       </node>
       <node id="16">
         <label>NDPluginAPI.h</label>
         <link refid="_n_d_plugin_a_p_i_8h"/>
         <childnode refid="17" relation="include">
         </childnode>
-      </node>
-      <node id="15">
-        <label>epicsTime.h</label>
-      </node>
-      <node id="20">
-        <label>asynPortDriver.h</label>
-      </node>
-      <node id="23">
-        <label>NDAttribute.h</label>
-        <link refid="_n_d_attribute_8h"/>
-        <childnode refid="24" relation="include">
-        </childnode>
-        <childnode refid="2" relation="include">
-        </childnode>
-        <childnode refid="22" relation="include">
-        </childnode>
-        <childnode refid="9" relation="include">
-        </childnode>
-        <childnode refid="25" relation="include">
-        </childnode>
-        <childnode refid="26" relation="include">
-        </childnode>
-      </node>
-      <node id="12">
-        <label>set</label>
       </node>
       <node id="11">
         <label>NDPluginDriver.h</label>
@@ -174,34 +136,72 @@
         <childnode refid="18" relation="include">
         </childnode>
       </node>
-      <node id="13">
-        <label>epicsMessageQueue.h</label>
-      </node>
-      <node id="18">
-        <label>asynNDArrayDriver.h</label>
-        <link refid="asyn_n_d_array_driver_8h"/>
+      <node id="8">
+        <label>NDPluginFile.h</label>
+        <link refid="_n_d_plugin_file_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
         <childnode refid="10" relation="include">
         </childnode>
-        <childnode refid="19" relation="include">
-        </childnode>
-        <childnode refid="20" relation="include">
-        </childnode>
-        <childnode refid="21" relation="include">
-        </childnode>
-        <childnode refid="29" relation="include">
+        <childnode refid="11" relation="include">
         </childnode>
       </node>
-      <node id="2">
-        <label>stdio.h</label>
+      <node id="25">
+        <label>asynDriver.h</label>
+      </node>
+      <node id="20">
+        <label>asynPortDriver.h</label>
+      </node>
+      <node id="22">
+        <label>ellLib.h</label>
       </node>
       <node id="19">
         <label>epicsEvent.h</label>
       </node>
+      <node id="30">
+        <label>epicsExport.h</label>
+      </node>
+      <node id="13">
+        <label>epicsMessageQueue.h</label>
+      </node>
+      <node id="10">
+        <label>epicsMutex.h</label>
+      </node>
+      <node id="14">
+        <label>epicsThread.h</label>
+      </node>
+      <node id="15">
+        <label>epicsTime.h</label>
+      </node>
+      <node id="9">
+        <label>epicsTypes.h</label>
+      </node>
+      <node id="17">
+        <label>epicsVersion.h</label>
+      </node>
+      <node id="6">
+        <label>iocsh.h</label>
+      </node>
+      <node id="4">
+        <label>libxml/parser.h</label>
+      </node>
       <node id="5">
         <label>napi.h</label>
       </node>
+      <node id="12">
+        <label>set</label>
+      </node>
+      <node id="2">
+        <label>stdio.h</label>
+      </node>
+      <node id="24">
+        <label>string</label>
+      </node>
+      <node id="3">
+        <label>string.h</label>
+      </node>
     </incdepgraph>
-      <sectiondef kind="var">
+    <sectiondef kind="var">
       <memberdef kind="variable" id="_n_d_file_nexus_8cpp_1af0e94d13028051cd5339d204bfbb057d" prot="public" static="yes" mutable="no">
         <type>const char *</type>
         <definition>const char* driverName</definition>
@@ -228,7 +228,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileNexus.cpp" line="906" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileNexus.cpp" bodystart="906" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileNexus.cpp" line="906" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileNexus.cpp" bodystart="906" bodyend="906"/>
       </memberdef>
       <memberdef kind="variable" id="_n_d_file_nexus_8cpp_1a85f312f39f3c368a5fa10d1039dc40b2" prot="public" static="yes" mutable="no">
         <type>const iocshArg</type>
@@ -242,7 +242,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileNexus.cpp" line="907" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileNexus.cpp" bodystart="907" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileNexus.cpp" line="907" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileNexus.cpp" bodystart="907" bodyend="907"/>
       </memberdef>
       <memberdef kind="variable" id="_n_d_file_nexus_8cpp_1a645a7d7d0d71a7522373e2af4008b520" prot="public" static="yes" mutable="no">
         <type>const iocshArg</type>
@@ -256,7 +256,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileNexus.cpp" line="908" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileNexus.cpp" bodystart="908" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileNexus.cpp" line="908" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileNexus.cpp" bodystart="908" bodyend="908"/>
       </memberdef>
       <memberdef kind="variable" id="_n_d_file_nexus_8cpp_1aaa425474fd6655fa6347e1933b29038a" prot="public" static="yes" mutable="no">
         <type>const iocshArg</type>
@@ -270,7 +270,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileNexus.cpp" line="909" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileNexus.cpp" bodystart="909" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileNexus.cpp" line="909" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileNexus.cpp" bodystart="909" bodyend="909"/>
       </memberdef>
       <memberdef kind="variable" id="_n_d_file_nexus_8cpp_1a945c4d0bc0e2bc869aeaf5c6a815368a" prot="public" static="yes" mutable="no">
         <type>const iocshArg</type>
@@ -284,7 +284,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileNexus.cpp" line="910" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileNexus.cpp" bodystart="910" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileNexus.cpp" line="910" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileNexus.cpp" bodystart="910" bodyend="910"/>
       </memberdef>
       <memberdef kind="variable" id="_n_d_file_nexus_8cpp_1ac7e214be38a3b3bface5e0370ae97db0" prot="public" static="yes" mutable="no">
         <type>const iocshArg</type>
@@ -298,7 +298,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileNexus.cpp" line="911" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileNexus.cpp" bodystart="911" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileNexus.cpp" line="911" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileNexus.cpp" bodystart="911" bodyend="911"/>
       </memberdef>
       <memberdef kind="variable" id="_n_d_file_nexus_8cpp_1a43397205694aec859f3b5cb14a85edc3" prot="public" static="yes" mutable="no">
         <type>const iocshArg</type>
@@ -312,7 +312,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileNexus.cpp" line="912" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileNexus.cpp" bodystart="912" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileNexus.cpp" line="912" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileNexus.cpp" bodystart="912" bodyend="912"/>
       </memberdef>
       <memberdef kind="variable" id="_n_d_file_nexus_8cpp_1ac0d7f455ac7138e5bcb473b630294718" prot="public" static="yes" mutable="no">
         <type>const iocshArg *const</type>
@@ -332,7 +332,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileNexus.cpp" line="913" column="30" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileNexus.cpp" bodystart="913" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileNexus.cpp" line="913" column="30" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileNexus.cpp" bodystart="913" bodyend="919"/>
       </memberdef>
       <memberdef kind="variable" id="_n_d_file_nexus_8cpp_1a469a3ecf9fff33f8f388acddffc8db6a" prot="public" static="yes" mutable="no">
         <type>const iocshFuncDef</type>
@@ -346,10 +346,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileNexus.cpp" line="920" column="27" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileNexus.cpp" bodystart="920" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileNexus.cpp" line="920" column="27" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileNexus.cpp" bodystart="920" bodyend="920"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="func">
+    </sectiondef>
+    <sectiondef kind="func">
       <memberdef kind="function" id="_n_d_file_nexus_8cpp_1a531955a6a8f733171a67dd0933ff3ce4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
         <definition>int NDFileNexusConfigure</definition>
@@ -430,7 +430,7 @@
         <argsstring>(NDFileNexusRegister)</argsstring>
         <name>epicsExportRegistrar</name>
         <param>
-          <type><ref refid="_n_d_file_nexus_8cpp_1a6f4e0124917e4dedf0985495090d5fef" kindref="member">NDFileNexusRegister</ref></type>
+          <type><ref refid="_n_d_file_dummy_8cpp_1a6f4e0124917e4dedf0985495090d5fef" kindref="member">NDFileNexusRegister</ref></type>
         </param>
         <briefdescription>
         </briefdescription>
@@ -440,7 +440,7 @@
         </inbodydescription>
         <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileNexus.cpp" line="932" column="1" declfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileNexus.cpp" declline="932" declcolumn="1"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
@@ -676,22 +676,22 @@
 <codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(strcmp<sp/>(nodeValue,<sp/></highlight><highlight class="stringliteral">&quot;NXxraylens&quot;</highlight><highlight class="normal">)<sp/>==0)<sp/>||</highlight></codeline>
 <codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(nodeType<sp/>&amp;&amp;<sp/>strcmp<sp/>(nodeType,<sp/></highlight><highlight class="stringliteral">&quot;UserGroup&quot;</highlight><highlight class="normal">)<sp/>==<sp/>0)<sp/>)<sp/>{</highlight></codeline>
 <codeline lineno="250"><highlight class="normal"><sp/><sp/><ref refid="namespacemake_adl_1ad7b803e2e744640af777e973c317f5b2" kindref="member">nodeName</ref><sp/>=<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)xmlGetProp(curNode,<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>xmlChar<sp/>*)</highlight><highlight class="stringliteral">&quot;name&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="251"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespacemake_adl_1ad7b803e2e744640af777e973c317f5b2" kindref="member">nodeName</ref><sp/>==<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(nodeName<sp/>==<sp/>NULL)<sp/>{</highlight></codeline>
 <codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacemake_adl_1ad7b803e2e744640af777e973c317f5b2" kindref="member">nodeName</ref><sp/>=<sp/>nodeValue;</highlight></codeline>
 <codeline lineno="253"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="254"><highlight class="normal"><sp/><sp/>stat<sp/>=<sp/>NXmakegroup(this-&gt;nxFileHandle,<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)<ref refid="namespacemake_adl_1ad7b803e2e744640af777e973c317f5b2" kindref="member">nodeName</ref>,<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)nodeValue);</highlight></codeline>
-<codeline lineno="255"><highlight class="normal"><sp/><sp/>stat<sp/>|=<sp/>NXopengroup(this-&gt;nxFileHandle,<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)<ref refid="namespacemake_adl_1ad7b803e2e744640af777e973c317f5b2" kindref="member">nodeName</ref>,<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)nodeValue);</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/>stat<sp/>=<sp/>NXmakegroup(this-&gt;nxFileHandle,<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)nodeName,<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)nodeValue);</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/>stat<sp/>|=<sp/>NXopengroup(this-&gt;nxFileHandle,<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)nodeName,<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)nodeValue);</highlight></codeline>
 <codeline lineno="256"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(stat<sp/>!=<sp/>NX_OK<sp/>)<sp/>{</highlight></codeline>
 <codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/>asynPrint(this-&gt;pasynUserSelf,<sp/>ASYN_TRACE_ERROR,</highlight></codeline>
 <codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s:%s<sp/>Error<sp/>creating<sp/>group<sp/>%s<sp/>%s\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName,<sp/><ref refid="namespacemake_adl_1ad7b803e2e744640af777e973c317f5b2" kindref="member">nodeName</ref>,<sp/>nodeValue);</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName,<sp/>nodeName,<sp/>nodeValue);</highlight></codeline>
 <codeline lineno="260"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="261"><highlight class="normal"><sp/><sp/>this-&gt;iterateNodes(curNode,<sp/>pArray);</highlight></codeline>
 <codeline lineno="262"><highlight class="normal"><sp/><sp/>stat<sp/>=<sp/>NXclosegroup(this-&gt;nxFileHandle);</highlight></codeline>
 <codeline lineno="263"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(stat<sp/>!=<sp/>NX_OK<sp/>)<sp/>{</highlight></codeline>
 <codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/>asynPrint(this-&gt;pasynUserSelf,<sp/>ASYN_TRACE_ERROR,</highlight></codeline>
 <codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s:%s<sp/>Error<sp/>closing<sp/>group<sp/>%s<sp/>%s\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName,<sp/><ref refid="namespacemake_adl_1ad7b803e2e744640af777e973c317f5b2" kindref="member">nodeName</ref>,<sp/>nodeValue);</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName,<sp/>nodeName,<sp/>nodeValue);</highlight></codeline>
 <codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="268"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="269"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(strcmp<sp/>(nodeValue,<sp/></highlight><highlight class="stringliteral">&quot;Attr&quot;</highlight><highlight class="normal">)<sp/>==0)<sp/>{</highlight></codeline>
@@ -705,9 +705,9 @@
 <codeline lineno="277"><highlight class="normal"></highlight></codeline>
 <codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(dataOutType<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
 <codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pValue<sp/>=<sp/>calloc(<sp/>attrDataSize,<sp/>wordSize<sp/>);</highlight></codeline>
-<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pAttr-&gt;<ref refid="class_n_d_attribute_1a732db4dc92aa8585089bac924335a9bd" kindref="member">getValue</ref>(attrDataType,<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)pValue,<sp/>attrDataSize*wordSize);</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pAttr-&gt;getValue(attrDataType,<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)pValue,<sp/>attrDataSize*wordSize);</highlight></codeline>
 <codeline lineno="281"><highlight class="normal"></highlight></codeline>
-<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>NXputattr(this-&gt;nxFileHandle,<sp/><ref refid="namespacemake_adl_1ad7b803e2e744640af777e973c317f5b2" kindref="member">nodeName</ref>,<sp/>pValue,<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)(attrDataSize/wordSize),<sp/>dataOutType);</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>NXputattr(this-&gt;nxFileHandle,<sp/>nodeName,<sp/>pValue,<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)(attrDataSize/wordSize),<sp/>dataOutType);</highlight></codeline>
 <codeline lineno="283"><highlight class="normal"></highlight></codeline>
 <codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>free(pValue);</highlight></codeline>
 <codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -733,7 +733,7 @@
 <codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>pValue<sp/>=<sp/>allocConstValue(<sp/>dataOutType,<sp/>nodeTextLen);</highlight></codeline>
 <codeline lineno="307"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>constTextToDataType(nodeText,<sp/>dataOutType,<sp/>pValue);</highlight></codeline>
-<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>NXputattr(this-&gt;nxFileHandle,<sp/><ref refid="namespacemake_adl_1ad7b803e2e744640af777e973c317f5b2" kindref="member">nodeName</ref>,<sp/>pValue,<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)nodeTextLen,<sp/>dataOutType);</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>NXputattr(this-&gt;nxFileHandle,<sp/>nodeName,<sp/>pValue,<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)nodeTextLen,<sp/>dataOutType);</highlight></codeline>
 <codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>free(pValue);</highlight></codeline>
 <codeline lineno="310"><highlight class="normal"></highlight></codeline>
 <codeline lineno="311"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -754,7 +754,7 @@
 <codeline lineno="326"><highlight class="normal"></highlight></codeline>
 <codeline lineno="327"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(dataOutType<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
 <codeline lineno="328"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pValue<sp/>=<sp/>calloc(<sp/>attrDataSize,<sp/>wordSize<sp/>);</highlight></codeline>
-<codeline lineno="329"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pAttr-&gt;<ref refid="class_n_d_attribute_1a732db4dc92aa8585089bac924335a9bd" kindref="member">getValue</ref>(attrDataType,<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)pValue,<sp/>attrDataSize);</highlight></codeline>
+<codeline lineno="329"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pAttr-&gt;getValue(attrDataType,<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)pValue,<sp/>attrDataSize);</highlight></codeline>
 <codeline lineno="330"><highlight class="normal"></highlight></codeline>
 <codeline lineno="331"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numWords<sp/>=<sp/>attrDataSize/wordSize;</highlight></codeline>
 <codeline lineno="332"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>NXmakedata(<sp/>this-&gt;nxFileHandle,<sp/>nodeValue,<sp/>dataOutType,<sp/>1,<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*)&amp;(numWords));</highlight></codeline>
@@ -1196,28 +1196,28 @@
 <codeline lineno="768"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-1;</highlight></codeline>
 <codeline lineno="769"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="770"><highlight class="normal"></highlight></codeline>
-<codeline lineno="778"><highlight class="normal">asynStatus<sp/><ref refid="class_n_d_file_nexus_1a87844e2ea40bfc624a833f0b039c607a" kindref="member">NDFileNexus::writeOctet</ref>(asynUser<sp/>*pasynUser,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>,</highlight></codeline>
+<codeline lineno="778"><highlight class="normal">asynStatus<sp/><ref refid="class_n_d_file_nexus_1a87844e2ea40bfc624a833f0b039c607a" kindref="member">NDFileNexus::writeOctet</ref>(asynUser<sp/>*pasynUser,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*value,</highlight></codeline>
 <codeline lineno="779"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>nChars,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>*nActual)</highlight></codeline>
 <codeline lineno="780"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="781"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>addr=0;</highlight></codeline>
-<codeline lineno="782"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>=<sp/>pasynUser-&gt;reason;</highlight></codeline>
+<codeline lineno="782"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>function<sp/>=<sp/>pasynUser-&gt;reason;</highlight></codeline>
 <codeline lineno="783"><highlight class="normal"><sp/><sp/>asynStatus<sp/>status<sp/>=<sp/>asynSuccess;</highlight></codeline>
 <codeline lineno="784"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*functionName<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;writeOctet&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="785"><highlight class="normal"></highlight></codeline>
 <codeline lineno="786"><highlight class="normal"><sp/><sp/>status<sp/>=<sp/>getAddress(pasynUser,<sp/>&amp;addr);<sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(status<sp/>!=<sp/>asynSuccess)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">(status);</highlight></codeline>
 <codeline lineno="787"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Set<sp/>the<sp/>parameter<sp/>in<sp/>the<sp/>parameter<sp/>library.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="788"><highlight class="normal"><sp/><sp/>status<sp/>=<sp/>(asynStatus)setStringParam(addr,<sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal">,<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)<ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="788"><highlight class="normal"><sp/><sp/>status<sp/>=<sp/>(asynStatus)setStringParam(addr,<sp/>function,<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)<ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
 <codeline lineno="789"><highlight class="normal"></highlight></codeline>
-<codeline lineno="790"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="class_n_d_file_nexus_1a6a4deaeca9a5cd3750bc1c2cea293e2e" kindref="member">NDFileNexusTemplatePath</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="790"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(function<sp/>==<sp/><ref refid="class_n_d_file_nexus_1a6a4deaeca9a5cd3750bc1c2cea293e2e" kindref="member">NDFileNexusTemplatePath</ref>)<sp/>{</highlight></codeline>
 <codeline lineno="791"><highlight class="normal"><sp/><sp/><sp/><sp/>loadTemplateFile();</highlight></codeline>
 <codeline lineno="792"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="793"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="class_n_d_file_nexus_1a039a93df6b0cbdfe5fec0fbc51ea5596" kindref="member">NDFileNexusTemplateFile</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="793"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(function<sp/>==<sp/><ref refid="class_n_d_file_nexus_1a039a93df6b0cbdfe5fec0fbc51ea5596" kindref="member">NDFileNexusTemplateFile</ref>)<sp/>{</highlight></codeline>
 <codeline lineno="794"><highlight class="normal"><sp/><sp/><sp/><sp/>loadTemplateFile();</highlight></codeline>
 <codeline lineno="795"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="796"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
 <codeline lineno="797"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>If<sp/>this<sp/>parameter<sp/>belongs<sp/>to<sp/>a<sp/>base<sp/>class<sp/>call<sp/>its<sp/>method<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="798"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>&lt;<sp/><ref refid="_n_d_file_nexus_8h_1abf51eb66e637ee0e63fc0dbbf789f3e7" kindref="member">FIRST_NDFILE_NEXUS_PARAM</ref>)</highlight></codeline>
-<codeline lineno="799"><highlight class="normal"><sp/><sp/><sp/><sp/>status<sp/>=<sp/><ref refid="class_n_d_plugin_driver_1ae485392fd0a4db1f4fdee533582bae44" kindref="member">NDPluginFile::writeOctet</ref>(pasynUser,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>,<sp/>nChars,<sp/>nActual);</highlight></codeline>
+<codeline lineno="798"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(function<sp/>&lt;<sp/><ref refid="_n_d_file_nexus_8h_1abf51eb66e637ee0e63fc0dbbf789f3e7" kindref="member">FIRST_NDFILE_NEXUS_PARAM</ref>)</highlight></codeline>
+<codeline lineno="799"><highlight class="normal"><sp/><sp/><sp/><sp/>status<sp/>=<sp/><ref refid="classasyn_n_d_array_driver_1a84d981f8995d984035bb9feff727d520" kindref="member">NDPluginFile::writeOctet</ref>(pasynUser,<sp/>value,<sp/>nChars,<sp/>nActual);</highlight></codeline>
 <codeline lineno="800"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="801"><highlight class="normal"></highlight></codeline>
 <codeline lineno="802"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Do<sp/>callbacks<sp/>so<sp/>higher<sp/>layers<sp/>see<sp/>any<sp/>changes<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
@@ -1226,11 +1226,11 @@
 <codeline lineno="805"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(status)</highlight></codeline>
 <codeline lineno="806"><highlight class="normal"><sp/><sp/><sp/><sp/>epicsSnprintf(pasynUser-&gt;errorMessage,<sp/>pasynUser-&gt;errorMessageSize,</highlight></codeline>
 <codeline lineno="807"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s:%s:<sp/>status=%d,<sp/>function=%d,<sp/>value=%s&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="808"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName,<sp/>status,<sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal">,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="808"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName,<sp/>status,<sp/>function,<sp/>value);</highlight></codeline>
 <codeline lineno="809"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="810"><highlight class="normal"><sp/><sp/><sp/><sp/>asynPrint(pasynUser,<sp/>ASYN_TRACEIO_DRIVER,</highlight></codeline>
 <codeline lineno="811"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s:%s:<sp/>function=%d,<sp/>value=%s\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="812"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName,<sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal">,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="812"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName,<sp/>function,<sp/>value);</highlight></codeline>
 <codeline lineno="813"><highlight class="normal"><sp/><sp/>*nActual<sp/>=<sp/>nChars;</highlight></codeline>
 <codeline lineno="814"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>status;</highlight></codeline>
 <codeline lineno="815"><highlight class="normal">}</highlight></codeline>
@@ -1326,9 +1326,9 @@
 <codeline lineno="918"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;initArg5,</highlight></codeline>
 <codeline lineno="919"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;initArg6};</highlight></codeline>
 <codeline lineno="920"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>iocshFuncDef<sp/>initFuncDef<sp/>=<sp/>{</highlight><highlight class="stringliteral">&quot;NDFileNexusConfigure&quot;</highlight><highlight class="normal">,7,initArgs};</highlight></codeline>
-<codeline lineno="921"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>initCallFunc(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>iocshArgBuf<sp/>*<ref refid="namespacemake_adl_1a1d55f39db2066eab50e6f2b21abc00f1" kindref="member">args</ref>)</highlight></codeline>
+<codeline lineno="921"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>initCallFunc(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>iocshArgBuf<sp/>*args)</highlight></codeline>
 <codeline lineno="922"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="923"><highlight class="normal"><sp/><sp/><ref refid="_n_d_file_nexus_8cpp_1a531955a6a8f733171a67dd0933ff3ce4" kindref="member">NDFileNexusConfigure</ref>(<ref refid="namespacemake_adl_1a1d55f39db2066eab50e6f2b21abc00f1" kindref="member">args</ref>[0].sval,<sp/><ref refid="namespacemake_adl_1a1d55f39db2066eab50e6f2b21abc00f1" kindref="member">args</ref>[1].ival,<sp/><ref refid="namespacemake_adl_1a1d55f39db2066eab50e6f2b21abc00f1" kindref="member">args</ref>[2].ival,<sp/><ref refid="namespacemake_adl_1a1d55f39db2066eab50e6f2b21abc00f1" kindref="member">args</ref>[3].sval,<sp/><ref refid="namespacemake_adl_1a1d55f39db2066eab50e6f2b21abc00f1" kindref="member">args</ref>[4].ival,<sp/><ref refid="namespacemake_adl_1a1d55f39db2066eab50e6f2b21abc00f1" kindref="member">args</ref>[5].ival,<sp/><ref refid="namespacemake_adl_1a1d55f39db2066eab50e6f2b21abc00f1" kindref="member">args</ref>[6].ival);</highlight></codeline>
+<codeline lineno="923"><highlight class="normal"><sp/><sp/><ref refid="_n_d_file_nexus_8cpp_1a531955a6a8f733171a67dd0933ff3ce4" kindref="member">NDFileNexusConfigure</ref>(args[0].sval,<sp/>args[1].ival,<sp/>args[2].ival,<sp/>args[3].sval,<sp/>args[4].ival,<sp/>args[5].ival,<sp/>args[6].ival);</highlight></codeline>
 <codeline lineno="924"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="925"><highlight class="normal"></highlight></codeline>
 <codeline lineno="926"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_n_d_file_nexus_8cpp_1a6f4e0124917e4dedf0985495090d5fef" kindref="member">NDFileNexusRegister</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>

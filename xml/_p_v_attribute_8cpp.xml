@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="_p_v_attribute_8cpp" kind="file" language="C++">
     <compoundname>PVAttribute.cpp</compoundname>
     <includes local="no">string.h</includes>
@@ -8,67 +8,11 @@
     <includes local="no">epicsString.h</includes>
     <includes refid="_p_v_attribute_8h" local="yes">PVAttribute.h</includes>
     <incdepgraph>
-      <node id="13">
-        <label>epicsTypes.h</label>
-      </node>
-      <node id="7">
-        <label>cadef.h</label>
-      </node>
-      <node id="4">
-        <label>stdlib.h</label>
-      </node>
-      <node id="8">
-        <label>epicsMutex.h</label>
-      </node>
-      <node id="6">
-        <label>PVAttribute.h</label>
-        <link refid="_p_v_attribute_8h"/>
-        <childnode refid="7" relation="include">
-        </childnode>
-        <childnode refid="8" relation="include">
-        </childnode>
-        <childnode refid="9" relation="include">
-        </childnode>
-        <childnode refid="10" relation="include">
-        </childnode>
-      </node>
-      <node id="16">
-        <label>epicsVersion.h</label>
-      </node>
-      <node id="11">
-        <label>string</label>
-      </node>
-      <node id="5">
-        <label>epicsString.h</label>
-      </node>
-      <node id="2">
-        <label>string.h</label>
-      </node>
-      <node id="12">
-        <label>ellLib.h</label>
-      </node>
-      <node id="1">
-        <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/ADSrc/PVAttribute.cpp</label>
-        <link refid="_p_v_attribute_8cpp"/>
-        <childnode refid="2" relation="include">
-        </childnode>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-        <childnode refid="5" relation="include">
-        </childnode>
-        <childnode refid="6" relation="include">
-        </childnode>
-      </node>
       <node id="15">
         <label>ADCoreAPI.h</label>
         <link refid="_a_d_core_a_p_i_8h"/>
         <childnode refid="16" relation="include">
         </childnode>
-      </node>
-      <node id="14">
-        <label>asynDriver.h</label>
       </node>
       <node id="10">
         <label>NDAttribute.h</label>
@@ -86,14 +30,70 @@
         <childnode refid="15" relation="include">
         </childnode>
       </node>
-      <node id="3">
-        <label>stdio.h</label>
+      <node id="1">
+        <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/ADSrc/PVAttribute.cpp</label>
+        <link refid="_p_v_attribute_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>PVAttribute.h</label>
+        <link refid="_p_v_attribute_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>asynDriver.h</label>
+      </node>
+      <node id="7">
+        <label>cadef.h</label>
+      </node>
+      <node id="12">
+        <label>ellLib.h</label>
       </node>
       <node id="9">
         <label>epicsEvent.h</label>
       </node>
+      <node id="8">
+        <label>epicsMutex.h</label>
+      </node>
+      <node id="5">
+        <label>epicsString.h</label>
+      </node>
+      <node id="13">
+        <label>epicsTypes.h</label>
+      </node>
+      <node id="16">
+        <label>epicsVersion.h</label>
+      </node>
+      <node id="3">
+        <label>stdio.h</label>
+      </node>
+      <node id="4">
+        <label>stdlib.h</label>
+      </node>
+      <node id="11">
+        <label>string</label>
+      </node>
+      <node id="2">
+        <label>string.h</label>
+      </node>
     </incdepgraph>
-      <sectiondef kind="var">
+    <sectiondef kind="var">
       <memberdef kind="variable" id="_p_v_attribute_8cpp_1af0e94d13028051cd5339d204bfbb057d" prot="public" static="yes" mutable="no">
         <type>const char *</type>
         <definition>const char* driverName</definition>
@@ -136,8 +136,8 @@
         </inbodydescription>
         <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/ADSrc/PVAttribute.cpp" line="27" column="17" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/ADSrc/PVAttribute.cpp" bodystart="27" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="func">
+    </sectiondef>
+    <sectiondef kind="func">
       <memberdef kind="function" id="_p_v_attribute_8cpp_1ace8133dc07b35b76c110c2343bc19bc6" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>static void connectCallbackC</definition>
@@ -172,7 +172,7 @@
         </inbodydescription>
         <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/ADSrc/PVAttribute.cpp" line="104" column="13" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/ADSrc/PVAttribute.cpp" bodystart="104" bodyend="109"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
@@ -260,7 +260,7 @@
 <codeline lineno="92"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="93"><highlight class="normal"><sp/><sp/><ref refid="class_p_v_attribute" kindref="compound">PVAttribute</ref><sp/>*pOut<sp/>=<sp/>(<ref refid="class_p_v_attribute" kindref="compound">PVAttribute</ref><sp/>*)pAttr;</highlight></codeline>
 <codeline lineno="94"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!pOut)</highlight></codeline>
-<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>pOut<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_p_v_attribute_1ac5e07758daf5719136a574a15c825ef2" kindref="member">PVAttribute</ref>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>pOut<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_p_v_attribute" kindref="compound">PVAttribute</ref>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="96"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
 <codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>NOTE:<sp/>We<sp/>assume<sp/>that<sp/>if<sp/>the<sp/>attribute<sp/>name<sp/>is<sp/>the<sp/>same<sp/>then<sp/>the<sp/>source<sp/>PV<sp/>and<sp/>dbrTtype</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>are<sp/>also<sp/>the<sp/>same</highlight><highlight class="normal"></highlight></codeline>
@@ -381,19 +381,19 @@
 <codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName,<sp/>this-&gt;<ref refid="class_n_d_attribute_1a72074a7b16db6cdfad903869248e6836" kindref="member">getSource</ref>(),<sp/>chanId,<sp/>dbfType,<sp/>elementCount,<sp/>dbrType);</highlight></codeline>
 <codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal">(dbfType)<sp/>{</highlight></codeline>
 <codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>DBF_STRING:</highlight></codeline>
-<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(this-&gt;dbrType<sp/>==<sp/><ref refid="param_attribute_8h_1a36798af4ae42cb7fd6c0ac80e9aef9aa" kindref="member">DBR_NATIVE</ref>)<sp/>dbrType<sp/>=<sp/>DBR_STRING;</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(this-&gt;dbrType<sp/>==<sp/><ref refid="_p_v_attribute_8h_1a36798af4ae42cb7fd6c0ac80e9aef9aa" kindref="member">DBR_NATIVE</ref>)<sp/>dbrType<sp/>=<sp/>DBR_STRING;</highlight></codeline>
 <codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>DBF_SHORT:<sp/><sp/></highlight><highlight class="comment">/*<sp/>Note:<sp/>DBF_INT<sp/>is<sp/>same<sp/>as<sp/>DBF_SHORT<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(this-&gt;dbrType<sp/>==<sp/><ref refid="param_attribute_8h_1a36798af4ae42cb7fd6c0ac80e9aef9aa" kindref="member">DBR_NATIVE</ref>)<sp/>dbrType<sp/>=<sp/>DBR_SHORT;</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(this-&gt;dbrType<sp/>==<sp/><ref refid="_p_v_attribute_8h_1a36798af4ae42cb7fd6c0ac80e9aef9aa" kindref="member">DBR_NATIVE</ref>)<sp/>dbrType<sp/>=<sp/>DBR_SHORT;</highlight></codeline>
 <codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>DBF_FLOAT:</highlight></codeline>
-<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(this-&gt;dbrType<sp/>==<sp/><ref refid="param_attribute_8h_1a36798af4ae42cb7fd6c0ac80e9aef9aa" kindref="member">DBR_NATIVE</ref>)<sp/>dbrType<sp/>=<sp/>DBR_FLOAT;</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(this-&gt;dbrType<sp/>==<sp/><ref refid="_p_v_attribute_8h_1a36798af4ae42cb7fd6c0ac80e9aef9aa" kindref="member">DBR_NATIVE</ref>)<sp/>dbrType<sp/>=<sp/>DBR_FLOAT;</highlight></codeline>
 <codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>DBF_ENUM:</highlight></codeline>
-<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(this-&gt;dbrType<sp/>==<sp/><ref refid="param_attribute_8h_1a36798af4ae42cb7fd6c0ac80e9aef9aa" kindref="member">DBR_NATIVE</ref>)<sp/>dbrType<sp/>=<sp/>DBR_SHORT;</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(this-&gt;dbrType<sp/>==<sp/><ref refid="_p_v_attribute_8h_1a36798af4ae42cb7fd6c0ac80e9aef9aa" kindref="member">DBR_NATIVE</ref>)<sp/>dbrType<sp/>=<sp/>DBR_SHORT;</highlight></codeline>
 <codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>DBF_CHAR:</highlight></codeline>
-<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(this-&gt;dbrType<sp/>==<sp/><ref refid="param_attribute_8h_1a36798af4ae42cb7fd6c0ac80e9aef9aa" kindref="member">DBR_NATIVE</ref>)<sp/>dbrType<sp/>=<sp/>DBR_CHAR;</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(this-&gt;dbrType<sp/>==<sp/><ref refid="_p_v_attribute_8h_1a36798af4ae42cb7fd6c0ac80e9aef9aa" kindref="member">DBR_NATIVE</ref>)<sp/>dbrType<sp/>=<sp/>DBR_CHAR;</highlight></codeline>
 <codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>If<sp/>the<sp/>native<sp/>type<sp/>is<sp/>DBF_CHAR<sp/>but<sp/>the<sp/>requested<sp/>type<sp/>is<sp/>DBR_STRING</highlight></codeline>
 <codeline lineno="239"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>read<sp/>a<sp/>char<sp/>array<sp/>and<sp/>treat<sp/>as<sp/>string<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(this-&gt;dbrType<sp/>==<sp/>DBR_STRING)<sp/>{</highlight></codeline>
@@ -402,10 +402,10 @@
 <codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>DBF_LONG:</highlight></codeline>
-<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(this-&gt;dbrType<sp/>==<sp/><ref refid="param_attribute_8h_1a36798af4ae42cb7fd6c0ac80e9aef9aa" kindref="member">DBR_NATIVE</ref>)<sp/>dbrType<sp/>=<sp/>DBR_LONG;</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(this-&gt;dbrType<sp/>==<sp/><ref refid="_p_v_attribute_8h_1a36798af4ae42cb7fd6c0ac80e9aef9aa" kindref="member">DBR_NATIVE</ref>)<sp/>dbrType<sp/>=<sp/>DBR_LONG;</highlight></codeline>
 <codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>DBF_DOUBLE:</highlight></codeline>
-<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(this-&gt;dbrType<sp/>==<sp/><ref refid="param_attribute_8h_1a36798af4ae42cb7fd6c0ac80e9aef9aa" kindref="member">DBR_NATIVE</ref>)<sp/>dbrType<sp/>=<sp/>DBR_DOUBLE;</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(this-&gt;dbrType<sp/>==<sp/><ref refid="_p_v_attribute_8h_1a36798af4ae42cb7fd6c0ac80e9aef9aa" kindref="member">DBR_NATIVE</ref>)<sp/>dbrType<sp/>=<sp/>DBR_DOUBLE;</highlight></codeline>
 <codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynPrint(pasynUserSelf,<sp/>ASYN_TRACE_ERROR,</highlight></codeline>

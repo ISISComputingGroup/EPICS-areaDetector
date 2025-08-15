@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="dir_8ce6ea57af3b69daea3048b97ba613d8" kind="dir">
     <compoundname>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADRIXSCam/rixscamApp</compoundname>
     <innerdir refid="dir_e16f7e23d95d536d5eeb4b3b29ed19c0">/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADRIXSCam/rixscamApp/src</innerdir>

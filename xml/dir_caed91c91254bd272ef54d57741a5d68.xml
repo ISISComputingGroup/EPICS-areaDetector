@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="dir_caed91c91254bd272ef54d57741a5d68" kind="dir">
     <compoundname>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPilatus</compoundname>
     <innerdir refid="dir_f54bf842f5f857cde4fde7a0d9abb921">/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPilatus/pilatusApp</innerdir>

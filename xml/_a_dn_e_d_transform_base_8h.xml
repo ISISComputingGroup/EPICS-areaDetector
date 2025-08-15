@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="_a_dn_e_d_transform_base_8h" kind="file" language="C++">
     <compoundname>ADnEDTransformBase.h</compoundname>
     <includes local="yes">stdio.h</includes>
@@ -10,17 +10,9 @@
     <includedby refid="_a_dn_e_d_transform_8h" local="yes">/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDTransform.h</includedby>
     <includedby refid="_a_dn_e_d_transform_base_8cpp" local="no">/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDTransformBase.cpp</includedby>
     <incdepgraph>
-      <node id="5">
-        <label>epicsTypes.h</label>
-      </node>
-      <node id="3">
-        <label>stdlib.h</label>
-      </node>
-      <node id="4">
-        <label>string.h</label>
-      </node>
-      <node id="2">
-        <label>stdio.h</label>
+      <node id="6">
+        <label>ADnEDGlobals.h</label>
+        <link refid="_a_dn_e_d_globals_8h"/>
       </node>
       <node id="1">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDTransformBase.h</label>
@@ -36,12 +28,24 @@
         <childnode refid="6" relation="include">
         </childnode>
       </node>
-      <node id="6">
-        <label>ADnEDGlobals.h</label>
-        <link refid="_a_dn_e_d_globals_8h"/>
+      <node id="5">
+        <label>epicsTypes.h</label>
+      </node>
+      <node id="2">
+        <label>stdio.h</label>
+      </node>
+      <node id="3">
+        <label>stdlib.h</label>
+      </node>
+      <node id="4">
+        <label>string.h</label>
       </node>
     </incdepgraph>
     <invincdepgraph>
+      <node id="3">
+        <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.cpp</label>
+        <link refid="_a_dn_e_d_8cpp"/>
+      </node>
       <node id="4">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.h</label>
         <link refid="_a_dn_e_d_8h"/>
@@ -49,6 +53,10 @@
         </childnode>
         <childnode refid="5" relation="include">
         </childnode>
+      </node>
+      <node id="6">
+        <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDTransform.cpp</label>
+        <link refid="_a_dn_e_d_transform_8cpp"/>
       </node>
       <node id="2">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDTransform.h</label>
@@ -60,21 +68,9 @@
         <childnode refid="6" relation="include">
         </childnode>
       </node>
-      <node id="6">
-        <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDTransform.cpp</label>
-        <link refid="_a_dn_e_d_transform_8cpp"/>
-      </node>
-      <node id="5">
-        <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/nEDChannel.cpp</label>
-        <link refid="n_e_d_channel_8cpp"/>
-      </node>
       <node id="7">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDTransformBase.cpp</label>
         <link refid="_a_dn_e_d_transform_base_8cpp"/>
-      </node>
-      <node id="3">
-        <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnED.cpp</label>
-        <link refid="_a_dn_e_d_8cpp"/>
       </node>
       <node id="1">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDTransformBase.h</label>
@@ -83,6 +79,10 @@
         </childnode>
         <childnode refid="7" relation="include">
         </childnode>
+      </node>
+      <node id="5">
+        <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/nEDChannel.cpp</label>
+        <link refid="n_e_d_channel_8cpp"/>
       </node>
     </invincdepgraph>
     <innerclass refid="class_a_dn_e_d_transform_base" prot="public">ADnEDTransformBase</innerclass>
@@ -105,7 +105,7 @@
 <codeline lineno="17"><highlight class="normal"></highlight></codeline>
 <codeline lineno="18"><highlight class="normal"><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:<sp/></highlight></codeline>
 <codeline lineno="19"><highlight class="normal"><sp/><sp/><ref refid="class_a_dn_e_d_transform_base" kindref="compound">ADnEDTransformBase</ref>();</highlight></codeline>
-<codeline lineno="20"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>~<ref refid="class_a_dn_e_d_transform_base" kindref="compound">ADnEDTransformBase</ref>();</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="class_a_dn_e_d_transform_base" kindref="compound">~ADnEDTransformBase</ref>();</highlight></codeline>
 <codeline lineno="21"><highlight class="normal"></highlight></codeline>
 <codeline lineno="22" refid="class_a_dn_e_d_transform_base_1a5408c9bb026b902610d14b97fb700d17" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>epicsFloat64<sp/><ref refid="class_a_dn_e_d_transform_base_1a5408c9bb026b902610d14b97fb700d17" kindref="member">calculate</ref>(epicsUInt32<sp/>type,<sp/>epicsUInt32<sp/>pixelID,<sp/>epicsUInt32<sp/>tof)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>=<sp/>0;</highlight></codeline>
 <codeline lineno="23"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>setIntParam(epicsUInt32<sp/>paramIndex,<sp/>epicsUInt32<sp/>paramVal);</highlight></codeline>

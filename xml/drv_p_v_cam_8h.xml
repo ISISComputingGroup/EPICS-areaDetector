@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="drv_p_v_cam_8h" kind="file" language="C++">
     <compoundname>drvPVCam.h</compoundname>
     <includedby refid="drv_p_v_cam_epics_8c" local="yes">/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPvCam/pvcamApp/src/drvPVCamEpics.c</includedby>
@@ -28,7 +28,7 @@
         </childnode>
       </node>
     </invincdepgraph>
-      <sectiondef kind="func">
+    <sectiondef kind="func">
       <memberdef kind="function" id="drv_p_v_cam_8h_1ac053bc3996189737d9f695d8f0ada287" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
         <definition>int pvCamConfig</definition>
@@ -74,7 +74,7 @@
         </inbodydescription>
         <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPvCam/pvcamApp/src/drvPVCam.h" line="18" column="5" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPvCam/pvcamApp/src/pvCam.cpp" bodystart="15" bodyend="20" declfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPvCam/pvcamApp/src/drvPVCam.h" declline="18" declcolumn="5"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

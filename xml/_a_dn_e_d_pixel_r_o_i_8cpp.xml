@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="_a_dn_e_d_pixel_r_o_i_8cpp" kind="file" language="C++">
     <compoundname>ADnEDPixelROI.cpp</compoundname>
     <includes local="no">stdlib.h</includes>
@@ -11,46 +11,15 @@
     <includes local="no">epicsExport.h</includes>
     <includes refid="_a_dn_e_d_pixel_r_o_i_8h" local="yes">ADnEDPixelROI.h</includes>
     <incdepgraph>
-      <node id="6">
-        <label>iocsh.h</label>
-      </node>
-      <node id="13">
-        <label>epicsTypes.h</label>
-      </node>
-      <node id="2">
-        <label>stdlib.h</label>
-      </node>
-      <node id="5">
-        <label>epicsMutex.h</label>
-      </node>
-      <node id="16">
-        <label>epicsVersion.h</label>
-      </node>
-      <node id="1">
-        <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDPixelROI.cpp</label>
-        <link refid="_a_dn_e_d_pixel_r_o_i_8cpp"/>
-        <childnode refid="2" relation="include">
-        </childnode>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-        <childnode refid="5" relation="include">
-        </childnode>
-        <childnode refid="6" relation="include">
-        </childnode>
-        <childnode refid="7" relation="include">
-        </childnode>
-        <childnode refid="19" relation="include">
-        </childnode>
-        <childnode refid="20" relation="include">
+      <node id="15">
+        <label>ADCoreAPI.h</label>
+        <link refid="_a_d_core_a_p_i_8h"/>
+        <childnode refid="16" relation="include">
         </childnode>
       </node>
-      <node id="12">
-        <label>string</label>
-      </node>
-      <node id="24">
-        <label>epicsThread.h</label>
+      <node id="29">
+        <label>ADCoreVersion.h</label>
+        <link refid="_a_d_core_version_8h"/>
       </node>
       <node id="18">
         <label>Codec.h</label>
@@ -74,65 +43,6 @@
         <childnode refid="18" relation="include">
         </childnode>
       </node>
-      <node id="19">
-        <label>epicsExport.h</label>
-      </node>
-      <node id="29">
-        <label>ADCoreVersion.h</label>
-        <link refid="_a_d_core_version_8h"/>
-      </node>
-      <node id="17">
-        <label>NDAttributeList.h</label>
-        <link refid="_n_d_attribute_list_8h"/>
-        <childnode refid="4" relation="include">
-        </childnode>
-        <childnode refid="10" relation="include">
-        </childnode>
-        <childnode refid="5" relation="include">
-        </childnode>
-        <childnode refid="11" relation="include">
-        </childnode>
-      </node>
-      <node id="3">
-        <label>string.h</label>
-      </node>
-      <node id="10">
-        <label>ellLib.h</label>
-      </node>
-      <node id="15">
-        <label>ADCoreAPI.h</label>
-        <link refid="_a_d_core_a_p_i_8h"/>
-        <childnode refid="16" relation="include">
-        </childnode>
-      </node>
-      <node id="14">
-        <label>asynDriver.h</label>
-      </node>
-      <node id="25">
-        <label>NDPluginAPI.h</label>
-        <link refid="_n_d_plugin_a_p_i_8h"/>
-        <childnode refid="16" relation="include">
-        </childnode>
-      </node>
-      <node id="20">
-        <label>ADnEDPixelROI.h</label>
-        <link refid="_a_dn_e_d_pixel_r_o_i_8h"/>
-        <childnode refid="13" relation="include">
-        </childnode>
-        <childnode refid="21" relation="include">
-        </childnode>
-        <childnode refid="22" relation="include">
-        </childnode>
-      </node>
-      <node id="21">
-        <label>asynStandardInterfaces.h</label>
-      </node>
-      <node id="9">
-        <label>epicsTime.h</label>
-      </node>
-      <node id="28">
-        <label>asynPortDriver.h</label>
-      </node>
       <node id="11">
         <label>NDAttribute.h</label>
         <link refid="_n_d_attribute_8h"/>
@@ -149,8 +59,37 @@
         <childnode refid="15" relation="include">
         </childnode>
       </node>
-      <node id="8">
-        <label>set</label>
+      <node id="17">
+        <label>NDAttributeList.h</label>
+        <link refid="_n_d_attribute_list_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>asynNDArrayDriver.h</label>
+        <link refid="asyn_n_d_array_driver_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>NDPluginAPI.h</label>
+        <link refid="_n_d_plugin_a_p_i_8h"/>
+        <childnode refid="16" relation="include">
+        </childnode>
       </node>
       <node id="22">
         <label>NDPluginDriver.h</label>
@@ -170,31 +109,92 @@
         <childnode refid="26" relation="include">
         </childnode>
       </node>
-      <node id="23">
-        <label>epicsMessageQueue.h</label>
-      </node>
-      <node id="26">
-        <label>asynNDArrayDriver.h</label>
-        <link refid="asyn_n_d_array_driver_8h"/>
+      <node id="1">
+        <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDPixelROI.cpp</label>
+        <link refid="_a_dn_e_d_pixel_r_o_i_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
         <childnode refid="5" relation="include">
         </childnode>
-        <childnode refid="27" relation="include">
-        </childnode>
-        <childnode refid="28" relation="include">
+        <childnode refid="6" relation="include">
         </childnode>
         <childnode refid="7" relation="include">
         </childnode>
-        <childnode refid="29" relation="include">
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
         </childnode>
       </node>
-      <node id="4">
-        <label>stdio.h</label>
+      <node id="20">
+        <label>ADnEDPixelROI.h</label>
+        <link refid="_a_dn_e_d_pixel_r_o_i_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>asynDriver.h</label>
+      </node>
+      <node id="28">
+        <label>asynPortDriver.h</label>
+      </node>
+      <node id="21">
+        <label>asynStandardInterfaces.h</label>
+      </node>
+      <node id="10">
+        <label>ellLib.h</label>
       </node>
       <node id="27">
         <label>epicsEvent.h</label>
       </node>
+      <node id="19">
+        <label>epicsExport.h</label>
+      </node>
+      <node id="23">
+        <label>epicsMessageQueue.h</label>
+      </node>
+      <node id="5">
+        <label>epicsMutex.h</label>
+      </node>
+      <node id="24">
+        <label>epicsThread.h</label>
+      </node>
+      <node id="9">
+        <label>epicsTime.h</label>
+      </node>
+      <node id="13">
+        <label>epicsTypes.h</label>
+      </node>
+      <node id="16">
+        <label>epicsVersion.h</label>
+      </node>
+      <node id="6">
+        <label>iocsh.h</label>
+      </node>
+      <node id="8">
+        <label>set</label>
+      </node>
+      <node id="4">
+        <label>stdio.h</label>
+      </node>
+      <node id="2">
+        <label>stdlib.h</label>
+      </node>
+      <node id="12">
+        <label>string</label>
+      </node>
+      <node id="3">
+        <label>string.h</label>
+      </node>
     </incdepgraph>
-      <sectiondef kind="define">
+    <sectiondef kind="define">
       <memberdef kind="define" id="_a_dn_e_d_pixel_r_o_i_8cpp_1ad935f1ff1a50822e317bdb321ce991ad" prot="public" static="no">
         <name>MAX</name>
         <param><defname>A</defname></param>
@@ -221,8 +221,8 @@
         </inbodydescription>
         <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDPixelROI.cpp" line="31" column="9" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDPixelROI.cpp" bodystart="31" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="var">
+    </sectiondef>
+    <sectiondef kind="var">
       <memberdef kind="variable" id="_a_dn_e_d_pixel_r_o_i_8cpp_1a13021e744179110a6114bf84e9d47f32" prot="public" static="yes" mutable="no">
         <type>const iocshArg</type>
         <definition>const iocshArg initArg0</definition>
@@ -235,7 +235,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDPixelROI.cpp" line="240" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDPixelROI.cpp" bodystart="240" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDPixelROI.cpp" line="240" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDPixelROI.cpp" bodystart="240" bodyend="240"/>
       </memberdef>
       <memberdef kind="variable" id="_a_dn_e_d_pixel_r_o_i_8cpp_1a85f312f39f3c368a5fa10d1039dc40b2" prot="public" static="yes" mutable="no">
         <type>const iocshArg</type>
@@ -249,7 +249,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDPixelROI.cpp" line="241" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDPixelROI.cpp" bodystart="241" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDPixelROI.cpp" line="241" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDPixelROI.cpp" bodystart="241" bodyend="241"/>
       </memberdef>
       <memberdef kind="variable" id="_a_dn_e_d_pixel_r_o_i_8cpp_1a645a7d7d0d71a7522373e2af4008b520" prot="public" static="yes" mutable="no">
         <type>const iocshArg</type>
@@ -263,7 +263,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDPixelROI.cpp" line="242" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDPixelROI.cpp" bodystart="242" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDPixelROI.cpp" line="242" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDPixelROI.cpp" bodystart="242" bodyend="242"/>
       </memberdef>
       <memberdef kind="variable" id="_a_dn_e_d_pixel_r_o_i_8cpp_1aaa425474fd6655fa6347e1933b29038a" prot="public" static="yes" mutable="no">
         <type>const iocshArg</type>
@@ -277,7 +277,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDPixelROI.cpp" line="243" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDPixelROI.cpp" bodystart="243" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDPixelROI.cpp" line="243" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDPixelROI.cpp" bodystart="243" bodyend="243"/>
       </memberdef>
       <memberdef kind="variable" id="_a_dn_e_d_pixel_r_o_i_8cpp_1a945c4d0bc0e2bc869aeaf5c6a815368a" prot="public" static="yes" mutable="no">
         <type>const iocshArg</type>
@@ -291,7 +291,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDPixelROI.cpp" line="244" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDPixelROI.cpp" bodystart="244" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDPixelROI.cpp" line="244" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDPixelROI.cpp" bodystart="244" bodyend="244"/>
       </memberdef>
       <memberdef kind="variable" id="_a_dn_e_d_pixel_r_o_i_8cpp_1ac7e214be38a3b3bface5e0370ae97db0" prot="public" static="yes" mutable="no">
         <type>const iocshArg</type>
@@ -305,7 +305,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDPixelROI.cpp" line="245" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDPixelROI.cpp" bodystart="245" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDPixelROI.cpp" line="245" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDPixelROI.cpp" bodystart="245" bodyend="245"/>
       </memberdef>
       <memberdef kind="variable" id="_a_dn_e_d_pixel_r_o_i_8cpp_1a43397205694aec859f3b5cb14a85edc3" prot="public" static="yes" mutable="no">
         <type>const iocshArg</type>
@@ -319,7 +319,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDPixelROI.cpp" line="246" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDPixelROI.cpp" bodystart="246" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDPixelROI.cpp" line="246" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDPixelROI.cpp" bodystart="246" bodyend="246"/>
       </memberdef>
       <memberdef kind="variable" id="_a_dn_e_d_pixel_r_o_i_8cpp_1a36049b095d9ed1f56a41821a2c8fc661" prot="public" static="yes" mutable="no">
         <type>const iocshArg</type>
@@ -333,7 +333,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDPixelROI.cpp" line="247" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDPixelROI.cpp" bodystart="247" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDPixelROI.cpp" line="247" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDPixelROI.cpp" bodystart="247" bodyend="247"/>
       </memberdef>
       <memberdef kind="variable" id="_a_dn_e_d_pixel_r_o_i_8cpp_1a62a0c5258a2c1049720be5c31729f76d" prot="public" static="yes" mutable="no">
         <type>const iocshArg</type>
@@ -347,7 +347,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDPixelROI.cpp" line="248" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDPixelROI.cpp" bodystart="248" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDPixelROI.cpp" line="248" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDPixelROI.cpp" bodystart="248" bodyend="248"/>
       </memberdef>
       <memberdef kind="variable" id="_a_dn_e_d_pixel_r_o_i_8cpp_1ac0d7f455ac7138e5bcb473b630294718" prot="public" static="yes" mutable="no">
         <type>const iocshArg *const</type>
@@ -369,7 +369,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDPixelROI.cpp" line="249" column="30" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDPixelROI.cpp" bodystart="249" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDPixelROI.cpp" line="249" column="30" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDPixelROI.cpp" bodystart="249" bodyend="257"/>
       </memberdef>
       <memberdef kind="variable" id="_a_dn_e_d_pixel_r_o_i_8cpp_1a469a3ecf9fff33f8f388acddffc8db6a" prot="public" static="yes" mutable="no">
         <type>const iocshFuncDef</type>
@@ -383,10 +383,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDPixelROI.cpp" line="258" column="27" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDPixelROI.cpp" bodystart="258" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDPixelROI.cpp" line="258" column="27" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDPixelROI.cpp" bodystart="258" bodyend="258"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="func">
+    </sectiondef>
+    <sectiondef kind="func">
       <memberdef kind="function" id="_a_dn_e_d_pixel_r_o_i_8cpp_1a3fdceee5a2e84394f1df2d7ccbe17a24" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
         <definition>int ADnEDPixelROIConfig</definition>
@@ -486,7 +486,7 @@
         </inbodydescription>
         <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDPixelROI.cpp" line="272" column="1" declfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDPixelROI.cpp" declline="272" declcolumn="1"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
@@ -565,11 +565,11 @@
 <codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Make<sp/>sure<sp/>each<sp/>new<sp/>X/Y<sp/>size<sp/>is<sp/>not<sp/>bigger<sp/>than<sp/>the<sp/>Dim0<sp/>size.*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(dim=0;<sp/>dim&lt;3;<sp/>dim++)<sp/>{</highlight></codeline>
 <codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>pDim<sp/>=<sp/>&amp;dims[dim];</highlight></codeline>
-<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>pDim-&gt;<ref refid="struct_n_d_dimension_1a0498332bfb996e2aa43e3604a4923144" kindref="member">offset</ref><sp/><sp/>=<sp/><ref refid="_a_dn_e_d_pixel_r_o_i_8cpp_1ad935f1ff1a50822e317bdb321ce991ad" kindref="member">MAX</ref>(pDim-&gt;<ref refid="struct_n_d_dimension_1a0498332bfb996e2aa43e3604a4923144" kindref="member">offset</ref>,<sp/><sp/>0);</highlight></codeline>
-<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>pDim-&gt;<ref refid="struct_n_d_dimension_1a0498332bfb996e2aa43e3604a4923144" kindref="member">offset</ref><sp/><sp/>=<sp/><ref refid="_a_dn_e_d_pixel_r_o_i_8cpp_1adcd021ac91d43a62b2cdecf9a5b971a7" kindref="member">MIN</ref>(pDim-&gt;<ref refid="struct_n_d_dimension_1a0498332bfb996e2aa43e3604a4923144" kindref="member">offset</ref>,<sp/><sp/>pArray-&gt;<ref refid="class_n_d_array_1a71e5be2b11008face8dc6c5be19f71f1" kindref="member">dims</ref>[0].<ref refid="struct_n_d_dimension_1af32ef14ab526ed14d195875fc688f027" kindref="member">size</ref>-1);</highlight></codeline>
-<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>pDim-&gt;<ref refid="struct_n_d_dimension_1af32ef14ab526ed14d195875fc688f027" kindref="member">size</ref><sp/><sp/><sp/><sp/>=<sp/><ref refid="_a_dn_e_d_pixel_r_o_i_8cpp_1ad935f1ff1a50822e317bdb321ce991ad" kindref="member">MAX</ref>(pDim-&gt;<ref refid="struct_n_d_dimension_1af32ef14ab526ed14d195875fc688f027" kindref="member">size</ref>,<sp/><sp/><sp/><sp/>1);</highlight></codeline>
-<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>pDim-&gt;<ref refid="struct_n_d_dimension_1af32ef14ab526ed14d195875fc688f027" kindref="member">size</ref><sp/><sp/><sp/><sp/>=<sp/><ref refid="_a_dn_e_d_pixel_r_o_i_8cpp_1adcd021ac91d43a62b2cdecf9a5b971a7" kindref="member">MIN</ref>(pDim-&gt;<ref refid="struct_n_d_dimension_1af32ef14ab526ed14d195875fc688f027" kindref="member">size</ref>,<sp/><sp/><sp/><sp/>dims[0].size);</highlight></codeline>
-<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>pDim-&gt;<ref refid="struct_n_d_dimension_1a6d5ea1ce1544d57ac3812f43a6ca7a94" kindref="member">binning</ref><sp/>=<sp/><ref refid="_a_dn_e_d_pixel_r_o_i_8cpp_1ad935f1ff1a50822e317bdb321ce991ad" kindref="member">MAX</ref>(pDim-&gt;<ref refid="struct_n_d_dimension_1a6d5ea1ce1544d57ac3812f43a6ca7a94" kindref="member">binning</ref>,<sp/>1);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>pDim-&gt;<ref refid="struct_n_d_dimension_1a0498332bfb996e2aa43e3604a4923144" kindref="member">offset</ref><sp/><sp/>=<sp/><ref refid="_n_d_plugin_overlay_8cpp_1ad935f1ff1a50822e317bdb321ce991ad" kindref="member">MAX</ref>(pDim-&gt;<ref refid="struct_n_d_dimension_1a0498332bfb996e2aa43e3604a4923144" kindref="member">offset</ref>,<sp/><sp/>0);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>pDim-&gt;<ref refid="struct_n_d_dimension_1a0498332bfb996e2aa43e3604a4923144" kindref="member">offset</ref><sp/><sp/>=<sp/><ref refid="_n_d_plugin_f_f_t_8cpp_1adcd021ac91d43a62b2cdecf9a5b971a7" kindref="member">MIN</ref>(pDim-&gt;<ref refid="struct_n_d_dimension_1a0498332bfb996e2aa43e3604a4923144" kindref="member">offset</ref>,<sp/><sp/>pArray-&gt;<ref refid="class_n_d_array_1a71e5be2b11008face8dc6c5be19f71f1" kindref="member">dims</ref>[0].<ref refid="struct_n_d_dimension_1af32ef14ab526ed14d195875fc688f027" kindref="member">size</ref>-1);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>pDim-&gt;<ref refid="struct_n_d_dimension_1af32ef14ab526ed14d195875fc688f027" kindref="member">size</ref><sp/><sp/><sp/><sp/>=<sp/><ref refid="_n_d_plugin_overlay_8cpp_1ad935f1ff1a50822e317bdb321ce991ad" kindref="member">MAX</ref>(pDim-&gt;<ref refid="struct_n_d_dimension_1af32ef14ab526ed14d195875fc688f027" kindref="member">size</ref>,<sp/><sp/><sp/><sp/>1);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>pDim-&gt;<ref refid="struct_n_d_dimension_1af32ef14ab526ed14d195875fc688f027" kindref="member">size</ref><sp/><sp/><sp/><sp/>=<sp/><ref refid="_n_d_plugin_f_f_t_8cpp_1adcd021ac91d43a62b2cdecf9a5b971a7" kindref="member">MIN</ref>(pDim-&gt;<ref refid="struct_n_d_dimension_1af32ef14ab526ed14d195875fc688f027" kindref="member">size</ref>,<sp/><sp/><sp/><sp/>dims[0].size);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>pDim-&gt;<ref refid="struct_n_d_dimension_1a6d5ea1ce1544d57ac3812f43a6ca7a94" kindref="member">binning</ref><sp/>=<sp/><ref refid="_n_d_plugin_overlay_8cpp_1ad935f1ff1a50822e317bdb321ce991ad" kindref="member">MAX</ref>(pDim-&gt;<ref refid="struct_n_d_dimension_1a6d5ea1ce1544d57ac3812f43a6ca7a94" kindref="member">binning</ref>,<sp/>1);</highlight></codeline>
 <codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="84"><highlight class="normal"></highlight></codeline>
 <codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Make<sp/>sure<sp/>end<sp/>result<sp/>of<sp/>X*Y<sp/>is<sp/>not<sp/>bigger<sp/>than<sp/>pArray-&gt;dims[0].size<sp/></highlight></codeline>
@@ -726,11 +726,11 @@
 <codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;initArg7,</highlight></codeline>
 <codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;initArg8};</highlight></codeline>
 <codeline lineno="258"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>iocshFuncDef<sp/>initFuncDef<sp/>=<sp/>{</highlight><highlight class="stringliteral">&quot;ADnEDPixelROIConfig&quot;</highlight><highlight class="normal">,9,initArgs};</highlight></codeline>
-<codeline lineno="259"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>initCallFunc(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>iocshArgBuf<sp/>*<ref refid="namespacemake_adl_1a1d55f39db2066eab50e6f2b21abc00f1" kindref="member">args</ref>)</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>initCallFunc(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>iocshArgBuf<sp/>*args)</highlight></codeline>
 <codeline lineno="260"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_a_dn_e_d_pixel_r_o_i_8cpp_1a3fdceee5a2e84394f1df2d7ccbe17a24" kindref="member">ADnEDPixelROIConfig</ref>(<ref refid="namespacemake_adl_1a1d55f39db2066eab50e6f2b21abc00f1" kindref="member">args</ref>[0].sval,<sp/><ref refid="namespacemake_adl_1a1d55f39db2066eab50e6f2b21abc00f1" kindref="member">args</ref>[1].ival,<sp/><ref refid="namespacemake_adl_1a1d55f39db2066eab50e6f2b21abc00f1" kindref="member">args</ref>[2].ival,</highlight></codeline>
-<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacemake_adl_1a1d55f39db2066eab50e6f2b21abc00f1" kindref="member">args</ref>[3].sval,<sp/><ref refid="namespacemake_adl_1a1d55f39db2066eab50e6f2b21abc00f1" kindref="member">args</ref>[4].ival,<sp/><ref refid="namespacemake_adl_1a1d55f39db2066eab50e6f2b21abc00f1" kindref="member">args</ref>[5].ival,</highlight></codeline>
-<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacemake_adl_1a1d55f39db2066eab50e6f2b21abc00f1" kindref="member">args</ref>[6].ival,<sp/><ref refid="namespacemake_adl_1a1d55f39db2066eab50e6f2b21abc00f1" kindref="member">args</ref>[7].ival,<sp/><ref refid="namespacemake_adl_1a1d55f39db2066eab50e6f2b21abc00f1" kindref="member">args</ref>[8].ival);</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_a_dn_e_d_pixel_r_o_i_8cpp_1a3fdceee5a2e84394f1df2d7ccbe17a24" kindref="member">ADnEDPixelROIConfig</ref>(args[0].sval,<sp/>args[1].ival,<sp/>args[2].ival,</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>args[3].sval,<sp/>args[4].ival,<sp/>args[5].ival,</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>args[6].ival,<sp/>args[7].ival,<sp/>args[8].ival);</highlight></codeline>
 <codeline lineno="264"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="265"><highlight class="normal"></highlight></codeline>
 <codeline lineno="266"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_a_dn_e_d_pixel_r_o_i_8cpp_1a84b27e6654883c16759861b9824ac5fe" kindref="member">ADnEDPixelROIRegister</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>

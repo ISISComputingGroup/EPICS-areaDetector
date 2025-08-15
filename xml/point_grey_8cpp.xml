@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="point_grey_8cpp" kind="file" language="C++">
     <compoundname>pointGrey.cpp</compoundname>
     <includes local="no">stdio.h</includes>
@@ -16,26 +16,91 @@
     <includes refid="_a_d_driver_8h" local="yes">ADDriver.h</includes>
     <includes local="no">epicsExport.h</includes>
     <incdepgraph>
-      <node id="9">
-        <label>iocsh.h</label>
+      <node id="25">
+        <label>ADCoreAPI.h</label>
+        <link refid="_a_d_core_a_p_i_8h"/>
+        <childnode refid="26" relation="include">
+        </childnode>
       </node>
-      <node id="14">
-        <label>epicsTypes.h</label>
+      <node id="29">
+        <label>ADCoreVersion.h</label>
+        <link refid="_a_d_core_version_8h"/>
       </node>
-      <node id="3">
-        <label>stdlib.h</label>
+      <node id="13">
+        <label>ADDriver.h</label>
+        <link refid="_a_d_driver_8h"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
       </node>
-      <node id="17">
-        <label>epicsMutex.h</label>
+      <node id="28">
+        <label>Codec.h</label>
+        <link refid="_codec_8h"/>
       </node>
-      <node id="11">
-        <label>epicsExit.h</label>
+      <node id="19">
+        <label>NDArray.h</label>
+        <link refid="_n_d_array_8h"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
       </node>
-      <node id="26">
-        <label>epicsVersion.h</label>
+      <node id="22">
+        <label>NDAttribute.h</label>
+        <link refid="_n_d_attribute_8h"/>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
       </node>
-      <node id="23">
-        <label>string</label>
+      <node id="27">
+        <label>NDAttributeList.h</label>
+        <link refid="_n_d_attribute_list_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>asynNDArrayDriver.h</label>
+        <link refid="asyn_n_d_array_driver_8h"/>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
       </node>
       <node id="1">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp</label>
@@ -67,52 +132,62 @@
         <childnode refid="30" relation="include">
         </childnode>
       </node>
-      <node id="8">
-        <label>epicsThread.h</label>
+      <node id="12">
+        <label>FlyCapture2.h</label>
       </node>
-      <node id="28">
-        <label>Codec.h</label>
-        <link refid="_codec_8h"/>
+      <node id="24">
+        <label>asynDriver.h</label>
       </node>
-      <node id="19">
-        <label>NDArray.h</label>
-        <link refid="_n_d_array_8h"/>
-        <childnode refid="20" relation="include">
-        </childnode>
-        <childnode refid="17" relation="include">
-        </childnode>
-        <childnode refid="7" relation="include">
-        </childnode>
-        <childnode refid="21" relation="include">
-        </childnode>
-        <childnode refid="22" relation="include">
-        </childnode>
-        <childnode refid="27" relation="include">
-        </childnode>
-        <childnode refid="28" relation="include">
-        </childnode>
+      <node id="18">
+        <label>asynPortDriver.h</label>
+      </node>
+      <node id="21">
+        <label>ellLib.h</label>
+      </node>
+      <node id="6">
+        <label>epicsEvent.h</label>
+      </node>
+      <node id="11">
+        <label>epicsExit.h</label>
       </node>
       <node id="30">
         <label>epicsExport.h</label>
       </node>
-      <node id="29">
-        <label>ADCoreVersion.h</label>
-        <link refid="_a_d_core_version_8h"/>
+      <node id="15">
+        <label>epicsMessageQueue.h</label>
       </node>
-      <node id="27">
-        <label>NDAttributeList.h</label>
-        <link refid="_n_d_attribute_list_8h"/>
-        <childnode refid="2" relation="include">
-        </childnode>
-        <childnode refid="21" relation="include">
-        </childnode>
-        <childnode refid="17" relation="include">
-        </childnode>
-        <childnode refid="22" relation="include">
-        </childnode>
+      <node id="17">
+        <label>epicsMutex.h</label>
       </node>
       <node id="10">
         <label>epicsString.h</label>
+      </node>
+      <node id="8">
+        <label>epicsThread.h</label>
+      </node>
+      <node id="7">
+        <label>epicsTime.h</label>
+      </node>
+      <node id="14">
+        <label>epicsTypes.h</label>
+      </node>
+      <node id="26">
+        <label>epicsVersion.h</label>
+      </node>
+      <node id="9">
+        <label>iocsh.h</label>
+      </node>
+      <node id="20">
+        <label>set</label>
+      </node>
+      <node id="2">
+        <label>stdio.h</label>
+      </node>
+      <node id="3">
+        <label>stdlib.h</label>
+      </node>
+      <node id="23">
+        <label>string</label>
       </node>
       <node id="4">
         <label>string.h</label>
@@ -120,86 +195,11 @@
       <node id="5">
         <label>unistd.h</label>
       </node>
-      <node id="21">
-        <label>ellLib.h</label>
-      </node>
-      <node id="25">
-        <label>ADCoreAPI.h</label>
-        <link refid="_a_d_core_a_p_i_8h"/>
-        <childnode refid="26" relation="include">
-        </childnode>
-      </node>
-      <node id="24">
-        <label>asynDriver.h</label>
-      </node>
-      <node id="7">
-        <label>epicsTime.h</label>
-      </node>
-      <node id="18">
-        <label>asynPortDriver.h</label>
-      </node>
-      <node id="22">
-        <label>NDAttribute.h</label>
-        <link refid="_n_d_attribute_8h"/>
-        <childnode refid="23" relation="include">
-        </childnode>
-        <childnode refid="2" relation="include">
-        </childnode>
-        <childnode refid="21" relation="include">
-        </childnode>
-        <childnode refid="14" relation="include">
-        </childnode>
-        <childnode refid="24" relation="include">
-        </childnode>
-        <childnode refid="25" relation="include">
-        </childnode>
-      </node>
-      <node id="20">
-        <label>set</label>
-      </node>
-      <node id="13">
-        <label>ADDriver.h</label>
-        <link refid="_a_d_driver_8h"/>
-        <childnode refid="14" relation="include">
-        </childnode>
-        <childnode refid="15" relation="include">
-        </childnode>
-        <childnode refid="7" relation="include">
-        </childnode>
-        <childnode refid="16" relation="include">
-        </childnode>
-      </node>
-      <node id="15">
-        <label>epicsMessageQueue.h</label>
-      </node>
-      <node id="16">
-        <label>asynNDArrayDriver.h</label>
-        <link refid="asyn_n_d_array_driver_8h"/>
-        <childnode refid="17" relation="include">
-        </childnode>
-        <childnode refid="6" relation="include">
-        </childnode>
-        <childnode refid="18" relation="include">
-        </childnode>
-        <childnode refid="19" relation="include">
-        </childnode>
-        <childnode refid="29" relation="include">
-        </childnode>
-      </node>
-      <node id="2">
-        <label>stdio.h</label>
-      </node>
-      <node id="6">
-        <label>epicsEvent.h</label>
-      </node>
-      <node id="12">
-        <label>FlyCapture2.h</label>
-      </node>
     </incdepgraph>
     <innerclass refid="structenum_struct__t" prot="public">enumStruct_t</innerclass>
     <innerclass refid="classpoint_grey" prot="public">pointGrey</innerclass>
     <innernamespace refid="namespace_fly_capture2">FlyCapture2</innernamespace>
-      <sectiondef kind="define">
+    <sectiondef kind="define">
       <memberdef kind="define" id="point_grey_8cpp_1ae578001fe043b4cca7a0edd801cfe9c4" prot="public" static="no">
         <name>DRIVER_VERSION</name>
         <initializer>2</initializer>
@@ -898,8 +898,8 @@
         </inbodydescription>
         <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" line="466" column="9" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" bodystart="466" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="enum">
+    </sectiondef>
+    <sectiondef kind="enum">
       <memberdef kind="enum" id="point_grey_8cpp_1a06247911a7d3dd5967a46aece3b77d68" prot="public" static="no" strong="no">
         <type></type>
         <name>propValue_t</name>
@@ -989,8 +989,8 @@
         </inbodydescription>
         <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" line="304" column="1" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" bodystart="304" bodyend="308"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="var">
+    </sectiondef>
+    <sectiondef kind="var">
       <memberdef kind="variable" id="point_grey_8cpp_1af0e94d13028051cd5339d204bfbb057d" prot="public" static="yes" mutable="no">
         <type>const char *</type>
         <definition>const char* driverName</definition>
@@ -1042,7 +1042,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" line="130" column="19" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" bodystart="130" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" line="130" column="19" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" bodystart="130" bodyend="155"/>
       </memberdef>
       <memberdef kind="variable" id="point_grey_8cpp_1a7ec68ef87b8ed387b38ae8b851da18d2" prot="public" static="yes" mutable="no">
         <type>const char *</type>
@@ -1065,7 +1065,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" line="157" column="19" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" bodystart="157" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" line="157" column="19" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" bodystart="157" bodyend="166"/>
       </memberdef>
       <memberdef kind="variable" id="point_grey_8cpp_1a34b1105796045b8cf5444359720d8ceb" prot="public" static="yes" mutable="no">
         <type>const char *</type>
@@ -1098,7 +1098,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" line="168" column="19" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" bodystart="168" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" line="168" column="19" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" bodystart="168" bodyend="187"/>
       </memberdef>
       <memberdef kind="variable" id="point_grey_8cpp_1a2e905fedf94f688689b6d8b482cdaa26" prot="public" static="yes" mutable="no">
         <type>const PixelFormat</type>
@@ -1133,7 +1133,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" line="189" column="26" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" bodystart="189" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" line="189" column="26" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" bodystart="189" bodyend="210"/>
       </memberdef>
       <memberdef kind="variable" id="point_grey_8cpp_1aa3788d86069a8af11336fa3d51f0f97e" prot="public" static="yes" mutable="no">
         <type>const char *</type>
@@ -1151,7 +1151,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" line="218" column="19" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" bodystart="218" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" line="218" column="19" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" bodystart="218" bodyend="222"/>
       </memberdef>
       <memberdef kind="variable" id="point_grey_8cpp_1aaa8e544fba199554413c4a4db41b967b" prot="public" static="yes" mutable="no">
         <type>const unsigned int</type>
@@ -1169,7 +1169,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" line="224" column="27" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" bodystart="224" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" line="224" column="27" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" bodystart="224" bodyend="228"/>
       </memberdef>
       <memberdef kind="variable" id="point_grey_8cpp_1aa5b0c30fb7a373dd4e5047855607be2d" prot="public" static="yes" mutable="no">
         <type>const char *</type>
@@ -1190,7 +1190,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" line="230" column="19" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" bodystart="230" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" line="230" column="19" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" bodystart="230" bodyend="237"/>
       </memberdef>
       <memberdef kind="variable" id="point_grey_8cpp_1a94dc24493c5c1a64886ca2081e3f437b" prot="public" static="yes" mutable="no">
         <type>const unsigned int</type>
@@ -1211,7 +1211,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" line="239" column="27" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" bodystart="239" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" line="239" column="27" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" bodystart="239" bodyend="246"/>
       </memberdef>
       <memberdef kind="variable" id="point_grey_8cpp_1a4f43ed9173f1a5e10f4a9e08bc561fac" prot="public" static="yes" mutable="no">
         <type>const char *</type>
@@ -1244,7 +1244,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" line="248" column="19" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" bodystart="248" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" line="248" column="19" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" bodystart="248" bodyend="267"/>
       </memberdef>
       <memberdef kind="variable" id="point_grey_8cpp_1a59e562bc5d071e64933f7b15d1328617" prot="public" static="yes" mutable="no">
         <type>const char *</type>
@@ -1263,7 +1263,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" line="269" column="19" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" bodystart="269" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" line="269" column="19" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" bodystart="269" bodyend="274"/>
       </memberdef>
       <memberdef kind="variable" id="point_grey_8cpp_1af31cc772cfeb97d20dfe3373582fdbdf" prot="public" static="yes" mutable="no">
         <type>const char *</type>
@@ -1295,7 +1295,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" line="277" column="19" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" bodystart="277" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" line="277" column="19" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" bodystart="277" bodyend="295"/>
       </memberdef>
       <memberdef kind="variable" id="point_grey_8cpp_1a1b9b67ad0feb3cbeba2f9aaad566d7ab" prot="public" static="yes" mutable="no">
         <type>const char *</type>
@@ -1314,7 +1314,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" line="297" column="19" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" bodystart="297" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" line="297" column="19" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" bodystart="297" bodyend="302"/>
       </memberdef>
       <memberdef kind="variable" id="point_grey_8cpp_1a5b3cb40f99ecdaa383a0189445b38fbf" prot="public" static="yes" mutable="no">
         <type>const iocshArg</type>
@@ -1328,7 +1328,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" line="3037" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" bodystart="3037" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" line="3037" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" bodystart="3037" bodyend="3037"/>
       </memberdef>
       <memberdef kind="variable" id="point_grey_8cpp_1a12e03f733e7768280d0205a2d8adeaab" prot="public" static="yes" mutable="no">
         <type>const iocshArg</type>
@@ -1342,7 +1342,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" line="3038" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" bodystart="3038" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" line="3038" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" bodystart="3038" bodyend="3038"/>
       </memberdef>
       <memberdef kind="variable" id="point_grey_8cpp_1ac0dc159931b84391cb7c0fed1fa7986f" prot="public" static="yes" mutable="no">
         <type>const iocshArg</type>
@@ -1356,7 +1356,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" line="3039" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" bodystart="3039" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" line="3039" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" bodystart="3039" bodyend="3039"/>
       </memberdef>
       <memberdef kind="variable" id="point_grey_8cpp_1ace59dfd97294c541e5bef057cdb513e7" prot="public" static="yes" mutable="no">
         <type>const iocshArg</type>
@@ -1370,7 +1370,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" line="3040" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" bodystart="3040" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" line="3040" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" bodystart="3040" bodyend="3040"/>
       </memberdef>
       <memberdef kind="variable" id="point_grey_8cpp_1a340f9b3d99922a0aa2c3b150f5a34cd1" prot="public" static="yes" mutable="no">
         <type>const iocshArg</type>
@@ -1384,7 +1384,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" line="3041" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" bodystart="3041" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" line="3041" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" bodystart="3041" bodyend="3041"/>
       </memberdef>
       <memberdef kind="variable" id="point_grey_8cpp_1a2c70847455a1f828f228bde88ad50ac0" prot="public" static="yes" mutable="no">
         <type>const iocshArg</type>
@@ -1398,7 +1398,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" line="3042" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" bodystart="3042" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" line="3042" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" bodystart="3042" bodyend="3042"/>
       </memberdef>
       <memberdef kind="variable" id="point_grey_8cpp_1af3e6f0bc824622de5ce00d56c75a4fe8" prot="public" static="yes" mutable="no">
         <type>const iocshArg</type>
@@ -1412,7 +1412,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" line="3043" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" bodystart="3043" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" line="3043" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" bodystart="3043" bodyend="3043"/>
       </memberdef>
       <memberdef kind="variable" id="point_grey_8cpp_1a0aa238c08f4c675a62450faafc9f3748" prot="public" static="yes" mutable="no">
         <type>const iocshArg</type>
@@ -1426,7 +1426,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" line="3044" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" bodystart="3044" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" line="3044" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" bodystart="3044" bodyend="3044"/>
       </memberdef>
       <memberdef kind="variable" id="point_grey_8cpp_1a552430c6092c73bc46cfa4a702f43ea6" prot="public" static="yes" mutable="no">
         <type>const iocshArg *const</type>
@@ -1447,7 +1447,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" line="3045" column="30" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" bodystart="3045" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" line="3045" column="30" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" bodystart="3045" bodyend="3052"/>
       </memberdef>
       <memberdef kind="variable" id="point_grey_8cpp_1ad34a502353d1cc0dd610cb791966775b" prot="public" static="yes" mutable="no">
         <type>const iocshFuncDef</type>
@@ -1461,10 +1461,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" line="3053" column="27" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" bodystart="3053" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" line="3053" column="27" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" bodystart="3053" bodyend="3053"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="func">
+    </sectiondef>
+    <sectiondef kind="func">
       <memberdef kind="function" id="point_grey_8cpp_1a271c779ebbbf99f1e91806fa7f137c1a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
         <definition>int pointGreyConfig</definition>
@@ -1662,7 +1662,7 @@
         </inbodydescription>
         <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" line="3068" column="1" declfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" declline="3068" declcolumn="1"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
@@ -1985,63 +1985,63 @@
 <codeline lineno="318"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>priority,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>stackSize);</highlight></codeline>
 <codeline lineno="319"><highlight class="normal"></highlight></codeline>
 <codeline lineno="320"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>virtual<sp/>methods<sp/>to<sp/>override<sp/>from<sp/>ADDriver<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="321"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>asynStatus<sp/>writeInt32(<sp/>asynUser<sp/>*pasynUser,<sp/>epicsInt32<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
-<codeline lineno="322"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>asynStatus<sp/>writeFloat64(<sp/>asynUser<sp/>*pasynUser,<sp/>epicsFloat64<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
-<codeline lineno="323"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>asynStatus<sp/>readEnum(asynUser<sp/>*pasynUser,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*strings[],<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>values[],<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>severities[],<sp/></highlight></codeline>
+<codeline lineno="321"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>asynStatus<sp/><ref refid="classpoint_grey_1a52b94fc43b333cf4aeaac9b8a08c8b2f" kindref="member">writeInt32</ref>(<sp/>asynUser<sp/>*pasynUser,<sp/>epicsInt32<sp/>value);</highlight></codeline>
+<codeline lineno="322"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>asynStatus<sp/><ref refid="classpoint_grey_1a5d717b53647b4be2897dd5350e37f42f" kindref="member">writeFloat64</ref>(<sp/>asynUser<sp/>*pasynUser,<sp/>epicsFloat64<sp/>value);</highlight></codeline>
+<codeline lineno="323"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>asynStatus<sp/><ref refid="classpoint_grey_1ae04c0fe04d64c357673002f03712f130" kindref="member">readEnum</ref>(asynUser<sp/>*pasynUser,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*strings[],<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>values[],<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>severities[],<sp/></highlight></codeline>
 <codeline lineno="324"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>nElements,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>*nIn);</highlight></codeline>
-<codeline lineno="325"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>report(FILE<sp/>*fp,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>details);</highlight></codeline>
-<codeline lineno="327"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>imageGrabTask();</highlight></codeline>
-<codeline lineno="328"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>shutdown();</highlight></codeline>
+<codeline lineno="325"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classpoint_grey_1ad82328c7fa0ccc585e7e39991a373aa4" kindref="member">report</ref>(FILE<sp/>*fp,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>details);</highlight></codeline>
+<codeline lineno="327"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classpoint_grey_1ae003d11855522f847b3d4fa7b473a5e5" kindref="member">imageGrabTask</ref>();</highlight></codeline>
+<codeline lineno="328"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classpoint_grey_1a904abc52db9807744a1aab90d558deb1" kindref="member">shutdown</ref>();</highlight></codeline>
 <codeline lineno="329"><highlight class="normal"></highlight></codeline>
 <codeline lineno="330"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="333"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>PGPropertyAvail;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="333"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classpoint_grey_1a50ae5223ac71c6e158e466fdeab6038b" kindref="member">PGPropertyAvail</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="334"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>FIRST_PG_PARAM<sp/>PGPropertyAvail</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="335"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>PGPropertyOnOffAvail;<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="336"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>PGPropertyOnOff;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="337"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>PGPropertyOnePushAvail;<sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="338"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>PGPropertyOnePush;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="339"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>PGPropertyAutoAvail;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="340"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>PGPropertyManAvail;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="341"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>PGPropertyAutoMode;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="342"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>PGPropertyAbsAvail;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="343"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>PGPropertyAbsMode;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="344"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>PGPropertyValue;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="345"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>PGPropertyValueB;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="346"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>PGPropertyValueMax;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="347"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>PGPropertyValueMin;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="348"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>PGPropertyValueAbs;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="349"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>PGPropertyValueAbsMax;<sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="350"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>PGPropertyValueAbsMin;<sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="351"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>PGGigEPropertyValue;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="352"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>PGGigEPropertyValueMax;<sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="353"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>PGGigEPropertyValueMin;<sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="354"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>PGVideoMode;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="355"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>PGFormat7Mode;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="356"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>PGBinningMode;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="357"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>PGFrameRate;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="358"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>PGPixelFormat;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="360"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>PGConvertPixelFormat;<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="363"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>PGTriggerSource;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="364"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>PGTriggerPolarity;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="365"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>PGSoftwareTrigger;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="366"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>PGSkipFrames;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="367"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>PGStrobeSource;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="368"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>PGStrobePolarity;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="369"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>PGStrobeEnable;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="370"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>PGStrobeDelay;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="371"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>PGStrobeDuration;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="372"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>PGPacketSize;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="373"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>PGPacketSizeActual;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="374"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>PGMaxPacketSize;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="375"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>PGPacketDelay;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="376"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>PGPacketDelayActual;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="377"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>PGPacketResendEnable;<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="378"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>PGBandwidth;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="379"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>PGTimeStampMode;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="380"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>PGCorruptFrames;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="381"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>PGDriverDropped;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="382"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>PGTransmitFailed;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="383"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>PGDroppedFrames;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="335"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classpoint_grey_1a03a3ccf4cacebd245577c23f3f083f1c" kindref="member">PGPropertyOnOffAvail</ref>;<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="336"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classpoint_grey_1a68c1081ac90854fd617e13b83b835e08" kindref="member">PGPropertyOnOff</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="337"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classpoint_grey_1a781d7b8e8a9715cb8a8cdc98e001b7ac" kindref="member">PGPropertyOnePushAvail</ref>;<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="338"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classpoint_grey_1a1aed3a675b2ccdf34719c7ca2a96a5cc" kindref="member">PGPropertyOnePush</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="339"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classpoint_grey_1a50decb5b21a5b44b262f2427da4e13c3" kindref="member">PGPropertyAutoAvail</ref>;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="340"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classpoint_grey_1aeac0f8bf1772f599bd655de717ffabc5" kindref="member">PGPropertyManAvail</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="341"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classpoint_grey_1ad0b3bf36980d2c7720866c5a85b69732" kindref="member">PGPropertyAutoMode</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="342"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classpoint_grey_1a63f57ed1e0038b9b1acdb7b972ac1047" kindref="member">PGPropertyAbsAvail</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="343"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classpoint_grey_1a2b72e6495dfe45231ac29303af902641" kindref="member">PGPropertyAbsMode</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="344"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classpoint_grey_1a3a0a732383ef0c7a697ea18f1ae611b4" kindref="member">PGPropertyValue</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="345"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classpoint_grey_1ae8dad86581728a440d186f7215a7b83a" kindref="member">PGPropertyValueB</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="346"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classpoint_grey_1ab7109a5b41cb042b6ad012d6c9ea274d" kindref="member">PGPropertyValueMax</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="347"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classpoint_grey_1a5e343e09316e50747836e51e80ce0c7f" kindref="member">PGPropertyValueMin</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="348"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classpoint_grey_1a13b0e4e890ae97e5bff5693f78841d63" kindref="member">PGPropertyValueAbs</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="349"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classpoint_grey_1afe70bd1ca4e33e29b7d95ac98a7ba0df" kindref="member">PGPropertyValueAbsMax</ref>;<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="350"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classpoint_grey_1a8ccb2d1d04066c0dac373368d16153a8" kindref="member">PGPropertyValueAbsMin</ref>;<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="351"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classpoint_grey_1a1d5eaca85cdf5e2e5910794d667e1c92" kindref="member">PGGigEPropertyValue</ref>;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="352"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classpoint_grey_1a1da5f5c491b764a4086bca99dfcafe10" kindref="member">PGGigEPropertyValueMax</ref>;<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="353"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classpoint_grey_1a2902c949f3287faa1454c83f43aff7b9" kindref="member">PGGigEPropertyValueMin</ref>;<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="354"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classpoint_grey_1a57f1347bcd594f54fd0130025bf0b7fb" kindref="member">PGVideoMode</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="355"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classpoint_grey_1a029510048f3c9a2f3bb4acf1e6423051" kindref="member">PGFormat7Mode</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="356"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classpoint_grey_1a542aa32ca6c6f30fe499a88e18915d33" kindref="member">PGBinningMode</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="357"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classpoint_grey_1a79a2ed83cf0ebd65e9c68051bdd4cddd" kindref="member">PGFrameRate</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="358"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classpoint_grey_1a57b568b83dc44556ed0a5950289b6df9" kindref="member">PGPixelFormat</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="360"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classpoint_grey_1a872565ea522c2c70b2c6a94d0cad3db3" kindref="member">PGConvertPixelFormat</ref>;<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="363"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classpoint_grey_1ad413903ad8667c04350abed947e6e1ed" kindref="member">PGTriggerSource</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="364"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classpoint_grey_1a824d9fc7c3eb8b0f53c2c1de560d466d" kindref="member">PGTriggerPolarity</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="365"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classpoint_grey_1a8d1d60832812b04a93a44246e3cd222b" kindref="member">PGSoftwareTrigger</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="366"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classpoint_grey_1a071bcf217255e695add34f56159c659c" kindref="member">PGSkipFrames</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="367"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classpoint_grey_1afc8c4ac61e4dbaf51f93965f6c49cbcd" kindref="member">PGStrobeSource</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="368"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classpoint_grey_1abcedc7e80cda881c468c9ce278663dfc" kindref="member">PGStrobePolarity</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="369"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classpoint_grey_1a7ab81414e6ac4303b0c34fdc490f61f6" kindref="member">PGStrobeEnable</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="370"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classpoint_grey_1a92b130978fe05dfbf51f4b3e2887f6ff" kindref="member">PGStrobeDelay</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="371"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classpoint_grey_1a6472f670704c26903a2494347d93af33" kindref="member">PGStrobeDuration</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="372"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classpoint_grey_1ac7dee34f4a0cb3f8ff90dc784c665527" kindref="member">PGPacketSize</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="373"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classpoint_grey_1a0f268d32bb9ec757fd79f53855751c75" kindref="member">PGPacketSizeActual</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="374"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classpoint_grey_1a33efadffe6207c0bb789df09259411c7" kindref="member">PGMaxPacketSize</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="375"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classpoint_grey_1a3e8d201b5f32f6431337b1a003ee9a20" kindref="member">PGPacketDelay</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="376"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classpoint_grey_1ab1233b9a19c7bca7d7aa8478c11bb574" kindref="member">PGPacketDelayActual</ref>;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="377"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classpoint_grey_1a140a30d45ee5b45f559c05704078df54" kindref="member">PGPacketResendEnable</ref>;<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="378"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classpoint_grey_1af10c7c163fa49e09d65ea6a38a2ed9ac" kindref="member">PGBandwidth</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="379"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classpoint_grey_1a68d9cc3eb74484d167b132973eb0b9e9" kindref="member">PGTimeStampMode</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="380"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classpoint_grey_1ae5fbc618db10c0098c567870a78af44a" kindref="member">PGCorruptFrames</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="381"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classpoint_grey_1a3000e108a78e226a6e22dc9a1218ed7a" kindref="member">PGDriverDropped</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="382"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classpoint_grey_1ac021fed7ce75fa32131da88f7672d627" kindref="member">PGTransmitFailed</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="383"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classpoint_grey_1a47eca17e9c10e7f3ea44de4167ebcf33" kindref="member">PGDroppedFrames</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="384"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>LAST_PG_PARAM<sp/>PGDroppedFrames</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="385"><highlight class="normal"></highlight></codeline>
 <codeline lineno="386"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
@@ -2056,10 +2056,10 @@
 <codeline lineno="395"><highlight class="normal"><sp/><sp/><sp/><sp/>asynStatus<sp/>readStatus();</highlight></codeline>
 <codeline lineno="396"><highlight class="normal"></highlight></codeline>
 <codeline lineno="397"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>camera<sp/>property<sp/>control<sp/>functions<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="398"><highlight class="normal"><sp/><sp/><sp/><sp/>asynStatus<sp/>setPropertyValue(PropertyType<sp/>propType,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>,<sp/><ref refid="point_grey_8cpp_1a06247911a7d3dd5967a46aece3b77d68" kindref="member">propValue_t</ref><sp/>valType);</highlight></codeline>
-<codeline lineno="399"><highlight class="normal"><sp/><sp/><sp/><sp/>asynStatus<sp/>setGigEPropertyValue(GigEPropertyType<sp/>propType,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
-<codeline lineno="400"><highlight class="normal"><sp/><sp/><sp/><sp/>asynStatus<sp/>setPropertyAbsValue(PropertyType<sp/>propType,<sp/>epicsFloat64<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
-<codeline lineno="401"><highlight class="normal"><sp/><sp/><sp/><sp/>asynStatus<sp/>setPropertyAutoMode(PropertyType<sp/>propType,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="398"><highlight class="normal"><sp/><sp/><sp/><sp/>asynStatus<sp/>setPropertyValue(PropertyType<sp/>propType,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>value,<sp/><ref refid="point_grey_8cpp_1a06247911a7d3dd5967a46aece3b77d68" kindref="member">propValue_t</ref><sp/>valType);</highlight></codeline>
+<codeline lineno="399"><highlight class="normal"><sp/><sp/><sp/><sp/>asynStatus<sp/>setGigEPropertyValue(GigEPropertyType<sp/>propType,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>value);</highlight></codeline>
+<codeline lineno="400"><highlight class="normal"><sp/><sp/><sp/><sp/>asynStatus<sp/>setPropertyAbsValue(PropertyType<sp/>propType,<sp/>epicsFloat64<sp/>value);</highlight></codeline>
+<codeline lineno="401"><highlight class="normal"><sp/><sp/><sp/><sp/>asynStatus<sp/>setPropertyAutoMode(PropertyType<sp/>propType,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>value);</highlight></codeline>
 <codeline lineno="402"><highlight class="normal"><sp/><sp/><sp/><sp/>asynStatus<sp/>setPropertyOnOff(PropertyType<sp/>propType,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>onOff);</highlight></codeline>
 <codeline lineno="403"><highlight class="normal"><sp/><sp/><sp/><sp/>asynStatus<sp/>setPropertyOnePush(PropertyType<sp/>propType);</highlight></codeline>
 <codeline lineno="404"><highlight class="normal"><sp/><sp/><sp/><sp/>asynStatus<sp/>setVideoMode(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>mode);</highlight></codeline>
@@ -2132,7 +2132,7 @@
 <codeline lineno="494"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>asynSuccess;</highlight></codeline>
 <codeline lineno="495"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="496"><highlight class="normal"></highlight></codeline>
-<codeline lineno="497"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="ffmpeg_server_8cpp_1ae7b0efc9c16f820fb943a67625b2018a" kindref="member">c_shutdown</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*arg)</highlight></codeline>
+<codeline lineno="497"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>c_shutdown(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*arg)</highlight></codeline>
 <codeline lineno="498"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="499"><highlight class="normal"><sp/><sp/><ref refid="classpoint_grey" kindref="compound">pointGrey</ref><sp/>*p<sp/>=<sp/>(<ref refid="classpoint_grey" kindref="compound">pointGrey</ref><sp/>*)arg;</highlight></codeline>
 <codeline lineno="500"><highlight class="normal"><sp/><sp/>p-&gt;<ref refid="classpoint_grey_1a904abc52db9807744a1aab90d558deb1" kindref="member">shutdown</ref>();</highlight></codeline>
@@ -2244,21 +2244,21 @@
 <codeline lineno="625"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s:%s:<sp/><sp/>camera<sp/>connection<sp/>failed<sp/>(%d)\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
 <codeline lineno="626"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName,<sp/>status);</highlight></codeline>
 <codeline lineno="627"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Call<sp/>report()<sp/>to<sp/>get<sp/>a<sp/>list<sp/>of<sp/>available<sp/>cameras</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="628"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classpoint_grey_1ad82328c7fa0ccc585e7e39991a373aa4" kindref="member">report</ref>(<ref refid="namespacemake_adl_1a3f4a3faa9267f79b85de3e74ef54d173" kindref="member">stdout</ref>,<sp/>1);</highlight></codeline>
+<codeline lineno="628"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classpoint_grey_1ad82328c7fa0ccc585e7e39991a373aa4" kindref="member">report</ref>(stdout,<sp/>1);</highlight></codeline>
 <codeline lineno="629"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="630"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="631"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="632"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Create<sp/>an<sp/>array<sp/>of<sp/>property<sp/>objects,<sp/>one<sp/>for<sp/>each<sp/>property</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="633"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>=0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;<ref refid="point_grey_8cpp_1a2b6573ab5111e79e03216ce92942e25c" kindref="member">NUM_PROPERTIES</ref>;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)<sp/>{</highlight></codeline>
-<codeline lineno="634"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>propType<sp/>=<sp/>(PropertyType)<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>;</highlight></codeline>
+<codeline lineno="633"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i=0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;<ref refid="point_grey_8cpp_1a2b6573ab5111e79e03216ce92942e25c" kindref="member">NUM_PROPERTIES</ref>;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)<sp/>{</highlight></codeline>
+<codeline lineno="634"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>propType<sp/>=<sp/>(PropertyType)<sp/>i;</highlight></codeline>
 <codeline lineno="635"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>allProperties_[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>]<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>Property(propType);</highlight></codeline>
 <codeline lineno="636"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>allPropInfos_[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>]<sp/><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>PropertyInfo(propType);</highlight></codeline>
 <codeline lineno="637"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="638"><highlight class="normal"><sp/><sp/><sp/><sp/>getAllProperties();</highlight></codeline>
 <codeline lineno="639"><highlight class="normal"></highlight></codeline>
-<codeline lineno="640"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>=0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;<ref refid="point_grey_8cpp_1a44d77a541523850f608940c22a46ac55" kindref="member">NUM_GIGE_PROPERTIES</ref>;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)<sp/>{</highlight></codeline>
+<codeline lineno="640"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i=0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;<ref refid="point_grey_8cpp_1a44d77a541523850f608940c22a46ac55" kindref="member">NUM_GIGE_PROPERTIES</ref>;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)<sp/>{</highlight></codeline>
 <codeline lineno="641"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>allGigEProperties_[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>]<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>GigEProperty();</highlight></codeline>
-<codeline lineno="642"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>allGigEProperties_[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>]-&gt;propType<sp/>=<sp/>(GigEPropertyType)<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>;</highlight></codeline>
+<codeline lineno="642"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>allGigEProperties_[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>]-&gt;propType<sp/>=<sp/>(GigEPropertyType)<sp/>i;</highlight></codeline>
 <codeline lineno="643"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="644"><highlight class="normal"><sp/><sp/><sp/><sp/>getAllGigEProperties();</highlight></codeline>
 <codeline lineno="645"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
@@ -2319,7 +2319,7 @@
 <codeline lineno="700"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>imageGrabTaskC,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="701"><highlight class="normal"></highlight></codeline>
 <codeline lineno="702"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>shutdown<sp/>on<sp/>exit<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="703"><highlight class="normal"><sp/><sp/><sp/><sp/>epicsAtExit(<ref refid="ffmpeg_server_8cpp_1ae7b0efc9c16f820fb943a67625b2018a" kindref="member">c_shutdown</ref>,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="703"><highlight class="normal"><sp/><sp/><sp/><sp/>epicsAtExit(c_shutdown,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="704"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="705"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="706"><highlight class="normal"></highlight></codeline>
@@ -2789,10 +2789,10 @@
 <codeline lineno="1173"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1174"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1175"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1182"><highlight class="normal">asynStatus<sp/><ref refid="classpoint_grey_1a52b94fc43b333cf4aeaac9b8a08c8b2f" kindref="member">pointGrey::writeInt32</ref>(<sp/>asynUser<sp/>*pasynUser,<sp/>epicsInt32<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>)</highlight></codeline>
+<codeline lineno="1182"><highlight class="normal">asynStatus<sp/><ref refid="classpoint_grey_1a52b94fc43b333cf4aeaac9b8a08c8b2f" kindref="member">pointGrey::writeInt32</ref>(<sp/>asynUser<sp/>*pasynUser,<sp/>epicsInt32<sp/>value)</highlight></codeline>
 <codeline lineno="1183"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="1184"><highlight class="normal"><sp/><sp/><sp/><sp/>asynStatus<sp/>status<sp/>=<sp/>asynSuccess;</highlight></codeline>
-<codeline lineno="1185"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>=<sp/>pasynUser-&gt;reason;</highlight></codeline>
+<codeline lineno="1185"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>function<sp/>=<sp/>pasynUser-&gt;reason;</highlight></codeline>
 <codeline lineno="1186"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>addr;</highlight></codeline>
 <codeline lineno="1187"><highlight class="normal"><sp/><sp/><sp/><sp/>PropertyType<sp/>propType;</highlight></codeline>
 <codeline lineno="1188"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*functionName<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;writeInt32&quot;</highlight><highlight class="normal">;</highlight></codeline>
@@ -2802,83 +2802,83 @@
 <codeline lineno="1192"><highlight class="normal"><sp/><sp/><sp/><sp/>propType<sp/>=<sp/>(PropertyType)<sp/>addr;</highlight></codeline>
 <codeline lineno="1193"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1194"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Set<sp/>the<sp/>value<sp/>in<sp/>the<sp/>parameter<sp/>library.<sp/><sp/>This<sp/>may<sp/>change<sp/>later<sp/>but<sp/>that&apos;s<sp/>OK<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1195"><highlight class="normal"><sp/><sp/><sp/><sp/>status<sp/>=<sp/><ref refid="classasyn_n_d_array_driver_1abf87462bc5853f8e5a56db5e93acd956" kindref="member">setIntegerParam</ref>(addr,<sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal">,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="1195"><highlight class="normal"><sp/><sp/><sp/><sp/>status<sp/>=<sp/><ref refid="classasyn_n_d_array_driver_1abf87462bc5853f8e5a56db5e93acd956" kindref="member">setIntegerParam</ref>(addr,<sp/>function,<sp/>value);</highlight></codeline>
 <codeline lineno="1196"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1197"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="classasyn_n_d_array_driver_1aa06c19f650b4619a7bdbf3a79397c3d3" kindref="member">ADAcquire</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="1198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="1197"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(function<sp/>==<sp/><ref refid="classasyn_n_d_array_driver_1aa06c19f650b4619a7bdbf3a79397c3d3" kindref="member">ADAcquire</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="1198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(value)<sp/>{</highlight></codeline>
 <codeline lineno="1199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>start<sp/>acquisition<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/>startCapture();</highlight></codeline>
 <codeline lineno="1201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
 <codeline lineno="1202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/>stopCapture();</highlight></codeline>
 <codeline lineno="1203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1204"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1205"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="class_a_d_driver_1a918ef4b3d80695f6872fd169b09b639a" kindref="member">ADSizeX</ref>)<sp/><sp/><sp/><sp/><sp/><sp/><sp/>||</highlight></codeline>
-<codeline lineno="1206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="class_a_d_driver_1a59ba3ba61b2b6f51dc9d88d81680b632" kindref="member">ADSizeY</ref>)<sp/><sp/><sp/><sp/><sp/><sp/><sp/>||</highlight></codeline>
-<codeline lineno="1207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="class_a_d_driver_1a23f8a7537c0c221ed3c5a72af90e276e" kindref="member">ADMinX</ref>)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>||</highlight></codeline>
-<codeline lineno="1208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="class_a_d_driver_1ae1b0c891ee0ecd596439b29e32e068e4" kindref="member">ADMinY</ref>)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>||</highlight></codeline>
-<codeline lineno="1209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="classpoint_grey_1a029510048f3c9a2f3bb4acf1e6423051" kindref="member">PGFormat7Mode</ref>)<sp/>||</highlight></codeline>
-<codeline lineno="1210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="classpoint_grey_1a57b568b83dc44556ed0a5950289b6df9" kindref="member">PGPixelFormat</ref>)<sp/>||</highlight></codeline>
-<codeline lineno="1211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="classpoint_grey_1a542aa32ca6c6f30fe499a88e18915d33" kindref="member">PGBinningMode</ref>)<sp/>||</highlight></codeline>
-<codeline lineno="1212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="classpoint_grey_1ac7dee34f4a0cb3f8ff90dc784c665527" kindref="member">PGPacketSize</ref>)<sp/><sp/>||</highlight></codeline>
-<codeline lineno="1213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="classpoint_grey_1a3e8d201b5f32f6431337b1a003ee9a20" kindref="member">PGPacketDelay</ref>)<sp/>||</highlight></codeline>
-<codeline lineno="1214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="classpoint_grey_1a140a30d45ee5b45f559c05704078df54" kindref="member">PGPacketResendEnable</ref>))<sp/>{</highlight></codeline>
+<codeline lineno="1205"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>(function<sp/>==<sp/><ref refid="class_a_d_driver_1a918ef4b3d80695f6872fd169b09b639a" kindref="member">ADSizeX</ref>)<sp/><sp/><sp/><sp/><sp/><sp/><sp/>||</highlight></codeline>
+<codeline lineno="1206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(function<sp/>==<sp/><ref refid="class_a_d_driver_1a59ba3ba61b2b6f51dc9d88d81680b632" kindref="member">ADSizeY</ref>)<sp/><sp/><sp/><sp/><sp/><sp/><sp/>||</highlight></codeline>
+<codeline lineno="1207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(function<sp/>==<sp/><ref refid="class_a_d_driver_1a23f8a7537c0c221ed3c5a72af90e276e" kindref="member">ADMinX</ref>)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>||</highlight></codeline>
+<codeline lineno="1208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(function<sp/>==<sp/><ref refid="class_a_d_driver_1ae1b0c891ee0ecd596439b29e32e068e4" kindref="member">ADMinY</ref>)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>||</highlight></codeline>
+<codeline lineno="1209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(function<sp/>==<sp/><ref refid="classpoint_grey_1a029510048f3c9a2f3bb4acf1e6423051" kindref="member">PGFormat7Mode</ref>)<sp/>||</highlight></codeline>
+<codeline lineno="1210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(function<sp/>==<sp/><ref refid="classpoint_grey_1a57b568b83dc44556ed0a5950289b6df9" kindref="member">PGPixelFormat</ref>)<sp/>||</highlight></codeline>
+<codeline lineno="1211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(function<sp/>==<sp/><ref refid="classpoint_grey_1a542aa32ca6c6f30fe499a88e18915d33" kindref="member">PGBinningMode</ref>)<sp/>||</highlight></codeline>
+<codeline lineno="1212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(function<sp/>==<sp/><ref refid="classpoint_grey_1ac7dee34f4a0cb3f8ff90dc784c665527" kindref="member">PGPacketSize</ref>)<sp/><sp/>||</highlight></codeline>
+<codeline lineno="1213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(function<sp/>==<sp/><ref refid="classpoint_grey_1a3e8d201b5f32f6431337b1a003ee9a20" kindref="member">PGPacketDelay</ref>)<sp/>||</highlight></codeline>
+<codeline lineno="1214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(function<sp/>==<sp/><ref refid="classpoint_grey_1a140a30d45ee5b45f559c05704078df54" kindref="member">PGPacketResendEnable</ref>))<sp/>{</highlight></codeline>
 <codeline lineno="1215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/>setImageParams();</highlight></codeline>
 <codeline lineno="1216"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1217"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="classpoint_grey_1a3a0a732383ef0c7a697ea18f1ae611b4" kindref="member">PGPropertyValue</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="1218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/>setPropertyValue(propType,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>,<sp/><ref refid="point_grey_8cpp_1a06247911a7d3dd5967a46aece3b77d68ae6ed6436d803389b011fb064995ebe72" kindref="member">propValueA</ref>);</highlight></codeline>
+<codeline lineno="1217"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(function<sp/>==<sp/><ref refid="classpoint_grey_1a3a0a732383ef0c7a697ea18f1ae611b4" kindref="member">PGPropertyValue</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="1218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/>setPropertyValue(propType,<sp/>value,<sp/><ref refid="point_grey_8cpp_1a06247911a7d3dd5967a46aece3b77d68ae6ed6436d803389b011fb064995ebe72" kindref="member">propValueA</ref>);</highlight></codeline>
 <codeline lineno="1219"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1220"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="classpoint_grey_1ae8dad86581728a440d186f7215a7b83a" kindref="member">PGPropertyValueB</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="1221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/>setPropertyValue(propType,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>,<sp/><ref refid="point_grey_8cpp_1a06247911a7d3dd5967a46aece3b77d68a6b3f5244c9acacc5f348b4313c390f75" kindref="member">propValueB</ref>);</highlight></codeline>
+<codeline lineno="1220"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(function<sp/>==<sp/><ref refid="classpoint_grey_1ae8dad86581728a440d186f7215a7b83a" kindref="member">PGPropertyValueB</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="1221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/>setPropertyValue(propType,<sp/>value,<sp/><ref refid="point_grey_8cpp_1a06247911a7d3dd5967a46aece3b77d68a6b3f5244c9acacc5f348b4313c390f75" kindref="member">propValueB</ref>);</highlight></codeline>
 <codeline lineno="1222"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1223"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="classpoint_grey_1ad0b3bf36980d2c7720866c5a85b69732" kindref="member">PGPropertyAutoMode</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="1224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/>setPropertyAutoMode(propType,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="1223"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(function<sp/>==<sp/><ref refid="classpoint_grey_1ad0b3bf36980d2c7720866c5a85b69732" kindref="member">PGPropertyAutoMode</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="1224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/>setPropertyAutoMode(propType,<sp/>value);</highlight></codeline>
 <codeline lineno="1225"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1226"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="classpoint_grey_1a68c1081ac90854fd617e13b83b835e08" kindref="member">PGPropertyOnOff</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="1227"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/>setPropertyOnOff(propType,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="1226"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(function<sp/>==<sp/><ref refid="classpoint_grey_1a68c1081ac90854fd617e13b83b835e08" kindref="member">PGPropertyOnOff</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="1227"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/>setPropertyOnOff(propType,<sp/>value);</highlight></codeline>
 <codeline lineno="1228"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1229"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="classpoint_grey_1a1aed3a675b2ccdf34719c7ca2a96a5cc" kindref="member">PGPropertyOnePush</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="1229"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(function<sp/>==<sp/><ref refid="classpoint_grey_1a1aed3a675b2ccdf34719c7ca2a96a5cc" kindref="member">PGPropertyOnePush</ref>)<sp/>{</highlight></codeline>
 <codeline lineno="1230"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/>setPropertyOnePush(propType);</highlight></codeline>
 <codeline lineno="1231"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1232"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="classpoint_grey_1a57f1347bcd594f54fd0130025bf0b7fb" kindref="member">PGVideoMode</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="1233"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/>setVideoMode(<ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="1232"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(function<sp/>==<sp/><ref refid="classpoint_grey_1a57f1347bcd594f54fd0130025bf0b7fb" kindref="member">PGVideoMode</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="1233"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/>setVideoMode(value);</highlight></codeline>
 <codeline lineno="1234"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1235"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="classpoint_grey_1a79a2ed83cf0ebd65e9c68051bdd4cddd" kindref="member">PGFrameRate</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="1236"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/>setFrameRate(<ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="1235"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(function<sp/>==<sp/><ref refid="classpoint_grey_1a79a2ed83cf0ebd65e9c68051bdd4cddd" kindref="member">PGFrameRate</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="1236"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/>setFrameRate(value);</highlight></codeline>
 <codeline lineno="1237"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1238"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="class_a_d_driver_1ae191abe1436e6dd02510fcbbac59dbc1" kindref="member">ADTriggerMode</ref>)<sp/><sp/>||<sp/></highlight></codeline>
-<codeline lineno="1239"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="class_a_d_driver_1a46e8f2fa100c21f2f0689c415b441fb0" kindref="member">ADNumImages</ref>)<sp/><sp/><sp/><sp/>||</highlight></codeline>
-<codeline lineno="1240"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="class_a_d_driver_1a25e11dff81ea84715fc8fe5ca290bacb" kindref="member">ADNumExposures</ref>)<sp/>||</highlight></codeline>
-<codeline lineno="1241"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="classpoint_grey_1a071bcf217255e695add34f56159c659c" kindref="member">PGSkipFrames</ref>))<sp/>{</highlight></codeline>
+<codeline lineno="1238"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((function<sp/>==<sp/><ref refid="class_a_d_driver_1ae191abe1436e6dd02510fcbbac59dbc1" kindref="member">ADTriggerMode</ref>)<sp/><sp/>||<sp/></highlight></codeline>
+<codeline lineno="1239"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(function<sp/>==<sp/><ref refid="class_a_d_driver_1a46e8f2fa100c21f2f0689c415b441fb0" kindref="member">ADNumImages</ref>)<sp/><sp/><sp/><sp/>||</highlight></codeline>
+<codeline lineno="1240"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(function<sp/>==<sp/><ref refid="class_a_d_driver_1a25e11dff81ea84715fc8fe5ca290bacb" kindref="member">ADNumExposures</ref>)<sp/>||</highlight></codeline>
+<codeline lineno="1241"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(function<sp/>==<sp/><ref refid="classpoint_grey_1a071bcf217255e695add34f56159c659c" kindref="member">PGSkipFrames</ref>))<sp/>{</highlight></codeline>
 <codeline lineno="1242"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/>setTrigger();</highlight></codeline>
 <codeline lineno="1243"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="1244"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="classpoint_grey_1a8d1d60832812b04a93a44246e3cd222b" kindref="member">PGSoftwareTrigger</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="1244"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(function<sp/>==<sp/><ref refid="classpoint_grey_1a8d1d60832812b04a93a44246e3cd222b" kindref="member">PGSoftwareTrigger</ref>)<sp/>{</highlight></codeline>
 <codeline lineno="1245"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/>softwareTrigger();</highlight></codeline>
 <codeline lineno="1246"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1247"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="classpoint_grey_1afc8c4ac61e4dbaf51f93965f6c49cbcd" kindref="member">PGStrobeSource</ref>)<sp/>||<sp/></highlight></codeline>
-<codeline lineno="1248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="classpoint_grey_1a7ab81414e6ac4303b0c34fdc490f61f6" kindref="member">PGStrobeEnable</ref>)<sp/>||</highlight></codeline>
-<codeline lineno="1249"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="classpoint_grey_1abcedc7e80cda881c468c9ce278663dfc" kindref="member">PGStrobePolarity</ref>))<sp/>{</highlight></codeline>
+<codeline lineno="1247"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((function<sp/>==<sp/><ref refid="classpoint_grey_1afc8c4ac61e4dbaf51f93965f6c49cbcd" kindref="member">PGStrobeSource</ref>)<sp/>||<sp/></highlight></codeline>
+<codeline lineno="1248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(function<sp/>==<sp/><ref refid="classpoint_grey_1a7ab81414e6ac4303b0c34fdc490f61f6" kindref="member">PGStrobeEnable</ref>)<sp/>||</highlight></codeline>
+<codeline lineno="1249"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(function<sp/>==<sp/><ref refid="classpoint_grey_1abcedc7e80cda881c468c9ce278663dfc" kindref="member">PGStrobePolarity</ref>))<sp/>{</highlight></codeline>
 <codeline lineno="1250"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/>setStrobe();</highlight></codeline>
 <codeline lineno="1251"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="1252"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="class_a_d_driver_1adbd8c8af9cf7a17913f16ecd0252eaba" kindref="member">ADReadStatus</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="1252"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(function<sp/>==<sp/><ref refid="class_a_d_driver_1adbd8c8af9cf7a17913f16ecd0252eaba" kindref="member">ADReadStatus</ref>)<sp/>{</highlight></codeline>
 <codeline lineno="1253"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/>readStatus();</highlight></codeline>
 <codeline lineno="1254"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1255"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
 <codeline lineno="1256"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>If<sp/>this<sp/>parameter<sp/>belongs<sp/>to<sp/>a<sp/>base<sp/>class<sp/>call<sp/>its<sp/>method<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1257"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>&lt;<sp/><ref refid="point_grey_8cpp_1a0e33566ac55fe207193900546d7bcae8" kindref="member">FIRST_PG_PARAM</ref>)<sp/>status<sp/>=<sp/><ref refid="class_a_d_driver_1abef6916bb90d032a1aeb6894adef12a6" kindref="member">ADDriver::writeInt32</ref>(pasynUser,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="1257"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(function<sp/>&lt;<sp/><ref refid="point_grey_8cpp_1a0e33566ac55fe207193900546d7bcae8" kindref="member">FIRST_PG_PARAM</ref>)<sp/>status<sp/>=<sp/><ref refid="class_a_d_driver_1abef6916bb90d032a1aeb6894adef12a6" kindref="member">ADDriver::writeInt32</ref>(pasynUser,<sp/>value);</highlight></codeline>
 <codeline lineno="1258"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1259"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1260"><highlight class="normal"><sp/><sp/><sp/><sp/>asynPrint(pasynUserSelf,<sp/>ASYN_TRACEIO_DRIVER,<sp/></highlight></codeline>
 <codeline lineno="1261"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s::%s<sp/>function=%d,<sp/>addr=%d,<sp/>value=%d,<sp/>status=%d\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="1262"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName,<sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal">,<sp/>addr,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>,<sp/>status);</highlight></codeline>
+<codeline lineno="1262"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName,<sp/>function,<sp/>addr,<sp/>value,<sp/>status);</highlight></codeline>
 <codeline lineno="1263"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="1264"><highlight class="normal"><sp/><sp/><sp/><sp/>callParamCallbacks(addr);</highlight></codeline>
 <codeline lineno="1265"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>status;</highlight></codeline>
 <codeline lineno="1266"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1267"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1274"><highlight class="normal">asynStatus<sp/><ref refid="classpoint_grey_1a5d717b53647b4be2897dd5350e37f42f" kindref="member">pointGrey::writeFloat64</ref>(<sp/>asynUser<sp/>*pasynUser,<sp/>epicsFloat64<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>)</highlight></codeline>
+<codeline lineno="1274"><highlight class="normal">asynStatus<sp/><ref refid="classpoint_grey_1a5d717b53647b4be2897dd5350e37f42f" kindref="member">pointGrey::writeFloat64</ref>(<sp/>asynUser<sp/>*pasynUser,<sp/>epicsFloat64<sp/>value)</highlight></codeline>
 <codeline lineno="1275"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="1276"><highlight class="normal"><sp/><sp/><sp/><sp/>asynStatus<sp/>status<sp/>=<sp/>asynSuccess;</highlight></codeline>
-<codeline lineno="1277"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>=<sp/>pasynUser-&gt;reason;</highlight></codeline>
+<codeline lineno="1277"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>function<sp/>=<sp/>pasynUser-&gt;reason;</highlight></codeline>
 <codeline lineno="1278"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>addr;</highlight></codeline>
 <codeline lineno="1279"><highlight class="normal"><sp/><sp/><sp/><sp/>PropertyType<sp/>propertyType;</highlight></codeline>
 <codeline lineno="1280"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*functionName<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;writeFloat64&quot;</highlight><highlight class="normal">;</highlight></codeline>
@@ -2888,37 +2888,37 @@
 <codeline lineno="1284"><highlight class="normal"><sp/><sp/><sp/><sp/>propertyType<sp/>=<sp/>(PropertyType)addr;</highlight></codeline>
 <codeline lineno="1285"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1286"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Set<sp/>the<sp/>value<sp/>in<sp/>the<sp/>parameter<sp/>library.<sp/><sp/>This<sp/>may<sp/>change<sp/>later<sp/>but<sp/>that&apos;s<sp/>OK<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1287"><highlight class="normal"><sp/><sp/><sp/><sp/>status<sp/>=<sp/>setDoubleParam(addr,<sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal">,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="1287"><highlight class="normal"><sp/><sp/><sp/><sp/>status<sp/>=<sp/>setDoubleParam(addr,<sp/>function,<sp/>value);</highlight></codeline>
 <codeline lineno="1288"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1289"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="classpoint_grey_1a13b0e4e890ae97e5bff5693f78841d63" kindref="member">PGPropertyValueAbs</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="1290"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/>setPropertyAbsValue(propertyType,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="1289"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(function<sp/>==<sp/><ref refid="classpoint_grey_1a13b0e4e890ae97e5bff5693f78841d63" kindref="member">PGPropertyValueAbs</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="1290"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/>setPropertyAbsValue(propertyType,<sp/>value);</highlight></codeline>
 <codeline lineno="1291"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="1292"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="class_a_d_driver_1a922005db3a5a52dd24e6706fdfe1a160" kindref="member">ADAcquireTime</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="1292"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(function<sp/>==<sp/><ref refid="class_a_d_driver_1a922005db3a5a52dd24e6706fdfe1a160" kindref="member">ADAcquireTime</ref>)<sp/>{</highlight></codeline>
 <codeline lineno="1293"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>propertyType<sp/>=<sp/>SHUTTER;</highlight></codeline>
 <codeline lineno="1294"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Camera<sp/>units<sp/>are<sp/>ms</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1295"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/>setPropertyAbsValue(propertyType,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>*1000.);</highlight></codeline>
+<codeline lineno="1295"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/>setPropertyAbsValue(propertyType,<sp/>value*1000.);</highlight></codeline>
 <codeline lineno="1296"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="1297"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="class_a_d_driver_1af7a169a1ab5a9069c5d556bf5c7ac387" kindref="member">ADGain</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="1297"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(function<sp/>==<sp/><ref refid="class_a_d_driver_1af7a169a1ab5a9069c5d556bf5c7ac387" kindref="member">ADGain</ref>)<sp/>{</highlight></codeline>
 <codeline lineno="1298"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>propertyType<sp/>=<sp/>GAIN;</highlight></codeline>
-<codeline lineno="1299"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/>setPropertyAbsValue(propertyType,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="1299"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/>setPropertyAbsValue(propertyType,<sp/>value);</highlight></codeline>
 <codeline lineno="1300"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="1301"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="class_a_d_driver_1a8d5333aa86509cbd8f5fd824e79b2799" kindref="member">ADAcquirePeriod</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="1301"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(function<sp/>==<sp/><ref refid="class_a_d_driver_1a8d5333aa86509cbd8f5fd824e79b2799" kindref="member">ADAcquirePeriod</ref>)<sp/>{</highlight></codeline>
 <codeline lineno="1302"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>propertyType<sp/>=<sp/>FRAME_RATE;</highlight></codeline>
 <codeline lineno="1303"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Camera<sp/>units<sp/>are<sp/>fps</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1304"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/>setPropertyAbsValue(propertyType,<sp/>1./<ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="1304"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/>setPropertyAbsValue(propertyType,<sp/>1./value);</highlight></codeline>
 <codeline lineno="1305"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="1306"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="classpoint_grey_1a92b130978fe05dfbf51f4b3e2887f6ff" kindref="member">PGStrobeDelay</ref>)<sp/><sp/>||<sp/></highlight></codeline>
-<codeline lineno="1307"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="classpoint_grey_1a6472f670704c26903a2494347d93af33" kindref="member">PGStrobeDuration</ref>))<sp/>{</highlight></codeline>
+<codeline lineno="1306"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((function<sp/>==<sp/><ref refid="classpoint_grey_1a92b130978fe05dfbf51f4b3e2887f6ff" kindref="member">PGStrobeDelay</ref>)<sp/><sp/>||<sp/></highlight></codeline>
+<codeline lineno="1307"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(function<sp/>==<sp/><ref refid="classpoint_grey_1a6472f670704c26903a2494347d93af33" kindref="member">PGStrobeDuration</ref>))<sp/>{</highlight></codeline>
 <codeline lineno="1308"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/>setStrobe();</highlight></codeline>
 <codeline lineno="1309"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="1310"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
 <codeline lineno="1311"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>If<sp/>this<sp/>parameter<sp/>belongs<sp/>to<sp/>a<sp/>base<sp/>class<sp/>call<sp/>its<sp/>method<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1312"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>&lt;<sp/><ref refid="point_grey_8cpp_1a0e33566ac55fe207193900546d7bcae8" kindref="member">FIRST_PG_PARAM</ref>)<sp/>status<sp/>=<sp/>ADDriver::writeFloat64(pasynUser,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="1312"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(function<sp/>&lt;<sp/><ref refid="point_grey_8cpp_1a0e33566ac55fe207193900546d7bcae8" kindref="member">FIRST_PG_PARAM</ref>)<sp/>status<sp/>=<sp/>ADDriver::writeFloat64(pasynUser,<sp/>value);</highlight></codeline>
 <codeline lineno="1313"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1314"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1315"><highlight class="normal"><sp/><sp/><sp/><sp/>asynPrint(pasynUser,<sp/>ASYN_TRACEIO_DRIVER,<sp/></highlight></codeline>
 <codeline lineno="1316"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s::%s<sp/>function=%d,<sp/>addr=%d,<sp/>value=%f,<sp/>status=%d\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="1317"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName,<sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal">,<sp/>addr,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>,<sp/>status);</highlight></codeline>
+<codeline lineno="1317"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName,<sp/>function,<sp/>addr,<sp/>value,<sp/>status);</highlight></codeline>
 <codeline lineno="1318"><highlight class="normal"><sp/><sp/><sp/><sp/>callParamCallbacks(addr);</highlight></codeline>
 <codeline lineno="1319"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>status;</highlight></codeline>
 <codeline lineno="1320"><highlight class="normal">}</highlight></codeline>
@@ -2927,36 +2927,36 @@
 <codeline lineno="1323"><highlight class="normal">asynStatus<sp/><ref refid="classpoint_grey_1ae04c0fe04d64c357673002f03712f130" kindref="member">pointGrey::readEnum</ref>(asynUser<sp/>*pasynUser,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*strings[],<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>values[],<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>severities[],<sp/></highlight></codeline>
 <codeline lineno="1324"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>nElements,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>*nIn)</highlight></codeline>
 <codeline lineno="1325"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1326"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>=<sp/>pasynUser-&gt;reason;</highlight></codeline>
+<codeline lineno="1326"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>function<sp/>=<sp/>pasynUser-&gt;reason;</highlight></codeline>
 <codeline lineno="1327"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structenum_struct__t" kindref="compound">enumStruct_t</ref><sp/>*pEnum;</highlight></codeline>
 <codeline lineno="1328"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>numEnums;</highlight></codeline>
 <codeline lineno="1329"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>;</highlight></codeline>
 <codeline lineno="1330"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1331"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="classpoint_grey_1a57f1347bcd594f54fd0130025bf0b7fb" kindref="member">PGVideoMode</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="1331"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(function<sp/>==<sp/><ref refid="classpoint_grey_1a57f1347bcd594f54fd0130025bf0b7fb" kindref="member">PGVideoMode</ref>)<sp/>{</highlight></codeline>
 <codeline lineno="1332"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pEnum<sp/>=<sp/>videoModeEnums_;</highlight></codeline>
 <codeline lineno="1333"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numEnums<sp/>=<sp/>numValidVideoModes_;</highlight></codeline>
-<codeline lineno="1334"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="classpoint_grey_1a029510048f3c9a2f3bb4acf1e6423051" kindref="member">PGFormat7Mode</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="1334"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(function<sp/>==<sp/><ref refid="classpoint_grey_1a029510048f3c9a2f3bb4acf1e6423051" kindref="member">PGFormat7Mode</ref>)<sp/>{</highlight></codeline>
 <codeline lineno="1335"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pEnum<sp/>=<sp/>format7ModeEnums_;</highlight></codeline>
 <codeline lineno="1336"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numEnums<sp/>=<sp/>numValidFormat7Modes_;</highlight></codeline>
-<codeline lineno="1337"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="classpoint_grey_1a542aa32ca6c6f30fe499a88e18915d33" kindref="member">PGBinningMode</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="1337"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(function<sp/>==<sp/><ref refid="classpoint_grey_1a542aa32ca6c6f30fe499a88e18915d33" kindref="member">PGBinningMode</ref>)<sp/>{</highlight></codeline>
 <codeline lineno="1338"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pEnum<sp/>=<sp/>binningModeEnums_;</highlight></codeline>
 <codeline lineno="1339"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numEnums<sp/>=<sp/>numValidBinningModes_;</highlight></codeline>
-<codeline lineno="1340"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="classpoint_grey_1a79a2ed83cf0ebd65e9c68051bdd4cddd" kindref="member">PGFrameRate</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="1340"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(function<sp/>==<sp/><ref refid="classpoint_grey_1a79a2ed83cf0ebd65e9c68051bdd4cddd" kindref="member">PGFrameRate</ref>)<sp/>{</highlight></codeline>
 <codeline lineno="1341"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pEnum<sp/>=<sp/>frameRateEnums_;</highlight></codeline>
 <codeline lineno="1342"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numEnums<sp/>=<sp/>numValidFrameRates_;</highlight></codeline>
-<codeline lineno="1343"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="classpoint_grey_1a57b568b83dc44556ed0a5950289b6df9" kindref="member">PGPixelFormat</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="1343"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(function<sp/>==<sp/><ref refid="classpoint_grey_1a57b568b83dc44556ed0a5950289b6df9" kindref="member">PGPixelFormat</ref>)<sp/>{</highlight></codeline>
 <codeline lineno="1344"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pEnum<sp/>=<sp/>pixelFormatEnums_;</highlight></codeline>
 <codeline lineno="1345"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numEnums<sp/>=<sp/>numValidPixelFormats_;</highlight></codeline>
-<codeline lineno="1346"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="classpoint_grey_1a872565ea522c2c70b2c6a94d0cad3db3" kindref="member">PGConvertPixelFormat</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="1346"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(function<sp/>==<sp/><ref refid="classpoint_grey_1a872565ea522c2c70b2c6a94d0cad3db3" kindref="member">PGConvertPixelFormat</ref>)<sp/>{</highlight></codeline>
 <codeline lineno="1347"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pEnum<sp/>=<sp/>convertPixelFormatEnums_;</highlight></codeline>
 <codeline lineno="1348"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numEnums<sp/>=<sp/>numValidConvertPixelFormats_;</highlight></codeline>
-<codeline lineno="1349"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="class_a_d_driver_1ae191abe1436e6dd02510fcbbac59dbc1" kindref="member">ADTriggerMode</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="1349"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(function<sp/>==<sp/><ref refid="class_a_d_driver_1ae191abe1436e6dd02510fcbbac59dbc1" kindref="member">ADTriggerMode</ref>)<sp/>{</highlight></codeline>
 <codeline lineno="1350"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pEnum<sp/>=<sp/>triggerModeEnums_;</highlight></codeline>
 <codeline lineno="1351"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numEnums<sp/>=<sp/>numValidTriggerModes_;</highlight></codeline>
-<codeline lineno="1352"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="classpoint_grey_1ad413903ad8667c04350abed947e6e1ed" kindref="member">PGTriggerSource</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="1352"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(function<sp/>==<sp/><ref refid="classpoint_grey_1ad413903ad8667c04350abed947e6e1ed" kindref="member">PGTriggerSource</ref>)<sp/>{</highlight></codeline>
 <codeline lineno="1353"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pEnum<sp/>=<sp/>triggerSourceEnums_;</highlight></codeline>
 <codeline lineno="1354"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numEnums<sp/>=<sp/>numValidTriggerSources_;</highlight></codeline>
-<codeline lineno="1355"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="classpoint_grey_1afc8c4ac61e4dbaf51f93965f6c49cbcd" kindref="member">PGStrobeSource</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="1355"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(function<sp/>==<sp/><ref refid="classpoint_grey_1afc8c4ac61e4dbaf51f93965f6c49cbcd" kindref="member">PGStrobeSource</ref>)<sp/>{</highlight></codeline>
 <codeline lineno="1356"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pEnum<sp/>=<sp/>strobeSourceEnums_;</highlight></codeline>
 <codeline lineno="1357"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numEnums<sp/>=<sp/>numValidStrobeSources_;</highlight></codeline>
 <codeline lineno="1358"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
@@ -2964,8 +2964,8 @@
 <codeline lineno="1360"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>asynError;</highlight></codeline>
 <codeline lineno="1361"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1362"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1363"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>=0;<sp/>((<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;numEnums)<sp/>&amp;&amp;<sp/>(<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)nElements));<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)<sp/>{</highlight></codeline>
-<codeline lineno="1364"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(strings[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>])<sp/>free(strings[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>]);</highlight></codeline>
+<codeline lineno="1363"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i=0;<sp/>((<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;numEnums)<sp/>&amp;&amp;<sp/>(i&lt;(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)nElements));<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)<sp/>{</highlight></codeline>
+<codeline lineno="1364"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(strings[i])<sp/>free(strings[i]);</highlight></codeline>
 <codeline lineno="1365"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strings[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>]<sp/>=<sp/>epicsStrDup(pEnum-&gt;<ref refid="structenum_struct__t_1ac06085f35779376cbe7eb85007769b8f" kindref="member">string</ref>);</highlight></codeline>
 <codeline lineno="1366"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>values[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>]<sp/>=<sp/>pEnum-&gt;<ref refid="structenum_struct__t_1a03dbcc57ce83c8dc439561fad3034412" kindref="member">value</ref>;</highlight></codeline>
 <codeline lineno="1367"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>severities[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>]<sp/>=<sp/>0;</highlight></codeline>
@@ -2975,7 +2975,7 @@
 <codeline lineno="1371"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>asynSuccess;<sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="1372"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1373"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1374"><highlight class="normal">asynStatus<sp/>pointGrey::setPropertyAutoMode(PropertyType<sp/>propType,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>)</highlight></codeline>
+<codeline lineno="1374"><highlight class="normal">asynStatus<sp/>pointGrey::setPropertyAutoMode(PropertyType<sp/>propType,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>value)</highlight></codeline>
 <codeline lineno="1375"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="1376"><highlight class="normal"><sp/><sp/><sp/><sp/>Error<sp/>error;</highlight></codeline>
 <codeline lineno="1377"><highlight class="normal"><sp/><sp/><sp/><sp/>Property<sp/>*pProperty<sp/>=<sp/>allProperties_[propType];</highlight></codeline>
@@ -2987,7 +2987,7 @@
 <codeline lineno="1383"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1384"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Check<sp/>if<sp/>the<sp/>desired<sp/>mode<sp/>is<sp/>even<sp/>supported<sp/>by<sp/>the<sp/>camera<sp/>on<sp/>this<sp/>propertyType<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1385"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>If<sp/>not,<sp/>return<sp/>with<sp/>no<sp/>error<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1386"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref><sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="1386"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(value<sp/>==<sp/>0)<sp/>{</highlight></codeline>
 <codeline lineno="1387"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!pPropInfo-&gt;manualSupported)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>asynSuccess;</highlight></codeline>
 <codeline lineno="1388"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
 <codeline lineno="1389"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!pPropInfo-&gt;autoSupported)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>asynSuccess;</highlight></codeline>
@@ -3064,7 +3064,7 @@
 <codeline lineno="1460"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1461"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1462"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1463"><highlight class="normal">asynStatus<sp/>pointGrey::setPropertyValue(PropertyType<sp/>propType,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>,<sp/><ref refid="point_grey_8cpp_1a06247911a7d3dd5967a46aece3b77d68" kindref="member">propValue_t</ref><sp/>valType)</highlight></codeline>
+<codeline lineno="1463"><highlight class="normal">asynStatus<sp/>pointGrey::setPropertyValue(PropertyType<sp/>propType,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>value,<sp/><ref refid="point_grey_8cpp_1a06247911a7d3dd5967a46aece3b77d68" kindref="member">propValue_t</ref><sp/>valType)</highlight></codeline>
 <codeline lineno="1464"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="1465"><highlight class="normal"><sp/><sp/><sp/><sp/>Error<sp/>error;</highlight></codeline>
 <codeline lineno="1466"><highlight class="normal"><sp/><sp/><sp/><sp/>Property<sp/>*pProperty<sp/>=<sp/>allProperties_[propType];</highlight></codeline>
@@ -3078,10 +3078,10 @@
 <codeline lineno="1474"><highlight class="normal"><sp/><sp/><sp/><sp/>pProperty-&gt;absControl<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="1475"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1476"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Check<sp/>the<sp/>value<sp/>is<sp/>within<sp/>the<sp/>expected<sp/>boundaries<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1477"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref><sp/>&lt;<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)pPropInfo-&gt;min<sp/>||<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref><sp/>&gt;<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)pPropInfo-&gt;max)<sp/>{</highlight></codeline>
+<codeline lineno="1477"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(value<sp/>&lt;<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)pPropInfo-&gt;min<sp/>||<sp/>value<sp/>&gt;<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)pPropInfo-&gt;max)<sp/>{</highlight></codeline>
 <codeline lineno="1478"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynPrint(pasynUserSelf,<sp/>ASYN_TRACE_ERROR,<sp/></highlight></codeline>
 <codeline lineno="1479"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s::%s<sp/>error<sp/>setting<sp/>propertyType<sp/>%s,<sp/>value<sp/>%d<sp/>is<sp/>out<sp/>of<sp/>range<sp/>[%d..%d]\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="1480"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName,<sp/>propertyTypeStrings[propType],<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>,<sp/>pPropInfo-&gt;min,<sp/>pPropInfo-&gt;max);</highlight></codeline>
+<codeline lineno="1480"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName,<sp/>propertyTypeStrings[propType],<sp/>value,<sp/>pPropInfo-&gt;min,<sp/>pPropInfo-&gt;max);</highlight></codeline>
 <codeline lineno="1481"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>asynError;</highlight></codeline>
 <codeline lineno="1482"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1483"><highlight class="normal"></highlight></codeline>
@@ -3103,7 +3103,7 @@
 <codeline lineno="1499"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1500"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1501"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1502"><highlight class="normal">asynStatus<sp/>pointGrey::setGigEPropertyValue(GigEPropertyType<sp/>propType,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>)</highlight></codeline>
+<codeline lineno="1502"><highlight class="normal">asynStatus<sp/>pointGrey::setGigEPropertyValue(GigEPropertyType<sp/>propType,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>value)</highlight></codeline>
 <codeline lineno="1503"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="1504"><highlight class="normal"><sp/><sp/><sp/><sp/>Error<sp/>error;</highlight></codeline>
 <codeline lineno="1505"><highlight class="normal"><sp/><sp/><sp/><sp/>GigEProperty<sp/>*pProperty<sp/>=<sp/>allGigEProperties_[propType];</highlight></codeline>
@@ -3115,10 +3115,10 @@
 <codeline lineno="1511"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!pProperty-&gt;isWritable)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>asynSuccess;</highlight></codeline>
 <codeline lineno="1512"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1513"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Check<sp/>the<sp/>value<sp/>is<sp/>within<sp/>the<sp/>expected<sp/>boundaries<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1514"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref><sp/>&lt;<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)pProperty-&gt;min<sp/>||<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref><sp/>&gt;<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)pProperty-&gt;max)<sp/>{</highlight></codeline>
+<codeline lineno="1514"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(value<sp/>&lt;<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)pProperty-&gt;min<sp/>||<sp/>value<sp/>&gt;<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)pProperty-&gt;max)<sp/>{</highlight></codeline>
 <codeline lineno="1515"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynPrint(pasynUserSelf,<sp/>ASYN_TRACE_ERROR,<sp/></highlight></codeline>
 <codeline lineno="1516"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s::%s<sp/>error<sp/>setting<sp/>propertyType<sp/>%s,<sp/>value<sp/>%d<sp/>is<sp/>out<sp/>of<sp/>range<sp/>[%d..%d]\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="1517"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName,<sp/>gigEPropertyTypeStrings[propType],<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>,<sp/>pProperty-&gt;min,<sp/>pProperty-&gt;max);</highlight></codeline>
+<codeline lineno="1517"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName,<sp/>gigEPropertyTypeStrings[propType],<sp/>value,<sp/>pProperty-&gt;min,<sp/>pProperty-&gt;max);</highlight></codeline>
 <codeline lineno="1518"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>asynError;</highlight></codeline>
 <codeline lineno="1519"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1520"><highlight class="normal"></highlight></codeline>
@@ -3137,7 +3137,7 @@
 <codeline lineno="1533"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1534"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1535"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1536"><highlight class="normal">asynStatus<sp/>pointGrey::setPropertyAbsValue(PropertyType<sp/>propType,<sp/>epicsFloat64<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>)</highlight></codeline>
+<codeline lineno="1536"><highlight class="normal">asynStatus<sp/>pointGrey::setPropertyAbsValue(PropertyType<sp/>propType,<sp/>epicsFloat64<sp/>value)</highlight></codeline>
 <codeline lineno="1537"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="1538"><highlight class="normal"><sp/><sp/><sp/><sp/>Error<sp/>error;</highlight></codeline>
 <codeline lineno="1539"><highlight class="normal"><sp/><sp/><sp/><sp/>Property<sp/>*pProperty<sp/>=<sp/>allProperties_[propType];</highlight></codeline>
@@ -3154,15 +3154,15 @@
 <codeline lineno="1550"><highlight class="normal"><sp/><sp/><sp/><sp/>pProperty-&gt;absControl<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="1551"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1552"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Check<sp/>the<sp/>value<sp/>is<sp/>within<sp/>the<sp/>expected<sp/>boundaries<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1553"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(value<sp/>&lt;<sp/>pPropInfo-&gt;absMin<sp/>||<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref><sp/>&gt;<sp/>pPropInfo-&gt;absMax)<sp/>{</highlight></codeline>
+<codeline lineno="1553"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(value<sp/>&lt;<sp/>pPropInfo-&gt;absMin<sp/>||<sp/>value<sp/>&gt;<sp/>pPropInfo-&gt;absMax)<sp/>{</highlight></codeline>
 <codeline lineno="1554"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynPrint(pasynUserSelf,<sp/>ASYN_TRACE_ERROR,<sp/></highlight></codeline>
 <codeline lineno="1555"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s::%s<sp/>error<sp/>setting<sp/>propertyType<sp/>%s,<sp/>value<sp/>%.5f<sp/>is<sp/>out<sp/>of<sp/>range<sp/>[%.3f..%.3f]\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="1556"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName,<sp/>propertyTypeStrings[propType],<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>,<sp/>pPropInfo-&gt;absMin,<sp/>pPropInfo-&gt;absMax);</highlight></codeline>
+<codeline lineno="1556"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName,<sp/>propertyTypeStrings[propType],<sp/>value,<sp/>pPropInfo-&gt;absMin,<sp/>pPropInfo-&gt;absMax);</highlight></codeline>
 <codeline lineno="1557"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>asynError;</highlight></codeline>
 <codeline lineno="1558"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1559"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1560"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Set<sp/>the<sp/>propertyType<sp/>value<sp/>in<sp/>the<sp/>camera<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1561"><highlight class="normal"><sp/><sp/><sp/><sp/>pProperty-&gt;absValue<sp/>=<sp/>(float)<ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>;</highlight></codeline>
+<codeline lineno="1561"><highlight class="normal"><sp/><sp/><sp/><sp/>pProperty-&gt;absValue<sp/>=<sp/>(float)value;</highlight></codeline>
 <codeline lineno="1562"><highlight class="normal"><sp/><sp/><sp/><sp/>asynPrint(pasynUserSelf,<sp/>ASYN_TRACE_WARNING,</highlight></codeline>
 <codeline lineno="1563"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s::%s<sp/>calling<sp/>CameraBase::SetProperty,<sp/>pCameraBase_=%p,<sp/>pProperty=%p,<sp/>pProperty-&gt;type=%d,<sp/>pProperty-&gt;absValue=%f\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
 <codeline lineno="1564"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName,<sp/>pCameraBase_,<sp/>pProperty,<sp/>pProperty-&gt;type,<sp/>pProperty-&gt;absValue);</highlight></codeline>
@@ -3170,7 +3170,7 @@
 <codeline lineno="1566"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(checkError(error,<sp/>functionName,<sp/></highlight><highlight class="stringliteral">&quot;SetProperty&quot;</highlight><highlight class="normal">))<sp/>{</highlight></codeline>
 <codeline lineno="1567"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynPrint(pasynUserSelf,<sp/>ASYN_TRACE_ERROR,<sp/></highlight></codeline>
 <codeline lineno="1568"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s::%s<sp/>error<sp/>setting<sp/>propertyType<sp/>%s,<sp/>value<sp/>%.5f\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="1569"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName,<sp/>propertyTypeStrings[propType],<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="1569"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName,<sp/>propertyTypeStrings[propType],<sp/>value);<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="1570"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>asynError;</highlight></codeline>
 <codeline lineno="1571"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1572"><highlight class="normal"></highlight></codeline>
@@ -3256,8 +3256,8 @@
 <codeline lineno="1652"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="1653"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>;</highlight></codeline>
 <codeline lineno="1654"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Find<sp/>the<sp/>pixel<sp/>format<sp/>index<sp/>corresponding<sp/>to<sp/>the<sp/>actual<sp/>pixelFormat</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1655"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>=0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;(int)NUM_PIXEL_FORMATS;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)<sp/>{</highlight></codeline>
-<codeline lineno="1656"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pixelFormatValues[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>]<sp/>==<sp/>pixelFormat)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>;</highlight></codeline>
+<codeline lineno="1655"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(i=0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;(int)NUM_PIXEL_FORMATS;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)<sp/>{</highlight></codeline>
+<codeline lineno="1656"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pixelFormatValues[i]<sp/>==<sp/>pixelFormat)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>;</highlight></codeline>
 <codeline lineno="1657"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1658"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-1;</highlight></codeline>
 <codeline lineno="1659"><highlight class="normal">}</highlight></codeline>
@@ -3409,7 +3409,7 @@
 <codeline lineno="1805"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
 <codeline lineno="1806"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Packet<sp/>size<sp/>must<sp/>be<sp/>a<sp/>multiple<sp/>of<sp/>unitBytesPerPacket</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1807"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>packetSize<sp/>=<sp/>(packetSize/f7PacketInfo.unitBytesPerPacket)<sp/>*<sp/>f7PacketInfo.unitBytesPerPacket;</highlight></codeline>
-<codeline lineno="1808"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(packetSize<sp/>&lt;<sp/>pFormat7Info_-&gt;minPacketSize)<sp/>packetSize<sp/>=<sp/>pFormat7Info_-&gt;minPacketSize;</highlight></codeline>
+<codeline lineno="1808"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(packetSize<sp/>&lt;<sp/>pFormat7Info_-&gt;minPacketSize)<sp/>packetSize<sp/>=<sp/>pFormat7Info_-&gt;minPacketSize;</highlight></codeline>
 <codeline lineno="1809"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(packetSize<sp/>&gt;<sp/>f7PacketInfo.maxBytesPerPacket)<sp/>packetSize<sp/>=<sp/>f7PacketInfo.maxBytesPerPacket;</highlight></codeline>
 <codeline lineno="1810"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1811"><highlight class="normal"><sp/><sp/><sp/><sp/>asynPrint(pasynUserSelf,<sp/>ASYN_TRACE_WARNING,</highlight></codeline>
@@ -4019,7 +4019,7 @@
 <codeline lineno="2415"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="2416"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="2417"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classasyn_n_d_array_driver_1abf87462bc5853f8e5a56db5e93acd956" kindref="member">setIntegerParam</ref>(<ref refid="classpoint_grey_1a57b568b83dc44556ed0a5950289b6df9" kindref="member">PGPixelFormat</ref>,<sp/>f7Settings.pixelFormat);</highlight></codeline>
-<codeline lineno="2418"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>=0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;numValidPixelFormats_;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)<sp/>{</highlight></codeline>
+<codeline lineno="2418"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i=0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;numValidPixelFormats_;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)<sp/>{</highlight></codeline>
 <codeline lineno="2419"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>enumStrings[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>]<sp/>=<sp/>pixelFormatEnums_[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>].<ref refid="structenum_struct__t_1ac06085f35779376cbe7eb85007769b8f" kindref="member">string</ref>;</highlight></codeline>
 <codeline lineno="2420"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>enumValues[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>]<sp/>=<sp/><sp/>pixelFormatEnums_[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>].<ref refid="structenum_struct__t_1a03dbcc57ce83c8dc439561fad3034412" kindref="member">value</ref>;</highlight></codeline>
 <codeline lineno="2421"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>enumSeverities[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>]<sp/>=<sp/>0;</highlight></codeline>
@@ -4046,7 +4046,7 @@
 <codeline lineno="2442"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numValidFrameRates_++;</highlight></codeline>
 <codeline lineno="2443"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight></codeline>
 <codeline lineno="2444"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="2445"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>=0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;numValidFrameRates_;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)<sp/>{</highlight></codeline>
+<codeline lineno="2445"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i=0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;numValidFrameRates_;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)<sp/>{</highlight></codeline>
 <codeline lineno="2446"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>enumStrings[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>]<sp/>=<sp/>frameRateEnums_[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>].<ref refid="structenum_struct__t_1ac06085f35779376cbe7eb85007769b8f" kindref="member">string</ref>;</highlight></codeline>
 <codeline lineno="2447"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>enumValues[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>]<sp/>=<sp/><sp/>frameRateEnums_[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>].<ref refid="structenum_struct__t_1a03dbcc57ce83c8dc439561fad3034412" kindref="member">value</ref>;</highlight></codeline>
 <codeline lineno="2448"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>enumSeverities[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>]<sp/>=<sp/>0;</highlight></codeline>
@@ -4080,7 +4080,7 @@
 <codeline lineno="2476"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="2477"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="2478"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classasyn_n_d_array_driver_1abf87462bc5853f8e5a56db5e93acd956" kindref="member">setIntegerParam</ref>(<ref refid="classpoint_grey_1a57b568b83dc44556ed0a5950289b6df9" kindref="member">PGPixelFormat</ref>,<sp/>gigEImageSettings.pixelFormat);</highlight></codeline>
-<codeline lineno="2479"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>=0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;numValidPixelFormats_;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)<sp/>{</highlight></codeline>
+<codeline lineno="2479"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i=0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;numValidPixelFormats_;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)<sp/>{</highlight></codeline>
 <codeline lineno="2480"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>enumStrings[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>]<sp/>=<sp/>pixelFormatEnums_[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>].<ref refid="structenum_struct__t_1ac06085f35779376cbe7eb85007769b8f" kindref="member">string</ref>;</highlight></codeline>
 <codeline lineno="2481"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>enumValues[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>]<sp/>=<sp/><sp/>pixelFormatEnums_[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>].<ref refid="structenum_struct__t_1a03dbcc57ce83c8dc439561fad3034412" kindref="member">value</ref>;</highlight></codeline>
 <codeline lineno="2482"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>enumSeverities[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>]<sp/>=<sp/>0;</highlight></codeline>
@@ -4315,10 +4315,10 @@
 <codeline lineno="2725"><highlight class="normal"></highlight></codeline>
 <codeline lineno="2726"><highlight class="normal"><sp/><sp/><sp/><sp/>fprintf(fp,<sp/></highlight><highlight class="stringliteral">&quot;\nNumber<sp/>of<sp/>cameras<sp/>detected:<sp/>%u\n&quot;</highlight><highlight class="normal">,<sp/>numCameras);</highlight></codeline>
 <codeline lineno="2727"><highlight class="normal"></highlight></codeline>
-<codeline lineno="2728"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>=0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;numCameras;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)<sp/>{</highlight></codeline>
+<codeline lineno="2728"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i=0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;numCameras;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)<sp/>{</highlight></codeline>
 <codeline lineno="2729"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PGRGuid<sp/>guid;</highlight></codeline>
 <codeline lineno="2730"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CameraInfo<sp/>camInfo;</highlight></codeline>
-<codeline lineno="2731"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>error<sp/>=<sp/>pBusMgr_-&gt;GetCameraFromIndex(<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>,<sp/>&amp;guid);</highlight></codeline>
+<codeline lineno="2731"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>error<sp/>=<sp/>pBusMgr_-&gt;GetCameraFromIndex(i,<sp/>&amp;guid);</highlight></codeline>
 <codeline lineno="2732"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(checkError(error,<sp/>functionName,<sp/></highlight><highlight class="stringliteral">&quot;GetCameraFromIndex&quot;</highlight><highlight class="normal">))<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="2733"><highlight class="normal"></highlight></codeline>
 <codeline lineno="2734"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Connect<sp/>to<sp/>camera</highlight><highlight class="normal"></highlight></codeline>
@@ -4641,11 +4641,11 @@
 <codeline lineno="3051"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;configArg6,</highlight></codeline>
 <codeline lineno="3052"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;configArg7};</highlight></codeline>
 <codeline lineno="3053"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>iocshFuncDef<sp/>configpointGrey<sp/>=<sp/>{</highlight><highlight class="stringliteral">&quot;pointGreyConfig&quot;</highlight><highlight class="normal">,<sp/>8,<sp/>configArgs};</highlight></codeline>
-<codeline lineno="3054"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>configCallFunc(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>iocshArgBuf<sp/>*<ref refid="namespacemake_adl_1a1d55f39db2066eab50e6f2b21abc00f1" kindref="member">args</ref>)</highlight></codeline>
+<codeline lineno="3054"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>configCallFunc(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>iocshArgBuf<sp/>*args)</highlight></codeline>
 <codeline lineno="3055"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="3056"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="point_grey_8cpp_1a271c779ebbbf99f1e91806fa7f137c1a" kindref="member">pointGreyConfig</ref>(<ref refid="namespacemake_adl_1a1d55f39db2066eab50e6f2b21abc00f1" kindref="member">args</ref>[0].sval,<sp/><ref refid="namespacemake_adl_1a1d55f39db2066eab50e6f2b21abc00f1" kindref="member">args</ref>[1].ival,<sp/><ref refid="namespacemake_adl_1a1d55f39db2066eab50e6f2b21abc00f1" kindref="member">args</ref>[2].ival,<sp/></highlight></codeline>
-<codeline lineno="3057"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacemake_adl_1a1d55f39db2066eab50e6f2b21abc00f1" kindref="member">args</ref>[3].ival,<sp/><ref refid="namespacemake_adl_1a1d55f39db2066eab50e6f2b21abc00f1" kindref="member">args</ref>[4].ival,<sp/><ref refid="namespacemake_adl_1a1d55f39db2066eab50e6f2b21abc00f1" kindref="member">args</ref>[5].ival,</highlight></codeline>
-<codeline lineno="3058"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacemake_adl_1a1d55f39db2066eab50e6f2b21abc00f1" kindref="member">args</ref>[6].ival,<sp/><ref refid="namespacemake_adl_1a1d55f39db2066eab50e6f2b21abc00f1" kindref="member">args</ref>[7].ival);</highlight></codeline>
+<codeline lineno="3056"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="point_grey_8cpp_1a271c779ebbbf99f1e91806fa7f137c1a" kindref="member">pointGreyConfig</ref>(args[0].sval,<sp/>args[1].ival,<sp/>args[2].ival,<sp/></highlight></codeline>
+<codeline lineno="3057"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>args[3].ival,<sp/>args[4].ival,<sp/>args[5].ival,</highlight></codeline>
+<codeline lineno="3058"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>args[6].ival,<sp/>args[7].ival);</highlight></codeline>
 <codeline lineno="3059"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="3060"><highlight class="normal"></highlight></codeline>
 <codeline lineno="3061"><highlight class="normal"></highlight></codeline>

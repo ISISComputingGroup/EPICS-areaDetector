@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="struct_make_unsigned_impl_3_01_t_00_01true_01_4" kind="struct" language="C++" prot="public">
     <compoundname>MakeUnsignedImpl&lt; T, true &gt;</compoundname>
     <templateparamlist>
@@ -7,12 +7,13 @@
         <type>typename T</type>
       </param>
     </templateparamlist>
-      <sectiondef kind="public-type">
+    <sectiondef kind="public-type">
       <memberdef kind="typedef" id="struct_make_unsigned_impl_3_01_t_00_01true_01_4_1a99945010f4e5da751a5a8a00cfe81cde" prot="public" static="no">
-        <type>std::make_unsigned&lt; T &gt;::<ref refid="struct_make_unsigned_impl_3_01_t_00_01true_01_4_1a99945010f4e5da751a5a8a00cfe81cde" kindref="member">type</ref></type>
+        <type>std::make_unsigned&lt; T &gt;::type</type>
         <definition>typedef std::make_unsigned&lt;T&gt;::type MakeUnsignedImpl&lt; T, true &gt;::type</definition>
         <argsstring></argsstring>
         <name>type</name>
+        <qualifiedname>MakeUnsignedImpl&lt; T, true &gt;::type</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -21,7 +22,7 @@
         </inbodydescription>
         <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginColorConvert.cpp" line="39" column="48" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginColorConvert.cpp" bodystart="39" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
 <para>specialisation of <ref refid="struct_make_unsigned_impl" kindref="compound">MakeUnsignedImpl</ref> for integral types i.e. &lt;T,true&gt; </para>
     </briefdescription>

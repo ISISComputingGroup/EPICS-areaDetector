@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="_a_d_spinnaker_8cpp" kind="file" language="C++">
     <compoundname>ADSpinnaker.cpp</compoundname>
     <includes local="no">stdio.h</includes>
@@ -22,62 +22,27 @@
     <includes refid="_s_p_feature_8h" local="yes">SPFeature.h</includes>
     <includes refid="_a_d_spinnaker_8h" local="yes">ADSpinnaker.h</includes>
     <incdepgraph>
-      <node id="11">
-        <label>iocsh.h</label>
-      </node>
-      <node id="37">
-        <label>SPFeature.h</label>
-        <link refid="_s_p_feature_8h"/>
-        <childnode refid="33" relation="include">
-        </childnode>
-        <childnode refid="15" relation="include">
-        </childnode>
-        <childnode refid="16" relation="include">
+      <node id="27">
+        <label>ADCoreAPI.h</label>
+        <link refid="_a_d_core_a_p_i_8h"/>
+        <childnode refid="28" relation="include">
         </childnode>
       </node>
-      <node id="19">
-        <label>epicsTypes.h</label>
+      <node id="31">
+        <label>ADCoreVersion.h</label>
+        <link refid="_a_d_core_version_8h"/>
       </node>
-      <node id="12">
-        <label>cantProceed.h</label>
-      </node>
-      <node id="3">
-        <label>stdlib.h</label>
-      </node>
-      <node id="33">
-        <label>GenICamFeature.h</label>
-        <link refid="_gen_i_cam_feature_8h"/>
-        <childnode refid="6" relation="include">
+      <node id="18">
+        <label>ADDriver.h</label>
+        <link refid="_a_d_driver_8h"/>
+        <childnode refid="19" relation="include">
         </childnode>
-        <childnode refid="34" relation="include">
+        <childnode refid="10" relation="include">
         </childnode>
-        <childnode refid="35" relation="include">
+        <childnode refid="8" relation="include">
         </childnode>
-        <childnode refid="22" relation="include">
+        <childnode refid="20" relation="include">
         </childnode>
-        <childnode refid="32" relation="include">
-        </childnode>
-      </node>
-      <node id="21">
-        <label>epicsMutex.h</label>
-      </node>
-      <node id="14">
-        <label>epicsExit.h</label>
-      </node>
-      <node id="28">
-        <label>epicsVersion.h</label>
-      </node>
-      <node id="6">
-        <label>string</label>
-      </node>
-      <node id="35">
-        <label>map</label>
-      </node>
-      <node id="9">
-        <label>epicsThread.h</label>
-      </node>
-      <node id="15">
-        <label>Spinnaker.h</label>
       </node>
       <node id="30">
         <label>Codec.h</label>
@@ -101,32 +66,20 @@
         <childnode refid="30" relation="include">
         </childnode>
       </node>
-      <node id="36">
-        <label>epicsExport.h</label>
-      </node>
-      <node id="31">
-        <label>ADCoreVersion.h</label>
-        <link refid="_a_d_core_version_8h"/>
-      </node>
-      <node id="38">
-        <label>ADSpinnaker.h</label>
-        <link refid="_a_d_spinnaker_8h"/>
-        <childnode refid="7" relation="include">
+      <node id="25">
+        <label>NDAttribute.h</label>
+        <link refid="_n_d_attribute_8h"/>
+        <childnode refid="6" relation="include">
         </childnode>
-        <childnode refid="17" relation="include">
+        <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="15" relation="include">
+        <childnode refid="24" relation="include">
         </childnode>
-        <childnode refid="16" relation="include">
+        <childnode refid="19" relation="include">
         </childnode>
-      </node>
-      <node id="16">
-        <label>SpinGenApi/SpinnakerGenApi.h</label>
-      </node>
-      <node id="32">
-        <label>ADGenICamAPI.h</label>
-        <link refid="_a_d_gen_i_cam_a_p_i_8h"/>
-        <childnode refid="28" relation="include">
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
         </childnode>
       </node>
       <node id="29">
@@ -141,29 +94,19 @@
         <childnode refid="25" relation="include">
         </childnode>
       </node>
-      <node id="13">
-        <label>epicsString.h</label>
-      </node>
-      <node id="4">
-        <label>string.h</label>
-      </node>
-      <node id="34">
-        <label>vector</label>
-      </node>
-      <node id="24">
-        <label>ellLib.h</label>
-      </node>
-      <node id="27">
-        <label>ADCoreAPI.h</label>
-        <link refid="_a_d_core_a_p_i_8h"/>
-        <childnode refid="28" relation="include">
+      <node id="20">
+        <label>asynNDArrayDriver.h</label>
+        <link refid="asyn_n_d_array_driver_8h"/>
+        <childnode refid="21" relation="include">
         </childnode>
-      </node>
-      <node id="26">
-        <label>asynDriver.h</label>
-      </node>
-      <node id="8">
-        <label>epicsTime.h</label>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
       </node>
       <node id="17">
         <label>ADGenICam.h</label>
@@ -175,8 +118,25 @@
         <childnode refid="33" relation="include">
         </childnode>
       </node>
-      <node id="22">
-        <label>asynPortDriver.h</label>
+      <node id="32">
+        <label>ADGenICamAPI.h</label>
+        <link refid="_a_d_gen_i_cam_a_p_i_8h"/>
+        <childnode refid="28" relation="include">
+        </childnode>
+      </node>
+      <node id="33">
+        <label>GenICamFeature.h</label>
+        <link refid="_gen_i_cam_feature_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
       </node>
       <node id="1">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.cpp</label>
@@ -220,65 +180,105 @@
         <childnode refid="38" relation="include">
         </childnode>
       </node>
-      <node id="25">
-        <label>NDAttribute.h</label>
-        <link refid="_n_d_attribute_8h"/>
-        <childnode refid="6" relation="include">
+      <node id="38">
+        <label>ADSpinnaker.h</label>
+        <link refid="_a_d_spinnaker_8h"/>
+        <childnode refid="7" relation="include">
         </childnode>
-        <childnode refid="2" relation="include">
+        <childnode refid="17" relation="include">
         </childnode>
-        <childnode refid="24" relation="include">
+        <childnode refid="15" relation="include">
         </childnode>
-        <childnode refid="19" relation="include">
-        </childnode>
-        <childnode refid="26" relation="include">
-        </childnode>
-        <childnode refid="27" relation="include">
+        <childnode refid="16" relation="include">
         </childnode>
       </node>
-      <node id="5">
-        <label>set</label>
+      <node id="37">
+        <label>SPFeature.h</label>
+        <link refid="_s_p_feature_8h"/>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
       </node>
-      <node id="18">
-        <label>ADDriver.h</label>
-        <link refid="_a_d_driver_8h"/>
-        <childnode refid="19" relation="include">
-        </childnode>
-        <childnode refid="10" relation="include">
-        </childnode>
-        <childnode refid="8" relation="include">
-        </childnode>
-        <childnode refid="20" relation="include">
-        </childnode>
+      <node id="16">
+        <label>SpinGenApi/SpinnakerGenApi.h</label>
+      </node>
+      <node id="15">
+        <label>Spinnaker.h</label>
+      </node>
+      <node id="26">
+        <label>asynDriver.h</label>
+      </node>
+      <node id="22">
+        <label>asynPortDriver.h</label>
+      </node>
+      <node id="12">
+        <label>cantProceed.h</label>
+      </node>
+      <node id="24">
+        <label>ellLib.h</label>
+      </node>
+      <node id="7">
+        <label>epicsEvent.h</label>
+      </node>
+      <node id="14">
+        <label>epicsExit.h</label>
+      </node>
+      <node id="36">
+        <label>epicsExport.h</label>
       </node>
       <node id="10">
         <label>epicsMessageQueue.h</label>
       </node>
-      <node id="20">
-        <label>asynNDArrayDriver.h</label>
-        <link refid="asyn_n_d_array_driver_8h"/>
-        <childnode refid="21" relation="include">
-        </childnode>
-        <childnode refid="7" relation="include">
-        </childnode>
-        <childnode refid="22" relation="include">
-        </childnode>
-        <childnode refid="23" relation="include">
-        </childnode>
-        <childnode refid="31" relation="include">
-        </childnode>
+      <node id="21">
+        <label>epicsMutex.h</label>
+      </node>
+      <node id="13">
+        <label>epicsString.h</label>
+      </node>
+      <node id="9">
+        <label>epicsThread.h</label>
+      </node>
+      <node id="8">
+        <label>epicsTime.h</label>
+      </node>
+      <node id="19">
+        <label>epicsTypes.h</label>
+      </node>
+      <node id="28">
+        <label>epicsVersion.h</label>
+      </node>
+      <node id="11">
+        <label>iocsh.h</label>
+      </node>
+      <node id="35">
+        <label>map</label>
+      </node>
+      <node id="5">
+        <label>set</label>
       </node>
       <node id="2">
         <label>stdio.h</label>
       </node>
-      <node id="7">
-        <label>epicsEvent.h</label>
+      <node id="3">
+        <label>stdlib.h</label>
+      </node>
+      <node id="6">
+        <label>string</label>
+      </node>
+      <node id="4">
+        <label>string.h</label>
+      </node>
+      <node id="34">
+        <label>vector</label>
       </node>
     </incdepgraph>
     <innernamespace refid="namespace_spinnaker">Spinnaker</innernamespace>
     <innernamespace refid="namespace_spinnaker_1_1_gen_api">Spinnaker::GenApi</innernamespace>
     <innernamespace refid="namespace_spinnaker_1_1_gen_i_cam">Spinnaker::GenICam</innernamespace>
-      <sectiondef kind="define">
+    <sectiondef kind="define">
       <memberdef kind="define" id="_a_d_spinnaker_8cpp_1ae578001fe043b4cca7a0edd801cfe9c4" prot="public" static="no">
         <name>DRIVER_VERSION</name>
         <initializer>3</initializer>
@@ -323,8 +323,8 @@
         </inbodydescription>
         <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.cpp" line="50" column="9" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.cpp" bodystart="50" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="enum">
+    </sectiondef>
+    <sectiondef kind="enum">
       <memberdef kind="enum" id="_a_d_spinnaker_8cpp_1ad16c4d353a315024cb1937cbef405f0c" prot="public" static="no" strong="no">
         <type></type>
         <name>SPPixelConvert_t</name>
@@ -428,8 +428,8 @@
         </inbodydescription>
         <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.cpp" line="66" column="1" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.cpp" bodystart="66" bodyend="69"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="var">
+    </sectiondef>
+    <sectiondef kind="var">
       <memberdef kind="variable" id="_a_d_spinnaker_8cpp_1af0e94d13028051cd5339d204bfbb057d" prot="public" static="yes" mutable="no">
         <type>const char *</type>
         <definition>const char* driverName</definition>
@@ -456,7 +456,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.cpp" line="943" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.cpp" bodystart="943" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.cpp" line="943" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.cpp" bodystart="943" bodyend="943"/>
       </memberdef>
       <memberdef kind="variable" id="_a_d_spinnaker_8cpp_1a12e03f733e7768280d0205a2d8adeaab" prot="public" static="yes" mutable="no">
         <type>const iocshArg</type>
@@ -470,7 +470,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.cpp" line="944" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.cpp" bodystart="944" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.cpp" line="944" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.cpp" bodystart="944" bodyend="944"/>
       </memberdef>
       <memberdef kind="variable" id="_a_d_spinnaker_8cpp_1ac0dc159931b84391cb7c0fed1fa7986f" prot="public" static="yes" mutable="no">
         <type>const iocshArg</type>
@@ -484,7 +484,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.cpp" line="945" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.cpp" bodystart="945" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.cpp" line="945" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.cpp" bodystart="945" bodyend="945"/>
       </memberdef>
       <memberdef kind="variable" id="_a_d_spinnaker_8cpp_1ace59dfd97294c541e5bef057cdb513e7" prot="public" static="yes" mutable="no">
         <type>const iocshArg</type>
@@ -498,7 +498,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.cpp" line="946" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.cpp" bodystart="946" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.cpp" line="946" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.cpp" bodystart="946" bodyend="946"/>
       </memberdef>
       <memberdef kind="variable" id="_a_d_spinnaker_8cpp_1a340f9b3d99922a0aa2c3b150f5a34cd1" prot="public" static="yes" mutable="no">
         <type>const iocshArg</type>
@@ -512,7 +512,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.cpp" line="947" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.cpp" bodystart="947" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.cpp" line="947" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.cpp" bodystart="947" bodyend="947"/>
       </memberdef>
       <memberdef kind="variable" id="_a_d_spinnaker_8cpp_1a2c70847455a1f828f228bde88ad50ac0" prot="public" static="yes" mutable="no">
         <type>const iocshArg</type>
@@ -526,7 +526,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.cpp" line="948" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.cpp" bodystart="948" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.cpp" line="948" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.cpp" bodystart="948" bodyend="948"/>
       </memberdef>
       <memberdef kind="variable" id="_a_d_spinnaker_8cpp_1a552430c6092c73bc46cfa4a702f43ea6" prot="public" static="yes" mutable="no">
         <type>const iocshArg *const</type>
@@ -545,7 +545,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.cpp" line="949" column="30" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.cpp" bodystart="949" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.cpp" line="949" column="30" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.cpp" bodystart="949" bodyend="954"/>
       </memberdef>
       <memberdef kind="variable" id="_a_d_spinnaker_8cpp_1a9b3e2c28124d594083c043164e0f4945" prot="public" static="yes" mutable="no">
         <type>const iocshFuncDef</type>
@@ -559,10 +559,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.cpp" line="955" column="27" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.cpp" bodystart="955" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.cpp" line="955" column="27" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.cpp" bodystart="955" bodyend="955"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="func">
+    </sectiondef>
+    <sectiondef kind="func">
       <memberdef kind="function" id="_a_d_spinnaker_8cpp_1a5fb7c89339f0eb44edfbebbf623b5c6f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
         <definition>int ADSpinnakerConfig</definition>
@@ -734,7 +734,7 @@
         </inbodydescription>
         <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.cpp" line="969" column="1" declfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/ADSpinnaker.cpp" declline="969" declcolumn="1"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
@@ -827,7 +827,7 @@
 <codeline lineno="97"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="98"><highlight class="normal"></highlight></codeline>
 <codeline lineno="99"><highlight class="normal"></highlight></codeline>
-<codeline lineno="100"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="ffmpeg_server_8cpp_1ae7b0efc9c16f820fb943a67625b2018a" kindref="member">c_shutdown</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*arg)</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>c_shutdown(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*arg)</highlight></codeline>
 <codeline lineno="101"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><ref refid="class_a_d_spinnaker" kindref="compound">ADSpinnaker</ref><sp/>*p<sp/>=<sp/>(<ref refid="class_a_d_spinnaker" kindref="compound">ADSpinnaker</ref><sp/>*)arg;</highlight></codeline>
 <codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/>p-&gt;<ref refid="class_a_d_spinnaker_1a41fd9b61d47d6d2b0798cdf8b534fff4" kindref="member">shutdown</ref>();</highlight></codeline>
@@ -855,7 +855,7 @@
 <codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//if<sp/>(numSPBuffers_<sp/>&lt;<sp/>10)<sp/>numSPBuffers_<sp/>=<sp/>10;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="135"><highlight class="normal"></highlight></codeline>
 <codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>shutdown<sp/>on<sp/>exit</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>epicsAtExit(<ref refid="ffmpeg_server_8cpp_1ae7b0efc9c16f820fb943a67625b2018a" kindref="member">c_shutdown</ref>,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>epicsAtExit(c_shutdown,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="138"><highlight class="normal"></highlight></codeline>
 <codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Retrieve<sp/>singleton<sp/>reference<sp/>to<sp/>system<sp/>object</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal"><sp/>{</highlight></codeline>
@@ -880,7 +880,7 @@
 <codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s:%s:<sp/><sp/>camera<sp/>connection<sp/>failed<sp/>(%d)\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
 <codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName,<sp/>status);</highlight></codeline>
 <codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Call<sp/>report()<sp/>to<sp/>get<sp/>a<sp/>list<sp/>of<sp/>available<sp/>cameras</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>report(<ref refid="namespacemake_adl_1a3f4a3faa9267f79b85de3e74ef54d173" kindref="member">stdout</ref>,<sp/>1);</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>report(stdout,<sp/>1);</highlight></codeline>
 <codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cerr<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Successfully<sp/>connected<sp/>to<sp/>camera&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
@@ -970,8 +970,8 @@
 <codeline lineno="249"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="250"><highlight class="normal"></highlight></codeline>
 <codeline lineno="251"><highlight class="normal"><ref refid="class_gen_i_cam_feature" kindref="compound">GenICamFeature</ref><sp/>*<ref refid="class_a_d_spinnaker_1aab1fc231e184c00fbf20681af8831b4d" kindref="member">ADSpinnaker::createFeature</ref>(<ref refid="class_gen_i_cam_feature_set" kindref="compound">GenICamFeatureSet</ref><sp/>*set,<sp/></highlight></codeline>
-<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacehdf5_1abeed318faeb13380e1b4221bd4198bf1aea271040d7a5b8d9af9cbf6564d262d5" kindref="member">std::string</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>&amp;<sp/>asynName,<sp/>asynParamType<sp/>asynType,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>asynIndex,</highlight></codeline>
-<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacehdf5_1abeed318faeb13380e1b4221bd4198bf1aea271040d7a5b8d9af9cbf6564d262d5" kindref="member">std::string</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>&amp;<sp/>featureName,<sp/><ref refid="_gen_i_cam_feature_8h_1a7e16ddb9db92703eb6dc8b3d6bfd5f05" kindref="member">GCFeatureType_t</ref><sp/>featureType)<sp/>{</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>&amp;<sp/>asynName,<sp/>asynParamType<sp/>asynType,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>asynIndex,</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>&amp;<sp/>featureName,<sp/><ref refid="_gen_i_cam_feature_8h_1a7e16ddb9db92703eb6dc8b3d6bfd5f05" kindref="member">GCFeatureType_t</ref><sp/>featureType)<sp/>{</highlight></codeline>
 <codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_s_p_feature" kindref="compound">SPFeature</ref>(set,<sp/>asynName,<sp/>asynType,<sp/>asynIndex,<sp/>featureName,<sp/>featureType);</highlight></codeline>
 <codeline lineno="255"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="256"><highlight class="normal"></highlight></codeline>
@@ -1018,7 +1018,7 @@
 <codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName,<sp/>&amp;camList_,<sp/>cameraId_);</highlight></codeline>
 <codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>tempString[100];</highlight></codeline>
 <codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sprintf(tempString,<sp/></highlight><highlight class="stringliteral">&quot;%d&quot;</highlight><highlight class="normal">,<sp/>cameraId_);</highlight></codeline>
-<codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacehdf5_1abeed318faeb13380e1b4221bd4198bf1aea271040d7a5b8d9af9cbf6564d262d5" kindref="member">std::string</ref><sp/>tempStdString(tempString);</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>tempStdString(tempString);</highlight></codeline>
 <codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cerr<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Looking<sp/>up<sp/>camera<sp/>by<sp/>serial<sp/>number<sp/>\&quot;&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>tempStdString<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\&quot;&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
 <codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pCamera_<sp/>=<sp/>camList_.GetBySerial(tempStdString);</highlight></codeline>
 <codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -1052,7 +1052,7 @@
 <codeline lineno="331"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="332"><highlight class="normal"></highlight></codeline>
 <codeline lineno="333"><highlight class="normal"><sp/><sp/><sp/><sp/>epicsSnprintf(tempString,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(tempString),<sp/></highlight><highlight class="stringliteral">&quot;%d.%d.%d&quot;</highlight><highlight class="normal">,<sp/></highlight></codeline>
-<codeline lineno="334"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_a_d_spinnaker_8cpp_1ae578001fe043b4cca7a0edd801cfe9c4" kindref="member">DRIVER_VERSION</ref>,<sp/><ref refid="_a_d_spinnaker_8cpp_1a09d8a9e616d09d45e8f4c3ad80849872" kindref="member">DRIVER_REVISION</ref>,<sp/><ref refid="_a_d_spinnaker_8cpp_1a00a7ebec19bc60e5ee0344109af2fd82" kindref="member">DRIVER_MODIFICATION</ref>);</highlight></codeline>
+<codeline lineno="334"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="andor_c_c_d_8cpp_1ae578001fe043b4cca7a0edd801cfe9c4" kindref="member">DRIVER_VERSION</ref>,<sp/><ref refid="andor_c_c_d_8cpp_1a09d8a9e616d09d45e8f4c3ad80849872" kindref="member">DRIVER_REVISION</ref>,<sp/><ref refid="andor_c_c_d_8cpp_1a00a7ebec19bc60e5ee0344109af2fd82" kindref="member">DRIVER_MODIFICATION</ref>);</highlight></codeline>
 <codeline lineno="335"><highlight class="normal"><sp/><sp/><sp/><sp/>setStringParam(<ref refid="classasyn_n_d_array_driver_1a2be0f672f139c59f942bedfd7d94ff0f" kindref="member">NDDriverVersion</ref>,tempString);</highlight></codeline>
 <codeline lineno="336"><highlight class="normal"><sp/></highlight></codeline>
 <codeline lineno="337"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
@@ -1092,11 +1092,11 @@
 <codeline lineno="371"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>asynSuccess;</highlight></codeline>
 <codeline lineno="372"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="373"><highlight class="normal"></highlight></codeline>
-<codeline lineno="374"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>ADSpinnaker::updateStreamStat(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="namespacemake_adl_1ad7b803e2e744640af777e973c317f5b2" kindref="member">nodeName</ref>,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>param)</highlight></codeline>
+<codeline lineno="374"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>ADSpinnaker::updateStreamStat(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*nodeName,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>param)</highlight></codeline>
 <codeline lineno="375"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="376"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*functionName<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;updateStreamStat&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="377"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="378"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CIntegerPtr<sp/>pNode<sp/>=<sp/>pTLStreamNodeMap_-&gt;GetNode(<ref refid="namespacemake_adl_1ad7b803e2e744640af777e973c317f5b2" kindref="member">nodeName</ref>);</highlight></codeline>
+<codeline lineno="378"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CIntegerPtr<sp/>pNode<sp/>=<sp/>pTLStreamNodeMap_-&gt;GetNode(nodeName);</highlight></codeline>
 <codeline lineno="379"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(IsReadable(pNode))<sp/>{</highlight></codeline>
 <codeline lineno="380"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classasyn_n_d_array_driver_1abf87462bc5853f8e5a56db5e93acd956" kindref="member">setIntegerParam</ref>(param,<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)pNode-&gt;GetValue());</highlight></codeline>
 <codeline lineno="381"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
@@ -1439,7 +1439,7 @@
 <codeline lineno="722"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="723"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Put<sp/>the<sp/>frame<sp/>number<sp/>into<sp/>the<sp/>buffer</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="724"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>getIntegerParam(SPUniqueIdMode,<sp/>&amp;uniqueIdMode);</highlight></codeline>
-<codeline lineno="725"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(uniqueIdMode<sp/>==<sp/><ref refid="_a_d_spinnaker_8cpp_1ad3d920580e9b0057b9654efee8098dd8a85fc0825cfae5473f57086d82784d803" kindref="member">UniqueIdCamera</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="725"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(uniqueIdMode<sp/>==<sp/><ref refid="_a_d_pylon_8cpp_1a08b855b16f8edd3d937f058c7a57020aa85fc0825cfae5473f57086d82784d803" kindref="member">UniqueIdCamera</ref>)<sp/>{</highlight></codeline>
 <codeline lineno="726"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pRaw_-&gt;<ref refid="class_n_d_array_1a62f165653bd0099f31b3d276bdb81d3c" kindref="member">uniqueId</ref><sp/>=<sp/>(int)pImage-&gt;GetFrameID();</highlight></codeline>
 <codeline lineno="727"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
 <codeline lineno="728"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pRaw_-&gt;<ref refid="class_n_d_array_1a62f165653bd0099f31b3d276bdb81d3c" kindref="member">uniqueId</ref><sp/>=<sp/>uniqueId_;</highlight></codeline>
@@ -1448,7 +1448,7 @@
 <codeline lineno="731"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>updateTimeStamp(&amp;pRaw_-&gt;<ref refid="class_n_d_array_1a107537f0e084674fbec9225cf63c3979" kindref="member">epicsTS</ref>);</highlight></codeline>
 <codeline lineno="732"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>getIntegerParam(SPTimeStampMode,<sp/>&amp;timeStampMode);</highlight></codeline>
 <codeline lineno="733"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Set<sp/>the<sp/>timestamps<sp/>in<sp/>the<sp/>buffer</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="734"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(timeStampMode<sp/>==<sp/><ref refid="_a_d_spinnaker_8cpp_1afc316df730166dc21b5cbcdb5423cf24a475496f506c5a8e359073df849517415" kindref="member">TimeStampCamera</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="734"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(timeStampMode<sp/>==<sp/><ref refid="point_grey_8cpp_1af783dacc57e23ea8f6dd06e2e85e4420a475496f506c5a8e359073df849517415" kindref="member">TimeStampCamera</ref>)<sp/>{</highlight></codeline>
 <codeline lineno="735"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>timeStamp<sp/>=<sp/>pImage-&gt;GetTimeStamp();</highlight></codeline>
 <codeline lineno="736"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(timeStamp<sp/>==<sp/>0)<sp/>{</highlight></codeline>
 <codeline lineno="737"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynPrint(pasynUserSelf,<sp/>ASYN_TRACE_WARNING,</highlight></codeline>
@@ -1492,11 +1492,11 @@
 <codeline lineno="775"><highlight class="normal">asynStatus<sp/><ref refid="class_a_d_spinnaker_1aaf4b46ecf92f6e19a704d2dae1655e84" kindref="member">ADSpinnaker::readEnum</ref>(asynUser<sp/>*pasynUser,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*strings[],<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>values[],<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>severities[],<sp/></highlight></codeline>
 <codeline lineno="776"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>nElements,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>*nIn)</highlight></codeline>
 <codeline lineno="777"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="778"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>=<sp/>pasynUser-&gt;reason;</highlight></codeline>
+<codeline lineno="778"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>function<sp/>=<sp/>pasynUser-&gt;reason;</highlight></codeline>
 <codeline lineno="779"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//static<sp/>const<sp/>char<sp/>*functionName<sp/>=<sp/>&quot;readEnum&quot;;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="780"><highlight class="normal"></highlight></codeline>
 <codeline lineno="781"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>There<sp/>are<sp/>a<sp/>few<sp/>enums<sp/>we<sp/>don&apos;t<sp/>want<sp/>to<sp/>autogenerate<sp/>the<sp/>values</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="782"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/>SPConvertPixelFormat)<sp/>{</highlight></codeline>
+<codeline lineno="782"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(function<sp/>==<sp/>SPConvertPixelFormat)<sp/>{</highlight></codeline>
 <codeline lineno="783"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>asynError;</highlight></codeline>
 <codeline lineno="784"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="785"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
@@ -1567,11 +1567,11 @@
 <codeline lineno="850"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>asynSuccess;</highlight></codeline>
 <codeline lineno="851"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="852"><highlight class="normal"></highlight></codeline>
-<codeline lineno="853"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>ADSpinnaker::reportNode(FILE<sp/>*fp,<sp/>INodeMap<sp/>*pNodeMap,<sp/>gcstring<sp/><ref refid="namespacemake_adl_1ad7b803e2e744640af777e973c317f5b2" kindref="member">nodeName</ref>,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>level)</highlight></codeline>
+<codeline lineno="853"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>ADSpinnaker::reportNode(FILE<sp/>*fp,<sp/>INodeMap<sp/>*pNodeMap,<sp/>gcstring<sp/>nodeName,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>level)</highlight></codeline>
 <codeline lineno="854"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="855"><highlight class="normal"><sp/><sp/><sp/><sp/>gcstring<sp/>displayName;</highlight></codeline>
 <codeline lineno="856"><highlight class="normal"><sp/><sp/><sp/><sp/>gcstring<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>;</highlight></codeline>
-<codeline lineno="857"><highlight class="normal"><sp/><sp/><sp/><sp/>CNodePtr<sp/>pBase<sp/>=<sp/>(CNodePtr)pNodeMap-&gt;GetNode(<ref refid="namespacemake_adl_1ad7b803e2e744640af777e973c317f5b2" kindref="member">nodeName</ref>);</highlight></codeline>
+<codeline lineno="857"><highlight class="normal"><sp/><sp/><sp/><sp/>CNodePtr<sp/>pBase<sp/>=<sp/>(CNodePtr)pNodeMap-&gt;GetNode(nodeName);</highlight></codeline>
 <codeline lineno="858"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(IsAvailable(pBase)<sp/>&amp;&amp;<sp/>IsReadable(pBase))<sp/>{</highlight></codeline>
 <codeline lineno="859"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>displayName<sp/>=<sp/>pBase-&gt;GetDisplayName();</highlight></codeline>
 <codeline lineno="860"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(pBase-&gt;GetPrincipalInterfaceType())<sp/>{</highlight></codeline>
@@ -1626,12 +1626,12 @@
 <codeline lineno="915"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fprintf(fp,<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="916"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fprintf(fp,<sp/></highlight><highlight class="stringliteral">&quot;Number<sp/>of<sp/>cameras<sp/>detected:<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>numCameras);</highlight></codeline>
 <codeline lineno="917"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(details<sp/>&lt;1)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="918"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>=0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;numCameras;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)<sp/>{</highlight></codeline>
+<codeline lineno="918"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i=0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;numCameras;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)<sp/>{</highlight></codeline>
 <codeline lineno="919"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CameraPtr<sp/>pCamera;</highlight></codeline>
-<codeline lineno="920"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pCamera<sp/>=<sp/>camList_.GetByIndex(<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>);</highlight></codeline>
+<codeline lineno="920"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pCamera<sp/>=<sp/>camList_.GetByIndex(i);</highlight></codeline>
 <codeline lineno="921"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>INodeMap<sp/>*pNodeMap<sp/>=<sp/>&amp;pCamera-&gt;GetTLDeviceNodeMap();</highlight></codeline>
 <codeline lineno="922"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="923"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fprintf(fp,<sp/></highlight><highlight class="stringliteral">&quot;Camera<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>);</highlight></codeline>
+<codeline lineno="923"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fprintf(fp,<sp/></highlight><highlight class="stringliteral">&quot;Camera<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>i);</highlight></codeline>
 <codeline lineno="924"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>reportNode(fp,<sp/>pNodeMap,<sp/></highlight><highlight class="stringliteral">&quot;DeviceVendorName&quot;</highlight><highlight class="normal">,<sp/>1);</highlight></codeline>
 <codeline lineno="925"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>reportNode(fp,<sp/>pNodeMap,<sp/></highlight><highlight class="stringliteral">&quot;DeviceModelName&quot;</highlight><highlight class="normal">,<sp/>1);</highlight></codeline>
 <codeline lineno="926"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>reportNode(fp,<sp/>pNodeMap,<sp/></highlight><highlight class="stringliteral">&quot;DeviceSerialNumber&quot;</highlight><highlight class="normal">,<sp/>1);</highlight></codeline>
@@ -1664,10 +1664,10 @@
 <codeline lineno="953"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;configArg4,</highlight></codeline>
 <codeline lineno="954"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;configArg5};</highlight></codeline>
 <codeline lineno="955"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>iocshFuncDef<sp/>configADSpinnaker<sp/>=<sp/>{</highlight><highlight class="stringliteral">&quot;ADSpinnakerConfig&quot;</highlight><highlight class="normal">,<sp/>6,<sp/>configArgs};</highlight></codeline>
-<codeline lineno="956"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>configCallFunc(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>iocshArgBuf<sp/>*<ref refid="namespacemake_adl_1a1d55f39db2066eab50e6f2b21abc00f1" kindref="member">args</ref>)</highlight></codeline>
+<codeline lineno="956"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>configCallFunc(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>iocshArgBuf<sp/>*args)</highlight></codeline>
 <codeline lineno="957"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="958"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_a_d_spinnaker_8cpp_1a5fb7c89339f0eb44edfbebbf623b5c6f" kindref="member">ADSpinnakerConfig</ref>(<ref refid="namespacemake_adl_1a1d55f39db2066eab50e6f2b21abc00f1" kindref="member">args</ref>[0].sval,<sp/><ref refid="namespacemake_adl_1a1d55f39db2066eab50e6f2b21abc00f1" kindref="member">args</ref>[1].ival,<sp/><ref refid="namespacemake_adl_1a1d55f39db2066eab50e6f2b21abc00f1" kindref="member">args</ref>[2].ival,<sp/></highlight></codeline>
-<codeline lineno="959"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacemake_adl_1a1d55f39db2066eab50e6f2b21abc00f1" kindref="member">args</ref>[3].ival,<sp/><ref refid="namespacemake_adl_1a1d55f39db2066eab50e6f2b21abc00f1" kindref="member">args</ref>[4].ival,<sp/><ref refid="namespacemake_adl_1a1d55f39db2066eab50e6f2b21abc00f1" kindref="member">args</ref>[5].ival);</highlight></codeline>
+<codeline lineno="958"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_a_d_spinnaker_8cpp_1a5fb7c89339f0eb44edfbebbf623b5c6f" kindref="member">ADSpinnakerConfig</ref>(args[0].sval,<sp/>args[1].ival,<sp/>args[2].ival,<sp/></highlight></codeline>
+<codeline lineno="959"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>args[3].ival,<sp/>args[4].ival,<sp/>args[5].ival);</highlight></codeline>
 <codeline lineno="960"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="961"><highlight class="normal"></highlight></codeline>
 <codeline lineno="962"><highlight class="normal"></highlight></codeline>

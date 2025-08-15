@@ -1,15 +1,16 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="class_a_d_vimba_frame_observer" kind="class" language="C++" prot="public">
     <compoundname>ADVimbaFrameObserver</compoundname>
     <basecompoundref prot="public" virt="virtual">IFrameObserver</basecompoundref>
     <includes refid="_a_d_vimba_8h" local="no">ADVimba.h</includes>
-      <sectiondef kind="public-attrib">
+    <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="class_a_d_vimba_frame_observer_1a570e497cf45067ccb81aca90ff4519e0" prot="public" static="no" mutable="no">
         <type>CameraPtr</type>
         <definition>CameraPtr ADVimbaFrameObserver::pCamera_</definition>
         <argsstring></argsstring>
         <name>pCamera_</name>
+        <qualifiedname>ADVimbaFrameObserver::pCamera_</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -23,6 +24,7 @@
         <definition>class ADVimba* ADVimbaFrameObserver::pVimba_</definition>
         <argsstring></argsstring>
         <name>pVimba_</name>
+        <qualifiedname>ADVimbaFrameObserver::pVimba_</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -31,13 +33,14 @@
         </inbodydescription>
         <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADVimba/vimbaApp/src/ADVimba.h" line="26" column="18" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADVimba/vimbaApp/src/ADVimba.h" bodystart="26" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="public-func">
+    </sectiondef>
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="class_a_d_vimba_frame_observer_1afc2db366eac21be6c90160ed14aaead1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>ADVimbaFrameObserver::ADVimbaFrameObserver</definition>
         <argsstring>(CameraPtr pCamera, class ADVimba *pVimba)</argsstring>
         <name>ADVimbaFrameObserver</name>
+        <qualifiedname>ADVimbaFrameObserver::ADVimbaFrameObserver</qualifiedname>
         <param>
           <type>CameraPtr</type>
           <declname>pCamera</declname>
@@ -59,6 +62,7 @@
         <definition>ADVimbaFrameObserver::~ADVimbaFrameObserver</definition>
         <argsstring>()</argsstring>
         <name>~ADVimbaFrameObserver</name>
+        <qualifiedname>ADVimbaFrameObserver::~ADVimbaFrameObserver</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -72,6 +76,7 @@
         <definition>void ADVimbaFrameObserver::FrameReceived</definition>
         <argsstring>(const FramePtr pFrame)</argsstring>
         <name>FrameReceived</name>
+        <qualifiedname>ADVimbaFrameObserver::FrameReceived</qualifiedname>
         <param>
           <type>const FramePtr</type>
           <declname>pFrame</declname>
@@ -84,7 +89,7 @@
         </inbodydescription>
         <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADVimba/vimbaApp/src/ADVimba.h" line="24" column="18" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADVimba/vimbaApp/src/ADVimba.cpp" bodystart="81" bodyend="83"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
@@ -101,6 +106,27 @@
       </node>
     </inheritancegraph>
     <collaborationgraph>
+      <node id="5">
+        <label>ADDriver</label>
+        <link refid="class_a_d_driver"/>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>ADGenICam</label>
+        <link refid="class_a_d_gen_i_cam"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+        <childnode refid="14" relation="usage">
+          <edgelabel>mGCFeatureSet</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>ADVimba</label>
+        <link refid="class_a_d_vimba"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
       <node id="1">
         <label>ADVimbaFrameObserver</label>
         <link refid="class_a_d_vimba_frame_observer"/>
@@ -110,22 +136,6 @@
           <edgelabel>pVimba_</edgelabel>
         </childnode>
       </node>
-      <node id="11">
-        <label>NDDimension</label>
-        <link refid="struct_n_d_dimension"/>
-      </node>
-      <node id="3">
-        <label>ADVimba</label>
-        <link refid="class_a_d_vimba"/>
-        <childnode refid="4" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="7">
-        <label>asynPortDriver</label>
-      </node>
-      <node id="13">
-        <label>string</label>
-      </node>
       <node id="12">
         <label>Codec_t</label>
         <link refid="struct_codec__t"/>
@@ -133,24 +143,43 @@
           <edgelabel>name</edgelabel>
         </childnode>
       </node>
-      <node id="10">
+      <node id="14">
+        <label>GenICamFeatureSet</label>
+        <link refid="class_gen_i_cam_feature_set"/>
+      </node>
+      <node id="2">
+        <label>IFrameObserver</label>
+      </node>
+      <node id="9">
         <label>NDArray</label>
         <link refid="class_n_d_array"/>
         <childnode refid="8" relation="usage">
           <edgelabel>pNDArrayPool</edgelabel>
         </childnode>
-        <childnode refid="11" relation="usage">
+        <childnode refid="6" relation="usage">
+          <edgelabel>pDriver</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="usage">
           <edgelabel>dims</edgelabel>
         </childnode>
-        <childnode refid="9" relation="usage">
+        <childnode refid="11" relation="usage">
           <edgelabel>pAttributeList</edgelabel>
         </childnode>
         <childnode refid="12" relation="usage">
           <edgelabel>codec</edgelabel>
         </childnode>
-        <childnode refid="6" relation="usage">
-          <edgelabel>pDriver</edgelabel>
-        </childnode>
+      </node>
+      <node id="8">
+        <label>NDArrayPool</label>
+        <link refid="class_n_d_array_pool"/>
+      </node>
+      <node id="11">
+        <label>NDAttributeList</label>
+        <link refid="class_n_d_attribute_list"/>
+      </node>
+      <node id="10">
+        <label>NDDimension</label>
+        <link refid="struct_n_d_dimension"/>
       </node>
       <node id="6">
         <label>asynNDArrayDriver</label>
@@ -161,41 +190,17 @@
           <edgelabel>pNDArrayPool</edgelabel>
         </childnode>
         <childnode refid="9" relation="usage">
-          <edgelabel>pAttributeList</edgelabel>
-        </childnode>
-        <childnode refid="10" relation="usage">
           <edgelabel>pArrays</edgelabel>
         </childnode>
-      </node>
-      <node id="14">
-        <label>GenICamFeatureSet</label>
-        <link refid="class_gen_i_cam_feature_set"/>
-      </node>
-      <node id="2">
-        <label>IFrameObserver</label>
-      </node>
-      <node id="8">
-        <label>NDArrayPool</label>
-        <link refid="class_n_d_array_pool"/>
-      </node>
-      <node id="5">
-        <label>ADDriver</label>
-        <link refid="class_a_d_driver"/>
-        <childnode refid="6" relation="public-inheritance">
+        <childnode refid="11" relation="usage">
+          <edgelabel>pAttributeList</edgelabel>
         </childnode>
       </node>
-      <node id="9">
-        <label>NDAttributeList</label>
-        <link refid="class_n_d_attribute_list"/>
+      <node id="7">
+        <label>asynPortDriver</label>
       </node>
-      <node id="4">
-        <label>ADGenICam</label>
-        <link refid="class_a_d_gen_i_cam"/>
-        <childnode refid="5" relation="public-inheritance">
-        </childnode>
-        <childnode refid="14" relation="usage">
-          <edgelabel>mGCFeatureSet</edgelabel>
-        </childnode>
+      <node id="13">
+        <label>string</label>
       </node>
     </collaborationgraph>
     <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADVimba/vimbaApp/src/ADVimba.h" line="20" column="1" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADVimba/vimbaApp/src/ADVimba.h" bodystart="20" bodyend="27"/>

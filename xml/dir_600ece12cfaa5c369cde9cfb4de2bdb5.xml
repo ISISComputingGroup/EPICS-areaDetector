@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="dir_600ece12cfaa5c369cde9cfb4de2bdb5" kind="dir">
     <compoundname>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADmar345/mar345App</compoundname>
     <innerdir refid="dir_2c1382927526ffeb394cfc07b110d821">/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADmar345/mar345App/src</innerdir>

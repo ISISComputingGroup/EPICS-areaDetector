@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="class_gen_i_cam_feature" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>GenICamFeature</compoundname>
     <derivedcompoundref refid="class_pylon_feature" prot="public" virt="non-virtual">PylonFeature</derivedcompoundref>
@@ -7,12 +7,13 @@
     <derivedcompoundref refid="class_vimba_feature" prot="public" virt="non-virtual">VimbaFeature</derivedcompoundref>
     <derivedcompoundref refid="classarv_feature" prot="public" virt="non-virtual">arvFeature</derivedcompoundref>
     <includes refid="_gen_i_cam_feature_8h" local="no">GenICamFeature.h</includes>
-      <sectiondef kind="protected-attrib">
+    <sectiondef kind="protected-attrib">
       <memberdef kind="variable" id="class_gen_i_cam_feature_1ad3a31a4e8a2108391dcb34829842fc96" prot="protected" static="no" mutable="no">
         <type>std::string</type>
         <definition>std::string GenICamFeature::mAsynName</definition>
         <argsstring></argsstring>
         <name>mAsynName</name>
+        <qualifiedname>GenICamFeature::mAsynName</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -26,6 +27,7 @@
         <definition>asynParamType GenICamFeature::mAsynType</definition>
         <argsstring></argsstring>
         <name>mAsynType</name>
+        <qualifiedname>GenICamFeature::mAsynType</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -39,6 +41,7 @@
         <definition>int GenICamFeature::mAsynIndex</definition>
         <argsstring></argsstring>
         <name>mAsynIndex</name>
+        <qualifiedname>GenICamFeature::mAsynIndex</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -52,6 +55,7 @@
         <definition>std::string GenICamFeature::mFeatureName</definition>
         <argsstring></argsstring>
         <name>mFeatureName</name>
+        <qualifiedname>GenICamFeature::mFeatureName</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -65,6 +69,7 @@
         <definition>GCFeatureType_t GenICamFeature::mFeatureType</definition>
         <argsstring></argsstring>
         <name>mFeatureType</name>
+        <qualifiedname>GenICamFeature::mFeatureType</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -78,6 +83,7 @@
         <definition>std::vector&lt;std::string&gt; GenICamFeature::mEnumStrings</definition>
         <argsstring></argsstring>
         <name>mEnumStrings</name>
+        <qualifiedname>GenICamFeature::mEnumStrings</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -91,6 +97,7 @@
         <definition>std::vector&lt;int&gt; GenICamFeature::mEnumValues</definition>
         <argsstring></argsstring>
         <name>mEnumValues</name>
+        <qualifiedname>GenICamFeature::mEnumValues</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -104,6 +111,7 @@
         <definition>int GenICamFeature::mImageMode</definition>
         <argsstring></argsstring>
         <name>mImageMode</name>
+        <qualifiedname>GenICamFeature::mImageMode</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -117,6 +125,7 @@
         <definition>GenICamFeatureSet* GenICamFeature::mSet</definition>
         <argsstring></argsstring>
         <name>mSet</name>
+        <qualifiedname>GenICamFeature::mSet</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -125,13 +134,14 @@
         </inbodydescription>
         <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADGenICam/GenICamApp/src/GenICamFeature.h" line="65" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADGenICam/GenICamApp/src/GenICamFeature.h" bodystart="65" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="private-func">
+    </sectiondef>
+    <sectiondef kind="private-func">
       <memberdef kind="function" id="class_gen_i_cam_feature_1af1ffc41540a00ae11b7fb112a7043a55" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
         <definition>int GenICamFeature::getParam</definition>
         <argsstring>(epicsInt64 &amp;value)</argsstring>
         <name>getParam</name>
+        <qualifiedname>GenICamFeature::getParam</qualifiedname>
         <param>
           <type>epicsInt64 &amp;</type>
           <declname>value</declname>
@@ -149,6 +159,7 @@
         <definition>int GenICamFeature::getParam</definition>
         <argsstring>(epicsInt32 &amp;value)</argsstring>
         <name>getParam</name>
+        <qualifiedname>GenICamFeature::getParam</qualifiedname>
         <param>
           <type>epicsInt32 &amp;</type>
           <declname>value</declname>
@@ -166,6 +177,7 @@
         <definition>int GenICamFeature::getParam</definition>
         <argsstring>(double &amp;value)</argsstring>
         <name>getParam</name>
+        <qualifiedname>GenICamFeature::getParam</qualifiedname>
         <param>
           <type>double &amp;</type>
           <declname>value</declname>
@@ -183,6 +195,7 @@
         <definition>int GenICamFeature::getParam</definition>
         <argsstring>(std::string &amp;value)</argsstring>
         <name>getParam</name>
+        <qualifiedname>GenICamFeature::getParam</qualifiedname>
         <param>
           <type>std::string &amp;</type>
           <declname>value</declname>
@@ -200,6 +213,7 @@
         <definition>int GenICamFeature::setParam</definition>
         <argsstring>(epicsInt64 value)</argsstring>
         <name>setParam</name>
+        <qualifiedname>GenICamFeature::setParam</qualifiedname>
         <param>
           <type>epicsInt64</type>
           <declname>value</declname>
@@ -217,6 +231,7 @@
         <definition>int GenICamFeature::setParam</definition>
         <argsstring>(epicsInt32 value)</argsstring>
         <name>setParam</name>
+        <qualifiedname>GenICamFeature::setParam</qualifiedname>
         <param>
           <type>epicsInt32</type>
           <declname>value</declname>
@@ -234,6 +249,7 @@
         <definition>int GenICamFeature::setParam</definition>
         <argsstring>(double value)</argsstring>
         <name>setParam</name>
+        <qualifiedname>GenICamFeature::setParam</qualifiedname>
         <param>
           <type>double</type>
           <declname>value</declname>
@@ -251,6 +267,7 @@
         <definition>int GenICamFeature::setParam</definition>
         <argsstring>(std::string const &amp;value)</argsstring>
         <name>setParam</name>
+        <qualifiedname>GenICamFeature::setParam</qualifiedname>
         <param>
           <type>std::string const &amp;</type>
           <declname>value</declname>
@@ -268,6 +285,7 @@
         <definition>int GenICamFeature::setParam</definition>
         <argsstring>(bool value)</argsstring>
         <name>setParam</name>
+        <qualifiedname>GenICamFeature::setParam</qualifiedname>
         <param>
           <type>bool</type>
           <declname>value</declname>
@@ -280,13 +298,14 @@
         </inbodydescription>
         <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADGenICam/GenICamApp/src/GenICamFeature.h" line="53" column="9" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADGenICam/GenICamApp/src/GenICamFeature.cpp" bodystart="138" bodyend="141"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="public-func">
+    </sectiondef>
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="class_gen_i_cam_feature_1a5bd0506dd71d728e0e1219e665245b8d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>GenICamFeature::GenICamFeature</definition>
         <argsstring>(GenICamFeatureSet *set, std::string const &amp;asynName, asynParamType asynType, int asynIndex, std::string const &amp;featureName, GCFeatureType_t featureType)</argsstring>
         <name>GenICamFeature</name>
+        <qualifiedname>GenICamFeature::GenICamFeature</qualifiedname>
         <param>
           <type><ref refid="class_gen_i_cam_feature_set" kindref="compound">GenICamFeatureSet</ref> *</type>
           <declname>set</declname>
@@ -324,6 +343,7 @@
         <definition>virtual bool GenICamFeature::isImplemented</definition>
         <argsstring>(void)=0</argsstring>
         <name>isImplemented</name>
+        <qualifiedname>GenICamFeature::isImplemented</qualifiedname>
         <reimplementedby refid="classarv_feature_1a93b4dca4bc978371e33f4d8aacfbd071">isImplemented</reimplementedby>
         <reimplementedby refid="class_pylon_feature_1aa99c19a7d128b8572320b6b58bbbfed5">isImplemented</reimplementedby>
         <reimplementedby refid="class_s_p_feature_1af5daa9e1c2ee5b2fe973094b5c7bed78">isImplemented</reimplementedby>
@@ -344,6 +364,7 @@
         <definition>virtual bool GenICamFeature::isAvailable</definition>
         <argsstring>(void)=0</argsstring>
         <name>isAvailable</name>
+        <qualifiedname>GenICamFeature::isAvailable</qualifiedname>
         <reimplementedby refid="classarv_feature_1ad42f91ffe8b41fab861d38cf9f990a5c">isAvailable</reimplementedby>
         <reimplementedby refid="class_pylon_feature_1ac2efae6b69a3b43c36bf62a6b786f9ab">isAvailable</reimplementedby>
         <reimplementedby refid="class_s_p_feature_1aac7ab88326d3159e70445ee01805f676">isAvailable</reimplementedby>
@@ -364,6 +385,7 @@
         <definition>virtual bool GenICamFeature::isReadable</definition>
         <argsstring>(void)=0</argsstring>
         <name>isReadable</name>
+        <qualifiedname>GenICamFeature::isReadable</qualifiedname>
         <reimplementedby refid="classarv_feature_1ad4caffffd57e6da59766d487b841bdf3">isReadable</reimplementedby>
         <reimplementedby refid="class_pylon_feature_1ab76f83bea621c8590ca27f559eee32c8">isReadable</reimplementedby>
         <reimplementedby refid="class_s_p_feature_1a4c9ca56b17752506ec87755b21c85c9b">isReadable</reimplementedby>
@@ -384,6 +406,7 @@
         <definition>virtual bool GenICamFeature::isWritable</definition>
         <argsstring>(void)=0</argsstring>
         <name>isWritable</name>
+        <qualifiedname>GenICamFeature::isWritable</qualifiedname>
         <reimplementedby refid="classarv_feature_1ae7a64d84bb2801ab9f42fd2f7b1650b4">isWritable</reimplementedby>
         <reimplementedby refid="class_pylon_feature_1a416baf51bf78216f7d770ea56ad687ab">isWritable</reimplementedby>
         <reimplementedby refid="class_s_p_feature_1aca027dec663b93d50efd45e31a6f0538">isWritable</reimplementedby>
@@ -404,6 +427,7 @@
         <definition>virtual epicsInt64 GenICamFeature::readInteger</definition>
         <argsstring>(void)=0</argsstring>
         <name>readInteger</name>
+        <qualifiedname>GenICamFeature::readInteger</qualifiedname>
         <reimplementedby refid="classarv_feature_1a6b6c8b899c2def91ee97d06154e66611">readInteger</reimplementedby>
         <reimplementedby refid="class_pylon_feature_1a262f2827561daeb8c04fc0d529dbe7ee">readInteger</reimplementedby>
         <reimplementedby refid="class_s_p_feature_1a4e62ad63eaf367f635ab1644ba29af18">readInteger</reimplementedby>
@@ -424,6 +448,7 @@
         <definition>virtual epicsInt64 GenICamFeature::readIntegerMin</definition>
         <argsstring>(void)=0</argsstring>
         <name>readIntegerMin</name>
+        <qualifiedname>GenICamFeature::readIntegerMin</qualifiedname>
         <reimplementedby refid="classarv_feature_1a0417f438712c9435d55cef8a20d4ba88">readIntegerMin</reimplementedby>
         <reimplementedby refid="class_pylon_feature_1afd0ca2e47fbf1a4a980b67ad23bd912d">readIntegerMin</reimplementedby>
         <reimplementedby refid="class_s_p_feature_1aa583eccc762ec9981e5f0ea218bbe48a">readIntegerMin</reimplementedby>
@@ -444,6 +469,7 @@
         <definition>virtual epicsInt64 GenICamFeature::readIntegerMax</definition>
         <argsstring>(void)=0</argsstring>
         <name>readIntegerMax</name>
+        <qualifiedname>GenICamFeature::readIntegerMax</qualifiedname>
         <reimplementedby refid="classarv_feature_1a3287d33386a12e3ab74080561d52daba">readIntegerMax</reimplementedby>
         <reimplementedby refid="class_pylon_feature_1a589e4b8b308422852a6ef5d5299df409">readIntegerMax</reimplementedby>
         <reimplementedby refid="class_s_p_feature_1a7366a8b2907d8b080dc92bb52e916055">readIntegerMax</reimplementedby>
@@ -464,6 +490,7 @@
         <definition>virtual epicsInt64 GenICamFeature::readIncrement</definition>
         <argsstring>(void)=0</argsstring>
         <name>readIncrement</name>
+        <qualifiedname>GenICamFeature::readIncrement</qualifiedname>
         <reimplementedby refid="classarv_feature_1a0b8c49f704350eecd2e0ddc8664e7790">readIncrement</reimplementedby>
         <reimplementedby refid="class_pylon_feature_1a5539fe4b2265dfad2bf5bd1da5896c43">readIncrement</reimplementedby>
         <reimplementedby refid="class_s_p_feature_1a0332d03256f04cd7e34c013e2b6d1662">readIncrement</reimplementedby>
@@ -484,6 +511,7 @@
         <definition>virtual void GenICamFeature::writeInteger</definition>
         <argsstring>(epicsInt64 value)=0</argsstring>
         <name>writeInteger</name>
+        <qualifiedname>GenICamFeature::writeInteger</qualifiedname>
         <reimplementedby refid="classarv_feature_1af69989aa823c71986c30386c02b8fe71">writeInteger</reimplementedby>
         <reimplementedby refid="class_pylon_feature_1aeea784e45ef145e46e2f5608b27ec493">writeInteger</reimplementedby>
         <reimplementedby refid="class_s_p_feature_1a1ef811440ec8839608bf1f88ff85f000">writeInteger</reimplementedby>
@@ -505,6 +533,7 @@
         <definition>virtual bool GenICamFeature::readBoolean</definition>
         <argsstring>(void)=0</argsstring>
         <name>readBoolean</name>
+        <qualifiedname>GenICamFeature::readBoolean</qualifiedname>
         <reimplementedby refid="classarv_feature_1a23e65898599ec3245d5ef18efc042bd8">readBoolean</reimplementedby>
         <reimplementedby refid="class_pylon_feature_1a25b059253ed5276379143d8f0ffd749b">readBoolean</reimplementedby>
         <reimplementedby refid="class_s_p_feature_1ad32da3aff0bb8d92f425f9c3a99e4c58">readBoolean</reimplementedby>
@@ -525,6 +554,7 @@
         <definition>virtual void GenICamFeature::writeBoolean</definition>
         <argsstring>(bool value)=0</argsstring>
         <name>writeBoolean</name>
+        <qualifiedname>GenICamFeature::writeBoolean</qualifiedname>
         <reimplementedby refid="classarv_feature_1a79a7fb75522bf0e13023a43af71231a6">writeBoolean</reimplementedby>
         <reimplementedby refid="class_pylon_feature_1acb9ad2b632311900efe8f11b6d272992">writeBoolean</reimplementedby>
         <reimplementedby refid="class_s_p_feature_1a4c0aea0b0e5eb87ba7a0d678662c2cde">writeBoolean</reimplementedby>
@@ -546,6 +576,7 @@
         <definition>virtual double GenICamFeature::readDouble</definition>
         <argsstring>(void)=0</argsstring>
         <name>readDouble</name>
+        <qualifiedname>GenICamFeature::readDouble</qualifiedname>
         <reimplementedby refid="classarv_feature_1ae5b1ca5cddc95cac568125a23674dece">readDouble</reimplementedby>
         <reimplementedby refid="class_pylon_feature_1a3daf9acc36e2572745171a1dd8b8f5c4">readDouble</reimplementedby>
         <reimplementedby refid="class_s_p_feature_1a3f5445cae3e3de3a9186457f1ea612f0">readDouble</reimplementedby>
@@ -566,6 +597,7 @@
         <definition>virtual double GenICamFeature::readDoubleMin</definition>
         <argsstring>(void)=0</argsstring>
         <name>readDoubleMin</name>
+        <qualifiedname>GenICamFeature::readDoubleMin</qualifiedname>
         <reimplementedby refid="classarv_feature_1ab1b3da39e978cb915ff758779b04e645">readDoubleMin</reimplementedby>
         <reimplementedby refid="class_pylon_feature_1af872bd560afb4773e62651669839cdc5">readDoubleMin</reimplementedby>
         <reimplementedby refid="class_s_p_feature_1abeba8dbeceb601341a258496545ec9c1">readDoubleMin</reimplementedby>
@@ -586,6 +618,7 @@
         <definition>virtual double GenICamFeature::readDoubleMax</definition>
         <argsstring>(void)=0</argsstring>
         <name>readDoubleMax</name>
+        <qualifiedname>GenICamFeature::readDoubleMax</qualifiedname>
         <reimplementedby refid="classarv_feature_1a44d52c975210230c22b1137602500f88">readDoubleMax</reimplementedby>
         <reimplementedby refid="class_pylon_feature_1a2c7f065e7c90a57798e2f10793b1b579">readDoubleMax</reimplementedby>
         <reimplementedby refid="class_s_p_feature_1aa469b0637b86b2736d5bbec9ccff04b3">readDoubleMax</reimplementedby>
@@ -606,6 +639,7 @@
         <definition>virtual void GenICamFeature::writeDouble</definition>
         <argsstring>(double value)=0</argsstring>
         <name>writeDouble</name>
+        <qualifiedname>GenICamFeature::writeDouble</qualifiedname>
         <reimplementedby refid="classarv_feature_1a12ecf0f5939d43d122695d6f6d111d5a">writeDouble</reimplementedby>
         <reimplementedby refid="class_pylon_feature_1a121adde2afb3848f9e93f87fe9223ce9">writeDouble</reimplementedby>
         <reimplementedby refid="class_s_p_feature_1a42fbcb8d84d5704fdb9abd79b3e5c0d2">writeDouble</reimplementedby>
@@ -627,6 +661,7 @@
         <definition>virtual int GenICamFeature::readEnumIndex</definition>
         <argsstring>(void)=0</argsstring>
         <name>readEnumIndex</name>
+        <qualifiedname>GenICamFeature::readEnumIndex</qualifiedname>
         <reimplementedby refid="classarv_feature_1a72350f88a73ec1346161e6314eecf833">readEnumIndex</reimplementedby>
         <reimplementedby refid="class_pylon_feature_1aa5954d796807892af3a2169357b4f207">readEnumIndex</reimplementedby>
         <reimplementedby refid="class_s_p_feature_1ac7d4eb85e5cb58210835f102d8d0e2bc">readEnumIndex</reimplementedby>
@@ -647,6 +682,7 @@
         <definition>virtual void GenICamFeature::writeEnumIndex</definition>
         <argsstring>(int value)=0</argsstring>
         <name>writeEnumIndex</name>
+        <qualifiedname>GenICamFeature::writeEnumIndex</qualifiedname>
         <reimplementedby refid="classarv_feature_1a7a2c8646e1002c09d4b7ffe684e5e33b">writeEnumIndex</reimplementedby>
         <reimplementedby refid="class_pylon_feature_1ab1026db851fa6b1c92c0ebac7223eda0">writeEnumIndex</reimplementedby>
         <reimplementedby refid="class_s_p_feature_1a3a54767659084e1968fa75c04391a111">writeEnumIndex</reimplementedby>
@@ -668,6 +704,7 @@
         <definition>virtual std::string GenICamFeature::readEnumString</definition>
         <argsstring>(void)=0</argsstring>
         <name>readEnumString</name>
+        <qualifiedname>GenICamFeature::readEnumString</qualifiedname>
         <reimplementedby refid="classarv_feature_1a7110039414be42832bf2758a3d4816c3">readEnumString</reimplementedby>
         <reimplementedby refid="class_pylon_feature_1a9df42388121bd9407acb43e514b4d458">readEnumString</reimplementedby>
         <reimplementedby refid="class_s_p_feature_1a7b427c91197f548813d9e437dafee80e">readEnumString</reimplementedby>
@@ -688,6 +725,7 @@
         <definition>virtual void GenICamFeature::writeEnumString</definition>
         <argsstring>(std::string const &amp;value)=0</argsstring>
         <name>writeEnumString</name>
+        <qualifiedname>GenICamFeature::writeEnumString</qualifiedname>
         <reimplementedby refid="classarv_feature_1a6d19bea85ec84a8d46189d688a729477">writeEnumString</reimplementedby>
         <reimplementedby refid="class_pylon_feature_1a61666f09ee45568662a71afb60cf32cb">writeEnumString</reimplementedby>
         <reimplementedby refid="class_s_p_feature_1ae7c2da3d4e6db77f9bff77c55d42b41d">writeEnumString</reimplementedby>
@@ -709,6 +747,7 @@
         <definition>virtual void GenICamFeature::readEnumChoices</definition>
         <argsstring>(std::vector&lt; std::string &gt; &amp;enumStrings, std::vector&lt; int &gt; &amp;enumValues)=0</argsstring>
         <name>readEnumChoices</name>
+        <qualifiedname>GenICamFeature::readEnumChoices</qualifiedname>
         <reimplementedby refid="classarv_feature_1aa4d8878fd65d7c425627ddd30b4ee69f">readEnumChoices</reimplementedby>
         <reimplementedby refid="class_pylon_feature_1a466178a774e7b1886b4faa1ba4cb9932">readEnumChoices</reimplementedby>
         <reimplementedby refid="class_s_p_feature_1ac790129625b6df53ae24b728ec9077eb">readEnumChoices</reimplementedby>
@@ -734,6 +773,7 @@
         <definition>virtual std::string GenICamFeature::readString</definition>
         <argsstring>(void)=0</argsstring>
         <name>readString</name>
+        <qualifiedname>GenICamFeature::readString</qualifiedname>
         <reimplementedby refid="classarv_feature_1a61643827a4b765a55b469a989cf3a756">readString</reimplementedby>
         <reimplementedby refid="class_pylon_feature_1a7ca95979b803e37ca7470ad160594246">readString</reimplementedby>
         <reimplementedby refid="class_s_p_feature_1a4b2a3f63d75d0cd04cf9f03bf191866a">readString</reimplementedby>
@@ -754,6 +794,7 @@
         <definition>virtual void GenICamFeature::writeString</definition>
         <argsstring>(std::string const &amp;value)=0</argsstring>
         <name>writeString</name>
+        <qualifiedname>GenICamFeature::writeString</qualifiedname>
         <reimplementedby refid="classarv_feature_1a028a2250a8347f125b8bd444ea2f07b6">writeString</reimplementedby>
         <reimplementedby refid="class_pylon_feature_1a784ce9746bc90cd63eacfabc8907b04f">writeString</reimplementedby>
         <reimplementedby refid="class_s_p_feature_1a7fc3b3ceb15cc3ad3aad66f9a546920f">writeString</reimplementedby>
@@ -775,6 +816,7 @@
         <definition>virtual void GenICamFeature::writeCommand</definition>
         <argsstring>(void)=0</argsstring>
         <name>writeCommand</name>
+        <qualifiedname>GenICamFeature::writeCommand</qualifiedname>
         <reimplementedby refid="classarv_feature_1a2829d4170ab7bde4977ddf7ab883e145">writeCommand</reimplementedby>
         <reimplementedby refid="class_pylon_feature_1a78e53f32c0b5b6142126af0381024561">writeCommand</reimplementedby>
         <reimplementedby refid="class_s_p_feature_1a4110287d09f728c8a47a08affbd0a85a">writeCommand</reimplementedby>
@@ -795,6 +837,7 @@
         <definition>int GenICamFeature::write</definition>
         <argsstring>(void *pValue, void *pReadbackValue, bool setParam)</argsstring>
         <name>write</name>
+        <qualifiedname>GenICamFeature::write</qualifiedname>
         <param>
           <type>void *</type>
           <declname>pValue</declname>
@@ -820,6 +863,7 @@
         <definition>int GenICamFeature::read</definition>
         <argsstring>(void *pValue, bool bSetParam)</argsstring>
         <name>read</name>
+        <qualifiedname>GenICamFeature::read</qualifiedname>
         <param>
           <type>void *</type>
           <declname>pValue</declname>
@@ -841,6 +885,7 @@
         <definition>void GenICamFeature::report</definition>
         <argsstring>(FILE *fp, int details)</argsstring>
         <name>report</name>
+        <qualifiedname>GenICamFeature::report</qualifiedname>
         <param>
           <type>FILE *</type>
           <declname>fp</declname>
@@ -862,6 +907,7 @@
         <definition>int GenICamFeature::getAsynIndex</definition>
         <argsstring>(void)</argsstring>
         <name>getAsynIndex</name>
+        <qualifiedname>GenICamFeature::getAsynIndex</qualifiedname>
         <param>
           <type>void</type>
         </param>
@@ -878,6 +924,7 @@
         <definition>std::string GenICamFeature::getAsynName</definition>
         <argsstring>(void)</argsstring>
         <name>getAsynName</name>
+        <qualifiedname>GenICamFeature::getAsynName</qualifiedname>
         <param>
           <type>void</type>
         </param>
@@ -894,6 +941,7 @@
         <definition>asynParamType GenICamFeature::getAsynType</definition>
         <argsstring>(void)</argsstring>
         <name>getAsynType</name>
+        <qualifiedname>GenICamFeature::getAsynType</qualifiedname>
         <param>
           <type>void</type>
         </param>
@@ -910,6 +958,7 @@
         <definition>std::string GenICamFeature::getFeatureName</definition>
         <argsstring>(void)</argsstring>
         <name>getFeatureName</name>
+        <qualifiedname>GenICamFeature::getFeatureName</qualifiedname>
         <param>
           <type>void</type>
         </param>
@@ -926,6 +975,7 @@
         <definition>std::string GenICamFeature::getValueAsString</definition>
         <argsstring>(void)</argsstring>
         <name>getValueAsString</name>
+        <qualifiedname>GenICamFeature::getValueAsString</qualifiedname>
         <param>
           <type>void</type>
         </param>
@@ -942,6 +992,7 @@
         <definition>GCFeatureType_t GenICamFeature::getFeatureType</definition>
         <argsstring>(void)</argsstring>
         <name>getFeatureType</name>
+        <qualifiedname>GenICamFeature::getFeatureType</qualifiedname>
         <param>
           <type>void</type>
         </param>
@@ -958,6 +1009,7 @@
         <definition>int GenICamFeature::convertEnum</definition>
         <argsstring>(epicsInt32 inputValue, GCConvertDirection_t direction)</argsstring>
         <name>convertEnum</name>
+        <qualifiedname>GenICamFeature::convertEnum</qualifiedname>
         <param>
           <type>epicsInt32</type>
           <declname>inputValue</declname>
@@ -979,6 +1031,7 @@
         <definition>double GenICamFeature::convertDoubleUnits</definition>
         <argsstring>(double inputValue, GCConvertDirection_t direction)</argsstring>
         <name>convertDoubleUnits</name>
+        <qualifiedname>GenICamFeature::convertDoubleUnits</qualifiedname>
         <param>
           <type>double</type>
           <declname>inputValue</declname>
@@ -995,27 +1048,19 @@
         </inbodydescription>
         <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADGenICam/GenICamApp/src/GenICamFeature.h" line="116" column="20" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADGenICam/GenICamApp/src/GenICamFeature.cpp" bodystart="505" bodyend="522"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="5">
-        <label>arvFeature</label>
-        <link refid="classarv_feature"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
+      <node id="1">
+        <label>GenICamFeature</label>
+        <link refid="class_gen_i_cam_feature"/>
       </node>
       <node id="2">
         <label>PylonFeature</label>
         <link refid="class_pylon_feature"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="4">
-        <label>VimbaFeature</label>
-        <link refid="class_vimba_feature"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
@@ -1025,29 +1070,37 @@
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="1">
-        <label>GenICamFeature</label>
-        <link refid="class_gen_i_cam_feature"/>
+      <node id="4">
+        <label>VimbaFeature</label>
+        <link refid="class_vimba_feature"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>arvFeature</label>
+        <link refid="classarv_feature"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="3">
-        <label>string</label>
-      </node>
-      <node id="2">
-        <label>GenICamFeatureSet</label>
-        <link refid="class_gen_i_cam_feature_set"/>
-      </node>
       <node id="1">
         <label>GenICamFeature</label>
         <link refid="class_gen_i_cam_feature"/>
         <childnode refid="2" relation="usage">
-          <edgelabel>mSet</edgelabel>
-        </childnode>
-        <childnode refid="3" relation="usage">
           <edgelabel>mAsynName</edgelabel>
           <edgelabel>mFeatureName</edgelabel>
         </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>mSet</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>GenICamFeatureSet</label>
+        <link refid="class_gen_i_cam_feature_set"/>
+      </node>
+      <node id="2">
+        <label>string</label>
       </node>
     </collaborationgraph>
     <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADGenICam/GenICamApp/src/GenICamFeature.h" line="40" column="1" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADGenICam/GenICamApp/src/GenICamFeature.h" bodystart="41" bodyend="117"/>

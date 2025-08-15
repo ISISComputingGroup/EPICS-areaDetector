@@ -1,15 +1,16 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="class_n_d_file_f_i_t_s" kind="class" language="C++" prot="public">
     <compoundname>NDFileFITS</compoundname>
     <basecompoundref refid="class_n_d_plugin_file" prot="public" virt="non-virtual">NDPluginFile</basecompoundref>
     <includes refid="_n_d_file_f_i_t_s_8h" local="no">NDFileFITS.h</includes>
-      <sectiondef kind="protected-attrib">
+    <sectiondef kind="protected-attrib">
       <memberdef kind="variable" id="class_n_d_file_f_i_t_s_1a9ac8c74a7d661b841dd30587d95fc7e1" prot="protected" static="no" mutable="no">
         <type>int</type>
         <definition>int NDFileFITS::NDFITSFileHeaderFullPathname</definition>
         <argsstring></argsstring>
         <name>NDFITSFileHeaderFullPathname</name>
+        <qualifiedname>NDFileFITS::NDFITSFileHeaderFullPathname</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -18,13 +19,14 @@
         </inbodydescription>
         <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileFITS.h" line="33" column="9" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileFITS.h" bodystart="33" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="private-attrib">
+    </sectiondef>
+    <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="class_n_d_file_f_i_t_s_1ac0fd515b397dd536fc93bc7b5ab46b66" prot="private" static="no" mutable="no">
         <type>char</type>
         <definition>char NDFileFITS::fits_status_str[FLEN_STATUS]</definition>
         <argsstring>[FLEN_STATUS]</argsstring>
         <name>fits_status_str</name>
+        <qualifiedname>NDFileFITS::fits_status_str</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -38,6 +40,7 @@
         <definition>fitsfile* NDFileFITS::fitsFilePtr</definition>
         <argsstring></argsstring>
         <name>fitsFilePtr</name>
+        <qualifiedname>NDFileFITS::fitsFilePtr</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -51,6 +54,7 @@
         <definition>int NDFileFITS::fitsStatus</definition>
         <argsstring></argsstring>
         <name>fitsStatus</name>
+        <qualifiedname>NDFileFITS::fitsStatus</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -59,13 +63,14 @@
         </inbodydescription>
         <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileFITS.h" line="41" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileFITS.h" bodystart="41" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="public-func">
+    </sectiondef>
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="class_n_d_file_f_i_t_s_1a89eeb99591b812614a4a4f68051dddc6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>NDFileFITS::NDFileFITS</definition>
         <argsstring>(const char *portName, int queueSize, int blockingCallbacks, const char *NDArrayPort, int NDArrayAddr, int priority, int stackSize)</argsstring>
         <name>NDFileFITS</name>
+        <qualifiedname>NDFileFITS::NDFileFITS</qualifiedname>
         <param>
           <type>const char *</type>
           <declname>portName</declname>
@@ -166,6 +171,7 @@
         <definition>asynStatus NDFileFITS::openFile</definition>
         <argsstring>(const char *fileName, NDFileOpenMode_t openMode, NDArray *pArray)</argsstring>
         <name>openFile</name>
+        <qualifiedname>NDFileFITS::openFile</qualifiedname>
         <reimplements refid="class_n_d_plugin_file_1a9758e4ab84ba1959fd942bd181f7577f">openFile</reimplements>
         <param>
           <type>const char *</type>
@@ -219,6 +225,7 @@
         <definition>asynStatus NDFileFITS::readFile</definition>
         <argsstring>(NDArray **pArray)</argsstring>
         <name>readFile</name>
+        <qualifiedname>NDFileFITS::readFile</qualifiedname>
         <reimplements refid="class_n_d_plugin_file_1a810cbc3916e9e1aae2ec1d9c589320f2">readFile</reimplements>
         <param>
           <type><ref refid="class_n_d_array" kindref="compound">NDArray</ref> **</type>
@@ -248,6 +255,7 @@
         <definition>asynStatus NDFileFITS::writeFile</definition>
         <argsstring>(NDArray *pArray)</argsstring>
         <name>writeFile</name>
+        <qualifiedname>NDFileFITS::writeFile</qualifiedname>
         <reimplements refid="class_n_d_plugin_file_1aa4492e7f3b478ba3d9cd5f7a179c469b">writeFile</reimplements>
         <param>
           <type><ref refid="class_n_d_array" kindref="compound">NDArray</ref> *</type>
@@ -277,6 +285,7 @@
         <definition>asynStatus NDFileFITS::closeFile</definition>
         <argsstring>()</argsstring>
         <name>closeFile</name>
+        <qualifiedname>NDFileFITS::closeFile</qualifiedname>
         <reimplements refid="class_n_d_plugin_file_1a815abad359463ebfecfd9c5d0c01b6fc">closeFile</reimplements>
         <briefdescription>
 <para>Closes the FITS file. </para>
@@ -287,13 +296,14 @@
         </inbodydescription>
         <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileFITS.h" line="30" column="24" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileFITS.cpp" bodystart="126" bodyend="137"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="private-func">
+    </sectiondef>
+    <sectiondef kind="private-func">
       <memberdef kind="function" id="class_n_d_file_f_i_t_s_1ace1f23c14d5a1881689584c1a9881ad6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>asynStatus</type>
         <definition>asynStatus NDFileFITS::WriteKeys</definition>
         <argsstring>(fitsfile *fitsFilePtr, int *fitsStatus)</argsstring>
         <name>WriteKeys</name>
+        <qualifiedname>NDFileFITS::WriteKeys</qualifiedname>
         <param>
           <type>fitsfile *</type>
           <declname>fitsFilePtr</declname>
@@ -310,13 +320,19 @@
         </inbodydescription>
         <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileFITS.h" line="38" column="14" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileFITS.cpp" bodystart="141" bodyend="177"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
 <para>Writes NDArrays in the FITS file format. </para>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
+      <node id="1">
+        <label>NDFileFITS</label>
+        <link refid="class_n_d_file_f_i_t_s"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
       <node id="3">
         <label>NDPluginDriver</label>
         <link refid="class_n_d_plugin_driver"/>
@@ -325,17 +341,11 @@
         <childnode refid="6" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="6">
-        <label>epicsThreadRunable</label>
-      </node>
       <node id="2">
         <label>NDPluginFile</label>
         <link refid="class_n_d_plugin_file"/>
         <childnode refid="3" relation="public-inheritance">
         </childnode>
-      </node>
-      <node id="5">
-        <label>asynPortDriver</label>
       </node>
       <node id="4">
         <label>asynNDArrayDriver</label>
@@ -343,44 +353,14 @@
         <childnode refid="5" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="1">
-        <label>NDFileFITS</label>
-        <link refid="class_n_d_file_f_i_t_s"/>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
-      </node>
-    </inheritancegraph>
-    <collaborationgraph>
-      <node id="3">
-        <label>NDPluginDriver</label>
-        <link refid="class_n_d_plugin_driver"/>
-        <childnode refid="4" relation="public-inheritance">
-        </childnode>
-        <childnode refid="12" relation="public-inheritance">
-        </childnode>
-        <childnode refid="8" relation="usage">
-          <edgelabel>pPrevInputArray_</edgelabel>
-        </childnode>
-      </node>
-      <node id="12">
-        <label>epicsThreadRunable</label>
-      </node>
-      <node id="9">
-        <label>NDDimension</label>
-        <link refid="struct_n_d_dimension"/>
-      </node>
-      <node id="2">
-        <label>NDPluginFile</label>
-        <link refid="class_n_d_plugin_file"/>
-        <childnode refid="3" relation="public-inheritance">
-        </childnode>
-      </node>
       <node id="5">
         <label>asynPortDriver</label>
       </node>
-      <node id="11">
-        <label>string</label>
+      <node id="6">
+        <label>epicsThreadRunable</label>
       </node>
+    </inheritancegraph>
+    <collaborationgraph>
       <node id="10">
         <label>Codec_t</label>
         <link refid="struct_codec__t"/>
@@ -388,23 +368,58 @@
           <edgelabel>name</edgelabel>
         </childnode>
       </node>
-      <node id="8">
+      <node id="7">
         <label>NDArray</label>
         <link refid="class_n_d_array"/>
         <childnode refid="6" relation="usage">
           <edgelabel>pNDArrayPool</edgelabel>
         </childnode>
-        <childnode refid="9" relation="usage">
+        <childnode refid="4" relation="usage">
+          <edgelabel>pDriver</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
           <edgelabel>dims</edgelabel>
         </childnode>
-        <childnode refid="7" relation="usage">
+        <childnode refid="9" relation="usage">
           <edgelabel>pAttributeList</edgelabel>
         </childnode>
         <childnode refid="10" relation="usage">
           <edgelabel>codec</edgelabel>
         </childnode>
-        <childnode refid="4" relation="usage">
-          <edgelabel>pDriver</edgelabel>
+      </node>
+      <node id="6">
+        <label>NDArrayPool</label>
+        <link refid="class_n_d_array_pool"/>
+      </node>
+      <node id="9">
+        <label>NDAttributeList</label>
+        <link refid="class_n_d_attribute_list"/>
+      </node>
+      <node id="8">
+        <label>NDDimension</label>
+        <link refid="struct_n_d_dimension"/>
+      </node>
+      <node id="1">
+        <label>NDFileFITS</label>
+        <link refid="class_n_d_file_f_i_t_s"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>NDPluginDriver</label>
+        <link refid="class_n_d_plugin_driver"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+        <childnode refid="12" relation="public-inheritance">
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>pPrevInputArray_</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>NDPluginFile</label>
+        <link refid="class_n_d_plugin_file"/>
+        <childnode refid="3" relation="public-inheritance">
         </childnode>
       </node>
       <node id="4">
@@ -416,25 +431,20 @@
           <edgelabel>pNDArrayPool</edgelabel>
         </childnode>
         <childnode refid="7" relation="usage">
-          <edgelabel>pAttributeList</edgelabel>
-        </childnode>
-        <childnode refid="8" relation="usage">
           <edgelabel>pArrays</edgelabel>
         </childnode>
-      </node>
-      <node id="6">
-        <label>NDArrayPool</label>
-        <link refid="class_n_d_array_pool"/>
-      </node>
-      <node id="7">
-        <label>NDAttributeList</label>
-        <link refid="class_n_d_attribute_list"/>
-      </node>
-      <node id="1">
-        <label>NDFileFITS</label>
-        <link refid="class_n_d_file_f_i_t_s"/>
-        <childnode refid="2" relation="public-inheritance">
+        <childnode refid="9" relation="usage">
+          <edgelabel>pAttributeList</edgelabel>
         </childnode>
+      </node>
+      <node id="5">
+        <label>asynPortDriver</label>
+      </node>
+      <node id="12">
+        <label>epicsThreadRunable</label>
+      </node>
+      <node id="11">
+        <label>string</label>
       </node>
     </collaborationgraph>
     <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileFITS.h" line="20" column="1" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileFITS.h" bodystart="20" bodyend="43"/>

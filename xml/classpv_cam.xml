@@ -1,15 +1,16 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="classpv_cam" kind="class" language="C++" prot="public">
     <compoundname>pvCam</compoundname>
     <basecompoundref refid="class_a_d_driver" prot="public" virt="non-virtual">ADDriver</basecompoundref>
     <includes refid="pv_cam_src_8h" local="no">pvCamSrc.h</includes>
-      <sectiondef kind="public-attrib">
+    <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="classpv_cam_1ad6f616342856b70cf431c58cee5ce7f7" prot="public" static="no" mutable="no">
         <type>int</type>
         <definition>int pvCam::imagesRemaining</definition>
         <argsstring></argsstring>
         <name>imagesRemaining</name>
+        <qualifiedname>pvCam::imagesRemaining</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -23,6 +24,7 @@
         <definition>epicsEventId pvCam::startEventId</definition>
         <argsstring></argsstring>
         <name>startEventId</name>
+        <qualifiedname>pvCam::startEventId</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -36,6 +38,7 @@
         <definition>epicsEventId pvCam::stopEventId</definition>
         <argsstring></argsstring>
         <name>stopEventId</name>
+        <qualifiedname>pvCam::stopEventId</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -49,6 +52,7 @@
         <definition>NDArray* pvCam::pRaw</definition>
         <argsstring></argsstring>
         <name>pRaw</name>
+        <qualifiedname>pvCam::pRaw</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -57,13 +61,14 @@
         </inbodydescription>
         <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPvCam/pvcamApp/src/pvCamSrc.h" line="120" column="21" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPvCam/pvcamApp/src/pvCamSrc.h" bodystart="120" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="protected-attrib">
+    </sectiondef>
+    <sectiondef kind="protected-attrib">
       <memberdef kind="variable" id="classpv_cam_1a8e55b9c1c13675e74c8a014a29080876" prot="protected" static="no" mutable="no">
         <type>int</type>
         <definition>int pvCam::PVCamInitDetector</definition>
         <argsstring></argsstring>
         <name>PVCamInitDetector</name>
+        <qualifiedname>pvCam::PVCamInitDetector</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -77,6 +82,7 @@
         <definition>int pvCam::PVCamSlot1Cam</definition>
         <argsstring></argsstring>
         <name>PVCamSlot1Cam</name>
+        <qualifiedname>pvCam::PVCamSlot1Cam</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -90,6 +96,7 @@
         <definition>int pvCam::PVCamSlot2Cam</definition>
         <argsstring></argsstring>
         <name>PVCamSlot2Cam</name>
+        <qualifiedname>pvCam::PVCamSlot2Cam</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -103,6 +110,7 @@
         <definition>int pvCam::PVCamSlot3Cam</definition>
         <argsstring></argsstring>
         <name>PVCamSlot3Cam</name>
+        <qualifiedname>pvCam::PVCamSlot3Cam</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -116,6 +124,7 @@
         <definition>int pvCam::PVCamDetectorSelected</definition>
         <argsstring></argsstring>
         <name>PVCamDetectorSelected</name>
+        <qualifiedname>pvCam::PVCamDetectorSelected</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -129,6 +138,7 @@
         <definition>int pvCam::PVCamChipNameRBV</definition>
         <argsstring></argsstring>
         <name>PVCamChipNameRBV</name>
+        <qualifiedname>pvCam::PVCamChipNameRBV</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -142,6 +152,7 @@
         <definition>int pvCam::PVCamNumParallelPixelsRBV</definition>
         <argsstring></argsstring>
         <name>PVCamNumParallelPixelsRBV</name>
+        <qualifiedname>pvCam::PVCamNumParallelPixelsRBV</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -155,6 +166,7 @@
         <definition>int pvCam::PVCamNumSerialPixelsRBV</definition>
         <argsstring></argsstring>
         <name>PVCamNumSerialPixelsRBV</name>
+        <qualifiedname>pvCam::PVCamNumSerialPixelsRBV</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -168,6 +180,7 @@
         <definition>int pvCam::PVCamPixelParallelSizeRBV</definition>
         <argsstring></argsstring>
         <name>PVCamPixelParallelSizeRBV</name>
+        <qualifiedname>pvCam::PVCamPixelParallelSizeRBV</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -181,6 +194,7 @@
         <definition>int pvCam::PVCamPixelSerialSizeRBV</definition>
         <argsstring></argsstring>
         <name>PVCamPixelSerialSizeRBV</name>
+        <qualifiedname>pvCam::PVCamPixelSerialSizeRBV</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -194,6 +208,7 @@
         <definition>int pvCam::PVCamChipHeightMMRBV</definition>
         <argsstring></argsstring>
         <name>PVCamChipHeightMMRBV</name>
+        <qualifiedname>pvCam::PVCamChipHeightMMRBV</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -207,6 +222,7 @@
         <definition>int pvCam::PVCamChipWidthMMRBV</definition>
         <argsstring></argsstring>
         <name>PVCamChipWidthMMRBV</name>
+        <qualifiedname>pvCam::PVCamChipWidthMMRBV</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -220,6 +236,7 @@
         <definition>int pvCam::PVCamPixelParallelDistRBV</definition>
         <argsstring></argsstring>
         <name>PVCamPixelParallelDistRBV</name>
+        <qualifiedname>pvCam::PVCamPixelParallelDistRBV</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -233,6 +250,7 @@
         <definition>int pvCam::PVCamPixelSerialDistRBV</definition>
         <argsstring></argsstring>
         <name>PVCamPixelSerialDistRBV</name>
+        <qualifiedname>pvCam::PVCamPixelSerialDistRBV</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -246,6 +264,7 @@
         <definition>int pvCam::PVCamPostMaskRBV</definition>
         <argsstring></argsstring>
         <name>PVCamPostMaskRBV</name>
+        <qualifiedname>pvCam::PVCamPostMaskRBV</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -259,6 +278,7 @@
         <definition>int pvCam::PVCamPreMaskRBV</definition>
         <argsstring></argsstring>
         <name>PVCamPreMaskRBV</name>
+        <qualifiedname>pvCam::PVCamPreMaskRBV</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -272,6 +292,7 @@
         <definition>int pvCam::PVCamPostScanRBV</definition>
         <argsstring></argsstring>
         <name>PVCamPostScanRBV</name>
+        <qualifiedname>pvCam::PVCamPostScanRBV</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -285,6 +306,7 @@
         <definition>int pvCam::PVCamPreScanRBV</definition>
         <argsstring></argsstring>
         <name>PVCamPreScanRBV</name>
+        <qualifiedname>pvCam::PVCamPreScanRBV</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -298,6 +320,7 @@
         <definition>int pvCam::PVCamNumPortsRBV</definition>
         <argsstring></argsstring>
         <name>PVCamNumPortsRBV</name>
+        <qualifiedname>pvCam::PVCamNumPortsRBV</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -311,6 +334,7 @@
         <definition>int pvCam::PVCamFullWellCapacityRBV</definition>
         <argsstring></argsstring>
         <name>PVCamFullWellCapacityRBV</name>
+        <qualifiedname>pvCam::PVCamFullWellCapacityRBV</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -324,6 +348,7 @@
         <definition>int pvCam::PVCamFrameTransferCapableRBV</definition>
         <argsstring></argsstring>
         <name>PVCamFrameTransferCapableRBV</name>
+        <qualifiedname>pvCam::PVCamFrameTransferCapableRBV</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -337,6 +362,7 @@
         <definition>int pvCam::PVCamNumSpeedTableEntriesRBV</definition>
         <argsstring></argsstring>
         <name>PVCamNumSpeedTableEntriesRBV</name>
+        <qualifiedname>pvCam::PVCamNumSpeedTableEntriesRBV</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -350,6 +376,7 @@
         <definition>int pvCam::PVCamSpeedTableIndex</definition>
         <argsstring></argsstring>
         <name>PVCamSpeedTableIndex</name>
+        <qualifiedname>pvCam::PVCamSpeedTableIndex</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -363,6 +390,7 @@
         <definition>int pvCam::PVCamSpeedTableIndexRBV</definition>
         <argsstring></argsstring>
         <name>PVCamSpeedTableIndexRBV</name>
+        <qualifiedname>pvCam::PVCamSpeedTableIndexRBV</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -376,6 +404,7 @@
         <definition>int pvCam::PVCamBitDepthRBV</definition>
         <argsstring></argsstring>
         <name>PVCamBitDepthRBV</name>
+        <qualifiedname>pvCam::PVCamBitDepthRBV</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -389,6 +418,7 @@
         <definition>int pvCam::PVCamPixelTimeRBV</definition>
         <argsstring></argsstring>
         <name>PVCamPixelTimeRBV</name>
+        <qualifiedname>pvCam::PVCamPixelTimeRBV</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -402,6 +432,7 @@
         <definition>int pvCam::PVCamGainIndex</definition>
         <argsstring></argsstring>
         <name>PVCamGainIndex</name>
+        <qualifiedname>pvCam::PVCamGainIndex</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -415,6 +446,7 @@
         <definition>int pvCam::PVCamGainIndexRBV</definition>
         <argsstring></argsstring>
         <name>PVCamGainIndexRBV</name>
+        <qualifiedname>pvCam::PVCamGainIndexRBV</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -428,6 +460,7 @@
         <definition>int pvCam::PVCamMaxGainIndexRBV</definition>
         <argsstring></argsstring>
         <name>PVCamMaxGainIndexRBV</name>
+        <qualifiedname>pvCam::PVCamMaxGainIndexRBV</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -441,6 +474,7 @@
         <definition>int pvCam::PVCamMinShutterOpenDelayRBV</definition>
         <argsstring></argsstring>
         <name>PVCamMinShutterOpenDelayRBV</name>
+        <qualifiedname>pvCam::PVCamMinShutterOpenDelayRBV</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -454,6 +488,7 @@
         <definition>int pvCam::PVCamMaxShutterOpenDelayRBV</definition>
         <argsstring></argsstring>
         <name>PVCamMaxShutterOpenDelayRBV</name>
+        <qualifiedname>pvCam::PVCamMaxShutterOpenDelayRBV</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -467,6 +502,7 @@
         <definition>int pvCam::PVCamMinShutterCloseDelayRBV</definition>
         <argsstring></argsstring>
         <name>PVCamMinShutterCloseDelayRBV</name>
+        <qualifiedname>pvCam::PVCamMinShutterCloseDelayRBV</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -480,6 +516,7 @@
         <definition>int pvCam::PVCamMaxShutterCloseDelayRBV</definition>
         <argsstring></argsstring>
         <name>PVCamMaxShutterCloseDelayRBV</name>
+        <qualifiedname>pvCam::PVCamMaxShutterCloseDelayRBV</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -493,6 +530,7 @@
         <definition>int pvCam::PVCamShutterOpenDelay</definition>
         <argsstring></argsstring>
         <name>PVCamShutterOpenDelay</name>
+        <qualifiedname>pvCam::PVCamShutterOpenDelay</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -506,6 +544,7 @@
         <definition>int pvCam::PVCamShutterOpenDelayRBV</definition>
         <argsstring></argsstring>
         <name>PVCamShutterOpenDelayRBV</name>
+        <qualifiedname>pvCam::PVCamShutterOpenDelayRBV</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -519,6 +558,7 @@
         <definition>int pvCam::PVCamShutterCloseDelay</definition>
         <argsstring></argsstring>
         <name>PVCamShutterCloseDelay</name>
+        <qualifiedname>pvCam::PVCamShutterCloseDelay</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -532,6 +572,7 @@
         <definition>int pvCam::PVCamShutterCloseDelayRBV</definition>
         <argsstring></argsstring>
         <name>PVCamShutterCloseDelayRBV</name>
+        <qualifiedname>pvCam::PVCamShutterCloseDelayRBV</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -545,6 +586,7 @@
         <definition>int pvCam::PVCamMeasuredTemperatureRBV</definition>
         <argsstring></argsstring>
         <name>PVCamMeasuredTemperatureRBV</name>
+        <qualifiedname>pvCam::PVCamMeasuredTemperatureRBV</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -558,6 +600,7 @@
         <definition>int pvCam::PVCamMinTemperatureRBV</definition>
         <argsstring></argsstring>
         <name>PVCamMinTemperatureRBV</name>
+        <qualifiedname>pvCam::PVCamMinTemperatureRBV</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -571,6 +614,7 @@
         <definition>int pvCam::PVCamMaxTemperatureRBV</definition>
         <argsstring></argsstring>
         <name>PVCamMaxTemperatureRBV</name>
+        <qualifiedname>pvCam::PVCamMaxTemperatureRBV</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -584,6 +628,7 @@
         <definition>int pvCam::PVCamSetTemperature</definition>
         <argsstring></argsstring>
         <name>PVCamSetTemperature</name>
+        <qualifiedname>pvCam::PVCamSetTemperature</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -597,6 +642,7 @@
         <definition>int pvCam::PVCamSetTemperatureRBV</definition>
         <argsstring></argsstring>
         <name>PVCamSetTemperatureRBV</name>
+        <qualifiedname>pvCam::PVCamSetTemperatureRBV</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -610,6 +656,7 @@
         <definition>int pvCam::PVCamDetectorMode</definition>
         <argsstring></argsstring>
         <name>PVCamDetectorMode</name>
+        <qualifiedname>pvCam::PVCamDetectorMode</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -623,6 +670,7 @@
         <definition>int pvCam::PVCamDetectorModeRBV</definition>
         <argsstring></argsstring>
         <name>PVCamDetectorModeRBV</name>
+        <qualifiedname>pvCam::PVCamDetectorModeRBV</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -636,6 +684,7 @@
         <definition>int pvCam::PVCamTriggerMode</definition>
         <argsstring></argsstring>
         <name>PVCamTriggerMode</name>
+        <qualifiedname>pvCam::PVCamTriggerMode</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -649,6 +698,7 @@
         <definition>int pvCam::PVCamTriggerModeRBV</definition>
         <argsstring></argsstring>
         <name>PVCamTriggerModeRBV</name>
+        <qualifiedname>pvCam::PVCamTriggerModeRBV</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -662,6 +712,7 @@
         <definition>int pvCam::PVCamTriggerEdge</definition>
         <argsstring></argsstring>
         <name>PVCamTriggerEdge</name>
+        <qualifiedname>pvCam::PVCamTriggerEdge</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -675,6 +726,7 @@
         <definition>int pvCam::PVCamTriggerEdgeRBV</definition>
         <argsstring></argsstring>
         <name>PVCamTriggerEdgeRBV</name>
+        <qualifiedname>pvCam::PVCamTriggerEdgeRBV</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -688,6 +740,7 @@
         <definition>int pvCam::PVCamCamFirmwareVersRBV</definition>
         <argsstring></argsstring>
         <name>PVCamCamFirmwareVersRBV</name>
+        <qualifiedname>pvCam::PVCamCamFirmwareVersRBV</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -701,6 +754,7 @@
         <definition>int pvCam::PVCamPCIFWVersRBV</definition>
         <argsstring></argsstring>
         <name>PVCamPCIFWVersRBV</name>
+        <qualifiedname>pvCam::PVCamPCIFWVersRBV</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -714,6 +768,7 @@
         <definition>int pvCam::PVCamHeadSerialNumRBV</definition>
         <argsstring></argsstring>
         <name>PVCamHeadSerialNumRBV</name>
+        <qualifiedname>pvCam::PVCamHeadSerialNumRBV</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -727,6 +782,7 @@
         <definition>int pvCam::PVCamSerialNumRBV</definition>
         <argsstring></argsstring>
         <name>PVCamSerialNumRBV</name>
+        <qualifiedname>pvCam::PVCamSerialNumRBV</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -740,6 +796,7 @@
         <definition>int pvCam::PVCamPVCamVersRBV</definition>
         <argsstring></argsstring>
         <name>PVCamPVCamVersRBV</name>
+        <qualifiedname>pvCam::PVCamPVCamVersRBV</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -753,6 +810,7 @@
         <definition>int pvCam::PVCamDevDrvVersRBV</definition>
         <argsstring></argsstring>
         <name>PVCamDevDrvVersRBV</name>
+        <qualifiedname>pvCam::PVCamDevDrvVersRBV</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -761,13 +819,14 @@
         </inbodydescription>
         <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPvCam/pvcamApp/src/pvCamSrc.h" line="196" column="9" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPvCam/pvcamApp/src/pvCamSrc.h" bodystart="196" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="private-attrib">
+    </sectiondef>
+    <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="classpv_cam_1ade29090579f6f4c9e4c71cad027ded72" prot="private" static="no" mutable="no">
         <type>int16</type>
         <definition>int16 pvCam::numDetectorsInstalled</definition>
         <argsstring></argsstring>
         <name>numDetectorsInstalled</name>
+        <qualifiedname>pvCam::numDetectorsInstalled</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -781,6 +840,7 @@
         <definition>int16 pvCam::detectorSelected</definition>
         <argsstring></argsstring>
         <name>detectorSelected</name>
+        <qualifiedname>pvCam::detectorSelected</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -794,6 +854,7 @@
         <definition>int16 pvCam::detectorHandle</definition>
         <argsstring></argsstring>
         <name>detectorHandle</name>
+        <qualifiedname>pvCam::detectorHandle</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -807,6 +868,7 @@
         <definition>char* pvCam::detectorList[5]</definition>
         <argsstring>[5]</argsstring>
         <name>detectorList</name>
+        <qualifiedname>pvCam::detectorList</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -820,6 +882,7 @@
         <definition>unsigned short* pvCam::rawData</definition>
         <argsstring></argsstring>
         <name>rawData</name>
+        <qualifiedname>pvCam::rawData</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -833,6 +896,7 @@
         <definition>bool pvCam::tempAvailable</definition>
         <argsstring></argsstring>
         <name>tempAvailable</name>
+        <qualifiedname>pvCam::tempAvailable</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -841,13 +905,14 @@
         </inbodydescription>
         <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPvCam/pvcamApp/src/pvCamSrc.h" line="218" column="10" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPvCam/pvcamApp/src/pvCamSrc.h" bodystart="218" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="public-func">
+    </sectiondef>
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="classpv_cam_1a11845604b8b972a3d5e499e58f373c9c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>pvCam::pvCam</definition>
         <argsstring>(const char *portName, int maxSizeX, int maxSizeY, NDDataType_t dataType, int maxBuffers, size_t maxMemory, int priority, int stackSize)</argsstring>
         <name>pvCam</name>
+        <qualifiedname>pvCam::pvCam</qualifiedname>
         <param>
           <type>const char *</type>
           <declname>portName</declname>
@@ -893,6 +958,7 @@
         <definition>asynStatus pvCam::writeInt32</definition>
         <argsstring>(asynUser *pasynUser, epicsInt32 value)</argsstring>
         <name>writeInt32</name>
+        <qualifiedname>pvCam::writeInt32</qualifiedname>
         <reimplements refid="class_a_d_driver_1abef6916bb90d032a1aeb6894adef12a6">writeInt32</reimplements>
         <param>
           <type>asynUser *</type>
@@ -934,6 +1000,7 @@ Takes action if the function code requires it. Currently only ADShutterControl r
         <definition>asynStatus pvCam::writeFloat64</definition>
         <argsstring>(asynUser *pasynUser, epicsFloat64 value)</argsstring>
         <name>writeFloat64</name>
+        <qualifiedname>pvCam::writeFloat64</qualifiedname>
         <param>
           <type>asynUser *</type>
           <declname>pasynUser</declname>
@@ -955,6 +1022,7 @@ Takes action if the function code requires it. Currently only ADShutterControl r
         <definition>void pvCam::report</definition>
         <argsstring>(FILE *fp, int details)</argsstring>
         <name>report</name>
+        <qualifiedname>pvCam::report</qualifiedname>
         <reimplements refid="classasyn_n_d_array_driver_1ac3f2d73a05eb54357ec3f052e1b000f2">report</reimplements>
         <param>
           <type>FILE *</type>
@@ -1001,6 +1069,7 @@ Takes action if the function code requires it. Currently only ADShutterControl r
         <definition>int pvCam::computeArray</definition>
         <argsstring>(int maxSizeX, int maxSizeY)</argsstring>
         <name>computeArray</name>
+        <qualifiedname>pvCam::computeArray</qualifiedname>
         <param>
           <type>int</type>
           <declname>maxSizeX</declname>
@@ -1022,6 +1091,7 @@ Takes action if the function code requires it. Currently only ADShutterControl r
         <definition>int pvCam::allocateBuffer</definition>
         <argsstring>()</argsstring>
         <name>allocateBuffer</name>
+        <qualifiedname>pvCam::allocateBuffer</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -1035,6 +1105,7 @@ Takes action if the function code requires it. Currently only ADShutterControl r
         <definition>int pvCam::computeImage</definition>
         <argsstring>()</argsstring>
         <name>computeImage</name>
+        <qualifiedname>pvCam::computeImage</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -1048,6 +1119,7 @@ Takes action if the function code requires it. Currently only ADShutterControl r
         <definition>void pvCam::pvCamAcquisitionTask</definition>
         <argsstring>()</argsstring>
         <name>pvCamAcquisitionTask</name>
+        <qualifiedname>pvCam::pvCamAcquisitionTask</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -1061,6 +1133,7 @@ Takes action if the function code requires it. Currently only ADShutterControl r
         <definition>void pvCam::pvCamMonitorTask</definition>
         <argsstring>()</argsstring>
         <name>pvCamMonitorTask</name>
+        <qualifiedname>pvCam::pvCamMonitorTask</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -1074,6 +1147,7 @@ Takes action if the function code requires it. Currently only ADShutterControl r
         <definition>pvCam::~pvCam</definition>
         <argsstring>()</argsstring>
         <name>~pvCam</name>
+        <qualifiedname>pvCam::~pvCam</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -1082,13 +1156,14 @@ Takes action if the function code requires it. Currently only ADShutterControl r
         </inbodydescription>
         <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPvCam/pvcamApp/src/pvCamSrc.h" line="139" column="5" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPvCam/pvcamApp/src/pvCam.cpp" bodystart="709" bodyend="725"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="private-func">
+    </sectiondef>
+    <sectiondef kind="private-func">
       <memberdef kind="function" id="classpv_cam_1a165330509fc801d5bc6b73f2c73a30c9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void pvCam::outputErrorMessage</definition>
         <argsstring>(const char *functionName, const char *appMessage)</argsstring>
         <name>outputErrorMessage</name>
+        <qualifiedname>pvCam::outputErrorMessage</qualifiedname>
         <param>
           <type>const char *</type>
           <declname>functionName</declname>
@@ -1110,6 +1185,7 @@ Takes action if the function code requires it. Currently only ADShutterControl r
         <definition>void pvCam::initializeDetectorInterface</definition>
         <argsstring>(void)</argsstring>
         <name>initializeDetectorInterface</name>
+        <qualifiedname>pvCam::initializeDetectorInterface</qualifiedname>
         <param>
           <type>void</type>
         </param>
@@ -1126,6 +1202,7 @@ Takes action if the function code requires it. Currently only ADShutterControl r
         <definition>void pvCam::selectDetector</definition>
         <argsstring>(int selectedDetector)</argsstring>
         <name>selectDetector</name>
+        <qualifiedname>pvCam::selectDetector</qualifiedname>
         <param>
           <type>int</type>
           <declname>selectedDetector</declname>
@@ -1143,6 +1220,7 @@ Takes action if the function code requires it. Currently only ADShutterControl r
         <definition>void pvCam::queryCurrentSettings</definition>
         <argsstring>(void)</argsstring>
         <name>queryCurrentSettings</name>
+        <qualifiedname>pvCam::queryCurrentSettings</qualifiedname>
         <param>
           <type>void</type>
         </param>
@@ -1159,6 +1237,7 @@ Takes action if the function code requires it. Currently only ADShutterControl r
         <definition>void pvCam::initializeDetector</definition>
         <argsstring>(void)</argsstring>
         <name>initializeDetector</name>
+        <qualifiedname>pvCam::initializeDetector</qualifiedname>
         <param>
           <type>void</type>
         </param>
@@ -1175,6 +1254,7 @@ Takes action if the function code requires it. Currently only ADShutterControl r
         <definition>int pvCam::getAcquireStatus</definition>
         <argsstring>(void)</argsstring>
         <name>getAcquireStatus</name>
+        <qualifiedname>pvCam::getAcquireStatus</qualifiedname>
         <param>
           <type>void</type>
         </param>
@@ -1186,21 +1266,18 @@ Takes action if the function code requires it. Currently only ADShutterControl r
         </inbodydescription>
         <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPvCam/pvcamApp/src/pvCamSrc.h" line="217" column="9" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPvCam/pvcamApp/src/pvCam.cpp" bodystart="1445" bodyend="1463"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
 <para>Driver for Roper (Photometrics and Princeton Instruments) cameras using the PvCam library. </para>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="1">
-        <label>pvCam</label>
-        <link refid="classpv_cam"/>
-        <childnode refid="2" relation="public-inheritance">
+      <node id="2">
+        <label>ADDriver</label>
+        <link refid="class_a_d_driver"/>
+        <childnode refid="3" relation="public-inheritance">
         </childnode>
-      </node>
-      <node id="4">
-        <label>asynPortDriver</label>
       </node>
       <node id="3">
         <label>asynNDArrayDriver</label>
@@ -1208,32 +1285,22 @@ Takes action if the function code requires it. Currently only ADShutterControl r
         <childnode refid="4" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="2">
-        <label>ADDriver</label>
-        <link refid="class_a_d_driver"/>
-        <childnode refid="3" relation="public-inheritance">
-        </childnode>
-      </node>
-    </inheritancegraph>
-    <collaborationgraph>
-      <node id="8">
-        <label>NDDimension</label>
-        <link refid="struct_n_d_dimension"/>
+      <node id="4">
+        <label>asynPortDriver</label>
       </node>
       <node id="1">
         <label>pvCam</label>
         <link refid="classpv_cam"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
-        <childnode refid="7" relation="usage">
-          <edgelabel>pRaw</edgelabel>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>ADDriver</label>
+        <link refid="class_a_d_driver"/>
+        <childnode refid="3" relation="public-inheritance">
         </childnode>
-      </node>
-      <node id="4">
-        <label>asynPortDriver</label>
-      </node>
-      <node id="10">
-        <label>string</label>
       </node>
       <node id="9">
         <label>Codec_t</label>
@@ -1242,24 +1309,36 @@ Takes action if the function code requires it. Currently only ADShutterControl r
           <edgelabel>name</edgelabel>
         </childnode>
       </node>
-      <node id="7">
+      <node id="6">
         <label>NDArray</label>
         <link refid="class_n_d_array"/>
         <childnode refid="5" relation="usage">
           <edgelabel>pNDArrayPool</edgelabel>
         </childnode>
-        <childnode refid="8" relation="usage">
+        <childnode refid="3" relation="usage">
+          <edgelabel>pDriver</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
           <edgelabel>dims</edgelabel>
         </childnode>
-        <childnode refid="6" relation="usage">
+        <childnode refid="8" relation="usage">
           <edgelabel>pAttributeList</edgelabel>
         </childnode>
         <childnode refid="9" relation="usage">
           <edgelabel>codec</edgelabel>
         </childnode>
-        <childnode refid="3" relation="usage">
-          <edgelabel>pDriver</edgelabel>
-        </childnode>
+      </node>
+      <node id="5">
+        <label>NDArrayPool</label>
+        <link refid="class_n_d_array_pool"/>
+      </node>
+      <node id="8">
+        <label>NDAttributeList</label>
+        <link refid="class_n_d_attribute_list"/>
+      </node>
+      <node id="7">
+        <label>NDDimension</label>
+        <link refid="struct_n_d_dimension"/>
       </node>
       <node id="3">
         <label>asynNDArrayDriver</label>
@@ -1270,25 +1349,26 @@ Takes action if the function code requires it. Currently only ADShutterControl r
           <edgelabel>pNDArrayPool</edgelabel>
         </childnode>
         <childnode refid="6" relation="usage">
-          <edgelabel>pAttributeList</edgelabel>
-        </childnode>
-        <childnode refid="7" relation="usage">
           <edgelabel>pArrays</edgelabel>
         </childnode>
-      </node>
-      <node id="5">
-        <label>NDArrayPool</label>
-        <link refid="class_n_d_array_pool"/>
-      </node>
-      <node id="2">
-        <label>ADDriver</label>
-        <link refid="class_a_d_driver"/>
-        <childnode refid="3" relation="public-inheritance">
+        <childnode refid="8" relation="usage">
+          <edgelabel>pAttributeList</edgelabel>
         </childnode>
       </node>
-      <node id="6">
-        <label>NDAttributeList</label>
-        <link refid="class_n_d_attribute_list"/>
+      <node id="4">
+        <label>asynPortDriver</label>
+      </node>
+      <node id="1">
+        <label>pvCam</label>
+        <link refid="classpv_cam"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>pRaw</edgelabel>
+        </childnode>
+      </node>
+      <node id="10">
+        <label>string</label>
       </node>
     </collaborationgraph>
     <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPvCam/pvcamApp/src/pvCamSrc.h" line="114" column="1" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPvCam/pvcamApp/src/pvCamSrc.h" bodystart="115" bodyend="220"/>

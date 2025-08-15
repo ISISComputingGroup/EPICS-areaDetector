@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="_n_d_file_h_d_f5_version_check_8h" kind="file" language="C++">
     <compoundname>NDFileHDF5VersionCheck.h</compoundname>
     <includes local="no">hdf5.h</includes>
@@ -7,28 +7,30 @@
     <includedby refid="_n_d_file_h_d_f5_attribute_dataset_8h" local="yes">/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5AttributeDataset.h</includedby>
     <includedby refid="_n_d_file_h_d_f5_dataset_8h" local="yes">/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5Dataset.h</includedby>
     <incdepgraph>
-      <node id="2">
-        <label>hdf5.h</label>
-      </node>
       <node id="1">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5VersionCheck.h</label>
         <link refid="_n_d_file_h_d_f5_version_check_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
       </node>
+      <node id="2">
+        <label>hdf5.h</label>
+      </node>
     </incdepgraph>
     <invincdepgraph>
+      <node id="3">
+        <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5.cpp</label>
+        <link refid="_n_d_file_h_d_f5_8cpp"/>
+      </node>
+      <node id="2">
+        <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5.h</label>
+        <link refid="_n_d_file_h_d_f5_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
       <node id="5">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5AttributeDataset.cpp</label>
         <link refid="_n_d_file_h_d_f5_attribute_dataset_8cpp"/>
-      </node>
-      <node id="6">
-        <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5Dataset.h</label>
-        <link refid="_n_d_file_h_d_f5_dataset_8h"/>
-        <childnode refid="2" relation="include">
-        </childnode>
-        <childnode refid="7" relation="include">
-        </childnode>
       </node>
       <node id="4">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5AttributeDataset.h</label>
@@ -38,15 +40,17 @@
         <childnode refid="5" relation="include">
         </childnode>
       </node>
-      <node id="2">
-        <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5.h</label>
-        <link refid="_n_d_file_h_d_f5_8h"/>
-        <childnode refid="3" relation="include">
-        </childnode>
+      <node id="7">
+        <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5Dataset.cpp</label>
+        <link refid="_n_d_file_h_d_f5_dataset_8cpp"/>
       </node>
-      <node id="3">
-        <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5.cpp</label>
-        <link refid="_n_d_file_h_d_f5_8cpp"/>
+      <node id="6">
+        <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5Dataset.h</label>
+        <link refid="_n_d_file_h_d_f5_dataset_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
       </node>
       <node id="1">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5VersionCheck.h</label>
@@ -58,12 +62,8 @@
         <childnode refid="6" relation="include">
         </childnode>
       </node>
-      <node id="7">
-        <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5Dataset.cpp</label>
-        <link refid="_n_d_file_h_d_f5_dataset_8cpp"/>
-      </node>
     </invincdepgraph>
-      <sectiondef kind="define">
+    <sectiondef kind="define">
       <memberdef kind="define" id="_n_d_file_h_d_f5_version_check_8h_1aa80cec001d4154b554aa2b0b6223a7f3" prot="public" static="no">
         <name>H5_VERSION_GE</name>
         <param><defname>Maj</defname></param>
@@ -78,9 +78,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5VersionCheck.h" line="18" column="9" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5VersionCheck.h" bodystart="18" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5VersionCheck.h" line="18" column="9" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5VersionCheck.h" bodystart="18" bodyend="21"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

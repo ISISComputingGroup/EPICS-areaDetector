@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="class_a_d_driver" kind="class" language="C++" prot="public">
     <compoundname>ADDriver</compoundname>
     <basecompoundref refid="classasyn_n_d_array_driver" prot="public" virt="non-virtual">asynNDArrayDriver</basecompoundref>
@@ -39,12 +39,13 @@
     <derivedcompoundref refid="classsim_detector" prot="public" virt="non-virtual">simDetector</derivedcompoundref>
     <derivedcompoundref refid="classxcam_camera" prot="public" virt="non-virtual">xcamCamera</derivedcompoundref>
     <includes refid="_a_d_driver_8h" local="no">ADDriver.h</includes>
-      <sectiondef kind="protected-attrib">
+    <sectiondef kind="protected-attrib">
       <memberdef kind="variable" id="class_a_d_driver_1af7a169a1ab5a9069c5d556bf5c7ac387" prot="protected" static="no" mutable="no">
         <type>int</type>
         <definition>int ADDriver::ADGain</definition>
         <argsstring></argsstring>
         <name>ADGain</name>
+        <qualifiedname>ADDriver::ADGain</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -58,6 +59,7 @@
         <definition>int ADDriver::ADBinX</definition>
         <argsstring></argsstring>
         <name>ADBinX</name>
+        <qualifiedname>ADDriver::ADBinX</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -71,6 +73,7 @@
         <definition>int ADDriver::ADBinY</definition>
         <argsstring></argsstring>
         <name>ADBinY</name>
+        <qualifiedname>ADDriver::ADBinY</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -84,6 +87,7 @@
         <definition>int ADDriver::ADMinX</definition>
         <argsstring></argsstring>
         <name>ADMinX</name>
+        <qualifiedname>ADDriver::ADMinX</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -97,6 +101,7 @@
         <definition>int ADDriver::ADMinY</definition>
         <argsstring></argsstring>
         <name>ADMinY</name>
+        <qualifiedname>ADDriver::ADMinY</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -110,6 +115,7 @@
         <definition>int ADDriver::ADSizeX</definition>
         <argsstring></argsstring>
         <name>ADSizeX</name>
+        <qualifiedname>ADDriver::ADSizeX</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -123,6 +129,7 @@
         <definition>int ADDriver::ADSizeY</definition>
         <argsstring></argsstring>
         <name>ADSizeY</name>
+        <qualifiedname>ADDriver::ADSizeY</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -136,6 +143,7 @@
         <definition>int ADDriver::ADMaxSizeX</definition>
         <argsstring></argsstring>
         <name>ADMaxSizeX</name>
+        <qualifiedname>ADDriver::ADMaxSizeX</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -149,6 +157,7 @@
         <definition>int ADDriver::ADMaxSizeY</definition>
         <argsstring></argsstring>
         <name>ADMaxSizeY</name>
+        <qualifiedname>ADDriver::ADMaxSizeY</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -162,6 +171,7 @@
         <definition>int ADDriver::ADReverseX</definition>
         <argsstring></argsstring>
         <name>ADReverseX</name>
+        <qualifiedname>ADDriver::ADReverseX</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -175,6 +185,7 @@
         <definition>int ADDriver::ADReverseY</definition>
         <argsstring></argsstring>
         <name>ADReverseY</name>
+        <qualifiedname>ADDriver::ADReverseY</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -188,6 +199,7 @@
         <definition>int ADDriver::ADFrameType</definition>
         <argsstring></argsstring>
         <name>ADFrameType</name>
+        <qualifiedname>ADDriver::ADFrameType</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -201,6 +213,7 @@
         <definition>int ADDriver::ADImageMode</definition>
         <argsstring></argsstring>
         <name>ADImageMode</name>
+        <qualifiedname>ADDriver::ADImageMode</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -214,6 +227,7 @@
         <definition>int ADDriver::ADNumExposures</definition>
         <argsstring></argsstring>
         <name>ADNumExposures</name>
+        <qualifiedname>ADDriver::ADNumExposures</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -227,6 +241,7 @@
         <definition>int ADDriver::ADNumExposuresCounter</definition>
         <argsstring></argsstring>
         <name>ADNumExposuresCounter</name>
+        <qualifiedname>ADDriver::ADNumExposuresCounter</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -240,6 +255,7 @@
         <definition>int ADDriver::ADNumImages</definition>
         <argsstring></argsstring>
         <name>ADNumImages</name>
+        <qualifiedname>ADDriver::ADNumImages</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -253,6 +269,7 @@
         <definition>int ADDriver::ADNumImagesCounter</definition>
         <argsstring></argsstring>
         <name>ADNumImagesCounter</name>
+        <qualifiedname>ADDriver::ADNumImagesCounter</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -266,6 +283,7 @@
         <definition>int ADDriver::ADAcquireTime</definition>
         <argsstring></argsstring>
         <name>ADAcquireTime</name>
+        <qualifiedname>ADDriver::ADAcquireTime</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -279,6 +297,7 @@
         <definition>int ADDriver::ADAcquirePeriod</definition>
         <argsstring></argsstring>
         <name>ADAcquirePeriod</name>
+        <qualifiedname>ADDriver::ADAcquirePeriod</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -292,6 +311,7 @@
         <definition>int ADDriver::ADTimeRemaining</definition>
         <argsstring></argsstring>
         <name>ADTimeRemaining</name>
+        <qualifiedname>ADDriver::ADTimeRemaining</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -305,6 +325,7 @@
         <definition>int ADDriver::ADStatus</definition>
         <argsstring></argsstring>
         <name>ADStatus</name>
+        <qualifiedname>ADDriver::ADStatus</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -318,6 +339,7 @@
         <definition>int ADDriver::ADTriggerMode</definition>
         <argsstring></argsstring>
         <name>ADTriggerMode</name>
+        <qualifiedname>ADDriver::ADTriggerMode</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -331,6 +353,7 @@
         <definition>int ADDriver::ADShutterControl</definition>
         <argsstring></argsstring>
         <name>ADShutterControl</name>
+        <qualifiedname>ADDriver::ADShutterControl</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -344,6 +367,7 @@
         <definition>int ADDriver::ADShutterControlEPICS</definition>
         <argsstring></argsstring>
         <name>ADShutterControlEPICS</name>
+        <qualifiedname>ADDriver::ADShutterControlEPICS</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -357,6 +381,7 @@
         <definition>int ADDriver::ADShutterStatus</definition>
         <argsstring></argsstring>
         <name>ADShutterStatus</name>
+        <qualifiedname>ADDriver::ADShutterStatus</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -370,6 +395,7 @@
         <definition>int ADDriver::ADShutterMode</definition>
         <argsstring></argsstring>
         <name>ADShutterMode</name>
+        <qualifiedname>ADDriver::ADShutterMode</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -383,6 +409,7 @@
         <definition>int ADDriver::ADShutterOpenDelay</definition>
         <argsstring></argsstring>
         <name>ADShutterOpenDelay</name>
+        <qualifiedname>ADDriver::ADShutterOpenDelay</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -396,6 +423,7 @@
         <definition>int ADDriver::ADShutterCloseDelay</definition>
         <argsstring></argsstring>
         <name>ADShutterCloseDelay</name>
+        <qualifiedname>ADDriver::ADShutterCloseDelay</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -409,6 +437,7 @@
         <definition>int ADDriver::ADTemperature</definition>
         <argsstring></argsstring>
         <name>ADTemperature</name>
+        <qualifiedname>ADDriver::ADTemperature</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -422,6 +451,7 @@
         <definition>int ADDriver::ADTemperatureActual</definition>
         <argsstring></argsstring>
         <name>ADTemperatureActual</name>
+        <qualifiedname>ADDriver::ADTemperatureActual</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -435,6 +465,7 @@
         <definition>int ADDriver::ADReadStatus</definition>
         <argsstring></argsstring>
         <name>ADReadStatus</name>
+        <qualifiedname>ADDriver::ADReadStatus</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -448,6 +479,7 @@
         <definition>int ADDriver::ADStatusMessage</definition>
         <argsstring></argsstring>
         <name>ADStatusMessage</name>
+        <qualifiedname>ADDriver::ADStatusMessage</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -461,6 +493,7 @@
         <definition>int ADDriver::ADStringToServer</definition>
         <argsstring></argsstring>
         <name>ADStringToServer</name>
+        <qualifiedname>ADDriver::ADStringToServer</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -474,6 +507,7 @@
         <definition>int ADDriver::ADStringFromServer</definition>
         <argsstring></argsstring>
         <name>ADStringFromServer</name>
+        <qualifiedname>ADDriver::ADStringFromServer</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -487,6 +521,7 @@
         <definition>bool ADDriver::deviceIsReachable</definition>
         <argsstring></argsstring>
         <name>deviceIsReachable</name>
+        <qualifiedname>ADDriver::deviceIsReachable</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -495,13 +530,14 @@
         </inbodydescription>
         <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" line="183" column="10" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" bodystart="183" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="public-func">
+    </sectiondef>
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="class_a_d_driver_1acc898497d3369c2f6f6ab1d83effdd25" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>ADDriver::ADDriver</definition>
         <argsstring>(const char *portName, int maxAddr, int numParams, int maxBuffers, size_t maxMemory, int interfaceMask, int interruptMask, int asynFlags, int autoConnect, int priority, int stackSize)</argsstring>
         <name>ADDriver</name>
+        <qualifiedname>ADDriver::ADDriver</qualifiedname>
         <param>
           <type>const char *</type>
           <declname>portName</declname>
@@ -561,6 +597,7 @@
         <definition>asynStatus ADDriver::writeInt32</definition>
         <argsstring>(asynUser *pasynUser, epicsInt32 value)</argsstring>
         <name>writeInt32</name>
+        <qualifiedname>ADDriver::writeInt32</qualifiedname>
         <reimplements refid="classasyn_n_d_array_driver_1a36610c94479e66123d75057595f39f70">writeInt32</reimplements>
         <reimplementedby refid="classadsc_1ad6db5c9c77063956172425c3cea59e55">writeInt32</reimplementedby>
         <reimplementedby refid="class_andor_c_c_d_1ad3da5fa4c559adc228bfb7a12661295c">writeInt32</reimplementedby>
@@ -638,6 +675,7 @@ Takes action if the function code requires it. Currently only ADShutterControl r
         <definition>asynStatus ADDriver::connect</definition>
         <argsstring>(asynUser *pasynUser)</argsstring>
         <name>connect</name>
+        <qualifiedname>ADDriver::connect</qualifiedname>
         <reimplementedby refid="class_fast_c_c_d_1ada3ac79155e235327a752a688496ce6e">connect</reimplementedby>
         <reimplementedby refid="classprosilica_1ac804033995122e01664a5b1323a25b7c">connect</reimplementedby>
         <reimplementedby refid="class_a_d_pylon_1a85080583913dc8df1e06f36512e82e40">connect</reimplementedby>
@@ -669,6 +707,7 @@ Takes action if the function code requires it. Currently only ADShutterControl r
         <definition>void ADDriver::setShutter</definition>
         <argsstring>(int open)</argsstring>
         <name>setShutter</name>
+        <qualifiedname>ADDriver::setShutter</qualifiedname>
         <reimplementedby refid="class_b_i_s_detector_1ae4e8564275d3712132b27b8f65fa9eee">setShutter</reimplementedby>
         <reimplementedby refid="class_light_field_1a9e94d60f4d5db5111bb5eae2d7e5a013">setShutter</reimplementedby>
         <reimplementedby refid="classmar345_1a44aad372cb630ffcc98d7d55deb13a32">setShutter</reimplementedby>
@@ -699,17 +738,47 @@ Takes action if the function code requires it. Currently only ADShutterControl r
         </inbodydescription>
         <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" line="144" column="18" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/ADSrc/ADDriver.cpp" bodystart="29" bodyend="52"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
 <para>Class from which areaDetector drivers are directly derived. </para>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="25">
-        <label>URLDriver</label>
-        <link refid="class_u_r_l_driver"/>
+      <node id="5">
+        <label>ADAravis</label>
+        <link refid="class_a_d_aravis"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>ADDriver</label>
+        <link refid="class_a_d_driver"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>ADGenICam</label>
+        <link refid="class_a_d_gen_i_cam"/>
         <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>ADLambda</label>
+        <link refid="class_a_d_lambda"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>ADPICam</label>
+        <link refid="class_a_d_p_i_cam"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>ADPylon</label>
+        <link refid="class_a_d_pylon"/>
+        <childnode refid="4" relation="public-inheritance">
         </childnode>
       </node>
       <node id="7">
@@ -718,21 +787,51 @@ Takes action if the function code requires it. Currently only ADShutterControl r
         <childnode refid="4" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="28">
-        <label>aravisCamera</label>
-        <link refid="classaravis_camera"/>
+      <node id="8">
+        <label>ADVimba</label>
+        <link refid="class_a_d_vimba"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>ADnED</label>
+        <link refid="class_a_dn_e_d"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="26">
-        <label>adsc</label>
-        <link refid="classadsc"/>
+      <node id="12">
+        <label>AndorCCD</label>
+        <link refid="class_andor_c_c_d"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="39">
-        <label>pvaDriver</label>
-        <link refid="classpva_driver"/>
+      <node id="13">
+        <label>BISDetector</label>
+        <link refid="class_b_i_s_detector"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>Dexela</label>
+        <link refid="class_dexela"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>FastCCD</label>
+        <link refid="class_fast_c_c_d"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>FirewireDCAM</label>
+        <link refid="class_firewire_d_c_a_m"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>FirewireWinDCAM</label>
+        <link refid="class_firewire_win_d_c_a_m"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
@@ -742,66 +841,27 @@ Takes action if the function code requires it. Currently only ADShutterControl r
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="8">
-        <label>ADVimba</label>
-        <link refid="class_a_d_vimba"/>
-        <childnode refid="4" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="32">
-        <label>merlinDetector</label>
-        <link refid="classmerlin_detector"/>
+      <node id="19">
+        <label>NDDriverStdArrays</label>
+        <link refid="class_n_d_driver_std_arrays"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="30">
-        <label>mar345</label>
-        <link refid="classmar345"/>
+      <node id="20">
+        <label>PSL</label>
+        <link refid="class_p_s_l"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="40">
-        <label>roper</label>
-        <link refid="classroper"/>
+      <node id="21">
+        <label>PerkinElmer</label>
+        <link refid="class_perkin_elmer"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="38">
-        <label>pvCam</label>
-        <link refid="classpv_cam"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="36">
-        <label>pointGrey</label>
-        <link refid="classpoint_grey"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="3">
-        <label>asynPortDriver</label>
-      </node>
-      <node id="6">
-        <label>ADPylon</label>
-        <link refid="class_a_d_pylon"/>
-        <childnode refid="4" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="27">
-        <label>andor3</label>
-        <link refid="classandor3"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="35">
-        <label>pixirad</label>
-        <link refid="classpixirad"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="13">
-        <label>BISDetector</label>
-        <link refid="class_b_i_s_detector"/>
+      <node id="22">
+        <label>PhotonII</label>
+        <link refid="class_photon_i_i"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
@@ -817,27 +877,27 @@ Takes action if the function code requires it. Currently only ADShutterControl r
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="15">
-        <label>FastCCD</label>
-        <link refid="class_fast_c_c_d"/>
+      <node id="25">
+        <label>URLDriver</label>
+        <link refid="class_u_r_l_driver"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="33">
-        <label>mythen</label>
-        <link refid="classmythen"/>
+      <node id="26">
+        <label>adsc</label>
+        <link refid="classadsc"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="19">
-        <label>NDDriverStdArrays</label>
-        <link refid="class_n_d_driver_std_arrays"/>
+      <node id="27">
+        <label>andor3</label>
+        <link refid="classandor3"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="34">
-        <label>pilatusDetector</label>
-        <link refid="classpilatus_detector"/>
+      <node id="28">
+        <label>aravisCamera</label>
+        <link refid="classaravis_camera"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
@@ -847,9 +907,18 @@ Takes action if the function code requires it. Currently only ADShutterControl r
         <childnode refid="3" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="41">
-        <label>simDetector</label>
-        <link refid="classsim_detector"/>
+      <node id="3">
+        <label>asynPortDriver</label>
+      </node>
+      <node id="29">
+        <label>eigerDetector</label>
+        <link refid="classeiger_detector"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="30">
+        <label>mar345</label>
+        <link refid="classmar345"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
@@ -859,93 +928,33 @@ Takes action if the function code requires it. Currently only ADShutterControl r
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="21">
-        <label>PerkinElmer</label>
-        <link refid="class_perkin_elmer"/>
+      <node id="32">
+        <label>merlinDetector</label>
+        <link refid="classmerlin_detector"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="42">
-        <label>xcamCamera</label>
-        <link refid="classxcam_camera"/>
+      <node id="33">
+        <label>mythen</label>
+        <link refid="classmythen"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="29">
-        <label>eigerDetector</label>
-        <link refid="classeiger_detector"/>
+      <node id="34">
+        <label>pilatusDetector</label>
+        <link refid="classpilatus_detector"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="17">
-        <label>FirewireWinDCAM</label>
-        <link refid="class_firewire_win_d_c_a_m"/>
+      <node id="35">
+        <label>pixirad</label>
+        <link refid="classpixirad"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="9">
-        <label>ADLambda</label>
-        <link refid="class_a_d_lambda"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="22">
-        <label>PhotonII</label>
-        <link refid="class_photon_i_i"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="20">
-        <label>PSL</label>
-        <link refid="class_p_s_l"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="1">
-        <label>ADDriver</label>
-        <link refid="class_a_d_driver"/>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="10">
-        <label>ADPICam</label>
-        <link refid="class_a_d_p_i_cam"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="5">
-        <label>ADAravis</label>
-        <link refid="class_a_d_aravis"/>
-        <childnode refid="4" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="4">
-        <label>ADGenICam</label>
-        <link refid="class_a_d_gen_i_cam"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="12">
-        <label>AndorCCD</label>
-        <link refid="class_andor_c_c_d"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="14">
-        <label>Dexela</label>
-        <link refid="class_dexela"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="16">
-        <label>FirewireDCAM</label>
-        <link refid="class_firewire_d_c_a_m"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="11">
-        <label>ADnED</label>
-        <link refid="class_a_dn_e_d"/>
+      <node id="36">
+        <label>pointGrey</label>
+        <link refid="classpoint_grey"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
@@ -955,17 +964,43 @@ Takes action if the function code requires it. Currently only ADShutterControl r
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
+      <node id="38">
+        <label>pvCam</label>
+        <link refid="classpv_cam"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="39">
+        <label>pvaDriver</label>
+        <link refid="classpva_driver"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="40">
+        <label>roper</label>
+        <link refid="classroper"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="41">
+        <label>simDetector</label>
+        <link refid="classsim_detector"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="42">
+        <label>xcamCamera</label>
+        <link refid="classxcam_camera"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="7">
-        <label>NDDimension</label>
-        <link refid="struct_n_d_dimension"/>
-      </node>
-      <node id="3">
-        <label>asynPortDriver</label>
-      </node>
-      <node id="9">
-        <label>string</label>
+      <node id="1">
+        <label>ADDriver</label>
+        <link refid="class_a_d_driver"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
       </node>
       <node id="8">
         <label>Codec_t</label>
@@ -974,24 +1009,36 @@ Takes action if the function code requires it. Currently only ADShutterControl r
           <edgelabel>name</edgelabel>
         </childnode>
       </node>
-      <node id="6">
+      <node id="5">
         <label>NDArray</label>
         <link refid="class_n_d_array"/>
         <childnode refid="4" relation="usage">
           <edgelabel>pNDArrayPool</edgelabel>
         </childnode>
-        <childnode refid="7" relation="usage">
+        <childnode refid="2" relation="usage">
+          <edgelabel>pDriver</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
           <edgelabel>dims</edgelabel>
         </childnode>
-        <childnode refid="5" relation="usage">
+        <childnode refid="7" relation="usage">
           <edgelabel>pAttributeList</edgelabel>
         </childnode>
         <childnode refid="8" relation="usage">
           <edgelabel>codec</edgelabel>
         </childnode>
-        <childnode refid="2" relation="usage">
-          <edgelabel>pDriver</edgelabel>
-        </childnode>
+      </node>
+      <node id="4">
+        <label>NDArrayPool</label>
+        <link refid="class_n_d_array_pool"/>
+      </node>
+      <node id="7">
+        <label>NDAttributeList</label>
+        <link refid="class_n_d_attribute_list"/>
+      </node>
+      <node id="6">
+        <label>NDDimension</label>
+        <link refid="struct_n_d_dimension"/>
       </node>
       <node id="2">
         <label>asynNDArrayDriver</label>
@@ -1002,25 +1049,17 @@ Takes action if the function code requires it. Currently only ADShutterControl r
           <edgelabel>pNDArrayPool</edgelabel>
         </childnode>
         <childnode refid="5" relation="usage">
-          <edgelabel>pAttributeList</edgelabel>
-        </childnode>
-        <childnode refid="6" relation="usage">
           <edgelabel>pArrays</edgelabel>
         </childnode>
-      </node>
-      <node id="4">
-        <label>NDArrayPool</label>
-        <link refid="class_n_d_array_pool"/>
-      </node>
-      <node id="1">
-        <label>ADDriver</label>
-        <link refid="class_a_d_driver"/>
-        <childnode refid="2" relation="public-inheritance">
+        <childnode refid="7" relation="usage">
+          <edgelabel>pAttributeList</edgelabel>
         </childnode>
       </node>
-      <node id="5">
-        <label>NDAttributeList</label>
-        <link refid="class_n_d_attribute_list"/>
+      <node id="3">
+        <label>asynPortDriver</label>
+      </node>
+      <node id="9">
+        <label>string</label>
       </node>
     </collaborationgraph>
     <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" line="132" column="1" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/ADSrc/ADDriver.h" bodystart="132" bodyend="184"/>

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="dir_9a65295b059e41f9ff4c15a92b597742" kind="dir">
     <compoundname>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED</compoundname>
     <innerdir refid="dir_bef7e803a6b7339a5507d8cbc6cbbae3">/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp</innerdir>

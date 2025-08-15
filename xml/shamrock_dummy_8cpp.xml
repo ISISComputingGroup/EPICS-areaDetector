@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="shamrock_dummy_8cpp" kind="file" language="C++">
     <compoundname>shamrockDummy.cpp</compoundname>
     <includes local="no">stdio.h</includes>
@@ -16,17 +16,17 @@
         <childnode refid="4" relation="include">
         </childnode>
       </node>
-      <node id="3">
-        <label>iocsh.h</label>
-      </node>
       <node id="4">
         <label>epicsExport.h</label>
+      </node>
+      <node id="3">
+        <label>iocsh.h</label>
       </node>
       <node id="2">
         <label>stdio.h</label>
       </node>
     </incdepgraph>
-      <sectiondef kind="var">
+    <sectiondef kind="var">
       <memberdef kind="variable" id="shamrock_dummy_8cpp_1a5b3cb40f99ecdaa383a0189445b38fbf" prot="public" static="yes" mutable="no">
         <type>const iocshArg</type>
         <definition>const iocshArg configArg0</definition>
@@ -39,7 +39,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADAndor/andorApp/src/shamrockDummy.cpp" line="7" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADAndor/andorApp/src/shamrockDummy.cpp" bodystart="7" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADAndor/andorApp/src/shamrockDummy.cpp" line="7" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADAndor/andorApp/src/shamrockDummy.cpp" bodystart="7" bodyend="7"/>
       </memberdef>
       <memberdef kind="variable" id="shamrock_dummy_8cpp_1a12e03f733e7768280d0205a2d8adeaab" prot="public" static="yes" mutable="no">
         <type>const iocshArg</type>
@@ -53,7 +53,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADAndor/andorApp/src/shamrockDummy.cpp" line="8" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADAndor/andorApp/src/shamrockDummy.cpp" bodystart="8" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADAndor/andorApp/src/shamrockDummy.cpp" line="8" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADAndor/andorApp/src/shamrockDummy.cpp" bodystart="8" bodyend="8"/>
       </memberdef>
       <memberdef kind="variable" id="shamrock_dummy_8cpp_1ac0dc159931b84391cb7c0fed1fa7986f" prot="public" static="yes" mutable="no">
         <type>const iocshArg</type>
@@ -67,7 +67,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADAndor/andorApp/src/shamrockDummy.cpp" line="9" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADAndor/andorApp/src/shamrockDummy.cpp" bodystart="9" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADAndor/andorApp/src/shamrockDummy.cpp" line="9" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADAndor/andorApp/src/shamrockDummy.cpp" bodystart="9" bodyend="9"/>
       </memberdef>
       <memberdef kind="variable" id="shamrock_dummy_8cpp_1ace59dfd97294c541e5bef057cdb513e7" prot="public" static="yes" mutable="no">
         <type>const iocshArg</type>
@@ -81,7 +81,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADAndor/andorApp/src/shamrockDummy.cpp" line="10" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADAndor/andorApp/src/shamrockDummy.cpp" bodystart="10" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADAndor/andorApp/src/shamrockDummy.cpp" line="10" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADAndor/andorApp/src/shamrockDummy.cpp" bodystart="10" bodyend="10"/>
       </memberdef>
       <memberdef kind="variable" id="shamrock_dummy_8cpp_1a340f9b3d99922a0aa2c3b150f5a34cd1" prot="public" static="yes" mutable="no">
         <type>const iocshArg</type>
@@ -95,7 +95,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADAndor/andorApp/src/shamrockDummy.cpp" line="11" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADAndor/andorApp/src/shamrockDummy.cpp" bodystart="11" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADAndor/andorApp/src/shamrockDummy.cpp" line="11" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADAndor/andorApp/src/shamrockDummy.cpp" bodystart="11" bodyend="11"/>
       </memberdef>
       <memberdef kind="variable" id="shamrock_dummy_8cpp_1a552430c6092c73bc46cfa4a702f43ea6" prot="public" static="yes" mutable="no">
         <type>const iocshArg *const</type>
@@ -113,7 +113,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADAndor/andorApp/src/shamrockDummy.cpp" line="12" column="30" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADAndor/andorApp/src/shamrockDummy.cpp" bodystart="12" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADAndor/andorApp/src/shamrockDummy.cpp" line="12" column="30" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADAndor/andorApp/src/shamrockDummy.cpp" bodystart="12" bodyend="16"/>
       </memberdef>
       <memberdef kind="variable" id="shamrock_dummy_8cpp_1a13ed22465ee8e1efa95598ef7132b829" prot="public" static="yes" mutable="no">
         <type>const iocshFuncDef</type>
@@ -127,10 +127,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADAndor/andorApp/src/shamrockDummy.cpp" line="17" column="27" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADAndor/andorApp/src/shamrockDummy.cpp" bodystart="17" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADAndor/andorApp/src/shamrockDummy.cpp" line="17" column="27" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADAndor/andorApp/src/shamrockDummy.cpp" bodystart="17" bodyend="17"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="func">
+    </sectiondef>
+    <sectiondef kind="func">
       <memberdef kind="function" id="shamrock_dummy_8cpp_1ad770aee80665342b5803974f683424bc" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>static void configCallFunc</definition>
@@ -180,7 +180,7 @@
         </inbodydescription>
         <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADAndor/andorApp/src/shamrockDummy.cpp" line="30" column="1" declfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADAndor/andorApp/src/shamrockDummy.cpp" declline="30" declcolumn="1"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
@@ -203,7 +203,7 @@
 <codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;configArg3,</highlight></codeline>
 <codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;configArg4};</highlight></codeline>
 <codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>iocshFuncDef<sp/>configShamrock<sp/>=<sp/>{</highlight><highlight class="stringliteral">&quot;shamrockConfig&quot;</highlight><highlight class="normal">,<sp/>5,<sp/>configArgs};</highlight></codeline>
-<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>configCallFunc(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>iocshArgBuf<sp/>*<ref refid="namespacemake_adl_1a1d55f39db2066eab50e6f2b21abc00f1" kindref="member">args</ref>)</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>configCallFunc(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>iocshArgBuf<sp/>*args)</highlight></codeline>
 <codeline lineno="19"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;ERROR:<sp/>shamrockConfig<sp/>is<sp/>not<sp/>supported<sp/>on<sp/>Linux\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="21"><highlight class="normal">}</highlight></codeline>

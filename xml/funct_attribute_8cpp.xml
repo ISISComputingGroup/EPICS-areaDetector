@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="funct_attribute_8cpp" kind="file" language="C++">
     <compoundname>functAttribute.cpp</compoundname>
     <includes local="no">stdlib.h</includes>
@@ -7,55 +7,11 @@
     <includes local="no">registryFunction.h</includes>
     <includes refid="funct_attribute_8h" local="yes">functAttribute.h</includes>
     <incdepgraph>
-      <node id="10">
-        <label>epicsTypes.h</label>
-      </node>
-      <node id="2">
-        <label>stdlib.h</label>
-      </node>
-      <node id="4">
-        <label>registryFunction.h</label>
-      </node>
-      <node id="13">
-        <label>epicsVersion.h</label>
-      </node>
-      <node id="8">
-        <label>string</label>
-      </node>
-      <node id="5">
-        <label>functAttribute.h</label>
-        <link refid="funct_attribute_8h"/>
-        <childnode refid="6" relation="include">
-        </childnode>
-        <childnode refid="7" relation="include">
-        </childnode>
-      </node>
-      <node id="1">
-        <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/ADSrc/functAttribute.cpp</label>
-        <link refid="funct_attribute_8cpp"/>
-        <childnode refid="2" relation="include">
-        </childnode>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-        <childnode refid="5" relation="include">
-        </childnode>
-      </node>
-      <node id="3">
-        <label>epicsString.h</label>
-      </node>
-      <node id="9">
-        <label>ellLib.h</label>
-      </node>
       <node id="12">
         <label>ADCoreAPI.h</label>
         <link refid="_a_d_core_a_p_i_8h"/>
         <childnode refid="13" relation="include">
         </childnode>
-      </node>
-      <node id="11">
-        <label>asynDriver.h</label>
       </node>
       <node id="7">
         <label>NDAttribute.h</label>
@@ -73,11 +29,55 @@
         <childnode refid="12" relation="include">
         </childnode>
       </node>
+      <node id="1">
+        <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/ADSrc/functAttribute.cpp</label>
+        <link refid="funct_attribute_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>functAttribute.h</label>
+        <link refid="funct_attribute_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>asynDriver.h</label>
+      </node>
+      <node id="9">
+        <label>ellLib.h</label>
+      </node>
+      <node id="3">
+        <label>epicsString.h</label>
+      </node>
+      <node id="10">
+        <label>epicsTypes.h</label>
+      </node>
+      <node id="13">
+        <label>epicsVersion.h</label>
+      </node>
+      <node id="4">
+        <label>registryFunction.h</label>
+      </node>
       <node id="6">
         <label>stdio.h</label>
       </node>
+      <node id="2">
+        <label>stdlib.h</label>
+      </node>
+      <node id="8">
+        <label>string</label>
+      </node>
     </incdepgraph>
-      <sectiondef kind="var">
+    <sectiondef kind="var">
       <memberdef kind="variable" id="funct_attribute_8cpp_1af0e94d13028051cd5339d204bfbb057d" prot="public" static="yes" mutable="no">
         <type>const char *</type>
         <definition>const char* driverName</definition>
@@ -106,7 +106,7 @@
         </inbodydescription>
         <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/ADSrc/functAttribute.cpp" line="25" column="17" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/ADSrc/functAttribute.cpp" bodystart="25" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
@@ -187,7 +187,7 @@
 <codeline lineno="84"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="85"><highlight class="normal"><sp/><sp/><ref refid="classfunct_attribute" kindref="compound">functAttribute</ref><sp/>*pOut<sp/>=<sp/>(<ref refid="classfunct_attribute" kindref="compound">functAttribute</ref><sp/>*)pAttr;</highlight></codeline>
 <codeline lineno="86"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!pOut)</highlight></codeline>
-<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>pOut<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classfunct_attribute_1af766f0ca2f5075599fcf5db83e006533" kindref="member">functAttribute</ref>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>pOut<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classfunct_attribute" kindref="compound">functAttribute</ref>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="88"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
 <codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>NOTE:<sp/>We<sp/>assume<sp/>that<sp/>if<sp/>the<sp/>attribute<sp/>name<sp/>is<sp/>the<sp/>same<sp/>then<sp/>the<sp/>function<sp/>name<sp/>and<sp/>parameter<sp/>are<sp/>also<sp/>the<sp/>same</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>are<sp/>also<sp/>the<sp/>same</highlight><highlight class="normal"></highlight></codeline>

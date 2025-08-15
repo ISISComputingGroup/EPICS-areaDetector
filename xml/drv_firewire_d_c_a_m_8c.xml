@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="drv_firewire_d_c_a_m_8c" kind="file" language="C++">
     <compoundname>drvFirewireDCAM.c</compoundname>
     <includes local="no">iocsh.h</includes>
@@ -7,15 +7,6 @@
     <includes local="no">epicsExport.h</includes>
     <includes refid="drv_firewire_d_c_a_m_8h" local="yes">drvFirewireDCAM.h</includes>
     <incdepgraph>
-      <node id="2">
-        <label>iocsh.h</label>
-      </node>
-      <node id="3">
-        <label>drvSup.h</label>
-      </node>
-      <node id="4">
-        <label>epicsExport.h</label>
-      </node>
       <node id="1">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/firewireDCAM/firewireDCAMApp/src/drvFirewireDCAM.c</label>
         <link refid="drv_firewire_d_c_a_m_8c"/>
@@ -32,8 +23,17 @@
         <label>drvFirewireDCAM.h</label>
         <link refid="drv_firewire_d_c_a_m_8h"/>
       </node>
+      <node id="3">
+        <label>drvSup.h</label>
+      </node>
+      <node id="4">
+        <label>epicsExport.h</label>
+      </node>
+      <node id="2">
+        <label>iocsh.h</label>
+      </node>
     </incdepgraph>
-      <sectiondef kind="var">
+    <sectiondef kind="var">
       <memberdef kind="variable" id="drv_firewire_d_c_a_m_8c_1a0085bc189376aff283410a55fa0b0082" prot="public" static="yes" mutable="no">
         <type>const iocshArg</type>
         <definition>const iocshArg firewireDCAMConfigArg0</definition>
@@ -46,7 +46,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/firewireDCAM/firewireDCAMApp/src/drvFirewireDCAM.c" line="11" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/firewireDCAM/firewireDCAMApp/src/drvFirewireDCAM.c" bodystart="11" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/firewireDCAM/firewireDCAMApp/src/drvFirewireDCAM.c" line="11" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/firewireDCAM/firewireDCAMApp/src/drvFirewireDCAM.c" bodystart="11" bodyend="11"/>
       </memberdef>
       <memberdef kind="variable" id="drv_firewire_d_c_a_m_8c_1a680418f2e49e681f60b2746dcbb426bc" prot="public" static="yes" mutable="no">
         <type>const iocshArg</type>
@@ -60,7 +60,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/firewireDCAM/firewireDCAMApp/src/drvFirewireDCAM.c" line="12" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/firewireDCAM/firewireDCAMApp/src/drvFirewireDCAM.c" bodystart="12" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/firewireDCAM/firewireDCAMApp/src/drvFirewireDCAM.c" line="12" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/firewireDCAM/firewireDCAMApp/src/drvFirewireDCAM.c" bodystart="12" bodyend="12"/>
       </memberdef>
       <memberdef kind="variable" id="drv_firewire_d_c_a_m_8c_1af65e66518065277b6c933c541b3d043b" prot="public" static="yes" mutable="no">
         <type>const iocshArg</type>
@@ -74,7 +74,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/firewireDCAM/firewireDCAMApp/src/drvFirewireDCAM.c" line="13" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/firewireDCAM/firewireDCAMApp/src/drvFirewireDCAM.c" bodystart="13" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/firewireDCAM/firewireDCAMApp/src/drvFirewireDCAM.c" line="13" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/firewireDCAM/firewireDCAMApp/src/drvFirewireDCAM.c" bodystart="13" bodyend="13"/>
       </memberdef>
       <memberdef kind="variable" id="drv_firewire_d_c_a_m_8c_1a8b07226a4e3f45443516164f0a495965" prot="public" static="yes" mutable="no">
         <type>const iocshArg</type>
@@ -88,7 +88,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/firewireDCAM/firewireDCAMApp/src/drvFirewireDCAM.c" line="14" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/firewireDCAM/firewireDCAMApp/src/drvFirewireDCAM.c" bodystart="14" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/firewireDCAM/firewireDCAMApp/src/drvFirewireDCAM.c" line="14" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/firewireDCAM/firewireDCAMApp/src/drvFirewireDCAM.c" bodystart="14" bodyend="14"/>
       </memberdef>
       <memberdef kind="variable" id="drv_firewire_d_c_a_m_8c_1a2bde69462c6adae8aca3ae332e3cd97f" prot="public" static="yes" mutable="no">
         <type>const iocshArg</type>
@@ -102,7 +102,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/firewireDCAM/firewireDCAMApp/src/drvFirewireDCAM.c" line="15" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/firewireDCAM/firewireDCAMApp/src/drvFirewireDCAM.c" bodystart="15" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/firewireDCAM/firewireDCAMApp/src/drvFirewireDCAM.c" line="15" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/firewireDCAM/firewireDCAMApp/src/drvFirewireDCAM.c" bodystart="15" bodyend="15"/>
       </memberdef>
       <memberdef kind="variable" id="drv_firewire_d_c_a_m_8c_1a1bf9ca7a53bdf757a946990c9d607577" prot="public" static="yes" mutable="no">
         <type>const iocshArg</type>
@@ -116,7 +116,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/firewireDCAM/firewireDCAMApp/src/drvFirewireDCAM.c" line="16" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/firewireDCAM/firewireDCAMApp/src/drvFirewireDCAM.c" bodystart="16" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/firewireDCAM/firewireDCAMApp/src/drvFirewireDCAM.c" line="16" column="23" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/firewireDCAM/firewireDCAMApp/src/drvFirewireDCAM.c" bodystart="16" bodyend="16"/>
       </memberdef>
       <memberdef kind="variable" id="drv_firewire_d_c_a_m_8c_1aa16f601cbc952f5f5aa8bfbf6428e976" prot="public" static="yes" mutable="no">
         <type>const iocshArg *const</type>
@@ -135,7 +135,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/firewireDCAM/firewireDCAMApp/src/drvFirewireDCAM.c" line="17" column="30" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/firewireDCAM/firewireDCAMApp/src/drvFirewireDCAM.c" bodystart="17" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/firewireDCAM/firewireDCAMApp/src/drvFirewireDCAM.c" line="17" column="30" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/firewireDCAM/firewireDCAMApp/src/drvFirewireDCAM.c" bodystart="17" bodyend="22"/>
       </memberdef>
       <memberdef kind="variable" id="drv_firewire_d_c_a_m_8c_1a8c7d26360ccfa9d42097da87d3b8a25e" prot="public" static="yes" mutable="no">
         <type>const iocshFuncDef</type>
@@ -149,7 +149,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/firewireDCAM/firewireDCAMApp/src/drvFirewireDCAM.c" line="23" column="27" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/firewireDCAM/firewireDCAMApp/src/drvFirewireDCAM.c" bodystart="23" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/firewireDCAM/firewireDCAMApp/src/drvFirewireDCAM.c" line="23" column="27" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/firewireDCAM/firewireDCAMApp/src/drvFirewireDCAM.c" bodystart="23" bodyend="23"/>
       </memberdef>
       <memberdef kind="variable" id="drv_firewire_d_c_a_m_8c_1a55e92089918526ceff31d6410815a7a1" prot="public" static="yes" mutable="no">
         <type>const iocshFuncDef</type>
@@ -163,7 +163,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/firewireDCAM/firewireDCAMApp/src/drvFirewireDCAM.c" line="30" column="27" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/firewireDCAM/firewireDCAMApp/src/drvFirewireDCAM.c" bodystart="30" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/firewireDCAM/firewireDCAMApp/src/drvFirewireDCAM.c" line="30" column="27" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/firewireDCAM/firewireDCAMApp/src/drvFirewireDCAM.c" bodystart="30" bodyend="30"/>
       </memberdef>
       <memberdef kind="variable" id="drv_firewire_d_c_a_m_8c_1a25d5bde0d5d8ab924f821ace7799ac2e" prot="public" static="yes" mutable="no">
         <type>const iocshFuncDef</type>
@@ -177,10 +177,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/firewireDCAM/firewireDCAMApp/src/drvFirewireDCAM.c" line="36" column="27" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/firewireDCAM/firewireDCAMApp/src/drvFirewireDCAM.c" bodystart="36" bodyend="-1"/>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/firewireDCAM/firewireDCAMApp/src/drvFirewireDCAM.c" line="36" column="27" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/firewireDCAM/firewireDCAMApp/src/drvFirewireDCAM.c" bodystart="36" bodyend="36"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="func">
+    </sectiondef>
+    <sectiondef kind="func">
       <memberdef kind="function" id="drv_firewire_d_c_a_m_8c_1acbaa65633c4035b6fc01abb509d728ca" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>static void configfirewireDCAMCallFunc</definition>
@@ -264,7 +264,7 @@
         </inbodydescription>
         <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/firewireDCAM/firewireDCAMApp/src/drvFirewireDCAM.c" line="51" column="1" declfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/firewireDCAM/firewireDCAMApp/src/drvFirewireDCAM.c" declline="51" declcolumn="1"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
 <para>Exporting the configuration functions to the ioc shell. </para>
     </briefdescription>
@@ -291,20 +291,20 @@
 <codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;firewireDCAMConfigArg4,</highlight></codeline>
 <codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;firewireDCAMConfigArg5};</highlight></codeline>
 <codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>iocshFuncDef<sp/>configFirewireDCAM<sp/>=<sp/>{</highlight><highlight class="stringliteral">&quot;FDC_Config&quot;</highlight><highlight class="normal">,<sp/>6,<sp/>firewireDCAMConfigArgs};</highlight></codeline>
-<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>configfirewireDCAMCallFunc(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>iocshArgBuf<sp/>*<ref refid="namespacemake_adl_1a1d55f39db2066eab50e6f2b21abc00f1" kindref="member">args</ref>)</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>configfirewireDCAMCallFunc(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>iocshArgBuf<sp/>*args)</highlight></codeline>
 <codeline lineno="25"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="drv_firewire_d_c_a_m_8h_1a454ac2cac58a9bcff7b247de1d2ac293" kindref="member">FDC_Config</ref>(<ref refid="namespacemake_adl_1a1d55f39db2066eab50e6f2b21abc00f1" kindref="member">args</ref>[0].sval,<sp/><ref refid="namespacemake_adl_1a1d55f39db2066eab50e6f2b21abc00f1" kindref="member">args</ref>[1].sval,<sp/><ref refid="namespacemake_adl_1a1d55f39db2066eab50e6f2b21abc00f1" kindref="member">args</ref>[2].ival,<sp/><ref refid="namespacemake_adl_1a1d55f39db2066eab50e6f2b21abc00f1" kindref="member">args</ref>[3].ival,<sp/><ref refid="namespacemake_adl_1a1d55f39db2066eab50e6f2b21abc00f1" kindref="member">args</ref>[4].ival,<sp/><ref refid="namespacemake_adl_1a1d55f39db2066eab50e6f2b21abc00f1" kindref="member">args</ref>[5].ival);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="drv_firewire_d_c_a_m_8h_1a454ac2cac58a9bcff7b247de1d2ac293" kindref="member">FDC_Config</ref>(args[0].sval,<sp/>args[1].sval,<sp/>args[2].ival,<sp/>args[3].ival,<sp/>args[4].ival,<sp/>args[5].ival);</highlight></codeline>
 <codeline lineno="27"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="28"><highlight class="normal"></highlight></codeline>
 <codeline lineno="29"><highlight class="normal"></highlight></codeline>
 <codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>iocshFuncDef<sp/>firewireDCAMInitBusFuncDef<sp/>=<sp/>{</highlight><highlight class="stringliteral">&quot;FDC_InitBus&quot;</highlight><highlight class="normal">,<sp/>0,<sp/>NULL};</highlight></codeline>
-<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>firewireDCAMInitBusCallFunc(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>iocshArgBuf<sp/>*<ref refid="namespacemake_adl_1a1d55f39db2066eab50e6f2b21abc00f1" kindref="member">args</ref>)</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>firewireDCAMInitBusCallFunc(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>iocshArgBuf<sp/>*args)</highlight></codeline>
 <codeline lineno="32"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="drv_firewire_d_c_a_m_8h_1a6d50200dff8184c53c436103fd99bbdd" kindref="member">FDC_InitBus</ref>();</highlight></codeline>
 <codeline lineno="34"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="35"><highlight class="normal"></highlight></codeline>
 <codeline lineno="36"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>iocshFuncDef<sp/>firewireDCAMResetBusFuncDef<sp/>=<sp/>{</highlight><highlight class="stringliteral">&quot;FDC_ResetBus&quot;</highlight><highlight class="normal">,<sp/>0,<sp/>NULL};</highlight></codeline>
-<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>firewireDCAMResetBusCallFunc(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>iocshArgBuf<sp/>*<ref refid="namespacemake_adl_1a1d55f39db2066eab50e6f2b21abc00f1" kindref="member">args</ref>)</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>firewireDCAMResetBusCallFunc(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>iocshArgBuf<sp/>*args)</highlight></codeline>
 <codeline lineno="38"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="drv_firewire_d_c_a_m_8h_1a6527e58d139780c0ef02a3cab4f21421" kindref="member">FDC_ResetBus</ref>();</highlight></codeline>
 <codeline lineno="40"><highlight class="normal">}</highlight></codeline>

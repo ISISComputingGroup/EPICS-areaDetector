@@ -1,16 +1,17 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="classhdf5_1_1_group" kind="class" language="C++" prot="public">
     <compoundname>hdf5::Group</compoundname>
     <basecompoundref refid="classhdf5_1_1_element" prot="public" virt="non-virtual">hdf5::Element</basecompoundref>
     <derivedcompoundref refid="classhdf5_1_1_root" prot="public" virt="non-virtual">hdf5::Root</derivedcompoundref>
     <includes refid="_n_d_file_h_d_f5_layout_8h" local="no">NDFileHDF5Layout.h</includes>
-      <sectiondef kind="public-type">
+    <sectiondef kind="public-type">
       <memberdef kind="typedef" id="classhdf5_1_1_group_1adb3e2d18f001900a0efaaf14f7d8ea95" prot="public" static="no">
         <type>std::map&lt; std::string, <ref refid="classhdf5_1_1_group" kindref="compound">Group</ref> * &gt;</type>
         <definition>typedef std::map&lt;std::string, Group*&gt; hdf5::Group::MapGroups_t</definition>
         <argsstring></argsstring>
         <name>MapGroups_t</name>
+        <qualifiedname>hdf5::Group::MapGroups_t</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -24,6 +25,7 @@
         <definition>typedef std::map&lt;std::string, Dataset*&gt; hdf5::Group::MapDatasets_t</definition>
         <argsstring></argsstring>
         <name>MapDatasets_t</name>
+        <qualifiedname>hdf5::Group::MapDatasets_t</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -37,6 +39,7 @@
         <definition>typedef std::map&lt;std::string, HardLink*&gt; hdf5::Group::MapHardLinks_t</definition>
         <argsstring></argsstring>
         <name>MapHardLinks_t</name>
+        <qualifiedname>hdf5::Group::MapHardLinks_t</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -50,6 +53,7 @@
         <definition>typedef std::map&lt;std::string, DataSource*&gt; hdf5::Group::MapNDAttrSrc_t</definition>
         <argsstring></argsstring>
         <name>MapNDAttrSrc_t</name>
+        <qualifiedname>hdf5::Group::MapNDAttrSrc_t</qualifiedname>
         <briefdescription>
 <para>return a map of datasets [string name, <ref refid="classhdf5_1_1_dataset" kindref="compound">Dataset</ref> dset] which contains all datasets, marked as [source] data. </para>
         </briefdescription>
@@ -59,13 +63,14 @@
         </inbodydescription>
         <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5Layout.h" line="270" column="24" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5Layout.h" bodystart="270" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="private-attrib">
+    </sectiondef>
+    <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="classhdf5_1_1_group_1a8e5a84a7912611a1ed5afc1acce96597" prot="private" static="no" mutable="no">
         <type><ref refid="classhdf5_1_1_data_source" kindref="compound">DataSource</ref></type>
         <definition>DataSource hdf5::Group::datasource</definition>
         <argsstring></argsstring>
         <name>datasource</name>
+        <qualifiedname>hdf5::Group::datasource</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -79,6 +84,7 @@
         <definition>bool hdf5::Group::ndattr_default_container</definition>
         <argsstring></argsstring>
         <name>ndattr_default_container</name>
+        <qualifiedname>hdf5::Group::ndattr_default_container</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -92,6 +98,7 @@
         <definition>std::map&lt;std::string, Dataset*&gt; hdf5::Group::datasets</definition>
         <argsstring></argsstring>
         <name>datasets</name>
+        <qualifiedname>hdf5::Group::datasets</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -105,6 +112,7 @@
         <definition>std::map&lt;std::string, Group*&gt; hdf5::Group::groups</definition>
         <argsstring></argsstring>
         <name>groups</name>
+        <qualifiedname>hdf5::Group::groups</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -118,6 +126,7 @@
         <definition>std::map&lt;std::string, HardLink*&gt; hdf5::Group::hardlinks</definition>
         <argsstring></argsstring>
         <name>hardlinks</name>
+        <qualifiedname>hdf5::Group::hardlinks</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -126,13 +135,14 @@
         </inbodydescription>
         <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5Layout.h" line="282" column="16" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5Layout.h" bodystart="282" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="public-func">
+    </sectiondef>
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="classhdf5_1_1_group_1a82bd71c12fbaa6dd01b956649b52881b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>hdf5::Group::Group</definition>
         <argsstring>()</argsstring>
         <name>Group</name>
+        <qualifiedname>hdf5::Group::Group</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -146,6 +156,7 @@
         <definition>hdf5::Group::Group</definition>
         <argsstring>(const std::string &amp;name)</argsstring>
         <name>Group</name>
+        <qualifiedname>hdf5::Group::Group</qualifiedname>
         <param>
           <type>const std::string &amp;</type>
           <declname>name</declname>
@@ -163,6 +174,7 @@
         <definition>hdf5::Group::Group</definition>
         <argsstring>(const char *name)</argsstring>
         <name>Group</name>
+        <qualifiedname>hdf5::Group::Group</qualifiedname>
         <param>
           <type>const char *</type>
           <declname>name</declname>
@@ -180,6 +192,7 @@
         <definition>hdf5::Group::Group</definition>
         <argsstring>(const Group &amp;src)</argsstring>
         <name>Group</name>
+        <qualifiedname>hdf5::Group::Group</qualifiedname>
         <param>
           <type>const <ref refid="classhdf5_1_1_group" kindref="compound">Group</ref> &amp;</type>
           <declname>src</declname>
@@ -197,6 +210,7 @@
         <definition>hdf5::Group::~Group</definition>
         <argsstring>()</argsstring>
         <name>~Group</name>
+        <qualifiedname>hdf5::Group::~Group</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -210,6 +224,7 @@
         <definition>Group &amp; hdf5::Group::operator=</definition>
         <argsstring>(const Group &amp;src)</argsstring>
         <name>operator=</name>
+        <qualifiedname>hdf5::Group::operator=</qualifiedname>
         <param>
           <type>const <ref refid="classhdf5_1_1_group" kindref="compound">Group</ref> &amp;</type>
           <declname>src</declname>
@@ -227,6 +242,7 @@
         <definition>Dataset * hdf5::Group::new_dset</definition>
         <argsstring>(const std::string &amp;name)</argsstring>
         <name>new_dset</name>
+        <qualifiedname>hdf5::Group::new_dset</qualifiedname>
         <param>
           <type>const std::string &amp;</type>
           <declname>name</declname>
@@ -244,6 +260,7 @@
         <definition>Dataset * hdf5::Group::new_dset</definition>
         <argsstring>(const char *name)</argsstring>
         <name>new_dset</name>
+        <qualifiedname>hdf5::Group::new_dset</qualifiedname>
         <param>
           <type>const char *</type>
           <declname>name</declname>
@@ -261,6 +278,7 @@
         <definition>Group * hdf5::Group::new_group</definition>
         <argsstring>(const std::string &amp;name)</argsstring>
         <name>new_group</name>
+        <qualifiedname>hdf5::Group::new_group</qualifiedname>
         <param>
           <type>const std::string &amp;</type>
           <declname>name</declname>
@@ -280,6 +298,7 @@
         <definition>Group * hdf5::Group::new_group</definition>
         <argsstring>(const char *name)</argsstring>
         <name>new_group</name>
+        <qualifiedname>hdf5::Group::new_group</qualifiedname>
         <param>
           <type>const char *</type>
           <declname>name</declname>
@@ -297,6 +316,7 @@
         <definition>HardLink * hdf5::Group::new_hardlink</definition>
         <argsstring>(const std::string &amp;name)</argsstring>
         <name>new_hardlink</name>
+        <qualifiedname>hdf5::Group::new_hardlink</qualifiedname>
         <param>
           <type>const std::string &amp;</type>
           <declname>name</declname>
@@ -316,6 +336,7 @@
         <definition>HardLink * hdf5::Group::new_hardlink</definition>
         <argsstring>(const char *name)</argsstring>
         <name>new_hardlink</name>
+        <qualifiedname>hdf5::Group::new_hardlink</qualifiedname>
         <param>
           <type>const char *</type>
           <declname>name</declname>
@@ -333,6 +354,7 @@
         <definition>int hdf5::Group::find_dset_ndattr</definition>
         <argsstring>(const std::string &amp;ndattr_name, Dataset **dset)</argsstring>
         <name>find_dset_ndattr</name>
+        <qualifiedname>hdf5::Group::find_dset_ndattr</qualifiedname>
         <param>
           <type>const std::string &amp;</type>
           <declname>ndattr_name</declname>
@@ -354,6 +376,7 @@
         <definition>int hdf5::Group::find_dset_ndattr</definition>
         <argsstring>(const char *ndattr_name, Dataset **dset)</argsstring>
         <name>find_dset_ndattr</name>
+        <qualifiedname>hdf5::Group::find_dset_ndattr</qualifiedname>
         <param>
           <type>const char *</type>
           <declname>ndattr_name</declname>
@@ -376,6 +399,7 @@
         <definition>int hdf5::Group::find_dset</definition>
         <argsstring>(std::string &amp;dsetname, Dataset **dest)</argsstring>
         <name>find_dset</name>
+        <qualifiedname>hdf5::Group::find_dset</qualifiedname>
         <param>
           <type>std::string &amp;</type>
           <declname>dsetname</declname>
@@ -397,6 +421,7 @@
         <definition>int hdf5::Group::find_dset</definition>
         <argsstring>(const char *dsetname, Dataset **dest)</argsstring>
         <name>find_dset</name>
+        <qualifiedname>hdf5::Group::find_dset</qualifiedname>
         <param>
           <type>const char *</type>
           <declname>dsetname</declname>
@@ -418,6 +443,7 @@
         <definition>void hdf5::Group::set_default_ndattr_group</definition>
         <argsstring>()</argsstring>
         <name>set_default_ndattr_group</name>
+        <qualifiedname>hdf5::Group::set_default_ndattr_group</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -431,6 +457,7 @@
         <definition>Group * hdf5::Group::find_ndattr_default_group</definition>
         <argsstring>()</argsstring>
         <name>find_ndattr_default_group</name>
+        <qualifiedname>hdf5::Group::find_ndattr_default_group</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -444,6 +471,7 @@
         <definition>int hdf5::Group::find_detector_default_dset</definition>
         <argsstring>(Dataset **dset)</argsstring>
         <name>find_detector_default_dset</name>
+        <qualifiedname>hdf5::Group::find_detector_default_dset</qualifiedname>
         <param>
           <type><ref refid="classhdf5_1_1_dataset" kindref="compound">Dataset</ref> **</type>
           <declname>dset</declname>
@@ -462,6 +490,7 @@
         <definition>int hdf5::Group::num_groups</definition>
         <argsstring>()</argsstring>
         <name>num_groups</name>
+        <qualifiedname>hdf5::Group::num_groups</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -475,6 +504,7 @@
         <definition>int hdf5::Group::num_datasets</definition>
         <argsstring>()</argsstring>
         <name>num_datasets</name>
+        <qualifiedname>hdf5::Group::num_datasets</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -488,6 +518,7 @@
         <definition>std::string hdf5::Group::_str_</definition>
         <argsstring>()</argsstring>
         <name>_str_</name>
+        <qualifiedname>hdf5::Group::_str_</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -501,6 +532,7 @@
         <definition>void hdf5::Group::set_data_source</definition>
         <argsstring>(DataSource &amp;src)</argsstring>
         <name>set_data_source</name>
+        <qualifiedname>hdf5::Group::set_data_source</qualifiedname>
         <param>
           <type><ref refid="classhdf5_1_1_data_source" kindref="compound">DataSource</ref> &amp;</type>
           <declname>src</declname>
@@ -519,6 +551,7 @@
         <definition>DataSource &amp; hdf5::Group::data_source</definition>
         <argsstring>()</argsstring>
         <name>data_source</name>
+        <qualifiedname>hdf5::Group::data_source</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -532,6 +565,7 @@
         <definition>Group::MapGroups_t &amp; hdf5::Group::get_groups</definition>
         <argsstring>()</argsstring>
         <name>get_groups</name>
+        <qualifiedname>hdf5::Group::get_groups</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -545,6 +579,7 @@
         <definition>Group::MapDatasets_t &amp; hdf5::Group::get_datasets</definition>
         <argsstring>()</argsstring>
         <name>get_datasets</name>
+        <qualifiedname>hdf5::Group::get_datasets</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -558,6 +593,7 @@
         <definition>Group::MapHardLinks_t &amp; hdf5::Group::get_hardlinks</definition>
         <argsstring>()</argsstring>
         <name>get_hardlinks</name>
+        <qualifiedname>hdf5::Group::get_hardlinks</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -571,6 +607,7 @@
         <definition>void hdf5::Group::find_dsets</definition>
         <argsstring>(DataSrc_t source, MapDatasets_t &amp;dsets)</argsstring>
         <name>find_dsets</name>
+        <qualifiedname>hdf5::Group::find_dsets</qualifiedname>
         <param>
           <type><ref refid="namespacehdf5_1a35f510139e8a82f80a2e0487f82078a8" kindref="member">DataSrc_t</ref></type>
           <declname>source</declname>
@@ -592,6 +629,7 @@
         <definition>void hdf5::Group::merge_ndattributes</definition>
         <argsstring>(MapNDAttrSrc_t::const_iterator it_begin, MapNDAttrSrc_t::const_iterator it_end, std::set&lt; std::string &gt; &amp;used_ndattribute_srcs)</argsstring>
         <name>merge_ndattributes</name>
+        <qualifiedname>hdf5::Group::merge_ndattributes</qualifiedname>
         <reimplementedby refid="classhdf5_1_1_root_1a0809f1de51652bd184a73a3ff2b4ca41">merge_ndattributes</reimplementedby>
         <param>
           <type>MapNDAttrSrc_t::const_iterator</type>
@@ -613,13 +651,14 @@
         </inbodydescription>
         <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5Layout.h" line="271" column="20" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5Layout.cpp" bodystart="621" bodyend="642"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="friend">
-      <memberdef kind="friend" id="classhdf5_1_1_group_1af54baecc2b425edb076f4004be22e546" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+    </sectiondef>
+    <sectiondef kind="friend">
+      <memberdef kind="friend" id="classhdf5_1_1_group_1a01ce9a2fde79bc777f0dc46ff7f4f7cc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>std::ostream &amp;</type>
-        <definition>std::ostream&amp; operator&lt;&lt;</definition>
+        <definition>std::ostream &amp; operator&lt;&lt;</definition>
         <argsstring>(std::ostream &amp;out, Group &amp;grp)</argsstring>
         <name>operator&lt;&lt;</name>
+        <qualifiedname>hdf5::Group::operator&lt;&lt;</qualifiedname>
         <param>
           <type>std::ostream &amp;</type>
           <declname>out</declname>
@@ -637,13 +676,14 @@
         </inbodydescription>
         <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5Layout.h" line="255" column="21" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5Layout.h" bodystart="255" bodyend="256"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="private-func">
+    </sectiondef>
+    <sectiondef kind="private-func">
       <memberdef kind="function" id="classhdf5_1_1_group_1a345011ca5af82021056ddfa5732479bc" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void hdf5::Group::_copy</definition>
         <argsstring>(const Group &amp;src)</argsstring>
         <name>_copy</name>
+        <qualifiedname>hdf5::Group::_copy</qualifiedname>
         <param>
           <type>const <ref refid="classhdf5_1_1_group" kindref="compound">Group</ref> &amp;</type>
           <declname>src</declname>
@@ -661,6 +701,7 @@
         <definition>bool hdf5::Group::name_exist</definition>
         <argsstring>(const std::string &amp;name)</argsstring>
         <name>name_exist</name>
+        <qualifiedname>hdf5::Group::name_exist</qualifiedname>
         <param>
           <type>const std::string &amp;</type>
           <declname>name</declname>
@@ -673,7 +714,7 @@
         </inbodydescription>
         <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5Layout.h" line="278" column="12" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5Layout.cpp" bodystart="665" bodyend="675"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
 <para>Describe a group element. </para>
     </briefdescription>
@@ -681,15 +722,15 @@
 <para>A group is like a directory in a file system. It can contain other groups and datasets (like files). </para>
     </detaileddescription>
     <inheritancegraph>
+      <node id="2">
+        <label>hdf5::Element</label>
+        <link refid="classhdf5_1_1_element"/>
+      </node>
       <node id="1">
         <label>hdf5::Group</label>
         <link refid="classhdf5_1_1_group"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
-      </node>
-      <node id="2">
-        <label>hdf5::Element</label>
-        <link refid="classhdf5_1_1_element"/>
       </node>
       <node id="3">
         <label>hdf5::Root</label>
@@ -699,6 +740,13 @@
       </node>
     </inheritancegraph>
     <collaborationgraph>
+      <node id="2">
+        <label>hdf5::Element</label>
+        <link refid="classhdf5_1_1_element"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
+      </node>
       <node id="1">
         <label>hdf5::Group</label>
         <link refid="classhdf5_1_1_group"/>
@@ -707,13 +755,6 @@
       </node>
       <node id="3">
         <label>string</label>
-      </node>
-      <node id="2">
-        <label>hdf5::Element</label>
-        <link refid="classhdf5_1_1_element"/>
-        <childnode refid="3" relation="usage">
-          <edgelabel>name</edgelabel>
-        </childnode>
       </node>
     </collaborationgraph>
     <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5Layout.h" line="228" column="3" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5Layout.h" bodystart="229" bodyend="283"/>
@@ -768,7 +809,7 @@
       <member refid="classhdf5_1_1_group_1af891f593665f3ab1b6a7317f614a2bd5" prot="public" virt="non-virtual"><scope>hdf5::Group</scope><name>new_hardlink</name></member>
       <member refid="classhdf5_1_1_group_1a36bbca99ae5b8bed8d32c3a5b4db09b5" prot="public" virt="non-virtual"><scope>hdf5::Group</scope><name>num_datasets</name></member>
       <member refid="classhdf5_1_1_group_1ad44a1c2497a79c468e49f6117eeca5b0" prot="public" virt="non-virtual"><scope>hdf5::Group</scope><name>num_groups</name></member>
-      <member refid="classhdf5_1_1_group_1af54baecc2b425edb076f4004be22e546" prot="public" virt="non-virtual"><scope>hdf5::Group</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classhdf5_1_1_group_1a01ce9a2fde79bc777f0dc46ff7f4f7cc" prot="public" virt="non-virtual"><scope>hdf5::Group</scope><name>operator&lt;&lt;</name></member>
       <member refid="classhdf5_1_1_group_1a39899097b4e28bb34b02a0917ee29f79" prot="public" virt="non-virtual"><scope>hdf5::Group</scope><name>operator=</name></member>
       <member refid="classhdf5_1_1_element_1af9364109e40ee88f8e67512c3c620c1a" prot="public" virt="non-virtual" ambiguityscope="hdf5::Element::"><scope>hdf5::Group</scope><name>operator=</name></member>
       <member refid="classhdf5_1_1_group_1af8417b5b8a53c23e540d7155e86a9100" prot="public" virt="non-virtual"><scope>hdf5::Group</scope><name>set_data_source</name></member>

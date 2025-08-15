@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="param_attribute_8cpp" kind="file" language="C++">
     <compoundname>paramAttribute.cpp</compoundname>
     <includes local="no">string.h</includes>
@@ -13,20 +13,15 @@
     <includes refid="_n_d_array_8h" local="yes">NDArray.h</includes>
     <includes refid="param_attribute_8h" local="yes">paramAttribute.h</includes>
     <incdepgraph>
-      <node id="13">
-        <label>epicsTypes.h</label>
+      <node id="15">
+        <label>ADCoreAPI.h</label>
+        <link refid="_a_d_core_a_p_i_8h"/>
+        <childnode refid="16" relation="include">
+        </childnode>
       </node>
-      <node id="5">
-        <label>stdlib.h</label>
-      </node>
-      <node id="6">
-        <label>epicsMutex.h</label>
-      </node>
-      <node id="16">
-        <label>epicsVersion.h</label>
-      </node>
-      <node id="3">
-        <label>string</label>
+      <node id="23">
+        <label>ADCoreVersion.h</label>
+        <link refid="_a_d_core_version_8h"/>
       </node>
       <node id="18">
         <label>Codec.h</label>
@@ -50,46 +45,6 @@
         <childnode refid="18" relation="include">
         </childnode>
       </node>
-      <node id="23">
-        <label>ADCoreVersion.h</label>
-        <link refid="_a_d_core_version_8h"/>
-      </node>
-      <node id="17">
-        <label>NDAttributeList.h</label>
-        <link refid="_n_d_attribute_list_8h"/>
-        <childnode refid="4" relation="include">
-        </childnode>
-        <childnode refid="8" relation="include">
-        </childnode>
-        <childnode refid="6" relation="include">
-        </childnode>
-        <childnode refid="12" relation="include">
-        </childnode>
-      </node>
-      <node id="9">
-        <label>epicsString.h</label>
-      </node>
-      <node id="2">
-        <label>string.h</label>
-      </node>
-      <node id="8">
-        <label>ellLib.h</label>
-      </node>
-      <node id="15">
-        <label>ADCoreAPI.h</label>
-        <link refid="_a_d_core_a_p_i_8h"/>
-        <childnode refid="16" relation="include">
-        </childnode>
-      </node>
-      <node id="14">
-        <label>asynDriver.h</label>
-      </node>
-      <node id="7">
-        <label>epicsTime.h</label>
-      </node>
-      <node id="22">
-        <label>asynPortDriver.h</label>
-      </node>
       <node id="12">
         <label>NDAttribute.h</label>
         <link refid="_n_d_attribute_8h"/>
@@ -106,8 +61,17 @@
         <childnode refid="15" relation="include">
         </childnode>
       </node>
-      <node id="11">
-        <label>set</label>
+      <node id="17">
+        <label>NDAttributeList.h</label>
+        <link refid="_n_d_attribute_list_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
       </node>
       <node id="20">
         <label>asynNDArrayDriver.h</label>
@@ -122,9 +86,6 @@
         </childnode>
         <childnode refid="23" relation="include">
         </childnode>
-      </node>
-      <node id="4">
-        <label>stdio.h</label>
       </node>
       <node id="1">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/ADSrc/paramAttribute.cpp</label>
@@ -150,9 +111,6 @@
         <childnode refid="19" relation="include">
         </childnode>
       </node>
-      <node id="21">
-        <label>epicsEvent.h</label>
-      </node>
       <node id="19">
         <label>paramAttribute.h</label>
         <link refid="param_attribute_8h"/>
@@ -161,8 +119,50 @@
         <childnode refid="20" relation="include">
         </childnode>
       </node>
+      <node id="14">
+        <label>asynDriver.h</label>
+      </node>
+      <node id="22">
+        <label>asynPortDriver.h</label>
+      </node>
+      <node id="8">
+        <label>ellLib.h</label>
+      </node>
+      <node id="21">
+        <label>epicsEvent.h</label>
+      </node>
+      <node id="6">
+        <label>epicsMutex.h</label>
+      </node>
+      <node id="9">
+        <label>epicsString.h</label>
+      </node>
+      <node id="7">
+        <label>epicsTime.h</label>
+      </node>
+      <node id="13">
+        <label>epicsTypes.h</label>
+      </node>
+      <node id="16">
+        <label>epicsVersion.h</label>
+      </node>
+      <node id="11">
+        <label>set</label>
+      </node>
+      <node id="4">
+        <label>stdio.h</label>
+      </node>
+      <node id="5">
+        <label>stdlib.h</label>
+      </node>
+      <node id="3">
+        <label>string</label>
+      </node>
+      <node id="2">
+        <label>string.h</label>
+      </node>
     </incdepgraph>
-      <sectiondef kind="var">
+    <sectiondef kind="var">
       <memberdef kind="variable" id="param_attribute_8cpp_1af0e94d13028051cd5339d204bfbb057d" prot="public" static="yes" mutable="no">
         <type>const char *</type>
         <definition>const char* driverName</definition>
@@ -191,7 +191,7 @@
         </inbodydescription>
         <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/ADSrc/paramAttribute.cpp" line="30" column="17" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/ADSrc/paramAttribute.cpp" bodystart="30" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
@@ -305,7 +305,7 @@
 <codeline lineno="122"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classparam_attribute_1ac367be2c85196cc99825a2da988eb689" kindref="member">paramAttribute::updateValue</ref>()</highlight></codeline>
 <codeline lineno="123"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>status<sp/>=<sp/>asynSuccess;</highlight></codeline>
-<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacehdf5_1abeed318faeb13380e1b4221bd4198bf1aea271040d7a5b8d9af9cbf6564d262d5" kindref="member">std::string</ref><sp/>stringValue<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>stringValue<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/>epicsInt32<sp/>i32Value=0;</highlight></codeline>
 <codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/>epicsInt64<sp/>i64Value=0;</highlight></codeline>
 <codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>epicsFloat64<sp/>f64Value=0.;</highlight></codeline>
@@ -347,7 +347,7 @@
 <codeline lineno="164"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="165"><highlight class="normal"><sp/><sp/><ref refid="classparam_attribute" kindref="compound">paramAttribute</ref><sp/>*pOut<sp/>=<sp/>(<ref refid="classparam_attribute" kindref="compound">paramAttribute</ref><sp/>*)pAttr;</highlight></codeline>
 <codeline lineno="166"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!pOut)</highlight></codeline>
-<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>pOut<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classparam_attribute_1a5cbf4b6c740605d618da772940c1676d" kindref="member">paramAttribute</ref>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>pOut<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classparam_attribute" kindref="compound">paramAttribute</ref>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="168"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
 <codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_n_d_attribute_1a17dfc6c9abb94701330d86429927c41b" kindref="member">NDAttribute::copy</ref>(pOut);</highlight></codeline>
 <codeline lineno="170"><highlight class="normal"><sp/><sp/>}</highlight></codeline>

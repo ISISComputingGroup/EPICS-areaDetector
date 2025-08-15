@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="nullhttpd_8h" kind="file" language="C++">
     <compoundname>nullhttpd.h</compoundname>
     <includes local="no">ctype.h</includes>
@@ -29,63 +29,6 @@
     <includedby refid="nullhttpd__server_8c" local="yes">/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ffmpegServer/ffmpegServerApp/src/nullhttpd_server.c</includedby>
     <includedby refid="nullhttpd__win32_8c" local="yes">/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ffmpegServer/ffmpegServerApp/src/nullhttpd_win32.c</includedby>
     <incdepgraph>
-      <node id="9">
-        <label>sys/stat.h</label>
-      </node>
-      <node id="4">
-        <label>stdarg.h</label>
-      </node>
-      <node id="17">
-        <label>netinet/in.h</label>
-      </node>
-      <node id="16">
-        <label>arpa/inet.h</label>
-      </node>
-      <node id="6">
-        <label>stdlib.h</label>
-      </node>
-      <node id="12">
-        <label>paths.h</label>
-      </node>
-      <node id="3">
-        <label>fcntl.h</label>
-      </node>
-      <node id="11">
-        <label>netdb.h</label>
-      </node>
-      <node id="18">
-        <label>sys/resource.h</label>
-      </node>
-      <node id="13">
-        <label>pthread.h</label>
-      </node>
-      <node id="21">
-        <label>sys/types.h</label>
-      </node>
-      <node id="7">
-        <label>string.h</label>
-      </node>
-      <node id="15">
-        <label>unistd.h</label>
-      </node>
-      <node id="14">
-        <label>signal.h</label>
-      </node>
-      <node id="8">
-        <label>time.h</label>
-      </node>
-      <node id="22">
-        <label>sys/wait.h</label>
-      </node>
-      <node id="20">
-        <label>sys/time.h</label>
-      </node>
-      <node id="2">
-        <label>ctype.h</label>
-      </node>
-      <node id="19">
-        <label>sys/socket.h</label>
-      </node>
       <node id="1">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ffmpegServer/ffmpegServerApp/src/nullhttpd.h</label>
         <link refid="nullhttpd_8h"/>
@@ -132,25 +75,74 @@
         <childnode refid="22" relation="include">
         </childnode>
       </node>
-      <node id="5">
-        <label>stdio.h</label>
+      <node id="16">
+        <label>arpa/inet.h</label>
+      </node>
+      <node id="2">
+        <label>ctype.h</label>
       </node>
       <node id="10">
         <label>dirent.h</label>
+      </node>
+      <node id="3">
+        <label>fcntl.h</label>
+      </node>
+      <node id="11">
+        <label>netdb.h</label>
+      </node>
+      <node id="17">
+        <label>netinet/in.h</label>
+      </node>
+      <node id="12">
+        <label>paths.h</label>
+      </node>
+      <node id="13">
+        <label>pthread.h</label>
+      </node>
+      <node id="14">
+        <label>signal.h</label>
+      </node>
+      <node id="4">
+        <label>stdarg.h</label>
+      </node>
+      <node id="5">
+        <label>stdio.h</label>
+      </node>
+      <node id="6">
+        <label>stdlib.h</label>
+      </node>
+      <node id="7">
+        <label>string.h</label>
+      </node>
+      <node id="18">
+        <label>sys/resource.h</label>
+      </node>
+      <node id="19">
+        <label>sys/socket.h</label>
+      </node>
+      <node id="9">
+        <label>sys/stat.h</label>
+      </node>
+      <node id="20">
+        <label>sys/time.h</label>
+      </node>
+      <node id="21">
+        <label>sys/types.h</label>
+      </node>
+      <node id="22">
+        <label>sys/wait.h</label>
+      </node>
+      <node id="8">
+        <label>time.h</label>
+      </node>
+      <node id="15">
+        <label>unistd.h</label>
       </node>
     </incdepgraph>
     <invincdepgraph>
       <node id="3">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ffmpegServer/ffmpegServerApp/src/ffmpegServer.cpp</label>
         <link refid="ffmpeg_server_8cpp"/>
-      </node>
-      <node id="7">
-        <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ffmpegServer/ffmpegServerApp/src/nullhttpd_win32.c</label>
-        <link refid="nullhttpd__win32_8c"/>
-      </node>
-      <node id="6">
-        <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ffmpegServer/ffmpegServerApp/src/nullhttpd_server.c</label>
-        <link refid="nullhttpd__server_8c"/>
       </node>
       <node id="2">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ffmpegServer/ffmpegServerApp/src/ffmpegServer.h</label>
@@ -172,20 +164,28 @@
         <childnode refid="7" relation="include">
         </childnode>
       </node>
+      <node id="4">
+        <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ffmpegServer/ffmpegServerApp/src/nullhttpd_format.c</label>
+        <link refid="nullhttpd__format_8c"/>
+      </node>
       <node id="5">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ffmpegServer/ffmpegServerApp/src/nullhttpd_http.c</label>
         <link refid="nullhttpd__http_8c"/>
       </node>
-      <node id="4">
-        <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ffmpegServer/ffmpegServerApp/src/nullhttpd_format.c</label>
-        <link refid="nullhttpd__format_8c"/>
+      <node id="6">
+        <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ffmpegServer/ffmpegServerApp/src/nullhttpd_server.c</label>
+        <link refid="nullhttpd__server_8c"/>
+      </node>
+      <node id="7">
+        <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ffmpegServer/ffmpegServerApp/src/nullhttpd_win32.c</label>
+        <link refid="nullhttpd__win32_8c"/>
       </node>
     </invincdepgraph>
     <innerclass refid="struct_c_o_n_f_i_g" prot="public">CONFIG</innerclass>
     <innerclass refid="struct_c_o_n_n_d_a_t_a" prot="public">CONNDATA</innerclass>
     <innerclass refid="struct_c_o_n_n_e_c_t_i_o_n" prot="public">CONNECTION</innerclass>
     <innerclass refid="structpipe__fd" prot="public">pipe_fd</innerclass>
-      <sectiondef kind="define">
+    <sectiondef kind="define">
       <memberdef kind="define" id="nullhttpd_8h_1aee36e0f5a4d67efec78edb9e1723304a" prot="public" static="no">
         <name>NULLHTTPD_SHARE</name>
         <briefdescription>
@@ -240,8 +240,8 @@
         </inbodydescription>
         <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ffmpegServer/ffmpegServerApp/src/nullhttpd.h" line="91" column="9" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ffmpegServer/ffmpegServerApp/src/nullhttpd.h" bodystart="91" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="var">
+    </sectiondef>
+    <sectiondef kind="var">
       <memberdef kind="variable" id="nullhttpd_8h_1a7e535fdc4fc85c1f88b9e044dbc21f52" prot="public" static="no" mutable="no">
         <type>pthread_mutex_t</type>
         <definition>pthread_mutex_t Crypt</definition>
@@ -282,8 +282,8 @@
         <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ffmpegServer/ffmpegServerApp/src/nullhttpd.h" line="232" column="17" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ffmpegServer/ffmpegServerApp/src/nullhttpd.h" bodystart="232" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="nullhttpd_8h_1af59c8ee0015ac5f3a81bfde224a3b9d7" prot="public" static="no" mutable="no">
-        <type>struct @8</type>
-        <definition>struct @8 Lock</definition>
+        <type>struct </type>
+        <definition>struct  Lock</definition>
         <argsstring></argsstring>
         <name>Lock</name>
         <briefdescription>
@@ -333,8 +333,8 @@
         </inbodydescription>
         <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ffmpegServer/ffmpegServerApp/src/nullhttpd.h" line="236" column="12" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ffmpegServer/ffmpegServerApp/src/nullhttpd.h" bodystart="236" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="func">
+    </sectiondef>
+    <sectiondef kind="func">
       <memberdef kind="function" id="nullhttpd_8h_1a280ff4f61d0c55000b6d8ae24f2dd09c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void dorequest</definition>
@@ -463,9 +463,9 @@
         </inbodydescription>
         <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ffmpegServer/ffmpegServerApp/src/nullhttpd.h" line="275" column="6" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ffmpegServer/ffmpegServerApp/src/nullhttpd_format.c" bodystart="87" bodyend="93" declfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ffmpegServer/ffmpegServerApp/src/nullhttpd.h" declline="275" declcolumn="6"/>
       </memberdef>
-      <memberdef kind="function" id="nullhttpd_8h_1a41a44bdb3e2cc1c3a62ef58e7a487957" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="nullhttpd_8h_1ae24bdd77caa8ac21e9a147ed10f948d5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>char *</type>
-        <definition>char* nullhttpd_strcasestr</definition>
+        <definition>char * nullhttpd_strcasestr</definition>
         <argsstring>(const char *src, const char *query)</argsstring>
         <name>nullhttpd_strcasestr</name>
         <param>
@@ -484,9 +484,9 @@
         </inbodydescription>
         <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ffmpegServer/ffmpegServerApp/src/nullhttpd.h" line="276" column="6" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ffmpegServer/ffmpegServerApp/src/nullhttpd_format.c" bodystart="95" bodyend="121" declfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ffmpegServer/ffmpegServerApp/src/nullhttpd.h" declline="276" declcolumn="6"/>
       </memberdef>
-      <memberdef kind="function" id="nullhttpd_8h_1ad1f25a5185e68601352178cfa624f7d2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="nullhttpd_8h_1a496e127e46703fd9d4663d3c8587914e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>char *</type>
-        <definition>char* strcatf</definition>
+        <definition>char * strcatf</definition>
         <argsstring>(char *dest, const char *format,...)</argsstring>
         <name>strcatf</name>
         <param>
@@ -577,9 +577,9 @@
         </inbodydescription>
         <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ffmpegServer/ffmpegServerApp/src/nullhttpd.h" line="281" column="6" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ffmpegServer/ffmpegServerApp/src/nullhttpd_http.c" bodystart="23" bodyend="35" declfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ffmpegServer/ffmpegServerApp/src/nullhttpd.h" declline="281" declcolumn="6"/>
       </memberdef>
-      <memberdef kind="function" id="nullhttpd_8h_1ad8d0362486b46e83729c01a679de74ca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="nullhttpd_8h_1a298420292443a08a317fa0678ae1870b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>char *</type>
-        <definition>char* get_mime_type</definition>
+        <definition>char * get_mime_type</definition>
         <argsstring>(char *name)</argsstring>
         <name>get_mime_type</name>
         <param>
@@ -939,7 +939,7 @@
         </inbodydescription>
         <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ffmpegServer/ffmpegServerApp/src/nullhttpd.h" line="302" column="22" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ffmpegServer/ffmpegServerApp/src/nullhttpd_server.c" bodystart="595" bodyend="652" declfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ffmpegServer/ffmpegServerApp/src/nullhttpd.h" declline="302" declcolumn="22"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
@@ -974,7 +974,7 @@
 <codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sys/stat.h&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>WIN32</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="29"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>#pragma<sp/>comment(lib,<sp/>&quot;libcmt.lib&quot;)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#pragma<sp/>comment(lib,<sp/>&quot;ws2_32.lib&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#pragma<sp/>comment(lib,<sp/>&quot;ws2_32.lib&quot;)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="31"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>#define<sp/>_MT<sp/>1</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#define<sp/>WIN32_LEAN_AND_MEAN</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#include<sp/>&lt;windows.h&gt;</highlight><highlight class="normal"></highlight></codeline>
@@ -1151,9 +1151,9 @@
 <codeline lineno="204"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>WIN32</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/>SOCKET<sp/><ref refid="structsocket" kindref="compound">socket</ref>;</highlight></codeline>
 <codeline lineno="206"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="207" refid="struct_c_o_n_n_e_c_t_i_o_n_1a6021b4b126950492d63d1d5e63f75c08" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structsocket" kindref="compound">socket</ref>;</highlight></codeline>
+<codeline lineno="207" refid="struct_c_o_n_n_e_c_t_i_o_n_1a20831448f876f3addf056628811a49c8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="struct_c_o_n_n_e_c_t_i_o_n_1a20831448f876f3addf056628811a49c8" kindref="member">socket</ref>;</highlight></codeline>
 <codeline lineno="208"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">sockaddr_in<sp/>ClientAddr;</highlight></codeline>
+<codeline lineno="209" refid="struct_c_o_n_n_e_c_t_i_o_n_1a6021b4b126950492d63d1d5e63f75c08" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">sockaddr_in<sp/>ClientAddr;</highlight></codeline>
 <codeline lineno="210" refid="struct_c_o_n_n_e_c_t_i_o_n_1a12f488994933eb0fb41eb3eb19ff93ca" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>time_t<sp/><ref refid="struct_c_o_n_n_e_c_t_i_o_n_1a12f488994933eb0fb41eb3eb19ff93ca" kindref="member">ctime</ref>;<sp/></highlight><highlight class="comment">//<sp/>Creation<sp/>time</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="211" refid="struct_c_o_n_n_e_c_t_i_o_n_1ad4da4149f74b440d31ed7cf57f15eb2f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>time_t<sp/><ref refid="struct_c_o_n_n_e_c_t_i_o_n_1ad4da4149f74b440d31ed7cf57f15eb2f" kindref="member">atime</ref>;<sp/></highlight><highlight class="comment">//<sp/>Last<sp/>Access<sp/>time</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="212" refid="struct_c_o_n_n_e_c_t_i_o_n_1a36c262e5f67ecd678aa264bfff4b5187" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="struct_c_o_n_n_e_c_t_i_o_n_1a36c262e5f67ecd678aa264bfff4b5187" kindref="member">PostData</ref>;</highlight></codeline>
@@ -1220,13 +1220,13 @@
 <codeline lineno="273"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="nullhttpd_8h_1a5e06f8315928ce0500b9471bf5b7ee61" kindref="member">hex2int</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*pChars);</highlight></codeline>
 <codeline lineno="274"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="nullhttpd_8h_1a1773d4c515919ba03f301efe291097db" kindref="member">striprn</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="275"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="nullhttpd_8h_1a5d4e286515357bbebc2f3e4886fd3264" kindref="member">swapchar</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>oldchar,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>newchar);</highlight></codeline>
-<codeline lineno="276"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="nullhttpd_8h_1a41a44bdb3e2cc1c3a62ef58e7a487957" kindref="member">nullhttpd_strcasestr</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*src,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*query);</highlight></codeline>
-<codeline lineno="277"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="nullhttpd_8h_1ad1f25a5185e68601352178cfa624f7d2" kindref="member">strcatf</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*dest,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*format,<sp/>...);</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="nullhttpd_8h_1ae24bdd77caa8ac21e9a147ed10f948d5" kindref="member">nullhttpd_strcasestr</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*src,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*query);</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="nullhttpd_8h_1a496e127e46703fd9d4663d3c8587914e" kindref="member">strcatf</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*dest,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*format,<sp/>...);</highlight></codeline>
 <codeline lineno="278"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="nullhttpd_8h_1a1ebb1631162c6f50d13c99635c8d00dd" kindref="member">printhex</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*format,<sp/>...);</highlight></codeline>
 <codeline lineno="279"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="nullhttpd_8h_1af58f9ee0c7f8257b1c16f235a9039cf6" kindref="member">printht</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*format,<sp/>...);</highlight></codeline>
 <codeline lineno="280"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>http.c<sp/>functions<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="281"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="nullhttpd_8h_1ad4a81cea18f472f3df2e85494113dcc5" kindref="member">printerror</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>sid,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>status,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>title,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="namespacemake_adl_1aeae8cdfc3da757448dc449a5ec6a2ce9" kindref="member">text</ref>);</highlight></codeline>
-<codeline lineno="282"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="nullhttpd_8h_1ad8d0362486b46e83729c01a679de74ca" kindref="member">get_mime_type</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="namespacemake_db_and_edl_1a2832407c256551abb325d5ee9e587443" kindref="member">name</ref>);</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="nullhttpd_8h_1ad4a81cea18f472f3df2e85494113dcc5" kindref="member">printerror</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>sid,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>status,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>title,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>text);</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="nullhttpd_8h_1a298420292443a08a317fa0678ae1870b" kindref="member">get_mime_type</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*name);</highlight></codeline>
 <codeline lineno="283"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="nullhttpd_8h_1adb5da8c9918f106775943cf27a171a3b" kindref="member">ReadPOSTData</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>sid);</highlight></codeline>
 <codeline lineno="284"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="nullhttpd_8h_1a1a9bc17fc2e0a0bf0fd9be63bf1faffc" kindref="member">read_header</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>sid);</highlight></codeline>
 <codeline lineno="285"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="nullhttpd_8h_1aed2a33b5bb684d7b757196a9c32a9fee" kindref="member">send_header</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>sid,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>cacheable,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>status,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*title,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*extra_header,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*mime_type,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>length,<sp/>time_t<sp/>mod);</highlight></codeline>
@@ -1244,9 +1244,9 @@
 <codeline lineno="297" refid="nullhttpd_8h_1a96b9678bd4e6fa1a289408ed69de0dd3" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="nullhttpd_8h_1a96b9678bd4e6fa1a289408ed69de0dd3" kindref="member">cgiinit</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="298"><highlight class="normal"><ref refid="nullhttpd_8h_1aee36e0f5a4d67efec78edb9e1723304a" kindref="member">NULLHTTPD_SHARE</ref><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="nullhttpd_8h_1afd49f8a781f4f13c93b4348dfdc4507d" kindref="member">init</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="299"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>WIN32</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="300"><highlight class="normal"><ref refid="nullhttpd_8h_1aee36e0f5a4d67efec78edb9e1723304a" kindref="member">NULLHTTPD_SHARE</ref><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>WSAReaper(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="namespacemake_adl_1a75ac3107bf0f8a876fe96f2eed30eb15" kindref="member">x</ref>);</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><ref refid="nullhttpd_8h_1aee36e0f5a4d67efec78edb9e1723304a" kindref="member">NULLHTTPD_SHARE</ref><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>WSAReaper(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*x);</highlight></codeline>
 <codeline lineno="301"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="302"><highlight class="normal"><ref refid="nullhttpd_8h_1aee36e0f5a4d67efec78edb9e1723304a" kindref="member">NULLHTTPD_SHARE</ref><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="nullhttpd_8h_1a8df31299ee67f394fa1b97ca96a1e656" kindref="member">accept_loop</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="namespacemake_adl_1a75ac3107bf0f8a876fe96f2eed30eb15" kindref="member">x</ref>);</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><ref refid="nullhttpd_8h_1aee36e0f5a4d67efec78edb9e1723304a" kindref="member">NULLHTTPD_SHARE</ref><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="nullhttpd_8h_1a8df31299ee67f394fa1b97ca96a1e656" kindref="member">accept_loop</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*x);</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ffmpegServer/ffmpegServerApp/src/nullhttpd.h"/>
   </compounddef>

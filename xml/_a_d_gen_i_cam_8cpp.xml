@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="_a_d_gen_i_cam_8cpp" kind="file" language="C++">
     <compoundname>ADGenICam.cpp</compoundname>
     <includes local="no">stdio.h</includes>
@@ -17,6 +17,92 @@
     <includes refid="_gen_i_cam_feature_8h" local="yes">GenICamFeature.h</includes>
     <includes refid="_a_d_gen_i_cam_8h" local="yes">ADGenICam.h</includes>
     <incdepgraph>
+      <node id="23">
+        <label>ADCoreAPI.h</label>
+        <link refid="_a_d_core_a_p_i_8h"/>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="27">
+        <label>ADCoreVersion.h</label>
+        <link refid="_a_d_core_version_8h"/>
+      </node>
+      <node id="12">
+        <label>ADDriver.h</label>
+        <link refid="_a_d_driver_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>Codec.h</label>
+        <link refid="_codec_8h"/>
+      </node>
+      <node id="18">
+        <label>NDArray.h</label>
+        <link refid="_n_d_array_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>NDAttribute.h</label>
+        <link refid="_n_d_attribute_8h"/>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>NDAttributeList.h</label>
+        <link refid="_n_d_attribute_list_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>asynNDArrayDriver.h</label>
+        <link refid="asyn_n_d_array_driver_8h"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+      </node>
       <node id="1">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADGenICam/GenICamApp/src/ADGenICam.cpp</label>
         <link refid="_a_d_gen_i_cam_8cpp"/>
@@ -49,14 +135,21 @@
         <childnode refid="33" relation="include">
         </childnode>
       </node>
-      <node id="13">
-        <label>epicsTypes.h</label>
+      <node id="33">
+        <label>ADGenICam.h</label>
+        <link refid="_a_d_gen_i_cam_8h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
       </node>
-      <node id="9">
-        <label>cantProceed.h</label>
-      </node>
-      <node id="3">
-        <label>stdlib.h</label>
+      <node id="32">
+        <label>ADGenICamAPI.h</label>
+        <link refid="_a_d_gen_i_cam_a_p_i_8h"/>
+        <childnode refid="24" relation="include">
+        </childnode>
       </node>
       <node id="29">
         <label>GenICamFeature.h</label>
@@ -72,73 +165,62 @@
         <childnode refid="32" relation="include">
         </childnode>
       </node>
-      <node id="16">
-        <label>epicsMutex.h</label>
+      <node id="22">
+        <label>asynDriver.h</label>
+      </node>
+      <node id="17">
+        <label>asynPortDriver.h</label>
+      </node>
+      <node id="9">
+        <label>cantProceed.h</label>
+      </node>
+      <node id="19">
+        <label>ellLib.h</label>
+      </node>
+      <node id="6">
+        <label>epicsEvent.h</label>
       </node>
       <node id="11">
         <label>epicsExit.h</label>
       </node>
-      <node id="24">
-        <label>epicsVersion.h</label>
+      <node id="28">
+        <label>epicsExport.h</label>
       </node>
-      <node id="21">
-        <label>string</label>
+      <node id="14">
+        <label>epicsMessageQueue.h</label>
       </node>
-      <node id="31">
-        <label>map</label>
+      <node id="16">
+        <label>epicsMutex.h</label>
+      </node>
+      <node id="10">
+        <label>epicsString.h</label>
       </node>
       <node id="8">
         <label>epicsThread.h</label>
       </node>
-      <node id="26">
-        <label>Codec.h</label>
-        <link refid="_codec_8h"/>
+      <node id="7">
+        <label>epicsTime.h</label>
       </node>
-      <node id="18">
-        <label>NDArray.h</label>
-        <link refid="_n_d_array_8h"/>
-        <childnode refid="5" relation="include">
-        </childnode>
-        <childnode refid="16" relation="include">
-        </childnode>
-        <childnode refid="7" relation="include">
-        </childnode>
-        <childnode refid="19" relation="include">
-        </childnode>
-        <childnode refid="20" relation="include">
-        </childnode>
-        <childnode refid="25" relation="include">
-        </childnode>
-        <childnode refid="26" relation="include">
-        </childnode>
+      <node id="13">
+        <label>epicsTypes.h</label>
       </node>
-      <node id="28">
-        <label>epicsExport.h</label>
+      <node id="24">
+        <label>epicsVersion.h</label>
       </node>
-      <node id="27">
-        <label>ADCoreVersion.h</label>
-        <link refid="_a_d_core_version_8h"/>
+      <node id="31">
+        <label>map</label>
       </node>
-      <node id="32">
-        <label>ADGenICamAPI.h</label>
-        <link refid="_a_d_gen_i_cam_a_p_i_8h"/>
-        <childnode refid="24" relation="include">
-        </childnode>
+      <node id="5">
+        <label>set</label>
       </node>
-      <node id="25">
-        <label>NDAttributeList.h</label>
-        <link refid="_n_d_attribute_list_8h"/>
-        <childnode refid="2" relation="include">
-        </childnode>
-        <childnode refid="19" relation="include">
-        </childnode>
-        <childnode refid="16" relation="include">
-        </childnode>
-        <childnode refid="20" relation="include">
-        </childnode>
+      <node id="2">
+        <label>stdio.h</label>
       </node>
-      <node id="10">
-        <label>epicsString.h</label>
+      <node id="3">
+        <label>stdlib.h</label>
+      </node>
+      <node id="21">
+        <label>string</label>
       </node>
       <node id="4">
         <label>string.h</label>
@@ -146,90 +228,8 @@
       <node id="30">
         <label>vector</label>
       </node>
-      <node id="19">
-        <label>ellLib.h</label>
-      </node>
-      <node id="23">
-        <label>ADCoreAPI.h</label>
-        <link refid="_a_d_core_a_p_i_8h"/>
-        <childnode refid="24" relation="include">
-        </childnode>
-      </node>
-      <node id="22">
-        <label>asynDriver.h</label>
-      </node>
-      <node id="7">
-        <label>epicsTime.h</label>
-      </node>
-      <node id="33">
-        <label>ADGenICam.h</label>
-        <link refid="_a_d_gen_i_cam_8h"/>
-        <childnode refid="12" relation="include">
-        </childnode>
-        <childnode refid="32" relation="include">
-        </childnode>
-        <childnode refid="29" relation="include">
-        </childnode>
-      </node>
-      <node id="17">
-        <label>asynPortDriver.h</label>
-      </node>
-      <node id="20">
-        <label>NDAttribute.h</label>
-        <link refid="_n_d_attribute_8h"/>
-        <childnode refid="21" relation="include">
-        </childnode>
-        <childnode refid="2" relation="include">
-        </childnode>
-        <childnode refid="19" relation="include">
-        </childnode>
-        <childnode refid="13" relation="include">
-        </childnode>
-        <childnode refid="22" relation="include">
-        </childnode>
-        <childnode refid="23" relation="include">
-        </childnode>
-      </node>
-      <node id="5">
-        <label>set</label>
-      </node>
-      <node id="12">
-        <label>ADDriver.h</label>
-        <link refid="_a_d_driver_8h"/>
-        <childnode refid="13" relation="include">
-        </childnode>
-        <childnode refid="14" relation="include">
-        </childnode>
-        <childnode refid="7" relation="include">
-        </childnode>
-        <childnode refid="15" relation="include">
-        </childnode>
-      </node>
-      <node id="14">
-        <label>epicsMessageQueue.h</label>
-      </node>
-      <node id="15">
-        <label>asynNDArrayDriver.h</label>
-        <link refid="asyn_n_d_array_driver_8h"/>
-        <childnode refid="16" relation="include">
-        </childnode>
-        <childnode refid="6" relation="include">
-        </childnode>
-        <childnode refid="17" relation="include">
-        </childnode>
-        <childnode refid="18" relation="include">
-        </childnode>
-        <childnode refid="27" relation="include">
-        </childnode>
-      </node>
-      <node id="2">
-        <label>stdio.h</label>
-      </node>
-      <node id="6">
-        <label>epicsEvent.h</label>
-      </node>
     </incdepgraph>
-      <sectiondef kind="var">
+    <sectiondef kind="var">
       <memberdef kind="variable" id="_a_d_gen_i_cam_8cpp_1af0e94d13028051cd5339d204bfbb057d" prot="public" static="yes" mutable="no">
         <type>const char *</type>
         <definition>const char* driverName</definition>
@@ -244,7 +244,7 @@
         </inbodydescription>
         <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADGenICam/GenICamApp/src/ADGenICam.cpp" line="32" column="19" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADGenICam/GenICamApp/src/ADGenICam.cpp" bodystart="32" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
@@ -316,10 +316,10 @@
 <codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="71"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="72"><highlight class="normal"></highlight></codeline>
-<codeline lineno="80"><highlight class="normal">asynStatus<sp/><ref refid="class_a_d_gen_i_cam_1a220b32d05048adcc8cd128a99a230594" kindref="member">ADGenICam::writeInt32</ref>(<sp/>asynUser<sp/>*pasynUser,<sp/>epicsInt32<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>)</highlight></codeline>
+<codeline lineno="80"><highlight class="normal">asynStatus<sp/><ref refid="class_a_d_gen_i_cam_1a220b32d05048adcc8cd128a99a230594" kindref="member">ADGenICam::writeInt32</ref>(<sp/>asynUser<sp/>*pasynUser,<sp/>epicsInt32<sp/>value)</highlight></codeline>
 <codeline lineno="81"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>asynStatus<sp/>status<sp/>=<sp/>asynSuccess;</highlight></codeline>
-<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>=<sp/>pasynUser-&gt;reason;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>function<sp/>=<sp/>pasynUser-&gt;reason;</highlight></codeline>
 <codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>acquiring;</highlight></codeline>
 <codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*functionName<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;writeInt32&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="86"><highlight class="normal"></highlight></codeline>
@@ -328,15 +328,15 @@
 <codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>asynPrint(pasynUserSelf,<sp/>ASYN_TRACEIO_DRIVER,<sp/></highlight><highlight class="stringliteral">&quot;%s%s:<sp/>entry<sp/>acquiring=%d\n&quot;</highlight><highlight class="normal">,<sp/>driverName,<sp/>functionName,<sp/>acquiring);</highlight></codeline>
 <codeline lineno="90"><highlight class="normal"></highlight></codeline>
 <codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Set<sp/>the<sp/>value<sp/>in<sp/>the<sp/>parameter<sp/>library.<sp/><sp/>This<sp/>may<sp/>change<sp/>later<sp/>but<sp/>that&apos;s<sp/>OK</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>status<sp/>=<sp/><ref refid="classasyn_n_d_array_driver_1abf87462bc5853f8e5a56db5e93acd956" kindref="member">setIntegerParam</ref>(</highlight><highlight class="keyword">function</highlight><highlight class="normal">,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>status<sp/>=<sp/><ref refid="classasyn_n_d_array_driver_1abf87462bc5853f8e5a56db5e93acd956" kindref="member">setIntegerParam</ref>(function,<sp/>value);</highlight></codeline>
 <codeline lineno="93"><highlight class="normal"></highlight></codeline>
-<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>&lt;<sp/>mFirstParam)<sp/>{</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(function<sp/>&lt;<sp/>mFirstParam)<sp/>{</highlight></codeline>
 <codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>If<sp/>this<sp/>parameter<sp/>belongs<sp/>to<sp/>a<sp/>base<sp/>class<sp/>call<sp/>its<sp/>method</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/><ref refid="class_a_d_driver_1abef6916bb90d032a1aeb6894adef12a6" kindref="member">ADDriver::writeInt32</ref>(pasynUser,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/><ref refid="class_a_d_driver_1abef6916bb90d032a1aeb6894adef12a6" kindref="member">ADDriver::writeInt32</ref>(pasynUser,<sp/>value);</highlight></codeline>
 <codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight></codeline>
 <codeline lineno="98"><highlight class="normal"></highlight></codeline>
-<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="classasyn_n_d_array_driver_1aa06c19f650b4619a7bdbf3a79397c3d3" kindref="member">ADAcquire</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(function<sp/>==<sp/><ref refid="classasyn_n_d_array_driver_1aa06c19f650b4619a7bdbf3a79397c3d3" kindref="member">ADAcquire</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(value)<sp/>{</highlight></codeline>
 <codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!acquiring)<sp/>{</highlight></codeline>
 <codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>start<sp/>acquisition</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/><ref refid="class_a_d_gen_i_cam_1a8e279b1fd30c024a80fe6e3df02f11de" kindref="member">startCapture</ref>();</highlight></codeline>
@@ -349,103 +349,103 @@
 <codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight></codeline>
-<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="class_a_d_driver_1a918ef4b3d80695f6872fd169b09b639a" kindref="member">ADSizeX</ref>)<sp/><sp/><sp/><sp/><sp/><sp/><sp/>||</highlight></codeline>
-<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="class_a_d_driver_1a59ba3ba61b2b6f51dc9d88d81680b632" kindref="member">ADSizeY</ref>)<sp/><sp/><sp/><sp/><sp/><sp/><sp/>||</highlight></codeline>
-<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="class_a_d_driver_1a23f8a7537c0c221ed3c5a72af90e276e" kindref="member">ADMinX</ref>)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>||</highlight></codeline>
-<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="class_a_d_driver_1ae1b0c891ee0ecd596439b29e32e068e4" kindref="member">ADMinY</ref>)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>||</highlight></codeline>
-<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="class_a_d_driver_1a11d483194e60669d11e0a4ff4bb919f3" kindref="member">ADBinX</ref>)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>||</highlight></codeline>
-<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="class_a_d_driver_1a0001097ff0ab8b55e564057699655c83" kindref="member">ADBinY</ref>))<sp/>{<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((function<sp/>==<sp/><ref refid="class_a_d_driver_1a918ef4b3d80695f6872fd169b09b639a" kindref="member">ADSizeX</ref>)<sp/><sp/><sp/><sp/><sp/><sp/><sp/>||</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(function<sp/>==<sp/><ref refid="class_a_d_driver_1a59ba3ba61b2b6f51dc9d88d81680b632" kindref="member">ADSizeY</ref>)<sp/><sp/><sp/><sp/><sp/><sp/><sp/>||</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(function<sp/>==<sp/><ref refid="class_a_d_driver_1a23f8a7537c0c221ed3c5a72af90e276e" kindref="member">ADMinX</ref>)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>||</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(function<sp/>==<sp/><ref refid="class_a_d_driver_1ae1b0c891ee0ecd596439b29e32e068e4" kindref="member">ADMinY</ref>)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>||</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(function<sp/>==<sp/><ref refid="class_a_d_driver_1a11d483194e60669d11e0a4ff4bb919f3" kindref="member">ADBinX</ref>)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>||</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(function<sp/>==<sp/><ref refid="class_a_d_driver_1a0001097ff0ab8b55e564057699655c83" kindref="member">ADBinY</ref>))<sp/>{<sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/><ref refid="class_a_d_gen_i_cam_1ac910ccb7f16aa7c9873987a87ff26eca" kindref="member">setImageParams</ref>();</highlight></codeline>
 <codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="class_a_d_driver_1adbd8c8af9cf7a17913f16ecd0252eaba" kindref="member">ADReadStatus</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(function<sp/>==<sp/><ref refid="class_a_d_driver_1adbd8c8af9cf7a17913f16ecd0252eaba" kindref="member">ADReadStatus</ref>)<sp/>{</highlight></codeline>
 <codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/><ref refid="class_a_d_gen_i_cam_1ae5402c10191161fb0b345191fc23a6ed" kindref="member">readStatus</ref>();</highlight></codeline>
 <codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight></codeline>
-<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="class_a_d_gen_i_cam_1a78ee18841dc5dc1786ddb2477b219e7f" kindref="member">GCPixelFormat</ref>)<sp/>||</highlight></codeline>
-<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="class_a_d_driver_1a46e8f2fa100c21f2f0689c415b441fb0" kindref="member">ADNumImages</ref>))<sp/>{</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((function<sp/>==<sp/><ref refid="class_a_d_gen_i_cam_1a78ee18841dc5dc1786ddb2477b219e7f" kindref="member">GCPixelFormat</ref>)<sp/>||</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(function<sp/>==<sp/><ref refid="class_a_d_driver_1a46e8f2fa100c21f2f0689c415b441fb0" kindref="member">ADNumImages</ref>))<sp/>{</highlight></codeline>
 <codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_a_d_gen_i_cam_1a7489a9ce1d10c05d82ba6ea31fb842ad" kindref="member">pauseAcquisition</ref>();</highlight></codeline>
 <codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>epicsThreadSleep(0.1);</highlight></codeline>
 <codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_gen_i_cam_feature" kindref="compound">GenICamFeature</ref><sp/>*pFeature<sp/>=<sp/><ref refid="class_a_d_gen_i_cam_1a7432fa0ca83c23fc639c92ee9fe4b8e1" kindref="member">mGCFeatureSet</ref>.<ref refid="class_gen_i_cam_feature_set_1a5f36cc9f958ee4f5ddb731d5c7b7aa10" kindref="member">getByIndex</ref>(</highlight><highlight class="keyword">function</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_gen_i_cam_feature" kindref="compound">GenICamFeature</ref><sp/>*pFeature<sp/>=<sp/><ref refid="class_a_d_gen_i_cam_1a7432fa0ca83c23fc639c92ee9fe4b8e1" kindref="member">mGCFeatureSet</ref>.<ref refid="class_gen_i_cam_feature_set_1a5f36cc9f958ee4f5ddb731d5c7b7aa10" kindref="member">getByIndex</ref>(function);</highlight></codeline>
 <codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pFeature)<sp/>{</highlight></codeline>
 <codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pFeature-&gt;<ref refid="class_gen_i_cam_feature_1a121ff23c5ebed95b6c374abdc535ee3f" kindref="member">getFeatureType</ref>()<sp/>==<sp/><ref refid="_gen_i_cam_feature_8h_1a7e16ddb9db92703eb6dc8b3d6bfd5f05aaa207ed8917c8a56a5f4a0178cd988ca" kindref="member">GCFeatureTypeInteger</ref>)<sp/>{</highlight></codeline>
 <codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>epicsInt64<sp/>i64value<sp/>=<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>;</highlight></codeline>
 <codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pFeature-&gt;<ref refid="class_gen_i_cam_feature_1a8ea6a5b92c780af483ab00c6da282d44" kindref="member">write</ref>(&amp;i64value,<sp/>NULL,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pFeature-&gt;<ref refid="class_gen_i_cam_feature_1a8ea6a5b92c780af483ab00c6da282d44" kindref="member">write</ref>(&amp;<ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>,<sp/>NULL,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pFeature-&gt;<ref refid="class_gen_i_cam_feature_1a8ea6a5b92c780af483ab00c6da282d44" kindref="member">write</ref>(&amp;value,<sp/>NULL,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_a_d_gen_i_cam_1a7432fa0ca83c23fc639c92ee9fe4b8e1" kindref="member">mGCFeatureSet</ref>.<ref refid="class_gen_i_cam_feature_set_1ae2af6786a1c9c86883eedb98678c9c7c" kindref="member">readAll</ref>();</highlight></codeline>
 <codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="class_a_d_gen_i_cam_1a78ee18841dc5dc1786ddb2477b219e7f" kindref="member">GCPixelFormat</ref>)<sp/>||</highlight></codeline>
-<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="class_a_d_driver_1a46e8f2fa100c21f2f0689c415b441fb0" kindref="member">ADNumImages</ref>))<sp/>{</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((function<sp/>==<sp/><ref refid="class_a_d_gen_i_cam_1a78ee18841dc5dc1786ddb2477b219e7f" kindref="member">GCPixelFormat</ref>)<sp/>||</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(function<sp/>==<sp/><ref refid="class_a_d_driver_1a46e8f2fa100c21f2f0689c415b441fb0" kindref="member">ADNumImages</ref>))<sp/>{</highlight></codeline>
 <codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>epicsThreadSleep(0.1);</highlight></codeline>
 <codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_a_d_gen_i_cam_1a45ada9c170dbbb222903ed829e7ca5f9" kindref="member">resumeAcquisition</ref>();</highlight></codeline>
 <codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="144"><highlight class="normal"></highlight></codeline>
 <codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/>asynPrint(pasynUserSelf,<sp/>ASYN_TRACEIO_DRIVER,<sp/></highlight></codeline>
 <codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s::%s<sp/>function=%d,<sp/>value=%d,<sp/>status=%d\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName,<sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal">,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>,<sp/>status);</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName,<sp/>function,<sp/>value,<sp/>status);</highlight></codeline>
 <codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/>callParamCallbacks();</highlight></codeline>
 <codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>status;</highlight></codeline>
 <codeline lineno="151"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="152"><highlight class="normal"></highlight></codeline>
-<codeline lineno="158"><highlight class="normal">asynStatus<sp/><ref refid="class_a_d_gen_i_cam_1aff92509f337d6bce8781e0c885a4053b" kindref="member">ADGenICam::writeInt64</ref>(<sp/>asynUser<sp/>*pasynUser,<sp/>epicsInt64<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>)</highlight></codeline>
+<codeline lineno="158"><highlight class="normal">asynStatus<sp/><ref refid="class_a_d_gen_i_cam_1aff92509f337d6bce8781e0c885a4053b" kindref="member">ADGenICam::writeInt64</ref>(<sp/>asynUser<sp/>*pasynUser,<sp/>epicsInt64<sp/>value)</highlight></codeline>
 <codeline lineno="159"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/>asynStatus<sp/>status<sp/>=<sp/>asynSuccess;</highlight></codeline>
-<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>=<sp/>pasynUser-&gt;reason;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>function<sp/>=<sp/>pasynUser-&gt;reason;</highlight></codeline>
 <codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*functionName<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;writeInt64&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="163"><highlight class="normal"></highlight></codeline>
 <codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Set<sp/>the<sp/>value<sp/>in<sp/>the<sp/>parameter<sp/>library.<sp/><sp/>This<sp/>may<sp/>change<sp/>later<sp/>but<sp/>that&apos;s<sp/>OK</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/>status<sp/>=<sp/>setInteger64Param(</highlight><highlight class="keyword">function</highlight><highlight class="normal">,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/>status<sp/>=<sp/>setInteger64Param(function,<sp/>value);</highlight></codeline>
 <codeline lineno="166"><highlight class="normal"></highlight></codeline>
-<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>&lt;<sp/>mFirstParam)<sp/>{</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(function<sp/>&lt;<sp/>mFirstParam)<sp/>{</highlight></codeline>
 <codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>If<sp/>this<sp/>parameter<sp/>belongs<sp/>to<sp/>a<sp/>base<sp/>class<sp/>call<sp/>its<sp/>method</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/>ADDriver::writeInt64(pasynUser,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/>ADDriver::writeInt64(pasynUser,<sp/>value);</highlight></codeline>
 <codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight></codeline>
 <codeline lineno="171"><highlight class="normal"></highlight></codeline>
-<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_gen_i_cam_feature" kindref="compound">GenICamFeature</ref><sp/>*pFeature<sp/>=<sp/><ref refid="class_a_d_gen_i_cam_1a7432fa0ca83c23fc639c92ee9fe4b8e1" kindref="member">mGCFeatureSet</ref>.<ref refid="class_gen_i_cam_feature_set_1a5f36cc9f958ee4f5ddb731d5c7b7aa10" kindref="member">getByIndex</ref>(</highlight><highlight class="keyword">function</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_gen_i_cam_feature" kindref="compound">GenICamFeature</ref><sp/>*pFeature<sp/>=<sp/><ref refid="class_a_d_gen_i_cam_1a7432fa0ca83c23fc639c92ee9fe4b8e1" kindref="member">mGCFeatureSet</ref>.<ref refid="class_gen_i_cam_feature_set_1a5f36cc9f958ee4f5ddb731d5c7b7aa10" kindref="member">getByIndex</ref>(function);</highlight></codeline>
 <codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pFeature)<sp/>{</highlight></codeline>
-<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pFeature-&gt;<ref refid="class_gen_i_cam_feature_1a8ea6a5b92c780af483ab00c6da282d44" kindref="member">write</ref>(&amp;<ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>,<sp/>NULL,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pFeature-&gt;<ref refid="class_gen_i_cam_feature_1a8ea6a5b92c780af483ab00c6da282d44" kindref="member">write</ref>(&amp;value,<sp/>NULL,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_a_d_gen_i_cam_1a7432fa0ca83c23fc639c92ee9fe4b8e1" kindref="member">mGCFeatureSet</ref>.<ref refid="class_gen_i_cam_feature_set_1ae2af6786a1c9c86883eedb98678c9c7c" kindref="member">readAll</ref>();</highlight></codeline>
 <codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="177"><highlight class="normal"></highlight></codeline>
 <codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/>asynPrint(pasynUserSelf,<sp/>ASYN_TRACEIO_DRIVER,<sp/></highlight></codeline>
 <codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s::%s<sp/>function=%d,<sp/>value=%lld,<sp/>status=%d\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName,<sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal">,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>,<sp/>status);</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName,<sp/>function,<sp/>value,<sp/>status);</highlight></codeline>
 <codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/>callParamCallbacks();</highlight></codeline>
 <codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>status;</highlight></codeline>
 <codeline lineno="184"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="185"><highlight class="normal"></highlight></codeline>
 <codeline lineno="186"><highlight class="normal"></highlight></codeline>
-<codeline lineno="193"><highlight class="normal">asynStatus<sp/><ref refid="class_a_d_gen_i_cam_1a28179f40898b70fdefb5d53487a0c382" kindref="member">ADGenICam::writeFloat64</ref>(<sp/>asynUser<sp/>*pasynUser,<sp/>epicsFloat64<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>)</highlight></codeline>
+<codeline lineno="193"><highlight class="normal">asynStatus<sp/><ref refid="class_a_d_gen_i_cam_1a28179f40898b70fdefb5d53487a0c382" kindref="member">ADGenICam::writeFloat64</ref>(<sp/>asynUser<sp/>*pasynUser,<sp/>epicsFloat64<sp/>value)</highlight></codeline>
 <codeline lineno="194"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/>asynStatus<sp/>status<sp/>=<sp/>asynSuccess;</highlight></codeline>
-<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>=<sp/>pasynUser-&gt;reason;</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>function<sp/>=<sp/>pasynUser-&gt;reason;</highlight></codeline>
 <codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*functionName<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;writeFloat64&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Set<sp/>the<sp/>value<sp/>in<sp/>the<sp/>parameter<sp/>library.<sp/><sp/>This<sp/>may<sp/>change<sp/>later<sp/>but<sp/>that&apos;s<sp/>OK</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/>status<sp/>=<sp/>setDoubleParam(</highlight><highlight class="keyword">function</highlight><highlight class="normal">,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/>status<sp/>=<sp/>setDoubleParam(function,<sp/>value);</highlight></codeline>
 <codeline lineno="201"><highlight class="normal"></highlight></codeline>
-<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>&lt;<sp/>mFirstParam)<sp/>{</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(function<sp/>&lt;<sp/>mFirstParam)<sp/>{</highlight></codeline>
 <codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>If<sp/>this<sp/>parameter<sp/>belongs<sp/>to<sp/>a<sp/>base<sp/>class<sp/>call<sp/>its<sp/>method</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/>ADDriver::writeFloat64(pasynUser,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/>ADDriver::writeFloat64(pasynUser,<sp/>value);</highlight></codeline>
 <codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight></codeline>
 <codeline lineno="206"><highlight class="normal"></highlight></codeline>
-<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_gen_i_cam_feature" kindref="compound">GenICamFeature</ref><sp/>*pFeature<sp/>=<sp/><ref refid="class_a_d_gen_i_cam_1a7432fa0ca83c23fc639c92ee9fe4b8e1" kindref="member">mGCFeatureSet</ref>.<ref refid="class_gen_i_cam_feature_set_1a5f36cc9f958ee4f5ddb731d5c7b7aa10" kindref="member">getByIndex</ref>(</highlight><highlight class="keyword">function</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_gen_i_cam_feature" kindref="compound">GenICamFeature</ref><sp/>*pFeature<sp/>=<sp/><ref refid="class_a_d_gen_i_cam_1a7432fa0ca83c23fc639c92ee9fe4b8e1" kindref="member">mGCFeatureSet</ref>.<ref refid="class_gen_i_cam_feature_set_1a5f36cc9f958ee4f5ddb731d5c7b7aa10" kindref="member">getByIndex</ref>(function);</highlight></codeline>
 <codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pFeature)<sp/>{</highlight></codeline>
 <codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pFeature-&gt;<ref refid="class_gen_i_cam_feature_1a121ff23c5ebed95b6c374abdc535ee3f" kindref="member">getFeatureType</ref>()<sp/>==<sp/><ref refid="_gen_i_cam_feature_8h_1a7e16ddb9db92703eb6dc8b3d6bfd5f05aaa207ed8917c8a56a5f4a0178cd988ca" kindref="member">GCFeatureTypeInteger</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>epicsInt64<sp/>i64value<sp/>=<sp/>(epicsInt64)<ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>;</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>epicsInt64<sp/>i64value<sp/>=<sp/>(epicsInt64)value;</highlight></codeline>
 <codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pFeature-&gt;<ref refid="class_gen_i_cam_feature_1a8ea6a5b92c780af483ab00c6da282d44" kindref="member">write</ref>(&amp;i64value,<sp/>NULL,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pFeature-&gt;<ref refid="class_gen_i_cam_feature_1a8ea6a5b92c780af483ab00c6da282d44" kindref="member">write</ref>(&amp;<ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>,<sp/>NULL,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pFeature-&gt;<ref refid="class_gen_i_cam_feature_1a8ea6a5b92c780af483ab00c6da282d44" kindref="member">write</ref>(&amp;value,<sp/>NULL,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_a_d_gen_i_cam_1a7432fa0ca83c23fc639c92ee9fe4b8e1" kindref="member">mGCFeatureSet</ref>.<ref refid="class_gen_i_cam_feature_set_1ae2af6786a1c9c86883eedb98678c9c7c" kindref="member">readAll</ref>();</highlight></codeline>
 <codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="217"><highlight class="normal"></highlight></codeline>
 <codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/>asynPrint(pasynUser,<sp/>ASYN_TRACEIO_DRIVER,<sp/></highlight></codeline>
 <codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s::%s<sp/>function=%d,<sp/>value=%f,<sp/>status=%d\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName,<sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal">,<sp/><ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>,<sp/>status);</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName,<sp/>function,<sp/>value,<sp/>status);</highlight></codeline>
 <codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/>callParamCallbacks();</highlight></codeline>
 <codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>status;</highlight></codeline>
 <codeline lineno="223"><highlight class="normal">}</highlight></codeline>
@@ -453,14 +453,14 @@
 <codeline lineno="225"><highlight class="normal">asynStatus<sp/><ref refid="class_a_d_gen_i_cam_1a11a4df0393a7ef4f8d2c57323751f76f" kindref="member">ADGenICam::readEnum</ref>(asynUser<sp/>*pasynUser,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*strings[],<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>values[],<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>severities[],<sp/></highlight></codeline>
 <codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>nElements,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>*nIn)</highlight></codeline>
 <codeline lineno="227"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>=<sp/>pasynUser-&gt;reason;</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>function<sp/>=<sp/>pasynUser-&gt;reason;</highlight></codeline>
 <codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>numEnums;</highlight></codeline>
 <codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>;</highlight></codeline>
 <codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::string&gt;<sp/>enumStrings;</highlight></codeline>
 <codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;int&gt;<sp/>enumValues;</highlight></codeline>
 <codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//static<sp/>const<sp/>char<sp/>*functionName<sp/>=<sp/>&quot;readEnum&quot;;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="234"><highlight class="normal"></highlight></codeline>
-<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_gen_i_cam_feature" kindref="compound">GenICamFeature</ref><sp/>*pFeature<sp/>=<sp/><ref refid="class_a_d_gen_i_cam_1a7432fa0ca83c23fc639c92ee9fe4b8e1" kindref="member">mGCFeatureSet</ref>.<ref refid="class_gen_i_cam_feature_set_1a5f36cc9f958ee4f5ddb731d5c7b7aa10" kindref="member">getByIndex</ref>(</highlight><highlight class="keyword">function</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_gen_i_cam_feature" kindref="compound">GenICamFeature</ref><sp/>*pFeature<sp/>=<sp/><ref refid="class_a_d_gen_i_cam_1a7432fa0ca83c23fc639c92ee9fe4b8e1" kindref="member">mGCFeatureSet</ref>.<ref refid="class_gen_i_cam_feature_set_1a5f36cc9f958ee4f5ddb731d5c7b7aa10" kindref="member">getByIndex</ref>(function);</highlight></codeline>
 <codeline lineno="236"><highlight class="normal"></highlight></codeline>
 <codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pFeature<sp/>==<sp/>0)<sp/>{</highlight></codeline>
 <codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>asynError;</highlight></codeline>
@@ -470,7 +470,7 @@
 <codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>asynError;</highlight></codeline>
 <codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>There<sp/>are<sp/>a<sp/>few<sp/>enums<sp/>we<sp/>don&apos;t<sp/>want<sp/>to<sp/>autogenerate<sp/>the<sp/>values</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>==<sp/><ref refid="class_a_d_driver_1a7dcba273d750e726bb3f5e4b7a38f53a" kindref="member">ADImageMode</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(function<sp/>==<sp/><ref refid="class_a_d_driver_1a7dcba273d750e726bb3f5e4b7a38f53a" kindref="member">ADImageMode</ref>)<sp/>{</highlight></codeline>
 <codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>asynError;</highlight></codeline>
 <codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="248"><highlight class="normal"></highlight></codeline>
@@ -487,9 +487,9 @@
 <codeline lineno="259"><highlight class="normal"></highlight></codeline>
 <codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/>numEnums<sp/>=<sp/>(int)enumStrings.size();</highlight></codeline>
 <codeline lineno="261"><highlight class="normal"></highlight></codeline>
-<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>=0;<sp/>((<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;numEnums)<sp/>&amp;&amp;<sp/>(<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)nElements));<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)<sp/>{</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i=0;<sp/>((<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;numEnums)<sp/>&amp;&amp;<sp/>(i&lt;(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)nElements));<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)<sp/>{</highlight></codeline>
 <codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(strings[*nIn])<sp/>free(strings[*nIn]);</highlight></codeline>
-<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strings[*nIn]<sp/>=<sp/>epicsStrDup(enumStrings[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>].c_str());</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strings[*nIn]<sp/>=<sp/>epicsStrDup(enumStrings[i].c_str());</highlight></codeline>
 <codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>values[*nIn]<sp/>=<sp/>enumValues[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>];</highlight></codeline>
 <codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>severities[*nIn]<sp/>=<sp/>0;</highlight></codeline>
 <codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(*nIn)++;</highlight></codeline>
@@ -533,14 +533,14 @@
 <codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/>paramIndices.push_back(<ref refid="class_a_d_driver_1a11d483194e60669d11e0a4ff4bb919f3" kindref="member">ADBinX</ref>);</highlight></codeline>
 <codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/>paramIndices.push_back(<ref refid="class_a_d_driver_1a0001097ff0ab8b55e564057699655c83" kindref="member">ADBinY</ref>);</highlight></codeline>
 <codeline lineno="307"><highlight class="normal"></highlight></codeline>
-<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>=0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;paramIndices.size();<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)<sp/>{</highlight></codeline>
-<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pFeature<sp/>=<sp/><ref refid="class_a_d_gen_i_cam_1a7432fa0ca83c23fc639c92ee9fe4b8e1" kindref="member">mGCFeatureSet</ref>.<ref refid="class_gen_i_cam_feature_set_1a5f36cc9f958ee4f5ddb731d5c7b7aa10" kindref="member">getByIndex</ref>(paramIndices[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>]);</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(i=0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;paramIndices.size();<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)<sp/>{</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pFeature<sp/>=<sp/><ref refid="class_a_d_gen_i_cam_1a7432fa0ca83c23fc639c92ee9fe4b8e1" kindref="member">mGCFeatureSet</ref>.<ref refid="class_gen_i_cam_feature_set_1a5f36cc9f958ee4f5ddb731d5c7b7aa10" kindref="member">getByIndex</ref>(paramIndices[i]);</highlight></codeline>
 <codeline lineno="310"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>On<sp/>some<sp/>cameras<sp/>some<sp/>features<sp/>will<sp/>not<sp/>be<sp/>writeable,<sp/>so<sp/>don&apos;t<sp/>try<sp/>if<sp/>not</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="311"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pFeature<sp/>&amp;&amp;<sp/>pFeature-&gt;<ref refid="class_gen_i_cam_feature_1a64d11fb7fa2664977e8d85b519564622" kindref="member">isWritable</ref>())<sp/>pFeature-&gt;<ref refid="class_gen_i_cam_feature_1a8ea6a5b92c780af483ab00c6da282d44" kindref="member">write</ref>(0,<sp/>0,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="312"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="313"><highlight class="normal"></highlight></codeline>
-<codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>=0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;paramIndices.size();<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)<sp/>{</highlight></codeline>
-<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pFeature<sp/>=<sp/><ref refid="class_a_d_gen_i_cam_1a7432fa0ca83c23fc639c92ee9fe4b8e1" kindref="member">mGCFeatureSet</ref>.<ref refid="class_gen_i_cam_feature_set_1a5f36cc9f958ee4f5ddb731d5c7b7aa10" kindref="member">getByIndex</ref>(paramIndices[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>]);</highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(i=0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;paramIndices.size();<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)<sp/>{</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pFeature<sp/>=<sp/><ref refid="class_a_d_gen_i_cam_1a7432fa0ca83c23fc639c92ee9fe4b8e1" kindref="member">mGCFeatureSet</ref>.<ref refid="class_gen_i_cam_feature_set_1a5f36cc9f958ee4f5ddb731d5c7b7aa10" kindref="member">getByIndex</ref>(paramIndices[i]);</highlight></codeline>
 <codeline lineno="316"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pFeature)<sp/>pFeature-&gt;<ref refid="class_gen_i_cam_feature_1a8cb014b78e41bb0cdad776d245d27a1e" kindref="member">read</ref>(0,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="317"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="318"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_a_d_gen_i_cam_1a45ada9c170dbbb222903ed829e7ca5f9" kindref="member">resumeAcquisition</ref>();</highlight></codeline>
@@ -629,9 +629,9 @@
 <codeline lineno="407"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>asynError;</highlight></codeline>
 <codeline lineno="408"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="409"><highlight class="normal"></highlight></codeline>
-<codeline lineno="410"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacehdf5_1abeed318faeb13380e1b4221bd4198bf1aea271040d7a5b8d9af9cbf6564d262d5" kindref="member">std::string</ref><sp/>featureName(drvInfo+5);</highlight></codeline>
+<codeline lineno="410"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>featureName(drvInfo+5);</highlight></codeline>
 <codeline lineno="411"><highlight class="normal"></highlight></codeline>
-<codeline lineno="412"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_gen_i_cam_feature" kindref="compound">GenICamFeature</ref><sp/>*pFeature<sp/>=<sp/><ref refid="class_a_d_gen_i_cam_1a1989d94807c08ce3f12ee6e950cda256" kindref="member">createFeature</ref>(&amp;<ref refid="class_a_d_gen_i_cam_1a7432fa0ca83c23fc639c92ee9fe4b8e1" kindref="member">mGCFeatureSet</ref>,<sp/>drvInfo,<sp/>asynType,<sp/>-1,<sp/>featureName,<sp/>featureType);</highlight></codeline>
+<codeline lineno="412"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_gen_i_cam_feature" kindref="compound">GenICamFeature</ref><sp/>*pFeature<sp/>=<sp/><ref refid="class_a_d_gen_i_cam_1ac8b9a510f256e303219f4f3dbf225ebb" kindref="member">createFeature</ref>(&amp;<ref refid="class_a_d_gen_i_cam_1a7432fa0ca83c23fc639c92ee9fe4b8e1" kindref="member">mGCFeatureSet</ref>,<sp/>drvInfo,<sp/>asynType,<sp/>-1,<sp/>featureName,<sp/>featureType);</highlight></codeline>
 <codeline lineno="413"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!pFeature)</highlight></codeline>
 <codeline lineno="414"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>asynError;</highlight></codeline>
 <codeline lineno="415"><highlight class="normal"></highlight></codeline>
@@ -643,14 +643,14 @@
 <codeline lineno="421"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ADDriver::drvUserCreate(pasynUser,<sp/>drvInfo,<sp/>pptypeName,<sp/>psize);</highlight></codeline>
 <codeline lineno="422"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="423"><highlight class="normal"></highlight></codeline>
-<codeline lineno="424"><highlight class="normal">asynStatus<sp/>ADGenICam::createMultiFeature(<ref refid="namespacehdf5_1abeed318faeb13380e1b4221bd4198bf1aea271040d7a5b8d9af9cbf6564d262d5" kindref="member">std::string</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>&amp;<sp/>asynName,<sp/>asynParamType<sp/>asynType,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>asynIndex,</highlight></codeline>
+<codeline lineno="424"><highlight class="normal">asynStatus<sp/>ADGenICam::createMultiFeature(std::string<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>&amp;<sp/>asynName,<sp/>asynParamType<sp/>asynType,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>asynIndex,</highlight></codeline>
 <codeline lineno="425"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;GCFeatureStruct_t&gt;<sp/>&amp;<sp/>features)</highlight></codeline>
 <codeline lineno="426"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="427"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>numFeatures<sp/>=<sp/>features.size();</highlight></codeline>
-<codeline lineno="428"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>=0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;numFeatures;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)<sp/>{</highlight></codeline>
-<codeline lineno="429"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_gen_i_cam_feature" kindref="compound">GenICamFeature</ref><sp/>*pFeature<sp/>=<sp/><ref refid="class_a_d_gen_i_cam_1a1989d94807c08ce3f12ee6e950cda256" kindref="member">createFeature</ref>(&amp;<ref refid="class_a_d_gen_i_cam_1a7432fa0ca83c23fc639c92ee9fe4b8e1" kindref="member">mGCFeatureSet</ref>,<sp/>asynName,<sp/>asynType,<sp/>asynIndex,<sp/>features[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>].featureName,<sp/>features[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>].featureType);</highlight></codeline>
+<codeline lineno="428"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i=0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;numFeatures;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)<sp/>{</highlight></codeline>
+<codeline lineno="429"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_gen_i_cam_feature" kindref="compound">GenICamFeature</ref><sp/>*pFeature<sp/>=<sp/><ref refid="class_a_d_gen_i_cam_1ac8b9a510f256e303219f4f3dbf225ebb" kindref="member">createFeature</ref>(&amp;<ref refid="class_a_d_gen_i_cam_1a7432fa0ca83c23fc639c92ee9fe4b8e1" kindref="member">mGCFeatureSet</ref>,<sp/>asynName,<sp/>asynType,<sp/>asynIndex,<sp/>features[i].featureName,<sp/>features[i].featureType);</highlight></codeline>
 <codeline lineno="430"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pFeature-&gt;<ref refid="class_gen_i_cam_feature_1ac3abe05115237ccb894fd1b6ebf83a0c" kindref="member">isImplemented</ref>())<sp/>{</highlight></codeline>
-<codeline lineno="431"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_a_d_gen_i_cam_1a7432fa0ca83c23fc639c92ee9fe4b8e1" kindref="member">mGCFeatureSet</ref>.<ref refid="class_gen_i_cam_feature_set_1ac22ed235987616984df72e5a57251a7d" kindref="member">insert</ref>(pFeature,<sp/>features[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>].featureName);</highlight></codeline>
+<codeline lineno="431"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_a_d_gen_i_cam_1a7432fa0ca83c23fc639c92ee9fe4b8e1" kindref="member">mGCFeatureSet</ref>.<ref refid="class_gen_i_cam_feature_set_1ac22ed235987616984df72e5a57251a7d" kindref="member">insert</ref>(pFeature,<sp/>features[i].featureName);</highlight></codeline>
 <codeline lineno="432"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Do<sp/>an<sp/>initial<sp/>read<sp/>of<sp/>the<sp/>feature<sp/>so<sp/>EPICS<sp/>output<sp/>records<sp/>initialize<sp/>to<sp/>this<sp/>value</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="433"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pFeature-&gt;<ref refid="class_gen_i_cam_feature_1a8cb014b78e41bb0cdad776d245d27a1e" kindref="member">read</ref>(NULL,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="434"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>asynSuccess;</highlight></codeline>
@@ -663,7 +663,7 @@
 <codeline lineno="441"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="442"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
 <codeline lineno="443"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index;<sp/></highlight></codeline>
-<codeline lineno="444"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacehdf5_1abeed318faeb13380e1b4221bd4198bf1aea271040d7a5b8d9af9cbf6564d262d5" kindref="member">std::string</ref><sp/>featureName;</highlight></codeline>
+<codeline lineno="444"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>featureName;</highlight></codeline>
 <codeline lineno="445"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_gen_i_cam_feature_8h_1a7e16ddb9db92703eb6dc8b3d6bfd5f05" kindref="member">GCFeatureType_t</ref><sp/>featureType;</highlight></codeline>
 <codeline lineno="446"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/>stdParam;</highlight></codeline>
 <codeline lineno="447"><highlight class="normal"><sp/><sp/><sp/><sp/>stdParam<sp/>params[]<sp/>=<sp/>{</highlight></codeline>
@@ -693,25 +693,25 @@
 <codeline lineno="471"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>numParams<sp/>=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(params)/</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(params[0]);</highlight></codeline>
 <codeline lineno="472"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_gen_i_cam_feature" kindref="compound">GenICamFeature</ref><sp/>*pFeature;</highlight></codeline>
 <codeline lineno="473"><highlight class="normal"></highlight></codeline>
-<codeline lineno="474"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>=0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;numParams;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)<sp/>{</highlight></codeline>
+<codeline lineno="474"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i=0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;numParams;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)<sp/>{</highlight></codeline>
 <codeline lineno="475"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynParamType<sp/>paramType;</highlight></codeline>
 <codeline lineno="476"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*paramName;</highlight></codeline>
-<codeline lineno="477"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>getParamType(params[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>].index,<sp/>&amp;paramType);</highlight></codeline>
-<codeline lineno="478"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>getParamName(params[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>].index,<sp/>&amp;paramName);</highlight></codeline>
-<codeline lineno="479"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pFeature<sp/>=<sp/><ref refid="class_a_d_gen_i_cam_1a1989d94807c08ce3f12ee6e950cda256" kindref="member">createFeature</ref>(&amp;<ref refid="class_a_d_gen_i_cam_1a7432fa0ca83c23fc639c92ee9fe4b8e1" kindref="member">mGCFeatureSet</ref>,<sp/>paramName,<sp/>paramType,<sp/>params[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>].index,<sp/></highlight></codeline>
-<codeline lineno="480"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>params[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>].featureName,<sp/>params[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>].featureType);</highlight></codeline>
+<codeline lineno="477"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>getParamType(params[i].index,<sp/>&amp;paramType);</highlight></codeline>
+<codeline lineno="478"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>getParamName(params[i].index,<sp/>&amp;paramName);</highlight></codeline>
+<codeline lineno="479"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pFeature<sp/>=<sp/><ref refid="class_a_d_gen_i_cam_1ac8b9a510f256e303219f4f3dbf225ebb" kindref="member">createFeature</ref>(&amp;<ref refid="class_a_d_gen_i_cam_1a7432fa0ca83c23fc639c92ee9fe4b8e1" kindref="member">mGCFeatureSet</ref>,<sp/>paramName,<sp/>paramType,<sp/>params[i].index,<sp/></highlight></codeline>
+<codeline lineno="480"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>params[i].featureName,<sp/>params[i].featureType);</highlight></codeline>
 <codeline lineno="481"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pFeature-&gt;<ref refid="class_gen_i_cam_feature_1ac3abe05115237ccb894fd1b6ebf83a0c" kindref="member">isImplemented</ref>())<sp/>{</highlight></codeline>
-<codeline lineno="482"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_a_d_gen_i_cam_1a7432fa0ca83c23fc639c92ee9fe4b8e1" kindref="member">mGCFeatureSet</ref>.<ref refid="class_gen_i_cam_feature_set_1ac22ed235987616984df72e5a57251a7d" kindref="member">insert</ref>(pFeature,<sp/>params[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>].featureName);</highlight></codeline>
+<codeline lineno="482"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_a_d_gen_i_cam_1a7432fa0ca83c23fc639c92ee9fe4b8e1" kindref="member">mGCFeatureSet</ref>.<ref refid="class_gen_i_cam_feature_set_1ac22ed235987616984df72e5a57251a7d" kindref="member">insert</ref>(pFeature,<sp/>params[i].featureName);</highlight></codeline>
 <codeline lineno="483"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We<sp/>map<sp/>the<sp/>areaDetector<sp/>ImageMode<sp/>to<sp/>the<sp/>GenICam<sp/>AcquisitionMode.</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="484"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>GenICam<sp/>seems<sp/>to<sp/>use<sp/>consistent<sp/>enum<sp/>strings,<sp/>but<sp/>not<sp/>enum<sp/>values</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="485"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pFeature-&gt;<ref refid="class_gen_i_cam_feature_1a3817886ef02fad3388963d53b219a5c8" kindref="member">getAsynIndex</ref>()<sp/>==<sp/><ref refid="class_a_d_driver_1a7dcba273d750e726bb3f5e4b7a38f53a" kindref="member">ADImageMode</ref>)<sp/>{</highlight></codeline>
 <codeline lineno="486"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;std::string&gt;<sp/>enumStrings;</highlight></codeline>
 <codeline lineno="487"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;int&gt;<sp/>enumValues;</highlight></codeline>
 <codeline lineno="488"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pFeature-&gt;<ref refid="class_gen_i_cam_feature_1aa035bd69b285c7c1799b120a92508eb6" kindref="member">readEnumChoices</ref>(enumStrings,<sp/>enumValues);</highlight></codeline>
-<codeline lineno="489"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>=0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;enumStrings.size();<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)<sp/>{</highlight></codeline>
-<codeline lineno="490"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(enumStrings[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>]<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;Continuous&quot;</highlight><highlight class="normal">)<sp/><sp/><ref refid="class_a_d_gen_i_cam_1a7432fa0ca83c23fc639c92ee9fe4b8e1" kindref="member">mGCFeatureSet</ref>.<ref refid="class_gen_i_cam_feature_set_1ad4b64801d538ff6331edfd3d5ce55d6a" kindref="member">mAcquisitionModeContinuous</ref><sp/><sp/>=<sp/>enumValues[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>];</highlight></codeline>
-<codeline lineno="491"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(enumStrings[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>]<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;MultiFrame&quot;</highlight><highlight class="normal">)<sp/><sp/><ref refid="class_a_d_gen_i_cam_1a7432fa0ca83c23fc639c92ee9fe4b8e1" kindref="member">mGCFeatureSet</ref>.<ref refid="class_gen_i_cam_feature_set_1a18b4191f6b807f5b633f9350a1e10741" kindref="member">mAcquisitionModeMultiFrame</ref><sp/><sp/>=<sp/>enumValues[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>];</highlight></codeline>
-<codeline lineno="492"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(enumStrings[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>]<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;SingleFrame&quot;</highlight><highlight class="normal">)<sp/><ref refid="class_a_d_gen_i_cam_1a7432fa0ca83c23fc639c92ee9fe4b8e1" kindref="member">mGCFeatureSet</ref>.<ref refid="class_gen_i_cam_feature_set_1af41a8335cb6c508faef3d9977a11b56c" kindref="member">mAcquisitionModeSingleFrame</ref><sp/>=<sp/>enumValues[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>];</highlight></codeline>
+<codeline lineno="489"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i=0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;enumStrings.size();<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)<sp/>{</highlight></codeline>
+<codeline lineno="490"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(enumStrings[i]<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;Continuous&quot;</highlight><highlight class="normal">)<sp/><sp/><ref refid="class_a_d_gen_i_cam_1a7432fa0ca83c23fc639c92ee9fe4b8e1" kindref="member">mGCFeatureSet</ref>.<ref refid="class_gen_i_cam_feature_set_1ad4b64801d538ff6331edfd3d5ce55d6a" kindref="member">mAcquisitionModeContinuous</ref><sp/><sp/>=<sp/>enumValues[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>];</highlight></codeline>
+<codeline lineno="491"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(enumStrings[i]<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;MultiFrame&quot;</highlight><highlight class="normal">)<sp/><sp/><ref refid="class_a_d_gen_i_cam_1a7432fa0ca83c23fc639c92ee9fe4b8e1" kindref="member">mGCFeatureSet</ref>.<ref refid="class_gen_i_cam_feature_set_1a18b4191f6b807f5b633f9350a1e10741" kindref="member">mAcquisitionModeMultiFrame</ref><sp/><sp/>=<sp/>enumValues[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>];</highlight></codeline>
+<codeline lineno="492"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(enumStrings[i]<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;SingleFrame&quot;</highlight><highlight class="normal">)<sp/><ref refid="class_a_d_gen_i_cam_1a7432fa0ca83c23fc639c92ee9fe4b8e1" kindref="member">mGCFeatureSet</ref>.<ref refid="class_gen_i_cam_feature_set_1af41a8335cb6c508faef3d9977a11b56c" kindref="member">mAcquisitionModeSingleFrame</ref><sp/>=<sp/>enumValues[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>];</highlight></codeline>
 <codeline lineno="493"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="494"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="495"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Do<sp/>an<sp/>initial<sp/>read<sp/>of<sp/>the<sp/>feature<sp/>so<sp/>EPICS<sp/>output<sp/>records<sp/>initialize<sp/>to<sp/>this<sp/>value</highlight><highlight class="normal"></highlight></codeline>
@@ -786,13 +786,13 @@
 <codeline lineno="571"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>;</highlight></codeline>
 <codeline lineno="572"><highlight class="normal"></highlight></codeline>
 <codeline lineno="573"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(leftShift)<sp/>{</highlight></codeline>
-<codeline lineno="574"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>=0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;numPixels/2;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)<sp/>{</highlight></codeline>
+<codeline lineno="574"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i=0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;numPixels/2;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)<sp/>{</highlight></codeline>
 <codeline lineno="575"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*output++<sp/>=<sp/>(*input<sp/>&lt;&lt;<sp/>4)<sp/>|<sp/>((*(input+1)<sp/>&amp;<sp/>0x0f)<sp/>&lt;&lt;<sp/>12);</highlight></codeline>
 <codeline lineno="576"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*output++<sp/>=<sp/>(*(input+1)<sp/>&amp;<sp/>0xf0)<sp/>|<sp/>(*(input+2)<sp/>&lt;&lt;<sp/>8);</highlight></codeline>
 <codeline lineno="577"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>input<sp/>+=<sp/>3;</highlight></codeline>
 <codeline lineno="578"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="579"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="580"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>=0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;numPixels/2;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)<sp/>{</highlight></codeline>
+<codeline lineno="580"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i=0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;numPixels/2;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)<sp/>{</highlight></codeline>
 <codeline lineno="581"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*output++<sp/>=<sp/>*input<sp/>|<sp/>((*(input+1)<sp/>&amp;<sp/>0x0f)<sp/>&lt;&lt;<sp/>8);</highlight></codeline>
 <codeline lineno="582"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*output++<sp/>=<sp/>((*(input+1)<sp/>&amp;<sp/>0xf0)<sp/>&gt;&gt;<sp/>4)<sp/>|<sp/>(*(input+2)<sp/>&lt;&lt;<sp/>4);</highlight></codeline>
 <codeline lineno="583"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>input<sp/>+=<sp/>3;</highlight></codeline>
@@ -805,13 +805,13 @@
 <codeline lineno="597"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>;</highlight></codeline>
 <codeline lineno="598"><highlight class="normal"></highlight></codeline>
 <codeline lineno="599"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(leftShift)<sp/>{</highlight></codeline>
-<codeline lineno="600"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>=0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;numPixels/2;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)<sp/>{</highlight></codeline>
+<codeline lineno="600"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i=0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;numPixels/2;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)<sp/>{</highlight></codeline>
 <codeline lineno="601"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*output++<sp/>=<sp/>(*input<sp/>&lt;&lt;<sp/>8)<sp/>|<sp/>((*(input+1)<sp/>&amp;<sp/>0x0f)<sp/>&lt;&lt;<sp/>4);</highlight></codeline>
 <codeline lineno="602"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*output++<sp/>=<sp/>(*(input+1)<sp/>&amp;<sp/>0xf0)<sp/>|<sp/>(*(input+2)<sp/>&lt;&lt;<sp/>8);</highlight></codeline>
 <codeline lineno="603"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>input<sp/>+=<sp/>3;</highlight></codeline>
 <codeline lineno="604"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="605"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="606"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>=0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;numPixels/2;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)<sp/>{</highlight></codeline>
+<codeline lineno="606"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i=0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;numPixels/2;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)<sp/>{</highlight></codeline>
 <codeline lineno="607"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*output++<sp/>=<sp/>(*input<sp/>&lt;&lt;<sp/>4)<sp/>|<sp/>(*(input+1)<sp/>&amp;<sp/>0x0f);</highlight></codeline>
 <codeline lineno="608"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*output++<sp/>=<sp/>((*(input+1)<sp/>&amp;<sp/>0xf0)<sp/>&gt;&gt;<sp/>4)<sp/>|<sp/>(*(input+2)<sp/>&lt;&lt;<sp/>4);</highlight></codeline>
 <codeline lineno="609"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>input<sp/>+=<sp/>3;</highlight></codeline>

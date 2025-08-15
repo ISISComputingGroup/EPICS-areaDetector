@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="dir_0846688077600ceefb56a6dd9ef5a67d" kind="dir">
     <compoundname>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADProsilica</compoundname>
     <innerdir refid="dir_e8d6f6196ebb2b59a01067f5a04f0c02">/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADProsilica/prosilicaApp</innerdir>

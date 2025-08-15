@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="mar3xx__pck_8h" kind="file" language="C++">
     <compoundname>mar3xx_pck.h</compoundname>
     <includes refid="types_8h" local="yes">types.h</includes>
@@ -18,6 +18,10 @@
       </node>
     </incdepgraph>
     <invincdepgraph>
+      <node id="2">
+        <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADmar345/mar345App/src/mar345.cpp</label>
+        <link refid="mar345_8cpp"/>
+      </node>
       <node id="3">
         <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADmar345/mar345App/src/mar3xx_pck.c</label>
         <link refid="mar3xx__pck_8c"/>
@@ -30,12 +34,8 @@
         <childnode refid="3" relation="include">
         </childnode>
       </node>
-      <node id="2">
-        <label>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADmar345/mar345App/src/mar345.cpp</label>
-        <link refid="mar345_8cpp"/>
-      </node>
     </invincdepgraph>
-      <sectiondef kind="func">
+    <sectiondef kind="func">
       <memberdef kind="function" id="mar3xx__pck_8h_1aa45545211c0d9aece2966853b0e1e6ff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void get_pck</definition>
@@ -86,7 +86,7 @@
         </inbodydescription>
         <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADmar345/mar345App/src/mar3xx_pck.h" line="10" column="6" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADmar345/mar345App/src/mar3xx_pck.c" bodystart="63" bodyend="114" declfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADmar345/mar345App/src/mar3xx_pck.h" declline="10" declcolumn="6"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

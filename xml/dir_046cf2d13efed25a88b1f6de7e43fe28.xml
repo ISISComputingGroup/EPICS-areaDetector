@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="dir_046cf2d13efed25a88b1f6de7e43fe28" kind="dir">
     <compoundname>/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPICam/PICamApp</compoundname>
     <innerdir refid="dir_93893a47f1fb2ee4dc5282ea6fe3c146">/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPICam/PICamApp/src</innerdir>

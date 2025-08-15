@@ -1,15 +1,16 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="class_n_d_plugin_focus_metrics" kind="class" language="C++" prot="public">
     <compoundname>NDPluginFocusMetrics</compoundname>
     <basecompoundref refid="class_n_d_plugin_driver" prot="public" virt="non-virtual">NDPluginDriver</basecompoundref>
     <includes refid="_n_d_plugin_focus_metrics_8h" local="no">NDPluginFocusMetrics.h</includes>
-      <sectiondef kind="protected-attrib">
+    <sectiondef kind="protected-attrib">
       <memberdef kind="variable" id="class_n_d_plugin_focus_metrics_1a225e53f636efd510a5c23abb97951334" prot="protected" static="no" mutable="no">
         <type>int</type>
         <definition>int NDPluginFocusMetrics::NDPluginFocusMetricsComputeFocus</definition>
         <argsstring></argsstring>
         <name>NDPluginFocusMetricsComputeFocus</name>
+        <qualifiedname>NDPluginFocusMetrics::NDPluginFocusMetricsComputeFocus</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -23,6 +24,7 @@
         <definition>int NDPluginFocusMetrics::NDPluginFocusMetricsFocusValue</definition>
         <argsstring></argsstring>
         <name>NDPluginFocusMetricsFocusValue</name>
+        <qualifiedname>NDPluginFocusMetrics::NDPluginFocusMetricsFocusValue</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -31,13 +33,14 @@
         </inbodydescription>
         <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginFocusMetrics.h" line="29" column="9" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginFocusMetrics.h" bodystart="29" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="public-func">
+    </sectiondef>
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="class_n_d_plugin_focus_metrics_1ab7c178043f8c565b872b50170f5981d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>NDPluginFocusMetrics::NDPluginFocusMetrics</definition>
         <argsstring>(const char *portName, int queueSize, int blockingCallbacks, const char *NDArrayPort, int NDArrayAddr, int maxBuffers, size_t maxMemory, int priority, int stackSize)</argsstring>
         <name>NDPluginFocusMetrics</name>
+        <qualifiedname>NDPluginFocusMetrics::NDPluginFocusMetrics</qualifiedname>
         <param>
           <type>const char *</type>
           <declname>portName</declname>
@@ -162,6 +165,7 @@
         <definition>void NDPluginFocusMetrics::processCallbacks</definition>
         <argsstring>(NDArray *pArray)</argsstring>
         <name>processCallbacks</name>
+        <qualifiedname>NDPluginFocusMetrics::processCallbacks</qualifiedname>
         <reimplements refid="class_n_d_plugin_driver_1a75ed5528f584d90e4f789aef058661cd">processCallbacks</reimplements>
         <param>
           <type><ref refid="class_n_d_array" kindref="compound">NDArray</ref> *</type>
@@ -191,6 +195,7 @@
         <definition>asynStatus NDPluginFocusMetrics::writeFloat64</definition>
         <argsstring>(asynUser *pasynUser, epicsFloat64 value)</argsstring>
         <name>writeFloat64</name>
+        <qualifiedname>NDPluginFocusMetrics::writeFloat64</qualifiedname>
         <reimplements refid="class_n_d_plugin_driver_1a0d9d826a638226234e48f4d4f41fc4c0">writeFloat64</reimplements>
         <param>
           <type>asynUser *</type>
@@ -237,6 +242,7 @@
         <definition>void NDPluginFocusMetrics::doComputeFocusMetricsT</definition>
         <argsstring>(NDArray *pArray, double *pFocusMetrics, double dNormFactor)</argsstring>
         <name>doComputeFocusMetricsT</name>
+        <qualifiedname>NDPluginFocusMetrics::doComputeFocusMetricsT</qualifiedname>
         <param>
           <type><ref refid="class_n_d_array" kindref="compound">NDArray</ref> *</type>
           <declname>pArray</declname>
@@ -262,6 +268,7 @@
         <definition>int NDPluginFocusMetrics::doComputeFocusMetrics</definition>
         <argsstring>(NDArray *pArray, double *pFocusMetrics)</argsstring>
         <name>doComputeFocusMetrics</name>
+        <qualifiedname>NDPluginFocusMetrics::doComputeFocusMetrics</qualifiedname>
         <param>
           <type><ref refid="class_n_d_array" kindref="compound">NDArray</ref> *</type>
           <declname>pArray</declname>
@@ -278,7 +285,7 @@
         </inbodydescription>
         <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginFocusMetrics.h" line="24" column="9" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginFocusMetrics.cpp" bodystart="67" bodyend="99"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
 <para>Calculates Focus Metrics. </para>
     </briefdescription>
@@ -293,17 +300,11 @@
         <childnode refid="5" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="5">
-        <label>epicsThreadRunable</label>
-      </node>
       <node id="1">
         <label>NDPluginFocusMetrics</label>
         <link refid="class_n_d_plugin_focus_metrics"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
-      </node>
-      <node id="4">
-        <label>asynPortDriver</label>
       </node>
       <node id="3">
         <label>asynNDArrayDriver</label>
@@ -311,38 +312,14 @@
         <childnode refid="4" relation="public-inheritance">
         </childnode>
       </node>
-    </inheritancegraph>
-    <collaborationgraph>
-      <node id="2">
-        <label>NDPluginDriver</label>
-        <link refid="class_n_d_plugin_driver"/>
-        <childnode refid="3" relation="public-inheritance">
-        </childnode>
-        <childnode refid="11" relation="public-inheritance">
-        </childnode>
-        <childnode refid="7" relation="usage">
-          <edgelabel>pPrevInputArray_</edgelabel>
-        </childnode>
-      </node>
-      <node id="11">
-        <label>epicsThreadRunable</label>
-      </node>
-      <node id="8">
-        <label>NDDimension</label>
-        <link refid="struct_n_d_dimension"/>
-      </node>
-      <node id="1">
-        <label>NDPluginFocusMetrics</label>
-        <link refid="class_n_d_plugin_focus_metrics"/>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
-      </node>
       <node id="4">
         <label>asynPortDriver</label>
       </node>
-      <node id="10">
-        <label>string</label>
+      <node id="5">
+        <label>epicsThreadRunable</label>
       </node>
+    </inheritancegraph>
+    <collaborationgraph>
       <node id="9">
         <label>Codec_t</label>
         <link refid="struct_codec__t"/>
@@ -350,23 +327,52 @@
           <edgelabel>name</edgelabel>
         </childnode>
       </node>
-      <node id="7">
+      <node id="6">
         <label>NDArray</label>
         <link refid="class_n_d_array"/>
         <childnode refid="5" relation="usage">
           <edgelabel>pNDArrayPool</edgelabel>
         </childnode>
-        <childnode refid="8" relation="usage">
+        <childnode refid="3" relation="usage">
+          <edgelabel>pDriver</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
           <edgelabel>dims</edgelabel>
         </childnode>
-        <childnode refid="6" relation="usage">
+        <childnode refid="8" relation="usage">
           <edgelabel>pAttributeList</edgelabel>
         </childnode>
         <childnode refid="9" relation="usage">
           <edgelabel>codec</edgelabel>
         </childnode>
-        <childnode refid="3" relation="usage">
-          <edgelabel>pDriver</edgelabel>
+      </node>
+      <node id="5">
+        <label>NDArrayPool</label>
+        <link refid="class_n_d_array_pool"/>
+      </node>
+      <node id="8">
+        <label>NDAttributeList</label>
+        <link refid="class_n_d_attribute_list"/>
+      </node>
+      <node id="7">
+        <label>NDDimension</label>
+        <link refid="struct_n_d_dimension"/>
+      </node>
+      <node id="2">
+        <label>NDPluginDriver</label>
+        <link refid="class_n_d_plugin_driver"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="11" relation="public-inheritance">
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>pPrevInputArray_</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>NDPluginFocusMetrics</label>
+        <link refid="class_n_d_plugin_focus_metrics"/>
+        <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
       <node id="3">
@@ -378,19 +384,20 @@
           <edgelabel>pNDArrayPool</edgelabel>
         </childnode>
         <childnode refid="6" relation="usage">
-          <edgelabel>pAttributeList</edgelabel>
-        </childnode>
-        <childnode refid="7" relation="usage">
           <edgelabel>pArrays</edgelabel>
         </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>pAttributeList</edgelabel>
+        </childnode>
       </node>
-      <node id="5">
-        <label>NDArrayPool</label>
-        <link refid="class_n_d_array_pool"/>
+      <node id="4">
+        <label>asynPortDriver</label>
       </node>
-      <node id="6">
-        <label>NDAttributeList</label>
-        <link refid="class_n_d_attribute_list"/>
+      <node id="11">
+        <label>epicsThreadRunable</label>
+      </node>
+      <node id="10">
+        <label>string</label>
       </node>
     </collaborationgraph>
     <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginFocusMetrics.h" line="13" column="1" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginFocusMetrics.h" bodystart="13" bodyend="33"/>
