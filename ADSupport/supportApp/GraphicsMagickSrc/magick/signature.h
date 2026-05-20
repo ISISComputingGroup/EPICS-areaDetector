@@ -17,8 +17,10 @@ extern "C" {
 
 /*
   Define declarations.
+  Cannot use SignatureSize name as a clash with Windows RUNTIME_REPORT_PACKAGE_HEADER
+  structure member
 */
-#define SignatureSize  64
+#define MagickSignatureSize  64
 
 /*
   Typedef declarations.
@@ -34,7 +36,7 @@ typedef struct _SignatureInfo
     offset;
 
   unsigned char
-    message[SignatureSize];
+    message[MagickSignatureSize];
 } SignatureInfo;
 
 /*
