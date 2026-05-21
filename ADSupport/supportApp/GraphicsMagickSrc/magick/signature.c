@@ -86,13 +86,13 @@ MagickExport void FinalizeSignature(SignatureInfo *signature_info)
   high_order=signature_info->high_order;
   count=(long) ((low_order >> 3) & 0x3f);
   signature_info->message[count++]=0x80;
-  if (count <= (SignatureSize-8))
-    (void) memset(signature_info->message+count,0,SignatureSize-8-count);
+  if (count <= (MagickSignatureSize-8))
+    (void) memset(signature_info->message+count,0,MagickSignatureSize-8-count);
   else
     {
-      (void) memset(signature_info->message+count,0,SignatureSize-count);
+      (void) memset(signature_info->message+count,0,MagickSignatureSize-count);
       TransformSignature(signature_info);
-      (void) memset(signature_info->message,0,SignatureSize-8);
+      (void) memset(signature_info->message,0,MagickSignatureSize-8);
     }
   signature_info->message[56]=(unsigned char) (high_order >> 24);
   signature_info->message[57]=(unsigned char) (high_order >> 16);
@@ -491,22 +491,22 @@ MagickExport void UpdateSignature(SignatureInfo *signature_info,
   signature_info->high_order+=(unsigned char) (n >> 29);
   if (signature_info->offset)
     {
-      i=SignatureSize-signature_info->offset;
+      i=MagickSignatureSize-signature_info->offset;
       if (i > (long) n)
         i=(long) n;
       (void) memcpy(signature_info->message+signature_info->offset,message,i);
       n-=i;
       message+=i;
       signature_info->offset+=i;
-      if (signature_info->offset != SignatureSize)
+      if (signature_info->offset != MagickSignatureSize)
         return;
       TransformSignature(signature_info);
     }
-  while (n >= SignatureSize)
+  while (n >= MagickSignatureSize)
   {
-    (void) memcpy(signature_info->message,message,SignatureSize);
-    message+=SignatureSize;
-    n-=SignatureSize;
+    (void) memcpy(signature_info->message,message,MagickSignatureSize);
+    message+=MagickSignatureSize;
+    n-=MagickSignatureSize;
     TransformSignature(signature_info);
   }
   (void) memcpy(signature_info->message,message,n);
