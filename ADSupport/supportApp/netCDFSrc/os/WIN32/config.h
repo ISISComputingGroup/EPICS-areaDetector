@@ -33,6 +33,11 @@ are set when opening a binary file on Windows. */
 /* Disable a few warnings under Visual Studio, for the
    time being. */
    #include <io.h>
+   #include <sys/stat.h>
+   #include <sys/types.h>
+   #include <stdio.h>
+   #include <fcntl.h>
+   
    #pragma warning( disable: 4018 4996 4244 4305 )
    #define unlink _unlink
    #define open _open
