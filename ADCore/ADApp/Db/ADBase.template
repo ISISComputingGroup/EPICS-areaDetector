@@ -603,10 +603,18 @@ record(calcout, "$(P)$(R)ShutterCloseEPICS")
     info(autosaveFields, "OUT OCAL")
 }
 
+record(longin, "$(P)$(R)ShutterStatusEPICS:TEST")
+{
+
+}
+
 record(mbbi, "$(P)$(R)ShutterStatusEPICS_RBV")
 {
     field(DTYP, "Raw Soft Channel")
-    field(INP,  "test CP MS")
+# set INP to PV to show status of EPICS controlled shutter, should be a CP link
+# and ZRVL/ONVL need to reflect closed/open raw readback value from this PV
+# INP/ZRVL/ONVL are all autosaved
+    field(INP,  "$(P)$(R)ShutterStatusEPICS:TEST CP MS")
     field(ZRVL, "0")
     field(ZRST, "Closed")
     field(ZRSV, "NO_ALARM")
