@@ -143,54 +143,54 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt; envPaths
 errlogInit(20000)
 
-dbLoadDatabase(&quot;$(TOP)/dbd/marCCDApp.dbd&quot;)
+dbLoadDatabase("$(TOP)/dbd/marCCDApp.dbd")
 marCCDApp_registerRecordDeviceDriver(pdbbase) 
 
 # Prefix for all records
-epicsEnvSet(&quot;PREFIX&quot;, &quot;13MARCCD1:&quot;)
+epicsEnvSet("PREFIX", "13MARCCD1:")
 # The port name for the detector
-epicsEnvSet(&quot;PORT&quot;,   &quot;MAR&quot;)
+epicsEnvSet("PORT",   "MAR")
 # The queue size for all plugins
-epicsEnvSet(&quot;QSIZE&quot;,  &quot;20&quot;)
+epicsEnvSet("QSIZE",  "20")
 # The maximim image width; used for row profiles in the NDPluginStats plugin
-epicsEnvSet(&quot;XSIZE&quot;,  &quot;2048&quot;)
+epicsEnvSet("XSIZE",  "2048")
 # The maximim image height; used for column profiles in the NDPluginStats plugin
-epicsEnvSet(&quot;YSIZE&quot;,  &quot;2048&quot;)
+epicsEnvSet("YSIZE",  "2048")
 # The maximum number of time series points in the NDPluginStats plugin
-epicsEnvSet(&quot;NCHANS&quot;, &quot;2048&quot;)
+epicsEnvSet("NCHANS", "2048")
 # The maximum number of frames buffered in the NDPluginCircularBuff plugin
-epicsEnvSet(&quot;CBUFFS&quot;, &quot;500&quot;)
+epicsEnvSet("CBUFFS", "500")
 # The search path for database files
-epicsEnvSet(&quot;EPICS_DB_INCLUDE_PATH&quot;, &quot;$(ADCORE)/db&quot;)
+epicsEnvSet("EPICS_DB_INCLUDE_PATH", "$(ADCORE)/db")
 
 ###
 # Create the asyn port to talk to the MAR on port 2222
-drvAsynIPPortConfigure(&quot;marServer&quot;,&quot;gse-marccd1.cars.aps.anl.gov:2222&quot;)
+drvAsynIPPortConfigure("marServer","gse-marccd1.cars.aps.anl.gov:2222")
 # Set the input and output terminators.
-asynOctetSetInputEos(&quot;marServer&quot;, 0, &quot;\n&quot;)
-asynOctetSetOutputEos(&quot;marServer&quot;, 0, &quot;\n&quot;)
-#asynSetTraceMask(&quot;marServer&quot;,0,255)
-asynSetTraceIOMask(&quot;marServer&quot;,0,2)
+asynOctetSetInputEos("marServer", 0, "\n")
+asynOctetSetOutputEos("marServer", 0, "\n")
+#asynSetTraceMask("marServer",0,255)
+asynSetTraceIOMask("marServer",0,2)
 
-marCCDConfig(&quot;$(PORT)&quot;, &quot;marServer&quot;, 0, 0)
-dbLoadRecords(&quot;$(ADMARCCD)/db/marCCD.template&quot;,&quot;P=$(PREFIX),R=cam1:,PORT=$(PORT),ADDR=0,TIMEOUT=1,MARSERVER_PORT=marServer&quot;)
+marCCDConfig("$(PORT)", "marServer", 0, 0)
+dbLoadRecords("$(ADMARCCD)/db/marCCD.template","P=$(PREFIX),R=cam1:,PORT=$(PORT),ADDR=0,TIMEOUT=1,MARSERVER_PORT=marServer")
 
 # Create a standard arrays plugin
-NDStdArraysConfigure(&quot;Image1&quot;, 5, 0, &quot;$(PORT)&quot;, 0, 0)
+NDStdArraysConfigure("Image1", 5, 0, "$(PORT)", 0, 0)
 # Make NELEMENTS in the following be a little bigger than 2048*2048
-dbLoadRecords(&quot;$(ADCORE)/db/NDStdArrays.template&quot;, &quot;P=$(PREFIX),R=image1:,PORT=Image1,ADDR=0,TIMEOUT=1,NDARRAY_PORT=$(PORT),TYPE=Int16,FTVL=SHORT,NELEMENTS=4200000&quot;)
+dbLoadRecords("$(ADCORE)/db/NDStdArrays.template", "P=$(PREFIX),R=image1:,PORT=Image1,ADDR=0,TIMEOUT=1,NDARRAY_PORT=$(PORT),TYPE=Int16,FTVL=SHORT,NELEMENTS=4200000")
 
 # Load all other plugins using commonPlugins.cmd
 &lt; $(ADCORE)/iocBoot/commonPlugins.cmd
-set_requestfile_path(&quot;$(ADMARCCD)/marCCDApp/Db&quot;)
+set_requestfile_path("$(ADMARCCD)/marCCDApp/Db")
 
-#asynSetTraceMask(&quot;$(PORT)&quot;,0,3)
-#asynSetTraceIOMask(&quot;$(PORT)&quot;,0,4)
+#asynSetTraceMask("$(PORT)",0,3)
+#asynSetTraceIOMask("$(PORT)",0,4)
 
 iocInit()
 
 # save things every thirty seconds
-create_monitor_set(&quot;auto_settings.req&quot;, 30,&quot;P=$(PREFIX)&quot;)
+create_monitor_set("auto_settings.req", 30,"P=$(PREFIX)")
 </pre></div>
 </div>
 </section>
@@ -207,7 +207,7 @@ create_monitor_set(&quot;auto_settings.req&quot;, 30,&quot;P=$(PREFIX)&quot;)
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Mark Rivers.
-      <span class="lastupdated">Last updated on 2026-August-04.
+      <span class="lastupdated">Last updated on 2026-August-17.
       </span></p>
   </div>
 

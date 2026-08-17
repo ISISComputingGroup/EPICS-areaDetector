@@ -211,7 +211,7 @@ read_nd_netcdf.pro file that can be found in ADCore/Viewers/IDL.</p>
 when SortMode=Sorted. attr[0].pvalue is the value of the UniqueId
 attribute for all 100 NDArrays. Note that the arrays are all in the
 correct UniqueId order.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">IDL</span><span class="o">&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">read_nd_netcdf</span><span class="p">(</span><span class="s1">&#39;thread_test_5_sorted_001.nc&#39;</span><span class="p">,</span> <span class="n">attr</span><span class="o">=</span><span class="n">attr</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">IDL</span><span class="o">&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">read_nd_netcdf</span><span class="p">(</span><span class="s1">'thread_test_5_sorted_001.nc'</span><span class="p">,</span> <span class="n">attr</span><span class="o">=</span><span class="n">attr</span><span class="p">)</span>
 <span class="n">IDL</span><span class="o">&gt;</span> <span class="n">u</span><span class="o">=*</span><span class="n">attr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">pvalue</span>
 <span class="n">IDL</span><span class="o">&gt;</span> <span class="nb">print</span><span class="p">,</span> <span class="n">u</span>
       <span class="mi">479298</span>      <span class="mi">479299</span>      <span class="mi">479300</span>      <span class="mi">479301</span>      <span class="mi">479302</span>      <span class="mi">479303</span>      <span class="mi">479304</span>      <span class="mi">479305</span>      <span class="mi">479306</span>      <span class="mi">479307</span>
@@ -229,7 +229,7 @@ correct UniqueId order.</p>
 <p>The following shows the output when reading the file that was written
 when SortMode=Unsorted. Note that the arrays are not in the correct
 UniqueId order.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">IDL</span><span class="o">&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">read_nd_netcdf</span><span class="p">(</span><span class="s1">&#39;thread_test_5_unsorted_001.nc&#39;</span><span class="p">,</span> <span class="n">attr</span><span class="o">=</span><span class="n">attr</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">IDL</span><span class="o">&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">read_nd_netcdf</span><span class="p">(</span><span class="s1">'thread_test_5_unsorted_001.nc'</span><span class="p">,</span> <span class="n">attr</span><span class="o">=</span><span class="n">attr</span><span class="p">)</span>
 <span class="n">IDL</span><span class="o">&gt;</span> <span class="n">u</span><span class="o">=*</span><span class="n">attr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">pvalue</span>
 <span class="n">IDL</span><span class="o">&gt;</span> <span class="nb">print</span><span class="p">,</span> <span class="n">u</span>
       <span class="mi">479398</span>      <span class="mi">479399</span>      <span class="mi">479400</span>      <span class="mi">479401</span>      <span class="mi">479402</span>      <span class="mi">479403</span>      <span class="mi">479404</span>      <span class="mi">479405</span>      <span class="mi">479406</span>      <span class="mi">479407</span>
@@ -258,7 +258,7 @@ UniqueId order.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Mark Rivers.
-      <span class="lastupdated">Last updated on 2026-August-04.
+      <span class="lastupdated">Last updated on 2026-August-17.
       </span></p>
   </div>
 

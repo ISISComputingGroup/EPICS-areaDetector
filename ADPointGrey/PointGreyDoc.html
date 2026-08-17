@@ -1306,102 +1306,102 @@ limitation.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt; envPaths
 errlogInit(20000)
 
-dbLoadDatabase(&quot;$(TOP)/dbd/pointGreyApp.dbd&quot;)
+dbLoadDatabase("$(TOP)/dbd/pointGreyApp.dbd")
 pointGreyApp_registerRecordDeviceDriver(pdbbase) 
 
 # Prefix for all records
-epicsEnvSet(&quot;PREFIX&quot;, &quot;13PG1:&quot;)
+epicsEnvSet("PREFIX", "13PG1:")
 # Use this line for the first Point Grey camera in the system
-#epicsEnvSet(&quot;CAMERA_ID&quot;, &quot;0&quot;)
+#epicsEnvSet("CAMERA_ID", "0")
 # Use this line for a specific camera by serial number, in this case a Flea2 Firewire camera
-#epicsEnvSet(&quot;CAMERA_ID&quot;, &quot;9211601&quot;)
+#epicsEnvSet("CAMERA_ID", "9211601")
 # Use this line for a specific camera by serial number, in this case a Grasshopper3 USB-3.0 camera
 # This is the GSECARS tomography camera
-#epicsEnvSet(&quot;CAMERA_ID&quot;, &quot;13510305&quot;)
+#epicsEnvSet("CAMERA_ID", "13510305")
 # This is another GSECARS tomography camera
-#epicsEnvSet(&quot;CAMERA_ID&quot;, &quot;15355695&quot;)
+#epicsEnvSet("CAMERA_ID", "15355695")
 # This is another GSECARS tomography camera
-#epicsEnvSet(&quot;CAMERA_ID&quot;, &quot;15337483&quot;)
+#epicsEnvSet("CAMERA_ID", "15337483")
 # This is the 13-ID-D Grasshopper3 GigE camera, gse-pointgrey2
-#epicsEnvSet(&quot;CAMERA_ID&quot;, &quot;14481221&quot;)
+#epicsEnvSet("CAMERA_ID", "14481221")
 # This is the 13-ID-D Grasshopper3 GigE camera, gse-pointgrey3
-#epicsEnvSet(&quot;CAMERA_ID&quot;, &quot;14481209&quot;)
+#epicsEnvSet("CAMERA_ID", "14481209")
 # This is the GSECARS LVP CMOS camera
-#epicsEnvSet(&quot;CAMERA_ID&quot;, &quot;14120134&quot;)
+#epicsEnvSet("CAMERA_ID", "14120134")
 # This is the GSECARS LVP CCD camera
-#epicsEnvSet(&quot;CAMERA_ID&quot;, &quot;15452742&quot;)
+#epicsEnvSet("CAMERA_ID", "15452742")
 # This is the 2-BM camera
-#epicsEnvSet(&quot;CAMERA_ID&quot;, &quot;15355637&quot;)
+#epicsEnvSet("CAMERA_ID", "15355637")
 # This is the 2-BM GS3-U3-91S6M-C camera
-#epicsEnvSet(&quot;CAMERA_ID&quot;, &quot;13510309&quot;)
+#epicsEnvSet("CAMERA_ID", "13510309")
 # Use this line for a specific camera by serial number, in this case a BlackFly GigE camera
-#epicsEnvSet(&quot;CAMERA_ID&quot;, &quot;13481965&quot;)
-#epicsEnvSet(&quot;CAMERA_ID&quot;, &quot;16292610&quot;)
-epicsEnvSet(&quot;CAMERA_ID&quot;, &quot;18402100&quot;)
-#epicsEnvSet(&quot;CAMERA_ID&quot;, &quot;1624484&quot;)
+#epicsEnvSet("CAMERA_ID", "13481965")
+#epicsEnvSet("CAMERA_ID", "16292610")
+epicsEnvSet("CAMERA_ID", "18402100")
+#epicsEnvSet("CAMERA_ID", "1624484")
 # Use this line for a specific camera by serial number, in this case a Flea3 GigE camera
-# epicsEnvSet(&quot;CAMERA_ID&quot;, &quot;14273040&quot;)
-#epicsEnvSet(&quot;CAMERA_ID&quot;, &quot;17476170&quot;)
+# epicsEnvSet("CAMERA_ID", "14273040")
+#epicsEnvSet("CAMERA_ID", "17476170")
 
 # The port name for the detector
-epicsEnvSet(&quot;PORT&quot;,   &quot;PG1&quot;)
+epicsEnvSet("PORT",   "PG1")
 # Really large queue so we can stream to disk at full camera speed
-epicsEnvSet(&quot;QSIZE&quot;,  &quot;2000&quot;)   
+epicsEnvSet("QSIZE",  "2000")   
 # The maximim image width; used for row profiles in the NDPluginStats plugin
-epicsEnvSet(&quot;XSIZE&quot;,  &quot;2048&quot;)
+epicsEnvSet("XSIZE",  "2048")
 # The maximim image height; used for column profiles in the NDPluginStats plugin
-epicsEnvSet(&quot;YSIZE&quot;,  &quot;2048&quot;)
+epicsEnvSet("YSIZE",  "2048")
 # The maximum number of time series points in the NDPluginStats plugin
-epicsEnvSet(&quot;NCHANS&quot;, &quot;2048&quot;)
+epicsEnvSet("NCHANS", "2048")
 # The maximum number of frames buffered in the NDPluginCircularBuff plugin
-epicsEnvSet(&quot;CBUFFS&quot;, &quot;500&quot;)
+epicsEnvSet("CBUFFS", "500")
 # The search path for database files
-epicsEnvSet(&quot;EPICS_DB_INCLUDE_PATH&quot;, &quot;$(ADCORE)/db&quot;)
+epicsEnvSet("EPICS_DB_INCLUDE_PATH", "$(ADCORE)/db")
 # Define NELEMENTS to be enough for a 2048x2048x3 (color) image
-epicsEnvSet(&quot;NELEMENTS&quot;, &quot;12592912&quot;)
+epicsEnvSet("NELEMENTS", "12592912")
 
 # pointGreyConfig(const char *portName, int cameraId, int traceMask, int memoryChannel,
 #                 int maxBuffers, size_t maxMemory, int priority, int stackSize)
-pointGreyConfig(&quot;$(PORT)&quot;, $(CAMERA_ID), 0x1, 0)
+pointGreyConfig("$(PORT)", $(CAMERA_ID), 0x1, 0)
 asynSetTraceIOMask($(PORT), 0, 2)
 #asynSetTraceMask($(PORT), 0, 0xFF)
-#asynSetTraceFile($(PORT), 0, &quot;asynTrace.out&quot;)
+#asynSetTraceFile($(PORT), 0, "asynTrace.out")
 #asynSetTraceInfoMask($(PORT), 0, 0xf)
 
-dbLoadRecords(&quot;$(ADPOINTGREY)/db/pointGrey.template&quot;, &quot;P=$(PREFIX),R=cam1:,PORT=$(PORT),ADDR=0,TIMEOUT=1&quot;)
-dbLoadTemplate(&quot;pointGrey.substitutions&quot;)
+dbLoadRecords("$(ADPOINTGREY)/db/pointGrey.template", "P=$(PREFIX),R=cam1:,PORT=$(PORT),ADDR=0,TIMEOUT=1")
+dbLoadTemplate("pointGrey.substitutions")
 
 # Create a standard arrays plugin
-NDStdArraysConfigure(&quot;Image1&quot;, 5, 0, &quot;$(PORT)&quot;, 0, 0)
+NDStdArraysConfigure("Image1", 5, 0, "$(PORT)", 0, 0)
 # Use this line for 8-bit data only
-#dbLoadRecords(&quot;$(ADCORE)/db/NDStdArrays.template&quot;, &quot;P=$(PREFIX),R=image1:,PORT=Image1,ADDR=0,TIMEOUT=1,NDARRAY_PORT=$(PORT),TYPE=Int8,FTVL=CHAR,NELEMENTS=$(NELEMENTS)&quot;)
+#dbLoadRecords("$(ADCORE)/db/NDStdArrays.template", "P=$(PREFIX),R=image1:,PORT=Image1,ADDR=0,TIMEOUT=1,NDARRAY_PORT=$(PORT),TYPE=Int8,FTVL=CHAR,NELEMENTS=$(NELEMENTS)")
 # Use this line for 8-bit or 16-bit data
-dbLoadRecords(&quot;$(ADCORE)/db/NDStdArrays.template&quot;, &quot;P=$(PREFIX),R=image1:,PORT=Image1,ADDR=0,TIMEOUT=1,NDARRAY_PORT=$(PORT),TYPE=Int16,FTVL=SHORT,NELEMENTS=$(NELEMENTS)&quot;)
+dbLoadRecords("$(ADCORE)/db/NDStdArrays.template", "P=$(PREFIX),R=image1:,PORT=Image1,ADDR=0,TIMEOUT=1,NDARRAY_PORT=$(PORT),TYPE=Int16,FTVL=SHORT,NELEMENTS=$(NELEMENTS)")
 
 # Load all other plugins using commonPlugins.cmd
 &lt; $(ADCORE)/iocBoot/commonPlugins.cmd
-set_requestfile_path(&quot;$(ADPOINTGREY)/pointGreyApp/Db&quot;)
+set_requestfile_path("$(ADPOINTGREY)/pointGreyApp/Db")
 
 iocInit()
 
 # save things every thirty seconds
-create_monitor_set(&quot;auto_settings.req&quot;, 30,&quot;P=$(PREFIX)&quot;)
+create_monitor_set("auto_settings.req", 30,"P=$(PREFIX)")
 
 # Wait for enum callbacks to complete
 epicsThreadSleep(1.0)
 
 # Records with dynamic enums need to be processed again because the enum values are not available during iocInit.  
-dbpf(&quot;$(PREFIX)cam1:Format7Mode.PROC&quot;, &quot;1&quot;)
-dbpf(&quot;$(PREFIX)cam1:PixelFormat.PROC&quot;, &quot;1&quot;)
+dbpf("$(PREFIX)cam1:Format7Mode.PROC", "1")
+dbpf("$(PREFIX)cam1:PixelFormat.PROC", "1")
 
 # Wait for callbacks on the property limits (DRVL, DRVH) to complete
 epicsThreadSleep(1.0)
 
 # Records that depend on the state of the dynamic enum records or property limits also need to be processed again
 # Other property records may need to be added to this list
-dbpf(&quot;$(PREFIX)cam1:FrameRate.PROC&quot;, &quot;1&quot;)
-dbpf(&quot;$(PREFIX)cam1:FrameRateValAbs.PROC&quot;, &quot;1&quot;)
-dbpf(&quot;$(PREFIX)cam1:AcquireTime.PROC&quot;, &quot;1&quot;)
+dbpf("$(PREFIX)cam1:FrameRate.PROC", "1")
+dbpf("$(PREFIX)cam1:FrameRateValAbs.PROC", "1")
+dbpf("$(PREFIX)cam1:AcquireTime.PROC", "1")
 
 </pre></div>
 </div>
@@ -1467,7 +1467,7 @@ close and re-open that main screen as well.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Mark Rivers.
-      <span class="lastupdated">Last updated on 2026-August-04.
+      <span class="lastupdated">Last updated on 2026-August-17.
       </span></p>
   </div>
 

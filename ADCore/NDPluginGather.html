@@ -331,7 +331,7 @@ any.</p>
 written when NDPluginGather was set to <code class="docutils literal notranslate"><span class="pre">SortMode=Unsorted</span></code>.</p>
 <p><code class="docutils literal notranslate"><span class="pre">attr[0].pvalue</span></code> is the value of the UniqueId attribute for all 1000
 NDArrays. Note that the arrays are not in the correct <code class="docutils literal notranslate"><span class="pre">UniqueId</span></code> order.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">IDL</span><span class="o">&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">read_nd_netcdf</span><span class="p">(</span><span class="s1">&#39;gather_test_sorted_001.nc&#39;</span><span class="p">,</span> <span class="n">attr</span><span class="o">=</span><span class="n">attr</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">IDL</span><span class="o">&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">read_nd_netcdf</span><span class="p">(</span><span class="s1">'gather_test_sorted_001.nc'</span><span class="p">,</span> <span class="n">attr</span><span class="o">=</span><span class="n">attr</span><span class="p">)</span>
 <span class="n">IDL</span><span class="o">&gt;</span> <span class="n">u</span><span class="o">=*</span><span class="n">attr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">pvalue</span>
 <span class="n">IDL</span><span class="o">&gt;</span> <span class="nb">print</span><span class="p">,</span> <span class="n">u</span>
       <span class="mi">155438</span>      <span class="mi">155440</span>      <span class="mi">155439</span>      <span class="mi">155441</span>      <span class="mi">155442</span>      <span class="mi">155445</span>      <span class="mi">155443</span>      <span class="mi">155446</span>      <span class="mi">155447</span>      <span class="mi">155444</span>
@@ -440,7 +440,7 @@ NDArrays. Note that the arrays are not in the correct <code class="docutils lite
 written when NDPluginGather was set to <code class="docutils literal notranslate"><span class="pre">SortMode=Sorted</span></code>.</p>
 <p><code class="docutils literal notranslate"><span class="pre">attr[0].pvalue</span></code> is the value of the UniqueId attribute for all 1000
 NDArrays. Note that the arrays are now in the correct <code class="docutils literal notranslate"><span class="pre">UniqueId</span></code> order.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">IDL</span><span class="o">&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">read_nd_netcdf</span><span class="p">(</span><span class="s1">&#39;gather_test_sorted_001.nc&#39;</span><span class="p">,</span> <span class="n">attr</span><span class="o">=</span><span class="n">attr</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">IDL</span><span class="o">&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">read_nd_netcdf</span><span class="p">(</span><span class="s1">'gather_test_sorted_001.nc'</span><span class="p">,</span> <span class="n">attr</span><span class="o">=</span><span class="n">attr</span><span class="p">)</span>
 <span class="n">IDL</span><span class="o">&gt;</span> <span class="n">u</span><span class="o">=*</span><span class="n">attr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">pvalue</span>
 <span class="n">IDL</span><span class="o">&gt;</span> <span class="nb">print</span><span class="p">,</span> <span class="n">u</span>
       <span class="mi">157438</span>      <span class="mi">157439</span>      <span class="mi">157440</span>      <span class="mi">157441</span>      <span class="mi">157442</span>      <span class="mi">157443</span>      <span class="mi">157444</span>      <span class="mi">157445</span>      <span class="mi">157446</span>      <span class="mi">157447</span>
@@ -560,7 +560,7 @@ NDArrays. Note that the arrays are now in the correct <code class="docutils lite
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Mark Rivers.
-      <span class="lastupdated">Last updated on 2026-August-04.
+      <span class="lastupdated">Last updated on 2026-August-17.
       </span></p>
   </div>
 

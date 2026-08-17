@@ -663,55 +663,55 @@ and in the documentation for the constructor for the
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt; envPaths
 errlogInit(20000)
 
-dbLoadDatabase(&quot;$(TOP)/dbd/pilatusDetectorApp.dbd&quot;)
+dbLoadDatabase("$(TOP)/dbd/pilatusDetectorApp.dbd")
 pilatusDetectorApp_registerRecordDeviceDriver(pdbbase) 
 
 # Prefix for all records
-epicsEnvSet(&quot;PREFIX&quot;, &quot;13PIL1:&quot;)
+epicsEnvSet("PREFIX", "13PIL1:")
 # The port name for the detector
-epicsEnvSet(&quot;PORT&quot;,   &quot;PIL&quot;)
+epicsEnvSet("PORT",   "PIL")
 # The queue size for all plugins
-epicsEnvSet(&quot;QSIZE&quot;,  &quot;20&quot;)
+epicsEnvSet("QSIZE",  "20")
 # The maximim image width; used for row profiles in the NDPluginStats plugin
-epicsEnvSet(&quot;XSIZE&quot;,  &quot;487&quot;)
+epicsEnvSet("XSIZE",  "487")
 # The maximim image height; used for column profiles in the NDPluginStats plugin
-epicsEnvSet(&quot;YSIZE&quot;,  &quot;195&quot;)
+epicsEnvSet("YSIZE",  "195")
 # The maximum number of time seried points in the NDPluginStats plugin
-epicsEnvSet(&quot;NCHANS&quot;, &quot;2048&quot;)
+epicsEnvSet("NCHANS", "2048")
 # The maximum number of frames buffered in the NDPluginCircularBuff plugin
-epicsEnvSet(&quot;CBUFFS&quot;, &quot;500&quot;)
+epicsEnvSet("CBUFFS", "500")
 # The search path for database files
-epicsEnvSet(&quot;EPICS_DB_INCLUDE_PATH&quot;, &quot;$(ADCORE)/db&quot;)
+epicsEnvSet("EPICS_DB_INCLUDE_PATH", "$(ADCORE)/db")
 
 ###
 # Create the asyn port to talk to the Pilatus on port 41234.
-drvAsynIPPortConfigure(&quot;camserver&quot;,&quot;gse-pilatus1:41234&quot;)
+drvAsynIPPortConfigure("camserver","gse-pilatus1:41234")
 # Uncomment the following to enable asynTrace on the camserver port
-#asynSetTraceIOMask(&quot;camserver&quot;,0,2)
-#asynSetTraceMask(&quot;camserver&quot;,0,9)
+#asynSetTraceIOMask("camserver",0,2)
+#asynSetTraceMask("camserver",0,9)
 # Set the input and output terminators.
-asynOctetSetInputEos(&quot;camserver&quot;, 0, &quot;\x18&quot;)
-asynOctetSetOutputEos(&quot;camserver&quot;, 0, &quot;\n&quot;)
+asynOctetSetInputEos("camserver", 0, "\x18")
+asynOctetSetOutputEos("camserver", 0, "\n")
 
-pilatusDetectorConfig(&quot;$(PORT)&quot;, &quot;camserver&quot;, $(XSIZE), $(YSIZE), 0, 0)
-dbLoadRecords(&quot;$(ADPILATUS)/db/pilatus.template&quot;,&quot;P=$(PREFIX),R=cam1:,PORT=$(PORT),ADDR=0,TIMEOUT=1,CAMSERVER_PORT=camserver&quot;)
+pilatusDetectorConfig("$(PORT)", "camserver", $(XSIZE), $(YSIZE), 0, 0)
+dbLoadRecords("$(ADPILATUS)/db/pilatus.template","P=$(PREFIX),R=cam1:,PORT=$(PORT),ADDR=0,TIMEOUT=1,CAMSERVER_PORT=camserver")
 
 # Create a standard arrays plugin
-NDStdArraysConfigure(&quot;Image1&quot;, 5, 0, &quot;$(PORT)&quot;, 0, 0)
-dbLoadRecords(&quot;$(ADCORE)/db/NDStdArrays.template&quot;, &quot;P=$(PREFIX),R=image1:,PORT=Image1,ADDR=0,TIMEOUT=1,NDARRAY_PORT=$(PORT),TYPE=Int32,FTVL=LONG,NELEMENTS=94965&quot;)
+NDStdArraysConfigure("Image1", 5, 0, "$(PORT)", 0, 0)
+dbLoadRecords("$(ADCORE)/db/NDStdArrays.template", "P=$(PREFIX),R=image1:,PORT=Image1,ADDR=0,TIMEOUT=1,NDARRAY_PORT=$(PORT),TYPE=Int32,FTVL=LONG,NELEMENTS=94965")
 
 # Load all other plugins using commonPlugins.cmd
 &lt; $(ADCORE)/iocBoot/commonPlugins.cmd
-set_requestfile_path(&quot;$(ADPILATUS)/pilatusApp/Db&quot;)
+set_requestfile_path("$(ADPILATUS)/pilatusApp/Db")
 
 # Uncomment to enable asynTrace on the driver port
-#asynSetTraceMask(&quot;$(PORT)&quot;,0,255)
+#asynSetTraceMask("$(PORT)",0,255)
 
 
 iocInit()
 
 # save things every thirty seconds
-create_monitor_set(&quot;auto_settings.req&quot;, 30,&quot;P=$(PREFIX)&quot;)
+create_monitor_set("auto_settings.req", 30,"P=$(PREFIX)")
 </pre></div>
 </div>
 </section>
@@ -821,53 +821,53 @@ can supply the source files on request.:</p>
 
 
 <span class="c1">###############################################################</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">_setup_img</span> <span class="s1">&#39;{</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">_setup_img</span> <span class="s1">'{</span>
 <span class="o">...</span>
      <span class="c1"># PILATUS_PREFIX detector name i.e. (GSE-PILATUS1:)</span>
-     <span class="k">if</span> <span class="p">(</span> <span class="n">PILATUS_PREFIX</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="n">PILATUS_PREFIX</span> <span class="o">=</span> <span class="s2">&quot;GSE-PILATUS1:&quot;</span>
-     <span class="n">PILATUS_PREFIX</span> <span class="o">=</span> <span class="n">getsval</span><span class="p">(</span><span class="s2">&quot;Enter PILATUS detector name i.e. GSE-PILATUS1:&quot;</span><span class="p">,</span><span class="n">PILATUS_PREFIX</span><span class="p">)</span>
+     <span class="k">if</span> <span class="p">(</span> <span class="n">PILATUS_PREFIX</span> <span class="o">==</span> <span class="s2">""</span><span class="p">)</span> <span class="n">PILATUS_PREFIX</span> <span class="o">=</span> <span class="s2">"GSE-PILATUS1:"</span>
+     <span class="n">PILATUS_PREFIX</span> <span class="o">=</span> <span class="n">getsval</span><span class="p">(</span><span class="s2">"Enter PILATUS detector name i.e. GSE-PILATUS1:"</span><span class="p">,</span><span class="n">PILATUS_PREFIX</span><span class="p">)</span>
 
      <span class="c1"># PILATUS_DET_PREFIX is the pv used by areaDetector to identify a specific detector.</span>
      <span class="c1"># When only one detector is used it is usally (cam1:)</span>
-     <span class="k">if</span> <span class="p">(</span> <span class="n">PILATUS_DET_PREFIX</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="n">PILATUS_DET_PREFIX</span> <span class="o">=</span> <span class="s2">&quot;cam1:&quot;</span>
-     <span class="n">PILATUS_DET_PREFIX</span> <span class="o">=</span> <span class="n">getsval</span><span class="p">(</span><span class="s2">&quot;Enter PILATUS specific detector name i.e. cam1:&quot;</span><span class="p">,</span><span class="n">PILATUS_DET_PREFIX</span><span class="p">)</span>
+     <span class="k">if</span> <span class="p">(</span> <span class="n">PILATUS_DET_PREFIX</span> <span class="o">==</span> <span class="s2">""</span><span class="p">)</span> <span class="n">PILATUS_DET_PREFIX</span> <span class="o">=</span> <span class="s2">"cam1:"</span>
+     <span class="n">PILATUS_DET_PREFIX</span> <span class="o">=</span> <span class="n">getsval</span><span class="p">(</span><span class="s2">"Enter PILATUS specific detector name i.e. cam1:"</span><span class="p">,</span><span class="n">PILATUS_DET_PREFIX</span><span class="p">)</span>
 
      <span class="c1"># PILATUS_ROI_PREFIX is the pv used by areaDetector to identify a specific a ROI plugin.</span>
      <span class="c1"># When only one ROI plugin is used it is usally (ROI1:)</span>
-     <span class="k">if</span> <span class="p">(</span> <span class="n">PILATUS_ROI_PREFIX</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="n">PILATUS_DET_PREFIX</span> <span class="o">=</span> <span class="s2">&quot;ROI1:&quot;</span>
-     <span class="n">PILATUS_ROI_PREFIX</span> <span class="o">=</span> <span class="n">getsval</span><span class="p">(</span><span class="s2">&quot;Enter PILATUS ROI plugin name i.e. ROI1:&quot;</span><span class="p">,</span><span class="n">PILATUS_ROI_PREFIX</span><span class="p">)</span>
+     <span class="k">if</span> <span class="p">(</span> <span class="n">PILATUS_ROI_PREFIX</span> <span class="o">==</span> <span class="s2">""</span><span class="p">)</span> <span class="n">PILATUS_DET_PREFIX</span> <span class="o">=</span> <span class="s2">"ROI1:"</span>
+     <span class="n">PILATUS_ROI_PREFIX</span> <span class="o">=</span> <span class="n">getsval</span><span class="p">(</span><span class="s2">"Enter PILATUS ROI plugin name i.e. ROI1:"</span><span class="p">,</span><span class="n">PILATUS_ROI_PREFIX</span><span class="p">)</span>
 
-     <span class="k">if</span> <span class="p">(</span><span class="n">PILATUS_MOUNT</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="n">PILATUS_MOUNT</span> <span class="o">=</span> <span class="s2">&quot;cars5/Data&quot;</span>
-     <span class="n">PILATUS_MOUNT</span> <span class="o">=</span> <span class="n">getsval</span><span class="p">(</span><span class="s2">&quot;Enter mount point relative to camserver home directory&quot;</span><span class="p">,</span><span class="n">PILATUS_MOUNT</span><span class="p">)</span>
-     <span class="k">if</span> <span class="p">(</span><span class="n">PILATUS_SPEC_MOUNT</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="n">PILATUS_SPEC_MOUNT</span> <span class="o">=</span> <span class="s2">&quot;cars5/Data&quot;</span>
-     <span class="n">PILATUS_SPEC_MOUNT</span> <span class="o">=</span> <span class="n">getsval</span><span class="p">(</span><span class="s2">&quot;Enter mount point relative to spec home directory&quot;</span><span class="p">,</span><span class="n">PILATUS_SPEC_MOUNT</span><span class="p">)</span>
+     <span class="k">if</span> <span class="p">(</span><span class="n">PILATUS_MOUNT</span> <span class="o">==</span> <span class="s2">""</span><span class="p">)</span> <span class="n">PILATUS_MOUNT</span> <span class="o">=</span> <span class="s2">"cars5/Data"</span>
+     <span class="n">PILATUS_MOUNT</span> <span class="o">=</span> <span class="n">getsval</span><span class="p">(</span><span class="s2">"Enter mount point relative to camserver home directory"</span><span class="p">,</span><span class="n">PILATUS_MOUNT</span><span class="p">)</span>
+     <span class="k">if</span> <span class="p">(</span><span class="n">PILATUS_SPEC_MOUNT</span> <span class="o">==</span> <span class="s2">""</span><span class="p">)</span> <span class="n">PILATUS_SPEC_MOUNT</span> <span class="o">=</span> <span class="s2">"cars5/Data"</span>
+     <span class="n">PILATUS_SPEC_MOUNT</span> <span class="o">=</span> <span class="n">getsval</span><span class="p">(</span><span class="s2">"Enter mount point relative to spec home directory"</span><span class="p">,</span><span class="n">PILATUS_SPEC_MOUNT</span><span class="p">)</span>
 <span class="o">...</span>
-     <span class="n">PILATUS_ROI_PV</span>             <span class="o">=</span> <span class="n">PILATUS_PREFIX</span> <span class="n">PILATUS_ROI_PREFIX</span> <span class="s2">&quot;0:Net_RBV&quot;</span>
-     <span class="n">PILATUS_ROI_ARRAY_PV</span>       <span class="o">=</span> <span class="n">PILATUS_PREFIX</span> <span class="n">PILATUS_ROI_PREFIX</span> <span class="s2">&quot;0:NetArray&quot;</span>
-     <span class="n">PILATUS_ROI_ARRAY_START_PV</span> <span class="o">=</span> <span class="n">PILATUS_PREFIX</span> <span class="n">PILATUS_ROI_PREFIX</span> <span class="s2">&quot;0:NetArrayEraseStart&quot;</span>
-     <span class="n">PILATUS_ROI_ARRAY_NUSE_PV</span>  <span class="o">=</span> <span class="n">PILATUS_PREFIX</span> <span class="n">PILATUS_ROI_PREFIX</span> <span class="s2">&quot;0:NetArray.NUSE&quot;</span>
-     <span class="n">PILATUS_ROI_ARRAY_ACQ_PV</span>   <span class="o">=</span> <span class="n">PILATUS_PREFIX</span> <span class="n">PILATUS_ROI_PREFIX</span> <span class="s2">&quot;0:NetArray.ACQG&quot;</span>
-     <span class="n">PILATUS_IMGPATH_PV</span>         <span class="o">=</span> <span class="n">PILATUS_PREFIX</span> <span class="n">PILATUS_DET_PREFIX</span> <span class="s2">&quot;FilePath&quot;</span>
-     <span class="n">PILATUS_FNAME_PV</span>           <span class="o">=</span> <span class="n">PILATUS_PREFIX</span> <span class="n">PILATUS_DET_PREFIX</span> <span class="s2">&quot;FileName&quot;</span>
-     <span class="n">PILATUS_FILENUMBER_PV</span>      <span class="o">=</span> <span class="n">PILATUS_PREFIX</span> <span class="n">PILATUS_DET_PREFIX</span> <span class="s2">&quot;FileNumber&quot;</span>
-     <span class="n">PILATUS_FILEFORMAT_PV</span>      <span class="o">=</span> <span class="n">PILATUS_PREFIX</span> <span class="n">PILATUS_DET_PREFIX</span> <span class="s2">&quot;FileTemplate&quot;</span>
-     <span class="n">PILATUS_EXPSRTM_PV</span>         <span class="o">=</span> <span class="n">PILATUS_PREFIX</span> <span class="n">PILATUS_DET_PREFIX</span> <span class="s2">&quot;AcquireTime&quot;</span>
-     <span class="n">PILATUS_NFRAME_PV</span>          <span class="o">=</span> <span class="n">PILATUS_PREFIX</span> <span class="n">PILATUS_DET_PREFIX</span> <span class="s2">&quot;NumImages&quot;</span>
-     <span class="n">PILATUS_EXPPRD_PV</span>          <span class="o">=</span> <span class="n">PILATUS_PREFIX</span> <span class="n">PILATUS_DET_PREFIX</span> <span class="s2">&quot;AcquirePeriod&quot;</span>
-     <span class="n">PILATUS_NEXPFRM_PV</span>         <span class="o">=</span> <span class="n">PILATUS_PREFIX</span> <span class="n">PILATUS_DET_PREFIX</span> <span class="s2">&quot;NumExposures&quot;</span>
-     <span class="n">PILATUS_ACQ_PV</span>             <span class="o">=</span> <span class="n">PILATUS_PREFIX</span> <span class="n">PILATUS_DET_PREFIX</span> <span class="s2">&quot;Acquire&quot;</span>
-     <span class="n">PILATUS_ARMED_PV</span>           <span class="o">=</span> <span class="n">PILATUS_PREFIX</span> <span class="n">PILATUS_DET_PREFIX</span> <span class="s2">&quot;Armed&quot;</span>
-     <span class="n">PILATUS_ABORT_PV</span>           <span class="o">=</span> <span class="n">PILATUS_PREFIX</span> <span class="n">PILATUS_DET_PREFIX</span> <span class="s2">&quot;Acquire&quot;</span>
-     <span class="n">PILATUS_ACQMODE_PV</span>         <span class="o">=</span> <span class="n">PILATUS_PREFIX</span> <span class="n">PILATUS_DET_PREFIX</span> <span class="s2">&quot;TriggerMode&quot;</span>
-     <span class="n">PILATUS_THRESHOLD_PV</span>       <span class="o">=</span> <span class="n">PILATUS_PREFIX</span> <span class="n">PILATUS_DET_PREFIX</span> <span class="s2">&quot;ThresholdEnergy&quot;</span>
-     <span class="n">PILATUS_ROI_0_MinX_PV</span>      <span class="o">=</span> <span class="n">PILATUS_PREFIX</span> <span class="n">PILATUS_ROI_PREFIX</span> <span class="s2">&quot;0:MinX&quot;</span>
-     <span class="n">PILATUS_ROI_0_SizeX_PV</span>     <span class="o">=</span> <span class="n">PILATUS_PREFIX</span> <span class="n">PILATUS_ROI_PREFIX</span> <span class="s2">&quot;0:SizeX&quot;</span>
-     <span class="n">PILATUS_ROI_0_MinY_PV</span>      <span class="o">=</span> <span class="n">PILATUS_PREFIX</span> <span class="n">PILATUS_ROI_PREFIX</span> <span class="s2">&quot;0:MinY&quot;</span>
-     <span class="n">PILATUS_ROI_0_SizeY_PV</span>     <span class="o">=</span> <span class="n">PILATUS_PREFIX</span> <span class="n">PILATUS_ROI_PREFIX</span> <span class="s2">&quot;0:SizeY&quot;</span>
-     <span class="n">PILATUS_ROI_0_BgdWidth_PV</span>  <span class="o">=</span> <span class="n">PILATUS_PREFIX</span> <span class="n">PILATUS_ROI_PREFIX</span> <span class="s2">&quot;0:BgdWidth&quot;</span>
+     <span class="n">PILATUS_ROI_PV</span>             <span class="o">=</span> <span class="n">PILATUS_PREFIX</span> <span class="n">PILATUS_ROI_PREFIX</span> <span class="s2">"0:Net_RBV"</span>
+     <span class="n">PILATUS_ROI_ARRAY_PV</span>       <span class="o">=</span> <span class="n">PILATUS_PREFIX</span> <span class="n">PILATUS_ROI_PREFIX</span> <span class="s2">"0:NetArray"</span>
+     <span class="n">PILATUS_ROI_ARRAY_START_PV</span> <span class="o">=</span> <span class="n">PILATUS_PREFIX</span> <span class="n">PILATUS_ROI_PREFIX</span> <span class="s2">"0:NetArrayEraseStart"</span>
+     <span class="n">PILATUS_ROI_ARRAY_NUSE_PV</span>  <span class="o">=</span> <span class="n">PILATUS_PREFIX</span> <span class="n">PILATUS_ROI_PREFIX</span> <span class="s2">"0:NetArray.NUSE"</span>
+     <span class="n">PILATUS_ROI_ARRAY_ACQ_PV</span>   <span class="o">=</span> <span class="n">PILATUS_PREFIX</span> <span class="n">PILATUS_ROI_PREFIX</span> <span class="s2">"0:NetArray.ACQG"</span>
+     <span class="n">PILATUS_IMGPATH_PV</span>         <span class="o">=</span> <span class="n">PILATUS_PREFIX</span> <span class="n">PILATUS_DET_PREFIX</span> <span class="s2">"FilePath"</span>
+     <span class="n">PILATUS_FNAME_PV</span>           <span class="o">=</span> <span class="n">PILATUS_PREFIX</span> <span class="n">PILATUS_DET_PREFIX</span> <span class="s2">"FileName"</span>
+     <span class="n">PILATUS_FILENUMBER_PV</span>      <span class="o">=</span> <span class="n">PILATUS_PREFIX</span> <span class="n">PILATUS_DET_PREFIX</span> <span class="s2">"FileNumber"</span>
+     <span class="n">PILATUS_FILEFORMAT_PV</span>      <span class="o">=</span> <span class="n">PILATUS_PREFIX</span> <span class="n">PILATUS_DET_PREFIX</span> <span class="s2">"FileTemplate"</span>
+     <span class="n">PILATUS_EXPSRTM_PV</span>         <span class="o">=</span> <span class="n">PILATUS_PREFIX</span> <span class="n">PILATUS_DET_PREFIX</span> <span class="s2">"AcquireTime"</span>
+     <span class="n">PILATUS_NFRAME_PV</span>          <span class="o">=</span> <span class="n">PILATUS_PREFIX</span> <span class="n">PILATUS_DET_PREFIX</span> <span class="s2">"NumImages"</span>
+     <span class="n">PILATUS_EXPPRD_PV</span>          <span class="o">=</span> <span class="n">PILATUS_PREFIX</span> <span class="n">PILATUS_DET_PREFIX</span> <span class="s2">"AcquirePeriod"</span>
+     <span class="n">PILATUS_NEXPFRM_PV</span>         <span class="o">=</span> <span class="n">PILATUS_PREFIX</span> <span class="n">PILATUS_DET_PREFIX</span> <span class="s2">"NumExposures"</span>
+     <span class="n">PILATUS_ACQ_PV</span>             <span class="o">=</span> <span class="n">PILATUS_PREFIX</span> <span class="n">PILATUS_DET_PREFIX</span> <span class="s2">"Acquire"</span>
+     <span class="n">PILATUS_ARMED_PV</span>           <span class="o">=</span> <span class="n">PILATUS_PREFIX</span> <span class="n">PILATUS_DET_PREFIX</span> <span class="s2">"Armed"</span>
+     <span class="n">PILATUS_ABORT_PV</span>           <span class="o">=</span> <span class="n">PILATUS_PREFIX</span> <span class="n">PILATUS_DET_PREFIX</span> <span class="s2">"Acquire"</span>
+     <span class="n">PILATUS_ACQMODE_PV</span>         <span class="o">=</span> <span class="n">PILATUS_PREFIX</span> <span class="n">PILATUS_DET_PREFIX</span> <span class="s2">"TriggerMode"</span>
+     <span class="n">PILATUS_THRESHOLD_PV</span>       <span class="o">=</span> <span class="n">PILATUS_PREFIX</span> <span class="n">PILATUS_DET_PREFIX</span> <span class="s2">"ThresholdEnergy"</span>
+     <span class="n">PILATUS_ROI_0_MinX_PV</span>      <span class="o">=</span> <span class="n">PILATUS_PREFIX</span> <span class="n">PILATUS_ROI_PREFIX</span> <span class="s2">"0:MinX"</span>
+     <span class="n">PILATUS_ROI_0_SizeX_PV</span>     <span class="o">=</span> <span class="n">PILATUS_PREFIX</span> <span class="n">PILATUS_ROI_PREFIX</span> <span class="s2">"0:SizeX"</span>
+     <span class="n">PILATUS_ROI_0_MinY_PV</span>      <span class="o">=</span> <span class="n">PILATUS_PREFIX</span> <span class="n">PILATUS_ROI_PREFIX</span> <span class="s2">"0:MinY"</span>
+     <span class="n">PILATUS_ROI_0_SizeY_PV</span>     <span class="o">=</span> <span class="n">PILATUS_PREFIX</span> <span class="n">PILATUS_ROI_PREFIX</span> <span class="s2">"0:SizeY"</span>
+     <span class="n">PILATUS_ROI_0_BgdWidth_PV</span>  <span class="o">=</span> <span class="n">PILATUS_PREFIX</span> <span class="n">PILATUS_ROI_PREFIX</span> <span class="s2">"0:BgdWidth"</span>
 <span class="o">...</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">epics_pilatus_count</span> <span class="s1">&#39;{</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">epics_pilatus_count</span> <span class="s1">'{</span>
 <span class="o">...</span>
      <span class="c1"># Call macro that creates and set the Pilatus path and filename</span>
      <span class="n">img_full_filename</span>
@@ -892,15 +892,15 @@ can supply the source files on request.:</p>
      <span class="n">data_done</span>  <span class="o">=</span> <span class="n">FALSE</span>
      <span class="k">while</span><span class="p">(</span><span class="n">status</span><span class="p">){</span>
          <span class="c1"># is the scalar done</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">epics_get</span><span class="p">(</span><span class="n">sc_cnt_pv</span><span class="p">)</span><span class="o">==</span><span class="s2">&quot;Done&quot;</span><span class="p">){</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">epics_get</span><span class="p">(</span><span class="n">sc_cnt_pv</span><span class="p">)</span><span class="o">==</span><span class="s2">"Done"</span><span class="p">){</span>
              <span class="n">sc_done</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">;</span>
-             <span class="c1">#p &quot;scaler done&quot;</span>
+             <span class="c1">#p "scaler done"</span>
         <span class="p">}</span>
 
         <span class="c1"># is the pilatus done</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">epics_get</span><span class="p">(</span><span class="n">PILATUS_ACQ_PV</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;Done&quot;</span><span class="p">){</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">epics_get</span><span class="p">(</span><span class="n">PILATUS_ACQ_PV</span><span class="p">)</span> <span class="o">==</span> <span class="s2">"Done"</span><span class="p">){</span>
             <span class="n">img_done</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">;</span>
-            <span class="c1">#p &quot;image collection done&quot;</span>
+            <span class="c1">#p "image collection done"</span>
         <span class="p">}</span>
 
         <span class="k">if</span><span class="p">(</span> <span class="p">(</span><span class="n">sc_done</span><span class="o">==</span><span class="n">TRUE</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">img_done</span><span class="o">==</span><span class="n">TRUE</span><span class="p">))</span> <span class="k">break</span><span class="p">;</span>
@@ -912,10 +912,10 @@ can supply the source files on request.:</p>
      <span class="c1"># note get_counts also calls user_getcounts</span>
      <span class="c1"># thats where the rois get read.</span>
      <span class="n">get_counts</span>
-<span class="p">}</span><span class="s1">&#39;</span>
+<span class="p">}</span><span class="s1">'</span>
 
 
-<span class="k">def</span><span class="w"> </span><span class="nf">user_getcounts</span> <span class="s1">&#39;{</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">user_getcounts</span> <span class="s1">'{</span>
 <span class="o">...</span>
     <span class="c1"># using image_count routine</span>
     <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span> <span class="n">EPICS_COUNT</span> <span class="o">==</span> <span class="mi">4</span> <span class="p">)</span> <span class="p">{</span>
@@ -1147,7 +1147,7 @@ the image file exists or if it is the expected size.</p></li>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Mark Rivers.
-      <span class="lastupdated">Last updated on 2026-August-04.
+      <span class="lastupdated">Last updated on 2026-August-17.
       </span></p>
   </div>
 

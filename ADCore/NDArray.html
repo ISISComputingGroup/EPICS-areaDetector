@@ -334,21 +334,21 @@ string to an integer or byte array before sending the path name to
 EPICS. In IDL this is done as follows:</p></li>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">;</span> <span class="n">Convert</span> <span class="n">a</span> <span class="n">string</span> <span class="n">to</span> <span class="n">a</span> <span class="n">null</span><span class="o">-</span><span class="n">terminated</span> <span class="n">byte</span> <span class="n">array</span> <span class="ow">and</span> <span class="n">write</span> <span class="k">with</span> <span class="n">caput</span>
-<span class="n">IDL</span><span class="o">&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">caput</span><span class="p">(</span><span class="s1">&#39;13PS1:TIFF1:FilePath&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">byte</span><span class="p">(</span><span class="s1">&#39;/home/epics/scratch&#39;</span><span class="p">),</span><span class="mi">0</span><span class="n">B</span><span class="p">])</span>
+<span class="n">IDL</span><span class="o">&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">caput</span><span class="p">(</span><span class="s1">'13PS1:TIFF1:FilePath'</span><span class="p">,</span> <span class="p">[</span><span class="n">byte</span><span class="p">(</span><span class="s1">'/home/epics/scratch'</span><span class="p">),</span><span class="mi">0</span><span class="n">B</span><span class="p">])</span>
 <span class="p">;</span> <span class="n">Read</span> <span class="n">a</span> <span class="n">null</span> <span class="n">terminated</span> <span class="n">byte</span> <span class="n">array</span>
-<span class="n">IDL</span><span class="o">&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">caget</span><span class="p">(</span><span class="s1">&#39;13PS1:TIFF1:FilePath&#39;</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+<span class="n">IDL</span><span class="o">&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">caget</span><span class="p">(</span><span class="s1">'13PS1:TIFF1:FilePath'</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
 <span class="p">;</span> <span class="n">Convert</span> <span class="n">to</span> <span class="n">a</span> <span class="n">string</span>
 <span class="n">IDL</span><span class="o">&gt;</span> <span class="n">s</span> <span class="o">=</span> <span class="n">string</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>In SPEC this is done as follows:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">array</span> <span class="n">_temp</span><span class="p">[</span><span class="mi">256</span><span class="p">]</span>
-<span class="c1"># Setting the array to &quot;&quot; will zero-fill it</span>
-<span class="n">_temp</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="c1"># Setting the array to "" will zero-fill it</span>
+<span class="n">_temp</span> <span class="o">=</span> <span class="s2">""</span>
 <span class="c1"># Copy the string to the array.  Note, this does not null terminate, so if array already contains</span>
-<span class="c1"># a longer string it needs to first be zeroed by setting it to &quot;&quot;.</span>
-<span class="n">_temp</span> <span class="o">=</span> <span class="s2">&quot;/home/epics/scratch&quot;</span>
-<span class="n">epics_put</span><span class="p">(</span><span class="s2">&quot;13PS1:TIFF1:FilePath&quot;</span><span class="p">,</span> <span class="n">_temp</span><span class="p">)</span>
+<span class="c1"># a longer string it needs to first be zeroed by setting it to "".</span>
+<span class="n">_temp</span> <span class="o">=</span> <span class="s2">"/home/epics/scratch"</span>
+<span class="n">epics_put</span><span class="p">(</span><span class="s2">"13PS1:TIFF1:FilePath"</span><span class="p">,</span> <span class="n">_temp</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Note that for parameters whose values are defined by enum values (e.g
@@ -1027,7 +1027,7 @@ be opened.</p></td>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Mark Rivers.
-      <span class="lastupdated">Last updated on 2026-August-04.
+      <span class="lastupdated">Last updated on 2026-August-17.
       </span></p>
   </div>
 

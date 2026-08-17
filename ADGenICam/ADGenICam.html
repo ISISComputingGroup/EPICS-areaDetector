@@ -211,14 +211,14 @@ in that camera. ADGenICam provides Python scripts that read and parse the XML fi
 the EPICS database (.template) file and medm display (.adl) files.  These medm files can then be autoconverted
 to edm, CSS-Boy, and caQtDM files.</p>
 <p>This is a small snippet from an XML file for the feature called PixelFormat:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">Enumeration</span> <span class="n">Name</span><span class="o">=</span><span class="s2">&quot;PixelFormat&quot;</span> <span class="n">NameSpace</span><span class="o">=</span><span class="s2">&quot;Standard&quot;</span><span class="o">&gt;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">Enumeration</span> <span class="n">Name</span><span class="o">=</span><span class="s2">"PixelFormat"</span> <span class="n">NameSpace</span><span class="o">=</span><span class="s2">"Standard"</span><span class="o">&gt;</span>
   <span class="o">&lt;</span><span class="n">ToolTip</span><span class="o">&gt;</span><span class="n">Format</span> <span class="n">of</span> <span class="n">the</span> <span class="n">pixel</span> <span class="n">data</span><span class="o">.&lt;/</span><span class="n">ToolTip</span><span class="o">&gt;</span>
   <span class="o">&lt;</span><span class="n">Description</span><span class="o">&gt;</span><span class="n">Format</span> <span class="n">of</span> <span class="n">the</span> <span class="n">pixel</span> <span class="n">data</span><span class="o">.&lt;/</span><span class="n">Description</span><span class="o">&gt;</span>
   <span class="o">&lt;</span><span class="n">DisplayName</span><span class="o">&gt;</span><span class="n">Pixel</span> <span class="n">Format</span><span class="o">&lt;/</span><span class="n">DisplayName</span><span class="o">&gt;</span>
   <span class="o">&lt;</span><span class="n">Visibility</span><span class="o">&gt;</span> <span class="n">Beginner</span><span class="o">&lt;/</span><span class="n">Visibility</span><span class="o">&gt;</span>
   <span class="o">&lt;</span><span class="n">pIsLocked</span><span class="o">&gt;</span><span class="n">TLParamsLocked</span><span class="o">&lt;/</span><span class="n">pIsLocked</span><span class="o">&gt;</span>
   <span class="o">&lt;</span><span class="n">ImposedAccessMode</span><span class="o">&gt;</span><span class="n">RW</span><span class="o">&lt;/</span><span class="n">ImposedAccessMode</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="n">EnumEntry</span> <span class="n">Name</span><span class="o">=</span><span class="s2">&quot;Mono8&quot;</span> <span class="n">NameSpace</span><span class="o">=</span><span class="s2">&quot;Standard&quot;</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">EnumEntry</span> <span class="n">Name</span><span class="o">=</span><span class="s2">"Mono8"</span> <span class="n">NameSpace</span><span class="o">=</span><span class="s2">"Standard"</span><span class="o">&gt;</span>
     <span class="o">&lt;</span><span class="n">ToolTip</span><span class="o">&gt;</span><span class="n">Pixel</span> <span class="nb">format</span> <span class="nb">set</span> <span class="n">to</span> <span class="n">Mono</span> <span class="mf">8.</span><span class="o">&lt;/</span><span class="n">ToolTip</span><span class="o">&gt;</span>
     <span class="o">&lt;</span><span class="n">Description</span><span class="o">&gt;</span><span class="n">Pixel</span> <span class="nb">format</span> <span class="nb">set</span> <span class="n">to</span> <span class="n">Mono</span> <span class="mf">8.</span><span class="o">&lt;/</span><span class="n">Description</span><span class="o">&gt;</span>
     <span class="o">&lt;</span><span class="n">DisplayName</span><span class="o">&gt;</span><span class="n">Mono</span> <span class="mi">8</span><span class="o">&lt;/</span><span class="n">DisplayName</span><span class="o">&gt;</span>
@@ -308,7 +308,7 @@ GenICam cameras that are visible from the Linux system, for example:</p>
 </pre></div>
 </div>
 <p>Then download the XML file with the command <cite>arv-tool -n cameraName genicam &gt; XML_file_name</cite>, for example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TahoeU18</span><span class="p">:</span><span class="o">/</span><span class="n">corvette</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">epics</span><span class="o">/</span><span class="n">devel</span><span class="o">/</span><span class="n">areaDetector</span><span class="o">/</span><span class="n">ADGenICam</span><span class="o">&gt;</span> <span class="n">arv</span><span class="o">-</span><span class="n">tool</span><span class="o">-</span><span class="mf">0.8</span> <span class="o">-</span><span class="n">n</span> <span class="s2">&quot;Allied Vision Technologies-Manta G-507B (E0022704)-50-0503479161&quot;</span> <span class="n">genicam</span> <span class="o">&gt;</span> <span class="n">xml</span><span class="o">/</span><span class="n">AVT_Manta_G507B</span><span class="o">.</span><span class="n">xml</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TahoeU18</span><span class="p">:</span><span class="o">/</span><span class="n">corvette</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">epics</span><span class="o">/</span><span class="n">devel</span><span class="o">/</span><span class="n">areaDetector</span><span class="o">/</span><span class="n">ADGenICam</span><span class="o">&gt;</span> <span class="n">arv</span><span class="o">-</span><span class="n">tool</span><span class="o">-</span><span class="mf">0.8</span> <span class="o">-</span><span class="n">n</span> <span class="s2">"Allied Vision Technologies-Manta G-507B (E0022704)-50-0503479161"</span> <span class="n">genicam</span> <span class="o">&gt;</span> <span class="n">xml</span><span class="o">/</span><span class="n">AVT_Manta_G507B</span><span class="o">.</span><span class="n">xml</span>
 <span class="n">TahoeU18</span><span class="p">:</span><span class="o">/</span><span class="n">corvette</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">epics</span><span class="o">/</span><span class="n">devel</span><span class="o">/</span><span class="n">areaDetector</span><span class="o">/</span><span class="n">ADGenICam</span><span class="o">&gt;</span> <span class="n">ls</span> <span class="o">-</span><span class="n">ltr</span> <span class="n">xml</span>
 <span class="n">total</span> <span class="mi">19496</span>
 <span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span> <span class="mi">1</span> <span class="n">epics</span> <span class="n">domain</span> <span class="n">users</span>  <span class="mi">332287</span> <span class="n">Oct</span>  <span class="mi">7</span>  <span class="mi">2018</span> <span class="n">PGR_Blackfly_50S5C</span><span class="o">.</span><span class="n">xml</span>
@@ -331,7 +331,7 @@ The first argument is the name of the XML file and the second argument is the na
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TahoeU18</span><span class="p">:</span><span class="o">/</span><span class="n">corvette</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">epics</span><span class="o">/</span><span class="n">devel</span><span class="o">/</span><span class="n">areaDetector</span><span class="o">/</span><span class="n">ADGenICam</span><span class="o">&gt;</span> <span class="n">python</span> <span class="n">scripts</span><span class="o">/</span><span class="n">makeDb</span><span class="o">.</span><span class="n">py</span> <span class="n">xml</span><span class="o">/</span><span class="n">PGR_Blackfly_20E4C</span><span class="o">.</span><span class="n">xml</span> <span class="n">GenICamApp</span><span class="o">/</span><span class="n">Db</span><span class="o">/</span><span class="n">PGR_Blackfly_20E4C</span><span class="o">.</span><span class="n">template</span>
 <span class="n">More</span> <span class="n">than</span> <span class="mi">16</span> <span class="n">enum</span> <span class="n">entries</span> <span class="k">for</span> <span class="n">PixelFormat</span> <span class="n">mbbi</span> <span class="n">record</span><span class="p">,</span> <span class="n">discarding</span> <span class="n">additional</span> <span class="n">options</span><span class="o">.</span>
    <span class="n">If</span> <span class="n">needed</span><span class="p">,</span> <span class="n">edit</span> <span class="n">the</span> <span class="n">Enumeration</span> <span class="n">tag</span> <span class="k">for</span> <span class="n">PixelFormat</span> <span class="n">to</span> <span class="n">select</span> <span class="n">the</span> <span class="mi">16</span> <span class="n">you</span> <span class="n">want</span><span class="o">.</span>
-<span class="n">Don</span><span class="s1">&#39;t know what to do with Register</span>
+<span class="n">Don</span><span class="s1">'t know what to do with Register</span>
 <span class="n">More</span> <span class="n">than</span> <span class="mi">16</span> <span class="n">enum</span> <span class="n">entries</span> <span class="k">for</span> <span class="n">GevSupportedOptionSelector</span> <span class="n">mbbi</span> <span class="n">record</span><span class="p">,</span> <span class="n">discarding</span> <span class="n">additional</span> <span class="n">options</span><span class="o">.</span>
    <span class="n">If</span> <span class="n">needed</span><span class="p">,</span> <span class="n">edit</span> <span class="n">the</span> <span class="n">Enumeration</span> <span class="n">tag</span> <span class="k">for</span> <span class="n">GevSupportedOptionSelector</span> <span class="n">to</span> <span class="n">select</span> <span class="n">the</span> <span class="mi">16</span> <span class="n">you</span> <span class="n">want</span><span class="o">.</span>
 <span class="n">More</span> <span class="n">than</span> <span class="mi">16</span> <span class="n">enum</span> <span class="n">entries</span> <span class="k">for</span> <span class="n">ChunkPixelFormat</span> <span class="n">mbbi</span> <span class="n">record</span><span class="p">,</span> <span class="n">discarding</span> <span class="n">additional</span> <span class="n">options</span><span class="o">.</span>
@@ -351,32 +351,32 @@ but at run-time ADGenICam limits the choices to those actually available for the
 and in practice appears never to be more than 16.
 Ignore the warning about <cite>Don’t know what to do with Register</cite>, the register entries are not needed.</p>
 <p>This is a portion of the PGR_Blackfly_20E4C.template created above for the ExposureAuto mbbi and mbbo records:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">record</span><span class="p">(</span><span class="n">mbbi</span><span class="p">,</span> <span class="s2">&quot;$(P)$(R)GC_ExposureAuto_RBV&quot;</span><span class="p">)</span> <span class="p">{</span>
-  <span class="n">field</span><span class="p">(</span><span class="n">DTYP</span><span class="p">,</span> <span class="s2">&quot;asynInt32&quot;</span><span class="p">)</span>
-  <span class="n">field</span><span class="p">(</span><span class="n">INP</span><span class="p">,</span>  <span class="s2">&quot;@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_E_ExposureAuto&quot;</span><span class="p">)</span>
-  <span class="n">field</span><span class="p">(</span><span class="n">ZRST</span><span class="p">,</span> <span class="s2">&quot;Off&quot;</span><span class="p">)</span>
-  <span class="n">field</span><span class="p">(</span><span class="n">ZRVL</span><span class="p">,</span> <span class="s2">&quot;0&quot;</span><span class="p">)</span>
-  <span class="n">field</span><span class="p">(</span><span class="n">ONST</span><span class="p">,</span> <span class="s2">&quot;Once&quot;</span><span class="p">)</span>
-  <span class="n">field</span><span class="p">(</span><span class="n">ONVL</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">)</span>
-  <span class="n">field</span><span class="p">(</span><span class="n">TWST</span><span class="p">,</span> <span class="s2">&quot;Continuous&quot;</span><span class="p">)</span>
-  <span class="n">field</span><span class="p">(</span><span class="n">TWVL</span><span class="p">,</span> <span class="s2">&quot;2&quot;</span><span class="p">)</span>
-  <span class="n">field</span><span class="p">(</span><span class="n">SCAN</span><span class="p">,</span> <span class="s2">&quot;I/O Intr&quot;</span><span class="p">)</span>
-  <span class="n">field</span><span class="p">(</span><span class="n">DISA</span><span class="p">,</span> <span class="s2">&quot;0&quot;</span><span class="p">)</span>
-  <span class="n">info</span><span class="p">(</span><span class="n">autosaveFields</span><span class="p">,</span> <span class="s2">&quot;DESC ZRSV ONSV TWSV THSV FRSV FVSV SXSV SVSV EISV NISV TESV ELSV TVSV TTSV FTSV FFSV TSE&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">record</span><span class="p">(</span><span class="n">mbbi</span><span class="p">,</span> <span class="s2">"$(P)$(R)GC_ExposureAuto_RBV"</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">field</span><span class="p">(</span><span class="n">DTYP</span><span class="p">,</span> <span class="s2">"asynInt32"</span><span class="p">)</span>
+  <span class="n">field</span><span class="p">(</span><span class="n">INP</span><span class="p">,</span>  <span class="s2">"@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_E_ExposureAuto"</span><span class="p">)</span>
+  <span class="n">field</span><span class="p">(</span><span class="n">ZRST</span><span class="p">,</span> <span class="s2">"Off"</span><span class="p">)</span>
+  <span class="n">field</span><span class="p">(</span><span class="n">ZRVL</span><span class="p">,</span> <span class="s2">"0"</span><span class="p">)</span>
+  <span class="n">field</span><span class="p">(</span><span class="n">ONST</span><span class="p">,</span> <span class="s2">"Once"</span><span class="p">)</span>
+  <span class="n">field</span><span class="p">(</span><span class="n">ONVL</span><span class="p">,</span> <span class="s2">"1"</span><span class="p">)</span>
+  <span class="n">field</span><span class="p">(</span><span class="n">TWST</span><span class="p">,</span> <span class="s2">"Continuous"</span><span class="p">)</span>
+  <span class="n">field</span><span class="p">(</span><span class="n">TWVL</span><span class="p">,</span> <span class="s2">"2"</span><span class="p">)</span>
+  <span class="n">field</span><span class="p">(</span><span class="n">SCAN</span><span class="p">,</span> <span class="s2">"I/O Intr"</span><span class="p">)</span>
+  <span class="n">field</span><span class="p">(</span><span class="n">DISA</span><span class="p">,</span> <span class="s2">"0"</span><span class="p">)</span>
+  <span class="n">info</span><span class="p">(</span><span class="n">autosaveFields</span><span class="p">,</span> <span class="s2">"DESC ZRSV ONSV TWSV THSV FRSV FVSV SXSV SVSV EISV NISV TESV ELSV TVSV TTSV FTSV FFSV TSE"</span><span class="p">)</span>
 <span class="p">}</span>
 
-<span class="n">record</span><span class="p">(</span><span class="n">mbbo</span><span class="p">,</span> <span class="s2">&quot;$(P)$(R)GC_ExposureAuto&quot;</span><span class="p">)</span> <span class="p">{</span>
-  <span class="n">field</span><span class="p">(</span><span class="n">DTYP</span><span class="p">,</span> <span class="s2">&quot;asynInt32&quot;</span><span class="p">)</span>
-  <span class="n">field</span><span class="p">(</span><span class="n">OUT</span><span class="p">,</span>  <span class="s2">&quot;@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_E_ExposureAuto&quot;</span><span class="p">)</span>
-  <span class="n">field</span><span class="p">(</span><span class="n">DOL</span><span class="p">,</span>  <span class="s2">&quot;0&quot;</span><span class="p">)</span>
-  <span class="n">field</span><span class="p">(</span><span class="n">ZRST</span><span class="p">,</span> <span class="s2">&quot;Off&quot;</span><span class="p">)</span>
-  <span class="n">field</span><span class="p">(</span><span class="n">ZRVL</span><span class="p">,</span> <span class="s2">&quot;0&quot;</span><span class="p">)</span>
-  <span class="n">field</span><span class="p">(</span><span class="n">ONST</span><span class="p">,</span> <span class="s2">&quot;Once&quot;</span><span class="p">)</span>
-  <span class="n">field</span><span class="p">(</span><span class="n">ONVL</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">)</span>
-  <span class="n">field</span><span class="p">(</span><span class="n">TWST</span><span class="p">,</span> <span class="s2">&quot;Continuous&quot;</span><span class="p">)</span>
-  <span class="n">field</span><span class="p">(</span><span class="n">TWVL</span><span class="p">,</span> <span class="s2">&quot;2&quot;</span><span class="p">)</span>
-  <span class="n">field</span><span class="p">(</span><span class="n">DISA</span><span class="p">,</span> <span class="s2">&quot;0&quot;</span><span class="p">)</span>
-  <span class="n">info</span><span class="p">(</span><span class="n">autosaveFields</span><span class="p">,</span> <span class="s2">&quot;DESC ZRSV ONSV TWSV THSV FRSV FVSV SXSV SVSV EISV NISV TESV ELSV TVSV TTSV FTSV FFSV TSE PINI VAL&quot;</span><span class="p">)</span>
+<span class="n">record</span><span class="p">(</span><span class="n">mbbo</span><span class="p">,</span> <span class="s2">"$(P)$(R)GC_ExposureAuto"</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">field</span><span class="p">(</span><span class="n">DTYP</span><span class="p">,</span> <span class="s2">"asynInt32"</span><span class="p">)</span>
+  <span class="n">field</span><span class="p">(</span><span class="n">OUT</span><span class="p">,</span>  <span class="s2">"@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))GC_E_ExposureAuto"</span><span class="p">)</span>
+  <span class="n">field</span><span class="p">(</span><span class="n">DOL</span><span class="p">,</span>  <span class="s2">"0"</span><span class="p">)</span>
+  <span class="n">field</span><span class="p">(</span><span class="n">ZRST</span><span class="p">,</span> <span class="s2">"Off"</span><span class="p">)</span>
+  <span class="n">field</span><span class="p">(</span><span class="n">ZRVL</span><span class="p">,</span> <span class="s2">"0"</span><span class="p">)</span>
+  <span class="n">field</span><span class="p">(</span><span class="n">ONST</span><span class="p">,</span> <span class="s2">"Once"</span><span class="p">)</span>
+  <span class="n">field</span><span class="p">(</span><span class="n">ONVL</span><span class="p">,</span> <span class="s2">"1"</span><span class="p">)</span>
+  <span class="n">field</span><span class="p">(</span><span class="n">TWST</span><span class="p">,</span> <span class="s2">"Continuous"</span><span class="p">)</span>
+  <span class="n">field</span><span class="p">(</span><span class="n">TWVL</span><span class="p">,</span> <span class="s2">"2"</span><span class="p">)</span>
+  <span class="n">field</span><span class="p">(</span><span class="n">DISA</span><span class="p">,</span> <span class="s2">"0"</span><span class="p">)</span>
+  <span class="n">info</span><span class="p">(</span><span class="n">autosaveFields</span><span class="p">,</span> <span class="s2">"DESC ZRSV ONSV TWSV THSV FRSV FVSV SXSV SVSV EISV NISV TESV ELSV TVSV TTSV FTSV FFSV TSE PINI VAL"</span><span class="p">)</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -411,7 +411,7 @@ The first argument is the name of the XML file and the second argument is the ba
 The medm files are <strong>[baseFile]-features1.adl</strong>, <strong>[baseFile]-features2.adl</strong>, etc.</p>
 <p>For example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TahoeU18</span><span class="p">:</span><span class="o">/</span><span class="n">corvette</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">epics</span><span class="o">/</span><span class="n">devel</span><span class="o">/</span><span class="n">areaDetector</span><span class="o">/</span><span class="n">ADGenICam</span><span class="o">&gt;</span> <span class="n">python</span> <span class="n">scripts</span><span class="o">/</span><span class="n">makeAdl</span><span class="o">.</span><span class="n">py</span> <span class="n">xml</span><span class="o">/</span><span class="n">PGR_Blackfly_20E4C</span><span class="o">.</span><span class="n">xml</span> <span class="n">GenICamApp</span><span class="o">/</span><span class="n">op</span><span class="o">/</span><span class="n">adl</span><span class="o">/</span><span class="n">PGR_Blackfly_20E4C</span>
-<span class="n">Don</span><span class="s1">&#39;t know what to do with Register</span>
+<span class="n">Don</span><span class="s1">'t know what to do with Register</span>
 <span class="n">TahoeU18</span><span class="p">:</span><span class="o">/</span><span class="n">corvette</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">epics</span><span class="o">/</span><span class="n">devel</span><span class="o">/</span><span class="n">areaDetector</span><span class="o">/</span><span class="n">ADGenICam</span><span class="o">&gt;</span> <span class="n">ls</span> <span class="o">-</span><span class="n">ltr</span> <span class="n">GenICamApp</span><span class="o">/</span><span class="n">op</span><span class="o">/</span><span class="n">adl</span><span class="o">/</span><span class="n">PGR_Blackfly_20E4C</span><span class="o">-</span><span class="n">features_</span><span class="o">*</span>
 <span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--</span> <span class="mi">1</span> <span class="n">epics</span> <span class="n">domain</span> <span class="n">users</span> <span class="mi">50125</span> <span class="n">Jun</span>  <span class="mi">3</span> <span class="mi">14</span><span class="p">:</span><span class="mi">40</span> <span class="n">GenICamApp</span><span class="o">/</span><span class="n">op</span><span class="o">/</span><span class="n">adl</span><span class="o">/</span><span class="n">PGR_Blackfly_20E4C</span><span class="o">-</span><span class="n">features_1</span><span class="o">.</span><span class="n">adl</span>
 <span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--</span> <span class="mi">1</span> <span class="n">epics</span> <span class="n">domain</span> <span class="n">users</span> <span class="mi">40041</span> <span class="n">Jun</span>  <span class="mi">3</span> <span class="mi">14</span><span class="p">:</span><span class="mi">40</span> <span class="n">GenICamApp</span><span class="o">/</span><span class="n">op</span><span class="o">/</span><span class="n">adl</span><span class="o">/</span><span class="n">PGR_Blackfly_20E4C</span><span class="o">-</span><span class="n">features_2</span><span class="o">.</span><span class="n">adl</span>
@@ -911,11 +911,11 @@ This is done by updating the boot params in grub. You can set the memory limit u
 <p>This method does not work with Ubuntu 14.04 or newer. With Ubuntu 14.04, users must set the memory limit permanently.</p>
 <p>To set the maximum usbfs memory limit permanently:</p>
 <p>Open the /etc/default/grub file in any text editor. Find and replace:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">GRUB_CMDLINE_LINUX_DEFAULT</span><span class="o">=</span><span class="s2">&quot;quiet splash&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">GRUB_CMDLINE_LINUX_DEFAULT</span><span class="o">=</span><span class="s2">"quiet splash"</span>
 </pre></div>
 </div>
 <p>with this:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">GRUB_CMDLINE_LINUX_DEFAULT</span><span class="o">=</span><span class="s2">&quot;quiet splash usbcore.usbfs_memory_mb=1000&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">GRUB_CMDLINE_LINUX_DEFAULT</span><span class="o">=</span><span class="s2">"quiet splash usbcore.usbfs_memory_mb=1000"</span>
 </pre></div>
 </div>
 <p>Update grub with these settings:</p>
@@ -926,7 +926,7 @@ This is done by updating the boot params in grub. You can set the memory limit u
 <p>grub2-mkconfig -o /boot/grub2/grub.cfg</p>
 <p>Reboot and test a USB 3 camera.</p>
 <p>If this method fails to set the memory limit, run the following command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sh</span> <span class="o">-</span><span class="n">c</span> <span class="s1">&#39;echo 1000 &gt; /sys/module/usbcore/parameters/usbfs_memory_mb&#39;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sh</span> <span class="o">-</span><span class="n">c</span> <span class="s1">'echo 1000 &gt; /sys/module/usbcore/parameters/usbfs_memory_mb'</span>
 </pre></div>
 </div>
 <p>To confirm that you have successfully updated the memory limit, run the following command:</p>
@@ -991,7 +991,7 @@ The ADGain parameter cannot be used for GainRawChannelB because the data types d
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Mark Rivers.
-      <span class="lastupdated">Last updated on 2026-August-04.
+      <span class="lastupdated">Last updated on 2026-August-17.
       </span></p>
   </div>
 
