@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="_n_d_plugin_overlay_text_font_8h" kind="file" language="C++">
     <compoundname>NDPluginOverlayTextFont.h</compoundname>
     <includedby refid="_n_d_plugin_overlay_8cpp" local="yes">/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginOverlay.cpp</includedby>
@@ -2903,8 +2903,8 @@
 <codeline lineno="12" refid="_n_d_plugin_overlay_text_font_8h_1a195e4144bc183de11c82461edea74b73" refkind="member"><highlight class="normal">}<sp/><ref refid="_n_d_plugin_overlay_text_font_8h_1a195e4144bc183de11c82461edea74b73" kindref="member">NDPluginOverlayTextFontBitmapType</ref>;</highlight></codeline>
 <codeline lineno="13"><highlight class="normal"></highlight></codeline>
 <codeline lineno="14"><highlight class="normal"></highlight></codeline>
-<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="struct_n_d_plugin_overlay_text_font_bitmap_struct" kindref="compound">NDPluginOverlayTextFontBitmapType</ref><sp/><ref refid="_n_d_plugin_overlay_text_font_8h_1a9fa93ed751475e940ce08c428b2d718f" kindref="member">NDPluginOverlayTextFontBitmaps</ref>[];</highlight></codeline>
-<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="_n_d_plugin_overlay_text_font_8h_1acb8acb4c5094593132095c79211c0716" kindref="member">NDPluginOverlayTextFontBitmapTypeN</ref>;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="_n_d_plugin_overlay_text_font_8h_1a195e4144bc183de11c82461edea74b73" kindref="member">NDPluginOverlayTextFontBitmapType</ref><sp/><ref refid="_n_d_plugin_overlay_text_font_8cpp_1a9fa93ed751475e940ce08c428b2d718f" kindref="member">NDPluginOverlayTextFontBitmaps</ref>[];</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="_n_d_plugin_overlay_text_font_8cpp_1acb8acb4c5094593132095c79211c0716" kindref="member">NDPluginOverlayTextFontBitmapTypeN</ref>;</highlight></codeline>
 <codeline lineno="17"><highlight class="normal"></highlight></codeline>
 <codeline lineno="18" refid="_n_d_plugin_overlay_text_font_8h_1a9d84173475a27bae9dd92e0cbb70f66a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>________<sp/>0x00</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="19" refid="_n_d_plugin_overlay_text_font_8h_1a5fd99299cee7692a165e64af81013142" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_______X<sp/>0x01</highlight><highlight class="normal"></highlight></codeline>

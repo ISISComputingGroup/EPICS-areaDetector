@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="mpx_connection_8h" kind="file" language="C++">
     <compoundname>mpxConnection.h</compoundname>
     <includes refid="merlin__low_8h" local="yes">merlin_low.h</includes>
@@ -125,12 +125,12 @@
 <codeline lineno="12" refid="mpx_connection_8h_1a089896eba0054394ad214279710424f6a5fa5c25a011217deeb50d495810b8410" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="mpx_connection_8h_1a089896eba0054394ad214279710424f6a5fa5c25a011217deeb50d495810b8410" kindref="member">MPXAcquisitionHeader</ref>,</highlight></codeline>
 <codeline lineno="13" refid="mpx_connection_8h_1a089896eba0054394ad214279710424f6a9c43fc9ead1b78b73d86db0e2356b194" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="mpx_connection_8h_1a089896eba0054394ad214279710424f6a9c43fc9ead1b78b73d86db0e2356b194" kindref="member">MPXQuadDataHeader</ref>,</highlight></codeline>
 <codeline lineno="14" refid="mpx_connection_8h_1a089896eba0054394ad214279710424f6a90a40ff9d771c609fe110782511c74a6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="mpx_connection_8h_1a089896eba0054394ad214279710424f6a90a40ff9d771c609fe110782511c74a6" kindref="member">MPXProfileHeader</ref>,</highlight></codeline>
-<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="mpx_connection_8h_1a089896eba0054394ad214279710424f6a2d256f3022954c2e3c5c265082020a47" kindref="member">MPXUnknownHeader</ref></highlight></codeline>
-<codeline lineno="16" refid="mpx_connection_8h_1a089896eba0054394ad214279710424f6a2d256f3022954c2e3c5c265082020a47" refkind="member"><highlight class="normal">}<sp/><ref refid="mpx_connection_8h_1a089896eba0054394ad214279710424f6" kindref="member">merlinDataHeader</ref>;</highlight></codeline>
+<codeline lineno="15" refid="mpx_connection_8h_1a089896eba0054394ad214279710424f6a2d256f3022954c2e3c5c265082020a47" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="mpx_connection_8h_1a089896eba0054394ad214279710424f6a2d256f3022954c2e3c5c265082020a47" kindref="member">MPXUnknownHeader</ref></highlight></codeline>
+<codeline lineno="16"><highlight class="normal">}<sp/><ref refid="mpx_connection_8h_1a089896eba0054394ad214279710424f6" kindref="member">merlinDataHeader</ref>;</highlight></codeline>
 <codeline lineno="17"><highlight class="normal"></highlight></codeline>
 <codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classmerlin_detector" kindref="compound">merlinDetector</ref>;</highlight></codeline>
 <codeline lineno="19"><highlight class="normal"></highlight></codeline>
-<codeline lineno="20" refid="classmpx_connection" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classmpx_connection" kindref="compound">mpxConnection</ref></highlight></codeline>
+<codeline lineno="20" refid="classmpx_connection" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classmpx_connection_1ac471913dce7cf1cdcf34950ef744992d" kindref="member">mpxConnection</ref></highlight></codeline>
 <codeline lineno="21"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>input<sp/>and<sp/>output<sp/>from<sp/>the<sp/>labView<sp/>controller<sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
@@ -143,7 +143,7 @@
 <codeline lineno="30"><highlight class="normal"></highlight></codeline>
 <codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Constructor</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmpx_connection" kindref="compound">mpxConnection</ref>(asynUser*<sp/>parentUser,<sp/>asynUser*<sp/>tcpUser,</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmpx_connection_1ac471913dce7cf1cdcf34950ef744992d" kindref="member">mpxConnection</ref>(asynUser*<sp/>parentUser,<sp/>asynUser*<sp/>tcpUser,</highlight></codeline>
 <codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classmerlin_detector" kindref="compound">merlinDetector</ref>*<sp/>parentObj);</highlight></codeline>
 <codeline lineno="35"><highlight class="normal"></highlight></codeline>
 <codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>The<sp/>labview<sp/>communication<sp/>primitives<sp/>*/</highlight><highlight class="normal"></highlight></codeline>

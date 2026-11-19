@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="class_a_d_c_sim_detector" kind="class" language="C++" prot="public">
     <compoundname>ADCSimDetector</compoundname>
     <basecompoundref refid="classasyn_n_d_array_driver" prot="public" virt="non-virtual">asynNDArrayDriver</basecompoundref>
@@ -292,7 +292,7 @@
 <parametername direction="in">dataType</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The initial data type (NDDataType_t) of the arrays that this driver will create. </para>
+<para>The initial data type (<ref refid="_n_d_attribute_8h_1a34b835bcabc3b7f546f4b25c5767cb16" kindref="member">NDDataType_t</ref>) of the arrays that this driver will create. </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -524,9 +524,6 @@
       <node id="8">
         <label>Codec_t</label>
         <link refid="struct_codec__t"/>
-        <childnode refid="9" relation="usage">
-          <edgelabel>name</edgelabel>
-        </childnode>
       </node>
       <node id="5">
         <label>NDArray</label>
@@ -576,9 +573,6 @@
       </node>
       <node id="3">
         <label>asynPortDriver</label>
-      </node>
-      <node id="9">
-        <label>string</label>
       </node>
     </collaborationgraph>
     <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCSimDetector/ADCSimDetectorApp/src/ADCSimDetector.h" line="30" column="1" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCSimDetector/ADCSimDetectorApp/src/ADCSimDetector.h" bodystart="30" bodyend="67"/>

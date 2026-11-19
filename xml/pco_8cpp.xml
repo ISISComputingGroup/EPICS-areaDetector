@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="pco_8cpp" kind="file" language="C++">
     <compoundname>pco.cpp</compoundname>
     <includes local="no">stddef.h</includes>
@@ -556,6 +556,7 @@
     </detaileddescription>
     <programlisting>
 <codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
 <codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stddef.h&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;math.h&gt;</highlight><highlight class="normal"></highlight></codeline>
@@ -615,17 +616,19 @@
 <codeline lineno="67"><highlight class="normal"></highlight></codeline>
 <codeline lineno="68"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*driverName<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;pco&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="69"><highlight class="normal"></highlight></codeline>
-<codeline lineno="73"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="pco_8cpp_1a45cdc97ec9e45671271e987a12d29a97" kindref="member">pco_blocking</ref><sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="74"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="pco_8cpp_1a99f866fb00b80ecbfbb5119ea177aaa5" kindref="member">pco_pr_mutex</ref><sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="75"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="pco_8cpp_1af6ed329d893bfe4c61a5f967d0b086b3" kindref="member">pco_pr_mutex2</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="drv_pco_8h_1a45cdc97ec9e45671271e987a12d29a97" kindref="member">pco_blocking</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="drv_pco_8h_1a99f866fb00b80ecbfbb5119ea177aaa5" kindref="member">pco_pr_mutex</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="drv_pco_8h_1af6ed329d893bfe4c61a5f967d0b086b3" kindref="member">pco_pr_mutex2</ref><sp/>=<sp/>0;</highlight></codeline>
 <codeline lineno="76"><highlight class="normal"></highlight></codeline>
 <codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/></highlight></codeline>
 <codeline lineno="83"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>pcoTaskC(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*drvPvt)<sp/>{</highlight></codeline>
 <codeline lineno="84"><highlight class="normal"><sp/><sp/><ref refid="classpco" kindref="compound">pco</ref><sp/>*pPvt<sp/>=<sp/>(<ref refid="classpco" kindref="compound">pco</ref><sp/>*)drvPvt;</highlight></codeline>
 <codeline lineno="85"><highlight class="normal"></highlight></codeline>
 <codeline lineno="86"><highlight class="normal"><sp/><sp/>pPvt-&gt;<ref refid="classpco_1afadcfbe3531ccdc49ae9d2bfc738ebfd" kindref="member">pcoTask</ref>();</highlight></codeline>
 <codeline lineno="87"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/></highlight></codeline>
 <codeline lineno="93"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>pcoTaskC2(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*drvPvt)<sp/>{</highlight></codeline>
 <codeline lineno="94"><highlight class="normal"><sp/><sp/><ref refid="classpco" kindref="compound">pco</ref><sp/>*pPvt<sp/>=<sp/>(<ref refid="classpco" kindref="compound">pco</ref><sp/>*)drvPvt;</highlight></codeline>
 <codeline lineno="95"><highlight class="normal"></highlight></codeline>
@@ -633,6 +636,7 @@
 <codeline lineno="97"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="98"><highlight class="normal"></highlight></codeline>
 <codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/></highlight></codeline>
 <codeline lineno="104"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classpco_1afd908e96f640d95eae082bea648718ae" kindref="member">pco::setDebuggingMessage</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>level)<sp/>{<sp/><ref refid="classpco_1aaf5bf587359c1251ceef520fa5f65909" kindref="member">dbg_msg_level</ref><sp/>=<sp/>level;<sp/>}</highlight></codeline>
 <codeline lineno="105"><highlight class="normal"></highlight></codeline>
 <codeline lineno="114"><highlight class="normal">asynStatus<sp/><ref refid="classpco_1a022b2a07d121c27d01260d4717cad3f2" kindref="member">pco::writeInt32</ref>(asynUser<sp/>*pasynUser,<sp/>epicsInt32<sp/>value)<sp/>{</highlight></codeline>
@@ -654,7 +658,7 @@
 <codeline lineno="130"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(function<sp/>==<sp/><ref refid="classpco_1ae5b06344e305af1250442575a55126c7" kindref="member">pco_cancel_dump</ref>)<sp/><ref refid="classpco_1a8350497fdf28026cafba96645eddf5c3" kindref="member">is_cancel_dump</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="131"><highlight class="normal"></highlight></codeline>
 <codeline lineno="132"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>ret<sp/>if<sp/>we<sp/>actulayyl<sp/>updated<sp/>so<sp/>we<sp/>can<sp/>call<sp/>super<sp/>if<sp/>necessary</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="133"><highlight class="normal"><sp/><sp/><ref refid="classpco_1acdd383c75162aabb46229e1f67ff9331" kindref="member">updateParameters</ref>(pasynUser,<sp/>value,<sp/>0,<sp/><ref refid="classpco_1aa9a85ae693a8c2cffd31c228f5e7b7daa2a6feef57062bcbc6794a0c9cef307e3" kindref="member">pco_paramint</ref>);</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><ref refid="classpco_1acdd383c75162aabb46229e1f67ff9331" kindref="member">updateParameters</ref>(pasynUser,<sp/>value,<sp/>0,<sp/><ref refid="classpco_1aed5e367298a3858a7cb2cd21ae59c51aa2a6feef57062bcbc6794a0c9cef307e3" kindref="member">pco_paramint</ref>);</highlight></codeline>
 <codeline lineno="134"><highlight class="normal"></highlight></codeline>
 <codeline lineno="135"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>call<sp/>super<sp/>class<sp/>to<sp/>update<sp/>pawram</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="136"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>sizex,<sp/>and<sp/>sizey<sp/>change<sp/>its<sp/>value<sp/>because<sp/>of<sp/>camera<sp/>constrinsts,<sp/>so<sp/>dont</highlight><highlight class="normal"></highlight></codeline>
@@ -684,7 +688,7 @@
 <codeline lineno="167"><highlight class="normal"><sp/><sp/>lf.log(mesx);</highlight></codeline>
 <codeline lineno="168"><highlight class="normal"></highlight></codeline>
 <codeline lineno="169"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>ret<sp/>if<sp/>we<sp/>actulayyl<sp/>updated<sp/>so<sp/>we<sp/>can<sp/>call<sp/>super<sp/>if<sp/>necessary</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="170"><highlight class="normal"><sp/><sp/><ref refid="classpco_1acdd383c75162aabb46229e1f67ff9331" kindref="member">updateParameters</ref>(pasynUser,<sp/>0,<sp/>value,<sp/><ref refid="classpco_1aa9a85ae693a8c2cffd31c228f5e7b7daa56096e6d2114a548ba80379410be9ecb" kindref="member">pco_paramdoub</ref>);</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><ref refid="classpco_1acdd383c75162aabb46229e1f67ff9331" kindref="member">updateParameters</ref>(pasynUser,<sp/>0,<sp/>value,<sp/><ref refid="classpco_1aed5e367298a3858a7cb2cd21ae59c51aa56096e6d2114a548ba80379410be9ecb" kindref="member">pco_paramdoub</ref>);</highlight></codeline>
 <codeline lineno="171"><highlight class="normal"></highlight></codeline>
 <codeline lineno="172"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>call<sp/>super<sp/>class<sp/>to<sp/>update<sp/>pawram</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="173"><highlight class="normal"><sp/><sp/>ADCameralink::writeFloat64(pasynUser,<sp/>value);</highlight></codeline>
@@ -705,6 +709,8 @@
 <codeline lineno="194"><highlight class="normal"><sp/><sp/><ref refid="classasyn_n_d_array_driver_1ac3f2d73a05eb54357ec3f052e1b000f2" kindref="member">ADDriver::report</ref>(fp,<sp/>details);</highlight></codeline>
 <codeline lineno="195"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="196"><highlight class="normal"></highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight></codeline>
 <codeline lineno="208"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="pco_8cpp_1a76af33a73cb052368863bb5ed8de1cb6" kindref="member">PCOConfig</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*portName,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*serverPort,</highlight></codeline>
 <codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>maxBuffers,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>maxMemory,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>priority,</highlight></codeline>
 <codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>stackSize)<sp/>{</highlight></codeline>
@@ -1138,6 +1144,7 @@
 <codeline lineno="670"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="671"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="672"><highlight class="normal"></highlight></codeline>
+<codeline lineno="679"><highlight class="normal"><sp/></highlight></codeline>
 <codeline lineno="680"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classpco_1a1e0c25ce1def3da5a38bd70b1fcfaf96" kindref="member">pco::processNewImage</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*img_ptr)<sp/>{</highlight></codeline>
 <codeline lineno="681"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>elapsed_time;</highlight></codeline>
 <codeline lineno="682"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/>*shrt_img;</highlight></codeline>
@@ -1156,7 +1163,7 @@
 <codeline lineno="695"><highlight class="normal"></highlight></codeline>
 <codeline lineno="696"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>mesgx[256];</highlight></codeline>
 <codeline lineno="697"><highlight class="normal"></highlight></codeline>
-<codeline lineno="698"><highlight class="normal"><sp/><sp/><ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*nimg<sp/>=<sp/>(<ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*)img_ptr;</highlight></codeline>
+<codeline lineno="698"><highlight class="normal"><sp/><sp/>NDArray<sp/>*nimg<sp/>=<sp/>(NDArray<sp/>*)img_ptr;</highlight></codeline>
 <codeline lineno="699"><highlight class="normal"></highlight></codeline>
 <codeline lineno="700"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>add<sp/>attribute<sp/>here<sp/>...</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="701"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(getIntParam(ADFrameType)<sp/>==<sp/><ref refid="_a_d_driver_8h_1aa7545fdb2f7941e8d0259a64ccdacc72a2848245f4d00941a1b8e7337262ea5b2" kindref="member">ADFrameNormal</ref>)<sp/><sp/></highlight><highlight class="comment">//<sp/>normal</highlight><highlight class="normal"></highlight></codeline>
@@ -1339,8 +1346,10 @@
 <codeline lineno="878"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="879"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="880"><highlight class="normal"></highlight></codeline>
+<codeline lineno="884"><highlight class="normal"><sp/></highlight></codeline>
 <codeline lineno="885"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classpco_1a705060c8ff07081b9ff1614e007fea0a" kindref="member">pco::keepHouse</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{}</highlight></codeline>
 <codeline lineno="886"><highlight class="normal"></highlight></codeline>
+<codeline lineno="890"><highlight class="normal"><sp/></highlight></codeline>
 <codeline lineno="891"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classpco_1a6e12361c2615752db6f5e2716d94cbcf" kindref="member">pco::intFlEndian</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>in)<sp/>{</highlight></codeline>
 <codeline lineno="892"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>a[4];</highlight></codeline>
 <codeline lineno="893"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>b[4];</highlight></codeline>
@@ -1360,6 +1369,7 @@
 <codeline lineno="907"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(ans);</highlight></codeline>
 <codeline lineno="908"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="909"><highlight class="normal"></highlight></codeline>
+<codeline lineno="914"><highlight class="normal"><sp/></highlight></codeline>
 <codeline lineno="915"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classpco_1a70fe6eaf4b979ff2382ab0b4e0e4abce" kindref="member">pco::checkEdgeDescramble</ref>(<ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*img_ptr)<sp/>{</highlight></codeline>
 <codeline lineno="916"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>elapsed_time;</highlight></codeline>
 <codeline lineno="917"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/>*shrt_img;</highlight></codeline>

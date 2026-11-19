@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="drv_p_v_cam_8h" kind="file" language="C++">
     <compoundname>drvPVCam.h</compoundname>
     <includedby refid="drv_p_v_cam_epics_8c" local="yes">/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPvCam/pvcamApp/src/drvPVCamEpics.c</includedby>

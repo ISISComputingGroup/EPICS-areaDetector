@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="_n_d_plugin_codec_8cpp" kind="file" language="C++">
     <compoundname>NDPluginCodec.cpp</compoundname>
     <includes local="no">string</includes>
@@ -1163,7 +1163,7 @@
 <codeline lineno="368"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
 <codeline lineno="369"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="370"><highlight class="normal"></highlight></codeline>
-<codeline lineno="371"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_n_d_array_info" kindref="compound">NDArrayInfo_t</ref><sp/>info;</highlight></codeline>
+<codeline lineno="371"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_n_d_array_8h_1a25da0f364d2f6a3b2369b647b38df24e" kindref="member">NDArrayInfo_t</ref><sp/>info;</highlight></codeline>
 <codeline lineno="372"><highlight class="normal"><sp/><sp/><sp/><sp/>input-&gt;<ref refid="class_n_d_array_1a47af97c0e2b8255d756207908f6b470d" kindref="member">getInfo</ref>(&amp;info);</highlight></codeline>
 <codeline lineno="373"><highlight class="normal"></highlight></codeline>
 <codeline lineno="374"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*output<sp/>=<sp/>allocArray(input,<sp/>-1,<sp/>info.<ref refid="struct_n_d_array_info_1af8f050c2c099f07311a39cc544693d00" kindref="member">totalBytes</ref><sp/>+<sp/>BLOSC_MAX_OVERHEAD);</highlight></codeline>
@@ -1260,7 +1260,7 @@
 <codeline lineno="465"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
 <codeline lineno="466"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="467"><highlight class="normal"></highlight></codeline>
-<codeline lineno="468"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_n_d_array_info" kindref="compound">NDArrayInfo_t</ref><sp/>info;</highlight></codeline>
+<codeline lineno="468"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_n_d_array_8h_1a25da0f364d2f6a3b2369b647b38df24e" kindref="member">NDArrayInfo_t</ref><sp/>info;</highlight></codeline>
 <codeline lineno="469"><highlight class="normal"><sp/><sp/><sp/><sp/>input-&gt;<ref refid="class_n_d_array_1a47af97c0e2b8255d756207908f6b470d" kindref="member">getInfo</ref>(&amp;info);</highlight></codeline>
 <codeline lineno="470"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>outputSize<sp/>=<sp/>LZ4_compressBound((</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)info.<ref refid="struct_n_d_array_info_1af8f050c2c099f07311a39cc544693d00" kindref="member">totalBytes</ref>);</highlight></codeline>
 <codeline lineno="471"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*output<sp/>=<sp/>allocArray(input,<sp/>-1,<sp/>outputSize);</highlight></codeline>
@@ -1297,7 +1297,7 @@
 <codeline lineno="502"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
 <codeline lineno="503"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="504"><highlight class="normal"></highlight></codeline>
-<codeline lineno="505"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_n_d_array_info" kindref="compound">NDArrayInfo_t</ref><sp/>info;</highlight></codeline>
+<codeline lineno="505"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_n_d_array_8h_1a25da0f364d2f6a3b2369b647b38df24e" kindref="member">NDArrayInfo_t</ref><sp/>info;</highlight></codeline>
 <codeline lineno="506"><highlight class="normal"><sp/><sp/><sp/><sp/>input-&gt;<ref refid="class_n_d_array_1a47af97c0e2b8255d756207908f6b470d" kindref="member">getInfo</ref>(&amp;info);</highlight></codeline>
 <codeline lineno="507"><highlight class="normal"></highlight></codeline>
 <codeline lineno="508"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*output<sp/>=<sp/>allocArray(input);</highlight></codeline>
@@ -1331,7 +1331,7 @@
 <codeline lineno="536"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
 <codeline lineno="537"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="538"><highlight class="normal"></highlight></codeline>
-<codeline lineno="539"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_n_d_array_info" kindref="compound">NDArrayInfo_t</ref><sp/>info;</highlight></codeline>
+<codeline lineno="539"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_n_d_array_8h_1a25da0f364d2f6a3b2369b647b38df24e" kindref="member">NDArrayInfo_t</ref><sp/>info;</highlight></codeline>
 <codeline lineno="540"><highlight class="normal"><sp/><sp/><sp/><sp/>input-&gt;<ref refid="class_n_d_array_1a47af97c0e2b8255d756207908f6b470d" kindref="member">getInfo</ref>(&amp;info);</highlight></codeline>
 <codeline lineno="541"><highlight class="normal"></highlight></codeline>
 <codeline lineno="542"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*output<sp/>=<sp/>allocArray(input,<sp/>-1,<sp/>info.<ref refid="struct_n_d_array_info_1af8f050c2c099f07311a39cc544693d00" kindref="member">totalBytes</ref>);</highlight></codeline>
@@ -1371,7 +1371,7 @@
 <codeline lineno="576"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
 <codeline lineno="577"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="578"><highlight class="normal"></highlight></codeline>
-<codeline lineno="579"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_n_d_array_info" kindref="compound">NDArrayInfo_t</ref><sp/>info;</highlight></codeline>
+<codeline lineno="579"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_n_d_array_8h_1a25da0f364d2f6a3b2369b647b38df24e" kindref="member">NDArrayInfo_t</ref><sp/>info;</highlight></codeline>
 <codeline lineno="580"><highlight class="normal"><sp/><sp/><sp/><sp/>input-&gt;<ref refid="class_n_d_array_1a47af97c0e2b8255d756207908f6b470d" kindref="member">getInfo</ref>(&amp;info);</highlight></codeline>
 <codeline lineno="581"><highlight class="normal"></highlight></codeline>
 <codeline lineno="582"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*output<sp/>=<sp/>allocArray(input);</highlight></codeline>
@@ -1445,7 +1445,7 @@
 <codeline lineno="657"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Call<sp/>the<sp/>base<sp/>class<sp/>method<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="658"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_n_d_plugin_driver_1a1aef91c358b7b8bde97fc1a01eb7c00d" kindref="member">NDPluginDriver::beginProcessCallbacks</ref>(pArray);</highlight></codeline>
 <codeline lineno="659"><highlight class="normal"></highlight></codeline>
-<codeline lineno="660"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*result<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="660"><highlight class="normal"><sp/><sp/><sp/><sp/>NDArray<sp/>*result<sp/>=<sp/>NULL;</highlight></codeline>
 <codeline lineno="661"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>factor<sp/>=<sp/>1.0;</highlight></codeline>
 <codeline lineno="662"><highlight class="normal"></highlight></codeline>
 <codeline lineno="663"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>mode,<sp/>algo;</highlight></codeline>
@@ -1508,7 +1508,7 @@
 <codeline lineno="720"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="721"><highlight class="normal"></highlight></codeline>
 <codeline lineno="722"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(result<sp/>&amp;&amp;<sp/>result<sp/>!=<sp/>pArray)<sp/>{</highlight></codeline>
-<codeline lineno="723"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_n_d_array_info" kindref="compound">NDArrayInfo_t</ref><sp/>info;</highlight></codeline>
+<codeline lineno="723"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_n_d_array_8h_1a25da0f364d2f6a3b2369b647b38df24e" kindref="member">NDArrayInfo_t</ref><sp/>info;</highlight></codeline>
 <codeline lineno="724"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pArray-&gt;<ref refid="class_n_d_array_1a47af97c0e2b8255d756207908f6b470d" kindref="member">getInfo</ref>(&amp;info);</highlight></codeline>
 <codeline lineno="725"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>factor<sp/>=<sp/>(double)info.<ref refid="struct_n_d_array_info_1af8f050c2c099f07311a39cc544693d00" kindref="member">totalBytes</ref><sp/>/<sp/>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">)result-&gt;<ref refid="class_n_d_array_1af0339c583d419e92ab33f7e95d14c190" kindref="member">compressedSize</ref>;</highlight></codeline>
 <codeline lineno="726"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -1545,7 +1545,7 @@
 <codeline lineno="757"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>result<sp/>=<sp/>NULL;</highlight></codeline>
 <codeline lineno="758"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="759"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(result<sp/>&amp;&amp;<sp/>result<sp/>!=<sp/>pArray)<sp/>{</highlight></codeline>
-<codeline lineno="760"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_n_d_array_info" kindref="compound">NDArrayInfo_t</ref><sp/>info;</highlight></codeline>
+<codeline lineno="760"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_n_d_array_8h_1a25da0f364d2f6a3b2369b647b38df24e" kindref="member">NDArrayInfo_t</ref><sp/>info;</highlight></codeline>
 <codeline lineno="761"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>result-&gt;<ref refid="class_n_d_array_1a47af97c0e2b8255d756207908f6b470d" kindref="member">getInfo</ref>(&amp;info);</highlight></codeline>
 <codeline lineno="762"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>factor<sp/>=<sp/>(double)info.<ref refid="struct_n_d_array_info_1af8f050c2c099f07311a39cc544693d00" kindref="member">totalBytes</ref><sp/>/<sp/>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">)pArray-&gt;<ref refid="class_n_d_array_1af0339c583d419e92ab33f7e95d14c190" kindref="member">compressedSize</ref>;</highlight></codeline>
 <codeline lineno="763"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>

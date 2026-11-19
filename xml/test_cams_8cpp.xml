@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="test_cams_8cpp" kind="file" language="C++">
     <compoundname>testCams.cpp</compoundname>
     <includes local="no">stddef.h</includes>
@@ -86,7 +86,7 @@
       <memberdef kind="define" id="test_cams_8cpp_1a990b50a6e80f6dcc2ea418efbcea1f94" prot="public" static="no">
         <name>DEBUG</name>
         <param><defname>errCode</defname></param>
-        <initializer>printf(&quot;%3d: &quot; #errCode &quot;\n&quot;, __LINE__); <ref refid="_n_d_file_net_c_d_f_8cpp_1a588357de2986fdf4c1380190f7ae9f37" kindref="member">ERR</ref>(errCode)</initializer>
+        <initializer>printf(&quot;%3d: &quot; #errCode &quot;\n&quot;, __LINE__); <ref refid="test_cams_8cpp_1a8e4a40e78c4cea6bb2d980f67b777b2d" kindref="member">ERR</ref>(errCode)</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -107,21 +107,6 @@
         <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/firewireDCAM/firewireDCAMApp/src/testCams.cpp" line="123" column="9" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/firewireDCAM/firewireDCAMApp/src/testCams.cpp" bodystart="123" bodyend="-1"/>
       </memberdef>
     </sectiondef>
-    <sectiondef kind="typedef">
-      <memberdef kind="typedef" id="test_cams_8cpp_1afb68e1b6c3a3a8a2fbb6288bf6569689" prot="public" static="no">
-        <type>struct <ref refid="structcam_node__t" kindref="compound">camNode_t</ref></type>
-        <definition>typedef struct camNode_t camNode_t</definition>
-        <argsstring></argsstring>
-        <name>camNode_t</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/firewireDCAM/firewireDCAMApp/src/testCams.cpp" line="30" column="10"/>
-      </memberdef>
-    </sectiondef>
     <sectiondef kind="var">
       <memberdef kind="variable" id="test_cams_8cpp_1a8f4adaebff4594956772107bb4859777" prot="public" static="yes" mutable="no">
         <type>dc1394_t *</type>
@@ -133,8 +118,6 @@
 <para>dc1394 handle to the firewire bus. </para>
         </briefdescription>
         <detaileddescription>
-<para><linebreak/>
- </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -215,8 +198,8 @@
 <codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ellLib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="16"><highlight class="normal"></highlight></codeline>
 <codeline lineno="17"><highlight class="normal"></highlight></codeline>
-<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dc1394/dc1394.h&gt;</highlight></codeline>
-<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FDC_DC1394_NUM_BUFFERS<sp/>5</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dc1394/dc1394.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FDC_DC1394_NUM_BUFFERS<sp/>5</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ERR(errCode)<sp/>if<sp/>(errCode<sp/>!=<sp/>0)<sp/>fprintf(stderr,<sp/>&quot;ERROR<sp/>[%s:%d]:<sp/>dc1394<sp/>code:<sp/>%d\n&quot;,<sp/>__FILE__,<sp/>__LINE__,<sp/>errCode)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DEBUG(errCode)<sp/>printf(&quot;%3d:<sp/>&quot;<sp/>#errCode<sp/>&quot;\n&quot;,<sp/>__LINE__);<sp/>ERR(errCode)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="24"><highlight class="normal"></highlight></codeline>
@@ -354,7 +337,7 @@
 <codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="test_cams_8cpp_1a990b50a6e80f6dcc2ea418efbcea1f94" kindref="member">DEBUG</ref>(dc1394_feature_set_absolute_control(cams[i],<sp/>DC1394_FEATURE_FRAME_RATE,<sp/>DC1394_ON));</highlight></codeline>
 <codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="test_cams_8cpp_1a990b50a6e80f6dcc2ea418efbcea1f94" kindref="member">DEBUG</ref>(dc1394_feature_set_absolute_value<sp/>(cams[i],<sp/>DC1394_FEATURE_FRAME_RATE,<sp/>25.0));</highlight></codeline>
 <codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>frames[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>]<sp/>=<sp/>0;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="test_cams_8cpp_1a990b50a6e80f6dcc2ea418efbcea1f94" kindref="member">DEBUG</ref>(dc1394_capture_setup(cams[i],<ref refid="test_cams_8cpp_1af340b0f4452aaf752fff2a5f5120b3b7" kindref="member">FDC_DC1394_NUM_BUFFERS</ref>,<sp/>DC1394_CAPTURE_FLAGS_DEFAULT));</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="test_cams_8cpp_1a990b50a6e80f6dcc2ea418efbcea1f94" kindref="member">DEBUG</ref>(dc1394_capture_setup(cams[i],<ref refid="firewire_d_c_a_m_8cpp_1af340b0f4452aaf752fff2a5f5120b3b7" kindref="member">FDC_DC1394_NUM_BUFFERS</ref>,<sp/>DC1394_CAPTURE_FLAGS_DEFAULT));</highlight></codeline>
 <codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="test_cams_8cpp_1a990b50a6e80f6dcc2ea418efbcea1f94" kindref="member">DEBUG</ref>(dc1394_video_set_transmission(cams[i],<sp/>DC1394_ON));</highlight></codeline>
 <codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="164"><highlight class="normal"></highlight></codeline>

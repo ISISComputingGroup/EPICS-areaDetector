@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="class_q_image" kind="class" language="C++" prot="public">
     <compoundname>QImage</compoundname>
     <basecompoundref refid="class_a_d_driver" prot="public" virt="non-virtual">ADDriver</basecompoundref>
@@ -1354,7 +1354,7 @@
 <parametername>ndDataType</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The initial data type (NDDataType_t) of the images that this driver will create. </para>
+<para>The initial data type (<ref refid="_n_d_attribute_8h_1a34b835bcabc3b7f546f4b25c5767cb16" kindref="member">NDDataType_t</ref>) of the images that this driver will create. </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -2493,9 +2493,6 @@
       <node id="9">
         <label>Codec_t</label>
         <link refid="struct_codec__t"/>
-        <childnode refid="10" relation="usage">
-          <edgelabel>name</edgelabel>
-        </childnode>
       </node>
       <node id="6">
         <label>NDArray</label>
@@ -2552,9 +2549,6 @@
       <node id="4">
         <label>asynPortDriver</label>
       </node>
-      <node id="10">
-        <label>string</label>
-      </node>
     </collaborationgraph>
     <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADQImaging/Support/QImaging.h" line="45" column="1" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADQImaging/Support/QImaging.h" bodystart="45" bodyend="225"/>
     <listofallmembers>
@@ -2595,8 +2589,8 @@
       <member refid="class_a_d_driver_1a13c7b3852b0a6662a701f8b0fd71eac2" prot="protected" virt="non-virtual"><scope>QImage</scope><name>ADShutterStatus</name></member>
       <member refid="class_a_d_driver_1a918ef4b3d80695f6872fd169b09b639a" prot="protected" virt="non-virtual"><scope>QImage</scope><name>ADSizeX</name></member>
       <member refid="class_a_d_driver_1a59ba3ba61b2b6f51dc9d88d81680b632" prot="protected" virt="non-virtual"><scope>QImage</scope><name>ADSizeY</name></member>
-      <member refid="class_q_image_1a1a6f2498d655f0d0e3c8e1dcd3c81b0c" prot="private" virt="non-virtual"><scope>QImage</scope><name>adStatus</name></member>
       <member refid="class_a_d_driver_1a6a532aae0f51273450f4e897bf0aed1d" prot="protected" virt="non-virtual"><scope>QImage</scope><name>ADStatus</name></member>
+      <member refid="class_q_image_1a1a6f2498d655f0d0e3c8e1dcd3c81b0c" prot="private" virt="non-virtual"><scope>QImage</scope><name>adStatus</name></member>
       <member refid="class_a_d_driver_1af8ca049bdf54eede6611e50a284152bc" prot="protected" virt="non-virtual"><scope>QImage</scope><name>ADStatusMessage</name></member>
       <member refid="class_a_d_driver_1adb837da5ddf5ba868ea2dea316254c41" prot="protected" virt="non-virtual"><scope>QImage</scope><name>ADStringFromServer</name></member>
       <member refid="class_a_d_driver_1a9f521abfc93c9ccba2b0e83acace6d0e" prot="protected" virt="non-virtual"><scope>QImage</scope><name>ADStringToServer</name></member>

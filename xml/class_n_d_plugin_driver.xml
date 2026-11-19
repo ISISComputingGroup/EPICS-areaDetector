@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="class_n_d_plugin_driver" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>NDPluginDriver</compoundname>
     <basecompoundref refid="classasyn_n_d_array_driver" prot="public" virt="non-virtual">asynNDArrayDriver</basecompoundref>
@@ -869,10 +869,10 @@
         <argsstring>(asynUser *pasynUser, epicsFloat64 value)</argsstring>
         <name>writeFloat64</name>
         <qualifiedname>NDPluginDriver::writeFloat64</qualifiedname>
+        <reimplementedby refid="classffmpeg_file_1a72d9ad95680e356dea041c72c8bd4d32">writeFloat64</reimplementedby>
         <reimplementedby refid="class_n_d_plugin_focus_metrics_1a6302db29ae541a4960cfaf297ada2fe8">writeFloat64</reimplementedby>
         <reimplementedby refid="class_n_d_plugin_stats_1a440c32f49dfb67fa285ae16ba82067e2">writeFloat64</reimplementedby>
         <reimplementedby refid="class_n_d_plugin_time_series_1a1e5aa73cb3f0cbc660556e364002fcc9">writeFloat64</reimplementedby>
-        <reimplementedby refid="classffmpeg_file_1a72d9ad95680e356dea041c72c8bd4d32">writeFloat64</reimplementedby>
         <param>
           <type>asynUser *</type>
           <declname>pasynUser</declname>
@@ -1148,16 +1148,20 @@
         <argsstring>(NDArray *pArray)=0</argsstring>
         <name>processCallbacks</name>
         <qualifiedname>NDPluginDriver::processCallbacks</qualifiedname>
+        <reimplementedby refid="class_a_dn_e_d_pixel_r_o_i_1a5fc592eac5ecb7dc2dd131610ac9245b">processCallbacks</reimplementedby>
+        <reimplementedby refid="classffmpeg_stream_1a04f5f241f4da4407726e3426bb5e6365">processCallbacks</reimplementedby>
         <reimplementedby refid="class_n_d_plugin_attribute_1a468b7e706cb6d70fbe2457fe86b5f49f">processCallbacks</reimplementedby>
         <reimplementedby refid="class_n_d_plugin_attr_plot_1a020304d5151936f11d73e94f73e03006">processCallbacks</reimplementedby>
         <reimplementedby refid="class_n_d_plugin_bad_pixel_1ae5f4ab5b4080f72692a844aac47f54ff">processCallbacks</reimplementedby>
         <reimplementedby refid="class_n_d_plugin_circular_buff_1aaf7b05cf0b40a5ee6b017a213bc8b505">processCallbacks</reimplementedby>
         <reimplementedby refid="class_n_d_plugin_codec_1a45cd7b210a11699c171fd74f8f502e6e">processCallbacks</reimplementedby>
         <reimplementedby refid="class_n_d_plugin_color_convert_1ad4cd8c3bd583d2b1c69db9dc16fe5378">processCallbacks</reimplementedby>
+        <reimplementedby refid="class_n_d_plugin_edge_1a1c2d16c28609a91b4ccd0f414244c17c">processCallbacks</reimplementedby>
         <reimplementedby refid="class_n_d_plugin_f_f_t_1a7895f0a9df03318aef5681c32752372c">processCallbacks</reimplementedby>
         <reimplementedby refid="class_n_d_plugin_file_1a49e1a69095365b5f2643695c8ca5f5ce">processCallbacks</reimplementedby>
         <reimplementedby refid="class_n_d_plugin_focus_metrics_1a469b6bb48fbe4743d1a9f36f857de79d">processCallbacks</reimplementedby>
         <reimplementedby refid="class_n_d_plugin_gather_1ad738e74d3b326740b735ed640efba772">processCallbacks</reimplementedby>
+        <reimplementedby refid="class_n_d_plugin_mask_1a2fac6f3d7e980a34157abef7a8fed837">processCallbacks</reimplementedby>
         <reimplementedby refid="class_n_d_plugin_overlay_1a7c19f77189c0abe388e92b62dd7bc64a">processCallbacks</reimplementedby>
         <reimplementedby refid="class_n_d_plugin_process_1a73fee700020e2dcaf79569a53df1b597">processCallbacks</reimplementedby>
         <reimplementedby refid="class_n_d_plugin_pva_1a0c40574801b927714c8ac6277488055d">processCallbacks</reimplementedby>
@@ -1169,11 +1173,7 @@
         <reimplementedby refid="class_n_d_plugin_time_series_1afabb03a31e990bd4a58851e8d466e0b5">processCallbacks</reimplementedby>
         <reimplementedby refid="class_n_d_plugin_transform_1a0e05a1e62bce96f7c56a3595a8248128">processCallbacks</reimplementedby>
         <reimplementedby refid="class_n_d_pos_plugin_1abd4172873e8d8af95d83d916b369126b">processCallbacks</reimplementedby>
-        <reimplementedby refid="class_a_dn_e_d_pixel_r_o_i_1a5fc592eac5ecb7dc2dd131610ac9245b">processCallbacks</reimplementedby>
-        <reimplementedby refid="class_n_d_plugin_mask_1a2fac6f3d7e980a34157abef7a8fed837">processCallbacks</reimplementedby>
         <reimplementedby refid="classpco_edge_plugin_1a216639465ebb2332343942e8de9fdd09">processCallbacks</reimplementedby>
-        <reimplementedby refid="class_n_d_plugin_edge_1a1c2d16c28609a91b4ccd0f414244c17c">processCallbacks</reimplementedby>
-        <reimplementedby refid="classffmpeg_stream_1a04f5f241f4da4407726e3426bb5e6365">processCallbacks</reimplementedby>
         <param>
           <type><ref refid="class_n_d_array" kindref="compound">NDArray</ref> *</type>
           <declname>pArray</declname>
@@ -1662,9 +1662,6 @@ This method does <ref refid="class_n_d_array" kindref="compound">NDArray</ref> c
       <node id="8">
         <label>Codec_t</label>
         <link refid="struct_codec__t"/>
-        <childnode refid="9" relation="usage">
-          <edgelabel>name</edgelabel>
-        </childnode>
       </node>
       <node id="5">
         <label>NDArray</label>
@@ -1702,7 +1699,7 @@ This method does <ref refid="class_n_d_array" kindref="compound">NDArray</ref> c
         <link refid="class_n_d_plugin_driver"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
-        <childnode refid="10" relation="public-inheritance">
+        <childnode refid="9" relation="public-inheritance">
         </childnode>
         <childnode refid="5" relation="usage">
           <edgelabel>pPrevInputArray_</edgelabel>
@@ -1726,11 +1723,8 @@ This method does <ref refid="class_n_d_array" kindref="compound">NDArray</ref> c
       <node id="3">
         <label>asynPortDriver</label>
       </node>
-      <node id="10">
-        <label>epicsThreadRunable</label>
-      </node>
       <node id="9">
-        <label>string</label>
+        <label>epicsThreadRunable</label>
       </node>
     </collaborationgraph>
     <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginDriver.h" line="57" column="1" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginDriver.h" bodystart="57" bodyend="141"/>

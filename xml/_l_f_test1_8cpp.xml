@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="_l_f_test1_8cpp" kind="file" language="C++">
     <compoundname>LFTest1.cpp</compoundname>
     <includes local="yes">stdafx.h</includes>
@@ -120,8 +120,8 @@
 <codeline lineno="17"><highlight class="normal"></highlight></codeline>
 <codeline lineno="18"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="_l_f_test1_8cpp_1a6b76d01859ec85807c5cf61bd6a32a3e" kindref="member">acquisitionComplete</ref>;</highlight></codeline>
 <codeline lineno="19"><highlight class="normal"></highlight></codeline>
-<codeline lineno="21"><highlight class="comment">//</highlight></codeline>
-<codeline lineno="23"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_l_f_test1_8cpp_1a74625865e75f6ac9ed2c98b6f7d3a2bc" kindref="member">ExperimentCompletedEventHandler</ref>(System::Object^<sp/>sender,<sp/></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_l_f_test1_8cpp_1a74625865e75f6ac9ed2c98b6f7d3a2bc" kindref="member">ExperimentCompletedEventHandler</ref>(System::Object^<sp/>sender,<sp/></highlight></codeline>
 <codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PrincetonInstruments::LightField::AddIns::ExperimentCompletedEventArgs^<sp/>args)</highlight></codeline>
 <codeline lineno="25"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;ExperimentCompletedEventHandler<sp/>entry\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
@@ -218,7 +218,7 @@
 <codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>m_Experiment-&gt;ExperimentCompleted<sp/>+=<sp/>gcnew<sp/>System::EventHandler&lt;PrincetonInstruments::LightField::AddIns::ExperimentCompletedEventArgs^&gt;(&amp;<ref refid="_l_f_test1_8cpp_1a74625865e75f6ac9ed2c98b6f7d3a2bc" kindref="member">ExperimentCompletedEventHandler</ref>);</highlight></codeline>
 <codeline lineno="121"><highlight class="normal"></highlight></codeline>
 <codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>Push<sp/>all<sp/>the<sp/>settings<sp/>to<sp/>the<sp/>camera<sp/>and<sp/>acquire</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespacemake_adl_1a75ac3107bf0f8a876fe96f2eed30eb15" kindref="member">x</ref><sp/><sp/>=<sp/>100;</highlight></codeline>
 <codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespacemake_adl_1ab4e88283989eb6655b188aa560a60e77" kindref="member">w</ref><sp/><sp/>=<sp/>500;</highlight></codeline>
 <codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>xb<sp/>=<sp/>1;</highlight></codeline>

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="firewiretool_8cpp" kind="file" language="C++">
     <compoundname>firewiretool.cpp</compoundname>
     <includes local="no">stddef.h</includes>
@@ -100,19 +100,6 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/firewireDCAM/firewireDCAMApp/src/firewiretool.cpp" line="53" column="28" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/firewireDCAM/firewireDCAMApp/src/firewiretool.cpp" bodystart="53" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="typedef" id="firewiretool_8cpp_1afb68e1b6c3a3a8a2fbb6288bf6569689" prot="public" static="no">
-        <type>struct <ref refid="structcam_node__t" kindref="compound">camNode_t</ref></type>
-        <definition>typedef struct camNode_t camNode_t</definition>
-        <argsstring></argsstring>
-        <name>camNode_t</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/firewireDCAM/firewireDCAMApp/src/firewiretool.cpp" line="258" column="10"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="var">
@@ -364,8 +351,8 @@
 <codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ellLib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="16"><highlight class="normal"></highlight></codeline>
 <codeline lineno="17"><highlight class="normal"></highlight></codeline>
-<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dc1394/dc1394.h&gt;</highlight></codeline>
-<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FDC_DC1394_NUM_BUFFERS<sp/>5</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dc1394/dc1394.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FDC_DC1394_NUM_BUFFERS<sp/>5</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ERR(errCode)<sp/>\</highlight></codeline>
 <codeline lineno="23"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>do<sp/>{<sp/>\</highlight></codeline>
 <codeline lineno="24"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>int<sp/>__err__<sp/>=<sp/>(errCode);<sp/>\</highlight></codeline>
@@ -376,8 +363,8 @@
 <codeline lineno="29"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}<sp/>while<sp/>(0)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="30"><highlight class="normal"></highlight></codeline>
 <codeline lineno="31" refid="structdc1394__color_code_string__t" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>dc1394color_coding_t<sp/>code;</highlight></codeline>
-<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>colorCodeStr;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>dc1394color_coding_t<sp/><ref refid="structdc1394__color_code_string__t_1a78bfb8ddc659f3a5d22c8d031eeacb2e" kindref="member">code</ref>;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/><ref refid="structdc1394__color_code_string__t_1a5b162663e414e2e750f3dd357b874ee3" kindref="member">colorCodeStr</ref>;</highlight></codeline>
 <codeline lineno="34"><highlight class="normal">}<sp/><ref refid="structdc1394__color_code_string__t" kindref="compound">dc1394_colorCodeString_t</ref>;</highlight></codeline>
 <codeline lineno="35"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="structdc1394__color_code_string__t" kindref="compound">dc1394_colorCodeString_t</ref><sp/>colorCodeString_lut[]<sp/>=<sp/>{</highlight></codeline>
 <codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>{DC1394_COLOR_CODING_MONO8,<sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;MONO8&quot;</highlight><highlight class="normal">},</highlight></codeline>
@@ -397,7 +384,7 @@
 <codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structcam_linked_list" kindref="compound">camLinkedList</ref><sp/>*<ref refid="structcam_linked_list_1af086a420b2d26321e584c869201bbefd" kindref="member">next</ref>;</highlight></codeline>
 <codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>dc1394camera_t<sp/>*<ref refid="structcam_linked_list_1a39e3d74c551afc8808a3a198881d3891" kindref="member">camera</ref>;</highlight></codeline>
 <codeline lineno="52"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="53"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structcam_linked_list" kindref="compound">camLinkedList</ref><sp/><ref refid="structcam_linked_list" kindref="compound">camListItem_t</ref>;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structcam_linked_list" kindref="compound">camLinkedList</ref><sp/><ref refid="firewiretool_8cpp_1acb9d624b7d3c482d2712399845bb9559" kindref="member">camListItem_t</ref>;</highlight></codeline>
 <codeline lineno="54"><highlight class="normal"></highlight></codeline>
 <codeline lineno="55"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">option<sp/>longopts[]<sp/>=<sp/>{</highlight></codeline>
 <codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;verbose&quot;</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>no_argument,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>NULL,<sp/><sp/><sp/>0},</highlight></codeline>
@@ -432,18 +419,18 @@
 <codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal">(c)</highlight></codeline>
 <codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>0:</highlight></codeline>
-<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fwtopts.<ref refid="structfwtooloptions__t_1a103d9baf292ae4e37f5cc5e5b3338141" kindref="member">verbose</ref><sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fwtopts.verbose<sp/>=<sp/>1;</highlight></codeline>
 <codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>1:</highlight></codeline>
-<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fwtopts.<ref refid="structfwtooloptions__t_1a430eddf9ad1b5de2f5ba71afacdabf66" kindref="member">camid</ref><sp/>=<sp/>strdup(optarg);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fwtopts.camid<sp/>=<sp/>strdup(optarg);</highlight></codeline>
 <codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>2:</highlight></codeline>
-<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fwtopts.<ref refid="structfwtooloptions__t_1a4edadc67a90cb08c15f5d34bb2c1823c" kindref="member">reset</ref><sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fwtopts.reset<sp/>=<sp/>1;</highlight></codeline>
 <codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>3:</highlight></codeline>
-<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fwtopts.<ref refid="structfwtooloptions__t_1a54b73ad3b3775664cc0d1475353266ac" kindref="member">report</ref><sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fwtopts.report<sp/>=<sp/>1;</highlight></codeline>
 <codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(optarg!=NULL)</highlight></codeline>
-<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fwtopts.<ref refid="structfwtooloptions__t_1a54b73ad3b3775664cc0d1475353266ac" kindref="member">report</ref><sp/>=<sp/>atoi(optarg);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fwtopts.report<sp/>=<sp/>atoi(optarg);</highlight></codeline>
 <codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal"></highlight></codeline>
@@ -465,13 +452,13 @@
 <codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(fwtopts.<ref refid="structfwtooloptions__t_1a103d9baf292ae4e37f5cc5e5b3338141" kindref="member">verbose</ref>==1)</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(fwtopts.verbose==1)</highlight></codeline>
 <codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\nOption<sp/>parsed:\n&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/>camid<sp/>=<sp/>%s\n&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/>reset<sp/>=<sp/>%d\n&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/>report<sp/>=<sp/>%d\n&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>,fwtopts.<ref refid="structfwtooloptions__t_1a430eddf9ad1b5de2f5ba71afacdabf66" kindref="member">camid</ref>,<sp/>fwtopts.<ref refid="structfwtooloptions__t_1a4edadc67a90cb08c15f5d34bb2c1823c" kindref="member">reset</ref>,<sp/>fwtopts.<ref refid="structfwtooloptions__t_1a54b73ad3b3775664cc0d1475353266ac" kindref="member">report</ref>);</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>,fwtopts.camid,<sp/>fwtopts.reset,<sp/>fwtopts.report);</highlight></codeline>
 <codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="129"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="130"><highlight class="normal"></highlight></codeline>
@@ -537,7 +524,7 @@
 <codeline lineno="190"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="191"><highlight class="comment"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="192"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(fwtopts.<ref refid="structfwtooloptions__t_1a54b73ad3b3775664cc0d1475353266ac" kindref="member">report</ref><sp/>&gt;<sp/>0)</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(fwtopts.report<sp/>&gt;<sp/>0)</highlight></codeline>
 <codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(cam<sp/>==<sp/>NULL)</highlight></codeline>
 <codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
@@ -559,7 +546,7 @@
 <codeline lineno="212"><highlight class="normal"></highlight></codeline>
 <codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="214"><highlight class="normal"></highlight></codeline>
-<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(fwtopts.<ref refid="structfwtooloptions__t_1a4edadc67a90cb08c15f5d34bb2c1823c" kindref="member">reset</ref>)<sp/><ref refid="firewiretool_8cpp_1ae9f379c5a72a54c766a43e763428daa6" kindref="member">reset_bus</ref>();</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(fwtopts.reset)<sp/><ref refid="firewiretool_8cpp_1ae9f379c5a72a54c766a43e763428daa6" kindref="member">reset_bus</ref>();</highlight></codeline>
 <codeline lineno="216"><highlight class="normal"></highlight></codeline>
 <codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/>dc1394_camera_free_list<sp/>(list);</highlight></codeline>
 <codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/>dc1394_free<sp/>(bus);</highlight></codeline>
@@ -602,7 +589,7 @@
 <codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/>ELLNODE<sp/><ref refid="structcam_node__t_1a4c30544ea112ed924d3bcad3c1ba95c8" kindref="member">node</ref>;</highlight></codeline>
 <codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="structcam_node__t_1a07b37fd5f3fd406c0b4256f73edefc4e" kindref="member">generation</ref>;</highlight></codeline>
 <codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/>dc1394camera_t<sp/>*<ref refid="structcam_node__t_1ab8d737a29e5c28faeb1c2fdb2ac1c840" kindref="member">cam</ref>;</highlight></codeline>
-<codeline lineno="258"><highlight class="normal">}<ref refid="firewiretool_8cpp_1afb68e1b6c3a3a8a2fbb6288bf6569689" kindref="member">camNode_t</ref>;</highlight></codeline>
+<codeline lineno="258"><highlight class="normal">}<ref refid="structcam_node__t" kindref="compound">camNode_t</ref>;</highlight></codeline>
 <codeline lineno="259"><highlight class="normal"></highlight></codeline>
 <codeline lineno="260"><highlight class="normal"></highlight></codeline>
 <codeline lineno="261"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="firewiretool_8cpp_1ae9f379c5a72a54c766a43e763428daa6" kindref="member">reset_bus</ref>()</highlight></codeline>
@@ -799,7 +786,7 @@
 <codeline lineno="452"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>;</highlight></codeline>
 <codeline lineno="453"><highlight class="normal"></highlight></codeline>
 <codeline lineno="454"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i=0;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>&lt;DC1394_COLOR_CODING_NUM;<sp/><ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>++)</highlight></codeline>
-<codeline lineno="455"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(colorCodeString_lut[i].code<sp/>==<sp/>code)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>colorCodeString_lut[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>].<ref refid="structdc1394__color_code_string__t_1a5b162663e414e2e750f3dd357b874ee3" kindref="member">colorCodeStr</ref>;</highlight></codeline>
+<codeline lineno="455"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(colorCodeString_lut[i].code<sp/>==<sp/>code)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>colorCodeString_lut[<ref refid="namespacemake_adl_1a518a859cd4b1663659f1e61fc40a2d30" kindref="member">i</ref>].colorCodeStr;</highlight></codeline>
 <codeline lineno="456"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="457"><highlight class="normal">}</highlight></codeline>
     </programlisting>

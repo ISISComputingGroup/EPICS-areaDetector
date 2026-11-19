@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="_n_d_file_nexus_8cpp" kind="file" language="C++">
     <compoundname>NDFileNexus.cpp</compoundname>
     <includes local="no">stdio.h</includes>
@@ -430,7 +430,7 @@
         <argsstring>(NDFileNexusRegister)</argsstring>
         <name>epicsExportRegistrar</name>
         <param>
-          <type><ref refid="_n_d_file_dummy_8cpp_1a6f4e0124917e4dedf0985495090d5fef" kindref="member">NDFileNexusRegister</ref></type>
+          <type><ref refid="_n_d_file_nexus_8cpp_1a6f4e0124917e4dedf0985495090d5fef" kindref="member">NDFileNexusRegister</ref></type>
         </param>
         <briefdescription>
         </briefdescription>
@@ -488,7 +488,7 @@
 <codeline lineno="50"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Construct<sp/>an<sp/>attribute<sp/>list.<sp/>We<sp/>use<sp/>a<sp/>separate<sp/>attribute<sp/>list</highlight></codeline>
 <codeline lineno="51"><highlight class="comment"><sp/><sp/><sp/>*<sp/>from<sp/>the<sp/>one<sp/>in<sp/>pArray<sp/>to<sp/>avoid<sp/>the<sp/>need<sp/>to<sp/>copy<sp/>the<sp/>array.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="52"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>First<sp/>clear<sp/>the<sp/>list*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="53"><highlight class="normal"><sp/><sp/>this-&gt;pFileAttributes-&gt;<ref refid="class_n_d_attribute_list_1a3c3c77990423bd5ae85ad7b873e044e1" kindref="member">clear</ref>();</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/>this-&gt;pFileAttributes-&gt;clear();</highlight></codeline>
 <codeline lineno="54"><highlight class="normal"></highlight></codeline>
 <codeline lineno="55"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Now<sp/>get<sp/>the<sp/>current<sp/>values<sp/>of<sp/>the<sp/>attributes<sp/>for<sp/>this<sp/>plugin<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="56"><highlight class="normal"><sp/><sp/>this-&gt;<ref refid="classasyn_n_d_array_driver_1a7492ba858d885e2ba226a1c7ef9dcf72" kindref="member">getAttributes</ref>(this-&gt;pFileAttributes);</highlight></codeline>
@@ -598,7 +598,7 @@
 <codeline lineno="170"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>numCapture;</highlight></codeline>
 <codeline lineno="171"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fileWriteMode;</highlight></codeline>
 <codeline lineno="172"><highlight class="normal"><sp/><sp/><ref refid="_n_d_attribute_8h_1a8a795995acde8458f43ac9b01376ef07" kindref="member">NDAttrDataType_t</ref><sp/>attrDataType;</highlight></codeline>
-<codeline lineno="173"><highlight class="normal"><sp/><sp/><ref refid="class_n_d_attribute" kindref="compound">NDAttribute</ref><sp/>*pAttr;</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/>NDAttribute<sp/>*pAttr;</highlight></codeline>
 <codeline lineno="174"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>attrDataSize;</highlight></codeline>
 <codeline lineno="175"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>nodeTextLen;</highlight></codeline>
 <codeline lineno="176"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>wordSize;</highlight></codeline>
@@ -698,9 +698,9 @@
 <codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacemake_adl_1ad7b803e2e744640af777e973c317f5b2" kindref="member">nodeName</ref><sp/>=<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)xmlGetProp(curNode,<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>xmlChar<sp/>*)</highlight><highlight class="stringliteral">&quot;name&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/>nodeSource<sp/>=<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)xmlGetProp(curNode,<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>xmlChar<sp/>*)</highlight><highlight class="stringliteral">&quot;source&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(nodeType<sp/>&amp;&amp;<sp/>strcmp(nodeType,<sp/></highlight><highlight class="stringliteral">&quot;ND_ATTR&quot;</highlight><highlight class="normal">)<sp/>==<sp/>0<sp/>)<sp/>{</highlight></codeline>
-<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>pAttr<sp/>=<sp/>this-&gt;pFileAttributes-&gt;<ref refid="class_n_d_attribute_list_1a99aa95cfbd0fe8430a1104e067a0fdaf" kindref="member">find</ref>(nodeSource);</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>pAttr<sp/>=<sp/>this-&gt;pFileAttributes-&gt;find(nodeSource);</highlight></codeline>
 <codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pAttr<sp/>!=<sp/>NULL<sp/>){</highlight></codeline>
-<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pAttr-&gt;<ref refid="class_n_d_attribute_1a046846745697949945a4ae7146204fdb" kindref="member">getValueInfo</ref>(&amp;attrDataType,<sp/>&amp;attrDataSize);</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pAttr-&gt;getValueInfo(&amp;attrDataType,<sp/>&amp;attrDataSize);</highlight></codeline>
 <codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;getAttrTypeNSize(pAttr,<sp/>&amp;dataOutType,<sp/>&amp;wordSize);</highlight></codeline>
 <codeline lineno="277"><highlight class="normal"></highlight></codeline>
 <codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(dataOutType<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
@@ -747,9 +747,9 @@
 <codeline lineno="319"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
 <codeline lineno="320"><highlight class="normal"><sp/><sp/><sp/><sp/>nodeSource<sp/>=<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)xmlGetProp(curNode,<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>xmlChar<sp/>*)</highlight><highlight class="stringliteral">&quot;source&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="321"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(nodeType<sp/>&amp;&amp;<sp/>strcmp(nodeType,<sp/></highlight><highlight class="stringliteral">&quot;ND_ATTR&quot;</highlight><highlight class="normal">)<sp/>==<sp/>0<sp/>)<sp/>{</highlight></codeline>
-<codeline lineno="322"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>pAttr<sp/>=<sp/>this-&gt;pFileAttributes-&gt;<ref refid="class_n_d_attribute_list_1a99aa95cfbd0fe8430a1104e067a0fdaf" kindref="member">find</ref>(nodeSource);</highlight></codeline>
+<codeline lineno="322"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>pAttr<sp/>=<sp/>this-&gt;pFileAttributes-&gt;find(nodeSource);</highlight></codeline>
 <codeline lineno="323"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>pAttr<sp/>!=<sp/>NULL)<sp/>{</highlight></codeline>
-<codeline lineno="324"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pAttr-&gt;<ref refid="class_n_d_attribute_1a046846745697949945a4ae7146204fdb" kindref="member">getValueInfo</ref>(&amp;attrDataType,<sp/>&amp;attrDataSize);</highlight></codeline>
+<codeline lineno="324"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pAttr-&gt;getValueInfo(&amp;attrDataType,<sp/>&amp;attrDataSize);</highlight></codeline>
 <codeline lineno="325"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;getAttrTypeNSize(pAttr,<sp/>&amp;dataOutType,<sp/>&amp;wordSize);</highlight></codeline>
 <codeline lineno="326"><highlight class="normal"></highlight></codeline>
 <codeline lineno="327"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(dataOutType<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
@@ -1206,7 +1206,7 @@
 <codeline lineno="785"><highlight class="normal"></highlight></codeline>
 <codeline lineno="786"><highlight class="normal"><sp/><sp/>status<sp/>=<sp/>getAddress(pasynUser,<sp/>&amp;addr);<sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(status<sp/>!=<sp/>asynSuccess)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">(status);</highlight></codeline>
 <codeline lineno="787"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Set<sp/>the<sp/>parameter<sp/>in<sp/>the<sp/>parameter<sp/>library.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="788"><highlight class="normal"><sp/><sp/>status<sp/>=<sp/>(asynStatus)setStringParam(addr,<sp/>function,<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)<ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="788"><highlight class="normal"><sp/><sp/>status<sp/>=<sp/>(asynStatus)setStringParam(addr,<sp/>function,<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)value);</highlight></codeline>
 <codeline lineno="789"><highlight class="normal"></highlight></codeline>
 <codeline lineno="790"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(function<sp/>==<sp/><ref refid="class_n_d_file_nexus_1a6a4deaeca9a5cd3750bc1c2cea293e2e" kindref="member">NDFileNexusTemplatePath</ref>)<sp/>{</highlight></codeline>
 <codeline lineno="791"><highlight class="normal"><sp/><sp/><sp/><sp/>loadTemplateFile();</highlight></codeline>
@@ -1337,7 +1337,7 @@
 <codeline lineno="929"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="930"><highlight class="normal"></highlight></codeline>
 <codeline lineno="931"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="932"><highlight class="normal"><ref refid="_n_d_file_nexus_8cpp_1a1883d53d7c2e49405a3a6a5ed6b88c32" kindref="member">epicsExportRegistrar</ref>(<ref refid="_n_d_file_nexus_8cpp_1a6f4e0124917e4dedf0985495090d5fef" kindref="member">NDFileNexusRegister</ref>);</highlight></codeline>
+<codeline lineno="932"><highlight class="normal"><ref refid="_n_d_file_nexus_8cpp_1a1883d53d7c2e49405a3a6a5ed6b88c32" kindref="member">epicsExportRegistrar</ref>(<ref refid="_n_d_file_dummy_8cpp_1a6f4e0124917e4dedf0985495090d5fef" kindref="member">NDFileNexusRegister</ref>);</highlight></codeline>
 <codeline lineno="933"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileNexus.cpp"/>

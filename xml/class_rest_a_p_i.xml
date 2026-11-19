@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="class_rest_a_p_i" kind="class" language="C++" prot="public">
     <compoundname>RestAPI</compoundname>
     <includes refid="rest_api_8h" local="no">restApi.h</includes>
@@ -61,7 +61,7 @@
         <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADEiger/eigerApp/src/restApi.h" line="50" column="12" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADEiger/eigerApp/src/restApi.h" bodystart="50" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_rest_a_p_i_1ad13fbffecc583b77fc4677ec61d2e9a9" prot="private" static="no" mutable="no">
-        <type><ref refid="rest_api_8h_1a6a9dbb91c569af562f6119bb7b960cbb" kindref="member">socket_t</ref> *</type>
+        <type><ref refid="rest_api_8cpp_1a6a9dbb91c569af562f6119bb7b960cbb" kindref="member">socket_t</ref> *</type>
         <definition>socket_t* RestAPI::mSockets</definition>
         <argsstring></argsstring>
         <name>mSockets</name>
@@ -111,7 +111,7 @@
         <name>connect</name>
         <qualifiedname>RestAPI::connect</qualifiedname>
         <param>
-          <type><ref refid="rest_api_8h_1a6a9dbb91c569af562f6119bb7b960cbb" kindref="member">socket_t</ref> *</type>
+          <type><ref refid="rest_api_8cpp_1a6a9dbb91c569af562f6119bb7b960cbb" kindref="member">socket_t</ref> *</type>
           <declname>s</declname>
         </param>
         <briefdescription>
@@ -129,7 +129,7 @@
         <name>setNonBlock</name>
         <qualifiedname>RestAPI::setNonBlock</qualifiedname>
         <param>
-          <type><ref refid="rest_api_8h_1a6a9dbb91c569af562f6119bb7b960cbb" kindref="member">socket_t</ref> *</type>
+          <type><ref refid="rest_api_8cpp_1a6a9dbb91c569af562f6119bb7b960cbb" kindref="member">socket_t</ref> *</type>
           <declname>s</declname>
         </param>
         <param>
@@ -151,11 +151,11 @@
         <name>doRequest</name>
         <qualifiedname>RestAPI::doRequest</qualifiedname>
         <param>
-          <type>const <ref refid="rest_api_8h_1a367edad9ab2aa35c679c908173b6ebc2" kindref="member">request_t</ref> *</type>
+          <type>const <ref refid="rest_api_8cpp_1a367edad9ab2aa35c679c908173b6ebc2" kindref="member">request_t</ref> *</type>
           <declname>request</declname>
         </param>
         <param>
-          <type><ref refid="rest_api_8h_1ae28817caa5cb8b1eef6c0d3e00529692" kindref="member">response_t</ref> *</type>
+          <type><ref refid="rest_api_8cpp_1ae28817caa5cb8b1eef6c0d3e00529692" kindref="member">response_t</ref> *</type>
           <declname>response</declname>
         </param>
         <param>

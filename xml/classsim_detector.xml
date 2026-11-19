@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="classsim_detector" kind="class" language="C++" prot="public">
     <compoundname>simDetector</compoundname>
     <basecompoundref refid="class_a_d_driver" prot="public" virt="non-virtual">ADDriver</basecompoundref>
@@ -738,7 +738,7 @@
 <parametername direction="in">dataType</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The initial data type (NDDataType_t) of the images that this driver will create. </para>
+<para>The initial data type (<ref refid="_n_d_attribute_8h_1a34b835bcabc3b7f546f4b25c5767cb16" kindref="member">NDDataType_t</ref>) of the images that this driver will create. </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -1110,9 +1110,6 @@
       <node id="9">
         <label>Codec_t</label>
         <link refid="struct_codec__t"/>
-        <childnode refid="10" relation="usage">
-          <edgelabel>name</edgelabel>
-        </childnode>
       </node>
       <node id="6">
         <label>NDArray</label>
@@ -1168,9 +1165,6 @@
         <link refid="classsim_detector"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
-      </node>
-      <node id="10">
-        <label>string</label>
       </node>
     </collaborationgraph>
     <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSimDetector/simDetectorApp/src/simDetector.h" line="9" column="1" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSimDetector/simDetectorApp/src/simDetector.h" bodystart="9" bodyend="81"/>
@@ -1312,8 +1306,8 @@
       <member refid="classsim_detector_1a27d8a5465389cf51ff961b809a6f62ae" prot="protected" virt="non-virtual"><scope>simDetector</scope><name>SimGainY</name></member>
       <member refid="classsim_detector_1a81cdcc7bbc6d20af6bd4a5793eda2ac1" prot="protected" virt="non-virtual"><scope>simDetector</scope><name>SimMode</name></member>
       <member refid="classsim_detector_1a70465559e7df8dd42c61280c46dd07d4" prot="protected" virt="non-virtual"><scope>simDetector</scope><name>SimNoise</name></member>
-      <member refid="classsim_detector_1a6e3a3dd86ff425e644f04a554ccfba9c" prot="protected" virt="non-virtual"><scope>simDetector</scope><name>simOffset</name></member>
       <member refid="classsim_detector_1ae99309aee83db66e47aeb83da014636f" prot="protected" virt="non-virtual"><scope>simDetector</scope><name>SimOffset</name></member>
+      <member refid="classsim_detector_1a6e3a3dd86ff425e644f04a554ccfba9c" prot="protected" virt="non-virtual"><scope>simDetector</scope><name>simOffset</name></member>
       <member refid="classsim_detector_1a7f0e7eeb66bed101c967b0c66df8cc80" prot="protected" virt="non-virtual"><scope>simDetector</scope><name>SimPeakHeightVariation</name></member>
       <member refid="classsim_detector_1a571534cbeb576980127a98cd5f71fb88" prot="protected" virt="non-virtual"><scope>simDetector</scope><name>SimPeakNumX</name></member>
       <member refid="classsim_detector_1a7f4b60f347c0e13c2291a0ad4af6d676" prot="protected" virt="non-virtual"><scope>simDetector</scope><name>SimPeakNumY</name></member>

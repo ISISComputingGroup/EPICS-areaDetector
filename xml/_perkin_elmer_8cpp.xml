@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="_perkin_elmer_8cpp" kind="file" language="C++">
     <compoundname>PerkinElmer.cpp</compoundname>
     <includes local="no">sys/stat.h</includes>
@@ -715,7 +715,8 @@
 <codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">(asynSuccess);</highlight></codeline>
 <codeline lineno="80"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="81"><highlight class="normal"></highlight></codeline>
-<codeline lineno="82"><highlight class="normal"></highlight><highlight class="comment">//_____________________________________________________________________________________________</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="comment">//_____________________________________________________________________________________________</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
 <codeline lineno="103"><highlight class="normal"><ref refid="class_perkin_elmer_1ab8ee9bfa4234752d7479066ffe93cd56" kindref="member">PerkinElmer::PerkinElmer</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*portName,<sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>IDType,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*IDValue,</highlight></codeline>
 <codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>maxBuffers,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>maxMemory,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>priority,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>stackSize)</highlight></codeline>
 <codeline lineno="105"><highlight class="normal"></highlight></codeline>
@@ -775,7 +776,7 @@
 <codeline lineno="159"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Set<sp/>some<sp/>default<sp/>values<sp/>for<sp/>parameters<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="160"><highlight class="normal"><sp/><sp/>status<sp/>=<sp/><sp/>setStringParam<sp/>(ADManufacturer,<sp/></highlight><highlight class="stringliteral">&quot;Perkin<sp/>Elmer&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="161"><highlight class="normal"><sp/><sp/>epicsSnprintf(versionString,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(versionString),<sp/></highlight><highlight class="stringliteral">&quot;%d.%d.%d&quot;</highlight><highlight class="normal">,<sp/></highlight></codeline>
-<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_perkin_elmer_8cpp_1ae578001fe043b4cca7a0edd801cfe9c4" kindref="member">DRIVER_VERSION</ref>,<sp/><ref refid="_perkin_elmer_8cpp_1a09d8a9e616d09d45e8f4c3ad80849872" kindref="member">DRIVER_REVISION</ref>,<sp/><ref refid="_perkin_elmer_8cpp_1a00a7ebec19bc60e5ee0344109af2fd82" kindref="member">DRIVER_MODIFICATION</ref>);</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="andor_c_c_d_8cpp_1ae578001fe043b4cca7a0edd801cfe9c4" kindref="member">DRIVER_VERSION</ref>,<sp/><ref refid="andor_c_c_d_8cpp_1a09d8a9e616d09d45e8f4c3ad80849872" kindref="member">DRIVER_REVISION</ref>,<sp/><ref refid="andor_c_c_d_8cpp_1a00a7ebec19bc60e5ee0344109af2fd82" kindref="member">DRIVER_MODIFICATION</ref>);</highlight></codeline>
 <codeline lineno="163"><highlight class="normal"><sp/><sp/>setStringParam(NDDriverVersion,<sp/>versionString);</highlight></codeline>
 <codeline lineno="164"><highlight class="normal"><sp/><sp/>status<sp/>|=<sp/>setIntegerParam(NDArraySize,<sp/>0);</highlight></codeline>
 <codeline lineno="165"><highlight class="normal"><sp/><sp/>status<sp/>|=<sp/>setIntegerParam(NDDataType,<sp/><ref refid="_n_d_attribute_8h_1a34b835bcabc3b7f546f4b25c5767cb16a174cfb9ba69c78761d4d9d25ec1bd8df" kindref="member">NDUInt16</ref>);</highlight></codeline>
@@ -826,7 +827,8 @@
 <codeline lineno="211"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">(pPerkinElmer);</highlight></codeline>
 <codeline lineno="212"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="213"><highlight class="normal"></highlight></codeline>
-<codeline lineno="214"><highlight class="normal"></highlight><highlight class="comment">//_____________________________________________________________________________________________</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"></highlight><highlight class="comment">//_____________________________________________________________________________________________</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"></highlight></codeline>
 <codeline lineno="218"><highlight class="normal"><ref refid="class_perkin_elmer_1aefbbad284b91752c21d50e7b54e7ad13" kindref="member">PerkinElmer::~PerkinElmer</ref>()</highlight></codeline>
 <codeline lineno="219"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="220"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>uiPEResult;</highlight></codeline>
@@ -1282,8 +1284,8 @@
 <codeline lineno="678"><highlight class="normal"><sp/><sp/><ref refid="classasyn_n_d_array_driver_1ac3f2d73a05eb54357ec3f052e1b000f2" kindref="member">ADDriver::report</ref>(fp,<sp/>details);</highlight></codeline>
 <codeline lineno="679"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="680"><highlight class="normal"></highlight></codeline>
-<codeline lineno="681"><highlight class="normal"></highlight><highlight class="comment">//_____________________________________________________________________________________________</highlight></codeline>
-<codeline lineno="683"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>PerkinElmer::reportSensors(FILE<sp/>*fp,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>details)</highlight></codeline>
+<codeline lineno="681"><highlight class="normal"></highlight><highlight class="comment">//_____________________________________________________________________________________________</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="683"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>PerkinElmer::reportSensors(FILE<sp/>*fp,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>details)</highlight></codeline>
 <codeline lineno="684"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="685"><highlight class="normal"><sp/><sp/>ACQDESCPOS<sp/>Pos<sp/>=<sp/>0;</highlight></codeline>
 <codeline lineno="686"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>uiPEResult;</highlight></codeline>
@@ -1388,15 +1390,15 @@
 <codeline lineno="786"><highlight class="normal"><sp/><sp/>pPerkinElmer-&gt;<ref refid="class_perkin_elmer_1aee89547a758f03f5a02bc5100597b65d" kindref="member">endFrameCallback</ref>(hAcqDesc);</highlight></codeline>
 <codeline lineno="787"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="788"><highlight class="normal"></highlight></codeline>
-<codeline lineno="789"><highlight class="normal"></highlight><highlight class="comment">//_____________________________________________________________________________________________</highlight></codeline>
-<codeline lineno="791"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_perkin_elmer_1aee89547a758f03f5a02bc5100597b65d" kindref="member">PerkinElmer::endFrameCallback</ref>(HACQDESC<sp/>hAcqDesc)</highlight></codeline>
+<codeline lineno="789"><highlight class="normal"></highlight><highlight class="comment">//_____________________________________________________________________________________________</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="791"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_perkin_elmer_1aee89547a758f03f5a02bc5100597b65d" kindref="member">PerkinElmer::endFrameCallback</ref>(HACQDESC<sp/>hAcqDesc)</highlight></codeline>
 <codeline lineno="792"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="793"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/>uiStatus;</highlight></codeline>
 <codeline lineno="794"><highlight class="normal"><sp/><sp/><ref refid="pco__structures_8h_1aa39b39d94407451a6ec0226479db68cf" kindref="member">DWORD</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ActAcqFrame;</highlight></codeline>
 <codeline lineno="795"><highlight class="normal"><sp/><sp/><ref refid="pco__structures_8h_1aa39b39d94407451a6ec0226479db68cf" kindref="member">DWORD</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ActBuffFrame;</highlight></codeline>
 <codeline lineno="796"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/>currBuff;</highlight></codeline>
 <codeline lineno="797"><highlight class="normal"><sp/><sp/>epicsUInt16<sp/><sp/><sp/>*pInput;</highlight></codeline>
-<codeline lineno="798"><highlight class="normal"><sp/><sp/><ref refid="struct_n_d_array_info" kindref="compound">NDArrayInfo</ref><sp/><sp/><sp/>arrayInfo;</highlight></codeline>
+<codeline lineno="798"><highlight class="normal"><sp/><sp/>NDArrayInfo<sp/><sp/><sp/>arrayInfo;</highlight></codeline>
 <codeline lineno="799"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>arrayCounter;</highlight></codeline>
 <codeline lineno="800"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>imageCounter;</highlight></codeline>
 <codeline lineno="801"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numImages;</highlight></codeline>
@@ -1409,7 +1411,7 @@
 <codeline lineno="808"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>usePixelCorrection;</highlight></codeline>
 <codeline lineno="809"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dims[2];</highlight></codeline>
 <codeline lineno="810"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>acquiring;</highlight></codeline>
-<codeline lineno="811"><highlight class="normal"><sp/><sp/><ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*pImage;</highlight></codeline>
+<codeline lineno="811"><highlight class="normal"><sp/><sp/>NDArray<sp/><sp/><sp/><sp/><sp/><sp/><sp/>*pImage;</highlight></codeline>
 <codeline lineno="812"><highlight class="normal"><sp/><sp/><ref refid="_n_d_attribute_8h_1a34b835bcabc3b7f546f4b25c5767cb16" kindref="member">NDDataType_t</ref><sp/><sp/><ref refid="_a_d_pylon_8cpp_1a048925b4357a1b4d6015c2113e05ce9f" kindref="member">dataType</ref>;</highlight></codeline>
 <codeline lineno="813"><highlight class="normal"><sp/><sp/>epicsTimeStamp<sp/>currentTime;</highlight></codeline>
 <codeline lineno="814"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*functionName<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;endFrameCallback&quot;</highlight><highlight class="normal">;</highlight></codeline>
@@ -1508,11 +1510,11 @@
 <codeline lineno="910"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>We<sp/>save<sp/>the<sp/>most<sp/>recent<sp/>image<sp/>buffer<sp/>so<sp/>it<sp/>can<sp/>be<sp/>used<sp/>in<sp/>the<sp/>read()<sp/>function.</highlight></codeline>
 <codeline lineno="911"><highlight class="comment"><sp/><sp/><sp/>*<sp/>Now<sp/>release<sp/>it<sp/>before<sp/>getting<sp/>a<sp/>new<sp/>version.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="912"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(this-&gt;<ref refid="classasyn_n_d_array_driver_1a6f5685f9951f6b3b897e85425b59ad69" kindref="member">pArrays</ref>[0])</highlight></codeline>
-<codeline lineno="913"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classasyn_n_d_array_driver_1a6f5685f9951f6b3b897e85425b59ad69" kindref="member">pArrays</ref>[0]-&gt;<ref refid="class_n_d_array_1a0c4c61ea4d44ce97db979d24305c996e" kindref="member">release</ref>();</highlight></codeline>
+<codeline lineno="913"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classasyn_n_d_array_driver_1a6f5685f9951f6b3b897e85425b59ad69" kindref="member">pArrays</ref>[0]-&gt;release();</highlight></codeline>
 <codeline lineno="914"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Allocate<sp/>the<sp/>array<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="915"><highlight class="normal"><sp/><sp/>dims[0]<sp/>=<sp/>uiColumns_;</highlight></codeline>
 <codeline lineno="916"><highlight class="normal"><sp/><sp/>dims[1]<sp/>=<sp/>uiRows_;</highlight></codeline>
-<codeline lineno="917"><highlight class="normal"><sp/><sp/>this-&gt;<ref refid="classasyn_n_d_array_driver_1a6f5685f9951f6b3b897e85425b59ad69" kindref="member">pArrays</ref>[0]<sp/>=<sp/><ref refid="classasyn_n_d_array_driver_1ad3969854a37329ef4061cc560e9022dc" kindref="member">pNDArrayPool</ref>-&gt;<ref refid="class_n_d_array_pool_1a26b4360694655c4af6c853c2f3d2ce5e" kindref="member">alloc</ref>(2,<sp/>dims,<sp/><ref refid="_a_d_pylon_8cpp_1a048925b4357a1b4d6015c2113e05ce9f" kindref="member">dataType</ref>,<sp/>0,<sp/>NULL);</highlight></codeline>
+<codeline lineno="917"><highlight class="normal"><sp/><sp/>this-&gt;<ref refid="classasyn_n_d_array_driver_1a6f5685f9951f6b3b897e85425b59ad69" kindref="member">pArrays</ref>[0]<sp/>=<sp/><ref refid="classasyn_n_d_array_driver_1ad3969854a37329ef4061cc560e9022dc" kindref="member">pNDArrayPool</ref>-&gt;alloc(2,<sp/>dims,<sp/><ref refid="_a_d_pylon_8cpp_1a048925b4357a1b4d6015c2113e05ce9f" kindref="member">dataType</ref>,<sp/>0,<sp/>NULL);</highlight></codeline>
 <codeline lineno="918"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(this-&gt;<ref refid="classasyn_n_d_array_driver_1a6f5685f9951f6b3b897e85425b59ad69" kindref="member">pArrays</ref>[0]<sp/>==<sp/>NULL)<sp/>{</highlight></codeline>
 <codeline lineno="919"><highlight class="normal"><sp/><sp/><sp/><sp/>asynPrint(pasynUserSelf,<sp/>ASYN_TRACE_ERROR,</highlight></codeline>
 <codeline lineno="920"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s:%s:<sp/>error<sp/>allocating<sp/>buffer\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
@@ -2083,8 +2085,9 @@
 <codeline lineno="1501"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1502"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1503"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1504"><highlight class="normal"></highlight><highlight class="comment">//_____________________________________________________________________________________________</highlight></codeline>
-<codeline lineno="1512"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>PerkinElmer::acquireStop(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="1504"><highlight class="normal"></highlight><highlight class="comment">//_____________________________________________________________________________________________</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1511"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1512"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>PerkinElmer::acquireStop(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
 <codeline lineno="1513"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="1514"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*functionName<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;acquireStop&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="1515"><highlight class="normal"></highlight></codeline>

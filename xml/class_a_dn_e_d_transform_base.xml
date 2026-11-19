@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="class_a_dn_e_d_transform_base" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>ADnEDTransformBase</compoundname>
     <derivedcompoundref refid="class_a_dn_e_d_transform" prot="public" virt="non-virtual">ADnEDTransform</derivedcompoundref>
@@ -87,8 +87,7 @@
 <para><ref refid="class_a_dn_e_d_transform" kindref="compound">ADnEDTransform</ref> base class. </para>
         </briefdescription>
         <detaileddescription>
-<para>Concrete classes should inherit from this. Constructor. <linebreak/>
- </para>
+<para>Concrete classes should inherit from this. Constructor. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -104,8 +103,6 @@
 <para>Destructor. </para>
         </briefdescription>
         <detaileddescription>
-<para><linebreak/>
- </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>

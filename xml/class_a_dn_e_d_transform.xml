@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="class_a_dn_e_d_transform" kind="class" language="C++" prot="public">
     <compoundname>ADnEDTransform</compoundname>
     <basecompoundref refid="class_a_dn_e_d_transform_base" prot="public" virt="non-virtual">ADnEDTransformBase</basecompoundref>
@@ -15,8 +15,6 @@
 <para>Constructor. </para>
         </briefdescription>
         <detaileddescription>
-<para><linebreak/>
- </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -32,8 +30,6 @@
 <para>Destructor. </para>
         </briefdescription>
         <detaileddescription>
-<para><linebreak/>
- </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -140,7 +136,7 @@
           <declname>tof</declname>
         </param>
         <briefdescription>
-<para>Type = ADNED_TRANSFORM_TYPE3 Parameters used: ADNED_TRANSFORM_MN - The mass of the neutron in Kg m_doubleParam[0] - L1 in meters p_Array[0] - Ef in MeV (indexed by pixel ID) p_Array[1] - L2 in meters (indexed by pixel ID) </para>
+<para>Type = ADNED_TRANSFORM_TYPE3 Parameters used: ADNED_TRANSFORM_MN - The mass of the neutron in Kg m_doubleParam[0] - L1 in meters p_Array[0] - Ef in MeV (indexed by pixel ID) p_Array[1] - L2 in meters (indexed by pixel ID). </para>
         </briefdescription>
         <detaileddescription>
 <para>The equation uses SI units. So the input parameters are converted internally. </para>

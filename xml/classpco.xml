@@ -1,22 +1,22 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="classpco" kind="class" language="C++" prot="public">
     <compoundname>pco</compoundname>
     <basecompoundref prot="public" virt="non-virtual">ADCameralink</basecompoundref>
     <includes refid="pco_8h" local="no">pco.h</includes>
     <sectiondef kind="protected-type">
-      <memberdef kind="enum" id="classpco_1aa9a85ae693a8c2cffd31c228f5e7b7da" prot="protected" static="no" strong="no">
+      <memberdef kind="enum" id="classpco_1aed5e367298a3858a7cb2cd21ae59c51a" prot="protected" static="no" strong="no">
         <type></type>
         <name></name>
         <qualifiedname>pco</qualifiedname>
-        <enumvalue id="classpco_1aa9a85ae693a8c2cffd31c228f5e7b7daa2a6feef57062bcbc6794a0c9cef307e3" prot="protected">
+        <enumvalue id="classpco_1aed5e367298a3858a7cb2cd21ae59c51aa2a6feef57062bcbc6794a0c9cef307e3" prot="protected">
           <name>pco_paramint</name>
           <briefdescription>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="classpco_1aa9a85ae693a8c2cffd31c228f5e7b7daa56096e6d2114a548ba80379410be9ecb" prot="protected">
+        <enumvalue id="classpco_1aed5e367298a3858a7cb2cd21ae59c51aa56096e6d2114a548ba80379410be9ecb" prot="protected">
           <name>pco_paramdoub</name>
           <briefdescription>
           </briefdescription>
@@ -3746,8 +3746,8 @@
       <member refid="classpco_1a07da884ede8b17572ff5da0b79efb756" prot="protected" virt="non-virtual"><scope>pco</scope><name>pco_num_imgs_seg3</name></member>
       <member refid="classpco_1ad51e2e0344e740f333065fb3dc251080" prot="protected" virt="non-virtual"><scope>pco</scope><name>pco_offset_mode</name></member>
       <member refid="classpco_1ad5ed5b95e51b9aafba745f3d46ddee53a4f064772c974290014e36155aee4c273" prot="protected" virt="non-virtual"><scope>pco</scope><name>pco_other</name></member>
-      <member refid="classpco_1aa9a85ae693a8c2cffd31c228f5e7b7daa56096e6d2114a548ba80379410be9ecb" prot="protected" virt="non-virtual"><scope>pco</scope><name>pco_paramdoub</name></member>
-      <member refid="classpco_1aa9a85ae693a8c2cffd31c228f5e7b7daa2a6feef57062bcbc6794a0c9cef307e3" prot="protected" virt="non-virtual"><scope>pco</scope><name>pco_paramint</name></member>
+      <member refid="classpco_1aed5e367298a3858a7cb2cd21ae59c51aa56096e6d2114a548ba80379410be9ecb" prot="protected" virt="non-virtual"><scope>pco</scope><name>pco_paramdoub</name></member>
+      <member refid="classpco_1aed5e367298a3858a7cb2cd21ae59c51aa2a6feef57062bcbc6794a0c9cef307e3" prot="protected" virt="non-virtual"><scope>pco</scope><name>pco_paramint</name></member>
       <member refid="classpco_1a9e9027023a3ed78ebdc0976ef4a7e444" prot="protected" virt="non-virtual"><scope>pco</scope><name>pco_pixelrate</name></member>
       <member refid="classpco_1a25e5cb78deb13b13669ee51a2d1b4bff" prot="protected" virt="non-virtual"><scope>pco</scope><name>pco_play_slow</name></member>
       <member refid="classpco_1ad8392962f18fe2ca2c5cb11d6b02766a" prot="protected" virt="non-virtual"><scope>pco</scope><name>pco_play_stop</name></member>

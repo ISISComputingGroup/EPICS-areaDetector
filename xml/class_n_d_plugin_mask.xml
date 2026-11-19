@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="class_n_d_plugin_mask" kind="class" language="C++" prot="public">
     <compoundname>NDPluginMask</compoundname>
     <basecompoundref refid="class_n_d_plugin_driver" prot="public" virt="non-virtual">NDPluginDriver</basecompoundref>
@@ -565,9 +565,6 @@
       <node id="9">
         <label>Codec_t</label>
         <link refid="struct_codec__t"/>
-        <childnode refid="10" relation="usage">
-          <edgelabel>name</edgelabel>
-        </childnode>
       </node>
       <node id="6">
         <label>NDArray</label>
@@ -605,7 +602,7 @@
         <link refid="class_n_d_plugin_driver"/>
         <childnode refid="3" relation="public-inheritance">
         </childnode>
-        <childnode refid="11" relation="public-inheritance">
+        <childnode refid="10" relation="public-inheritance">
         </childnode>
         <childnode refid="6" relation="usage">
           <edgelabel>pPrevInputArray_</edgelabel>
@@ -635,11 +632,8 @@
       <node id="4">
         <label>asynPortDriver</label>
       </node>
-      <node id="11">
-        <label>epicsThreadRunable</label>
-      </node>
       <node id="10">
-        <label>string</label>
+        <label>epicsThreadRunable</label>
       </node>
     </collaborationgraph>
     <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDPluginMask.h" line="47" column="1" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADnED/ADnEDApp/src/ADnEDPluginMask.h" bodystart="47" bodyend="85"/>

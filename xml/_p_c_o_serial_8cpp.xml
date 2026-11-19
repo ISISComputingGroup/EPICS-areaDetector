@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="_p_c_o_serial_8cpp" kind="file" language="C++">
     <compoundname>PCOSerial.cpp</compoundname>
     <includes local="no">stdio.h</includes>
@@ -124,6 +124,7 @@
     </detaileddescription>
     <programlisting>
 <codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/></highlight></codeline>
 <codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">//#include<sp/>&quot;stdafx.h&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="12"><highlight class="normal"></highlight></codeline>
 <codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
@@ -162,7 +163,7 @@
 <codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>epicsThreadSleep(0.1);</highlight></codeline>
 <codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(getIntParam(<ref refid="classpco_1adbe7ab84a8566687223fe99d81bf3366" kindref="member">pco_is_running</ref>)<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
 <codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>release<sp/>serial<sp/>mutex<sp/>in<sp/>case<sp/>some<sp/>exception<sp/>caused<sp/>us<sp/>not<sp/>to<sp/>release</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>properly...</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>properly...</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>releaseSerialMutex();</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>releaseGrabberMutex();</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="56"><highlight class="normal"></highlight></codeline>
@@ -251,9 +252,11 @@
 <codeline lineno="139"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="140"><highlight class="normal"></highlight></codeline>
 <codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
 <codeline lineno="146"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classpco_1a76fbafa0ef6d7f91f0b18233f5457875" kindref="member">pco::pcoTask2</ref>()<sp/>{}</highlight></codeline>
 <codeline lineno="147"><highlight class="normal"></highlight></codeline>
 <codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
 <codeline lineno="156"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classpco_1a1ed52a84e8a82abe71df48862548402c" kindref="member">pco::clearPipe</ref>(FILE<sp/>*fp)<sp/>{</highlight></codeline>
 <codeline lineno="157"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ret;</highlight></codeline>
 <codeline lineno="158"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>counter<sp/>=<sp/>0;</highlight></codeline>
@@ -264,6 +267,7 @@
 <codeline lineno="163"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="164"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="165"><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight></codeline>
 <codeline lineno="175"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classpco_1acdd383c75162aabb46229e1f67ff9331" kindref="member">pco::updateParameters</ref>(asynUser<sp/>*pasynUser,<sp/>epicsInt32<sp/>ivalue,</highlight></codeline>
 <codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>epicsFloat64<sp/>dvalue,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>paramtype)<sp/>{</highlight></codeline>
 <codeline lineno="177"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>err;</highlight></codeline>
@@ -289,6 +293,7 @@
 <codeline lineno="197"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(0);</highlight></codeline>
 <codeline lineno="198"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="199"><highlight class="normal"></highlight></codeline>
+<codeline lineno="208"><highlight class="normal"></highlight></codeline>
 <codeline lineno="209"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classpco_1a89acc8aa0a478d19f72a8c53044d3b78" kindref="member">pco::doSerialTransactions</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>function,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ivalue,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dvalue,</highlight></codeline>
 <codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>paramtype)<sp/>{</highlight></codeline>
 <codeline lineno="211"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>mesg[128];</highlight></codeline>
@@ -376,7 +381,7 @@
 <codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>releaseSerialMutex();</highlight></codeline>
 <codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>lf.log(&quot;doSerialTransactions<sp/>release<sp/>mutex&quot;);</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>epicsMutexShowAll(1,1);</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>epicsMutexShowAll(1,1);</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>setPcoBaudrate();</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="300"><highlight class="normal"></highlight></codeline>
 <codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(</highlight><highlight class="normal"></highlight></codeline>
@@ -483,6 +488,7 @@
 <codeline lineno="411"><highlight class="normal"><sp/><sp/>setIntegerParam(ADStatus,<sp/><ref refid="_a_d_driver_8h_1a69820e97c7282152e222297a6d36f72eae5aabf2281b95d16f607f1a7b1c5a8bd" kindref="member">ADStatusIdle</ref>);</highlight></codeline>
 <codeline lineno="412"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="413"><highlight class="normal"></highlight></codeline>
+<codeline lineno="417"><highlight class="normal"></highlight></codeline>
 <codeline lineno="418"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classpco_1a3c3d4d290085c21f1ab7e2a9c760efdb" kindref="member">pco::dbgSerial</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
 <codeline lineno="419"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>serstr[256];</highlight></codeline>
 <codeline lineno="420"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>textstr[512];</highlight></codeline>
@@ -549,6 +555,7 @@
 <codeline lineno="481"><highlight class="normal"><sp/><sp/>releaseSerialMutex();</highlight></codeline>
 <codeline lineno="482"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="483"><highlight class="normal"></highlight></codeline>
+<codeline lineno="491"><highlight class="normal"></highlight></codeline>
 <codeline lineno="492"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classpco_1a3764777923968b70a966440ae4c5ea9b" kindref="member">pco::doSerialCommand</ref>(<ref refid="classpco__command" kindref="compound">pco_command</ref><sp/>&amp;cmd,<sp/><ref refid="classpco__response" kindref="compound">pco_response</ref><sp/>&amp;rsp,</highlight></codeline>
 <codeline lineno="493"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*obj,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>len)<sp/>{</highlight></codeline>
 <codeline lineno="494"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/>code;</highlight></codeline>
@@ -768,8 +775,9 @@
 <codeline lineno="708"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(8);</highlight></codeline>
 <codeline lineno="709"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="710"><highlight class="normal"></highlight></codeline>
+<codeline lineno="715"><highlight class="normal"></highlight></codeline>
 <codeline lineno="716"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classpco_1a56d636cd03a9b999da97af729279c209" kindref="member">pco::checkCameraMessages</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
-<codeline lineno="717"><highlight class="normal"><sp/><sp/><ref refid="classpco__response" kindref="compound">pco_response</ref><sp/>rsp;</highlight></codeline>
+<codeline lineno="717"><highlight class="normal"><sp/><sp/>pco_response<sp/>rsp;</highlight></codeline>
 <codeline lineno="718"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/>code;</highlight></codeline>
 <codeline lineno="719"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/>length;</highlight></codeline>
 <codeline lineno="720"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>code_hi;</highlight></codeline>
@@ -838,8 +846,10 @@
 <codeline lineno="783"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(0);</highlight></codeline>
 <codeline lineno="784"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="785"><highlight class="normal"></highlight></codeline>
+<codeline lineno="789"><highlight class="normal"></highlight></codeline>
 <codeline lineno="790"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classpco_1a3807223f8fdeb6caa496eb8afe0f68fc" kindref="member">pco::getlib</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="pco_8cpp_1aa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref>;<sp/>}</highlight></codeline>
 <codeline lineno="791"><highlight class="normal"></highlight></codeline>
+<codeline lineno="798"><highlight class="normal"></highlight></codeline>
 <codeline lineno="799"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classpco_1a77152d74d482aec30d791b5c2600c951" kindref="member">pco::ReportError</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>code,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*usrmsg)<sp/>{</highlight></codeline>
 <codeline lineno="800"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>mesgx[256];</highlight></codeline>
 <codeline lineno="801"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>errx[128];</highlight></codeline>
@@ -851,6 +861,7 @@
 <codeline lineno="807"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(0);</highlight></codeline>
 <codeline lineno="808"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="809"><highlight class="normal"></highlight></codeline>
+<codeline lineno="815"><highlight class="normal"></highlight></codeline>
 <codeline lineno="816"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classpco_1a278a317fd733f1c2c43222f47484c2a6" kindref="member">pco::Disconnected</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>code,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*usrmsg)<sp/>{</highlight></codeline>
 <codeline lineno="817"><highlight class="normal"><sp/><sp/><ref refid="classpco_1a77152d74d482aec30d791b5c2600c951" kindref="member">ReportError</ref>(code,<sp/>usrmsg);</highlight></codeline>
 <codeline lineno="818"><highlight class="normal"><sp/><sp/>lf.log(</highlight><highlight class="stringliteral">&quot;Closing<sp/>Serial<sp/>Port&quot;</highlight><highlight class="normal">);</highlight></codeline>
@@ -864,9 +875,10 @@
 <codeline lineno="826"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(0);</highlight></codeline>
 <codeline lineno="827"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="828"><highlight class="normal"></highlight></codeline>
+<codeline lineno="832"><highlight class="normal"></highlight></codeline>
 <codeline lineno="833"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classpco_1acb3f21a30c8fa45ef0e7227c3ecbc044" kindref="member">pco::OpenCamera</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
-<codeline lineno="834"><highlight class="normal"><sp/><sp/><ref refid="classpco__command" kindref="compound">pco_command</ref><sp/>cmd;</highlight></codeline>
-<codeline lineno="835"><highlight class="normal"><sp/><sp/><ref refid="classpco__response" kindref="compound">pco_response</ref><sp/>rsp;</highlight></codeline>
+<codeline lineno="834"><highlight class="normal"><sp/><sp/>pco_command<sp/>cmd;</highlight></codeline>
+<codeline lineno="835"><highlight class="normal"><sp/><sp/>pco_response<sp/>rsp;</highlight></codeline>
 <codeline lineno="836"><highlight class="normal"></highlight></codeline>
 <codeline lineno="837"><highlight class="normal"></highlight><highlight class="comment">//<sp/>grabSerialMutex();</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="838"><highlight class="normal"></highlight></codeline>
@@ -891,9 +903,10 @@
 <codeline lineno="857"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
 <codeline lineno="858"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="859"><highlight class="normal"></highlight></codeline>
+<codeline lineno="868"><highlight class="normal"></highlight></codeline>
 <codeline lineno="869"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classpco_1a15c27511c49c754ca3a8eb2409bcfbc3" kindref="member">pco::setPcoImageReadParams</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>function)<sp/>{</highlight></codeline>
-<codeline lineno="870"><highlight class="normal"><sp/><sp/><ref refid="classpco__command" kindref="compound">pco_command</ref><sp/>cmd;</highlight></codeline>
-<codeline lineno="871"><highlight class="normal"><sp/><sp/><ref refid="classpco__response" kindref="compound">pco_response</ref><sp/>rsp;</highlight></codeline>
+<codeline lineno="870"><highlight class="normal"><sp/><sp/>pco_command<sp/>cmd;</highlight></codeline>
+<codeline lineno="871"><highlight class="normal"><sp/><sp/>pco_response<sp/>rsp;</highlight></codeline>
 <codeline lineno="872"><highlight class="normal"></highlight></codeline>
 <codeline lineno="873"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(function<sp/>==<sp/><ref refid="classpco_1a25e5cb78deb13b13669ee51a2d1b4bff" kindref="member">pco_play_slow</ref><sp/>||<sp/>function<sp/>==<sp/><ref refid="classpco_1ad8392962f18fe2ca2c5cb11d6b02766a" kindref="member">pco_play_stop</ref><sp/>||</highlight></codeline>
 <codeline lineno="874"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>function<sp/>==<sp/><ref refid="classpco_1a284d4d3b7843539a6a2faa43d9ca162c" kindref="member">pco_setallparams</ref>)<sp/>{</highlight></codeline>
@@ -1001,13 +1014,14 @@
 <codeline lineno="977"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(0);</highlight></codeline>
 <codeline lineno="978"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="979"><highlight class="normal"></highlight></codeline>
+<codeline lineno="986"><highlight class="normal"></highlight></codeline>
 <codeline lineno="987"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classpco_1a58858a7ef3aec86e28050efe28305d55" kindref="member">pco::getPcoStatusParams</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
 <codeline lineno="988"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/>val1;</highlight></codeline>
 <codeline lineno="989"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>msgx[256];</highlight></codeline>
 <codeline lineno="990"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>lval1;</highlight></codeline>
 <codeline lineno="991"><highlight class="normal"></highlight></codeline>
-<codeline lineno="992"><highlight class="normal"><sp/><sp/><ref refid="classpco__command" kindref="compound">pco_command</ref><sp/>cmd;</highlight></codeline>
-<codeline lineno="993"><highlight class="normal"><sp/><sp/><ref refid="classpco__response" kindref="compound">pco_response</ref><sp/>rsp;</highlight></codeline>
+<codeline lineno="992"><highlight class="normal"><sp/><sp/>pco_command<sp/>cmd;</highlight></codeline>
+<codeline lineno="993"><highlight class="normal"><sp/><sp/>pco_response<sp/>rsp;</highlight></codeline>
 <codeline lineno="994"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>prd_sec;</highlight></codeline>
 <codeline lineno="995"><highlight class="normal"></highlight></codeline>
 <codeline lineno="996"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Get<sp/>Number<sp/>Of<sp/>Images<sp/>in<sp/>Segment<sp/>0</highlight><highlight class="normal"></highlight></codeline>
@@ -1092,7 +1106,7 @@
 <codeline lineno="1075"><highlight class="normal"><sp/><sp/><sp/><sp/>setIntegerParam(<ref refid="classpco_1a29620d9e6f87c4183f07d492a9f4d5aa" kindref="member">pco_health_status</ref>,<sp/>lval1);</highlight></codeline>
 <codeline lineno="1076"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1077"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1078"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>0</highlight></codeline>
+<codeline lineno="1078"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>0</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1080"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1081"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1082"><highlight class="normal"></highlight><highlight class="comment">//get<sp/>frame<sp/>fate<sp/>from<sp/>camera</highlight><highlight class="normal"></highlight></codeline>
@@ -1124,13 +1138,14 @@
 <codeline lineno="1108"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(0);</highlight></codeline>
 <codeline lineno="1109"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1117"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1118"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classpco_1aba1b487c760340a0c3996407b44ec001" kindref="member">pco::getPcoImageReadParams</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
 <codeline lineno="1119"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/>val1;</highlight></codeline>
 <codeline lineno="1120"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>msgx[256];</highlight></codeline>
 <codeline lineno="1121"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>lval1;</highlight></codeline>
 <codeline lineno="1122"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1123"><highlight class="normal"><sp/><sp/><ref refid="classpco__command" kindref="compound">pco_command</ref><sp/>cmd;</highlight></codeline>
-<codeline lineno="1124"><highlight class="normal"><sp/><sp/><ref refid="classpco__response" kindref="compound">pco_response</ref><sp/>rsp;</highlight></codeline>
+<codeline lineno="1123"><highlight class="normal"><sp/><sp/>pco_command<sp/>cmd;</highlight></codeline>
+<codeline lineno="1124"><highlight class="normal"><sp/><sp/>pco_response<sp/>rsp;</highlight></codeline>
 <codeline lineno="1125"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k;</highlight></codeline>
 <codeline lineno="1126"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1127"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(getIntParam(<ref refid="classpco_1a6d70b54955b51daa7cddc2bb94f7363d" kindref="member">pco_which_camera</ref>)<sp/>!=<sp/><ref refid="classpco_1ad5ed5b95e51b9aafba745f3d46ddee53ae4d4e13c4209999660be7a109a45b60d" kindref="member">pco_dimax</ref>)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(0);</highlight></codeline>
@@ -1208,13 +1223,14 @@
 <codeline lineno="1199"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(0);</highlight></codeline>
 <codeline lineno="1200"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1201"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1208"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1209"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classpco_1a2246cc2403a7ae22249099c6d09ff8bc" kindref="member">pco::getPcoCameraLinkParams</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
 <codeline lineno="1210"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/>val1;</highlight></codeline>
 <codeline lineno="1211"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>msgx[256];</highlight></codeline>
 <codeline lineno="1212"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>lval1;</highlight></codeline>
 <codeline lineno="1213"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1214"><highlight class="normal"><sp/><sp/><ref refid="classpco__command" kindref="compound">pco_command</ref><sp/>cmd;</highlight></codeline>
-<codeline lineno="1215"><highlight class="normal"><sp/><sp/><ref refid="classpco__response" kindref="compound">pco_response</ref><sp/>rsp;</highlight></codeline>
+<codeline lineno="1214"><highlight class="normal"><sp/><sp/>pco_command<sp/>cmd;</highlight></codeline>
+<codeline lineno="1215"><highlight class="normal"><sp/><sp/>pco_response<sp/>rsp;</highlight></codeline>
 <codeline lineno="1216"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1217"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Get<sp/>Number<sp/>Of<sp/>Images<sp/>in<sp/>Segment<sp/>0</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1218"><highlight class="normal"><sp/><sp/>cmd.<ref refid="classpco__command_1a4ab34acd27db29f85275dc20e5ae21aa" kindref="member">setCode</ref>(0x3416);</highlight></codeline>
@@ -1234,13 +1250,14 @@
 <codeline lineno="1232"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(0);</highlight></codeline>
 <codeline lineno="1233"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1234"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1242"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1243"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classpco_1a962adb1b854b437715472bec28593386" kindref="member">pco::setPcoCameraLinkParams</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>function)<sp/>{</highlight></codeline>
 <codeline lineno="1244"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/>val1;</highlight></codeline>
 <codeline lineno="1245"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>msgx[256];</highlight></codeline>
 <codeline lineno="1246"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>lval1;</highlight></codeline>
 <codeline lineno="1247"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1248"><highlight class="normal"><sp/><sp/><ref refid="classpco__command" kindref="compound">pco_command</ref><sp/>cmd;</highlight></codeline>
-<codeline lineno="1249"><highlight class="normal"><sp/><sp/><ref refid="classpco__response" kindref="compound">pco_response</ref><sp/>rsp;</highlight></codeline>
+<codeline lineno="1248"><highlight class="normal"><sp/><sp/>pco_command<sp/>cmd;</highlight></codeline>
+<codeline lineno="1249"><highlight class="normal"><sp/><sp/>pco_response<sp/>rsp;</highlight></codeline>
 <codeline lineno="1250"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1251"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Get<sp/>Number<sp/>Of<sp/>Images<sp/>in<sp/>Segment<sp/>0</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1252"><highlight class="normal"></highlight></codeline>
@@ -1267,13 +1284,14 @@
 <codeline lineno="1273"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(0);</highlight></codeline>
 <codeline lineno="1274"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1275"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1280"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1281"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classpco_1abdc49c320709ef03e32ccc2f768afd63" kindref="member">pco::setPcoBaudrate</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>function)<sp/>{</highlight></codeline>
 <codeline lineno="1282"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/>val1;</highlight></codeline>
 <codeline lineno="1283"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>msgx[256];</highlight></codeline>
 <codeline lineno="1284"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>lval1;</highlight></codeline>
 <codeline lineno="1285"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1286"><highlight class="normal"><sp/><sp/><ref refid="classpco__command" kindref="compound">pco_command</ref><sp/>cmd;</highlight></codeline>
-<codeline lineno="1287"><highlight class="normal"><sp/><sp/><ref refid="classpco__response" kindref="compound">pco_response</ref><sp/>rsp;</highlight></codeline>
+<codeline lineno="1286"><highlight class="normal"><sp/><sp/>pco_command<sp/>cmd;</highlight></codeline>
+<codeline lineno="1287"><highlight class="normal"><sp/><sp/>pco_response<sp/>rsp;</highlight></codeline>
 <codeline lineno="1288"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1289"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(getIntParam(<ref refid="classpco_1a837b2dee2c6fad80ad4f413390b77c3e" kindref="member">is_com_open</ref>)<sp/>==<sp/>0)<sp/>{</highlight></codeline>
 <codeline lineno="1290"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(1);</highlight></codeline>
@@ -1418,9 +1436,10 @@
 <codeline lineno="1429"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(0);</highlight></codeline>
 <codeline lineno="1430"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1431"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1439"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1440"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classpco_1a81baae7847930a385562be2bba16b253" kindref="member">pco::setPcoRecordingParams</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>function)<sp/>{</highlight></codeline>
-<codeline lineno="1441"><highlight class="normal"><sp/><sp/><ref refid="classpco__command" kindref="compound">pco_command</ref><sp/>cmd;</highlight></codeline>
-<codeline lineno="1442"><highlight class="normal"><sp/><sp/><ref refid="classpco__response" kindref="compound">pco_response</ref><sp/>rsp;</highlight></codeline>
+<codeline lineno="1441"><highlight class="normal"><sp/><sp/>pco_command<sp/>cmd;</highlight></codeline>
+<codeline lineno="1442"><highlight class="normal"><sp/><sp/>pco_response<sp/>rsp;</highlight></codeline>
 <codeline lineno="1443"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1444"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Set<sp/>pco_arm_camera</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1445"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(function<sp/>==<sp/><ref refid="classpco_1a6994e2cb49772a8dc1b87b442fa6b065" kindref="member">pco_arm_camera</ref><sp/>||<sp/>function<sp/>==<sp/><ref refid="classpco_1a284d4d3b7843539a6a2faa43d9ca162c" kindref="member">pco_setallparams</ref>)<sp/>{</highlight></codeline>
@@ -1565,8 +1584,8 @@
 <codeline lineno="1591"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>msgx[256];</highlight></codeline>
 <codeline lineno="1592"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>lval1;</highlight></codeline>
 <codeline lineno="1593"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1594"><highlight class="normal"><sp/><sp/><ref refid="classpco__command" kindref="compound">pco_command</ref><sp/>cmd;</highlight></codeline>
-<codeline lineno="1595"><highlight class="normal"><sp/><sp/><ref refid="classpco__response" kindref="compound">pco_response</ref><sp/>rsp;</highlight></codeline>
+<codeline lineno="1594"><highlight class="normal"><sp/><sp/>pco_command<sp/>cmd;</highlight></codeline>
+<codeline lineno="1595"><highlight class="normal"><sp/><sp/>pco_response<sp/>rsp;</highlight></codeline>
 <codeline lineno="1596"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1597"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Get<sp/>Storage<sp/>Mode<sp/>(Recorder<sp/>/<sp/>FIFO<sp/>buffer)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1598"><highlight class="normal"><sp/><sp/>cmd.<ref refid="classpco__command_1a4ab34acd27db29f85275dc20e5ae21aa" kindref="member">setCode</ref>(0x0114);</highlight></codeline>
@@ -1633,8 +1652,8 @@
 <codeline lineno="1660"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1661"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1669"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classpco_1abb94d0475da1556a5a51a80be968c469" kindref="member">pco::setPcoStorageParams</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>function)<sp/>{</highlight></codeline>
-<codeline lineno="1670"><highlight class="normal"><sp/><sp/><ref refid="classpco__command" kindref="compound">pco_command</ref><sp/>cmd;</highlight></codeline>
-<codeline lineno="1671"><highlight class="normal"><sp/><sp/><ref refid="classpco__response" kindref="compound">pco_response</ref><sp/>rsp;</highlight></codeline>
+<codeline lineno="1670"><highlight class="normal"><sp/><sp/>pco_command<sp/>cmd;</highlight></codeline>
+<codeline lineno="1671"><highlight class="normal"><sp/><sp/>pco_response<sp/>rsp;</highlight></codeline>
 <codeline lineno="1672"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1673"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(getIntParam(<ref refid="classpco_1a6d70b54955b51daa7cddc2bb94f7363d" kindref="member">pco_which_camera</ref>)<sp/>!=<sp/><ref refid="classpco_1ad5ed5b95e51b9aafba745f3d46ddee53ae4d4e13c4209999660be7a109a45b60d" kindref="member">pco_dimax</ref>)<sp/>{</highlight></codeline>
 <codeline lineno="1674"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(0);</highlight></codeline>
@@ -1702,13 +1721,14 @@
 <codeline lineno="1736"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(0);</highlight></codeline>
 <codeline lineno="1737"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1738"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1745"><highlight class="normal"><sp/></highlight></codeline>
 <codeline lineno="1746"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classpco_1ab198436bfe369be70a409c4addbff405" kindref="member">pco::getPcoStorageParams</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
 <codeline lineno="1747"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/>val1;</highlight></codeline>
 <codeline lineno="1748"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>msgx[256];</highlight></codeline>
 <codeline lineno="1749"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>lval1;</highlight></codeline>
 <codeline lineno="1750"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1751"><highlight class="normal"><sp/><sp/><ref refid="classpco__command" kindref="compound">pco_command</ref><sp/>cmd;</highlight></codeline>
-<codeline lineno="1752"><highlight class="normal"><sp/><sp/><ref refid="classpco__response" kindref="compound">pco_response</ref><sp/>rsp;</highlight></codeline>
+<codeline lineno="1751"><highlight class="normal"><sp/><sp/>pco_command<sp/>cmd;</highlight></codeline>
+<codeline lineno="1752"><highlight class="normal"><sp/><sp/>pco_response<sp/>rsp;</highlight></codeline>
 <codeline lineno="1753"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1754"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(getIntParam(<ref refid="classpco_1a6d70b54955b51daa7cddc2bb94f7363d" kindref="member">pco_which_camera</ref>)<sp/>!=<sp/><ref refid="classpco_1ad5ed5b95e51b9aafba745f3d46ddee53ae4d4e13c4209999660be7a109a45b60d" kindref="member">pco_dimax</ref>)<sp/>{</highlight></codeline>
 <codeline lineno="1755"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(0);</highlight></codeline>
@@ -1759,9 +1779,10 @@
 <codeline lineno="1800"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(0);</highlight></codeline>
 <codeline lineno="1801"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1802"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1810"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1811"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classpco_1ade64712422a89363deee7affb8a6eac1" kindref="member">pco::setPcoTimingParams</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>function)<sp/>{</highlight></codeline>
-<codeline lineno="1812"><highlight class="normal"><sp/><sp/><ref refid="classpco__command" kindref="compound">pco_command</ref><sp/>cmd;</highlight></codeline>
-<codeline lineno="1813"><highlight class="normal"><sp/><sp/><ref refid="classpco__response" kindref="compound">pco_response</ref><sp/>rsp;</highlight></codeline>
+<codeline lineno="1812"><highlight class="normal"><sp/><sp/>pco_command<sp/>cmd;</highlight></codeline>
+<codeline lineno="1813"><highlight class="normal"><sp/><sp/>pco_response<sp/>rsp;</highlight></codeline>
 <codeline lineno="1814"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1815"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Set<sp/>Timebase</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1816"><highlight class="normal"></highlight></codeline>
@@ -1799,11 +1820,11 @@
 <codeline lineno="1848"><highlight class="normal"><sp/><sp/><sp/><sp/>lf.log(mxxx);</highlight></codeline>
 <codeline lineno="1849"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1850"><highlight class="normal"><sp/><sp/><sp/><sp/>sprintf(mxxx,<sp/></highlight><highlight class="stringliteral">&quot;Min<sp/>DlyTime<sp/>%d<sp/>ns<sp/>MaxDkytime<sp/>%d<sp/>ms\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="1851"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classpco_1a2aa7e93e52017a7a467501ea9f521bcf" kindref="member">pco_desc</ref>.<ref refid="structx_p_c_o___description_1a62eb929a8e042645d2c4a8a55f864b55" kindref="member">dwMinDelayDESC</ref>,<sp/><ref refid="classpco_1a2aa7e93e52017a7a467501ea9f521bcf" kindref="member">pco_desc</ref>.<ref refid="structx_p_c_o___description_1a31c7b7cd9f0076e1b7c41ed2dbd4383a" kindref="member">dwMaxDelayDESC</ref>);</highlight></codeline>
+<codeline lineno="1851"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classpco_1a2aa7e93e52017a7a467501ea9f521bcf" kindref="member">pco_desc</ref>.dwMinDelayDESC,<sp/><ref refid="classpco_1a2aa7e93e52017a7a467501ea9f521bcf" kindref="member">pco_desc</ref>.dwMaxDelayDESC);</highlight></codeline>
 <codeline lineno="1852"><highlight class="normal"><sp/><sp/><sp/><sp/>lf.log(mxxx);</highlight></codeline>
 <codeline lineno="1853"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1854"><highlight class="normal"><sp/><sp/><sp/><sp/>sprintf(mxxx,<sp/></highlight><highlight class="stringliteral">&quot;Min<sp/>Exptime<sp/>%d<sp/>ns<sp/>Exptime<sp/>%d<sp/>ms\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="1855"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classpco_1a2aa7e93e52017a7a467501ea9f521bcf" kindref="member">pco_desc</ref>.<ref refid="structx_p_c_o___description_1a9ae0b4922128fc9d1c7c50b63799f116" kindref="member">dwMinExposureDESC</ref>,<sp/><ref refid="classpco_1a2aa7e93e52017a7a467501ea9f521bcf" kindref="member">pco_desc</ref>.<ref refid="structx_p_c_o___description_1a247151b9ecb78785902d3cfd3813d32a" kindref="member">dwMaxExposureDESC</ref>);</highlight></codeline>
+<codeline lineno="1855"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classpco_1a2aa7e93e52017a7a467501ea9f521bcf" kindref="member">pco_desc</ref>.dwMinExposureDESC,<sp/><ref refid="classpco_1a2aa7e93e52017a7a467501ea9f521bcf" kindref="member">pco_desc</ref>.dwMaxExposureDESC);</highlight></codeline>
 <codeline lineno="1856"><highlight class="normal"><sp/><sp/><sp/><sp/>lf.log(mxxx);</highlight></codeline>
 <codeline lineno="1857"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1858"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(getIntParam(<ref refid="classpco_1ab9d8c1a6ee5199d4158abd5400f995df" kindref="member">pco_exp_timebase</ref>)<sp/>==<sp/>2)</highlight></codeline>
@@ -1877,11 +1898,11 @@
 <codeline lineno="1926"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1927"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1928"><highlight class="normal"><sp/><sp/><sp/><sp/>sprintf(mxxx,<sp/></highlight><highlight class="stringliteral">&quot;Min<sp/>DlyTime<sp/>%d<sp/>ns<sp/>MaxDkytime<sp/>%d<sp/>ms\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="1929"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classpco_1a2aa7e93e52017a7a467501ea9f521bcf" kindref="member">pco_desc</ref>.<ref refid="structx_p_c_o___description_1a62eb929a8e042645d2c4a8a55f864b55" kindref="member">dwMinDelayDESC</ref>,<sp/><ref refid="classpco_1a2aa7e93e52017a7a467501ea9f521bcf" kindref="member">pco_desc</ref>.<ref refid="structx_p_c_o___description_1a31c7b7cd9f0076e1b7c41ed2dbd4383a" kindref="member">dwMaxDelayDESC</ref>);</highlight></codeline>
+<codeline lineno="1929"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classpco_1a2aa7e93e52017a7a467501ea9f521bcf" kindref="member">pco_desc</ref>.dwMinDelayDESC,<sp/><ref refid="classpco_1a2aa7e93e52017a7a467501ea9f521bcf" kindref="member">pco_desc</ref>.dwMaxDelayDESC);</highlight></codeline>
 <codeline lineno="1930"><highlight class="normal"><sp/><sp/><sp/><sp/>lf.log(mxxx);</highlight></codeline>
 <codeline lineno="1931"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1932"><highlight class="normal"><sp/><sp/><sp/><sp/>sprintf(mxxx,<sp/></highlight><highlight class="stringliteral">&quot;Min<sp/>Exptime<sp/>%d<sp/>ns<sp/>Exptime<sp/>%d<sp/>ms\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="1933"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classpco_1a2aa7e93e52017a7a467501ea9f521bcf" kindref="member">pco_desc</ref>.<ref refid="structx_p_c_o___description_1a9ae0b4922128fc9d1c7c50b63799f116" kindref="member">dwMinExposureDESC</ref>,<sp/><ref refid="classpco_1a2aa7e93e52017a7a467501ea9f521bcf" kindref="member">pco_desc</ref>.<ref refid="structx_p_c_o___description_1a247151b9ecb78785902d3cfd3813d32a" kindref="member">dwMaxExposureDESC</ref>);</highlight></codeline>
+<codeline lineno="1933"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classpco_1a2aa7e93e52017a7a467501ea9f521bcf" kindref="member">pco_desc</ref>.dwMinExposureDESC,<sp/><ref refid="classpco_1a2aa7e93e52017a7a467501ea9f521bcf" kindref="member">pco_desc</ref>.dwMaxExposureDESC);</highlight></codeline>
 <codeline lineno="1934"><highlight class="normal"><sp/><sp/><sp/><sp/>lf.log(mxxx);</highlight></codeline>
 <codeline lineno="1935"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1936"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>convert<sp/>to<sp/>ns</highlight><highlight class="normal"></highlight></codeline>
@@ -1963,14 +1984,15 @@
 <codeline lineno="2012"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(0);</highlight></codeline>
 <codeline lineno="2013"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="2014"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2021"><highlight class="normal"></highlight></codeline>
 <codeline lineno="2022"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classpco_1a7ef0e71681abc8a62d307bd78af45f1d" kindref="member">pco::doHighLevelParams</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>function)<sp/>{</highlight></codeline>
 <codeline lineno="2023"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>edx,<sp/>k;</highlight></codeline>
 <codeline lineno="2024"><highlight class="normal"><sp/><sp/>stopWatch<sp/>timex;</highlight></codeline>
 <codeline lineno="2025"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>tx;</highlight></codeline>
 <codeline lineno="2026"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>stxx[128];</highlight></codeline>
 <codeline lineno="2027"><highlight class="normal"></highlight></codeline>
-<codeline lineno="2028"><highlight class="normal"><sp/><sp/><ref refid="classpco__response" kindref="compound">pco_response</ref><sp/>rsp;</highlight></codeline>
-<codeline lineno="2029"><highlight class="normal"><sp/><sp/><ref refid="classpco__command" kindref="compound">pco_command</ref><sp/>cmd;</highlight></codeline>
+<codeline lineno="2028"><highlight class="normal"><sp/><sp/>pco_response<sp/>rsp;</highlight></codeline>
+<codeline lineno="2029"><highlight class="normal"><sp/><sp/>pco_command<sp/>cmd;</highlight></codeline>
 <codeline lineno="2030"><highlight class="normal"></highlight></codeline>
 <codeline lineno="2031"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(function<sp/>==<sp/>(<ref refid="classpco_1a22beed1c7c972d0af72eb40e68d70591" kindref="member">pco_edge_fastscan</ref>)<sp/>||<sp/>function<sp/>==<sp/><ref refid="classpco_1a284d4d3b7843539a6a2faa43d9ca162c" kindref="member">pco_setallparams</ref>)<sp/>{</highlight></codeline>
 <codeline lineno="2032"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(getIntParam(<ref refid="classpco_1a22beed1c7c972d0af72eb40e68d70591" kindref="member">pco_edge_fastscan</ref>)<sp/>==<sp/>2)<sp/>{</highlight></codeline>
@@ -2175,8 +2197,8 @@
 <codeline lineno="2239"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>tx;</highlight></codeline>
 <codeline lineno="2240"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>stxx[128];</highlight></codeline>
 <codeline lineno="2241"><highlight class="normal"></highlight></codeline>
-<codeline lineno="2242"><highlight class="normal"><sp/><sp/><ref refid="classpco__response" kindref="compound">pco_response</ref><sp/>rsp;</highlight></codeline>
-<codeline lineno="2243"><highlight class="normal"><sp/><sp/><ref refid="classpco__command" kindref="compound">pco_command</ref><sp/>cmd;</highlight></codeline>
+<codeline lineno="2242"><highlight class="normal"><sp/><sp/>pco_response<sp/>rsp;</highlight></codeline>
+<codeline lineno="2243"><highlight class="normal"><sp/><sp/>pco_command<sp/>cmd;</highlight></codeline>
 <codeline lineno="2244"><highlight class="normal"></highlight></codeline>
 <codeline lineno="2245"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>waitms;</highlight></codeline>
 <codeline lineno="2246"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>last_val;</highlight></codeline>
@@ -2344,8 +2366,8 @@
 <codeline lineno="2408"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>if<sp/>dump<sp/>mem</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2409"><highlight class="normal"></highlight></codeline>
 <codeline lineno="2414"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classpco_1ad8c84c6c7479bf4b197720c378bf48aa" kindref="member">pco::dumpOneFrame</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k)<sp/>{</highlight></codeline>
-<codeline lineno="2415"><highlight class="normal"><sp/><sp/><ref refid="classpco__response" kindref="compound">pco_response</ref><sp/>rsp;</highlight></codeline>
-<codeline lineno="2416"><highlight class="normal"><sp/><sp/><ref refid="classpco__command" kindref="compound">pco_command</ref><sp/>cmd;</highlight></codeline>
+<codeline lineno="2415"><highlight class="normal"><sp/><sp/>pco_response<sp/>rsp;</highlight></codeline>
+<codeline lineno="2416"><highlight class="normal"><sp/><sp/>pco_command<sp/>cmd;</highlight></codeline>
 <codeline lineno="2417"><highlight class="normal"></highlight></codeline>
 <codeline lineno="2418"><highlight class="normal"><sp/><sp/>cmd.<ref refid="classpco__command_1a4ab34acd27db29f85275dc20e5ae21aa" kindref="member">setCode</ref>(0x0515);</highlight></codeline>
 <codeline lineno="2419"><highlight class="normal"><sp/><sp/>cmd.<ref refid="classpco__command_1a988cf6f21efb0bc88909f35f617b1142" kindref="member">addUShort</ref>(1);</highlight></codeline>
@@ -2357,7 +2379,7 @@
 <codeline lineno="2425"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classpco_1a3764777923968b70a966440ae4c5ea9b" kindref="member">doSerialCommand</ref>(cmd,<sp/>rsp,<sp/>0,<sp/>0)<sp/>!=<sp/>0)<sp/>{</highlight></codeline>
 <codeline lineno="2426"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>com<sp/>error</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2427"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>see<sp/>if<sp/>frame<sp/>made<sp/>it</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="2428"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>wait<sp/>and<sp/>timeout<sp/>at<sp/>1s</highlight></codeline>
+<codeline lineno="2428"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>wait<sp/>and<sp/>timeout<sp/>at<sp/>1s</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2430"><highlight class="normal"></highlight></codeline>
 <codeline lineno="2431"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(-1);</highlight></codeline>
 <codeline lineno="2432"><highlight class="normal"><sp/><sp/>}<sp/><sp/></highlight><highlight class="comment">//<sp/>if<sp/>do<sp/>serial</highlight><highlight class="normal"></highlight></codeline>
@@ -2365,6 +2387,7 @@
 <codeline lineno="2434"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(0);</highlight></codeline>
 <codeline lineno="2435"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="2436"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2442"><highlight class="normal"></highlight></codeline>
 <codeline lineno="2443"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classpco_1a42bd8cb13d6695bb132a0a6ddc949088" kindref="member">pco::resetDimaxMemory</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
 <codeline lineno="2444"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>npixels;</highlight></codeline>
 <codeline lineno="2445"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>pagepixels;</highlight></codeline>
@@ -2426,6 +2449,7 @@
 <codeline lineno="2501"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="2502"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="2503"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2509"><highlight class="normal"></highlight></codeline>
 <codeline lineno="2510"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classpco_1ab29f71bd8712fa5dfa6373f280e092ba" kindref="member">pco::getPcoTimingParams</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
 <codeline lineno="2511"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/>val1;</highlight></codeline>
 <codeline lineno="2512"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>msgx[256];</highlight></codeline>
@@ -2433,8 +2457,8 @@
 <codeline lineno="2514"><highlight class="normal"></highlight></codeline>
 <codeline lineno="2515"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>etb,<sp/>dtb;</highlight></codeline>
 <codeline lineno="2516"><highlight class="normal"></highlight></codeline>
-<codeline lineno="2517"><highlight class="normal"><sp/><sp/><ref refid="classpco__command" kindref="compound">pco_command</ref><sp/>cmd;</highlight></codeline>
-<codeline lineno="2518"><highlight class="normal"><sp/><sp/><ref refid="classpco__response" kindref="compound">pco_response</ref><sp/>rsp;</highlight></codeline>
+<codeline lineno="2517"><highlight class="normal"><sp/><sp/>pco_command<sp/>cmd;</highlight></codeline>
+<codeline lineno="2518"><highlight class="normal"><sp/><sp/>pco_response<sp/>rsp;</highlight></codeline>
 <codeline lineno="2519"><highlight class="normal"></highlight></codeline>
 <codeline lineno="2520"><highlight class="normal"><sp/><sp/>etb<sp/>=<sp/>1e-3;</highlight></codeline>
 <codeline lineno="2521"><highlight class="normal"><sp/><sp/>dtb<sp/>=<sp/>1e-3;</highlight></codeline>
@@ -2558,13 +2582,14 @@
 <codeline lineno="2639"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(0);</highlight></codeline>
 <codeline lineno="2640"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="2641"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2647"><highlight class="normal"></highlight></codeline>
 <codeline lineno="2648"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classpco_1aacfd87f2c6a4570641274a519400fb37" kindref="member">pco::getPcoGeneralParams</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
 <codeline lineno="2649"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/>val1;</highlight></codeline>
 <codeline lineno="2650"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>msgx[256];</highlight></codeline>
 <codeline lineno="2651"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>lval1;</highlight></codeline>
 <codeline lineno="2652"><highlight class="normal"></highlight></codeline>
-<codeline lineno="2653"><highlight class="normal"><sp/><sp/><ref refid="classpco__command" kindref="compound">pco_command</ref><sp/>cmd;</highlight></codeline>
-<codeline lineno="2654"><highlight class="normal"><sp/><sp/><ref refid="classpco__response" kindref="compound">pco_response</ref><sp/>rsp;</highlight></codeline>
+<codeline lineno="2653"><highlight class="normal"><sp/><sp/>pco_command<sp/>cmd;</highlight></codeline>
+<codeline lineno="2654"><highlight class="normal"><sp/><sp/>pco_response<sp/>rsp;</highlight></codeline>
 <codeline lineno="2655"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Get<sp/>Camera<sp/>Type</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2656"><highlight class="normal"><sp/><sp/>cmd.<ref refid="classpco__command_1a4ab34acd27db29f85275dc20e5ae21aa" kindref="member">setCode</ref>(0x0110);</highlight></codeline>
 <codeline lineno="2657"><highlight class="normal"><sp/><sp/>rsp.<ref refid="classpco__response_1adaa31925ed04f729454658d2dff35a45" kindref="member">setErrCode</ref>(0x01D0);</highlight></codeline>
@@ -2667,6 +2692,7 @@
 <codeline lineno="2754"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(0);</highlight></codeline>
 <codeline lineno="2755"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="2756"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2762"><highlight class="normal"></highlight></codeline>
 <codeline lineno="2763"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classpco_1ac8b4be819a2f076d27d286ed1791803c" kindref="member">pco::setPcoGeneralParams</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>function)<sp/>{</highlight></codeline>
 <codeline lineno="2764"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Reset<sp/>Settings<sp/>to<sp/>Default</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2765"><highlight class="normal"></highlight></codeline>
@@ -2674,8 +2700,8 @@
 <codeline lineno="2767"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>function<sp/>==<sp/><ref refid="classpco_1a284d4d3b7843539a6a2faa43d9ca162c" kindref="member">pco_setallparams</ref>)<sp/>{</highlight></codeline>
 <codeline lineno="2768"><highlight class="normal"><sp/><sp/><sp/><sp/>setIntegerParam(<ref refid="classpco_1a3abe20425dcd886ed67506da1387ffa4" kindref="member">pco_reset_default_settings</ref>,<sp/>0);</highlight></codeline>
 <codeline lineno="2769"><highlight class="normal"></highlight></codeline>
-<codeline lineno="2770"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classpco__command" kindref="compound">pco_command</ref><sp/>cmd;</highlight></codeline>
-<codeline lineno="2771"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classpco__response" kindref="compound">pco_response</ref><sp/>rsp;</highlight></codeline>
+<codeline lineno="2770"><highlight class="normal"><sp/><sp/><sp/><sp/>pco_command<sp/>cmd;</highlight></codeline>
+<codeline lineno="2771"><highlight class="normal"><sp/><sp/><sp/><sp/>pco_response<sp/>rsp;</highlight></codeline>
 <codeline lineno="2772"><highlight class="normal"></highlight></codeline>
 <codeline lineno="2773"><highlight class="normal"><sp/><sp/><sp/><sp/>cmd.<ref refid="classpco__command_1a4ab34acd27db29f85275dc20e5ae21aa" kindref="member">setCode</ref>(0x0310);</highlight></codeline>
 <codeline lineno="2774"><highlight class="normal"><sp/><sp/><sp/><sp/>rsp.<ref refid="classpco__response_1a9246408457bdd6114b650f90d25dcf9d" kindref="member">setExpCode</ref>(0x0390);</highlight></codeline>
@@ -2689,8 +2715,8 @@
 <codeline lineno="2782"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(function<sp/>==<sp/><ref refid="classpco_1a02ab70e9e894df6d4594654d2a1a3fc3" kindref="member">pco_init_selftest</ref><sp/>||<sp/>function<sp/>==<sp/><ref refid="classpco_1a284d4d3b7843539a6a2faa43d9ca162c" kindref="member">pco_setallparams</ref>)<sp/>{</highlight></codeline>
 <codeline lineno="2783"><highlight class="normal"><sp/><sp/><sp/><sp/>setIntegerParam(<ref refid="classpco_1a02ab70e9e894df6d4594654d2a1a3fc3" kindref="member">pco_init_selftest</ref>,<sp/>0);</highlight></codeline>
 <codeline lineno="2784"><highlight class="normal"></highlight></codeline>
-<codeline lineno="2785"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classpco__command" kindref="compound">pco_command</ref><sp/>cmd;</highlight></codeline>
-<codeline lineno="2786"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classpco__response" kindref="compound">pco_response</ref><sp/>rsp;</highlight></codeline>
+<codeline lineno="2785"><highlight class="normal"><sp/><sp/><sp/><sp/>pco_command<sp/>cmd;</highlight></codeline>
+<codeline lineno="2786"><highlight class="normal"><sp/><sp/><sp/><sp/>pco_response<sp/>rsp;</highlight></codeline>
 <codeline lineno="2787"><highlight class="normal"></highlight></codeline>
 <codeline lineno="2788"><highlight class="normal"><sp/><sp/><sp/><sp/>cmd.<ref refid="classpco__command_1a4ab34acd27db29f85275dc20e5ae21aa" kindref="member">setCode</ref>(0x0510);</highlight></codeline>
 <codeline lineno="2789"><highlight class="normal"><sp/><sp/><sp/><sp/>rsp.<ref refid="classpco__response_1a9246408457bdd6114b650f90d25dcf9d" kindref="member">setExpCode</ref>(0x0590);</highlight></codeline>
@@ -2709,8 +2735,8 @@
 <codeline lineno="2802"><highlight class="normal"></highlight></codeline>
 <codeline lineno="2803"><highlight class="normal"><sp/><sp/><sp/><sp/>setIntegerParam(ADStatus,<sp/><ref refid="_a_d_driver_8h_1a69820e97c7282152e222297a6d36f72eae5f0661ab013affe1ec15bf297bcf40f" kindref="member">ADStatusWaiting</ref>);</highlight></codeline>
 <codeline lineno="2804"><highlight class="normal"><sp/><sp/><sp/><sp/>callParamCallbacks();</highlight></codeline>
-<codeline lineno="2805"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classpco__command" kindref="compound">pco_command</ref><sp/>cmd;</highlight></codeline>
-<codeline lineno="2806"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classpco__response" kindref="compound">pco_response</ref><sp/>rsp;</highlight></codeline>
+<codeline lineno="2805"><highlight class="normal"><sp/><sp/><sp/><sp/>pco_command<sp/>cmd;</highlight></codeline>
+<codeline lineno="2806"><highlight class="normal"><sp/><sp/><sp/><sp/>pco_response<sp/>rsp;</highlight></codeline>
 <codeline lineno="2807"><highlight class="normal"></highlight></codeline>
 <codeline lineno="2808"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Get<sp/>Camera<sp/>Setup</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2809"><highlight class="normal"><sp/><sp/><sp/><sp/>cmd.<ref refid="classpco__command_1a4ab34acd27db29f85275dc20e5ae21aa" kindref="member">setCode</ref>(0x1110);</highlight></codeline>
@@ -2814,10 +2840,11 @@
 <codeline lineno="2907"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(0);</highlight></codeline>
 <codeline lineno="2908"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="2909"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2915"><highlight class="normal"></highlight></codeline>
 <codeline lineno="2916"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classpco_1ab5501068659f6f8476e49d0ce4734495" kindref="member">pco::setPcoSensorParams</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>function)<sp/>{</highlight></codeline>
 <codeline lineno="2917"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>mesgxx[256];</highlight></codeline>
-<codeline lineno="2918"><highlight class="normal"><sp/><sp/><ref refid="classpco__command" kindref="compound">pco_command</ref><sp/>cmd;</highlight></codeline>
-<codeline lineno="2919"><highlight class="normal"><sp/><sp/><ref refid="classpco__response" kindref="compound">pco_response</ref><sp/>rsp;</highlight></codeline>
+<codeline lineno="2918"><highlight class="normal"><sp/><sp/>pco_command<sp/>cmd;</highlight></codeline>
+<codeline lineno="2919"><highlight class="normal"><sp/><sp/>pco_response<sp/>rsp;</highlight></codeline>
 <codeline lineno="2920"><highlight class="normal"></highlight></codeline>
 <codeline lineno="2921"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Set<sp/>Sensor<sp/>Format</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2922"><highlight class="normal"></highlight></codeline>
@@ -2870,9 +2897,9 @@
 <codeline lineno="2969"><highlight class="normal"><sp/><sp/><sp/><sp/>x1<sp/>=<sp/>getIntParam(ADSizeX)<sp/>+<sp/>getIntParam(ADMinX)<sp/>-<sp/>1;</highlight></codeline>
 <codeline lineno="2970"><highlight class="normal"><sp/><sp/><sp/><sp/>y1<sp/>=<sp/>getIntParam(ADSizeY)<sp/>+<sp/>getIntParam(ADMinY)<sp/>-<sp/>1;</highlight></codeline>
 <codeline lineno="2971"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>in<sp/>dimax<sp/>pco_desc.wRoiHorStepsDESC<sp/>is<sp/>24.<sp/>We<sp/>use<sp/>48<sp/>,<sp/>so<sp/>we<sp/>have</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="2972"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>divisable<sp/>by<sp/>16<sp/>too,<sp/>for<sp/>grabber.</highlight></codeline>
+<codeline lineno="2972"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>divisable<sp/>by<sp/>16<sp/>too,<sp/>for<sp/>grabber.</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2974"><highlight class="normal"></highlight></codeline>
-<codeline lineno="2975"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>magic_number<sp/>=<sp/><ref refid="classpco_1a2aa7e93e52017a7a467501ea9f521bcf" kindref="member">pco_desc</ref>.<ref refid="structx_p_c_o___description_1a9cf90f5f94b69c20eb37a005d15e9bb8" kindref="member">wRoiHorStepsDESC</ref>;</highlight></codeline>
+<codeline lineno="2975"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>magic_number<sp/>=<sp/><ref refid="classpco_1a2aa7e93e52017a7a467501ea9f521bcf" kindref="member">pco_desc</ref>.wRoiHorStepsDESC;</highlight></codeline>
 <codeline lineno="2976"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(magic_number<sp/>&gt;<sp/>2560)<sp/>{</highlight></codeline>
 <codeline lineno="2977"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>magic_number<sp/>=<sp/>16;</highlight></codeline>
 <codeline lineno="2978"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Problem<sp/>with<sp/>magic<sp/>number\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
@@ -2882,7 +2909,7 @@
 <codeline lineno="2982"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="2983"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;magic<sp/>number<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>magic_number);</highlight></codeline>
 <codeline lineno="2984"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>magicd<sp/>=<sp/>(double)magic_number;</highlight></codeline>
-<codeline lineno="2985"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>make<sp/>size<sp/>x<sp/>by<sp/>divisible<sp/>by<sp/>twice<sp/>mag<sp/>number</highlight></codeline>
+<codeline lineno="2985"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>make<sp/>size<sp/>x<sp/>by<sp/>divisible<sp/>by<sp/>twice<sp/>mag<sp/>number</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2991"><highlight class="normal"></highlight></codeline>
 <codeline lineno="2992"><highlight class="normal"><sp/><sp/><sp/><sp/>x0<sp/>=<sp/>1.0<sp/>+<sp/>(floor(((x0<sp/>-<sp/>1.0)<sp/>/<sp/>magicd)<sp/>+<sp/>0.5)<sp/>*<sp/>magicd);</highlight></codeline>
 <codeline lineno="2993"><highlight class="normal"><sp/><sp/><sp/><sp/>x1<sp/>=<sp/>(floor(((x1)<sp/>/<sp/>magicd)<sp/>+<sp/>0.5)<sp/>*<sp/>magicd);</highlight></codeline>
@@ -2893,7 +2920,7 @@
 <codeline lineno="2998"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>y0<sp/>=<sp/>1;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2999"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>y1<sp/>=<sp/>sizey;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="3000"><highlight class="normal"></highlight></codeline>
-<codeline lineno="3001"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>vsteps<sp/>=<sp/>2<sp/>*<sp/><ref refid="classpco_1a2aa7e93e52017a7a467501ea9f521bcf" kindref="member">pco_desc</ref>.<ref refid="structx_p_c_o___description_1a7931dd961e26e014df1de3630b4ae3f6" kindref="member">wRoiVertStepsDESC</ref>;</highlight></codeline>
+<codeline lineno="3001"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>vsteps<sp/>=<sp/>2<sp/>*<sp/><ref refid="classpco_1a2aa7e93e52017a7a467501ea9f521bcf" kindref="member">pco_desc</ref>.wRoiVertStepsDESC;</highlight></codeline>
 <codeline lineno="3002"><highlight class="normal"><sp/><sp/><sp/><sp/>y0<sp/>=<sp/>1.0<sp/>+<sp/>(floor(((y0<sp/>-<sp/>1.0)<sp/>/<sp/>vsteps)<sp/>+<sp/>0.5)<sp/>*<sp/>vsteps);</highlight></codeline>
 <codeline lineno="3003"><highlight class="normal"><sp/><sp/><sp/><sp/>y1<sp/>=<sp/>(floor(((y1)<sp/>/<sp/>vsteps)<sp/>+<sp/>0.5)<sp/>*<sp/>vsteps);</highlight></codeline>
 <codeline lineno="3004"><highlight class="normal"></highlight></codeline>
@@ -3128,9 +3155,10 @@
 <codeline lineno="3233"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(0);</highlight></codeline>
 <codeline lineno="3234"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="3235"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3241"><highlight class="normal"></highlight></codeline>
 <codeline lineno="3242"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classpco_1ad34c444e4cd85368ddad0e3bb98426ae" kindref="member">pco::getPcoSensorParams</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
-<codeline lineno="3243"><highlight class="normal"><sp/><sp/><ref refid="classpco__command" kindref="compound">pco_command</ref><sp/>cmd;</highlight></codeline>
-<codeline lineno="3244"><highlight class="normal"><sp/><sp/><ref refid="classpco__response" kindref="compound">pco_response</ref><sp/>rsp;</highlight></codeline>
+<codeline lineno="3243"><highlight class="normal"><sp/><sp/>pco_command<sp/>cmd;</highlight></codeline>
+<codeline lineno="3244"><highlight class="normal"><sp/><sp/>pco_response<sp/>rsp;</highlight></codeline>
 <codeline lineno="3245"><highlight class="normal"></highlight></codeline>
 <codeline lineno="3246"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Get<sp/>Camera<sp/>Description</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="3247"><highlight class="normal"><sp/><sp/>cmd.<ref refid="classpco__command_1a4ab34acd27db29f85275dc20e5ae21aa" kindref="member">setCode</ref>(0x0111);</highlight></codeline>

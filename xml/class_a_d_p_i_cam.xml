@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="class_a_d_p_i_cam" kind="class" language="C++" prot="public">
     <compoundname>ADPICam</compoundname>
     <basecompoundref refid="class_a_d_driver" prot="public" virt="non-virtual">ADDriver</basecompoundref>
@@ -6822,7 +6822,7 @@
           <declname>picamParameter</declname>
         </param>
         <briefdescription>
-<para>Create and Index parameters associated (exists and relevant) with PI parameter that is mapped to an existing AD parameter (from <ref refid="class_a_d_driver" kindref="compound">ADDriver</ref> base class) </para>
+<para>Create and Index parameters associated (exists and relevant) with PI parameter that is mapped to an existing AD parameter (from <ref refid="class_a_d_driver" kindref="compound">ADDriver</ref> base class). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -6853,7 +6853,7 @@
           <declname>picamParameter</declname>
         </param>
         <briefdescription>
-<para>Create and Index parameters associated with awareness (exists and relevant) </para>
+<para>Create and Index parameters associated with awareness (exists and relevant). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -6892,7 +6892,7 @@
           <declname>picamParameter</declname>
         </param>
         <briefdescription>
-<para>Create and Index parameters associated (exists and relevant) with PI parameter that is mapped to an parameter defined by this class (<ref refid="class_a_d_p_i_cam" kindref="compound">ADPICam</ref>) </para>
+<para>Create and Index parameters associated (exists and relevant) with PI parameter that is mapped to an parameter defined by this class (<ref refid="class_a_d_p_i_cam" kindref="compound">ADPICam</ref>). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -6923,7 +6923,7 @@
           <declname>picamParameter</declname>
         </param>
         <briefdescription>
-<para>Create and Index parameters associated (exists and relevant) with PI parameter that is mapped to an parameter defined by this class (<ref refid="class_a_d_p_i_cam" kindref="compound">ADPICam</ref>) </para>
+<para>Create and Index parameters associated (exists and relevant) with PI parameter that is mapped to an parameter defined by this class (<ref refid="class_a_d_p_i_cam" kindref="compound">ADPICam</ref>). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -6954,7 +6954,7 @@
           <declname>picamParameter</declname>
         </param>
         <briefdescription>
-<para>Create and Index parameters associated (exists and relevant) with PI parameter that is mapped to an parameter defined by this class (<ref refid="class_a_d_p_i_cam" kindref="compound">ADPICam</ref>) </para>
+<para>Create and Index parameters associated (exists and relevant) with PI parameter that is mapped to an parameter defined by this class (<ref refid="class_a_d_p_i_cam" kindref="compound">ADPICam</ref>). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -6985,7 +6985,7 @@
           <declname>picamParameter</declname>
         </param>
         <briefdescription>
-<para>Create and Index parameters associated (exists and relevant) with PI parameter that is mapped to an parameter defined by this class (<ref refid="class_a_d_p_i_cam" kindref="compound">ADPICam</ref>) </para>
+<para>Create and Index parameters associated (exists and relevant) with PI parameter that is mapped to an parameter defined by this class (<ref refid="class_a_d_p_i_cam" kindref="compound">ADPICam</ref>). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -7585,9 +7585,6 @@
       <node id="9">
         <label>Codec_t</label>
         <link refid="struct_codec__t"/>
-        <childnode refid="10" relation="usage">
-          <edgelabel>name</edgelabel>
-        </childnode>
       </node>
       <node id="6">
         <label>NDArray</label>
@@ -7637,9 +7634,6 @@
       </node>
       <node id="4">
         <label>asynPortDriver</label>
-      </node>
-      <node id="10">
-        <label>string</label>
       </node>
     </collaborationgraph>
     <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPICam/PICamApp/src/ADPICam.h" line="29" column="1" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPICam/PICamApp/src/ADPICam.h" bodystart="29" bodyend="624"/>

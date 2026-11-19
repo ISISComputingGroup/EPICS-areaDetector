@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="class_a_d_gen_i_cam" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>ADGenICam</compoundname>
     <basecompoundref refid="class_a_d_driver" prot="public" virt="non-virtual">ADDriver</basecompoundref>
@@ -878,18 +878,15 @@ Takes action if the function code requires it. </para>
         <link refid="class_a_d_gen_i_cam"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
-        <childnode refid="11" relation="usage">
+        <childnode refid="10" relation="usage">
           <edgelabel>mGCFeatureSet</edgelabel>
         </childnode>
       </node>
       <node id="9">
         <label>Codec_t</label>
         <link refid="struct_codec__t"/>
-        <childnode refid="10" relation="usage">
-          <edgelabel>name</edgelabel>
-        </childnode>
       </node>
-      <node id="11">
+      <node id="10">
         <label>GenICamFeatureSet</label>
         <link refid="class_gen_i_cam_feature_set"/>
       </node>
@@ -941,9 +938,6 @@ Takes action if the function code requires it. </para>
       </node>
       <node id="4">
         <label>asynPortDriver</label>
-      </node>
-      <node id="10">
-        <label>string</label>
       </node>
     </collaborationgraph>
     <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADGenICam/GenICamApp/src/ADGenICam.h" line="24" column="1" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADGenICam/GenICamApp/src/ADGenICam.h" bodystart="25" bodyend="74"/>

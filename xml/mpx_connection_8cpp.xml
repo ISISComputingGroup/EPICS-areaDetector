@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="mpx_connection_8cpp" kind="file" language="C++">
     <compoundname>mpxConnection.cpp</compoundname>
     <includes local="no">stdlib.h</includes>
@@ -460,8 +460,8 @@
 <codeline lineno="241"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="242"><highlight class="normal"></highlight></codeline>
 <codeline lineno="243"><highlight class="normal"></highlight></codeline>
-<codeline lineno="244"><highlight class="normal"></highlight><highlight class="comment">//</highlight></codeline>
-<codeline lineno="249"><highlight class="comment">//void<sp/>mpxConnection::parseDataFrame(NDAttributeList*<sp/>pAttr,<sp/>const<sp/>char*<sp/>header,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="244"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="249"><highlight class="normal"></highlight><highlight class="comment">//void<sp/>mpxConnection::parseDataFrame(NDAttributeList*<sp/>pAttr,<sp/>const<sp/>char*<sp/>header,</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="250"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>merlinDataHeader<sp/>headerType,<sp/>size_t<sp/>*xsize,<sp/>size_t<sp/>*ysize,</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="251"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>int*<sp/>pixelSize,<sp/>int*<sp/>profileMask)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="252"><highlight class="normal"></highlight><highlight class="comment">//{</highlight><highlight class="normal"></highlight></codeline>
@@ -777,7 +777,7 @@
 <codeline lineno="568"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s:%s,<sp/>status=%d,<sp/>sent\n%s\n&quot;</highlight><highlight class="normal">,<sp/>driverName,<sp/>functionName,</highlight></codeline>
 <codeline lineno="569"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status,<sp/>this-&gt;<ref refid="classmpx_connection_1a9c48a2ec516fbf12cdf95589b677d31b" kindref="member">toLabview</ref>);</highlight></codeline>
 <codeline lineno="570"><highlight class="normal"></highlight></codeline>
-<codeline lineno="571"><highlight class="normal"><sp/><sp/><sp/><sp/>parentObj-&gt;<ref refid="classmerlin_detector_1abb42ae30046ed44cca2c876a3326d37f" kindref="member">toLabViewStr</ref>(this-&gt;<ref refid="classmpx_connection_1a9c48a2ec516fbf12cdf95589b677d31b" kindref="member">toLabview</ref>);</highlight></codeline>
+<codeline lineno="571"><highlight class="normal"><sp/><sp/><sp/><sp/>parentObj-&gt;toLabViewStr(this-&gt;<ref refid="classmpx_connection_1a9c48a2ec516fbf12cdf95589b677d31b" kindref="member">toLabview</ref>);</highlight></codeline>
 <codeline lineno="572"><highlight class="normal"></highlight></codeline>
 <codeline lineno="573"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>asynSuccess;</highlight></codeline>
 <codeline lineno="574"><highlight class="normal">}</highlight></codeline>
@@ -952,7 +952,7 @@
 <codeline lineno="760"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strncpy(<ref refid="classmpx_connection_1a3c1673f2d4938ec0a3695127c4610c7f" kindref="member">fromLabview</ref>,<sp/><ref refid="classmpx_connection_1a673d6c3d1dbe8cf552864b0b4bdc5934" kindref="member">fromLabviewHeader</ref>,<sp/><ref refid="merlin__low_8h_1a783ca881fc669116765f87e1bdfc6a8b" kindref="member">MPX_MAXLINE</ref>);</highlight></codeline>
 <codeline lineno="761"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strncat(<ref refid="classmpx_connection_1a3c1673f2d4938ec0a3695127c4610c7f" kindref="member">fromLabview</ref>,<sp/><ref refid="classmpx_connection_1a811dd9a77f088e4bb0a88b177f708bbf" kindref="member">fromLabviewBody</ref>,<sp/><ref refid="merlin__low_8h_1a783ca881fc669116765f87e1bdfc6a8b" kindref="member">MPX_MAXLINE</ref>);</highlight></codeline>
 <codeline lineno="762"><highlight class="normal"></highlight></codeline>
-<codeline lineno="763"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>parentObj-&gt;<ref refid="classmerlin_detector_1a897d0bab3074f723f224eba6b9a2153a" kindref="member">fromLabViewStr</ref>(this-&gt;<ref refid="classmpx_connection_1a3c1673f2d4938ec0a3695127c4610c7f" kindref="member">fromLabview</ref>);</highlight></codeline>
+<codeline lineno="763"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>parentObj-&gt;fromLabViewStr(this-&gt;<ref refid="classmpx_connection_1a3c1673f2d4938ec0a3695127c4610c7f" kindref="member">fromLabview</ref>);</highlight></codeline>
 <codeline lineno="764"><highlight class="normal"></highlight></codeline>
 <codeline lineno="765"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>items<sp/>in<sp/>the<sp/>response<sp/>are<sp/>comma<sp/>delimited<sp/>-</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="766"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>1st<sp/>item<sp/>is<sp/>the<sp/>command<sp/>type</highlight><highlight class="normal"></highlight></codeline>

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="_n_d_file_h_d_f5_layout_x_m_l_8cpp" kind="file" language="C++">
     <compoundname>NDFileHDF5LayoutXML.cpp</compoundname>
     <includes local="no">cstdlib</includes>
@@ -360,7 +360,7 @@
 <codeline lineno="264"><highlight class="normal"></highlight></codeline>
 <codeline lineno="268"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>LayoutXML::process_node()</highlight></codeline>
 <codeline lineno="269"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
-<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/>xmlReaderTypes<sp/>type<sp/>=<sp/>(xmlReaderTypes)xmlTextReaderNodeType(this-&gt;xmlreader);</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/>xmlReaderTypes<sp/><ref refid="struct_make_unsigned_impl" kindref="compound">type</ref><sp/>=<sp/>(xmlReaderTypes)xmlTextReaderNodeType(this-&gt;xmlreader);</highlight></codeline>
 <codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ret<sp/>=<sp/>0;</highlight></codeline>
 <codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>xmlChar*<sp/>xmlname<sp/>=<sp/>NULL;</highlight></codeline>
 <codeline lineno="273"><highlight class="normal"></highlight></codeline>
@@ -370,7 +370,7 @@
 <codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="278"><highlight class="normal"></highlight></codeline>
 <codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="namespacemake_db_and_edl_1a2832407c256551abb325d5ee9e587443" kindref="member">name</ref>((</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*)xmlname);</highlight></codeline>
-<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal">(<sp/>type<sp/>)</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal">(<sp/><ref refid="struct_make_unsigned_impl" kindref="compound">type</ref><sp/>)</highlight></codeline>
 <codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Elements<sp/>can<sp/>be<sp/>either<sp/>&apos;group&apos;,<sp/>&apos;dataset&apos;<sp/>or<sp/>&apos;attribute&apos;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>XML_READER_TYPE_ELEMENT:</highlight></codeline>

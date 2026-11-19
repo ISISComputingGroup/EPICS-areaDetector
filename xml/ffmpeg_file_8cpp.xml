@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="ffmpeg_file_8cpp" kind="file" language="C++">
     <compoundname>ffmpegFile.cpp</compoundname>
     <includes refid="ffmpeg_common_8h" local="yes">ffmpegCommon.h</includes>
@@ -391,7 +391,7 @@
         </briefdescription>
         <detaileddescription>
 <para>Called directly, or from the iocsh function, calls <ref refid="classffmpeg_file" kindref="compound">ffmpegFile</ref> constructor:</para>
-<para>Constructor for <ref refid="classffmpeg_file" kindref="compound">ffmpegFile</ref>; all parameters are simply passed to <ref refid="class_n_d_plugin_file_1a59d1b76dfbef43310a6a5628fdfcc655" kindref="member">NDPluginFile::NDPluginFile</ref>.  </para>
+<para>Constructor for <ref refid="classffmpeg_file" kindref="compound">ffmpegFile</ref>; all parameters are simply passed to <ref refid="class_n_d_plugin_file_1a59d1b76dfbef43310a6a5628fdfcc655" kindref="member">NDPluginFile::NDPluginFile</ref>.   </para>
 <para><ref refid="ffmpeg_file_8cpp_1a872787bb0b74e15e104f396020d8ae58" kindref="member">ffmpegFileConfigure()</ref> should be used to create an instance in the iocsh. See ffmpegStream.template for more details of usage. <verbatim>\param[in] portName The name of the asyn port driver to be created.
 \param[in] queueSize The number of NDArrays that the input queue for this plugin can hold when 
            NDPluginDriverBlockingCallbacks=0.  Larger queues can decrease the number of dropped arrays,
@@ -403,7 +403,7 @@
 \param[in] NDArrayAddr asyn port driver address for initial source of NDArray callbacks.
 \param[in] priority The thread priority for the asyn port driver thread if ASYN_CANBLOCK is set in asynFlags.
 \param[in] stackSize The stack size for the asyn port driver thread if ASYN_CANBLOCK is set in asynFlags.
-</verbatim>   </para>
+</verbatim>    </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -477,6 +477,7 @@
 <codeline lineno="7"><highlight class="normal"></highlight></codeline>
 <codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*driverName2<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;ffmpegFile&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/></highlight></codeline>
 <codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">/**************************************************************/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="18"><highlight class="normal"></highlight></codeline>
 <codeline lineno="19"><highlight class="normal">asynStatus<sp/><ref refid="classffmpeg_file_1a9ed8ae7dbff372476b59cf7e310456ba" kindref="member">ffmpegFile::openFile</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*filename,<sp/><ref refid="_n_d_plugin_file_8h_1a0585278ac7a80661367c32f62ad6c653" kindref="member">NDFileOpenMode_t</ref><sp/>openMode,<sp/><ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*pArray)</highlight></codeline>
@@ -646,26 +647,26 @@
 <codeline lineno="183"><highlight class="normal"></highlight></codeline>
 <codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>alloc<sp/>array<sp/>for<sp/>output<sp/>and<sp/>compression<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(scArray)<sp/>{</highlight></codeline>
-<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>scArray-&gt;<ref refid="class_n_d_array_1a0c4c61ea4d44ce97db979d24305c996e" kindref="member">release</ref>();</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>scArray-&gt;release();</highlight></codeline>
 <codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>scArray<sp/>=<sp/>NULL;</highlight></codeline>
 <codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(outArray)<sp/>{</highlight></codeline>
-<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>outArray-&gt;<ref refid="class_n_d_array_1a0c4c61ea4d44ce97db979d24305c996e" kindref="member">release</ref>();</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>outArray-&gt;release();</highlight></codeline>
 <codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>outArray<sp/>=<sp/>NULL;</highlight></codeline>
 <codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="193"><highlight class="normal"></highlight></codeline>
-<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/>scArray<sp/>=<sp/>this-&gt;<ref refid="classasyn_n_d_array_driver_1ad3969854a37329ef4061cc560e9022dc" kindref="member">pNDArrayPool</ref>-&gt;<ref refid="class_n_d_array_pool_1a26b4360694655c4af6c853c2f3d2ce5e" kindref="member">alloc</ref>(1,<sp/>&amp;outSize,<sp/><ref refid="_n_d_attribute_8h_1a34b835bcabc3b7f546f4b25c5767cb16aa4bc4803d2c1a0073497f0b4b4d2243f" kindref="member">NDInt8</ref>,<sp/>0,<sp/>NULL);</highlight></codeline>
-<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/>outArray<sp/>=<sp/>this-&gt;<ref refid="classasyn_n_d_array_driver_1ad3969854a37329ef4061cc560e9022dc" kindref="member">pNDArrayPool</ref>-&gt;<ref refid="class_n_d_array_pool_1a26b4360694655c4af6c853c2f3d2ce5e" kindref="member">alloc</ref>(1,<sp/>&amp;outSize,<sp/><ref refid="_n_d_attribute_8h_1a34b835bcabc3b7f546f4b25c5767cb16aa4bc4803d2c1a0073497f0b4b4d2243f" kindref="member">NDInt8</ref>,<sp/>0,<sp/>NULL);</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/>scArray<sp/>=<sp/>this-&gt;<ref refid="classasyn_n_d_array_driver_1ad3969854a37329ef4061cc560e9022dc" kindref="member">pNDArrayPool</ref>-&gt;alloc(1,<sp/>&amp;outSize,<sp/><ref refid="_n_d_attribute_8h_1a34b835bcabc3b7f546f4b25c5767cb16aa4bc4803d2c1a0073497f0b4b4d2243f" kindref="member">NDInt8</ref>,<sp/>0,<sp/>NULL);</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/>outArray<sp/>=<sp/>this-&gt;<ref refid="classasyn_n_d_array_driver_1ad3969854a37329ef4061cc560e9022dc" kindref="member">pNDArrayPool</ref>-&gt;alloc(1,<sp/>&amp;outSize,<sp/><ref refid="_n_d_attribute_8h_1a34b835bcabc3b7f546f4b25c5767cb16aa4bc4803d2c1a0073497f0b4b4d2243f" kindref="member">NDInt8</ref>,<sp/>0,<sp/>NULL);</highlight></codeline>
 <codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(scArray<sp/>==<sp/>NULL<sp/>||<sp/>outArray<sp/>==<sp/>NULL)<sp/>{</highlight></codeline>
 <codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>asynPrint(this-&gt;pasynUserSelf,<sp/>ASYN_TRACE_ERROR,</highlight></codeline>
 <codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s:%s<sp/>error<sp/>allocating<sp/>arrays\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
 <codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName2,<sp/>functionName);</highlight></codeline>
 <codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(scArray)<sp/>{</highlight></codeline>
-<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>scArray-&gt;<ref refid="class_n_d_array_1a0c4c61ea4d44ce97db979d24305c996e" kindref="member">release</ref>();</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>scArray-&gt;release();</highlight></codeline>
 <codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>scArray<sp/>=<sp/>NULL;</highlight></codeline>
 <codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(outArray)<sp/>{</highlight></codeline>
-<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>outArray-&gt;<ref refid="class_n_d_array_1a0c4c61ea4d44ce97db979d24305c996e" kindref="member">release</ref>();</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>outArray-&gt;release();</highlight></codeline>
 <codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>outArray<sp/>=<sp/>NULL;</highlight></codeline>
 <codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">(asynError);</highlight></codeline>
@@ -674,7 +675,7 @@
 <codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>alloc<sp/>in<sp/>and<sp/>scaled<sp/>pictures<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/>inPicture<sp/>=<sp/>av_frame_alloc();</highlight></codeline>
 <codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/>scPicture<sp/>=<sp/>av_frame_alloc();</highlight></codeline>
-<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>avpicture_fill((AVPicture<sp/>*)scPicture,(uint8_t<sp/>*)scArray-&gt;<ref refid="class_n_d_array_1a9581f9d8f38225a2c2977bbed70fa2b8" kindref="member">pData</ref>,c-&gt;pix_fmt,c-&gt;width,c-&gt;height);<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>avpicture_fill((AVPicture<sp/>*)scPicture,(uint8_t<sp/>*)scArray-&gt;pData,c-&gt;pix_fmt,c-&gt;width,c-&gt;height);<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/>scPicture-&gt;pts<sp/>=<sp/>0;</highlight></codeline>
 <codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>needStop<sp/>=<sp/>1;</highlight></codeline>
 <codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">(asynSuccess);</highlight></codeline>
@@ -782,11 +783,11 @@
 <codeline lineno="326"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>free<sp/>the<sp/>stream<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="327"><highlight class="normal"><sp/><sp/><sp/><sp/>av_free(oc);</highlight></codeline>
 <codeline lineno="328"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(scArray)<sp/>{</highlight></codeline>
-<codeline lineno="329"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>scArray-&gt;<ref refid="class_n_d_array_1a0c4c61ea4d44ce97db979d24305c996e" kindref="member">release</ref>();</highlight></codeline>
+<codeline lineno="329"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>scArray-&gt;release();</highlight></codeline>
 <codeline lineno="330"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>scArray<sp/>=<sp/>NULL;</highlight></codeline>
 <codeline lineno="331"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="332"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(outArray)<sp/>{</highlight></codeline>
-<codeline lineno="333"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>outArray-&gt;<ref refid="class_n_d_array_1a0c4c61ea4d44ce97db979d24305c996e" kindref="member">release</ref>();</highlight></codeline>
+<codeline lineno="333"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>outArray-&gt;release();</highlight></codeline>
 <codeline lineno="334"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>outArray<sp/>=<sp/>NULL;</highlight></codeline>
 <codeline lineno="335"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="336"><highlight class="normal"></highlight></codeline>
@@ -857,6 +858,7 @@
 <codeline lineno="426"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="427"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="428"><highlight class="normal"></highlight></codeline>
+<codeline lineno="433"><highlight class="normal"></highlight></codeline>
 <codeline lineno="434"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="ffmpeg_file_8cpp_1a872787bb0b74e15e104f396020d8ae58" kindref="member">ffmpegFileConfigure</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*portName,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>queueSize,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>blockingCallbacks,</highlight></codeline>
 <codeline lineno="435"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*NDArrayPort,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NDArrayAddr,</highlight></codeline>
 <codeline lineno="436"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>priority,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>stackSize)</highlight></codeline>

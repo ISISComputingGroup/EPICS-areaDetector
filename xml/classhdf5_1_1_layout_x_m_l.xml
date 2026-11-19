@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="classhdf5_1_1_layout_x_m_l" kind="class" language="C++" prot="public">
     <compoundname>hdf5::LayoutXML</compoundname>
     <includes refid="_n_d_file_h_d_f5_layout_x_m_l_8h" local="no">NDFileHDF5LayoutXML.h</includes>
@@ -372,29 +372,29 @@
         <qualifiedname>hdf5::LayoutXML::DEFAULT_LAYOUT</qualifiedname>
         <initializer>= &quot; \
   &lt;group name=\&quot;entry\&quot;&gt; \
-    &lt;attribute name=\&quot;NX_class\&quot; source=\&quot;constant\&quot; value=\&quot;NXentry\&quot; type=\&quot;string\&quot;&gt;&lt;/attribute&gt; \
+    &lt;attribute name=\&quot;NX_class\&quot; source=\&quot;constant\&quot; value=\&quot;NXentry\&quot; <ref refid="struct_make_unsigned_impl" kindref="compound">type</ref>=\&quot;string\&quot;&gt;&lt;/attribute&gt; \
     &lt;group name=\&quot;instrument\&quot;&gt; \
-      &lt;attribute name=\&quot;NX_class\&quot; source=\&quot;constant\&quot; value=\&quot;NXinstrument\&quot; type=\&quot;string\&quot;&gt;&lt;/attribute&gt; \
+      &lt;attribute name=\&quot;NX_class\&quot; source=\&quot;constant\&quot; value=\&quot;NXinstrument\&quot; <ref refid="struct_make_unsigned_impl" kindref="compound">type</ref>=\&quot;string\&quot;&gt;&lt;/attribute&gt; \
       &lt;group name=\&quot;detector\&quot;&gt; \
-        &lt;attribute name=\&quot;NX_class\&quot; source=\&quot;constant\&quot; value=\&quot;NXdetector\&quot; type=\&quot;string\&quot;&gt;&lt;/attribute&gt; \
+        &lt;attribute name=\&quot;NX_class\&quot; source=\&quot;constant\&quot; value=\&quot;NXdetector\&quot; <ref refid="struct_make_unsigned_impl" kindref="compound">type</ref>=\&quot;string\&quot;&gt;&lt;/attribute&gt; \
         &lt;dataset name=\&quot;data\&quot; source=\&quot;detector\&quot; det_default=\&quot;true\&quot;&gt; \
-          &lt;attribute name=\&quot;signal\&quot; source=\&quot;constant\&quot; value=\&quot;1\&quot; type=\&quot;int\&quot;&gt;&lt;/attribute&gt; \
+          &lt;attribute name=\&quot;signal\&quot; source=\&quot;constant\&quot; value=\&quot;1\&quot; <ref refid="struct_make_unsigned_impl" kindref="compound">type</ref>=\&quot;int\&quot;&gt;&lt;/attribute&gt; \
         &lt;/dataset&gt; \
         &lt;group name=\&quot;NDAttributes\&quot;&gt; \
-          &lt;attribute name=\&quot;NX_class\&quot; source=\&quot;constant\&quot; value=\&quot;NXcollection\&quot; type=\&quot;string\&quot;&gt;&lt;/attribute&gt; \
+          &lt;attribute name=\&quot;NX_class\&quot; source=\&quot;constant\&quot; value=\&quot;NXcollection\&quot; <ref refid="struct_make_unsigned_impl" kindref="compound">type</ref>=\&quot;string\&quot;&gt;&lt;/attribute&gt; \
           &lt;dataset name=\&quot;ColorMode\&quot; source=\&quot;ndattribute\&quot; <ref refid="namespacehdf5_1a35f510139e8a82f80a2e0487f82078a8a9666c3192f02a51b1d2fa1907c2c7cc6" kindref="member">ndattribute</ref>=\&quot;ColorMode\&quot;&gt; \
           &lt;/dataset&gt; \
         &lt;/group&gt;          &lt;!-- end group <ref refid="class_n_d_attribute" kindref="compound">NDAttribute</ref> --&gt; \
       &lt;/group&gt;            &lt;!-- end group <ref refid="namespacehdf5_1a35f510139e8a82f80a2e0487f82078a8a9b2ce7fbca521a5b3b440b7d598b72df" kindref="member">detector</ref> --&gt; \
       &lt;group name=\&quot;NDAttributes\&quot; ndattr_default=\&quot;true\&quot;&gt; \
-        &lt;attribute name=\&quot;NX_class\&quot; source=\&quot;constant\&quot; value=\&quot;NXcollection\&quot; type=\&quot;string\&quot;&gt;&lt;/attribute&gt; \
+        &lt;attribute name=\&quot;NX_class\&quot; source=\&quot;constant\&quot; value=\&quot;NXcollection\&quot; <ref refid="struct_make_unsigned_impl" kindref="compound">type</ref>=\&quot;string\&quot;&gt;&lt;/attribute&gt; \
       &lt;/group&gt;            &lt;!-- end group <ref refid="class_n_d_attribute" kindref="compound">NDAttribute</ref> (default) --&gt; \
       &lt;group name=\&quot;performance\&quot;&gt; \
         &lt;dataset name=\&quot;timestamp\&quot;&gt;&lt;/dataset&gt; \
       &lt;/group&gt;            &lt;!-- end group performance --&gt; \
     &lt;/group&gt;              &lt;!-- end group instrument --&gt; \
     &lt;group name=\&quot;data\&quot;&gt; \
-      &lt;attribute name=\&quot;NX_class\&quot; source=\&quot;constant\&quot; value=\&quot;NXdata\&quot; type=\&quot;string\&quot;&gt;&lt;/attribute&gt; \
+      &lt;attribute name=\&quot;NX_class\&quot; source=\&quot;constant\&quot; value=\&quot;NXdata\&quot; <ref refid="struct_make_unsigned_impl" kindref="compound">type</ref>=\&quot;string\&quot;&gt;&lt;/attribute&gt; \
       &lt;hardlink name=\&quot;data\&quot; target=\&quot;/entry/instrument/<ref refid="namespacehdf5_1a35f510139e8a82f80a2e0487f82078a8a9b2ce7fbca521a5b3b440b7d598b72df" kindref="member">detector</ref>/data\&quot;&gt;&lt;/hardlink&gt; \
     &lt;/group&gt;              &lt;!-- end group data --&gt; \
   &lt;/group&gt;                &lt;!-- end group entry --&gt; &quot;</initializer>

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="structeiger__min__max__t" kind="struct" language="C++" prot="public">
     <compoundname>eiger_min_max_t</compoundname>
     <includes refid="eiger_param_8h" local="no">eigerParam.h</includes>
@@ -46,7 +46,7 @@
         </inbodydescription>
         <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADEiger/eigerApp/src/eigerParam.h" line="37" column="16" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADEiger/eigerApp/src/eigerParam.h" bodystart="37" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="structeiger__min__max__t_1a212fc2a0e7d36117bdb3db6368ebe2a6" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="structeiger__min__max__t_1a99b4040fdab1dbc5b47eca1b814bea31" prot="public" static="no" mutable="no">
         <type>union <ref refid="structeiger__min__max__t" kindref="compound">eiger_min_max_t</ref></type>
         <definition>union eiger_min_max_t eiger_min_max_t</definition>
         <argsstring></argsstring>

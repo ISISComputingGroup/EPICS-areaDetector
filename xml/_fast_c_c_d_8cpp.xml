@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="_fast_c_c_d_8cpp" kind="file" language="C++">
     <compoundname>FastCCD.cpp</compoundname>
     <includes local="no">stdio.h</includes>
@@ -882,6 +882,7 @@
     </detaileddescription>
     <programlisting>
 <codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
 <codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
@@ -1015,14 +1016,14 @@
 <codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>dims[1]<sp/>=<sp/>CIN_DATA_MAX_FRAME_Y;</highlight></codeline>
 <codeline lineno="138"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="139"><highlight class="normal"></highlight></codeline>
-<codeline lineno="140"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(!(<ref refid="class_fast_c_c_d_1a1ed1060dcb5fc7eefc7882b2ec4184e3" kindref="member">pImage</ref><sp/>=<sp/>this-&gt;<ref refid="classasyn_n_d_array_driver_1ad3969854a37329ef4061cc560e9022dc" kindref="member">pNDArrayPool</ref>-&gt;<ref refid="class_n_d_array_pool_1a26b4360694655c4af6c853c2f3d2ce5e" kindref="member">alloc</ref>(nDims,<sp/>dims,<sp/>(<ref refid="_n_d_attribute_8h_1a34b835bcabc3b7f546f4b25c5767cb16" kindref="member">NDDataType_t</ref>)<ref refid="_a_d_pylon_8cpp_1a048925b4357a1b4d6015c2113e05ce9f" kindref="member">dataType</ref>,<sp/></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(!(<ref refid="class_fast_c_c_d_1a1ed1060dcb5fc7eefc7882b2ec4184e3" kindref="member">pImage</ref><sp/>=<sp/>this-&gt;<ref refid="classasyn_n_d_array_driver_1ad3969854a37329ef4061cc560e9022dc" kindref="member">pNDArrayPool</ref>-&gt;alloc(nDims,<sp/>dims,<sp/>(<ref refid="_n_d_attribute_8h_1a34b835bcabc3b7f546f4b25c5767cb16" kindref="member">NDDataType_t</ref>)<ref refid="_a_d_pylon_8cpp_1a048925b4357a1b4d6015c2113e05ce9f" kindref="member">dataType</ref>,<sp/></highlight></codeline>
 <codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0,<sp/>NULL)))<sp/>{</highlight></codeline>
 <codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/>asynPrint(pasynUserSelf,<sp/>ASYN_TRACE_ERROR,</highlight></codeline>
 <codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Unable<sp/>to<sp/>allocate<sp/>array<sp/>from<sp/>pool....\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/>sleep(1);</highlight></codeline>
 <codeline lineno="145"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="147"><highlight class="normal"><sp/><sp/>frame-&gt;data<sp/>=<sp/>(uint16_t*)<ref refid="class_fast_c_c_d_1a1ed1060dcb5fc7eefc7882b2ec4184e3" kindref="member">pImage</ref>-&gt;<ref refid="class_n_d_array_1a9581f9d8f38225a2c2977bbed70fa2b8" kindref="member">pData</ref>;</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/>frame-&gt;data<sp/>=<sp/>(uint16_t*)<ref refid="class_fast_c_c_d_1a1ed1060dcb5fc7eefc7882b2ec4184e3" kindref="member">pImage</ref>-&gt;pData;</highlight></codeline>
 <codeline lineno="148"><highlight class="normal"></highlight></codeline>
 <codeline lineno="149"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="150"><highlight class="normal">}</highlight></codeline>
@@ -1039,7 +1040,7 @@
 <codeline lineno="161"><highlight class="normal"></highlight></codeline>
 <codeline lineno="162"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(firstFrameFlag){</highlight></codeline>
 <codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;lock();</highlight></codeline>
-<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_fast_c_c_d_1a1ed1060dcb5fc7eefc7882b2ec4184e3" kindref="member">pImage</ref>-&gt;<ref refid="class_n_d_array_1a0c4c61ea4d44ce97db979d24305c996e" kindref="member">release</ref>();</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_fast_c_c_d_1a1ed1060dcb5fc7eefc7882b2ec4184e3" kindref="member">pImage</ref>-&gt;release();</highlight></codeline>
 <codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;unlock();</highlight></codeline>
 <codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/>asynPrint(pasynUserSelf,<sp/>ASYN_TRACE_ERROR,</highlight></codeline>
 <codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Dropped<sp/>frame<sp/>%d<sp/>as<sp/>framesore<sp/>frame<sp/>%d\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
@@ -1057,7 +1058,7 @@
 <codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Dropped<sp/>frame<sp/>%d<sp/>as<sp/>we<sp/>are<sp/>not<sp/>acquiring\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
 <codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>frame-&gt;number);</highlight></codeline>
 <codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;lock();</highlight></codeline>
-<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_fast_c_c_d_1a1ed1060dcb5fc7eefc7882b2ec4184e3" kindref="member">pImage</ref>-&gt;<ref refid="class_n_d_array_1a0c4c61ea4d44ce97db979d24305c996e" kindref="member">release</ref>();</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_fast_c_c_d_1a1ed1060dcb5fc7eefc7882b2ec4184e3" kindref="member">pImage</ref>-&gt;release();</highlight></codeline>
 <codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;unlock();</highlight></codeline>
 <codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="185"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
@@ -1077,7 +1078,7 @@
 <codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>asynPrint(pasynUserSelf,<sp/>ASYN_TRACE_ERROR,</highlight></codeline>
 <codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Dropped<sp/>frame<sp/>%d<sp/>due<sp/>to<sp/>\&quot;framesRemaining\&quot;<sp/>overrun.\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
 <codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>frame-&gt;number);</highlight></codeline>
-<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_fast_c_c_d_1a1ed1060dcb5fc7eefc7882b2ec4184e3" kindref="member">pImage</ref>-&gt;<ref refid="class_n_d_array_1a0c4c61ea4d44ce97db979d24305c996e" kindref="member">release</ref>();</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_fast_c_c_d_1a1ed1060dcb5fc7eefc7882b2ec4184e3" kindref="member">pImage</ref>-&gt;release();</highlight></codeline>
 <codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;unlock();</highlight></codeline>
 <codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -1090,25 +1091,25 @@
 <codeline lineno="212"><highlight class="normal"><sp/><sp/><ref refid="classasyn_n_d_array_driver_1abf87462bc5853f8e5a56db5e93acd956" kindref="member">setIntegerParam</ref>(<ref refid="classasyn_n_d_array_driver_1abec5f5fc9922549d745d7dc7f19243ea" kindref="member">NDArrayCounter</ref>,<sp/>imageCounter);</highlight></codeline>
 <codeline lineno="213"><highlight class="normal"></highlight></codeline>
 <codeline lineno="214"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Set<sp/>the<sp/>unique<sp/>ID</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="215"><highlight class="normal"><sp/><sp/><ref refid="class_fast_c_c_d_1a1ed1060dcb5fc7eefc7882b2ec4184e3" kindref="member">pImage</ref>-&gt;<ref refid="class_n_d_array_1a62f165653bd0099f31b3d276bdb81d3c" kindref="member">uniqueId</ref><sp/>=<sp/>frame-&gt;number;</highlight></codeline>
-<codeline lineno="216"><highlight class="normal"><sp/><sp/><ref refid="class_fast_c_c_d_1a1ed1060dcb5fc7eefc7882b2ec4184e3" kindref="member">pImage</ref>-&gt;<ref refid="class_n_d_array_1a71e5be2b11008face8dc6c5be19f71f1" kindref="member">dims</ref>[0].<ref refid="struct_n_d_dimension_1af32ef14ab526ed14d195875fc688f027" kindref="member">size</ref><sp/>=<sp/>frame-&gt;size_x;</highlight></codeline>
-<codeline lineno="217"><highlight class="normal"><sp/><sp/><ref refid="class_fast_c_c_d_1a1ed1060dcb5fc7eefc7882b2ec4184e3" kindref="member">pImage</ref>-&gt;<ref refid="class_n_d_array_1a71e5be2b11008face8dc6c5be19f71f1" kindref="member">dims</ref>[0].<ref refid="struct_n_d_dimension_1a0498332bfb996e2aa43e3604a4923144" kindref="member">offset</ref><sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="218"><highlight class="normal"><sp/><sp/><ref refid="class_fast_c_c_d_1a1ed1060dcb5fc7eefc7882b2ec4184e3" kindref="member">pImage</ref>-&gt;<ref refid="class_n_d_array_1a71e5be2b11008face8dc6c5be19f71f1" kindref="member">dims</ref>[0].<ref refid="struct_n_d_dimension_1a6d5ea1ce1544d57ac3812f43a6ca7a94" kindref="member">binning</ref><sp/>=<sp/>1;</highlight></codeline>
-<codeline lineno="219"><highlight class="normal"><sp/><sp/><ref refid="class_fast_c_c_d_1a1ed1060dcb5fc7eefc7882b2ec4184e3" kindref="member">pImage</ref>-&gt;<ref refid="class_n_d_array_1a71e5be2b11008face8dc6c5be19f71f1" kindref="member">dims</ref>[1].<ref refid="struct_n_d_dimension_1af32ef14ab526ed14d195875fc688f027" kindref="member">size</ref><sp/>=<sp/>frame-&gt;size_y;</highlight></codeline>
-<codeline lineno="220"><highlight class="normal"><sp/><sp/><ref refid="class_fast_c_c_d_1a1ed1060dcb5fc7eefc7882b2ec4184e3" kindref="member">pImage</ref>-&gt;<ref refid="class_n_d_array_1a71e5be2b11008face8dc6c5be19f71f1" kindref="member">dims</ref>[1].<ref refid="struct_n_d_dimension_1a0498332bfb996e2aa43e3604a4923144" kindref="member">offset</ref><sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="221"><highlight class="normal"><sp/><sp/><ref refid="class_fast_c_c_d_1a1ed1060dcb5fc7eefc7882b2ec4184e3" kindref="member">pImage</ref>-&gt;<ref refid="class_n_d_array_1a71e5be2b11008face8dc6c5be19f71f1" kindref="member">dims</ref>[1].<ref refid="struct_n_d_dimension_1a6d5ea1ce1544d57ac3812f43a6ca7a94" kindref="member">binning</ref><sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><ref refid="class_fast_c_c_d_1a1ed1060dcb5fc7eefc7882b2ec4184e3" kindref="member">pImage</ref>-&gt;uniqueId<sp/>=<sp/>frame-&gt;number;</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><ref refid="class_fast_c_c_d_1a1ed1060dcb5fc7eefc7882b2ec4184e3" kindref="member">pImage</ref>-&gt;dims[0].size<sp/>=<sp/>frame-&gt;size_x;</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><ref refid="class_fast_c_c_d_1a1ed1060dcb5fc7eefc7882b2ec4184e3" kindref="member">pImage</ref>-&gt;dims[0].offset<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><ref refid="class_fast_c_c_d_1a1ed1060dcb5fc7eefc7882b2ec4184e3" kindref="member">pImage</ref>-&gt;dims[0].binning<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><ref refid="class_fast_c_c_d_1a1ed1060dcb5fc7eefc7882b2ec4184e3" kindref="member">pImage</ref>-&gt;dims[1].size<sp/>=<sp/>frame-&gt;size_y;</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><ref refid="class_fast_c_c_d_1a1ed1060dcb5fc7eefc7882b2ec4184e3" kindref="member">pImage</ref>-&gt;dims[1].offset<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><ref refid="class_fast_c_c_d_1a1ed1060dcb5fc7eefc7882b2ec4184e3" kindref="member">pImage</ref>-&gt;dims[1].binning<sp/>=<sp/>1;</highlight></codeline>
 <codeline lineno="222"><highlight class="normal"></highlight></codeline>
 <codeline lineno="223"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Process<sp/>Timestamps.</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="224"><highlight class="normal"><sp/><sp/></highlight></codeline>
 <codeline lineno="225"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Frame<sp/>timestamp<sp/>is<sp/>a<sp/>timespec<sp/>always<sp/>trust<sp/>driver<sp/>becuase<sp/>it<sp/>is<sp/>correct!</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="226"><highlight class="normal"><sp/><sp/><ref refid="class_fast_c_c_d_1a1ed1060dcb5fc7eefc7882b2ec4184e3" kindref="member">pImage</ref>-&gt;<ref refid="class_n_d_array_1ac449943846ba4c5c18aa1ca5559470c2" kindref="member">timeStamp</ref><sp/>=<sp/>frame-&gt;timestamp.tv_sec<sp/>+<sp/>1e-9<sp/>*<sp/>frame-&gt;timestamp.tv_nsec;</highlight></codeline>
-<codeline lineno="227"><highlight class="normal"><sp/><sp/><ref refid="class_fast_c_c_d_1a1ed1060dcb5fc7eefc7882b2ec4184e3" kindref="member">pImage</ref>-&gt;<ref refid="class_n_d_array_1a107537f0e084674fbec9225cf63c3979" kindref="member">epicsTS</ref>.secPastEpoch<sp/>=<sp/>frame-&gt;timestamp.tv_sec;</highlight></codeline>
-<codeline lineno="228"><highlight class="normal"><sp/><sp/><ref refid="class_fast_c_c_d_1a1ed1060dcb5fc7eefc7882b2ec4184e3" kindref="member">pImage</ref>-&gt;<ref refid="class_n_d_array_1a107537f0e084674fbec9225cf63c3979" kindref="member">epicsTS</ref>.nsec<sp/>=<sp/>frame-&gt;timestamp.tv_nsec;</highlight></codeline>
-<codeline lineno="229"><highlight class="normal"><sp/><sp/>updateTimeStamp(&amp;<ref refid="class_fast_c_c_d_1a1ed1060dcb5fc7eefc7882b2ec4184e3" kindref="member">pImage</ref>-&gt;<ref refid="class_n_d_array_1a107537f0e084674fbec9225cf63c3979" kindref="member">epicsTS</ref>);</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><ref refid="class_fast_c_c_d_1a1ed1060dcb5fc7eefc7882b2ec4184e3" kindref="member">pImage</ref>-&gt;timeStamp<sp/>=<sp/>frame-&gt;timestamp.tv_sec<sp/>+<sp/>1e-9<sp/>*<sp/>frame-&gt;timestamp.tv_nsec;</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><ref refid="class_fast_c_c_d_1a1ed1060dcb5fc7eefc7882b2ec4184e3" kindref="member">pImage</ref>-&gt;epicsTS.secPastEpoch<sp/>=<sp/>frame-&gt;timestamp.tv_sec;</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><ref refid="class_fast_c_c_d_1a1ed1060dcb5fc7eefc7882b2ec4184e3" kindref="member">pImage</ref>-&gt;epicsTS.nsec<sp/>=<sp/>frame-&gt;timestamp.tv_nsec;</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/>updateTimeStamp(&amp;<ref refid="class_fast_c_c_d_1a1ed1060dcb5fc7eefc7882b2ec4184e3" kindref="member">pImage</ref>-&gt;epicsTS);</highlight></codeline>
 <codeline lineno="230"><highlight class="normal"><sp/><sp/>lastFrameTimestamp<sp/>=<sp/>frame-&gt;timestamp;</highlight></codeline>
 <codeline lineno="231"><highlight class="normal"></highlight></codeline>
 <codeline lineno="232"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Get<sp/>any<sp/>attributes<sp/>for<sp/>the<sp/>driver</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="233"><highlight class="normal"><sp/><sp/>this-&gt;<ref refid="classasyn_n_d_array_driver_1a7492ba858d885e2ba226a1c7ef9dcf72" kindref="member">getAttributes</ref>(<ref refid="class_fast_c_c_d_1a1ed1060dcb5fc7eefc7882b2ec4184e3" kindref="member">pImage</ref>-&gt;<ref refid="class_n_d_array_1af5aad7b41118f465621cf045ed957469" kindref="member">pAttributeList</ref>);</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/>this-&gt;<ref refid="classasyn_n_d_array_driver_1a7492ba858d885e2ba226a1c7ef9dcf72" kindref="member">getAttributes</ref>(<ref refid="class_fast_c_c_d_1a1ed1060dcb5fc7eefc7882b2ec4184e3" kindref="member">pImage</ref>-&gt;pAttributeList);</highlight></codeline>
 <codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="235"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>arrayCallbacks;</highlight></codeline>
 <codeline lineno="236"><highlight class="normal"><sp/><sp/>getIntegerParam(<ref refid="classasyn_n_d_array_driver_1af2354f73acece6ee2427f5069b16fdb5" kindref="member">NDArrayCallbacks</ref>,<sp/>&amp;arrayCallbacks);</highlight></codeline>
@@ -1123,7 +1124,7 @@
 <codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName,<sp/>frame-&gt;number);</highlight></codeline>
 <codeline lineno="246"><highlight class="normal"></highlight></codeline>
 <codeline lineno="247"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Release<sp/>the<sp/>frame<sp/>as<sp/>we<sp/>are<sp/>done<sp/>with<sp/>it!</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="248"><highlight class="normal"><sp/><sp/><ref refid="class_fast_c_c_d_1a1ed1060dcb5fc7eefc7882b2ec4184e3" kindref="member">pImage</ref>-&gt;<ref refid="class_n_d_array_1a0c4c61ea4d44ce97db979d24305c996e" kindref="member">release</ref>();</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><ref refid="class_fast_c_c_d_1a1ed1060dcb5fc7eefc7882b2ec4184e3" kindref="member">pImage</ref>-&gt;release();</highlight></codeline>
 <codeline lineno="249"><highlight class="normal"></highlight></codeline>
 <codeline lineno="250"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Update<sp/>any<sp/>changed<sp/>parameters<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="251"><highlight class="normal"><sp/><sp/>callParamCallbacks();</highlight></codeline>
@@ -1579,6 +1580,7 @@
 <codeline lineno="720"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="721"><highlight class="normal"></highlight></codeline>
 <codeline lineno="722"><highlight class="normal"></highlight></codeline>
+<codeline lineno="726"><highlight class="normal"></highlight></codeline>
 <codeline lineno="727"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>exitHandler(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*drvPvt)</highlight></codeline>
 <codeline lineno="728"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="729"><highlight class="normal"><sp/><sp/><ref refid="class_fast_c_c_d" kindref="compound">FastCCD</ref><sp/>*pFastCCD<sp/>=<sp/>(<ref refid="class_fast_c_c_d" kindref="compound">FastCCD</ref><sp/>*)drvPvt;</highlight></codeline>
@@ -2147,7 +2149,7 @@
 <codeline lineno="1302"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(status<sp/>!=<sp/>asynSuccess){</highlight></codeline>
 <codeline lineno="1303"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">(status);</highlight></codeline>
 <codeline lineno="1304"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1305"><highlight class="normal"><sp/><sp/>status<sp/>=<sp/>(asynStatus)setStringParam(addr,<sp/>function,<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)<ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="1305"><highlight class="normal"><sp/><sp/>status<sp/>=<sp/>(asynStatus)setStringParam(addr,<sp/>function,<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)value);</highlight></codeline>
 <codeline lineno="1306"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(status<sp/>!=<sp/>asynSuccess){</highlight></codeline>
 <codeline lineno="1307"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">(status);</highlight></codeline>
 <codeline lineno="1308"><highlight class="normal"><sp/><sp/>}</highlight></codeline>

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="class_a_d_vimba_frame_observer" kind="class" language="C++" prot="public">
     <compoundname>ADVimbaFrameObserver</compoundname>
     <basecompoundref prot="public" virt="virtual">IFrameObserver</basecompoundref>
@@ -117,7 +117,7 @@
         <link refid="class_a_d_gen_i_cam"/>
         <childnode refid="5" relation="public-inheritance">
         </childnode>
-        <childnode refid="14" relation="usage">
+        <childnode refid="13" relation="usage">
           <edgelabel>mGCFeatureSet</edgelabel>
         </childnode>
       </node>
@@ -139,11 +139,8 @@
       <node id="12">
         <label>Codec_t</label>
         <link refid="struct_codec__t"/>
-        <childnode refid="13" relation="usage">
-          <edgelabel>name</edgelabel>
-        </childnode>
       </node>
-      <node id="14">
+      <node id="13">
         <label>GenICamFeatureSet</label>
         <link refid="class_gen_i_cam_feature_set"/>
       </node>
@@ -198,9 +195,6 @@
       </node>
       <node id="7">
         <label>asynPortDriver</label>
-      </node>
-      <node id="13">
-        <label>string</label>
       </node>
     </collaborationgraph>
     <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADVimba/vimbaApp/src/ADVimba.h" line="20" column="1" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADVimba/vimbaApp/src/ADVimba.h" bodystart="20" bodyend="27"/>

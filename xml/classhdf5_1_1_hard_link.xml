@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="classhdf5_1_1_hard_link" kind="class" language="C++" prot="public">
     <compoundname>hdf5::HardLink</compoundname>
     <basecompoundref refid="classhdf5_1_1_element" prot="public" virt="non-virtual">hdf5::Element</basecompoundref>
@@ -60,7 +60,7 @@
         <name>HardLink</name>
         <qualifiedname>hdf5::HardLink::HardLink</qualifiedname>
         <param>
-          <type>const <ref refid="classhdf5_1_1_hard_link" kindref="compound">HardLink</ref> &amp;</type>
+          <type>const HardLink &amp;</type>
           <declname>src</declname>
         </param>
         <briefdescription>
@@ -72,13 +72,13 @@
         <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5Layout.h" line="206" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5Layout.cpp" bodystart="906" bodyend="909"/>
       </memberdef>
       <memberdef kind="function" id="classhdf5_1_1_hard_link_1a2fd65c27f7f5fe0ebbd90d500280eab6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classhdf5_1_1_hard_link" kindref="compound">HardLink</ref> &amp;</type>
+        <type><ref refid="classhdf5_1_1_hard_link_1a56925e54cf181d53809e87f35e2e9d0e" kindref="member">HardLink</ref> &amp;</type>
         <definition>HardLink &amp; hdf5::HardLink::operator=</definition>
         <argsstring>(const HardLink &amp;src)</argsstring>
         <name>operator=</name>
         <qualifiedname>hdf5::HardLink::operator=</qualifiedname>
         <param>
-          <type>const <ref refid="classhdf5_1_1_hard_link" kindref="compound">HardLink</ref> &amp;</type>
+          <type>const <ref refid="classhdf5_1_1_hard_link_1a56925e54cf181d53809e87f35e2e9d0e" kindref="member">HardLink</ref> &amp;</type>
           <declname>src</declname>
         </param>
         <briefdescription>
@@ -163,7 +163,7 @@
           <declname>out</declname>
         </param>
         <param>
-          <type><ref refid="classhdf5_1_1_hard_link" kindref="compound">HardLink</ref> &amp;</type>
+          <type><ref refid="classhdf5_1_1_hard_link_1a56925e54cf181d53809e87f35e2e9d0e" kindref="member">HardLink</ref> &amp;</type>
           <declname>hardLink</declname>
         </param>
         <briefdescription>
@@ -184,7 +184,7 @@
         <name>_copy</name>
         <qualifiedname>hdf5::HardLink::_copy</qualifiedname>
         <param>
-          <type>const <ref refid="classhdf5_1_1_hard_link" kindref="compound">HardLink</ref> &amp;</type>
+          <type>const <ref refid="classhdf5_1_1_hard_link_1a56925e54cf181d53809e87f35e2e9d0e" kindref="member">HardLink</ref> &amp;</type>
           <declname>src</declname>
         </param>
         <briefdescription>
@@ -217,18 +217,12 @@
       <node id="2">
         <label>hdf5::Element</label>
         <link refid="classhdf5_1_1_element"/>
-        <childnode refid="3" relation="usage">
-          <edgelabel>name</edgelabel>
-        </childnode>
       </node>
       <node id="1">
         <label>hdf5::HardLink</label>
         <link refid="classhdf5_1_1_hard_link"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
-      </node>
-      <node id="3">
-        <label>string</label>
       </node>
     </collaborationgraph>
     <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5Layout.h" line="201" column="3" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5Layout.h" bodystart="202" bodyend="221"/>

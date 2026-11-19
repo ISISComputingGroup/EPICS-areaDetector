@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="pxrd2__interface__misc_8cpp" kind="file" language="C++">
     <compoundname>pxrd2_interface_misc.cpp</compoundname>
     <includes refid="pxrd2__interface__misc_8h" local="yes">pxrd2_interface_misc.h</includes>
@@ -1042,7 +1042,7 @@
 <codeline lineno="381"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ret;</highlight></codeline>
 <codeline lineno="382"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="383"><highlight class="normal"></highlight></codeline>
-<codeline lineno="384"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Conn_ptr-&gt;Sens.Asic<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Sens.<ref refid="struct_s_e_n_s_o_r_1a9b4a71895885b0417258270992040513" kindref="member">Asic</ref>;</highlight></codeline>
+<codeline lineno="384"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Conn_ptr-&gt;Sens.<ref refid="struct_s_e_n_s_o_r_1a9b4a71895885b0417258270992040513" kindref="member">Asic</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Sens.<ref refid="struct_s_e_n_s_o_r_1a9b4a71895885b0417258270992040513" kindref="member">Asic</ref>;</highlight></codeline>
 <codeline lineno="385"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Conn_ptr-&gt;Sens.Hybrid<sp/><sp/><sp/>=<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Sens.<ref refid="struct_s_e_n_s_o_r_1ae31477874b76de778cd383eff32d40aa" kindref="member">Hybrid</ref>;</highlight></codeline>
 <codeline lineno="386"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Conn_ptr-&gt;Sens.Build<sp/><sp/><sp/><sp/>=<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Sens.<ref refid="struct_s_e_n_s_o_r_1a6d2f5d30e3f92417ca015e7301ef071b" kindref="member">Build</ref>;</highlight></codeline>
 <codeline lineno="387"><highlight class="normal"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/**********************************************************/</highlight><highlight class="normal"></highlight></codeline>

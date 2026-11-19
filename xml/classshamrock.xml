@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="classshamrock" kind="class" language="C++" prot="public">
     <compoundname>shamrock</compoundname>
     <basecompoundref prot="public" virt="non-virtual">asynPortDriver</basecompoundref>
@@ -39,7 +39,7 @@
         <name>SRMaxWavelength_</name>
         <qualifiedname>shamrock::SRMaxWavelength_</qualifiedname>
         <briefdescription>
-<para>Min wavelength (float64 read/write) </para>
+<para>Min wavelength (float64 read/write). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -54,7 +54,7 @@
         <name>SRCalibration_</name>
         <qualifiedname>shamrock::SRCalibration_</qualifiedname>
         <briefdescription>
-<para>Min wavelength (float64 read/write) </para>
+<para>Min wavelength (float64 read/write). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -69,7 +69,7 @@
         <name>SRGrating_</name>
         <qualifiedname>shamrock::SRGrating_</qualifiedname>
         <briefdescription>
-<para>Calibration (float32 array read) </para>
+<para>Calibration (float32 array read). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -84,7 +84,7 @@
         <name>SRNumGratings_</name>
         <qualifiedname>shamrock::SRNumGratings_</qualifiedname>
         <briefdescription>
-<para>Grating (int32 read/write) </para>
+<para>Grating (int32 read/write). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -99,7 +99,7 @@
         <name>SRGratingExists_</name>
         <qualifiedname>shamrock::SRGratingExists_</qualifiedname>
         <briefdescription>
-<para>Number of gratings (int32 read) </para>
+<para>Number of gratings (int32 read). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -114,7 +114,7 @@
         <name>SRFlipperMirrorExists_</name>
         <qualifiedname>shamrock::SRFlipperMirrorExists_</qualifiedname>
         <briefdescription>
-<para>Grating exists (int32 read) </para>
+<para>Grating exists (int32 read). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -129,7 +129,7 @@
         <name>SRFlipperMirrorPort_</name>
         <qualifiedname>shamrock::SRFlipperMirrorPort_</qualifiedname>
         <briefdescription>
-<para>Flipper Mirror exists (int32 read) </para>
+<para>Flipper Mirror exists (int32 read). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -144,7 +144,7 @@
         <name>SRSlitExists_</name>
         <qualifiedname>shamrock::SRSlitExists_</qualifiedname>
         <briefdescription>
-<para>Flipper Mirror Port (int32 read/write) </para>
+<para>Flipper Mirror Port (int32 read/write). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -159,7 +159,7 @@
         <name>SRSlitSize_</name>
         <qualifiedname>shamrock::SRSlitSize_</qualifiedname>
         <briefdescription>
-<para>Slit exists (int32 read) </para>
+<para>Slit exists (int32 read). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>

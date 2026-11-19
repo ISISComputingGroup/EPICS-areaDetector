@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="mythen_8cpp" kind="file" language="C++">
     <compoundname>mythen.cpp</compoundname>
     <includes local="no">stddef.h</includes>
@@ -894,9 +894,9 @@
 <codeline lineno="76"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SDReadModeString<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;SD_READ_MODE&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="77"><highlight class="normal"></highlight></codeline>
 <codeline lineno="78"><highlight class="normal"></highlight></codeline>
-<codeline lineno="80" refid="classmythen" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classmythen" kindref="compound">mythen</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_a_d_driver" kindref="compound">ADDriver</ref><sp/>{</highlight></codeline>
+<codeline lineno="80" refid="classmythen" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classmythen_1a0ddf1d43790c00e9f71184c001657079" kindref="member">mythen</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_a_d_driver_1acc898497d3369c2f6f6ab1d83effdd25" kindref="member">ADDriver</ref><sp/>{</highlight></codeline>
 <codeline lineno="81"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmythen" kindref="compound">mythen</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*portName,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*IPPortName,</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmythen_1a0ddf1d43790c00e9f71184c001657079" kindref="member">mythen</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*portName,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*IPPortName,</highlight></codeline>
 <codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>maxBuffers,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>maxMemory,</highlight></codeline>
 <codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>priority,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>stackSize);</highlight></codeline>
 <codeline lineno="85"><highlight class="normal"></highlight></codeline>
@@ -1300,7 +1300,7 @@
 <codeline lineno="504"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="505"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>status;</highlight></codeline>
 <codeline lineno="506"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="507"><highlight class="normal"></highlight></codeline>
+<codeline lineno="507"><highlight class="normal"><sp/></highlight></codeline>
 <codeline lineno="509"><highlight class="normal">epicsInt32<sp/><ref refid="classmythen_1ad481927fa7fe4b5693ade8d1efddf8e8" kindref="member">mythen::getStatus</ref>()</highlight></codeline>
 <codeline lineno="510"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="511"><highlight class="normal"><sp/><sp/><sp/><sp/>epicsInt32<sp/>detStatus;</highlight></codeline>
@@ -1734,7 +1734,7 @@
 <codeline lineno="949"><highlight class="normal"></highlight></codeline>
 <codeline lineno="950"><highlight class="normal">epicsInt32<sp/><ref refid="classmythen_1a54494c17deee9996ae4174c47a034b50" kindref="member">mythen::dataCallback</ref>(epicsInt32<sp/>*pData)</highlight></codeline>
 <codeline lineno="951"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="952"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*pImage;<sp/></highlight></codeline>
+<codeline lineno="952"><highlight class="normal"><sp/><sp/><sp/><sp/>NDArray<sp/>*pImage;<sp/></highlight></codeline>
 <codeline lineno="953"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ndims<sp/>=<sp/>1;</highlight></codeline>
 <codeline lineno="954"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>dims[2];</highlight></codeline>
 <codeline lineno="955"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>totalBytes;<sp/></highlight></codeline>
@@ -1755,7 +1755,7 @@
 <codeline lineno="970"><highlight class="normal"><sp/><sp/><sp/><sp/>epicsTimeGetCurrent(&amp;timeStamp);<sp/></highlight></codeline>
 <codeline lineno="971"><highlight class="normal"></highlight></codeline>
 <codeline lineno="972"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Allocate<sp/>a<sp/>new<sp/>image<sp/>buffer<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="973"><highlight class="normal"><sp/><sp/><sp/><sp/>pImage<sp/>=<sp/>this-&gt;<ref refid="classasyn_n_d_array_driver_1ad3969854a37329ef4061cc560e9022dc" kindref="member">pNDArrayPool</ref>-&gt;<ref refid="class_n_d_array_pool_1a26b4360694655c4af6c853c2f3d2ce5e" kindref="member">alloc</ref>(ndims,<sp/>dims,<sp/><ref refid="_n_d_attribute_8h_1a34b835bcabc3b7f546f4b25c5767cb16a460cbd8f43b3531669bc85cc3a4e9a80" kindref="member">NDInt32</ref>,<sp/>totalBytes,<sp/>NULL);</highlight></codeline>
+<codeline lineno="973"><highlight class="normal"><sp/><sp/><sp/><sp/>pImage<sp/>=<sp/>this-&gt;<ref refid="classasyn_n_d_array_driver_1ad3969854a37329ef4061cc560e9022dc" kindref="member">pNDArrayPool</ref>-&gt;alloc(ndims,<sp/>dims,<sp/><ref refid="_n_d_attribute_8h_1a34b835bcabc3b7f546f4b25c5767cb16a460cbd8f43b3531669bc85cc3a4e9a80" kindref="member">NDInt32</ref>,<sp/>totalBytes,<sp/>NULL);</highlight></codeline>
 <codeline lineno="974"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(readmode_==0)</highlight></codeline>
 <codeline lineno="975"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classmythen_1a2238d6353f6e96ef26d3fc5e33e4959a" kindref="member">decodeRawReadout</ref>(this-&gt;nmodules,<sp/>this-&gt;nbits_,<sp/>pData,<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*)pImage-&gt;<ref refid="class_n_d_array_1a9581f9d8f38225a2c2977bbed70fa2b8" kindref="member">pData</ref>);</highlight></codeline>
 <codeline lineno="976"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
@@ -1792,7 +1792,7 @@
 <codeline lineno="1007"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1008"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>We<sp/>save<sp/>the<sp/>most<sp/>recent<sp/>good<sp/>image<sp/>buffer<sp/>so<sp/>it<sp/>can<sp/>be<sp/>used<sp/>in<sp/>the</highlight></codeline>
 <codeline lineno="1009"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>readADImage<sp/>function.<sp/><sp/>Now<sp/>release<sp/>it.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1010"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(this-&gt;<ref refid="classasyn_n_d_array_driver_1a6f5685f9951f6b3b897e85425b59ad69" kindref="member">pArrays</ref>[0])<sp/>this-&gt;<ref refid="classasyn_n_d_array_driver_1a6f5685f9951f6b3b897e85425b59ad69" kindref="member">pArrays</ref>[0]-&gt;<ref refid="class_n_d_array_1a0c4c61ea4d44ce97db979d24305c996e" kindref="member">release</ref>();</highlight></codeline>
+<codeline lineno="1010"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(this-&gt;<ref refid="classasyn_n_d_array_driver_1a6f5685f9951f6b3b897e85425b59ad69" kindref="member">pArrays</ref>[0])<sp/>this-&gt;<ref refid="classasyn_n_d_array_driver_1a6f5685f9951f6b3b897e85425b59ad69" kindref="member">pArrays</ref>[0]-&gt;release();</highlight></codeline>
 <codeline lineno="1011"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classasyn_n_d_array_driver_1a6f5685f9951f6b3b897e85425b59ad69" kindref="member">pArrays</ref>[0]<sp/>=<sp/>pImage;</highlight></codeline>
 <codeline lineno="1012"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1013"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Update<sp/>any<sp/>changed<sp/>parameters<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
@@ -1853,7 +1853,7 @@
 <codeline lineno="1074"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>}</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1075"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1076"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Set<sp/>the<sp/>parameter<sp/>in<sp/>the<sp/>parameter<sp/>library.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1077"><highlight class="normal"><sp/><sp/><sp/><sp/>status<sp/>|=<sp/>(asynStatus)setStringParam(function,<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)<ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="1077"><highlight class="normal"><sp/><sp/><sp/><sp/>status<sp/>|=<sp/>(asynStatus)setStringParam(function,<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)value);</highlight></codeline>
 <codeline lineno="1078"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1079"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>If<sp/>this<sp/>is<sp/>not<sp/>a<sp/>parameter<sp/>we<sp/>have<sp/>handled<sp/>call<sp/>the<sp/>base<sp/>class<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1080"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(function<sp/>&lt;<sp/><ref refid="mythen_8cpp_1ae9467b204052f124dc12160bba88eb10" kindref="member">FIRST_SD_PARAM</ref>)<sp/></highlight></codeline>

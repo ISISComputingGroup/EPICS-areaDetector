@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="ntnd_array_converter_a_p_i_8h" kind="file" language="C++">
     <compoundname>ntndArrayConverterAPI.h</compoundname>
     <includedby refid="ntnd_array_converter_8h" local="no">/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/ntndArrayConverterSrc/ntndArrayConverter.h</includedby>

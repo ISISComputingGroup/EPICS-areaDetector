@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="_a_dn_e_d_transform_8h" kind="file" language="C++">
     <compoundname>ADnEDTransform.h</compoundname>
     <includes local="yes">epicsTypes.h</includes>
@@ -88,7 +88,8 @@
     <detaileddescription>
     </detaileddescription>
     <programlisting>
-<codeline lineno="1"></codeline>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
 <codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>ADNED_TRANSFORM_H</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADNED_TRANSFORM_H</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="28"><highlight class="normal"></highlight></codeline>
@@ -96,15 +97,15 @@
 <codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_a_dn_e_d_globals_8h" kindref="compound">ADnEDGlobals.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_a_dn_e_d_transform_base_8h" kindref="compound">ADnEDTransformBase.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="32"><highlight class="normal"></highlight></codeline>
-<codeline lineno="33" refid="class_a_dn_e_d_transform" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">epicsShareClass<sp/><ref refid="class_a_dn_e_d_transform" kindref="compound">ADnEDTransform</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_a_dn_e_d_transform_base" kindref="compound">ADnEDTransformBase</ref><sp/>{</highlight></codeline>
+<codeline lineno="33" refid="class_a_dn_e_d_transform" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">epicsShareClass<sp/><ref refid="class_a_dn_e_d_transform_1a983598b51eb7c1e38cd36c7efe8764d4" kindref="member">ADnEDTransform</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_a_dn_e_d_transform_base_1a42d7b421620c51fc77ee626855b6c3bc" kindref="member">ADnEDTransformBase</ref><sp/>{</highlight></codeline>
 <codeline lineno="34"><highlight class="normal"><sp/><sp/></highlight></codeline>
 <codeline lineno="35"><highlight class="normal"><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="36"><highlight class="normal"><sp/><sp/><ref refid="class_a_dn_e_d_transform" kindref="compound">ADnEDTransform</ref>();</highlight></codeline>
-<codeline lineno="37"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="class_a_dn_e_d_transform" kindref="compound">~ADnEDTransform</ref>();</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><ref refid="class_a_dn_e_d_transform_1a983598b51eb7c1e38cd36c7efe8764d4" kindref="member">ADnEDTransform</ref>();</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="class_a_dn_e_d_transform_1a983598b51eb7c1e38cd36c7efe8764d4" kindref="member">~ADnEDTransform</ref>();</highlight></codeline>
 <codeline lineno="38"><highlight class="normal"><sp/><sp/></highlight></codeline>
 <codeline lineno="39"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//Call<sp/>this<sp/>to<sp/>transform<sp/>the<sp/>TOF<sp/>using<sp/>a<sp/>particular<sp/>calculation<sp/>(specified<sp/>by<sp/>type)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="40"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//This<sp/>is<sp/>the<sp/>only<sp/>public<sp/>function<sp/>that<sp/>you<sp/>need<sp/>to<sp/>define<sp/>in<sp/>a<sp/>derived<sp/>class.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="41"><highlight class="normal"><sp/><sp/>epicsFloat64<sp/><ref refid="class_a_dn_e_d_transform_base_1a5408c9bb026b902610d14b97fb700d17" kindref="member">calculate</ref>(epicsUInt32<sp/>type,<sp/>epicsUInt32<sp/>pixelID,<sp/>epicsUInt32<sp/>tof)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/>epicsFloat64<sp/><ref refid="class_a_dn_e_d_transform_base_1a5408c9bb026b902610d14b97fb700d17" kindref="member">calculate</ref>(epicsUInt32<sp/><ref refid="struct_make_unsigned_impl" kindref="compound">type</ref>,<sp/>epicsUInt32<sp/>pixelID,<sp/>epicsUInt32<sp/>tof)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="42"><highlight class="normal"></highlight></codeline>
 <codeline lineno="43"><highlight class="normal"><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="44"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//These<sp/>are<sp/>the<sp/>functions<sp/>that<sp/>do<sp/>the<sp/>real<sp/>work,<sp/>at<sp/>least<sp/>in<sp/>this<sp/>implementation</highlight><highlight class="normal"></highlight></codeline>

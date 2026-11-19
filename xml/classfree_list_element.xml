@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="classfree_list_element" kind="class" language="C++" prot="public">
     <compoundname>freeListElement</compoundname>
     <includes refid="_n_d_array_8h" local="no">NDArray.h</includes>
@@ -105,9 +105,6 @@
       <node id="8">
         <label>Codec_t</label>
         <link refid="struct_codec__t"/>
-        <childnode refid="9" relation="usage">
-          <edgelabel>name</edgelabel>
-        </childnode>
       </node>
       <node id="2">
         <label>NDArray</label>
@@ -164,9 +161,6 @@
         <childnode refid="2" relation="usage">
           <edgelabel>pArray_</edgelabel>
         </childnode>
-      </node>
-      <node id="9">
-        <label>string</label>
       </node>
     </collaborationgraph>
     <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/ADSrc/NDArray.h" line="147" column="1" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/ADSrc/NDArray.h" bodystart="147" bodyend="159"/>

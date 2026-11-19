@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="_n_d_plugin_circular_buff_8cpp" kind="file" language="C++">
     <compoundname>NDPluginCircularBuff.cpp</compoundname>
     <includes local="no">stdlib.h</includes>
@@ -494,7 +494,7 @@
 <codeline lineno="25"><highlight class="normal"></highlight></codeline>
 <codeline lineno="26"><highlight class="normal">asynStatus<sp/>NDPluginCircularBuff::calculateTrigger(<ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*pArray,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*trig)</highlight></codeline>
 <codeline lineno="27"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_n_d_attribute" kindref="compound">NDAttribute</ref><sp/>*trigger;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>NDAttribute<sp/>*trigger;</highlight></codeline>
 <codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>triggerString[256];</highlight></codeline>
 <codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>triggerValue;</highlight></codeline>
 <codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>calcResult;</highlight></codeline>
@@ -558,8 +558,8 @@
 <codeline lineno="95"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>scopeControl,<sp/>preCount,<sp/>postCount,<sp/>currentImage,<sp/>currentPostCount,<sp/>softTrigger;</highlight></codeline>
 <codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>presetTriggerCount,<sp/>actualTriggerCount;</highlight></codeline>
-<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*pArrayCpy<sp/>=<sp/>NULL;</highlight></codeline>
-<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_n_d_array_info" kindref="compound">NDArrayInfo</ref><sp/>arrayInfo;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>NDArray<sp/>*pArrayCpy<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>NDArrayInfo<sp/>arrayInfo;</highlight></codeline>
 <codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>triggered<sp/>=<sp/>0;</highlight></codeline>
 <codeline lineno="101"><highlight class="normal"></highlight></codeline>
 <codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//const<sp/>char*<sp/>functionName<sp/>=<sp/>&quot;processCallbacks&quot;;</highlight><highlight class="normal"></highlight></codeline>
@@ -597,22 +597,22 @@
 <codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="135"><highlight class="normal"></highlight></codeline>
 <codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>First<sp/>copy<sp/>the<sp/>buffer<sp/>into<sp/>our<sp/>buffer<sp/>pool<sp/>so<sp/>we<sp/>can<sp/>release<sp/>the<sp/>resource<sp/>on<sp/>the<sp/>driver</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>pArrayCpy<sp/>=<sp/>this-&gt;<ref refid="classasyn_n_d_array_driver_1ad3969854a37329ef4061cc560e9022dc" kindref="member">pNDArrayPool</ref>-&gt;<ref refid="class_n_d_array_pool_1a90dd764706fddbf69cde2fc498d4af9e" kindref="member">copy</ref>(pArray,<sp/>NULL,<sp/>1);</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>pArrayCpy<sp/>=<sp/>this-&gt;<ref refid="classasyn_n_d_array_driver_1ad3969854a37329ef4061cc560e9022dc" kindref="member">pNDArrayPool</ref>-&gt;copy(pArray,<sp/>NULL,<sp/>1);</highlight></codeline>
 <codeline lineno="138"><highlight class="normal"></highlight></codeline>
 <codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pArrayCpy){</highlight></codeline>
 <codeline lineno="140"><highlight class="normal"></highlight></codeline>
 <codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Have<sp/>we<sp/>detected<sp/>a<sp/>trigger<sp/>event<sp/>yet?</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!triggered)<sp/>{</highlight></codeline>
 <codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>No<sp/>trigger<sp/>so<sp/>add<sp/>the<sp/>NDArray<sp/>to<sp/>the<sp/>pre-trigger<sp/>ring</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pOldArray_<sp/>=<sp/>preBuffer_-&gt;<ref refid="class_n_d_array_ring_1a0f393388986651e26ed0e49affd4ef20" kindref="member">addToEnd</ref>(pArrayCpy);</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pOldArray_<sp/>=<sp/>preBuffer_-&gt;addToEnd(pArrayCpy);</highlight></codeline>
 <codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>If<sp/>we<sp/>overwrote<sp/>an<sp/>existing<sp/>array<sp/>in<sp/>the<sp/>ring,<sp/>release<sp/>it<sp/>here</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pOldArray_){</highlight></codeline>
-<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pOldArray_-&gt;<ref refid="class_n_d_array_1a0c4c61ea4d44ce97db979d24305c996e" kindref="member">release</ref>();</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pOldArray_-&gt;release();</highlight></codeline>
 <codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pOldArray_<sp/>=<sp/>NULL;</highlight></codeline>
 <codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Set<sp/>the<sp/>size</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classasyn_n_d_array_driver_1abf87462bc5853f8e5a56db5e93acd956" kindref="member">setIntegerParam</ref>(<ref refid="class_n_d_plugin_circular_buff_1a752e9f928f7ae032ce5f5b714ca8fa7c" kindref="member">NDCircBuffCurrentImage</ref>,<sp/><sp/>preBuffer_-&gt;<ref refid="class_n_d_array_ring_1a4d9289e0797acfb8f1c173fbbf8736b8" kindref="member">size</ref>());</highlight></codeline>
-<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(preBuffer_-&gt;<ref refid="class_n_d_array_ring_1a4d9289e0797acfb8f1c173fbbf8736b8" kindref="member">size</ref>()<sp/>==<sp/>preCount){</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classasyn_n_d_array_driver_1abf87462bc5853f8e5a56db5e93acd956" kindref="member">setIntegerParam</ref>(<ref refid="class_n_d_plugin_circular_buff_1a752e9f928f7ae032ce5f5b714ca8fa7c" kindref="member">NDCircBuffCurrentImage</ref>,<sp/><sp/>preBuffer_-&gt;size());</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(preBuffer_-&gt;size()<sp/>==<sp/>preCount){</highlight></codeline>
 <codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>setStringParam(<ref refid="class_n_d_plugin_circular_buff_1a038dfe24d844f647986eb59b322d06a5" kindref="member">NDCircBuffStatus</ref>,</highlight></codeline>
 <codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>preCount<sp/>?<sp/></highlight><highlight class="stringliteral">&quot;Buffer<sp/>Wrapping&quot;</highlight><highlight class="normal"><sp/>:<sp/></highlight><highlight class="stringliteral">&quot;Dropping<sp/>frames&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -671,12 +671,12 @@
 <codeline lineno="208"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_n_d_plugin_circular_buff_1aa65c4a2dc9bf7fd32ae40afd0d25ff56" kindref="member">NDPluginCircularBuff::flushPreBuffer</ref>()</highlight></codeline>
 <codeline lineno="209"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(NULL<sp/>==<sp/>preBuffer_)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(preBuffer_-&gt;<ref refid="class_n_d_array_ring_1a4d9289e0797acfb8f1c173fbbf8736b8" kindref="member">size</ref>()<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
-<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>doCallbacksGenericPointer(preBuffer_-&gt;<ref refid="class_n_d_array_ring_1a3d7ad2b4eab90267af45bbcf839de3f4" kindref="member">readFromStart</ref>(),<sp/><ref refid="classasyn_n_d_array_driver_1a2b2fe51fba9a6ee4146813eac0c47fd1" kindref="member">NDArrayData</ref>,<sp/>0);</highlight></codeline>
-<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(preBuffer_-&gt;<ref refid="class_n_d_array_ring_1a2787d043a582c80efb3061c587aacc43" kindref="member">hasNext</ref>())<sp/>{</highlight></codeline>
-<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>doCallbacksGenericPointer(preBuffer_-&gt;<ref refid="class_n_d_array_ring_1a919c04adbee5c1fcccaa6f51baa2fd8b" kindref="member">readNext</ref>(),<sp/><ref refid="classasyn_n_d_array_driver_1a2b2fe51fba9a6ee4146813eac0c47fd1" kindref="member">NDArrayData</ref>,<sp/>0);</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(preBuffer_-&gt;size()<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>doCallbacksGenericPointer(preBuffer_-&gt;readFromStart(),<sp/><ref refid="classasyn_n_d_array_driver_1a2b2fe51fba9a6ee4146813eac0c47fd1" kindref="member">NDArrayData</ref>,<sp/>0);</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(preBuffer_-&gt;hasNext())<sp/>{</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>doCallbacksGenericPointer(preBuffer_-&gt;readNext(),<sp/><ref refid="classasyn_n_d_array_driver_1a2b2fe51fba9a6ee4146813eac0c47fd1" kindref="member">NDArrayData</ref>,<sp/>0);</highlight></codeline>
 <codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>preBuffer_-&gt;<ref refid="class_n_d_array_ring_1a12deb2e1c43f3edca659c946dfe17941" kindref="member">clear</ref>();</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>preBuffer_-&gt;clear();</highlight></codeline>
 <codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="218"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="219"><highlight class="normal"></highlight></codeline>
@@ -694,9 +694,9 @@
 <codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(preBuffer_){</highlight></codeline>
 <codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>preBuffer_;</highlight></codeline>
 <codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>preBuffer_<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_n_d_array_ring" kindref="compound">NDArrayRing</ref>(preCount);</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>preBuffer_<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>NDArrayRing(preCount);</highlight></codeline>
 <codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pOldArray_){</highlight></codeline>
-<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pOldArray_-&gt;<ref refid="class_n_d_array_1a0c4c61ea4d44ce97db979d24305c996e" kindref="member">release</ref>();</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pOldArray_-&gt;release();</highlight></codeline>
 <codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pOldArray_<sp/>=<sp/>NULL;</highlight></codeline>
 <codeline lineno="244"><highlight class="normal"></highlight></codeline>
@@ -781,7 +781,7 @@
 <codeline lineno="330"><highlight class="normal"></highlight></codeline>
 <codeline lineno="331"><highlight class="normal"><sp/><sp/>status<sp/>=<sp/>getAddress(pasynUser,<sp/>&amp;addr);<sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(status<sp/>!=<sp/>asynSuccess)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">(status);</highlight></codeline>
 <codeline lineno="332"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Set<sp/>the<sp/>parameter<sp/>in<sp/>the<sp/>parameter<sp/>library.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="333"><highlight class="normal"><sp/><sp/>status<sp/>=<sp/>(asynStatus)setStringParam(addr,<sp/>function,<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)<ref refid="namespacemake_db_and_edl_1a7cc19c5fdb190aab14fe515dd85b45b7" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="333"><highlight class="normal"><sp/><sp/>status<sp/>=<sp/>(asynStatus)setStringParam(addr,<sp/>function,<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)value);</highlight></codeline>
 <codeline lineno="334"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(status<sp/>!=<sp/>asynSuccess)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">(status);</highlight></codeline>
 <codeline lineno="335"><highlight class="normal"></highlight></codeline>
 <codeline lineno="336"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(function<sp/>==<sp/><ref refid="class_n_d_plugin_circular_buff_1a5f186b925b14eb6b4ee63cb4b5c1f38a" kindref="member">NDCircBuffTriggerCalc</ref>){</highlight></codeline>

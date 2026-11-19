@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="class_n_d_plugin_attr_plot" kind="class" language="C++" prot="public">
     <compoundname>NDPluginAttrPlot</compoundname>
     <basecompoundref refid="class_n_d_plugin_driver" prot="public" virt="non-virtual">NDPluginDriver</basecompoundref>
@@ -169,7 +169,7 @@
         <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginAttrPlot.h" line="204" column="21" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginAttrPlot.h" bodystart="204" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_n_d_plugin_attr_plot_1aa7c1d61da3db8b2eb2a54a63eac0c146" prot="private" static="no" mutable="no">
-        <type>std::vector&lt; <ref refid="class_circular_buffer" kindref="compound">CB</ref> &gt;</type>
+        <type>std::vector&lt; CB &gt;</type>
         <definition>std::vector&lt;CB&gt; NDPluginAttrPlot::data_</definition>
         <argsstring></argsstring>
         <name>data_</name>
@@ -184,7 +184,7 @@
         <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginAttrPlot.h" line="207" column="17" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginAttrPlot.h" bodystart="207" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_n_d_plugin_attr_plot_1a380a525bbd5256c7a922f2588de72366" prot="private" static="no" mutable="no">
-        <type><ref refid="class_circular_buffer" kindref="compound">CB</ref></type>
+        <type>CB</type>
         <definition>CB NDPluginAttrPlot::uids_</definition>
         <argsstring></argsstring>
         <name>uids_</name>
@@ -672,9 +672,6 @@
       <node id="9">
         <label>Codec_t</label>
         <link refid="struct_codec__t"/>
-        <childnode refid="10" relation="usage">
-          <edgelabel>name</edgelabel>
-        </childnode>
       </node>
       <node id="6">
         <label>NDArray</label>
@@ -718,7 +715,7 @@
         <link refid="class_n_d_plugin_driver"/>
         <childnode refid="3" relation="public-inheritance">
         </childnode>
-        <childnode refid="11" relation="public-inheritance">
+        <childnode refid="10" relation="public-inheritance">
         </childnode>
         <childnode refid="6" relation="usage">
           <edgelabel>pPrevInputArray_</edgelabel>
@@ -742,11 +739,8 @@
       <node id="4">
         <label>asynPortDriver</label>
       </node>
-      <node id="11">
-        <label>epicsThreadRunable</label>
-      </node>
       <node id="10">
-        <label>string</label>
+        <label>epicsThreadRunable</label>
       </node>
     </collaborationgraph>
     <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginAttrPlot.h" line="94" column="1" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDPluginAttrPlot.h" bodystart="95" bodyend="223"/>

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="_n_d_file_net_c_d_f_8h" kind="file" language="C++">
     <compoundname>NDFileNetCDF.h</compoundname>
     <includes refid="_n_d_plugin_file_8h" local="yes">NDPluginFile.h</includes>
@@ -180,7 +180,7 @@
 <para>This version number is an attribute in the netCDF file to allow readers to handle changes in the file contents All files up through ADCore R3-8 were 3.0 R3-9 changed to 3.1. </para>
         </briefdescription>
         <detaileddescription>
-<para>This was done because the datatype attribute in the file which is enum NDDataType_t changed. NDInt64 and NDUInt64 were added after NDUInt32, which changed the datatypes of NDFloat32 and NDFloat64 from 6-7 to 8-9. </para>
+<para>This was done because the datatype attribute in the file which is enum <ref refid="_n_d_attribute_8h_1a34b835bcabc3b7f546f4b25c5767cb16" kindref="member">NDDataType_t</ref> changed. NDInt64 and NDUInt64 were added after NDUInt32, which changed the datatypes of NDFloat32 and NDFloat64 from 6-7 to 8-9. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -206,9 +206,9 @@
 <codeline lineno="12"><highlight class="normal"></highlight></codeline>
 <codeline lineno="19" refid="_n_d_file_net_c_d_f_8h_1ab566b209069f3d73322c307bf07c2c92" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NDNetCDFFileVersion<sp/>3.1</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="20"><highlight class="normal"></highlight></codeline>
-<codeline lineno="29" refid="class_n_d_file_net_c_d_f" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="_n_d_plugin_a_p_i_8h_1a02c41946c40d115c88db54fcbb3e58d7" kindref="member">NDPLUGIN_API</ref><sp/><ref refid="class_n_d_file_net_c_d_f" kindref="compound">NDFileNetCDF</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_n_d_plugin_file" kindref="compound">NDPluginFile</ref><sp/>{</highlight></codeline>
+<codeline lineno="29" refid="class_n_d_file_net_c_d_f" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="_n_d_plugin_a_p_i_8h_1a02c41946c40d115c88db54fcbb3e58d7" kindref="member">NDPLUGIN_API</ref><sp/><ref refid="class_n_d_file_net_c_d_f_1a754cf520527b533bde7e271e76b60c63" kindref="member">NDFileNetCDF</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_n_d_plugin_file_1a59d1b76dfbef43310a6a5628fdfcc655" kindref="member">NDPluginFile</ref><sp/>{</highlight></codeline>
 <codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_n_d_file_net_c_d_f" kindref="compound">NDFileNetCDF</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*portName,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>queueSize,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>blockingCallbacks,</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_n_d_file_net_c_d_f_1a754cf520527b533bde7e271e76b60c63" kindref="member">NDFileNetCDF</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*portName,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>queueSize,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>blockingCallbacks,</highlight></codeline>
 <codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*NDArrayPort,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NDArrayAddr,</highlight></codeline>
 <codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>priority,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>stackSize);</highlight></codeline>
 <codeline lineno="34"><highlight class="normal"></highlight></codeline>

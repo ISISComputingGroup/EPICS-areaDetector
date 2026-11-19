@@ -1,10 +1,8 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="class_read_only_parameter" kind="class" language="C++" prot="public">
     <compoundname>ReadOnlyParameter</compoundname>
     <basecompoundref refid="class_parameter_base" prot="public" virt="non-virtual">ParameterBase</basecompoundref>
-    <derivedcompoundref refid="class_parameter" prot="public" virt="non-virtual">Parameter&lt; epicsInt32 &gt;</derivedcompoundref>
-    <derivedcompoundref refid="class_parameter" prot="public" virt="non-virtual">Parameter&lt; epicsFloat64 &gt;</derivedcompoundref>
     <derivedcompoundref refid="class_parameter" prot="public" virt="non-virtual">Parameter&lt; T &gt;</derivedcompoundref>
     <includes refid="rixscam_8h" local="no">rixscam.h</includes>
     <templateparamlist>
@@ -351,26 +349,66 @@
         </inbodydescription>
         <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADRIXSCam/rixscamApp/src/rixscam.h" line="166" column="20" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADRIXSCam/rixscamApp/src/rixscam.h" bodystart="166" bodyend="169"/>
       </memberdef>
+      <memberdef kind="function" id="class_read_only_parameter_1a52b31ae16d3575d50b549d5881cfe3bb" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>asynStatus</type>
+        <definition>asynStatus ReadOnlyParameter&lt; epicsInt32 &gt;::Create</definition>
+        <argsstring>(asynPortDriver &amp;driver, const std::string &amp;name, int &amp;parameterIndex)</argsstring>
+        <name>Create</name>
+        <qualifiedname>ReadOnlyParameter::Create</qualifiedname>
+        <param>
+          <type>asynPortDriver &amp;</type>
+          <declname>driver</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>int &amp;</type>
+          <declname>parameterIndex</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADRIXSCam/rixscamApp/src/rixscam.h" line="178" column="40" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADRIXSCam/rixscamApp/src/rixscam.h" bodystart="178" bodyend="181"/>
+      </memberdef>
+      <memberdef kind="function" id="class_read_only_parameter_1a044a499560552409c9acbd4226a0d289" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>asynStatus</type>
+        <definition>asynStatus ReadOnlyParameter&lt; epicsFloat64 &gt;::Create</definition>
+        <argsstring>(asynPortDriver &amp;driver, const std::string &amp;name, int &amp;parameterIndex)</argsstring>
+        <name>Create</name>
+        <qualifiedname>ReadOnlyParameter::Create</qualifiedname>
+        <param>
+          <type>asynPortDriver &amp;</type>
+          <declname>driver</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>int &amp;</type>
+          <declname>parameterIndex</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADRIXSCam/rixscamApp/src/rixscam.h" line="183" column="40" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADRIXSCam/rixscamApp/src/rixscam.h" bodystart="183" bodyend="186"/>
+      </memberdef>
     </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="5">
-        <label>Parameter&lt; T &gt;</label>
-        <link refid="class_parameter"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="4">
-        <label>Parameter&lt; epicsFloat64 &gt;</label>
-        <link refid="class_parameter"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
       <node id="3">
-        <label>Parameter&lt; epicsInt32 &gt;</label>
+        <label>Parameter&lt; T &gt;</label>
         <link refid="class_parameter"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
@@ -406,6 +444,8 @@
       <member refid="class_read_only_parameter_1a5427b5421ec85d7544604bd4ffb608d3" prot="protected" virt="non-virtual"><scope>ReadOnlyParameter</scope><name>_scale</name></member>
       <member refid="class_read_only_parameter_1a05796688e4c51e9990b5599155f90611" prot="protected" virt="non-virtual"><scope>ReadOnlyParameter</scope><name>_value</name></member>
       <member refid="class_read_only_parameter_1a99809d5bca0211c7a39a31a62d1478b5" prot="protected" virt="virtual"><scope>ReadOnlyParameter</scope><name>Create</name></member>
+      <member refid="class_read_only_parameter_1a52b31ae16d3575d50b549d5881cfe3bb" prot="protected" virt="non-virtual"><scope>ReadOnlyParameter</scope><name>Create</name></member>
+      <member refid="class_read_only_parameter_1a044a499560552409c9acbd4226a0d289" prot="protected" virt="non-virtual"><scope>ReadOnlyParameter</scope><name>Create</name></member>
       <member refid="class_parameter_base_1a636d6f29870d0098d40b26c6ecba0f70" prot="protected" virt="non-virtual"><scope>ReadOnlyParameter</scope><name>GetParameter</name></member>
       <member refid="class_parameter_base_1a4231bea23b8a736771fcb55d09bfa9d3" prot="protected" virt="non-virtual"><scope>ReadOnlyParameter</scope><name>GetParameter</name></member>
       <member refid="class_read_only_parameter_1a746bfb09439365fba6969d571ab2e43f" prot="public" virt="virtual"><scope>ReadOnlyParameter</scope><name>HasParameterIndex</name></member>

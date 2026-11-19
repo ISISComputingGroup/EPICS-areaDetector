@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="specs_analyser_8cpp" kind="file" language="C++">
     <compoundname>specsAnalyser.cpp</compoundname>
     <includes refid="specs_analyser_8h" local="yes">specsAnalyser.h</includes>
@@ -452,7 +452,7 @@
           <declname>stackSize</declname>
         </param>
         <briefdescription>
-<para>A bit of C glue to make the config function available in the startup script (ioc shell) </para>
+<para>A bit of C glue to make the config function available in the startup script (ioc shell). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -841,7 +841,7 @@
 <codeline lineno="280"><highlight class="normal"><sp/><sp/>epicsTimeStamp<sp/>startTime,<sp/>endTime;</highlight></codeline>
 <codeline lineno="281"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>elapsedTime;</highlight></codeline>
 <codeline lineno="282"><highlight class="normal"><sp/><sp/>std::map&lt;std::string,<sp/>std::string&gt;<sp/>data;</highlight></codeline>
-<codeline lineno="283"><highlight class="normal"><sp/><sp/><ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*pImage;</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/>NDArray<sp/>*pImage;</highlight></codeline>
 <codeline lineno="284"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>dims[2];</highlight></codeline>
 <codeline lineno="285"><highlight class="normal"><sp/><sp/><ref refid="_n_d_attribute_8h_1a34b835bcabc3b7f546f4b25c5767cb16" kindref="member">NDDataType_t</ref><sp/><ref refid="_a_d_pylon_8cpp_1a048925b4357a1b4d6015c2113e05ce9f" kindref="member">dataType</ref>;</highlight></codeline>
 <codeline lineno="286"><highlight class="normal"><sp/><sp/>epicsFloat64<sp/>*pNDImage<sp/>=<sp/>0;</highlight></codeline>
@@ -1012,7 +1012,7 @@
 <codeline lineno="451"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="452"><highlight class="normal"></highlight></codeline>
 <codeline lineno="453"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Allocate<sp/>NDArray<sp/>memory</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="454"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>pImage<sp/>=<sp/>this-&gt;<ref refid="classasyn_n_d_array_driver_1ad3969854a37329ef4061cc560e9022dc" kindref="member">pNDArrayPool</ref>-&gt;<ref refid="class_n_d_array_pool_1a26b4360694655c4af6c853c2f3d2ce5e" kindref="member">alloc</ref>(2,<sp/>dims,<sp/><ref refid="_a_d_pylon_8cpp_1a048925b4357a1b4d6015c2113e05ce9f" kindref="member">dataType</ref>,<sp/>0,<sp/>NULL);</highlight></codeline>
+<codeline lineno="454"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>pImage<sp/>=<sp/>this-&gt;<ref refid="classasyn_n_d_array_driver_1ad3969854a37329ef4061cc560e9022dc" kindref="member">pNDArrayPool</ref>-&gt;alloc(2,<sp/>dims,<sp/><ref refid="_a_d_pylon_8cpp_1a048925b4357a1b4d6015c2113e05ce9f" kindref="member">dataType</ref>,<sp/>0,<sp/>NULL);</highlight></codeline>
 <codeline lineno="455"><highlight class="normal"></highlight></codeline>
 <codeline lineno="456"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Reset<sp/>the<sp/>percent<sp/>complete<sp/>and<sp/>current<sp/>sample</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="457"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classasyn_n_d_array_driver_1abf87462bc5853f8e5a56db5e93acd956" kindref="member">setIntegerParam</ref>(<ref refid="class_specs_analyser_1a90726c4e4d25c387fa5595e5bdd3a246" kindref="member">SPECSPercentCompleteIteration_</ref>,<sp/>0);</highlight></codeline>
@@ -1634,7 +1634,7 @@
 <codeline lineno="1109"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1110"><highlight class="normal"><sp/><sp/>asynStatus<sp/>status<sp/>=<sp/>asynSuccess;</highlight></codeline>
 <codeline lineno="1111"><highlight class="normal"><sp/><sp/>std::stringstream<sp/>command;</highlight></codeline>
-<codeline lineno="1112"><highlight class="normal"><sp/><sp/>std::string<sp/><ref refid="structresponse" kindref="compound">response</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="1112"><highlight class="normal"><sp/><sp/>std::string<sp/>response<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="1113"><highlight class="normal"><sp/><sp/>std::map&lt;std::string,<sp/>std::string&gt;<sp/>data;</highlight></codeline>
 <codeline lineno="1114"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dvalue<sp/>=<sp/>0.0;</highlight></codeline>
 <codeline lineno="1115"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ivalue<sp/>=<sp/>0;</highlight></codeline>
@@ -1675,7 +1675,7 @@
 <codeline lineno="1155"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1156"><highlight class="normal"><sp/><sp/>asynStatus<sp/>status<sp/>=<sp/>asynSuccess;</highlight></codeline>
 <codeline lineno="1157"><highlight class="normal"><sp/><sp/>std::stringstream<sp/>command;</highlight></codeline>
-<codeline lineno="1158"><highlight class="normal"><sp/><sp/>std::string<sp/><ref refid="structresponse" kindref="compound">response</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="1158"><highlight class="normal"><sp/><sp/>std::string<sp/>response<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="1159"><highlight class="normal"><sp/><sp/>std::map&lt;std::string,<sp/>std::string&gt;<sp/>data;</highlight></codeline>
 <codeline lineno="1160"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dvalue<sp/>=<sp/>0.0;</highlight></codeline>
 <codeline lineno="1161"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ivalue<sp/>=<sp/>0;</highlight></codeline>
@@ -1713,7 +1713,7 @@
 <codeline lineno="1193"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1194"><highlight class="normal"><sp/><sp/>asynStatus<sp/>status<sp/>=<sp/>asynSuccess;</highlight></codeline>
 <codeline lineno="1195"><highlight class="normal"><sp/><sp/>std::stringstream<sp/>command;</highlight></codeline>
-<codeline lineno="1196"><highlight class="normal"><sp/><sp/>std::string<sp/><ref refid="structresponse" kindref="compound">response</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="1196"><highlight class="normal"><sp/><sp/>std::string<sp/>response<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="1197"><highlight class="normal"><sp/><sp/>std::map&lt;std::string,<sp/>std::string&gt;<sp/>data;</highlight></codeline>
 <codeline lineno="1198"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dvalue<sp/>=<sp/>0.0;</highlight></codeline>
 <codeline lineno="1199"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ivalue<sp/>=<sp/>0;</highlight></codeline>
@@ -1754,7 +1754,7 @@
 <codeline lineno="1234"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1235"><highlight class="normal"><sp/><sp/>asynStatus<sp/>status<sp/>=<sp/>asynSuccess;</highlight></codeline>
 <codeline lineno="1236"><highlight class="normal"><sp/><sp/>std::stringstream<sp/>command;</highlight></codeline>
-<codeline lineno="1237"><highlight class="normal"><sp/><sp/>std::string<sp/><ref refid="structresponse" kindref="compound">response</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="1237"><highlight class="normal"><sp/><sp/>std::string<sp/>response<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="1238"><highlight class="normal"><sp/><sp/>std::map&lt;std::string,<sp/>std::string&gt;<sp/>data;</highlight></codeline>
 <codeline lineno="1239"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dvalue<sp/>=<sp/>0.0;</highlight></codeline>
 <codeline lineno="1240"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ivalue<sp/>=<sp/>0;</highlight></codeline>
@@ -1831,16 +1831,16 @@
 <codeline lineno="1315"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*functionName<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;SpecsAnalyser::sendSimpleCommand&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="1316"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1317"><highlight class="normal"><sp/><sp/>asynStatus<sp/>status<sp/>=<sp/>asynSuccess;</highlight></codeline>
-<codeline lineno="1318"><highlight class="normal"><sp/><sp/>std::string<sp/><ref refid="structresponse" kindref="compound">response</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="1318"><highlight class="normal"><sp/><sp/>std::string<sp/>response<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="1319"><highlight class="normal"><sp/><sp/>std::map&lt;std::string,<sp/>std::string&gt;<sp/>ldata;</highlight></codeline>
 <codeline lineno="1320"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1321"><highlight class="normal"><sp/><sp/><ref refid="class_specs_analyser_1a2c008251d0728d780494193a58d8f6df" kindref="member">debug</ref>(functionName,<sp/></highlight><highlight class="stringliteral">&quot;Sending<sp/>command&quot;</highlight><highlight class="normal">,<sp/>command);</highlight></codeline>
 <codeline lineno="1322"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Send<sp/>the<sp/>command<sp/>and<sp/>get<sp/>the<sp/>reply</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1323"><highlight class="normal"><sp/><sp/>status<sp/>=<sp/><ref refid="class_specs_analyser_1aef8fea6aded7d899411870cb9ea6b117" kindref="member">commandResponse</ref>(command,<sp/><ref refid="structresponse" kindref="compound">response</ref>,<sp/>ldata);</highlight></codeline>
+<codeline lineno="1323"><highlight class="normal"><sp/><sp/>status<sp/>=<sp/><ref refid="class_specs_analyser_1aef8fea6aded7d899411870cb9ea6b117" kindref="member">commandResponse</ref>(command,<sp/>response,<sp/>ldata);</highlight></codeline>
 <codeline lineno="1324"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Check<sp/>the<sp/>command<sp/>sent<sp/>OK</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1325"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(status<sp/>==<sp/>asynSuccess){</highlight></codeline>
 <codeline lineno="1326"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Check<sp/>the<sp/>response<sp/>for<sp/>any<sp/>errors</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1327"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="structresponse" kindref="compound">response</ref><sp/>==<sp/><ref refid="specs_analyser_8h_1a0d89f5afa958c8a7005f2aa5c9e0eeaa" kindref="member">SPECS_ERROR_STRING</ref>){</highlight></codeline>
+<codeline lineno="1327"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(response<sp/>==<sp/><ref refid="specs_analyser_8h_1a0d89f5afa958c8a7005f2aa5c9e0eeaa" kindref="member">SPECS_ERROR_STRING</ref>){</highlight></codeline>
 <codeline lineno="1328"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_specs_analyser_1a2c008251d0728d780494193a58d8f6df" kindref="member">debug</ref>(functionName,<sp/></highlight><highlight class="stringliteral">&quot;Unable<sp/>to<sp/>successfully<sp/>issue<sp/>the<sp/>command&quot;</highlight><highlight class="normal">,<sp/>command);</highlight></codeline>
 <codeline lineno="1329"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>msg<sp/>=<sp/>ldata[</highlight><highlight class="stringliteral">&quot;Code&quot;</highlight><highlight class="normal">]<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>ldata[</highlight><highlight class="stringliteral">&quot;Message&quot;</highlight><highlight class="normal">];</highlight></codeline>
 <codeline lineno="1330"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_specs_analyser_1a2c008251d0728d780494193a58d8f6df" kindref="member">debug</ref>(functionName,<sp/></highlight><highlight class="stringliteral">&quot;Returned<sp/>error&quot;</highlight><highlight class="normal">,<sp/>msg);</highlight></codeline>
@@ -2000,7 +2000,7 @@
 <codeline lineno="1492"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>status;</highlight></codeline>
 <codeline lineno="1493"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1494"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1495"><highlight class="normal">asynStatus<sp/><ref refid="class_specs_analyser_1a834ee1bb680980d102383767177fc0dd" kindref="member">SpecsAnalyser::getAnalyserParameterType</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>name,<sp/><ref refid="specs_analyser_8h_1a18fcc036f049d62022faef28491639f9" kindref="member">SPECSValueType_t</ref><sp/>&amp;type)</highlight></codeline>
+<codeline lineno="1495"><highlight class="normal">asynStatus<sp/><ref refid="class_specs_analyser_1a834ee1bb680980d102383767177fc0dd" kindref="member">SpecsAnalyser::getAnalyserParameterType</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>name,<sp/><ref refid="specs_analyser_8h_1a18fcc036f049d62022faef28491639f9" kindref="member">SPECSValueType_t</ref><sp/>&amp;<ref refid="struct_make_unsigned_impl" kindref="compound">type</ref>)</highlight></codeline>
 <codeline lineno="1496"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="1497"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>functionName<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;SpecsAnalyser::getAnalyserParameterType&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="1498"><highlight class="normal"><sp/><sp/>asynStatus<sp/>status<sp/>=<sp/>asynSuccess;</highlight></codeline>
@@ -2396,7 +2396,7 @@
 <codeline lineno="1913"><highlight class="normal"><sp/><sp/><sp/><sp/>replyString.assign(replyArray);</highlight></codeline>
 <codeline lineno="1914"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Search<sp/>for<sp/>OK<sp/>or<sp/>ERROR<sp/>at<sp/>the<sp/>beginning<sp/>of<sp/>the<sp/>string</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1915"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(replyString.substr(0,<sp/>2)<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;OK&quot;</highlight><highlight class="normal">){</highlight></codeline>
-<codeline lineno="1916"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structresponse" kindref="compound">response</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;OK&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="1916"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>response<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;OK&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="1917"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Only<sp/>parse<sp/>the<sp/>response<sp/>if<sp/>there<sp/>is<sp/>something<sp/>to<sp/>parse!</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1918"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(replyString.length()<sp/>&gt;<sp/>3){</highlight></codeline>
 <codeline lineno="1919"><highlight class="normal"></highlight></codeline>
@@ -2492,7 +2492,7 @@
 <codeline lineno="2009"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="2010"><highlight class="normal"></highlight></codeline>
 <codeline lineno="2011"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="2012"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structresponse" kindref="compound">response</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;ERROR&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="2012"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>response<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;ERROR&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="2013"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>replyString<sp/>=<sp/>replyString.substr(5);</highlight></codeline>
 <codeline lineno="2014"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Clean<sp/>any<sp/>:<sp/>and<sp/>whitespace<sp/>from<sp/>the<sp/>front<sp/>of<sp/>the<sp/>string</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2015"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_specs_analyser_1aa4860a007948f4de145369331715cbb5" kindref="member">cleanString</ref>(replyString);</highlight></codeline>
@@ -2585,7 +2585,7 @@
 <codeline lineno="2107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/>asynError;</highlight></codeline>
 <codeline lineno="2108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
 <codeline lineno="2109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Copy<sp/>the<sp/>response<sp/>to<sp/>the<sp/>return<sp/>string</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="2110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strcpy(<ref refid="structresponse" kindref="compound">response</ref>,<sp/>replyString.substr(6).c_str());</highlight></codeline>
+<codeline lineno="2110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strcpy(response,<sp/>replyString.substr(6).c_str());</highlight></codeline>
 <codeline lineno="2111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="2112"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/><ref refid="class_specs_analyser_1a2c008251d0728d780494193a58d8f6df" kindref="member">debug</ref>(functionName,<sp/></highlight><highlight class="stringliteral">&quot;****Error<sp/>asynStatus=&quot;</highlight><highlight class="normal">,status);</highlight></codeline>
 <codeline lineno="2113"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.9.8" xml:lang="en-US">
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.15.0" xml:lang="en-US">
   <compound refid="struct_a_c_q___p_r_o_p" kind="struct"><name>ACQ_PROP</name>
     <member refid="struct_a_c_q___p_r_o_p_1af1977176ae1fd511aa5ab00396a9bd2b" kind="variable"><name>energy</name></member>
     <member refid="struct_a_c_q___p_r_o_p_1a64fd02b5610b497af910b4c8680305ff" kind="variable"><name>reg</name></member>
@@ -1853,7 +1853,7 @@
     <member refid="structeiger__min__max__t_1afdffc578778316f79d836c8d38633582" kind="variable"><name>exists</name></member>
     <member refid="structeiger__min__max__t_1afb8a212ea8663c26eb639a97ea51d62a" kind="variable"><name>valInt</name></member>
     <member refid="structeiger__min__max__t_1a9d9ee2e506f1a111aabafe4bf36e5d46" kind="variable"><name>valDouble</name></member>
-    <member refid="structeiger__min__max__t_1a212fc2a0e7d36117bdb3db6368ebe2a6" kind="variable"><name></name></member>
+    <member refid="structeiger__min__max__t_1a99b4040fdab1dbc5b47eca1b814bea31" kind="variable"><name></name></member>
   </compound>
   <compound refid="classeiger_detector" kind="class"><name>eigerDetector</name>
     <member refid="classeiger_detector_1a10547056693d377f8fb6347056ba929d" kind="enum"><name>roi_mode</name></member>
@@ -4382,6 +4382,17 @@
     <member refid="classn_e_d_channel_1_1n_e_d_channel_requester_1aba6acba70c0d7b0b1c74209a0d85ae89" kind="function"><name>getRequesterName</name></member>
     <member refid="classn_e_d_channel_1_1n_e_d_channel_requester_1ade2cfd1f4db70b263132eaffb07bae26" kind="function"><name>message</name></member>
   </compound>
+  <compound refid="classn_e_d_channel_requester" kind="class"><name>nEDChannelRequester</name>
+    <member refid="classn_e_d_channel_requester_1a8cd624b3d5cbb1325bbf40f00385f89c" kind="variable"><name>m_requesterName</name></member>
+    <member refid="classn_e_d_channel_requester_1a3c1cdd377566445f5f9d59569448ad76" kind="variable"><name>m_connectEvent</name></member>
+    <member refid="classn_e_d_channel_requester_1a0165320560af6305883e5d2e4397132f" kind="function"><name>nEDChannelRequester</name></member>
+    <member refid="classn_e_d_channel_requester_1a0c0b942afaa713c58e5b03442b851c5e" kind="function"><name>~nEDChannelRequester</name></member>
+    <member refid="classn_e_d_channel_requester_1a631773ba8dcaa4a9a941ad48e93448ce" kind="function"><name>channelCreated</name></member>
+    <member refid="classn_e_d_channel_requester_1a69b24631bc410d8e75c337eea275ff34" kind="function"><name>channelStateChange</name></member>
+    <member refid="classn_e_d_channel_requester_1a5e42ccd909b6e0fc977f8be62b32c8f8" kind="function"><name>waitUntilConnected</name></member>
+    <member refid="classn_e_d_channel_requester_1aba6acba70c0d7b0b1c74209a0d85ae89" kind="function"><name>getRequesterName</name></member>
+    <member refid="classn_e_d_channel_requester_1ade2cfd1f4db70b263132eaffb07bae26" kind="function"><name>message</name></member>
+  </compound>
   <compound refid="classn_e_d_channel_1_1n_e_d_monitor_requester" kind="class"><name>nEDChannel::nEDMonitorRequester</name>
     <member refid="classn_e_d_channel_1_1n_e_d_monitor_requester_1a88ae01d8dbee8f15f07f94e49643eeb3" kind="variable"><name>m_connectEvent</name></member>
     <member refid="classn_e_d_channel_1_1n_e_d_monitor_requester_1aee44fc50ed0cd07294e5d09ff5ad1cad" kind="variable"><name>m_requesterName</name></member>
@@ -4397,6 +4408,22 @@
     <member refid="classn_e_d_channel_1_1n_e_d_monitor_requester_1a33e266c270ced2f69dd034375d8eac43" kind="function"><name>waitUntilDone</name></member>
     <member refid="classn_e_d_channel_1_1n_e_d_monitor_requester_1a7cf9f9ce178948305824bcb2f1cc8888" kind="function"><name>getRequesterName</name></member>
     <member refid="classn_e_d_channel_1_1n_e_d_monitor_requester_1ac997fec75508130440ac49681ba2121f" kind="function"><name>message</name></member>
+  </compound>
+  <compound refid="classn_e_d_monitor_requester" kind="class"><name>nEDMonitorRequester</name>
+    <member refid="classn_e_d_monitor_requester_1a88ae01d8dbee8f15f07f94e49643eeb3" kind="variable"><name>m_connectEvent</name></member>
+    <member refid="classn_e_d_monitor_requester_1aee44fc50ed0cd07294e5d09ff5ad1cad" kind="variable"><name>m_requesterName</name></member>
+    <member refid="classn_e_d_monitor_requester_1aea8f5f8bfd7d28bb54c5900d021831e8" kind="variable"><name>p_nED</name></member>
+    <member refid="classn_e_d_monitor_requester_1a68e8b453910447cc8497e13c126c78fa" kind="variable"><name>m_doneEvent</name></member>
+    <member refid="classn_e_d_monitor_requester_1a26eb477d6be91d39916e5323dfd7418b" kind="variable"><name>m_channelID</name></member>
+    <member refid="classn_e_d_monitor_requester_1a539ad79a681f88c599c26e30b8461197" kind="function"><name>nEDMonitorRequester</name></member>
+    <member refid="classn_e_d_monitor_requester_1aeb507293f45d94bc852cc86b7883ac0d" kind="function"><name>~nEDMonitorRequester</name></member>
+    <member refid="classn_e_d_monitor_requester_1a1ced277f6ac8f37bce2ed85192c0e44f" kind="function"><name>monitorConnect</name></member>
+    <member refid="classn_e_d_monitor_requester_1a5c6c0e8ea60a37787e3d4f0637858f50" kind="function"><name>monitorEvent</name></member>
+    <member refid="classn_e_d_monitor_requester_1a174e9e785350875785f6fa959566631d" kind="function"><name>unlisten</name></member>
+    <member refid="classn_e_d_monitor_requester_1ac625a9a1a8cdac1a0be2855a89c5bd2f" kind="function"><name>waitUntilConnected</name></member>
+    <member refid="classn_e_d_monitor_requester_1a33e266c270ced2f69dd034375d8eac43" kind="function"><name>waitUntilDone</name></member>
+    <member refid="classn_e_d_monitor_requester_1a7cf9f9ce178948305824bcb2f1cc8888" kind="function"><name>getRequesterName</name></member>
+    <member refid="classn_e_d_monitor_requester_1ac997fec75508130440ac49681ba2121f" kind="function"><name>message</name></member>
   </compound>
   <compound refid="class_n_t_n_d_array_converter" kind="class"><name>NTNDArrayConverter</name>
     <member refid="class_n_t_n_d_array_converter_1aea009c4c81a787b7104b84174690c169" kind="variable"><name>m_array</name></member>
@@ -4439,9 +4466,9 @@
     <member refid="struct_n_t_n_d_array_info_1a02fb8bdc6c5e01a45cbc7e35f31c3d4b" kind="variable"><name>dim</name></member>
     <member refid="struct_n_t_n_d_array_info_1a5095b25de6066b5ea6b90c4df54fb2cd" kind="variable"><name>size</name></member>
     <member refid="struct_n_t_n_d_array_info_1a417a3ea61e23ce109bcc8dfbaf8798f4" kind="variable"><name>stride</name></member>
-    <member refid="struct_n_t_n_d_array_info_1aaeb5336186f64f4151b6880837278dc7" kind="variable"><name>x</name></member>
-    <member refid="struct_n_t_n_d_array_info_1a055a038040b8a40e9239b9e53b36eb5e" kind="variable"><name>y</name></member>
-    <member refid="struct_n_t_n_d_array_info_1a45873fd7951b0468ed7d26c979ceb8f8" kind="variable"><name>color</name></member>
+    <member refid="struct_n_t_n_d_array_info_1ab1b302b5ef90a6b8ec1cbd314477e582" kind="variable"><name>x</name></member>
+    <member refid="struct_n_t_n_d_array_info_1a2510afe7d40427b19d86152807d6f36a" kind="variable"><name>y</name></member>
+    <member refid="struct_n_t_n_d_array_info_1a7b6dded6bf4c97612bdcccf6cd1712d3" kind="variable"><name>color</name></member>
   </compound>
   <compound refid="class_n_t_n_d_array_record" kind="class"><name>NTNDArrayRecord</name>
     <member refid="class_n_t_n_d_array_record_1ab1655c6fb9626303e40cf9b531128442" kind="variable"><name>m_ntndArray</name></member>
@@ -4483,9 +4510,9 @@
     <member refid="class_parameter_base_1a4231bea23b8a736771fcb55d09bfa9d3" kind="function"><name>GetParameter</name></member>
   </compound>
   <compound refid="classpco" kind="class"><name>pco</name>
-    <member refid="classpco_1aa9a85ae693a8c2cffd31c228f5e7b7da" kind="enum"><name></name></member>
-    <member refid="classpco_1aa9a85ae693a8c2cffd31c228f5e7b7daa2a6feef57062bcbc6794a0c9cef307e3" kind="enumvalue"><name>pco_paramint</name></member>
-    <member refid="classpco_1aa9a85ae693a8c2cffd31c228f5e7b7daa56096e6d2114a548ba80379410be9ecb" kind="enumvalue"><name>pco_paramdoub</name></member>
+    <member refid="classpco_1aed5e367298a3858a7cb2cd21ae59c51a" kind="enum"><name></name></member>
+    <member refid="classpco_1aed5e367298a3858a7cb2cd21ae59c51aa2a6feef57062bcbc6794a0c9cef307e3" kind="enumvalue"><name>pco_paramint</name></member>
+    <member refid="classpco_1aed5e367298a3858a7cb2cd21ae59c51aa56096e6d2114a548ba80379410be9ecb" kind="enumvalue"><name>pco_paramdoub</name></member>
     <member refid="classpco_1ad5ed5b95e51b9aafba745f3d46ddee53" kind="enum"><name>whichPCOCam</name></member>
     <member refid="classpco_1ad5ed5b95e51b9aafba745f3d46ddee53ae4d4e13c4209999660be7a109a45b60d" kind="enumvalue"><name>pco_dimax</name></member>
     <member refid="classpco_1ad5ed5b95e51b9aafba745f3d46ddee53abac74cafb917d1958aca8c15a6826783" kind="enumvalue"><name>pco_edge</name></member>
@@ -5614,6 +5641,8 @@
     <member refid="class_read_only_parameter_1a746bfb09439365fba6969d571ab2e43f" kind="function"><name>HasParameterIndex</name></member>
     <member refid="class_read_only_parameter_1ac8b44cc510e7e0e0c6434478eb586875" kind="function"><name>InternalIndex</name></member>
     <member refid="class_read_only_parameter_1a99809d5bca0211c7a39a31a62d1478b5" kind="function"><name>Create</name></member>
+    <member refid="class_read_only_parameter_1a52b31ae16d3575d50b549d5881cfe3bb" kind="function"><name>Create</name></member>
+    <member refid="class_read_only_parameter_1a044a499560552409c9acbd4226a0d289" kind="function"><name>Create</name></member>
   </compound>
   <compound refid="structrequest" kind="struct"><name>request</name>
     <member refid="structrequest_1a75261cd13d263ec8e0a3e6e80f4924e9" kind="variable"><name>data</name></member>
@@ -5962,15 +5991,15 @@
     <member refid="class_s_p_feature_1a4110287d09f728c8a47a08affbd0a85a" kind="function"><name>writeCommand</name></member>
   </compound>
   <compound refid="structstream__frame" kind="struct"><name>stream_frame</name>
-    <member refid="structstream__frame_1aca1774c8a8ce98fa6e729072f766e8c8" kind="enum"><name></name></member>
-    <member refid="structstream__frame_1aca1774c8a8ce98fa6e729072f766e8c8aea266a65c573d124cf8668945309aa54" kind="enumvalue"><name>UINT8</name></member>
-    <member refid="structstream__frame_1aca1774c8a8ce98fa6e729072f766e8c8a30d93f6019a5994d0c84767f7bf79156" kind="enumvalue"><name>UINT16</name></member>
-    <member refid="structstream__frame_1aca1774c8a8ce98fa6e729072f766e8c8ac3bca264d9aa653cf95dda8aaaba554a" kind="enumvalue"><name>UINT32</name></member>
+    <member refid="structstream__frame_1a9e373ba7fe010a10eba3fe76bc0c1f7f" kind="enum"><name></name></member>
+    <member refid="structstream__frame_1a9e373ba7fe010a10eba3fe76bc0c1f7faea266a65c573d124cf8668945309aa54" kind="enumvalue"><name>UINT8</name></member>
+    <member refid="structstream__frame_1a9e373ba7fe010a10eba3fe76bc0c1f7fa30d93f6019a5994d0c84767f7bf79156" kind="enumvalue"><name>UINT16</name></member>
+    <member refid="structstream__frame_1a9e373ba7fe010a10eba3fe76bc0c1f7fac3bca264d9aa653cf95dda8aaaba554a" kind="enumvalue"><name>UINT32</name></member>
     <member refid="structstream__frame_1a56de6090a15f971a67bf3b105a7a0b2f" kind="variable"><name>end</name></member>
     <member refid="structstream__frame_1a1820fb2722186e355aabb3c8e6553204" kind="variable"><name>series</name></member>
     <member refid="structstream__frame_1a3dccf2fd5c32e48714d8182119ffb065" kind="variable"><name>frame</name></member>
     <member refid="structstream__frame_1a91dc06471c5f5f90376934a3d8b7beb2" kind="variable"><name>shape</name></member>
-    <member refid="structstream__frame_1aff75c17af0310f069f160f4344e71f5e" kind="variable"><name>type</name></member>
+    <member refid="structstream__frame_1ab66f6a704ee7e4b37a2acb468e190dcf" kind="variable"><name>type</name></member>
     <member refid="structstream__frame_1ae01dffe6ddd72098543d284444080539" kind="variable"><name>encoding</name></member>
     <member refid="structstream__frame_1a4643e401984ff522767f37fa4db86113" kind="variable"><name>compressedSize</name></member>
     <member refid="structstream__frame_1ae8471acc5d2d33d441a261ff928e9c9f" kind="variable"><name>uncompressedSize</name></member>
@@ -6159,8 +6188,8 @@
     <member refid="structtag_c_s_m_a_h_e_a_d_1a59e949432331bbd1e15573b9d01cd1a3" kind="variable"><name>leftover_flag</name></member>
     <member refid="structtag_c_s_m_a_h_e_a_d_1a3f88354907e3be145ceee299008fdcea" kind="variable"><name>user_label</name></member>
     <member refid="structtag_c_s_m_a_h_e_a_d_1a65d4e27ef6987fa69f4a5775329dd7c1" kind="variable"><name>expansion</name></member>
-    <member refid="structtag_c_s_m_a_h_e_a_d_1a0d680a54e4347a32217a5e8103db953e" kind="variable"><name>xcalibration</name></member>
-    <member refid="structtag_c_s_m_a_h_e_a_d_1a27be65eb1c0485d0ce2ff6e67516bfb0" kind="variable"><name>ycalibration</name></member>
+    <member refid="structtag_c_s_m_a_h_e_a_d_1a8d24b863a6b45a1ef258e02179856254" kind="variable"><name>xcalibration</name></member>
+    <member refid="structtag_c_s_m_a_h_e_a_d_1adf6a702ddb40f18bd17527aad06600b6" kind="variable"><name>ycalibration</name></member>
     <member refid="structtag_c_s_m_a_h_e_a_d_1a4ee0b35ffd14a5bcb416279edfb0b4aa" kind="variable"><name>Istring</name></member>
     <member refid="structtag_c_s_m_a_h_e_a_d_1a8ef24b02434eb590d36b5fecb9819e96" kind="variable"><name>Spare_6</name></member>
     <member refid="structtag_c_s_m_a_h_e_a_d_1a56884bc077b2455206b9f07598c3bbc6" kind="variable"><name>SpecType</name></member>
@@ -8677,9 +8706,9 @@
   </compound>
   <compound refid="_n_d_plugin_time_series_8cpp" kind="file"><name>NDPluginTimeSeries.cpp</name>
     <member refid="_n_d_plugin_time_series_8cpp_1a96ffc35d728f7c0747171b09be5021ec" kind="define"><name>DEFAULT_NUM_TSPOINTS</name></member>
-    <member refid="_n_d_plugin_time_series_8cpp_1a06fc87d81c62e9abb8790b6e5713c55b" kind="enum"><name></name></member>
-    <member refid="_n_d_plugin_time_series_8cpp_1a06fc87d81c62e9abb8790b6e5713c55baae134f53e3d76e5d7fbdc542ea786bda" kind="enumvalue"><name>TSAcquireModeFixed</name></member>
-    <member refid="_n_d_plugin_time_series_8cpp_1a06fc87d81c62e9abb8790b6e5713c55bab9115122930377f5bbda31ad6a8fd7d4" kind="enumvalue"><name>TSAcquireModeCircular</name></member>
+    <member refid="_n_d_plugin_time_series_8cpp_1a447a968ad6ee35f1854a58d952e319b5" kind="enum"><name></name></member>
+    <member refid="_n_d_plugin_time_series_8cpp_1a447a968ad6ee35f1854a58d952e319b5aae134f53e3d76e5d7fbdc542ea786bda" kind="enumvalue"><name>TSAcquireModeFixed</name></member>
+    <member refid="_n_d_plugin_time_series_8cpp_1a447a968ad6ee35f1854a58d952e319b5ab9115122930377f5bbda31ad6a8fd7d4" kind="enumvalue"><name>TSAcquireModeCircular</name></member>
     <member refid="_n_d_plugin_time_series_8cpp_1a13021e744179110a6114bf84e9d47f32" kind="variable"><name>initArg0</name></member>
     <member refid="_n_d_plugin_time_series_8cpp_1a85f312f39f3c368a5fa10d1039dc40b2" kind="variable"><name>initArg1</name></member>
     <member refid="_n_d_plugin_time_series_8cpp_1a645a7d7d0d71a7522373e2af4008b520" kind="variable"><name>initArg2</name></member>
@@ -9083,9 +9112,6 @@
     <member refid="rest_api_8h_1a14c3ad6f5fa82ee5ff47981398d0e13caadd8602a6ab296f8692c5ce7224164cf" kind="enumvalue"><name>SSStreamStatus</name></member>
     <member refid="rest_api_8h_1a14c3ad6f5fa82ee5ff47981398d0e13ca1a3e49e6ed8bbd7628d9987531e8f08c" kind="enumvalue"><name>SSSysCommand</name></member>
     <member refid="rest_api_8h_1a14c3ad6f5fa82ee5ff47981398d0e13ca69d0630a4d1e3d547807db45c2ae59bf" kind="enumvalue"><name>SSCount</name></member>
-    <member refid="rest_api_8h_1a367edad9ab2aa35c679c908173b6ebc2" kind="typedef"><name>request_t</name></member>
-    <member refid="rest_api_8h_1ae28817caa5cb8b1eef6c0d3e00529692" kind="typedef"><name>response_t</name></member>
-    <member refid="rest_api_8h_1a6a9dbb91c569af562f6119bb7b960cbb" kind="typedef"><name>socket_t</name></member>
   </compound>
   <compound refid="stream_api_8cpp" kind="file"><name>streamApi.cpp</name>
     <member refid="stream_api_8cpp_1a2f1ae599e19d53b7acd88c73b9e86541" kind="define"><name>ZMQ_PORT</name></member>
@@ -10983,7 +11009,7 @@
     <member refid="pixirad_8cpp_1adf01265ec90c6edb8ef03effbc631869" kind="define"><name>PIXIE_THDAC_OFFSET</name></member>
     <member refid="pixirad_8cpp_1a494232671ece88e9e4096ccf6bdabe4f" kind="define"><name>DUMMY_0_OFFSET</name></member>
     <member refid="pixirad_8cpp_1a8a54dd946c2a8609f0cc2d3f56753039" kind="define"><name>PIXIE_THDAC_MASK</name></member>
-    <member refid="pixirad_8cpp_1adf01265ec90c6edb8ef03effbc631869" kind="define"><name>PIXIE_THDAC_OFFSET</name></member>
+    <member refid="pixirad_8cpp_1ab356a8805687c6b7f15645dc585de700" kind="define"><name>PIXIE_THDAC_OFFSET</name></member>
     <member refid="pixirad_8cpp_1a30160464b5a74b2bdf8facae51d604cf" kind="define"><name>DUMMY_1_OFFSET</name></member>
     <member refid="pixirad_8cpp_1a10290155a529ee095e61fe1c9e181293" kind="define"><name>NUM_THRESHOLDS</name></member>
     <member refid="pixirad_8cpp_1a86b6e7b2ead9bfd9b0d3cf881db5a603" kind="define"><name>THRESH_B_COEFF</name></member>
@@ -11734,7 +11760,7 @@
     <member refid="_a_d_pylon_8cpp_1a3c447dc29e8a7c4be4fda5f438b28904" kind="variable"><name>colorMode</name></member>
     <member refid="_a_d_pylon_8cpp_1a048925b4357a1b4d6015c2113e05ce9f" kind="variable"><name>dataType</name></member>
     <member refid="_a_d_pylon_8cpp_1ad9d146b03dbf0bed289f260de75ee03a" kind="variable"><name>bayerFormat</name></member>
-    <member refid="_a_d_pylon_8cpp_1aded9f4ed84cfd61c30f0874e6e81ef94" kind="variable"><name>pix_lookup</name></member>
+    <member refid="_a_d_pylon_8cpp_1a34374d51155a554e3eb1a1f1fa80d977" kind="variable"><name>pix_lookup</name></member>
     <member refid="_a_d_pylon_8cpp_1a5b3cb40f99ecdaa383a0189445b38fbf" kind="variable"><name>configArg0</name></member>
     <member refid="_a_d_pylon_8cpp_1a12e03f733e7768280d0205a2d8adeaab" kind="variable"><name>configArg1</name></member>
     <member refid="_a_d_pylon_8cpp_1ac0dc159931b84391cb7c0fed1fa7986f" kind="variable"><name>configArg2</name></member>
@@ -12261,7 +12287,7 @@
     <member refid="nullhttpd_8h_1a7e535fdc4fc85c1f88b9e044dbc21f52" kind="variable"><name>Crypt</name></member>
     <member refid="nullhttpd_8h_1a0edc6eef7aa70a3ed92ef98306054d1a" kind="variable"><name>Global</name></member>
     <member refid="nullhttpd_8h_1a41e1fee0d3cdacac20b7bf9bb56b8e55" kind="variable"><name>SQL</name></member>
-    <member refid="nullhttpd_8h_1af59c8ee0015ac5f3a81bfde224a3b9d7" kind="variable"><name>Lock</name></member>
+    <member refid="nullhttpd_8h_1a23c1a4a21e899a5b3d1e37e567768674" kind="variable"><name>Lock</name></member>
     <member refid="nullhttpd_8h_1a71770dad1bccb2ffa25dfdcb12cb40bd" kind="variable"><name>program_name</name></member>
     <member refid="nullhttpd_8h_1ac72f0ddb88146ec79385cf0a0bdb3f27" kind="variable"><name>config</name></member>
     <member refid="nullhttpd_8h_1a525d7eccda3aaf37a79ce3854365b295" kind="variable"><name>conn</name></member>
@@ -12399,7 +12425,6 @@
     <member refid="firewiretool_8cpp_1af340b0f4452aaf752fff2a5f5120b3b7" kind="define"><name>FDC_DC1394_NUM_BUFFERS</name></member>
     <member refid="firewiretool_8cpp_1a8e4a40e78c4cea6bb2d980f67b777b2d" kind="define"><name>ERR</name></member>
     <member refid="firewiretool_8cpp_1acb9d624b7d3c482d2712399845bb9559" kind="typedef"><name>camListItem_t</name></member>
-    <member refid="firewiretool_8cpp_1afb68e1b6c3a3a8a2fbb6288bf6569689" kind="typedef"><name>camNode_t</name></member>
     <member refid="firewiretool_8cpp_1ae7880f5d03ee3d5e8178951523c90de9" kind="variable"><name>colorCodeString_lut</name></member>
     <member refid="firewiretool_8cpp_1a94965649155359a4c4eb047af782bf22" kind="variable"><name>longopts</name></member>
     <member refid="firewiretool_8cpp_1aeca65747d7a92a326067969e7fb06bcd" kind="variable"><name>fwtopts</name></member>
@@ -12417,7 +12442,6 @@
     <member refid="test_cams_8cpp_1a8e4a40e78c4cea6bb2d980f67b777b2d" kind="define"><name>ERR</name></member>
     <member refid="test_cams_8cpp_1a990b50a6e80f6dcc2ea418efbcea1f94" kind="define"><name>DEBUG</name></member>
     <member refid="test_cams_8cpp_1a0487542dffb3cfb21f4504552bbfedf9" kind="define"><name>NFRAMES</name></member>
-    <member refid="test_cams_8cpp_1afb68e1b6c3a3a8a2fbb6288bf6569689" kind="typedef"><name>camNode_t</name></member>
     <member refid="test_cams_8cpp_1a8f4adaebff4594956772107bb4859777" kind="variable"><name>dc1394fwbus</name></member>
     <member refid="test_cams_8cpp_1a98e77674c838111282c2e2bd1ead92e9" kind="variable"><name>dc1394camList</name></member>
     <member refid="test_cams_8cpp_1ae9f379c5a72a54c766a43e763428daa6" kind="function"><name>reset_bus</name></member>

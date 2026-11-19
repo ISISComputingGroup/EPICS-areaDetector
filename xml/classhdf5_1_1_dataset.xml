@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="classhdf5_1_1_dataset" kind="class" language="C++" prot="public">
     <compoundname>hdf5::Dataset</compoundname>
     <basecompoundref refid="classhdf5_1_1_element" prot="public" virt="non-virtual">hdf5::Element</basecompoundref>
@@ -158,7 +158,7 @@
         <name>Dataset</name>
         <qualifiedname>hdf5::Dataset::Dataset</qualifiedname>
         <param>
-          <type>const <ref refid="classhdf5_1_1_dataset" kindref="compound">Dataset</ref> &amp;</type>
+          <type>const Dataset &amp;</type>
           <declname>src</declname>
         </param>
         <briefdescription>
@@ -170,13 +170,13 @@
         <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5Layout.h" line="161" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5Layout.cpp" bodystart="722" bodyend="728"/>
       </memberdef>
       <memberdef kind="function" id="classhdf5_1_1_dataset_1a23f2ac0183df490e9659a76cc0bd179a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classhdf5_1_1_dataset" kindref="compound">Dataset</ref> &amp;</type>
+        <type><ref refid="classhdf5_1_1_dataset_1a8f3665cf6a2dc25472ee43e0a278fe48" kindref="member">Dataset</ref> &amp;</type>
         <definition>Dataset &amp; hdf5::Dataset::operator=</definition>
         <argsstring>(const Dataset &amp;src)</argsstring>
         <name>operator=</name>
         <qualifiedname>hdf5::Dataset::operator=</qualifiedname>
         <param>
-          <type>const <ref refid="classhdf5_1_1_dataset" kindref="compound">Dataset</ref> &amp;</type>
+          <type>const <ref refid="classhdf5_1_1_dataset_1a8f3665cf6a2dc25472ee43e0a278fe48" kindref="member">Dataset</ref> &amp;</type>
           <declname>src</declname>
         </param>
         <briefdescription>
@@ -443,7 +443,7 @@
           <declname>out</declname>
         </param>
         <param>
-          <type><ref refid="classhdf5_1_1_dataset" kindref="compound">Dataset</ref> &amp;</type>
+          <type><ref refid="classhdf5_1_1_dataset_1a8f3665cf6a2dc25472ee43e0a278fe48" kindref="member">Dataset</ref> &amp;</type>
           <declname>dset</declname>
         </param>
         <briefdescription>
@@ -464,7 +464,7 @@
         <name>_copy</name>
         <qualifiedname>hdf5::Dataset::_copy</qualifiedname>
         <param>
-          <type>const <ref refid="classhdf5_1_1_dataset" kindref="compound">Dataset</ref> &amp;</type>
+          <type>const <ref refid="classhdf5_1_1_dataset_1a8f3665cf6a2dc25472ee43e0a278fe48" kindref="member">Dataset</ref> &amp;</type>
           <declname>src</declname>
         </param>
         <briefdescription>
@@ -517,12 +517,6 @@
       <node id="2">
         <label>hdf5::Element</label>
         <link refid="classhdf5_1_1_element"/>
-        <childnode refid="3" relation="usage">
-          <edgelabel>name</edgelabel>
-        </childnode>
-      </node>
-      <node id="3">
-        <label>string</label>
       </node>
     </collaborationgraph>
     <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5Layout.h" line="156" column="3" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5Layout.h" bodystart="157" bodyend="197"/>

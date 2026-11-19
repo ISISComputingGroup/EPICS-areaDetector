@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="classpoint_grey" kind="class" language="C++" prot="public">
     <compoundname>pointGrey</compoundname>
     <basecompoundref refid="class_a_d_driver" prot="public" virt="non-virtual">ADDriver</basecompoundref>
@@ -40,7 +40,7 @@
         <name>PGPropertyOnOff</name>
         <qualifiedname>pointGrey::PGPropertyOnOff</qualifiedname>
         <briefdescription>
-<para>Property on/off is available (int32 read) </para>
+<para>Property on/off is available (int32 read). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -55,7 +55,7 @@
         <name>PGPropertyOnePushAvail</name>
         <qualifiedname>pointGrey::PGPropertyOnePushAvail</qualifiedname>
         <briefdescription>
-<para>Property on/off (int32 read) </para>
+<para>Property on/off (int32 read). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -70,7 +70,7 @@
         <name>PGPropertyOnePush</name>
         <qualifiedname>pointGrey::PGPropertyOnePush</qualifiedname>
         <briefdescription>
-<para>Property one push is available (int32 read) </para>
+<para>Property one push is available (int32 read). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -85,7 +85,7 @@
         <name>PGPropertyAutoAvail</name>
         <qualifiedname>pointGrey::PGPropertyAutoAvail</qualifiedname>
         <briefdescription>
-<para>Property one push (int32 read) </para>
+<para>Property one push (int32 read). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -100,7 +100,7 @@
         <name>PGPropertyManAvail</name>
         <qualifiedname>pointGrey::PGPropertyManAvail</qualifiedname>
         <briefdescription>
-<para>Property auto mode available (int32 read) </para>
+<para>Property auto mode available (int32 read). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -115,7 +115,7 @@
         <name>PGPropertyAutoMode</name>
         <qualifiedname>pointGrey::PGPropertyAutoMode</qualifiedname>
         <briefdescription>
-<para>Property manual mode available (int32 read) </para>
+<para>Property manual mode available (int32 read). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -130,7 +130,7 @@
         <name>PGPropertyAbsAvail</name>
         <qualifiedname>pointGrey::PGPropertyAbsAvail</qualifiedname>
         <briefdescription>
-<para>Property control mode: 0:manual or 1:automatic (int32 read/write) </para>
+<para>Property control mode: 0:manual or 1:automatic (int32 read/write). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -145,7 +145,7 @@
         <name>PGPropertyAbsMode</name>
         <qualifiedname>pointGrey::PGPropertyAbsMode</qualifiedname>
         <briefdescription>
-<para>Property has absolute (floating point) controls (int32 read) </para>
+<para>Property has absolute (floating point) controls (int32 read). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -160,7 +160,7 @@
         <name>PGPropertyValue</name>
         <qualifiedname>pointGrey::PGPropertyValue</qualifiedname>
         <briefdescription>
-<para>Property raw/absolute mode: 0:raw or 1:absolute (int32 read/write) </para>
+<para>Property raw/absolute mode: 0:raw or 1:absolute (int32 read/write). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -175,7 +175,7 @@
         <name>PGPropertyValueB</name>
         <qualifiedname>pointGrey::PGPropertyValueB</qualifiedname>
         <briefdescription>
-<para>Property value (int32 read/write) </para>
+<para>Property value (int32 read/write). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -190,7 +190,7 @@
         <name>PGPropertyValueMax</name>
         <qualifiedname>pointGrey::PGPropertyValueMax</qualifiedname>
         <briefdescription>
-<para>Property value B (int32 read/write) </para>
+<para>Property value B (int32 read/write). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -205,7 +205,7 @@
         <name>PGPropertyValueMin</name>
         <qualifiedname>pointGrey::PGPropertyValueMin</qualifiedname>
         <briefdescription>
-<para>Property maximum value (int32 read) </para>
+<para>Property maximum value (int32 read). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -220,7 +220,7 @@
         <name>PGPropertyValueAbs</name>
         <qualifiedname>pointGrey::PGPropertyValueAbs</qualifiedname>
         <briefdescription>
-<para>Property minimum value (int32 read) </para>
+<para>Property minimum value (int32 read). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -235,7 +235,7 @@
         <name>PGPropertyValueAbsMax</name>
         <qualifiedname>pointGrey::PGPropertyValueAbsMax</qualifiedname>
         <briefdescription>
-<para>Property absolute value (float64 read/write) </para>
+<para>Property absolute value (float64 read/write). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -250,7 +250,7 @@
         <name>PGPropertyValueAbsMin</name>
         <qualifiedname>pointGrey::PGPropertyValueAbsMin</qualifiedname>
         <briefdescription>
-<para>Property absolute maximum value (float64 read) </para>
+<para>Property absolute maximum value (float64 read). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -265,7 +265,7 @@
         <name>PGGigEPropertyValue</name>
         <qualifiedname>pointGrey::PGGigEPropertyValue</qualifiedname>
         <briefdescription>
-<para>Property absolute minimum value (float64 read) </para>
+<para>Property absolute minimum value (float64 read). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -280,7 +280,7 @@
         <name>PGGigEPropertyValueMax</name>
         <qualifiedname>pointGrey::PGGigEPropertyValueMax</qualifiedname>
         <briefdescription>
-<para>GigE property value (int32 read/write) </para>
+<para>GigE property value (int32 read/write). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -295,7 +295,7 @@
         <name>PGGigEPropertyValueMin</name>
         <qualifiedname>pointGrey::PGGigEPropertyValueMin</qualifiedname>
         <briefdescription>
-<para>GigE property maximum value (int32 read) </para>
+<para>GigE property maximum value (int32 read). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -310,7 +310,7 @@
         <name>PGVideoMode</name>
         <qualifiedname>pointGrey::PGVideoMode</qualifiedname>
         <briefdescription>
-<para>GigE property minimum value (int32 read) </para>
+<para>GigE property minimum value (int32 read). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -325,7 +325,7 @@
         <name>PGFormat7Mode</name>
         <qualifiedname>pointGrey::PGFormat7Mode</qualifiedname>
         <briefdescription>
-<para>Video mode enum VideoMode, 0-NUM_VIDEOMODES-1 (int32 read/write) </para>
+<para>Video mode enum VideoMode, 0-NUM_VIDEOMODES-1 (int32 read/write). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -340,8 +340,7 @@
         <name>PGBinningMode</name>
         <qualifiedname>pointGrey::PGBinningMode</qualifiedname>
         <briefdescription>
-<para>Format7 mode enum Mode, 0-NUM_MODES-1 (int32 read/write) <linebreak/>
- </para>
+<para>Format7 mode enum Mode, 0-NUM_MODES-1 (int32 read/write). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -356,7 +355,7 @@
         <name>PGFrameRate</name>
         <qualifiedname>pointGrey::PGFrameRate</qualifiedname>
         <briefdescription>
-<para>Binning enum Binning, 0-NUM_BINNINGS-1 (int32 read/write) </para>
+<para>Binning enum Binning, 0-NUM_BINNINGS-1 (int32 read/write). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -371,7 +370,7 @@
         <name>PGPixelFormat</name>
         <qualifiedname>pointGrey::PGPixelFormat</qualifiedname>
         <briefdescription>
-<para>Frame rate enum FrameRate, 0-NUM_FRAMERATES-1 (int32 read/write) </para>
+<para>Frame rate enum FrameRate, 0-NUM_FRAMERATES-1 (int32 read/write). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -386,7 +385,7 @@
         <name>PGConvertPixelFormat</name>
         <qualifiedname>pointGrey::PGConvertPixelFormat</qualifiedname>
         <briefdescription>
-<para>The pixel format when VideoFormat=Format7 enum PixelFormat, 0-NUM_PIXEL_FORMATS-1 (int32 read/write) </para>
+<para>The pixel format when VideoFormat=Format7 enum PixelFormat, 0-NUM_PIXEL_FORMATS-1 (int32 read/write). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -402,7 +401,7 @@
         <qualifiedname>pointGrey::PGTriggerSource</qualifiedname>
         <briefdescription>
 <para>The pixel format to convert to when input <linebreak/>
- pixel format is raw[8,12,16] enum PixelFormat, 0-NUM_PIXEL_FORMATS-1 (int32 read/write) </para>
+ pixel format is raw[8,12,16] enum PixelFormat, 0-NUM_PIXEL_FORMATS-1 (int32 read/write). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -417,7 +416,7 @@
         <name>PGTriggerPolarity</name>
         <qualifiedname>pointGrey::PGTriggerPolarity</qualifiedname>
         <briefdescription>
-<para>Trigger source (int32 write/read) </para>
+<para>Trigger source (int32 write/read). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -432,7 +431,7 @@
         <name>PGSoftwareTrigger</name>
         <qualifiedname>pointGrey::PGSoftwareTrigger</qualifiedname>
         <briefdescription>
-<para>Trigger polarity (int32 write/read) </para>
+<para>Trigger polarity (int32 write/read). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -447,7 +446,7 @@
         <name>PGSkipFrames</name>
         <qualifiedname>pointGrey::PGSkipFrames</qualifiedname>
         <briefdescription>
-<para>Issue a software trigger (int32 write/read) </para>
+<para>Issue a software trigger (int32 write/read). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -462,7 +461,7 @@
         <name>PGStrobeSource</name>
         <qualifiedname>pointGrey::PGStrobeSource</qualifiedname>
         <briefdescription>
-<para>Frames to skip in trigger mode 3 (int32 write/read) </para>
+<para>Frames to skip in trigger mode 3 (int32 write/read). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -477,7 +476,7 @@
         <name>PGStrobePolarity</name>
         <qualifiedname>pointGrey::PGStrobePolarity</qualifiedname>
         <briefdescription>
-<para>Strobe source GPIO pin (int32 write/read) </para>
+<para>Strobe source GPIO pin (int32 write/read). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -492,7 +491,7 @@
         <name>PGStrobeEnable</name>
         <qualifiedname>pointGrey::PGStrobeEnable</qualifiedname>
         <briefdescription>
-<para>Strobe polarity (low/high) (int32 write/read) </para>
+<para>Strobe polarity (low/high) (int32 write/read). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -507,7 +506,7 @@
         <name>PGStrobeDelay</name>
         <qualifiedname>pointGrey::PGStrobeDelay</qualifiedname>
         <briefdescription>
-<para>Strobe enable/disable strobe (int32 write/read) </para>
+<para>Strobe enable/disable strobe (int32 write/read). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -522,7 +521,7 @@
         <name>PGStrobeDuration</name>
         <qualifiedname>pointGrey::PGStrobeDuration</qualifiedname>
         <briefdescription>
-<para>Strobe delay (float64 write/read) </para>
+<para>Strobe delay (float64 write/read). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -537,7 +536,7 @@
         <name>PGPacketSize</name>
         <qualifiedname>pointGrey::PGPacketSize</qualifiedname>
         <briefdescription>
-<para>Strobe duration (float64 write/read) </para>
+<para>Strobe duration (float64 write/read). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -552,7 +551,7 @@
         <name>PGPacketSizeActual</name>
         <qualifiedname>pointGrey::PGPacketSizeActual</qualifiedname>
         <briefdescription>
-<para>Size of data packets from camera (int32 write/read) </para>
+<para>Size of data packets from camera (int32 write/read). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -567,7 +566,7 @@
         <name>PGMaxPacketSize</name>
         <qualifiedname>pointGrey::PGMaxPacketSize</qualifiedname>
         <briefdescription>
-<para>Size of data packets from camera (int32 write/read) </para>
+<para>Size of data packets from camera (int32 write/read). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -582,7 +581,7 @@
         <name>PGPacketDelay</name>
         <qualifiedname>pointGrey::PGPacketDelay</qualifiedname>
         <briefdescription>
-<para>Maximum size of data packets from camera (int32 write/read) </para>
+<para>Maximum size of data packets from camera (int32 write/read). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -597,7 +596,7 @@
         <name>PGPacketDelayActual</name>
         <qualifiedname>pointGrey::PGPacketDelayActual</qualifiedname>
         <briefdescription>
-<para>Packet delay in usec from camera, GigE only (int32 write/read) </para>
+<para>Packet delay in usec from camera, GigE only (int32 write/read). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -612,7 +611,7 @@
         <name>PGPacketResendEnable</name>
         <qualifiedname>pointGrey::PGPacketResendEnable</qualifiedname>
         <briefdescription>
-<para>Packet delay in usec from camera, GigE only (int32 read) </para>
+<para>Packet delay in usec from camera, GigE only (int32 read). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -627,7 +626,7 @@
         <name>PGBandwidth</name>
         <qualifiedname>pointGrey::PGBandwidth</qualifiedname>
         <briefdescription>
-<para>Packet resend enable, GigE only (int32 read/write) </para>
+<para>Packet resend enable, GigE only (int32 read/write). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -642,7 +641,7 @@
         <name>PGTimeStampMode</name>
         <qualifiedname>pointGrey::PGTimeStampMode</qualifiedname>
         <briefdescription>
-<para>Bandwidth in MB/s (float64 read) </para>
+<para>Bandwidth in MB/s (float64 read). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -657,7 +656,7 @@
         <name>PGCorruptFrames</name>
         <qualifiedname>pointGrey::PGCorruptFrames</qualifiedname>
         <briefdescription>
-<para>Time stamp mode (PGTimeStamp_t) (int32 write/read) </para>
+<para>Time stamp mode (<ref refid="point_grey_8cpp_1af783dacc57e23ea8f6dd06e2e85e4420" kindref="member">PGTimeStamp_t</ref>) (int32 write/read). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -672,7 +671,7 @@
         <name>PGDriverDropped</name>
         <qualifiedname>pointGrey::PGDriverDropped</qualifiedname>
         <briefdescription>
-<para>Number of corrupt frames (int32 read) </para>
+<para>Number of corrupt frames (int32 read). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -687,7 +686,7 @@
         <name>PGTransmitFailed</name>
         <qualifiedname>pointGrey::PGTransmitFailed</qualifiedname>
         <briefdescription>
-<para>Number of driver dropped frames (int32 read) </para>
+<para>Number of driver dropped frames (int32 read). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -702,7 +701,7 @@
         <name>PGDroppedFrames</name>
         <qualifiedname>pointGrey::PGDroppedFrames</qualifiedname>
         <briefdescription>
-<para>Number of transmit failures (int32 read) </para>
+<para>Number of transmit failures (int32 read). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -2129,9 +2128,6 @@ Takes action if the function code requires it. The PGPropertyValueAbs function c
       <node id="9">
         <label>Codec_t</label>
         <link refid="struct_codec__t"/>
-        <childnode refid="10" relation="usage">
-          <edgelabel>name</edgelabel>
-        </childnode>
       </node>
       <node id="6">
         <label>NDArray</label>
@@ -2187,9 +2183,6 @@ Takes action if the function code requires it. The PGPropertyValueAbs function c
         <link refid="classpoint_grey"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
-      </node>
-      <node id="10">
-        <label>string</label>
       </node>
     </collaborationgraph>
     <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" line="313" column="1" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPointGrey/pointGreyApp/src/pointGrey.cpp" bodystart="314" bodyend="463"/>

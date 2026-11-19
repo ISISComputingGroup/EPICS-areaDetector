@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="_n_d_file_magick_8h" kind="file" language="C++">
     <compoundname>NDFileMagick.h</compoundname>
     <includes refid="_n_d_plugin_file_8h" local="yes">NDPluginFile.h</includes>
@@ -194,7 +194,7 @@
       </memberdef>
       <memberdef kind="define" id="_n_d_file_magick_8h_1a65bce7b79984c43c01128d15195e9560" prot="public" static="no">
         <name>NDFileMagickCompressTypeString</name>
-        <initializer>&quot;MAGICK_COMPRESS_TYPE&quot;  /* (asynInt32, r/w) Compression type */</initializer>
+        <initializer>&quot;MAGICK_COMPRESS_TYPE&quot;  /* (asynInt32, r/w) Compression <ref refid="struct_make_unsigned_impl" kindref="compound">type</ref> */</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -250,9 +250,9 @@
 <codeline lineno="17" refid="_n_d_file_magick_8h_1a65bce7b79984c43c01128d15195e9560" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NDFileMagickCompressTypeString<sp/>&quot;MAGICK_COMPRESS_TYPE&quot;<sp/><sp/></highlight><highlight class="comment">/*<sp/>(asynInt32,<sp/>r/w)<sp/>Compression<sp/>type<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="18" refid="_n_d_file_magick_8h_1a9d4fa0e3ed285b69de6c84b84ab9b66e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NDFileMagickBitDepthString<sp/><sp/><sp/><sp/><sp/>&quot;MAGICK_BIT_DEPTH&quot;<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>(asynInt32,<sp/>r/w)<sp/>Bit<sp/>depth<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="19"><highlight class="normal"></highlight></codeline>
-<codeline lineno="22" refid="class_n_d_file_magick" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="_n_d_plugin_a_p_i_8h_1a02c41946c40d115c88db54fcbb3e58d7" kindref="member">NDPLUGIN_API</ref><sp/><ref refid="class_n_d_file_magick" kindref="compound">NDFileMagick</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_n_d_plugin_file" kindref="compound">NDPluginFile</ref><sp/>{</highlight></codeline>
+<codeline lineno="22" refid="class_n_d_file_magick" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="_n_d_plugin_a_p_i_8h_1a02c41946c40d115c88db54fcbb3e58d7" kindref="member">NDPLUGIN_API</ref><sp/><ref refid="class_n_d_file_magick_1ae81794eeeaf77d70e074e600bce489a0" kindref="member">NDFileMagick</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_n_d_plugin_file_1a59d1b76dfbef43310a6a5628fdfcc655" kindref="member">NDPluginFile</ref><sp/>{</highlight></codeline>
 <codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_n_d_file_magick" kindref="compound">NDFileMagick</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*portName,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>queueSize,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>blockingCallbacks,</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_n_d_file_magick_1ae81794eeeaf77d70e074e600bce489a0" kindref="member">NDFileMagick</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*portName,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>queueSize,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>blockingCallbacks,</highlight></codeline>
 <codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*NDArrayPort,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NDArrayAddr,</highlight></codeline>
 <codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>priority,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>stackSize);</highlight></codeline>
 <codeline lineno="27"><highlight class="normal"></highlight></codeline>
@@ -272,7 +272,7 @@
 <codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>sizeX;</highlight></codeline>
 <codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>sizeY;</highlight></codeline>
 <codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>StorageType<sp/>storageType;</highlight></codeline>
-<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_n_d_array_8h_1a158fa3df51916c6942849dccdc7c5812" kindref="member">NDColorMode_t</ref><sp/><ref refid="_a_d_pylon_8cpp_1a3c447dc29e8a7c4be4fda5f438b28904" kindref="member">colorMode</ref>;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_n_d_array_8h_1a158fa3df51916c6942849dccdc7c5812" kindref="member">NDColorMode_t</ref><sp/>colorMode;</highlight></codeline>
 <codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="pxrd2__interface__misc_8h_1a3154c405c975616503bac23f51b78fc0" kindref="member">ImageType</ref><sp/>imageType;</highlight></codeline>
 <codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>colorMap;</highlight></codeline>
 <codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>Image<sp/>image;</highlight></codeline>

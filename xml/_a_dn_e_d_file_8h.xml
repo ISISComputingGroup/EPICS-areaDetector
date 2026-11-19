@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="_a_dn_e_d_file_8h" kind="file" language="C++">
     <compoundname>ADnEDFile.h</compoundname>
     <includes local="yes">epicsTypes.h</includes>
@@ -63,10 +63,10 @@
 <codeline lineno="8"><highlight class="normal"></highlight></codeline>
 <codeline lineno="9" refid="_a_dn_e_d_file_8h_1a1e5b3aa419e4837107f114b4e7328b06" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADNEDFILE_MAX_STRING<sp/>256</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="10"><highlight class="normal"></highlight></codeline>
-<codeline lineno="11" refid="class_a_dn_e_d_file" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_a_dn_e_d_file" kindref="compound">ADnEDFile</ref><sp/>{</highlight></codeline>
+<codeline lineno="11" refid="class_a_dn_e_d_file" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_a_dn_e_d_file_1a50fcd81f94c99eaa4be50858f92c5b58" kindref="member">ADnEDFile</ref><sp/>{</highlight></codeline>
 <codeline lineno="12"><highlight class="normal"></highlight></codeline>
 <codeline lineno="13"><highlight class="normal"><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="14"><highlight class="normal"><sp/><sp/><ref refid="class_a_dn_e_d_file" kindref="compound">ADnEDFile</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*fileName);</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><ref refid="class_a_dn_e_d_file_1a50fcd81f94c99eaa4be50858f92c5b58" kindref="member">ADnEDFile</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*fileName);</highlight></codeline>
 <codeline lineno="15"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="class_a_dn_e_d_file_1ad74585e5605ba750146fe1cc9645b301" kindref="member">~ADnEDFile</ref>();</highlight></codeline>
 <codeline lineno="16"><highlight class="normal"><sp/><sp/></highlight></codeline>
 <codeline lineno="17" refid="class_a_dn_e_d_file_1a37075a48780bc7a5237ba195d8dd7e24" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_a_dn_e_d_file_1a37075a48780bc7a5237ba195d8dd7e24" kindref="member">closeFile</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>

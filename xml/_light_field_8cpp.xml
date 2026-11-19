@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="_light_field_8cpp" kind="file" language="C++">
     <compoundname>LightField.cpp</compoundname>
     <includes local="yes">stdafx.h</includes>
@@ -1233,17 +1233,17 @@
 <codeline lineno="106"><highlight class="normal">}<sp/><ref refid="_light_field_8cpp_1a1261a4c84a51d6d2d45539899cefef1a" kindref="member">LFSetting_t</ref>;</highlight></codeline>
 <codeline lineno="107"><highlight class="normal"></highlight></codeline>
 <codeline lineno="108" refid="structsetting_map" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>ELLNODE<sp/><sp/><sp/><sp/><sp/><sp/>node;</highlight></codeline>
-<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>gcroot&lt;String^&gt;<sp/>setting;</highlight></codeline>
-<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>epicsParam;</highlight></codeline>
-<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>asynParamType<sp/><sp/><sp/>epicsType;</highlight></codeline>
-<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_light_field_8cpp_1a1261a4c84a51d6d2d45539899cefef1a" kindref="member">LFSetting_t</ref><sp/><sp/><sp/><sp/><sp/>LFType;</highlight></codeline>
-<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>exists;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>ELLNODE<sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structsetting_map_1a06403e481dd4dd2e904b59eff32c297a" kindref="member">node</ref>;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>gcroot&lt;String^&gt;<sp/><ref refid="structsetting_map_1ab1e47bf3df4ece51264322cf4f043c36" kindref="member">setting</ref>;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structsetting_map_1a83a8881710d689a4088c951f383da241" kindref="member">epicsParam</ref>;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>asynParamType<sp/><sp/><sp/><ref refid="structsetting_map_1af2156478b7203a93d9f1b2ca63dc95fe" kindref="member">epicsType</ref>;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_light_field_8cpp_1a1261a4c84a51d6d2d45539899cefef1a" kindref="member">LFSetting_t</ref><sp/><sp/><sp/><sp/><sp/><ref refid="structsetting_map_1a5e6478858f3f9f2b0874a5febc40558f" kindref="member">LFType</ref>;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structsetting_map_1a52860a02d04569b03b3710f9c363b63c" kindref="member">exists</ref>;</highlight></codeline>
 <codeline lineno="115"><highlight class="normal">}<sp/><ref refid="structsetting_map" kindref="compound">settingMap</ref>;</highlight></codeline>
 <codeline lineno="116"><highlight class="normal"></highlight></codeline>
-<codeline lineno="118" refid="class_light_field" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_light_field" kindref="compound">LightField</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_a_d_driver" kindref="compound">ADDriver</ref><sp/>{</highlight></codeline>
+<codeline lineno="118" refid="class_light_field" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_light_field_1a74af476b0bc49b74bb9d75d34d47337f" kindref="member">LightField</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_a_d_driver_1acc898497d3369c2f6f6ab1d83effdd25" kindref="member">ADDriver</ref><sp/>{</highlight></codeline>
 <codeline lineno="119"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_light_field" kindref="compound">LightField</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*portName,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*experimentName,</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_light_field_1a74af476b0bc49b74bb9d75d34d47337f" kindref="member">LightField</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*portName,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*experimentName,</highlight></codeline>
 <codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>maxBuffers,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>maxMemory,</highlight></codeline>
 <codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>priority,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>stackSize);</highlight></codeline>
 <codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
@@ -1349,23 +1349,23 @@
 <codeline lineno="223"><highlight class="normal"></highlight></codeline>
 <codeline lineno="224"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_light_field_8cpp_1a7e0b0604abb0b71ee7f96788cfc8be33" kindref="member">imageDataEventHandler</ref>(System::Object^<sp/>sender,<sp/>ImageDataSetReceivedEventArgs^<sp/>args)</highlight></codeline>
 <codeline lineno="225"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/>LightField_-&gt;<ref refid="class_light_field_1a8bc7ddb46d6e3310951747c92f8d9f55" kindref="member">frameCallback</ref>(args);</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/>LightField_-&gt;frameCallback(args);</highlight></codeline>
 <codeline lineno="227"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="228"><highlight class="normal"></highlight></codeline>
 <codeline lineno="229"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_light_field_8cpp_1aab56552d70cb689ece3c067447e7d687" kindref="member">settingChangedEventHandler</ref>(System::Object^<sp/>sender,<sp/>SettingChangedEventArgs^<sp/>args)</highlight></codeline>
 <codeline lineno="230"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/>LightField_-&gt;<ref refid="class_light_field_1a8fb7a60b516524c20b18b79c0c5bf68f" kindref="member">settingChangedCallback</ref>(args);</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/>LightField_-&gt;settingChangedCallback(args);</highlight></codeline>
 <codeline lineno="232"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="233"><highlight class="normal"></highlight></codeline>
 <codeline lineno="234"><highlight class="normal"></highlight></codeline>
 <codeline lineno="235"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_light_field_8cpp_1a789be7b022c23e471ecc9714bfb83e05" kindref="member">LFExitHandler</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*args)</highlight></codeline>
 <codeline lineno="236"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/>LightField_-&gt;<ref refid="class_light_field_1a3e52acd786a7d2354139db404716c064" kindref="member">exitHandler</ref>(args);</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/>LightField_-&gt;exitHandler(args);</highlight></codeline>
 <codeline lineno="238"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="239"><highlight class="normal"></highlight></codeline>
 <codeline lineno="240"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_light_field_8cpp_1a2c8a41c081cf7076ba584f11ddf8f03f" kindref="member">LFPollerTask</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*args)</highlight></codeline>
 <codeline lineno="241"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/>LightField_-&gt;<ref refid="class_light_field_1a5743f6495b6ec6cd170ed7ad1a93c75f" kindref="member">pollerTask</ref>();</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/>LightField_-&gt;pollerTask();</highlight></codeline>
 <codeline lineno="243"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="244"><highlight class="normal"></highlight></codeline>
 <codeline lineno="245"><highlight class="normal"></highlight></codeline>
@@ -1561,7 +1561,7 @@
 <codeline lineno="449"><highlight class="normal"></highlight></codeline>
 <codeline lineno="450"><highlight class="normal">asynStatus<sp/>LightField::addSetting(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>param,<sp/>String^<sp/>setting,<sp/>asynParamType<sp/>epicsType,<sp/><ref refid="_light_field_8cpp_1a1261a4c84a51d6d2d45539899cefef1a" kindref="member">LFSetting_t</ref><sp/>LFType)</highlight></codeline>
 <codeline lineno="451"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="452"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structsetting_map" kindref="compound">settingMap</ref><sp/>*ps<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="structsetting_map" kindref="compound">settingMap</ref>;</highlight></codeline>
+<codeline lineno="452"><highlight class="normal"><sp/><sp/><sp/><sp/>settingMap<sp/>*ps<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>settingMap;</highlight></codeline>
 <codeline lineno="453"><highlight class="normal"><sp/><sp/><sp/><sp/>ps-&gt;<ref refid="structsetting_map_1a83a8881710d689a4088c951f383da241" kindref="member">epicsParam</ref><sp/>=<sp/>param;</highlight></codeline>
 <codeline lineno="454"><highlight class="normal"><sp/><sp/><sp/><sp/>ps-&gt;<ref refid="structsetting_map_1ab1e47bf3df4ece51264322cf4f043c36" kindref="member">setting</ref><sp/>=<sp/>gcnew<sp/>String(setting);</highlight></codeline>
 <codeline lineno="455"><highlight class="normal"><sp/><sp/><sp/><sp/>ps-&gt;<ref refid="structsetting_map_1af2156478b7203a93d9f1b2ca63dc95fe" kindref="member">epicsType</ref><sp/>=<sp/>epicsType;</highlight></codeline>
@@ -1624,14 +1624,14 @@
 <codeline lineno="512"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="513"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Read<sp/>the<sp/>settings<sp/>from<sp/>the<sp/>camera<sp/>and<sp/>ask<sp/>for<sp/>callbacks<sp/>on<sp/>each<sp/>setting</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="514"><highlight class="normal"><sp/><sp/><sp/><sp/>List&lt;String^&gt;^<sp/>filterList<sp/>=<sp/>gcnew<sp/>List&lt;String^&gt;;</highlight></codeline>
-<codeline lineno="515"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structsetting_map" kindref="compound">settingMap</ref><sp/>*ps<sp/>=<sp/>(<ref refid="structsetting_map" kindref="compound">settingMap</ref><sp/>*)ellFirst(&amp;settingList_);</highlight></codeline>
+<codeline lineno="515"><highlight class="normal"><sp/><sp/><sp/><sp/>settingMap<sp/>*ps<sp/>=<sp/>(settingMap<sp/>*)ellFirst(&amp;settingList_);</highlight></codeline>
 <codeline lineno="516"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(ps)<sp/>{</highlight></codeline>
 <codeline lineno="517"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ps-&gt;<ref refid="structsetting_map_1a52860a02d04569b03b3710f9c363b63c" kindref="member">exists</ref><sp/>=<sp/>Experiment_-&gt;Exists(ps-&gt;<ref refid="structsetting_map_1ab1e47bf3df4ece51264322cf4f043c36" kindref="member">setting</ref>);</highlight></codeline>
 <codeline lineno="518"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ps-&gt;<ref refid="structsetting_map_1a52860a02d04569b03b3710f9c363b63c" kindref="member">exists</ref>)<sp/>{</highlight></codeline>
 <codeline lineno="519"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>getExperimentValue(ps);</highlight></codeline>
 <codeline lineno="520"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>filterList-&gt;Add(ps-&gt;<ref refid="structsetting_map_1ab1e47bf3df4ece51264322cf4f043c36" kindref="member">setting</ref>);</highlight></codeline>
 <codeline lineno="521"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="522"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ps<sp/>=<sp/>(<ref refid="structsetting_map" kindref="compound">settingMap</ref><sp/>*)ellNext(&amp;ps-&gt;<ref refid="structsetting_map_1a06403e481dd4dd2e904b59eff32c297a" kindref="member">node</ref>);</highlight></codeline>
+<codeline lineno="522"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ps<sp/>=<sp/>(settingMap<sp/>*)ellNext(&amp;ps-&gt;<ref refid="structsetting_map_1a06403e481dd4dd2e904b59eff32c297a" kindref="member">node</ref>);</highlight></codeline>
 <codeline lineno="523"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="524"><highlight class="normal"><sp/><sp/><sp/><sp/>Experiment_-&gt;FilterSettingChanged(filterList);</highlight></codeline>
 <codeline lineno="525"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
@@ -1745,16 +1745,16 @@
 <codeline lineno="633"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s:%s:<sp/>exit\n&quot;</highlight><highlight class="normal">,<sp/>driverName,<sp/>functionName);</highlight></codeline>
 <codeline lineno="634"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="635"><highlight class="normal"></highlight></codeline>
-<codeline lineno="636"><highlight class="normal"></highlight><highlight class="comment">//_____________________________________________________________________________________________</highlight></codeline>
-<codeline lineno="638"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_light_field_1a8bc7ddb46d6e3310951747c92f8d9f55" kindref="member">LightField::frameCallback</ref>(ImageDataSetReceivedEventArgs^<sp/>args)</highlight></codeline>
+<codeline lineno="636"><highlight class="normal"></highlight><highlight class="comment">//_____________________________________________________________________________________________</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="638"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_light_field_1a8bc7ddb46d6e3310951747c92f8d9f55" kindref="member">LightField::frameCallback</ref>(ImageDataSetReceivedEventArgs^<sp/>args)</highlight></codeline>
 <codeline lineno="639"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="640"><highlight class="normal"><sp/><sp/><ref refid="struct_n_d_array_info" kindref="compound">NDArrayInfo</ref><sp/><sp/><sp/>arrayInfo;</highlight></codeline>
+<codeline lineno="640"><highlight class="normal"><sp/><sp/>NDArrayInfo<sp/><sp/><sp/>arrayInfo;</highlight></codeline>
 <codeline lineno="641"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>arrayCounter;</highlight></codeline>
 <codeline lineno="642"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>imageCounter;</highlight></codeline>
 <codeline lineno="643"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>arrayCallbacks;</highlight></codeline>
 <codeline lineno="644"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*pInput;</highlight></codeline>
 <codeline lineno="645"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dims[2];</highlight></codeline>
-<codeline lineno="646"><highlight class="normal"><sp/><sp/><ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*pImage;</highlight></codeline>
+<codeline lineno="646"><highlight class="normal"><sp/><sp/>NDArray<sp/><sp/><sp/><sp/><sp/><sp/><sp/>*pImage;</highlight></codeline>
 <codeline lineno="647"><highlight class="normal"><sp/><sp/><ref refid="_n_d_attribute_8h_1a34b835bcabc3b7f546f4b25c5767cb16" kindref="member">NDDataType_t</ref><sp/><sp/><ref refid="_a_d_pylon_8cpp_1a048925b4357a1b4d6015c2113e05ce9f" kindref="member">dataType</ref>;</highlight></codeline>
 <codeline lineno="648"><highlight class="normal"><sp/><sp/>epicsTimeStamp<sp/>currentTime;</highlight></codeline>
 <codeline lineno="649"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*functionName<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;frameCallback&quot;</highlight><highlight class="normal">;</highlight></codeline>
@@ -1805,11 +1805,11 @@
 <codeline lineno="694"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>We<sp/>save<sp/>the<sp/>most<sp/>recent<sp/>image<sp/>buffer<sp/>so<sp/>it<sp/>can<sp/>be<sp/>used<sp/>in<sp/>the<sp/>read()<sp/>function.</highlight></codeline>
 <codeline lineno="695"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>Now<sp/>release<sp/>it<sp/>before<sp/>getting<sp/>a<sp/>new<sp/>version.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="696"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(this-&gt;<ref refid="classasyn_n_d_array_driver_1a6f5685f9951f6b3b897e85425b59ad69" kindref="member">pArrays</ref>[0])</highlight></codeline>
-<codeline lineno="697"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classasyn_n_d_array_driver_1a6f5685f9951f6b3b897e85425b59ad69" kindref="member">pArrays</ref>[0]-&gt;<ref refid="class_n_d_array_1a0c4c61ea4d44ce97db979d24305c996e" kindref="member">release</ref>();</highlight></codeline>
+<codeline lineno="697"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classasyn_n_d_array_driver_1a6f5685f9951f6b3b897e85425b59ad69" kindref="member">pArrays</ref>[0]-&gt;release();</highlight></codeline>
 <codeline lineno="698"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Allocate<sp/>the<sp/>array<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="699"><highlight class="normal"><sp/><sp/><sp/><sp/>dims[0]<sp/>=<sp/>frame-&gt;Width;</highlight></codeline>
 <codeline lineno="700"><highlight class="normal"><sp/><sp/><sp/><sp/>dims[1]<sp/>=<sp/>frame-&gt;Height;</highlight></codeline>
-<codeline lineno="701"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classasyn_n_d_array_driver_1a6f5685f9951f6b3b897e85425b59ad69" kindref="member">pArrays</ref>[0]<sp/>=<sp/><ref refid="classasyn_n_d_array_driver_1ad3969854a37329ef4061cc560e9022dc" kindref="member">pNDArrayPool</ref>-&gt;<ref refid="class_n_d_array_pool_1a26b4360694655c4af6c853c2f3d2ce5e" kindref="member">alloc</ref>(2,<sp/>dims,<sp/><ref refid="_a_d_pylon_8cpp_1a048925b4357a1b4d6015c2113e05ce9f" kindref="member">dataType</ref>,<sp/>0,<sp/>NULL);</highlight></codeline>
+<codeline lineno="701"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classasyn_n_d_array_driver_1a6f5685f9951f6b3b897e85425b59ad69" kindref="member">pArrays</ref>[0]<sp/>=<sp/><ref refid="classasyn_n_d_array_driver_1ad3969854a37329ef4061cc560e9022dc" kindref="member">pNDArrayPool</ref>-&gt;alloc(2,<sp/>dims,<sp/><ref refid="_a_d_pylon_8cpp_1a048925b4357a1b4d6015c2113e05ce9f" kindref="member">dataType</ref>,<sp/>0,<sp/>NULL);</highlight></codeline>
 <codeline lineno="702"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(this-&gt;<ref refid="classasyn_n_d_array_driver_1a6f5685f9951f6b3b897e85425b59ad69" kindref="member">pArrays</ref>[0]<sp/>==<sp/>NULL)<sp/>{</highlight></codeline>
 <codeline lineno="703"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>asynPrint(pasynUserSelf,<sp/>ASYN_TRACE_ERROR,</highlight></codeline>
 <codeline lineno="704"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s:%s:<sp/>error<sp/>allocating<sp/>buffer\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
@@ -2097,31 +2097,31 @@
 <codeline lineno="986"><highlight class="normal"></highlight></codeline>
 <codeline lineno="987"><highlight class="normal"><ref refid="structsetting_map" kindref="compound">settingMap</ref>*<sp/>LightField::findSettingMap(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>param)</highlight></codeline>
 <codeline lineno="988"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="989"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structsetting_map" kindref="compound">settingMap</ref><sp/>*ps<sp/>=<sp/>(<ref refid="structsetting_map" kindref="compound">settingMap</ref><sp/>*)ellFirst(&amp;settingList_);</highlight></codeline>
+<codeline lineno="989"><highlight class="normal"><sp/><sp/><sp/><sp/>settingMap<sp/>*ps<sp/>=<sp/>(settingMap<sp/>*)ellFirst(&amp;settingList_);</highlight></codeline>
 <codeline lineno="990"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(ps)<sp/>{</highlight></codeline>
 <codeline lineno="991"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ps-&gt;<ref refid="structsetting_map_1a83a8881710d689a4088c951f383da241" kindref="member">epicsParam</ref><sp/>==<sp/>param)<sp/>{</highlight></codeline>
 <codeline lineno="992"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ps;</highlight></codeline>
 <codeline lineno="993"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="994"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ps<sp/>=<sp/>(<ref refid="structsetting_map" kindref="compound">settingMap</ref><sp/>*)ellNext(&amp;ps-&gt;<ref refid="structsetting_map_1a06403e481dd4dd2e904b59eff32c297a" kindref="member">node</ref>);</highlight></codeline>
+<codeline lineno="994"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ps<sp/>=<sp/>(settingMap<sp/>*)ellNext(&amp;ps-&gt;<ref refid="structsetting_map_1a06403e481dd4dd2e904b59eff32c297a" kindref="member">node</ref>);</highlight></codeline>
 <codeline lineno="995"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="996"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
 <codeline lineno="997"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="998"><highlight class="normal"></highlight></codeline>
 <codeline lineno="999"><highlight class="normal"><ref refid="structsetting_map" kindref="compound">settingMap</ref>*<sp/>LightField::findSettingMap(String^<sp/>setting)</highlight></codeline>
 <codeline lineno="1000"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1001"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structsetting_map" kindref="compound">settingMap</ref><sp/>*ps<sp/>=<sp/>(<ref refid="structsetting_map" kindref="compound">settingMap</ref><sp/>*)ellFirst(&amp;settingList_);</highlight></codeline>
+<codeline lineno="1001"><highlight class="normal"><sp/><sp/><sp/><sp/>settingMap<sp/>*ps<sp/>=<sp/>(settingMap<sp/>*)ellFirst(&amp;settingList_);</highlight></codeline>
 <codeline lineno="1002"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(ps)<sp/>{</highlight></codeline>
 <codeline lineno="1003"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ps-&gt;<ref refid="structsetting_map_1ab1e47bf3df4ece51264322cf4f043c36" kindref="member">setting</ref><sp/>==<sp/>setting)<sp/>{</highlight></codeline>
 <codeline lineno="1004"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ps;</highlight></codeline>
 <codeline lineno="1005"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1006"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ps<sp/>=<sp/>(<ref refid="structsetting_map" kindref="compound">settingMap</ref><sp/>*)ellNext(&amp;ps-&gt;<ref refid="structsetting_map_1a06403e481dd4dd2e904b59eff32c297a" kindref="member">node</ref>);</highlight></codeline>
+<codeline lineno="1006"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ps<sp/>=<sp/>(settingMap<sp/>*)ellNext(&amp;ps-&gt;<ref refid="structsetting_map_1a06403e481dd4dd2e904b59eff32c297a" kindref="member">node</ref>);</highlight></codeline>
 <codeline lineno="1007"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1008"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
 <codeline lineno="1009"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1010"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1011"><highlight class="normal">asynStatus<sp/>LightField::setExperimentInteger(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>param,<sp/>epicsInt32<sp/>value)</highlight></codeline>
 <codeline lineno="1012"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1013"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structsetting_map" kindref="compound">settingMap</ref><sp/>*ps<sp/>=<sp/>findSettingMap(param);</highlight></codeline>
+<codeline lineno="1013"><highlight class="normal"><sp/><sp/><sp/><sp/>settingMap<sp/>*ps<sp/>=<sp/>findSettingMap(param);</highlight></codeline>
 <codeline lineno="1014"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ps)<sp/>{</highlight></codeline>
 <codeline lineno="1015"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>setExperimentInteger(ps-&gt;<ref refid="structsetting_map_1ab1e47bf3df4ece51264322cf4f043c36" kindref="member">setting</ref>,<sp/>value);</highlight></codeline>
 <codeline lineno="1016"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -2154,7 +2154,7 @@
 <codeline lineno="1043"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1044"><highlight class="normal">asynStatus<sp/>LightField::setExperimentDouble(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>param,<sp/>epicsFloat64<sp/>value)</highlight></codeline>
 <codeline lineno="1045"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1046"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structsetting_map" kindref="compound">settingMap</ref><sp/>*ps<sp/>=<sp/>findSettingMap(param);</highlight></codeline>
+<codeline lineno="1046"><highlight class="normal"><sp/><sp/><sp/><sp/>settingMap<sp/>*ps<sp/>=<sp/>findSettingMap(param);</highlight></codeline>
 <codeline lineno="1047"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ps)<sp/>{</highlight></codeline>
 <codeline lineno="1048"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>setExperimentDouble(ps-&gt;<ref refid="structsetting_map_1ab1e47bf3df4ece51264322cf4f043c36" kindref="member">setting</ref>,<sp/>value);</highlight></codeline>
 <codeline lineno="1049"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -2190,7 +2190,7 @@
 <codeline lineno="1079"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*functionName<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;setExperimentPulse&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="1080"><highlight class="normal"><sp/><sp/><sp/><sp/>asynPrint(pasynUserSelf,<sp/>ASYN_TRACE_FLOW,</highlight></codeline>
 <codeline lineno="1081"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s:%s:<sp/>entry\n&quot;</highlight><highlight class="normal">,<sp/>driverName,<sp/>functionName);</highlight></codeline>
-<codeline lineno="1082"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structsetting_map" kindref="compound">settingMap</ref><sp/>*ps<sp/>=<sp/>findSettingMap(param);</highlight></codeline>
+<codeline lineno="1082"><highlight class="normal"><sp/><sp/><sp/><sp/>settingMap<sp/>*ps<sp/>=<sp/>findSettingMap(param);</highlight></codeline>
 <codeline lineno="1083"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!ps)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>asynError;</highlight></codeline>
 <codeline lineno="1084"><highlight class="normal"><sp/><sp/><sp/><sp/>String^<sp/>setting<sp/>=<sp/>ps-&gt;<ref refid="structsetting_map_1ab1e47bf3df4ece51264322cf4f043c36" kindref="member">setting</ref>;</highlight></codeline>
 <codeline lineno="1085"><highlight class="normal"><sp/><sp/><sp/><sp/>Pulse^<sp/>pulse<sp/>=<sp/>gcnew<sp/>Pulse(width*1e9,<sp/>delay*1e9);</highlight></codeline>
@@ -2239,7 +2239,7 @@
 <codeline lineno="1128"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1129"><highlight class="normal">asynStatus<sp/>LightField::getExperimentValue(String^<sp/>setting)</highlight></codeline>
 <codeline lineno="1130"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1131"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structsetting_map" kindref="compound">settingMap</ref><sp/>*ps<sp/>=<sp/>findSettingMap(setting);</highlight></codeline>
+<codeline lineno="1131"><highlight class="normal"><sp/><sp/><sp/><sp/>settingMap<sp/>*ps<sp/>=<sp/>findSettingMap(setting);</highlight></codeline>
 <codeline lineno="1132"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ps)<sp/>{</highlight></codeline>
 <codeline lineno="1133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>getExperimentValue(ps);</highlight></codeline>
 <codeline lineno="1134"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -2248,7 +2248,7 @@
 <codeline lineno="1137"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1138"><highlight class="normal">asynStatus<sp/>LightField::getExperimentValue(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>param)</highlight></codeline>
 <codeline lineno="1139"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1140"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structsetting_map" kindref="compound">settingMap</ref><sp/>*ps<sp/>=<sp/>findSettingMap(param);</highlight></codeline>
+<codeline lineno="1140"><highlight class="normal"><sp/><sp/><sp/><sp/>settingMap<sp/>*ps<sp/>=<sp/>findSettingMap(param);</highlight></codeline>
 <codeline lineno="1141"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ps)<sp/>{</highlight></codeline>
 <codeline lineno="1142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>getExperimentValue(ps);</highlight></codeline>
 <codeline lineno="1143"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>

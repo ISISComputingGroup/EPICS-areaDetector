@@ -1,15 +1,15 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="namespacehdf5" kind="namespace" language="C++">
     <compoundname>hdf5</compoundname>
-    <innerclass refid="classhdf5_1_1_attribute" prot="public">hdf5::Attribute</innerclass>
-    <innerclass refid="classhdf5_1_1_dataset" prot="public">hdf5::Dataset</innerclass>
     <innerclass refid="classhdf5_1_1_data_source" prot="public">hdf5::DataSource</innerclass>
+    <innerclass refid="classhdf5_1_1_attribute" prot="public">hdf5::Attribute</innerclass>
     <innerclass refid="classhdf5_1_1_element" prot="public">hdf5::Element</innerclass>
-    <innerclass refid="classhdf5_1_1_group" prot="public">hdf5::Group</innerclass>
+    <innerclass refid="classhdf5_1_1_dataset" prot="public">hdf5::Dataset</innerclass>
     <innerclass refid="classhdf5_1_1_hard_link" prot="public">hdf5::HardLink</innerclass>
-    <innerclass refid="classhdf5_1_1_layout_x_m_l" prot="public">hdf5::LayoutXML</innerclass>
+    <innerclass refid="classhdf5_1_1_group" prot="public">hdf5::Group</innerclass>
     <innerclass refid="classhdf5_1_1_root" prot="public">hdf5::Root</innerclass>
+    <innerclass refid="classhdf5_1_1_layout_x_m_l" prot="public">hdf5::LayoutXML</innerclass>
     <sectiondef kind="enum">
       <memberdef kind="enum" id="namespacehdf5_1ab51726310ac9f6d97ac953d29c93ade5" prot="public" static="no" strong="no">
         <type></type>

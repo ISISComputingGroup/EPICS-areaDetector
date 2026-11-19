@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="classpv_cam" kind="class" language="C++" prot="public">
     <compoundname>pvCam</compoundname>
     <basecompoundref refid="class_a_d_driver" prot="public" virt="non-virtual">ADDriver</basecompoundref>
@@ -1305,9 +1305,6 @@ Takes action if the function code requires it. Currently only ADShutterControl r
       <node id="9">
         <label>Codec_t</label>
         <link refid="struct_codec__t"/>
-        <childnode refid="10" relation="usage">
-          <edgelabel>name</edgelabel>
-        </childnode>
       </node>
       <node id="6">
         <label>NDArray</label>
@@ -1366,9 +1363,6 @@ Takes action if the function code requires it. Currently only ADShutterControl r
         <childnode refid="6" relation="usage">
           <edgelabel>pRaw</edgelabel>
         </childnode>
-      </node>
-      <node id="10">
-        <label>string</label>
       </node>
     </collaborationgraph>
     <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPvCam/pvcamApp/src/pvCamSrc.h" line="114" column="1" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPvCam/pvcamApp/src/pvCamSrc.h" bodystart="115" bodyend="220"/>

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="structjpeg_dest_mgr" kind="struct" language="C++" prot="public">
     <compoundname>jpegDestMgr</compoundname>
     <includes refid="_n_d_file_j_p_e_g_8h" local="no">NDFileJPEG.h</includes>
@@ -42,9 +42,6 @@
       <node id="11">
         <label>Codec_t</label>
         <link refid="struct_codec__t"/>
-        <childnode refid="12" relation="usage">
-          <edgelabel>name</edgelabel>
-        </childnode>
       </node>
       <node id="8">
         <label>NDArray</label>
@@ -88,7 +85,7 @@
         <link refid="class_n_d_plugin_driver"/>
         <childnode refid="5" relation="public-inheritance">
         </childnode>
-        <childnode refid="13" relation="public-inheritance">
+        <childnode refid="12" relation="public-inheritance">
         </childnode>
         <childnode refid="8" relation="usage">
           <edgelabel>pPrevInputArray_</edgelabel>
@@ -118,7 +115,7 @@
       <node id="6">
         <label>asynPortDriver</label>
       </node>
-      <node id="13">
+      <node id="12">
         <label>epicsThreadRunable</label>
       </node>
       <node id="1">
@@ -127,9 +124,6 @@
         <childnode refid="2" relation="usage">
           <edgelabel>pNDFileJPEG</edgelabel>
         </childnode>
-      </node>
-      <node id="12">
-        <label>string</label>
       </node>
     </collaborationgraph>
     <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileJPEG.h" line="25" column="1" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileJPEG.h" bodystart="25" bodyend="28"/>

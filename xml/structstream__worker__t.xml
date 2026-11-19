@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="structstream__worker__t" kind="struct" language="C++" prot="public">
     <compoundname>stream_worker_t</compoundname>
     <sectiondef kind="public-attrib">
@@ -102,11 +102,8 @@
       <node id="10">
         <label>Codec_t</label>
         <link refid="struct_codec__t"/>
-        <childnode refid="11" relation="usage">
-          <edgelabel>name</edgelabel>
-        </childnode>
       </node>
-      <node id="12">
+      <node id="11">
         <label>EigerParam</label>
         <link refid="class_eiger_param"/>
       </node>
@@ -164,7 +161,7 @@
         <link refid="classeiger_detector"/>
         <childnode refid="3" relation="public-inheritance">
         </childnode>
-        <childnode refid="12" relation="usage">
+        <childnode refid="11" relation="usage">
           <edgelabel>mAcquirePeriod</edgelabel>
           <edgelabel>mAcquireTime</edgelabel>
           <edgelabel>mArmed</edgelabel>
@@ -175,11 +172,8 @@
           <edgelabel>mDescription</edgelabel>
           <edgelabel>mEnergyEpsilon</edgelabel>
           <edgelabel>mError</edgelabel>
-          <edgelabel>...</edgelabel>
+          <edgelabel>  ...</edgelabel>
         </childnode>
-      </node>
-      <node id="11">
-        <label>string</label>
       </node>
       <node id="1">
         <label>stream_worker_t</label>

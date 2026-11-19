@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="_n_d_file_magick_8cpp" kind="file" language="C++">
     <compoundname>NDFileMagick.cpp</compoundname>
     <includes local="no">stdlib.h</includes>
@@ -481,7 +481,7 @@
 <codeline lineno="29"><highlight class="normal">asynStatus<sp/><ref refid="class_n_d_file_magick_1a15942537c3a299ef246f621124e0988a" kindref="member">NDFileMagick::openFile</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*fileName,<sp/><ref refid="_n_d_plugin_file_8h_1a0585278ac7a80661367c32f62ad6c653" kindref="member">NDFileOpenMode_t</ref><sp/>openMode,<sp/><ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*pArray)</highlight></codeline>
 <codeline lineno="30"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*functionName<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;openFile&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_n_d_attribute" kindref="compound">NDAttribute</ref><sp/>*pAttribute;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>NDAttribute<sp/>*pAttribute;</highlight></codeline>
 <codeline lineno="33"><highlight class="normal"></highlight></codeline>
 <codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>We<sp/>don&apos;t<sp/>support<sp/>reading<sp/>yet<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(openMode<sp/>&amp;<sp/><ref refid="_n_d_plugin_file_8h_1a222fabeae657a5d4c8e127876f7e4be3" kindref="member">NDFileModeRead</ref>)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">(asynError);</highlight></codeline>

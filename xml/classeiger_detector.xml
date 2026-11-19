@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="classeiger_detector" kind="class" language="C++" prot="public">
     <compoundname>eigerDetector</compoundname>
     <basecompoundref refid="class_a_d_driver" prot="public" virt="non-virtual">ADDriver</basecompoundref>
@@ -1958,11 +1958,8 @@ Takes action if the function code requires it. Currently only ADShutterControl r
       <node id="9">
         <label>Codec_t</label>
         <link refid="struct_codec__t"/>
-        <childnode refid="10" relation="usage">
-          <edgelabel>name</edgelabel>
-        </childnode>
       </node>
-      <node id="11">
+      <node id="10">
         <label>EigerParam</label>
         <link refid="class_eiger_param"/>
       </node>
@@ -2020,7 +2017,7 @@ Takes action if the function code requires it. Currently only ADShutterControl r
         <link refid="classeiger_detector"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
-        <childnode refid="11" relation="usage">
+        <childnode refid="10" relation="usage">
           <edgelabel>mAcquirePeriod</edgelabel>
           <edgelabel>mAcquireTime</edgelabel>
           <edgelabel>mArmed</edgelabel>
@@ -2031,11 +2028,8 @@ Takes action if the function code requires it. Currently only ADShutterControl r
           <edgelabel>mDescription</edgelabel>
           <edgelabel>mEnergyEpsilon</edgelabel>
           <edgelabel>mError</edgelabel>
-          <edgelabel>...</edgelabel>
+          <edgelabel>  ...</edgelabel>
         </childnode>
-      </node>
-      <node id="10">
-        <label>string</label>
       </node>
     </collaborationgraph>
     <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADEiger/eigerApp/src/eigerDetector.h" line="100" column="1" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADEiger/eigerApp/src/eigerDetector.h" bodystart="101" bodyend="262"/>

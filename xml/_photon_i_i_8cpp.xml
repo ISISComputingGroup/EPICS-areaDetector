@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="_photon_i_i_8cpp" kind="file" language="C++">
     <compoundname>PhotonII.cpp</compoundname>
     <includes local="no">stdio.h</includes>
@@ -773,7 +773,7 @@
 <codeline lineno="53"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PII_SIZEX<sp/>768</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="54"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PII_SIZEY<sp/>1024</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="55"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PII_COMMAND_TIMEOUT<sp/>1.0</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="56"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PII_MAX_FILENAME_LEN<sp/>256</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PII_MAX_FILENAME_LEN<sp/>256</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="58"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PII_FILE_READ_DELAY<sp/>.01</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="59"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PII_FILE_READ_TIMEOUT<sp/>3.0<sp/></highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="60"><highlight class="normal"></highlight></codeline>
@@ -849,6 +849,7 @@
 <codeline lineno="143"><highlight class="normal"></highlight></codeline>
 <codeline lineno="144"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/></highlight></codeline>
 <codeline lineno="151"><highlight class="normal">asynStatus<sp/>PhotonII::readRaw(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*fileName,<sp/>epicsTimeStamp<sp/>*pStartTime,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>timeout,<sp/><ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*pImage)</highlight></codeline>
 <codeline lineno="152"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/>FILE<sp/>*file=NULL;</highlight></codeline>
@@ -970,7 +971,7 @@
 <codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>imageCounter;</highlight></codeline>
 <codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>numImages,<sp/>numImagesCounter;</highlight></codeline>
 <codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>imageMode;</highlight></codeline>
-<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*pImage;</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/>NDArray<sp/>*pImage;</highlight></codeline>
 <codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>acquireTime;</highlight></codeline>
 <codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>expectedTime;</highlight></codeline>
 <codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>timeRemaining;</highlight></codeline>
@@ -1112,7 +1113,7 @@
 <codeline lineno="413"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Get<sp/>an<sp/>image<sp/>buffer<sp/>from<sp/>the<sp/>pool<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="414"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>getIntegerParam(<ref refid="class_a_d_driver_1a918ef4b3d80695f6872fd169b09b639a" kindref="member">ADSizeX</ref>,<sp/>&amp;itemp);<sp/>dims[0]<sp/>=<sp/>itemp;</highlight></codeline>
 <codeline lineno="415"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>getIntegerParam(<ref refid="class_a_d_driver_1a59ba3ba61b2b6f51dc9d88d81680b632" kindref="member">ADSizeY</ref>,<sp/>&amp;itemp);<sp/>dims[1]<sp/>=<sp/>itemp;</highlight></codeline>
-<codeline lineno="416"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pImage<sp/>=<sp/>this-&gt;<ref refid="classasyn_n_d_array_driver_1ad3969854a37329ef4061cc560e9022dc" kindref="member">pNDArrayPool</ref>-&gt;<ref refid="class_n_d_array_pool_1a26b4360694655c4af6c853c2f3d2ce5e" kindref="member">alloc</ref>(2,<sp/>dims,<sp/><ref refid="_n_d_attribute_8h_1a34b835bcabc3b7f546f4b25c5767cb16a460cbd8f43b3531669bc85cc3a4e9a80" kindref="member">NDInt32</ref>,<sp/>0,<sp/>NULL);</highlight></codeline>
+<codeline lineno="416"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pImage<sp/>=<sp/>this-&gt;<ref refid="classasyn_n_d_array_driver_1ad3969854a37329ef4061cc560e9022dc" kindref="member">pNDArrayPool</ref>-&gt;alloc(2,<sp/>dims,<sp/><ref refid="_n_d_attribute_8h_1a34b835bcabc3b7f546f4b25c5767cb16a460cbd8f43b3531669bc85cc3a4e9a80" kindref="member">NDInt32</ref>,<sp/>0,<sp/>NULL);</highlight></codeline>
 <codeline lineno="417"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>epicsSnprintf(statusMessage,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(statusMessage),<sp/></highlight><highlight class="stringliteral">&quot;Reading<sp/>from<sp/>File<sp/>%s&quot;</highlight><highlight class="normal">,<sp/>fullFileName);</highlight></codeline>
 <codeline lineno="418"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>setStringParam(<ref refid="class_a_d_driver_1af8ca049bdf54eede6611e50a284152bc" kindref="member">ADStatusMessage</ref>,<sp/>statusMessage);</highlight></codeline>
 <codeline lineno="419"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>setStringParam(<ref refid="classasyn_n_d_array_driver_1ad109404880a23929fc17dea1f09e0775" kindref="member">NDFullFileName</ref>,<sp/>fullFileName);</highlight></codeline>

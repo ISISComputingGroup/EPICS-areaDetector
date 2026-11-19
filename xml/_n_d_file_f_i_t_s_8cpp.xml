@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="_n_d_file_f_i_t_s_8cpp" kind="file" language="C++">
     <compoundname>NDFileFITS.cpp</compoundname>
     <includes local="no">stdlib.h</includes>
@@ -529,7 +529,7 @@
 <codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%s:%s:<sp/>%lu,<sp/>%lu\n&quot;</highlight><highlight class="normal">,<sp/></highlight></codeline>
 <codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>driverName,<sp/>functionName,<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal">)pArray-&gt;<ref refid="class_n_d_array_1a71e5be2b11008face8dc6c5be19f71f1" kindref="member">dims</ref>[0].<ref refid="struct_n_d_dimension_1af32ef14ab526ed14d195875fc688f027" kindref="member">size</ref>,<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal">)pArray-&gt;<ref refid="class_n_d_array_1a71e5be2b11008face8dc6c5be19f71f1" kindref="member">dims</ref>[1].<ref refid="struct_n_d_dimension_1af32ef14ab526ed14d195875fc688f027" kindref="member">size</ref>);</highlight></codeline>
 <codeline lineno="73"><highlight class="normal"></highlight></codeline>
-<codeline lineno="74"><highlight class="normal"><sp/><sp/><ref refid="struct_n_d_array_info" kindref="compound">NDArrayInfo</ref><sp/>arrayInfo;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/>NDArrayInfo<sp/>arrayInfo;</highlight></codeline>
 <codeline lineno="75"><highlight class="normal"><sp/><sp/>pArray-&gt;<ref refid="class_n_d_array_1a47af97c0e2b8255d756207908f6b470d" kindref="member">getInfo</ref>(&amp;arrayInfo);</highlight></codeline>
 <codeline lineno="76"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespacemake_adl_1a3c7364e67c0570681ac29158f738bff6" kindref="member">nx</ref><sp/>=<sp/>(int)<sp/>arrayInfo.<ref refid="struct_n_d_array_info_1a246cfc03b09db9de7685f5856617d377" kindref="member">xSize</ref>;</highlight></codeline>
 <codeline lineno="77"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ny<sp/>=<sp/>(int)<sp/>arrayInfo.<ref refid="struct_n_d_array_info_1a8d8e4bbf0a527f1764e3286d871994dc" kindref="member">ySize</ref>;</highlight></codeline>

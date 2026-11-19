@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="_n_d_array_ring_8cpp" kind="file" language="C++">
     <compoundname>NDArrayRing.cpp</compoundname>
     <includes refid="_n_d_array_ring_8h" local="yes">NDArrayRing.h</includes>
@@ -124,7 +124,7 @@
 <codeline lineno="17"><highlight class="normal"><sp/><sp/>readIndex_<sp/>=<sp/>-1;</highlight></codeline>
 <codeline lineno="18"><highlight class="normal"><sp/><sp/>wrapped_<sp/>=<sp/>0;</highlight></codeline>
 <codeline lineno="19"><highlight class="normal"></highlight></codeline>
-<codeline lineno="20"><highlight class="normal"><sp/><sp/>buffers_<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*[noOfBuffers_];</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/>buffers_<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>NDArray<sp/>*[noOfBuffers_];</highlight></codeline>
 <codeline lineno="21"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index<sp/>=<sp/>0;<sp/>index<sp/>&lt;<sp/>noOfBuffers_;<sp/>index++){</highlight></codeline>
 <codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>buffers_[index]<sp/>=<sp/>NULL;</highlight></codeline>
 <codeline lineno="23"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
@@ -146,7 +146,7 @@
 <codeline lineno="39"><highlight class="normal"></highlight></codeline>
 <codeline lineno="40"><highlight class="normal"><ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*<ref refid="class_n_d_array_ring_1a0f393388986651e26ed0e49affd4ef20" kindref="member">NDArrayRing::addToEnd</ref>(<ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*pArray)</highlight></codeline>
 <codeline lineno="41"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="42"><highlight class="normal"><sp/><sp/><ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*retVal<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/>NDArray<sp/>*retVal<sp/>=<sp/>NULL;</highlight></codeline>
 <codeline lineno="43"><highlight class="normal"></highlight></codeline>
 <codeline lineno="44"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(noOfBuffers_<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
 <codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>writeIndex_<sp/>=<sp/>(writeIndex_<sp/>+<sp/>1)<sp/>%<sp/>noOfBuffers_;</highlight></codeline>
@@ -202,7 +202,7 @@
 <codeline lineno="95"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(buffers_){</highlight></codeline>
 <codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index<sp/>=<sp/>0;<sp/>index<sp/>&lt;<sp/>noOfBuffers_;<sp/>index++){</highlight></codeline>
 <codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(buffers_[index]){</highlight></codeline>
-<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>buffers_[index]-&gt;<ref refid="class_n_d_array_1a0c4c61ea4d44ce97db979d24305c996e" kindref="member">release</ref>();</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>buffers_[index]-&gt;release();</highlight></codeline>
 <codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>buffers_[index]<sp/>=<sp/>NULL;</highlight></codeline>
 <codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>

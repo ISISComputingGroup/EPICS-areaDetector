@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="_n_d_plugin_r_o_i_stat_8cpp" kind="file" language="C++">
     <compoundname>NDPluginROIStat.cpp</compoundname>
     <includes local="no">string.h</includes>
@@ -535,6 +535,7 @@
     </detaileddescription>
     <programlisting>
 <codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
 <codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="13"><highlight class="normal"></highlight></codeline>
 <codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cantProceed.h&gt;</highlight><highlight class="normal"></highlight></codeline>
@@ -659,7 +660,7 @@
 <codeline lineno="139"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="140"><highlight class="normal"></highlight></codeline>
 <codeline lineno="141"><highlight class="normal"></highlight></codeline>
-<codeline lineno="148"><highlight class="normal">asynStatus<sp/>NDPluginROIStat::doComputeStatistics(<ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*pArray,<sp/><ref refid="struct_n_d_r_o_i" kindref="compound">NDROI_t</ref><sp/>*pROI)</highlight></codeline>
+<codeline lineno="148"><highlight class="normal">asynStatus<sp/>NDPluginROIStat::doComputeStatistics(<ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*pArray,<sp/><ref refid="_n_d_plugin_r_o_i_stat_8h_1a879b6c6c7e57b28eafd7511de5bd3288" kindref="member">NDROI_t</ref><sp/>*pROI)</highlight></codeline>
 <codeline lineno="149"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="150"><highlight class="normal"><sp/><sp/>asynStatus<sp/>status<sp/>=<sp/>asynSuccess;</highlight></codeline>
 <codeline lineno="151"><highlight class="normal"></highlight></codeline>
@@ -711,10 +712,10 @@
 <codeline lineno="203"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>itemp<sp/>=<sp/>0;</highlight></codeline>
 <codeline lineno="204"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dim<sp/>=<sp/>0;</highlight></codeline>
 <codeline lineno="205"><highlight class="normal"><sp/><sp/>asynStatus<sp/>status<sp/>=<sp/>asynSuccess;</highlight></codeline>
-<codeline lineno="206"><highlight class="normal"><sp/><sp/><ref refid="struct_n_d_r_o_i" kindref="compound">NDROI</ref><sp/>*pROI;</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/>NDROI<sp/>*pROI;</highlight></codeline>
 <codeline lineno="207"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>TSAcquiring;</highlight></codeline>
 <codeline lineno="208"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>functionName<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;NDPluginROIStat::processCallbacks&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="209"><highlight class="normal"><sp/><sp/><ref refid="struct_n_d_r_o_i" kindref="compound">NDROI_t</ref><sp/>*pROIs<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="struct_n_d_r_o_i" kindref="compound">NDROI</ref>[maxROIs_];</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><ref refid="_n_d_plugin_r_o_i_stat_8h_1a879b6c6c7e57b28eafd7511de5bd3288" kindref="member">NDROI_t</ref><sp/>*pROIs<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>NDROI[maxROIs_];</highlight></codeline>
 <codeline lineno="210"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!pROIs)<sp/>{cantProceed(</highlight><highlight class="stringliteral">&quot;%s&quot;</highlight><highlight class="normal">,functionName);}</highlight></codeline>
 <codeline lineno="211"><highlight class="normal"></highlight></codeline>
 <codeline lineno="212"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Call<sp/>the<sp/>base<sp/>class<sp/>method<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
@@ -1035,7 +1036,7 @@
 <codeline lineno="560"><highlight class="normal"><sp/><sp/><sp/><sp/>callParamCallbacks(roi);</highlight></codeline>
 <codeline lineno="561"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="562"><highlight class="normal"></highlight></codeline>
-<codeline lineno="563"><highlight class="normal"><sp/><sp/>numTSPoints_<sp/>=<sp/><ref refid="_n_d_plugin_r_o_i_stat_8cpp_1a96ffc35d728f7c0747171b09be5021ec" kindref="member">DEFAULT_NUM_TSPOINTS</ref>;</highlight></codeline>
+<codeline lineno="563"><highlight class="normal"><sp/><sp/>numTSPoints_<sp/>=<sp/><ref refid="_n_d_plugin_attribute_8cpp_1a96ffc35d728f7c0747171b09be5021ec" kindref="member">DEFAULT_NUM_TSPOINTS</ref>;</highlight></codeline>
 <codeline lineno="564"><highlight class="normal"><sp/><sp/>setIntegerParam(NDPluginROIStatTSNumPoints,<sp/>numTSPoints_);</highlight></codeline>
 <codeline lineno="565"><highlight class="normal"><sp/><sp/>timeSeries_<sp/>=<sp/>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*)calloc(<ref refid="_n_d_plugin_r_o_i_stat_8h_1a8f75801a2a56ef8d661c2031594cffdcae34f73df62e3b4a2200343a302f61f2b" kindref="member">MAX_TIME_SERIES_TYPES</ref>*maxROIs_*numTSPoints_,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">));</highlight></codeline>
 <codeline lineno="566"><highlight class="normal"></highlight></codeline>

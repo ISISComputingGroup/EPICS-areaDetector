@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="merlin__low_8h" kind="file" language="C++">
     <compoundname>merlin_low.h</compoundname>
     <includes local="no">asynOctetSyncIO.h</includes>
@@ -320,7 +320,7 @@
       </memberdef>
       <memberdef kind="define" id="merlin__low_8h_1aac7acba8230e53033ab1e836ccfbd2a5" prot="public" static="no">
         <name>MPX_OK</name>
-        <initializer>0    			/*Ok*/</initializer>
+        <initializer>0                       /*Ok*/</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -342,7 +342,7 @@
       </memberdef>
       <memberdef kind="define" id="merlin__low_8h_1abfac54a80140f20134c1c7143b6df2ea" prot="public" static="no">
         <name>MPX_ERR_CMD</name>
-        <initializer>2   		/*Command not known.*/</initializer>
+        <initializer>2               /*Command not known.*/</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -375,7 +375,7 @@
       </memberdef>
       <memberdef kind="define" id="merlin__low_8h_1ade302a712677abb6a3e09d481e82d3fb" prot="public" static="no">
         <name>MPX_ERR_CONN</name>
-        <initializer>100  		/*Not connected to detector.*/</initializer>
+        <initializer>100             /*Not connected to detector.*/</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -386,7 +386,7 @@
       </memberdef>
       <memberdef kind="define" id="merlin__low_8h_1a19dc64ab1b532629e9b612ceb8175ac3" prot="public" static="no">
         <name>MPX_ERR_WRITE</name>
-        <initializer>101 		/*Error writing to socket.*/</initializer>
+        <initializer>101             /*Error writing to socket.*/</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -397,7 +397,7 @@
       </memberdef>
       <memberdef kind="define" id="merlin__low_8h_1a529a21523d89dd9a75bb365ca8d3a913" prot="public" static="no">
         <name>MPX_ERR_READ</name>
-        <initializer>102 		/*Error reading from socket.*/</initializer>
+        <initializer>102             /*Error reading from socket.*/</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -408,7 +408,7 @@
       </memberdef>
       <memberdef kind="define" id="merlin__low_8h_1a182adb7f27bbd9308ffd5c0e7832ba5e" prot="public" static="no">
         <name>MPX_ERR_LEN</name>
-        <initializer>103 		/*Length of command and value too long, or NULL*/</initializer>
+        <initializer>103             /*Length of command and value too long, or NULL*/</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -419,7 +419,7 @@
       </memberdef>
       <memberdef kind="define" id="merlin__low_8h_1a42b7f86b0bbf8abc8c55ef0c0bfb4c93" prot="public" static="no">
         <name>MPX_ERR_DATA</name>
-        <initializer>110 		/*Data formatting error.*/</initializer>
+        <initializer>110             /*Data formatting error.*/</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -430,7 +430,7 @@
       </memberdef>
       <memberdef kind="define" id="merlin__low_8h_1a4dc1a53dda7a8d879a16119067388f4a" prot="public" static="no">
         <name>MPX_ERR_UNEXPECTED</name>
-        <initializer>111 	/*unexpected <ref refid="structresponse" kindref="compound">response</ref> from labview */</initializer>
+        <initializer>111     /*unexpected <ref refid="structresponse" kindref="compound">response</ref> from labview */</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -1254,6 +1254,7 @@
     </detaileddescription>
     <programlisting>
 <codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
 <codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>MPX_LOW_H</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MPX_LOW_H</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="10"><highlight class="normal"></highlight></codeline>

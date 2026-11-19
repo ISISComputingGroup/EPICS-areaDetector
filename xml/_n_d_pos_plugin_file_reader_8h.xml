@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="_n_d_pos_plugin_file_reader_8h" kind="file" language="C++">
     <compoundname>NDPosPluginFileReader.h</compoundname>
     <includes local="yes">asynDriver.h</includes>
@@ -80,7 +80,7 @@
 <codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;map&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="16"><highlight class="normal"></highlight></codeline>
-<codeline lineno="17" refid="class_n_d_pos_plugin_file_reader" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_n_d_pos_plugin_file_reader" kindref="compound">NDPosPluginFileReader</ref></highlight></codeline>
+<codeline lineno="17" refid="class_n_d_pos_plugin_file_reader" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_n_d_pos_plugin_file_reader_1ae372a29d2eb8107176e69296a5010e51" kindref="member">NDPosPluginFileReader</ref></highlight></codeline>
 <codeline lineno="18"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="20" refid="class_n_d_pos_plugin_file_reader_1ac4d73a4221ac60eac0f9908097f4f445" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="class_n_d_pos_plugin_file_reader_1ac4d73a4221ac60eac0f9908097f4f445" kindref="member">ELEMENT_NAME</ref>;</highlight></codeline>

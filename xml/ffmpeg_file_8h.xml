@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="ffmpeg_file_8h" kind="file" language="C++">
     <compoundname>ffmpegFile.h</compoundname>
     <includes refid="_n_d_plugin_file_8h" local="yes">NDPluginFile.h</includes>
@@ -327,9 +327,9 @@
 <codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Maximum<sp/>integer<sp/>exactly<sp/>representable<sp/>in<sp/>IEEE<sp/>754<sp/>double<sp/>(2^53)<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="18" refid="ffmpeg_file_8h_1a27578485e7b29a066f27982e4891ec05" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EXACT_INT_DBL_MAX<sp/>9007199254740992.0</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="19"><highlight class="normal"></highlight></codeline>
-<codeline lineno="22" refid="classffmpeg_file" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classffmpeg_file" kindref="compound">ffmpegFile</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_n_d_plugin_file" kindref="compound">NDPluginFile</ref><sp/>{</highlight></codeline>
+<codeline lineno="22" refid="classffmpeg_file" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classffmpeg_file_1a78e73fd80a7c4770ee37b12ad2a3c519" kindref="member">ffmpegFile</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_n_d_plugin_file_1a59d1b76dfbef43310a6a5628fdfcc655" kindref="member">NDPluginFile</ref><sp/>{</highlight></codeline>
 <codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classffmpeg_file" kindref="compound">ffmpegFile</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*portName,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>queueSize,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>blockingCallbacks,</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classffmpeg_file_1a78e73fd80a7c4770ee37b12ad2a3c519" kindref="member">ffmpegFile</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*portName,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>queueSize,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>blockingCallbacks,</highlight></codeline>
 <codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*NDArrayPort,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NDArrayAddr,</highlight></codeline>
 <codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>priority,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>stackSize);</highlight></codeline>
 <codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>The<sp/>methods<sp/>that<sp/>this<sp/>class<sp/>implements<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
@@ -368,7 +368,7 @@
 <codeline lineno="60"><highlight class="normal">};</highlight></codeline>
 <codeline lineno="61" refid="ffmpeg_file_8h_1a333ac05f8afb783422fbf9f044f37762" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NUM_FFMPEG_FILE_PARAMS<sp/>(int)(&amp;LAST_FFMPEG_FILE_PARAM<sp/>-<sp/>&amp;FIRST_FFMPEG_FILE_PARAM<sp/>+<sp/>1)<sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="62"><highlight class="normal"></highlight></codeline>
-<codeline lineno="63"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="preprocessor"></highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ffmpegServer/ffmpegServerApp/src/ffmpegFile.h"/>
   </compounddef>

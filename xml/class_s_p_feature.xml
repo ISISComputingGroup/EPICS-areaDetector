@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="class_s_p_feature" kind="class" language="C++" prot="public">
     <compoundname>SPFeature</compoundname>
     <basecompoundref refid="class_gen_i_cam_feature" prot="public" virt="non-virtual">GenICamFeature</basecompoundref>
@@ -534,14 +534,10 @@
         <label>GenICamFeature</label>
         <link refid="class_gen_i_cam_feature"/>
         <childnode refid="3" relation="usage">
-          <edgelabel>mAsynName</edgelabel>
-          <edgelabel>mFeatureName</edgelabel>
-        </childnode>
-        <childnode refid="4" relation="usage">
           <edgelabel>mSet</edgelabel>
         </childnode>
       </node>
-      <node id="4">
+      <node id="3">
         <label>GenICamFeatureSet</label>
         <link refid="class_gen_i_cam_feature_set"/>
       </node>
@@ -550,9 +546,6 @@
         <link refid="class_s_p_feature"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
-      </node>
-      <node id="3">
-        <label>string</label>
       </node>
     </collaborationgraph>
     <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.h" line="13" column="1" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADSpinnaker/spinnakerApp/src/SPFeature.h" bodystart="14" bodyend="48"/>

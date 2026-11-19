@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="_a_d_core_a_p_i_8h" kind="file" language="C++">
     <compoundname>ADCoreAPI.h</compoundname>
     <includes local="no">epicsVersion.h</includes>
@@ -1201,8 +1201,8 @@
 <codeline lineno="5"><highlight class="normal"></highlight></codeline>
 <codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;epicsVersion.h&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="7"><highlight class="normal"></highlight></codeline>
-<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>VERSION_INT</highlight></codeline>
-<codeline lineno="10" refid="_a_d_core_a_p_i_8h_1aec3b51ad3030e7a0894015698908ee00" refkind="member"><highlight class="preprocessor">#<sp/><sp/>define<sp/>VERSION_INT(V,R,M,P)<sp/>(<sp/>((V)&lt;&lt;24)<sp/>|<sp/>((R)&lt;&lt;16)<sp/>|<sp/>((M)&lt;&lt;8)<sp/>|<sp/>(P))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>VERSION_INT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10" refid="_a_d_core_a_p_i_8h_1aec3b51ad3030e7a0894015698908ee00" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>VERSION_INT(V,R,M,P)<sp/>(<sp/>((V)&lt;&lt;24)<sp/>|<sp/>((R)&lt;&lt;16)<sp/>|<sp/>((M)&lt;&lt;8)<sp/>|<sp/>(P))</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="12"><highlight class="normal"></highlight></codeline>
 <codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>EPICS_VERSION_INT</highlight><highlight class="normal"></highlight></codeline>

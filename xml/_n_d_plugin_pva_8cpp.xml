@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="_n_d_plugin_pva_8cpp" kind="file" language="C++">
     <compoundname>NDPluginPva.cpp</compoundname>
     <includes local="no">stdlib.h</includes>
@@ -575,25 +575,25 @@
 <codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">epics::nt;</highlight></codeline>
 <codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">std;</highlight></codeline>
 <codeline lineno="25"><highlight class="normal"></highlight></codeline>
-<codeline lineno="26" refid="class_n_t_n_d_array_record" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="_n_d_plugin_a_p_i_8h_1a02c41946c40d115c88db54fcbb3e58d7" kindref="member">NDPLUGIN_API</ref><sp/><ref refid="class_n_t_n_d_array_record" kindref="compound">NTNDArrayRecord</ref><sp/>:</highlight></codeline>
+<codeline lineno="26" refid="class_n_t_n_d_array_record" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="_n_d_plugin_a_p_i_8h_1a02c41946c40d115c88db54fcbb3e58d7" kindref="member">NDPLUGIN_API</ref><sp/>NTNDArrayRecord<sp/>:</highlight></codeline>
 <codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>PVRecord</highlight></codeline>
 <codeline lineno="28"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="29"><highlight class="normal"></highlight></codeline>
 <codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_n_t_n_d_array_record" kindref="compound">NTNDArrayRecord</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>&amp;<sp/>name,<sp/>PVStructurePtr<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>&amp;<sp/>pvStructure)</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>NTNDArrayRecord(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>&amp;<sp/>name,<sp/>PVStructurePtr<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>&amp;<sp/>pvStructure)</highlight></codeline>
 <codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>:PVRecord(name,<sp/>pvStructure)<sp/>{}</highlight></codeline>
 <codeline lineno="33"><highlight class="normal"></highlight></codeline>
 <codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>NTNDArrayPtr<sp/>m_ntndArray;</highlight></codeline>
 <codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="ntnd_array_converter_8h_1a72a31c7a33ef6e2074ee6276b1c19e9b" kindref="member">NTNDArrayConverterPtr</ref><sp/>m_converter;</highlight></codeline>
 <codeline lineno="36"><highlight class="normal"></highlight></codeline>
 <codeline lineno="37"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>POINTER_DEFINITIONS(<ref refid="class_n_t_n_d_array_record" kindref="compound">NTNDArrayRecord</ref>);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_n_t_n_d_array_record_1ae7366fd68566e932eb3942f0475bea0f" kindref="member">POINTER_DEFINITIONS</ref>(NTNDArrayRecord);</highlight></codeline>
 <codeline lineno="39"><highlight class="normal"></highlight></codeline>
-<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="class_n_t_n_d_array_record" kindref="compound">~NTNDArrayRecord</ref><sp/>()<sp/>{}</highlight></codeline>
-<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="_n_d_plugin_pva_8h_1acd87133ff0e032f572de7ac8b8ab7834" kindref="member">NTNDArrayRecordPtr</ref><sp/>create<sp/>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>&amp;<sp/>name);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>~NTNDArrayRecord<sp/>()<sp/>{}</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="_n_d_plugin_pva_8h_1acd87133ff0e032f572de7ac8b8ab7834" kindref="member">NTNDArrayRecordPtr</ref><sp/><ref refid="class_n_t_n_d_array_record_1a9219e20725dc309c15b412164f14ef0f" kindref="member">create</ref><sp/>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>&amp;<sp/>name);</highlight></codeline>
 <codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="nullhttpd_8h_1afd49f8a781f4f13c93b4348dfdc4507d" kindref="member">init</ref><sp/>();</highlight></codeline>
-<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>process<sp/>()<sp/>{}</highlight></codeline>
-<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>update<sp/>(<ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*pArray);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_n_t_n_d_array_record_1a3348a35fbef8371347e3ebd38db31747" kindref="member">process</ref><sp/>()<sp/>{}</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_n_t_n_d_array_record_1ab1b6defc72af9dbe70ec1eb5c58f00bf" kindref="member">update</ref><sp/>(<ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*pArray);</highlight></codeline>
 <codeline lineno="45"><highlight class="normal">};</highlight></codeline>
 <codeline lineno="46"><highlight class="normal"></highlight></codeline>
 <codeline lineno="47"><highlight class="normal"><ref refid="_n_d_plugin_pva_8h_1acd87133ff0e032f572de7ac8b8ab7834" kindref="member">NTNDArrayRecordPtr</ref><sp/><ref refid="class_n_t_n_d_array_record_1a9219e20725dc309c15b412164f14ef0f" kindref="member">NTNDArrayRecord::create</ref><sp/>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>&amp;<sp/>name)</highlight></codeline>
@@ -614,7 +614,7 @@
 <codeline lineno="62"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>initPVRecord();</highlight></codeline>
 <codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>m_ntndArray<sp/>=<sp/>NTNDArray::wrap(getPVStructure());</highlight></codeline>
-<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>m_converter.reset(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_n_t_n_d_array_converter" kindref="compound">NTNDArrayConverter</ref>(m_ntndArray));</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>m_converter.reset(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>NTNDArrayConverter(m_ntndArray));</highlight></codeline>
 <codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="67"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="68"><highlight class="normal"></highlight></codeline>

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="class_n_d_attribute_list" kind="class" language="C++" prot="public">
     <compoundname>NDAttributeList</compoundname>
     <includes refid="_n_d_attribute_list_8h" local="no">NDAttributeList.h</includes>
@@ -11,8 +11,7 @@
         <name>list_</name>
         <qualifiedname>NDAttributeList::list_</qualifiedname>
         <briefdescription>
-<para>The EPICS ELLLIST <linebreak/>
- </para>
+<para>The EPICS ELLLIST. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -176,7 +175,7 @@
           <declname>pName</declname>
         </param>
         <briefdescription>
-<para>Finds an attribute by name; the search is now case sensitive (R1-10) </para>
+<para>Finds an attribute by name; the search is now case sensitive (R1-10). </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>

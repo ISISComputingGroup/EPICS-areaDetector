@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="classhdf5_1_1_data_source" kind="class" language="C++" prot="public">
     <compoundname>hdf5::DataSource</compoundname>
     <includes refid="_n_d_file_h_d_f5_layout_8h" local="no">NDFileHDF5Layout.h</includes>
@@ -199,7 +199,7 @@
         <name>DataSource</name>
         <qualifiedname>hdf5::DataSource::DataSource</qualifiedname>
         <param>
-          <type>const <ref refid="classhdf5_1_1_data_source" kindref="compound">DataSource</ref> &amp;</type>
+          <type>const DataSource &amp;</type>
           <declname>src</declname>
         </param>
         <briefdescription>
@@ -211,13 +211,13 @@
         <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5Layout.h" line="61" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5Layout.cpp" bodystart="94" bodyend="97"/>
       </memberdef>
       <memberdef kind="function" id="classhdf5_1_1_data_source_1acb7e8881127e64fa4b403dc1aa5c3b08" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classhdf5_1_1_data_source" kindref="compound">DataSource</ref> &amp;</type>
+        <type><ref refid="classhdf5_1_1_data_source_1adea6bb6f8c4b8ec2c90bc20fcab55a11" kindref="member">DataSource</ref> &amp;</type>
         <definition>DataSource &amp; hdf5::DataSource::operator=</definition>
         <argsstring>(const DataSource &amp;src)</argsstring>
         <name>operator=</name>
         <qualifiedname>hdf5::DataSource::operator=</qualifiedname>
         <param>
-          <type>const <ref refid="classhdf5_1_1_data_source" kindref="compound">DataSource</ref> &amp;</type>
+          <type>const <ref refid="classhdf5_1_1_data_source_1adea6bb6f8c4b8ec2c90bc20fcab55a11" kindref="member">DataSource</ref> &amp;</type>
           <declname>src</declname>
         </param>
         <briefdescription>

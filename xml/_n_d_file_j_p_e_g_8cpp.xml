@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="_n_d_file_j_p_e_g_8cpp" kind="file" language="C++">
     <compoundname>NDFileJPEG.cpp</compoundname>
     <includes local="no">stdlib.h</includes>
@@ -518,7 +518,7 @@
 <codeline lineno="27"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*functionName<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;openFile&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>colorMode<sp/>=<sp/><ref refid="_n_d_array_8h_1a158fa3df51916c6942849dccdc7c5812a7ce7370097e884f4954fc8b3d069a620" kindref="member">NDColorModeMono</ref>;</highlight></codeline>
-<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_n_d_attribute" kindref="compound">NDAttribute</ref><sp/>*pAttribute;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>NDAttribute<sp/>*pAttribute;</highlight></codeline>
 <codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>quality;</highlight></codeline>
 <codeline lineno="32"><highlight class="normal"></highlight></codeline>
 <codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>We<sp/>don&apos;t<sp/>support<sp/>reading<sp/>yet<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
@@ -702,7 +702,7 @@
 <codeline lineno="218"><highlight class="normal"></highlight></codeline>
 <codeline lineno="220"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_n_d_file_j_p_e_g_1a31bcd46295c6e8033fcfed4edef7a5cf" kindref="member">NDFileJPEG::initDestination</ref>()</highlight></codeline>
 <codeline lineno="221"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structjpeg_dest_mgr" kindref="compound">jpegDestMgr</ref><sp/>*pdest<sp/>=<sp/>(<ref refid="structjpeg_dest_mgr" kindref="compound">jpegDestMgr</ref>*)<sp/>this-&gt;jpegInfo.dest;</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/>jpegDestMgr<sp/>*pdest<sp/>=<sp/>(jpegDestMgr*)<sp/>this-&gt;jpegInfo.dest;</highlight></codeline>
 <codeline lineno="223"><highlight class="normal"></highlight></codeline>
 <codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/>pdest-&gt;pub.next_output_byte<sp/>=<sp/>this-&gt;jpegBuffer;</highlight></codeline>
 <codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/>pdest-&gt;pub.free_in_buffer<sp/>=<sp/><ref refid="_n_d_file_j_p_e_g_8h_1a5d2603a7b6443c38e7faed2dcc5cc93e" kindref="member">JPEG_BUF_SIZE</ref>;</highlight></codeline>
@@ -716,7 +716,7 @@
 <codeline lineno="233"><highlight class="normal"></highlight></codeline>
 <codeline lineno="235"><highlight class="normal"></highlight><highlight class="keywordtype">boolean</highlight><highlight class="normal"><sp/><ref refid="class_n_d_file_j_p_e_g_1abf53ef773f43d3e89d13ada8e28d634a" kindref="member">NDFileJPEG::emptyOutputBuffer</ref>()</highlight></codeline>
 <codeline lineno="236"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structjpeg_dest_mgr" kindref="compound">jpegDestMgr</ref><sp/>*pdest<sp/>=<sp/>(<ref refid="structjpeg_dest_mgr" kindref="compound">jpegDestMgr</ref>*)<sp/>this-&gt;jpegInfo.dest;</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/>jpegDestMgr<sp/>*pdest<sp/>=<sp/>(jpegDestMgr*)<sp/>this-&gt;jpegInfo.dest;</highlight></codeline>
 <codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*functionName<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;emptyOutputBuffer&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="239"><highlight class="normal"></highlight></codeline>
 <codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(fwrite(this-&gt;jpegBuffer,<sp/>1,<sp/><ref refid="_n_d_file_j_p_e_g_8h_1a5d2603a7b6443c38e7faed2dcc5cc93e" kindref="member">JPEG_BUF_SIZE</ref>,<sp/>this-&gt;outFile)<sp/>!=</highlight></codeline>
@@ -739,7 +739,7 @@
 <codeline lineno="257"><highlight class="normal"></highlight></codeline>
 <codeline lineno="259"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_n_d_file_j_p_e_g_1afcca30a63099674c97afce3917dfea1f" kindref="member">NDFileJPEG::termDestination</ref>()</highlight></codeline>
 <codeline lineno="260"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structjpeg_dest_mgr" kindref="compound">jpegDestMgr</ref><sp/>*pdest<sp/>=<sp/>(<ref refid="structjpeg_dest_mgr" kindref="compound">jpegDestMgr</ref>*)<sp/>this-&gt;jpegInfo.dest;</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/>jpegDestMgr<sp/>*pdest<sp/>=<sp/>(jpegDestMgr*)<sp/>this-&gt;jpegInfo.dest;</highlight></codeline>
 <codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>datacount<sp/>=<sp/><ref refid="_n_d_file_j_p_e_g_8h_1a5d2603a7b6443c38e7faed2dcc5cc93e" kindref="member">JPEG_BUF_SIZE</ref><sp/>-<sp/>pdest-&gt;pub.free_in_buffer;</highlight></codeline>
 <codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*functionName<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;termDestination&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="264"><highlight class="normal"></highlight></codeline>

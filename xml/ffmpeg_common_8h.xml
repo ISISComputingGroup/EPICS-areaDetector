@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="ffmpeg_common_8h" kind="file" language="C++">
     <compoundname>ffmpegCommon.h</compoundname>
     <includes local="yes">libavcodec/avcodec.h</includes>
@@ -239,8 +239,7 @@
     </briefdescription>
     <detaileddescription>
 <sect1 id="ffmpeg_common_8h_1License">
-<title>License</title>
-<para>Author: Diamond Light Source, Copyright 2010</para>
+<title>License</title><para>Author: Diamond Light Source, Copyright 2010</para>
 <para>&apos;ffmpegServer&apos; is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.</para>
 <para>&apos;ffmpegServer&apos; is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</para>
 <para>You should have received a copy of the GNU Lesser General Public License along with &apos;ffmpegServer&apos;. If not, see <ulink url="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</ulink>. </para>
@@ -279,7 +278,7 @@
 <codeline lineno="30"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="ffmpeg_common_8h_1ab6f0216aa17760826df4630964370220" kindref="member">formatArray</ref>(<ref refid="class_n_d_array" kindref="compound">NDArray</ref><sp/>*pArray,<sp/>asynUser<sp/>*pasynUser,<sp/>AVFrame<sp/>*inPicture,</highlight></codeline>
 <codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>SwsContext<sp/>**pCtx,<sp/>AVCodecContext<sp/>*c,<sp/>AVFrame<sp/>*scPicture);</highlight></codeline>
 <codeline lineno="32"><highlight class="normal"></highlight></codeline>
-<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="preprocessor"></highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ffmpegServer/ffmpegServerApp/src/ffmpegCommon.h"/>
   </compounddef>

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="funct_attribute_8cpp" kind="file" language="C++">
     <compoundname>functAttribute.cpp</compoundname>
     <includes local="no">stdlib.h</includes>
@@ -147,7 +147,7 @@
 <codeline lineno="39"><highlight class="normal"></highlight></codeline>
 <codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Create<sp/>the<sp/>static<sp/>pasynUser<sp/>if<sp/>not<sp/>already<sp/>done<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!pasynUserSelf)<sp/>pasynUserSelf<sp/>=<sp/>pasynManager-&gt;createAsynUser(0,0);</highlight></codeline>
-<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pParam)</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(pParam)</highlight></codeline>
 <codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>functParam<sp/>=<sp/>epicsStrDup(pParam);</highlight></codeline>
 <codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>functParam<sp/>=<sp/>epicsStrDup(</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
@@ -185,9 +185,9 @@
 <codeline lineno="82"><highlight class="normal"></highlight></codeline>
 <codeline lineno="83"><highlight class="normal"><ref refid="classfunct_attribute" kindref="compound">functAttribute</ref>*<sp/><ref refid="classfunct_attribute_1a6184012fe7080f97f01e6c2a076d1c3e" kindref="member">functAttribute::copy</ref>(<ref refid="class_n_d_attribute" kindref="compound">NDAttribute</ref><sp/>*pAttr)</highlight></codeline>
 <codeline lineno="84"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="85"><highlight class="normal"><sp/><sp/><ref refid="classfunct_attribute" kindref="compound">functAttribute</ref><sp/>*pOut<sp/>=<sp/>(<ref refid="classfunct_attribute" kindref="compound">functAttribute</ref><sp/>*)pAttr;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><ref refid="classfunct_attribute_1af766f0ca2f5075599fcf5db83e006533" kindref="member">functAttribute</ref><sp/>*pOut<sp/>=<sp/>(<ref refid="classfunct_attribute_1af766f0ca2f5075599fcf5db83e006533" kindref="member">functAttribute</ref><sp/>*)pAttr;</highlight></codeline>
 <codeline lineno="86"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!pOut)</highlight></codeline>
-<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>pOut<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classfunct_attribute" kindref="compound">functAttribute</ref>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>pOut<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classfunct_attribute_1af766f0ca2f5075599fcf5db83e006533" kindref="member">functAttribute</ref>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="88"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
 <codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>NOTE:<sp/>We<sp/>assume<sp/>that<sp/>if<sp/>the<sp/>attribute<sp/>name<sp/>is<sp/>the<sp/>same<sp/>then<sp/>the<sp/>function<sp/>name<sp/>and<sp/>parameter<sp/>are<sp/>also<sp/>the<sp/>same</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>are<sp/>also<sp/>the<sp/>same</highlight><highlight class="normal"></highlight></codeline>

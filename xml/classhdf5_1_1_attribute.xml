@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="classhdf5_1_1_attribute" kind="class" language="C++" prot="public">
     <compoundname>hdf5::Attribute</compoundname>
     <includes refid="_n_d_file_h_d_f5_layout_8h" local="no">NDFileHDF5Layout.h</includes>
@@ -71,7 +71,7 @@
         <name>Attribute</name>
         <qualifiedname>hdf5::Attribute::Attribute</qualifiedname>
         <param>
-          <type>const <ref refid="classhdf5_1_1_attribute" kindref="compound">Attribute</ref> &amp;</type>
+          <type>const Attribute &amp;</type>
           <declname>src</declname>
         </param>
         <briefdescription>
@@ -155,13 +155,13 @@
         <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5Layout.h" line="103" column="7" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADCore/ADApp/pluginSrc/NDFileHDF5Layout.h" bodystart="103" bodyend="103"/>
       </memberdef>
       <memberdef kind="function" id="classhdf5_1_1_attribute_1ade1805e0b5604d80b72e26fac5776db8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classhdf5_1_1_attribute" kindref="compound">Attribute</ref> &amp;</type>
+        <type><ref refid="classhdf5_1_1_attribute_1aaed46129e409433bb16e842dab8b6a61" kindref="member">Attribute</ref> &amp;</type>
         <definition>Attribute &amp; hdf5::Attribute::operator=</definition>
         <argsstring>(const Attribute &amp;src)</argsstring>
         <name>operator=</name>
         <qualifiedname>hdf5::Attribute::operator=</qualifiedname>
         <param>
-          <type>const <ref refid="classhdf5_1_1_attribute" kindref="compound">Attribute</ref> &amp;</type>
+          <type>const <ref refid="classhdf5_1_1_attribute_1aaed46129e409433bb16e842dab8b6a61" kindref="member">Attribute</ref> &amp;</type>
           <declname>src</declname>
         </param>
         <briefdescription>
@@ -241,7 +241,7 @@
         <name>_copy</name>
         <qualifiedname>hdf5::Attribute::_copy</qualifiedname>
         <param>
-          <type>const <ref refid="classhdf5_1_1_attribute" kindref="compound">Attribute</ref> &amp;</type>
+          <type>const <ref refid="classhdf5_1_1_attribute_1aaed46129e409433bb16e842dab8b6a61" kindref="member">Attribute</ref> &amp;</type>
           <declname>src</declname>
         </param>
         <briefdescription>

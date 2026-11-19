@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="pco__structures_8h" kind="file" language="C++">
     <compoundname>pco_structures.h</compoundname>
     <includedby refid="pco_8cpp" local="yes">/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADPCO/pcoApp/src/pco.cpp</includedby>
@@ -136,6 +136,7 @@
     </detaileddescription>
     <programlisting>
 <codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
 <codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>PCO_STRUCTURES_H_</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PCO_STRUCTURES_H_</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="11"><highlight class="normal"></highlight></codeline>
@@ -156,7 +157,8 @@
 <codeline lineno="26"><highlight class="normal"></highlight></codeline>
 <codeline lineno="27"><highlight class="normal"></highlight><highlight class="comment">//<sp/>pco.1300<sp/>types</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="28"><highlight class="normal"></highlight></codeline>
-<codeline lineno="36" refid="classpco__command" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classpco__command" kindref="compound">pco_command</ref><sp/>{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="classpco__command" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classpco__command_1a53683038240b74d40ab1a25e29872bf7" kindref="member">pco_command</ref><sp/>{</highlight></codeline>
 <codeline lineno="37"><highlight class="normal"><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="38"><highlight class="normal"><sp/></highlight></codeline>
 <codeline lineno="39"><highlight class="normal"><sp/></highlight><highlight class="comment">/*</highlight></codeline>
@@ -295,7 +297,8 @@
 <codeline lineno="172" refid="classpco__command_1af5b7cd604aa22b5c775137c565e5ede4" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classpco__command_1af5b7cd604aa22b5c775137c565e5ede4" kindref="member">totalsum</ref>;</highlight></codeline>
 <codeline lineno="173"><highlight class="normal">};</highlight></codeline>
 <codeline lineno="174"><highlight class="normal"></highlight></codeline>
-<codeline lineno="180" refid="classpco__response" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classpco__response" kindref="compound">pco_response</ref><sp/>{</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight></codeline>
+<codeline lineno="180" refid="classpco__response" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classpco__response_1a89926a93db688eb5748c739d923bd9be" kindref="member">pco_response</ref><sp/>{</highlight></codeline>
 <codeline lineno="181"><highlight class="normal"><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="182"><highlight class="normal"></highlight></codeline>
 <codeline lineno="183"><highlight class="normal"><sp/></highlight><highlight class="comment">/*</highlight></codeline>

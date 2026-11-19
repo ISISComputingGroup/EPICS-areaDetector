@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="class_firewire_d_c_a_m" kind="class" language="C++" prot="public">
     <compoundname>FirewireDCAM</compoundname>
     <basecompoundref refid="class_a_d_driver" prot="public" virt="non-virtual">ADDriver</basecompoundref>
@@ -242,7 +242,7 @@
         <name>FDC_feat_available</name>
         <qualifiedname>FirewireDCAM::FDC_feat_available</qualifiedname>
         <briefdescription>
-<para>Feature control mode: 0:manual or 1:automatic (camera controlled) (int32 read/write) </para>
+<para>Feature control mode: 0:manual or 1:automatic (camera controlled) (int32 read/write). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -257,7 +257,7 @@
         <name>FDC_feat_absolute</name>
         <qualifiedname>FirewireDCAM::FDC_feat_absolute</qualifiedname>
         <briefdescription>
-<para>Is a given featurea available in the camera 1=available 0=not available (int32, read) </para>
+<para>Is a given featurea available in the camera 1=available 0=not available (int32, read). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -272,7 +272,7 @@
         <name>FDC_framerate</name>
         <qualifiedname>FirewireDCAM::FDC_framerate</qualifiedname>
         <briefdescription>
-<para>Feature has absolute (floating point) controls available 1=available 0=not available (int32 read) </para>
+<para>Feature has absolute (floating point) controls available 1=available 0=not available (int32 read). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -287,7 +287,7 @@
         <name>FDC_videomode</name>
         <qualifiedname>FirewireDCAM::FDC_videomode</qualifiedname>
         <briefdescription>
-<para>Set and read back the frame rate (int32 (enums) read/write) </para>
+<para>Set and read back the frame rate (int32 (enums) read/write). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -302,7 +302,7 @@
         <name>FDC_bandwidth</name>
         <qualifiedname>FirewireDCAM::FDC_bandwidth</qualifiedname>
         <briefdescription>
-<para>Set and read back the video mode (int32 (enums) read/write) </para>
+<para>Set and read back the video mode (int32 (enums) read/write). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -1123,9 +1123,6 @@
       <node id="9">
         <label>Codec_t</label>
         <link refid="struct_codec__t"/>
-        <childnode refid="10" relation="usage">
-          <edgelabel>name</edgelabel>
-        </childnode>
       </node>
       <node id="1">
         <label>FirewireDCAM</label>
@@ -1184,9 +1181,6 @@
       </node>
       <node id="4">
         <label>asynPortDriver</label>
-      </node>
-      <node id="10">
-        <label>string</label>
       </node>
     </collaborationgraph>
     <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/firewireDCAM/firewireDCAMApp/src/firewireDCAM.cpp" line="78" column="1" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/firewireDCAM/firewireDCAMApp/src/firewireDCAM.cpp" bodystart="79" bodyend="142"/>

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="structtag_c_s_m_a_h_e_a_d" kind="struct" language="C++" prot="public">
     <compoundname>tagCSMAHEAD</compoundname>
     <includes refid="_s_p_e_header_8h" local="no">SPEHeader.h</includes>
@@ -2146,7 +2146,7 @@
         </inbodydescription>
         <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADAndor/andorApp/src/SPEHeader.h" line="272" column="18" bodyfile="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADAndor/andorApp/src/SPEHeader.h" bodystart="272" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="structtag_c_s_m_a_h_e_a_d_1a0d680a54e4347a32217a5e8103db953e" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="structtag_c_s_m_a_h_e_a_d_1a8d24b863a6b45a1ef258e02179856254" prot="public" static="no" mutable="no">
         <type>struct <ref refid="structtag_c_s_m_a_h_e_a_d" kindref="compound">tagCSMAHEAD</ref></type>
         <definition>struct tagCSMAHEAD tagCSMAHEAD::xcalibration</definition>
         <argsstring></argsstring>
@@ -2160,7 +2160,7 @@
         </inbodydescription>
         <location file="/home/runner/work/EPICS-areaDetector/EPICS-areaDetector/ADAndor/andorApp/src/SPEHeader.h" line="273" column="16"/>
       </memberdef>
-      <memberdef kind="variable" id="structtag_c_s_m_a_h_e_a_d_1a27be65eb1c0485d0ce2ff6e67516bfb0" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="structtag_c_s_m_a_h_e_a_d_1adf6a702ddb40f18bd17527aad06600b6" prot="public" static="no" mutable="no">
         <type>struct <ref refid="structtag_c_s_m_a_h_e_a_d" kindref="compound">tagCSMAHEAD</ref></type>
         <definition>struct tagCSMAHEAD tagCSMAHEAD::ycalibration</definition>
         <argsstring></argsstring>
@@ -2606,14 +2606,14 @@
       <member refid="structtag_c_s_m_a_h_e_a_d_1aafbdc47012b74844afecf438e37197f1" prot="public" virt="non-virtual"><scope>tagCSMAHEAD</scope><name>VirtualChipFlag</name></member>
       <member refid="structtag_c_s_m_a_h_e_a_d_1a1ea6aa7330a4a8166869b98067c49e07" prot="public" virt="non-virtual"><scope>tagCSMAHEAD</scope><name>WindowSize</name></member>
       <member refid="structtag_c_s_m_a_h_e_a_d_1aecee6ca1106b097adf16fc92187b7b99" prot="public" virt="non-virtual"><scope>tagCSMAHEAD</scope><name>WinView_id</name></member>
-      <member refid="structtag_c_s_m_a_h_e_a_d_1a0d680a54e4347a32217a5e8103db953e" prot="public" virt="non-virtual"><scope>tagCSMAHEAD</scope><name>xcalibration</name></member>
+      <member refid="structtag_c_s_m_a_h_e_a_d_1a8d24b863a6b45a1ef258e02179856254" prot="public" virt="non-virtual"><scope>tagCSMAHEAD</scope><name>xcalibration</name></member>
       <member refid="structtag_c_s_m_a_h_e_a_d_1a79b0d4c74f0b520e1b55bb7d0c9cf53d" prot="public" virt="non-virtual"><scope>tagCSMAHEAD</scope><name>xdim</name></member>
       <member refid="structtag_c_s_m_a_h_e_a_d_1ad0f265eb9545afa824b3bec6a4fa97af" prot="public" virt="non-virtual"><scope>tagCSMAHEAD</scope><name>xDimDet</name></member>
       <member refid="structtag_c_s_m_a_h_e_a_d_1a1736ae96d4f3a1177dbf29bfe7f15d73" prot="public" virt="non-virtual"><scope>tagCSMAHEAD</scope><name>xlabel</name></member>
       <member refid="structtag_c_s_m_a_h_e_a_d_1aeb95bc69afbce50a85030331329b7979" prot="public" virt="non-virtual"><scope>tagCSMAHEAD</scope><name>XML_Offset</name></member>
       <member refid="structtag_c_s_m_a_h_e_a_d_1a7eb0a7596ab0d0c8b809ea9d832337be" prot="public" virt="non-virtual"><scope>tagCSMAHEAD</scope><name>XPostPixels</name></member>
       <member refid="structtag_c_s_m_a_h_e_a_d_1a53511471fa7689c9ed50c0baf0592b3e" prot="public" virt="non-virtual"><scope>tagCSMAHEAD</scope><name>XPrePixels</name></member>
-      <member refid="structtag_c_s_m_a_h_e_a_d_1a27be65eb1c0485d0ce2ff6e67516bfb0" prot="public" virt="non-virtual"><scope>tagCSMAHEAD</scope><name>ycalibration</name></member>
+      <member refid="structtag_c_s_m_a_h_e_a_d_1adf6a702ddb40f18bd17527aad06600b6" prot="public" virt="non-virtual"><scope>tagCSMAHEAD</scope><name>ycalibration</name></member>
       <member refid="structtag_c_s_m_a_h_e_a_d_1ab8b21007f2ea06cce6bd4ffe5325100e" prot="public" virt="non-virtual"><scope>tagCSMAHEAD</scope><name>ydim</name></member>
       <member refid="structtag_c_s_m_a_h_e_a_d_1a6a34ea1b3473af447266eadb26509ad9" prot="public" virt="non-virtual"><scope>tagCSMAHEAD</scope><name>yDimDet</name></member>
       <member refid="structtag_c_s_m_a_h_e_a_d_1ad8533a48984c69b88259984bdc9da11e" prot="public" virt="non-virtual"><scope>tagCSMAHEAD</scope><name>ylabel</name></member>
